@@ -1,7 +1,6 @@
 /*
 	AAC DONATE
 */
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900,300italic,400italic,700italic);
 
 /* General Styles */
 
@@ -20,12 +19,13 @@
 :-ms-input-placeholder {  
    color: #fff !important;
 }
-body, html {
+body, 
+html {
 	background: #fff;
 	height: 100%;
-	font-size: 16px;
+	font-size: 14px;
 	position: relative;
-	font-family: 'Lato', sans-serif;
+
 	-moz-transition: all .0s ease-in-out;
 	-webkit-transition: all .0s ease-in-out;
 	transition: all .0s ease-in-out;
@@ -55,102 +55,6 @@ a:hover {
 	width: 100%;
 }
 
-/* FLEXSLIDER */
-.flexslider{
-	border: 0;
-	-webkit-box-shadow: 0 0 0 0;
-	-moz-box-shadow: 0 0 0 0;
-	-o-box-shadow: 0 0 0 0;
-	box-shadow: 0 0 0 0;
-}
-.flexslider .flex-control-paging li a{
-	font-size: 0;
-	width: 14px;
-	height: 14px;
-	border: 1px solid #747474;
-	background: #fff;	
-}
-
-.flex-control-paging li a:hover,
-.flex-control-paging li a.flex-active{
-	border: 1px solid #0094CF;
-}
-.flex-control-paging li a{
-	-webkit-box-shadow: 0 0 0 0;
-	-moz-box-shadow: 0 0 0 0;
-	-o-box-shadow: 0 0 0 0;
-	box-shadow: 0 0 0 0;
-}
-.flex-direction-nav a.flex-prev:before,
-.flex-direction-nav a.flex-next:before{
-	content: "";
-}
-.flex-direction-nav a.flex-prev,
-.flex-direction-nav a.flex-next{
-	font-size: 0;
-	border: 1px solid #CCCCCC;
-}
-
-/* CHECKBOX */
-.form-checkbox .checkbox {
-	height: 18px;
-	width: 18px;
-}
-.form-checkbox .checkbox {
-	display: block;
-}
-.checkbox:not(:checked),
-.checkbox:checked {
-  display: none;
-}
-
-.checkbox,
-.checkbox-label {
-  cursor: pointer;
-}
-.checkbox-label{
-	
-	color: #fff;
-	font-size:16px;
-	text-align:left;
-	font-weight: 300;
-	vertical-align: top;
-	margin: 3px 0;
-
-	display: block;
-	position: relative;
-	padding-left: 27px;
-}
-
-.checkbox-label::before {
-	background-color:#fff;
-	border: 1px solid #fff;
-	border-radius: 0;
-	color: #FB4362;
-	display: inline-block;
-	position: relative;
-	margin-right: 5px;
-    width: 19px;
-    height: 19px;
-	top: 2px;
-	position: absolute;
-	left: 0;
-    text-indent: 3px;
-    line-height: 10px !important;
-    font-size: 20px;
-}
-
-.checkbox:not(:checked) + .checkbox-label::before {
-  content: '';
-}
-
-.checkbox:checked + .checkbox-label .texto{
-text-decoration: line-through;
-}
-.checkbox:checked + .checkbox-label::before {
-  content: '';
-  background: #fff url('css/images/cross-checkbox.svg') no-repeat center;
-}
 
 /* SECTION */
 
