@@ -1,6 +1,6 @@
      
     <footer id="footer">
-        
+        <div>Something</div>
         <div class="row touch-row">
 
             <div class="container">
