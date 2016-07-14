@@ -1,4 +1,5 @@
 <?
+$section = 'dashboard';
 include 'inc/header.php'
 ?>
 	
@@ -14,7 +15,7 @@ include 'inc/header.php'
 					
 					<div class="col-md-4">
 							
-						<h1>
+						<h1 class="logo-header">
 							
 							<a href="#">
 								
@@ -86,16 +87,41 @@ include 'inc/header.php'
 
 				<ul class="nav-dashboard">
 					<li class="dashboard-li">
-					<a href="#" class="lkn-dashboard">View Transactions <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+						<a href="#" class="lkn-dashboard">
+							<span class="icon">
+								<i class="fa fa-line-chart" aria-hidden="true"></i>
+							</span>
+							<span class="text">View Transactions </span>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</a>
 					</li>
 					<li class="dashboard-li">
-						<a href="#" class="lkn-dashboard">Make a Donation <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+						<a href="#" class="lkn-dashboard">
+							<span class="icon">
+								<i class="fa fa-line-chart" aria-hidden="true"></i>
+							</span>
+							<span class="text">Make a Donation </span>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</a>
 					</li>
 					<li class="dashboard-li">
-						<a href="#" class="lkn-dashboard">View Standing orders <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+						<a href="#" class="lkn-dashboard">
+							<span class="icon">
+								<i class="fa fa-line-chart" aria-hidden="true"></i>
+							</span>
+							<span class="text">View Standing orders </span>
+							<i class="fa fa-angle-right" aria-hidden="true">
+							</i>
+						</a>
 					</li>
 					<li class="dashboard-li">
-						<a href="#" class="lkn-dashboard">Order Vouchers Books <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+						<a href="#" class="lkn-dashboard">
+							<span class="icon">
+								<i class="fa fa-line-chart" aria-hidden="true"></i>
+							</span>
+							<span class="text">Order Vouchers Books</span>
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</a>
 					</li>
 				</ul>
 			

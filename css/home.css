@@ -2,7 +2,141 @@
 
 
 @media(max-width:767px){
-	
+	#dashboard .header {
+		background-image: linear-gradient(-180deg, #155199 12%, #0084B7 83%);
+	}
+	#dashboard .logo-header {
+		text-align: center;
+		margin: 10px 0 0 0 ;
+	}
+	.title-welcome {
+		text-align: center;
+		font-size: 16px;
+		color: #FFFFFF;
+		letter-spacing: 0.58px;
+		margin: 30px 0 15px 0;
+	}
+	.box-account-header {
+		background: #FFFFFF;
+		box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.30);
+		border-radius: 5px;
+		float: left;
+		padding: 15px 20px;
+		margin-bottom: 17px;
+		width: 100%;
+	}
+	.box-balance,
+	.box-account {
+		float: left;
+	}
+
+	.box-account {
+		border-right: 1px solid #E5E5E5;
+		margin-right: 30px;
+		padding: 10px 25px 10px 20px;
+	}
+	.box-balance {
+		padding: 4px 0;
+	}
+	.box-account .title {
+		font-weight: 400;
+		font-size: 12px;
+		color: #333333;
+		letter-spacing: 0.32px;
+		line-height: 18px;
+		margin: 0;
+	}
+	.account-number {
+		font-weight: 700;
+		font-size: 12px;
+		color: #333333;
+		letter-spacing: 0.29px;
+		line-height: 18px;
+		margin: 0;
+	}
+	.box-balance .title {
+		font-weight: 400;
+		font-size: 12px;
+		color: #333333;
+		letter-spacing: 0.57px;
+		line-height: 18px;
+		margin: 0;
+	}
+	.box-balance .balance-number {
+		font-weight: 700;
+		font-size: 28px;
+		color: #333333;
+		letter-spacing: 0.69px;
+		line-height: 25px;
+		margin: 0;
+	}
+	.time {
+		clear: both;
+		text-align: center;
+		font-size: 12px;
+		font-weight: 300;
+		color: #FFFFFF;
+		margin: 17px 0;
+		letter-spacing: 0.32px;
+	}
+	.box-daily-updates {
+		margin: 0 -15px	;
+	}
+	.lkn-daily {
+		background: #F2F2F2;
+		font-weight: 400;
+		padding: 15px;
+		font-size: 12px;
+		color: #333333;
+		letter-spacing: 0.64px;
+		line-height: 17px;		
+		display: block;
+		position: relative;
+	}
+	.lkn-daily .date{
+		font-weight: 700;
+	}
+	.lkn-daily i {
+		color: #939393;
+		position: absolute;
+	    right: 15px;
+	    top: 15px;
+	    font-size: 20px;
+	}
+	.box-daily-updates .text {
+		display: none;
+	}
+	.nav-dashboard {
+		margin: 0 -15px;
+	}
+	.lkn-dashboard {
+		border-bottom: 2px solid #DADADA;
+		padding: 25px 15px ;
+		position: relative;
+		display: block;
+		color: #333;
+	}
+	.dashboard-li:last-child .lkn-dashboard {
+		border-bottom: 0;
+	}
+
+	.lkn-dashboard .text{
+		font-weight: 400;
+		font-size: 16px;
+		color: #333333;
+		letter-spacing: 0.43px;
+	}
+	.lkn-dashboard .icon {
+		color: #00ADEE;
+		margin-right: 5px;
+	}
+	.lkn-dashboard .fa-angle-right {
+		color: #939393;
+		position: absolute;
+		right: 15px;
+		font-size: 20px;
+	    top: 25px;
+	}
 }
 @media(min-width:768px){
 	

@@ -19,7 +19,10 @@
         <link href="css/sections.css" rel="stylesheet">
 
         <link href="style.css" rel="stylesheet">
-        
+        <? if (  $section == 'dashboard') {?>
+
+        <link href="css/home.css" rel="stylesheet">
+        <?}?>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
