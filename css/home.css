@@ -47,7 +47,7 @@
 		margin: 0;
 	}
 	.account-number {
-		font-weight: 700;
+		font-weight: 900;
 		font-size: 12px;
 		color: #333333;
 		letter-spacing: 0.29px;
@@ -63,7 +63,7 @@
 		margin: 0;
 	}
 	.box-balance .balance-number {
-		font-weight: 700;
+		font-weight: 900;
 		font-size: 28px;
 		color: #333333;
 		letter-spacing: 0.69px;
@@ -94,7 +94,7 @@
 		position: relative;
 	}
 	.lkn-daily .date{
-		font-weight: 700;
+		font-weight: 900;
 	}
 	.lkn-daily i {
 		color: #939393;
