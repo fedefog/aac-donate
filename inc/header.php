@@ -9,15 +9,12 @@
         <title></title>        
 
         <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href='https://fonts.googleapis.com/css?family=Kite+One|Roboto+Condensed:400,300,700,300italic,400italic,700italic|Dosis:400,200,300,500,600,700,800|Satisfy' rel='stylesheet' type='text/css'>
+
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         
-        <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
-        
-        <link rel="stylesheet" href="css/jquery-ui.structure.min.css"> 
 
         <link href="css/sections.css" rel="stylesheet">
 
