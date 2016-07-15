@@ -78,6 +78,156 @@
   top: 18px;
   left: 8px;
 }
+
+/* navigator */
+.navigator {
+  height: 680px;
+  right: 0;
+  position: absolute;
+  background: #F4F4F4;
+  z-index: 99;
+  width: 300px;
+  right: -300px;
+  transition: all 0.5s cubic-bezier(0.645,0.045,0.355,1);
+}
+.menu-mobile-open .navigator{
+  right: 0;
+}
+.name-navigator {
+  font-weight: 900;
+  font-size: 16px;
+  color: #333333;
+  letter-spacing: 0.52px;
+  text-align: center;
+  margin: 60px 0 20px 0;
+}
+.close-nav {
+  color: #979797;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.time-navigator {
+  font-weight: 400;
+  text-align: center;
+  font-size: 12px;
+  color: #333333;
+  letter-spacing: 0.32px;
+  clear: both;
+  margin-bottom: 30px;
+}
+/* .list-navigator {
+
+}
+.navigator-li {
+
+} */
+.navigator-li:first-child .navigator-lkn {
+  border-top: 1px solid #DADADA;
+  
+}
+.navigator-lkn {
+  border-bottom: 1px solid #DADADA;
+  color: #333;
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.43px;
+  padding: 20px;
+}
+.navigator-lkn .icon {
+  color: #00ADEE;
+}
+.navigator-lkn .text {
+  margin-left: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #333;
+  letter-spacing: 0.43px;
+}
+.lkn-logout {
+  border-top: 1px solid #DADADA;
+  color: #333;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  width: 100%;
+}
+.lkn-logout .text{
+  font-size: 16px;
+  margin-left: 10px;
+}
+ 
+.navigator-account-header {
+  background: #FFFFFF;
+  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.30);
+  border-radius: 5px;
+  float: left;
+  padding: 15px 20px;
+  width: 270px;
+  margin: 0 15px 25px 15px;
+}
+.navigator-balance,
+.navigator-account {
+  float: left;
+}
+
+.navigator-account {
+  border-right: 1px solid #E5E5E5;
+  margin-right: 0px;
+  padding: 10px 25px 10px 0px;
+}
+.navigator-balance {
+  padding: 4px 0;
+}
+.navigator-account .title {
+  font-weight: 400;
+  font-size: 12px;
+  color: #333333;
+  letter-spacing: 0.32px;
+  line-height: 18px;
+  margin: 0;
+}
+.account-number {
+  font-weight: 900;
+  font-size: 12px;
+  color: #333333;
+  letter-spacing: 0.29px;
+  line-height: 18px;
+  margin: 0;
+}
+.navigator-balance .title {
+  font-weight: 400;
+  font-size: 12px;
+  color: #333333;
+  letter-spacing: 0.57px;
+  line-height: 18px;
+  margin: 0 0 0 20px;
+}
+.navigator-balance .balance-number {
+  font-weight: 900;
+  font-size: 24px;
+  color: #333333;
+  letter-spacing: 0.69px;
+  line-height: 25px;
+  margin: 0 0 0 20px;
+}
+.layer-navigator {
+  background: #000;
+  opacity: .0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+
+  position: absolute;
+  z-index: 2;
+  transition: all .3s ease-out;
+}
+.menu-mobile-open .layer-navigator {
+  visibility: visible;
+  opacity: .4;
+}
 @media(max-width:767px){
 	
 }

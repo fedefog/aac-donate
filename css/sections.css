@@ -8,8 +8,12 @@
 /* DASHBOARD */
 
 
-
 @media(max-width:767px){
+	.section {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+	}
 	
 }
 @media(min-width:768px){

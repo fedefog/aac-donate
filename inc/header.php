@@ -35,5 +35,8 @@
 
     <body>
 
-    <section class="section-">
+    <section class="section">
        
+<?
+include 'navigator.php'
+?>    

@@ -79,7 +79,11 @@ include 'inc/header.php'
 			   
 			    <div class="box-daily-updates">
 				    	
-					<a href="#" class="lkn-daily"><span class="date">SEP-14 </span>  ROSH HASHANAH UPDATE <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+					<a href="#" class="lkn-daily">
+						<span class="date">SEP-14 </span>  ROSH HASHANAH UPDATE 
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+						<i class="fa fa-angle-up" aria-hidden="true"></i>
+					</a>
 
 					<p class="text">The office will be closed Monday September 21 to Thursday the 24th. Please ensure all transactions are dealt with as soon as possible to avoid any issues given the high demand. Wishing everyone a ksiva v'chasima tova.</p>
 
