@@ -10,7 +10,7 @@ $(document).ready(function( ) {
 		$('.close-nav').click(
 			function(event) {
 			event.preventDefault ( );
-			$(this).toggleClass('open');
+			$('.nav-icon4').toggleClass('open');
 			$('body').toggleClass('menu-mobile-open');
 		});
 		$('.lkn-daily').click(
