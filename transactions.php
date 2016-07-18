@@ -15,7 +15,7 @@ include 'inc/header.php'
 					
 					<div class="header-mobile-transactions">
 						
-						<div class="col-md-3">
+						<div class="col-xs-3">
 								
 							<a href="#" class="go-back">
 								
@@ -25,13 +25,13 @@ include 'inc/header.php'
 						
 						</div><!-- /col -->
 
-						<div class="col-md-6">
+						<div class="col-xs-6">
 							
 							<h2 class="title">Transactions</h2>
 
 						</div><!-- /col -->	
 						
-						<div class="col-md-3">
+						<div class="col-xs-3">
 							
 							<a href="#" class="nav-mobile nav-icon4 visible-xs ">
 			                                
@@ -45,22 +45,22 @@ include 'inc/header.php'
 
 	                </div><!-- /header-mobile-transactions -->
 
-	                <div class="header-mobile-transactions">
+	                <div class="col-xs-12 header-mobile-transactions">
 
 	                	<ul class="nav-transactions">
 	                		
 	                		<li class="nav-transactions-li">
 	                		
-	                			<a href="#" class="nav-transactions-lkn">all</a>
+	                			<a href="#" class="nav-transactions-lkn active">all</a>
 	                		
 	                		</li>
-	                		
+
 	                		<li class="nav-transactions-li">
 	                		
 	                			<a href="#" class="nav-transactions-lkn">in</a>
 	                		
 	                		</li>
-	                		
+
 	                		<li class="nav-transactions-li">
 	                		
 	                			<a href="#" class="nav-transactions-lkn">out</a>
@@ -71,60 +71,68 @@ include 'inc/header.php'
 
 	                </div><!-- /header-mobile-transactions -->
 
-                	<div class="box-account-header">
-						
-						<div class="box-account">
+					<div class="col-xs-12">
+                	
+	                	<div class="box-account-header">
 							
-							<h2 class="title">ACCOUNT</h2> 
-							
-							<h3 class="account-number">A7895</h3>
-							
-						</div><!-- /box-account -->
-
-						<div class="box-balance">
-							
-							<h2 class="title">BALANCE</h2>
-
-							<h3 class="balance-number">£ 3,344.99</h3>
-
-						</div><!-- /box-balance -->
-
-					</div><!-- /box-account-header -->
-
-					<h3 class="time">AS OF <strong>1 SEP 2016, 2:15PM</strong></h3>
-
-					<ul class="navigator-transactions">
-						
-						<li class="navigator-transactions-li">
-							
-							<a href="#" class="navigator-transactions-lkn">RECENT</a>
-
-						</li>
-
-						<li class="navigator-transactions-li">
-							
-							<a href="#" class="navigator-transactions-lkn">DATES</a>
-
-						</li>
-
-						<li class="navigator-transactions-li">
-							
-							<a href="#" class="navigator-transactions-lkn">SEARCH</a>
-
-						</li>
-
-						<li class="navigator-transactions-li">
-							
-							<a href="#" class="navigator-transactions-lkn">
+							<div class="box-account">
 								
-								<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+								<h2 class="title">ACCOUNT</h2> 
+								
+								<h3 class="account-number">A7895</h3>
+								
+							</div><!-- /box-account -->
 
-							</a>
+							<div class="box-balance">
+								
+								<h2 class="title">BALANCE</h2>
 
-						</li>
+								<h3 class="balance-number">£ 3,344.99</h3>
 
-					</ul
+							</div><!-- /box-balance -->
 
+						</div><!-- /box-account-header -->
+
+						<h3 class="time-update">AS OF <strong>1 SEP 2016, 2:15PM</strong></h3>
+
+					</div><!-- /col -->
+					
+					<div class="col-xs-12">
+						
+						<ul class="navigator-transactions">
+							
+							<li class="navigator-transactions-li">
+								
+								<a href="#" class="navigator-transactions-lkn active">RECENT</a>
+
+							</li>
+
+							<li class="navigator-transactions-li">
+								
+								<a href="#" class="navigator-transactions-lkn">DATES</a>
+
+							</li>
+
+							<li class="navigator-transactions-li">
+								
+								<a href="#" class="navigator-transactions-lkn">SEARCH</a>
+
+							</li>
+
+							<li class="navigator-transactions-li">
+								
+								<a href="#" class="navigator-transactions-lkn">
+									
+									<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+
+								</a>
+
+							</li>
+
+						</ul>
+						
+					</div><!-- /col -->
+					<div class="clear"></div>
 
 				</div><!-- /row  -->	
             
@@ -133,34 +141,132 @@ include 'inc/header.php'
         </header>
 
     </div><!-- /header-fixed -->
-
+	
     <div class="container-fluid">
 	
 		<div class="row">
 		
 			<div class="col-xs-12">
+
+				<div class="container-table">
 			   
-			   <table class="table table-condensed">
-					
-					<tbody>
-						<tr>
-							<td>
-								<div class="date">1-7</div>
-							</td>
-							<td>
-								<div class="desc-table">
-									<h2 class="title">Initiation Society</h2>
-									<h3 class="subtitle">STANDING ORDER </h3>
-								</div><!-- /desc-table -->
-							</td>
-							<td>
-								<span class="balance-transition">£ 990.00</span>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				   <table class="table-transactions table table-condensed">
+						
+						<tbody>
+							<tr>
+								<td>
+									<div class="date">1-7</div>
+								</td>
+								<td>
+									<div class="desc-table">
+										<h2 class="title">Initiation Society</h2>
+										<h3 class="subtitle">STANDING ORDER </h3>
+									</div><!-- /desc-table -->
+								</td>
+								<td class="balance-up">
+									<span class="balance-transition">
+										£ 990.00
+										<i class="fa fa-caret-up" aria-hidden="true"></i>
+										<i class="fa fa-caret-down" aria-hidden="true"></i>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="date">1-7</div>
+								</td>
+								<td>
+									<div class="desc-table">
+										<h2 class="title">Initiation Society</h2>
+										<h3 class="subtitle">STANDING ORDER </h3>
+									</div><!-- /desc-table -->
+								</td>
+								<td class="balance-down">
+									<span class="balance-transition">
+										£ 990.00
+										<i class="fa fa-caret-up" aria-hidden="true"></i>
+										<i class="fa fa-caret-down" aria-hidden="true"></i>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="date">1-7</div>
+								</td>
+								<td>
+									<div class="desc-table">
+										<h2 class="title">Initiation Society</h2>
+										<h3 class="subtitle">STANDING ORDER </h3>
+									</div><!-- /desc-table -->
+								</td>
+								<td class="balance-up">
+									<span class="balance-transition">
+										£ 990.00
+										<i class="fa fa-caret-up" aria-hidden="true"></i>
+										<i class="fa fa-caret-down" aria-hidden="true"></i>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="date">1-7</div>
+								</td>
+								<td>
+									<div class="desc-table">
+										<h2 class="title">Initiation Society</h2>
+									</div><!-- /desc-table -->
+								</td>
+								<td class="balance-down">
+									<span class="balance-transition">
+										£ 990.00
+										<i class="fa fa-caret-up" aria-hidden="true"></i>
+										<i class="fa fa-caret-down" aria-hidden="true"></i>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="date">1-7</div>
+								</td>
+								<td>
+									<div class="desc-table">
+										<h2 class="title">Initiation Society</h2>
+										<h3 class="subtitle">STANDING ORDER </h3>
+									</div><!-- /desc-table -->
+								</td>
+								<td class="balance-up">
+									<span class="balance-transition">
+										£ 990.00
+										<i class="fa fa-caret-up" aria-hidden="true"></i>
+										<i class="fa fa-caret-down" aria-hidden="true"></i>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="date">1-7</div>
+								</td>
+								<td>
+									<div class="desc-table">
+										<h2 class="title">Initiation Society</h2>
+										<h3 class="subtitle">STANDING ORDER </h3>
+									</div><!-- /desc-table -->
+								</td>
+								<td class="balance-down">
+									<span class="balance-transition">
+										£ 990.00
+										<i class="fa fa-caret-up" aria-hidden="true"></i>
+										<i class="fa fa-caret-down" aria-hidden="true"></i>
+									</span>
+								</td>
+							</tr>
+							
+						</tbody>
+
+					</table>
 				
-			
+				</div><!-- /container-table -->
+
 			</div><!-- /col -->
 		
 		</div><!-- /row -->

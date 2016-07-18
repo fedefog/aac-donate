@@ -15,6 +15,244 @@
 		width: 100%;
 	}
 	
+	/* transactions */
+	.header-fixed {
+		height: 285px;
+	}
+	#transactions .header {
+		height: 285px;
+		position: fixed;
+		z-index: 2;
+        background-image: linear-gradient(-180deg, #155199 12%, #488DBF 83%);
+	}
+	.header-mobile-transactions .go-back {
+	    height: 50px;
+	    color: #fff;
+	    position: absolute;
+	    width: 50px;
+	    text-align: left;
+	    font-size: 40px;
+	    margin-top: 0px;
+	}
+	.header-mobile-transactions .title {
+		text-align: center;
+		margin: 17px 0;
+		font-weight: 900;
+		font-size: 20px;
+		color: #FFFFFF;
+		letter-spacing: 0.54px;		
+	}
+	.header-mobile-transactions {
+		font-weight: 900;
+		font-size: 20px;
+		color: #fff;
+		letter-spacing: 0.54px;
+	}
+	.nav-transactions {
+		border: 1px solid #FFFFFF;
+		border-radius: 4px;
+		clear: both;
+		float: left;
+		margin-top: 10px;
+		width: 100%;
+	}
+	.nav-transactions-li {
+		display: inline-block;
+		font-weight: 900;
+		float: left;
+		letter-spacing: 0.44px;
+		text-transform: uppercase;
+		position: relative;
+		border-right: 1px solid #fff;
+		width: 33.3%;
+	}
+	.nav-transactions-li:last-child {
+		border-right: 0;
+	}
+	.nav-transactions-lkn {
+		font-size: 12px;
+		color: #FFFFFF;
+		display: block;
+		padding: 10px 0;
+		text-align: center;
+	}
+	.nav-transactions-lkn.active {
+		background: #FFF;
+		color: #155199;
+	}
+
+
+	#transactions .box-account-header {
+		background: #FFFFFF;
+		box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.30);
+		border-radius: 5px;
+		float: left;
+		padding: 5px 20px 3px 20px;
+		margin-top: 30px;
+		margin-bottom: 14px;
+		width: 100%;
+	}
+	#transactions .box-account {
+		float: left;
+		border-right: 1px solid #E5E5E5;
+		margin-right: 30px;
+		margin-left: 20px;
+		padding: 4px 25px 4px 20px;
+	}
+	#transactions .box-account .title  {
+		float: left;
+		font-weight: 400;
+		font-size: 12px;
+		color: #333;
+		letter-spacing: 0.32px;
+		line-height: 20px;
+		margin: 0;
+	}
+	#transactions .box-account .account-number {
+		font-weight: 900;
+		font-size: 12px;
+		color: #333333;
+		letter-spacing: 0.32px;
+		line-height: 20px;
+		margin: 0;
+	}
+	#transactions .box-balance {
+		padding: 4px 0;
+		float: left;
+	}
+	#transactions .box-balance .title {
+		font-weight: 400;
+		font-size: 12px;
+		color: #333333;
+		letter-spacing: 0.57px;
+		line-height: 18px;
+		margin: 0;
+	}
+	#transactions .box-balance .balance-number {
+		font-weight: 900;
+		font-size: 20px;
+		color: #333333;
+		letter-spacing: 0.69px;
+		line-height: 25px;
+		margin: 0; 
+	}
+	#transactions .time-update {
+		font-weight: 400;
+		text-align: center;
+		font-size: 11px;
+		color: #FFFFFF;
+		margin: 0 0 14px 0;
+		letter-spacing: 0.29px;
+	}
+	.navigator-transactions {
+		margin: 0 -15px;
+		background: #F7F7F7;
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12);
+		height: 51px;
+		clear: both;
+	}
+	.navigator-transactions-li {
+		float: left;		
+		position: relative;
+		width: 28%;
+	}
+	.navigator-transactions-li:before {
+		background: #DEE1E6;
+		content: '';
+		height: 100%;
+		position: absolute;
+		right: 0;
+		width: 1px;
+	}
+	.navigator-transactions-li:last-child:before {
+		display: none;	
+	}
+	.navigator-transactions-li:last-child {
+		width: 16%;
+	}
+	.navigator-transactions-lkn {
+		display: block;
+		padding: 17px 0;
+		text-align: center;
+		font-weight: 900;
+		font-size: 12px;
+		color: #333333;
+		letter-spacing: 0.44px;
+	}
+	.navigator-transactions-lkn.active {
+		color: #00ADEE;
+		background: #fff;
+	} 
+	.container-table {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.table-transactions {
+		float: left;
+		
+		margin: 0 0 40px 0;
+	}
+	.table-transactions.table > tbody > tr > td {
+		vertical-align: middle;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.table-transactions.table > tbody > tr{
+		padding: 0 15px	;
+	}
+	.table-transactions.table > tbody > tr > td {
+		border-top: 0;
+		border-bottom: 1px solid #E2E2E5;
+	}
+	.table-transactions .desc-table .title {
+		color: #333333;
+		font-weight: 600;
+		font-size: 14px;
+		letter-spacing: 0.5px;
+		margin: 2px 0 2px 0;
+	}
+	.table-transactions .date {
+		background: #F7F7F7;
+		border-radius: 3px;
+		color: #727272;
+		height: 37px;
+		line-height: 37px;
+		text-align: center;
+		font-weight: 600;
+		font-size: 12px;
+		letter-spacing: 0.18px;
+		margin-left: 10px;
+	}
+	.table-transactions .desc-table .subtitle {
+		margin: 0;
+		font-weight: 400;
+		font-size: 10px;
+		color: #333333;
+		letter-spacing: 0.27px;
+	}
+	.balance-transition {
+		text-align: right;
+		display: block;
+		font-weight: 600;
+		margin-right: 10px;
+	}
+	.balance-transition i {
+		margin-left: 8px;
+		font-size: 17px;
+	}
+	.balance-down .balance-transition  {
+		color: #F7657C;	
+	}
+	.balance-up .balance-transition  {
+		color: #97D361;
+	}
+	.balance-down .fa-caret-up {
+		display: none;
+	}
+	.balance-up .fa-caret-down {
+		display: none;
+	}
+
 }
 @media(min-width:768px){
 	
