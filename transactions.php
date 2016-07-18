@@ -115,7 +115,7 @@ include 'inc/header.php'
 
 							<li class="navigator-transactions-li">
 								
-								<a href="#" class="navigator-transactions-lkn">SEARCH</a>
+								<a href="#" class="navigator-transactions-lkn" data-toggle="modal" data-target="#modal-search" >SEARCH</a>
 
 							</li>
 
@@ -274,6 +274,61 @@ include 'inc/header.php'
 	</div><!-- /container-fluid -->
 
 </main>	
+
+<div class="modal-search modal fade" id="modal-search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  
+  <div class="modal-dialog" role="document">
+  
+    <div class="modal-content">
+
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	</div>    	
+  
+      <div class="modal-body">
+  
+		<form class="form-modal-search">
+									
+			<div class="form-group">
+				<label for="" class="label">TRANSACTION ID</label>
+				<input type="text" id="" class="input" placeholder="For a specific transaction.">
+			</div>
+			<div class="form-group">
+				<label for="" class="label">CHARITY NAME</label>
+				<input type="text" id="" class="input" placeholder="Please enter the name of the charity">
+			</div>
+			<div class="form-group">
+				<label for="" class="label">AMOUNT DONATED</label>
+				<input type="text" id="" class="input" placeholder="For a specific amount that has been donated.">
+			</div>
+			<div class="form-group">
+				<label for="" class="label">PERSONAL NOTES</label>
+				<input type="text" id="" class="input" placeholder="Search your personal notes">
+			</div>
+			<div class="form-group">
+				<label for="" class="label">VOUCHER NUMBER</label>
+				<input type="text" id="" class="input" placeholder="Enter voucher number or range (from and to)">
+			</div>
+			<div class="form-group">
+				<label for="" class="label">BOOK VOUCHER NUMBER</label>
+				<input type="text" id="" class="input" placeholder="To display all vouchers in a book.">
+			</div>
+			<div class="form-group">
+				<label for="" class="label">TRANSACTION TYPE</label>
+				<input type="text" id="" class="input" placeholder="Select the type of transactions ">
+			</div>
+			
+			<a href="#" class="btn-search">Search Transactions</a>
+
+		</form>
+
+      </div><!-- /modal-body -->
+
+    </div><!-- /modal-content -->
+
+  </div><!-- /modal-dialog -->
+
+</div><!-- /modal-search -->
 	
 
 <? include 'inc/footer.php'?>

@@ -5,19 +5,19 @@
 /* General Styles */
 
 ::-webkit-input-placeholder {
-   color: #fff !important;
+   color: #B0B0B0 !important;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #fff !important;
+   color: #B0B0B0 !important;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #fff !important;
+   color: #B0B0B0 !important;
 }
 
 :-ms-input-placeholder {  
-   color: #fff !important;
+   color: #B0B0B0 !important;
 }
 body, 
 html {
