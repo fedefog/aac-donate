@@ -28,6 +28,14 @@ $(document).ready(function( ) {
 			
 		});
 		
+		$('.modal-search .checkbox-input').click(
+			function(event) {
+			event.preventDefault ( );
+			$(this).parent().toggleClass('active');
+			
+			
+		});
+		
  		
 	}
 );

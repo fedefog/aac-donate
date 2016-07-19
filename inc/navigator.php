@@ -1,5 +1,5 @@
 <div class="navigator">
-	
+<div class="inner-navigator">
 	<a href="#" class="close-nav">X</a>
 
 	<h2 class="name-navigator">David Jacobs</h2>
@@ -84,6 +84,20 @@
 
 		</li>
 
+		<li class="navigator-li">
+
+			<a href="#" class="navigator-lkn">
+
+				<span class="icon">
+					<i class="fa fa-home" aria-hidden="true"></i>
+				</span>
+
+				<span class="text">Settings</span>
+
+			</a>
+
+		</li>
+
 	</ul>
 
 	<a href="#" class="lkn-logout">
@@ -95,7 +109,7 @@
 		<span class="text">Logout</span>
 
 	</a>
-
+</div><!-- /inner -->	
 </div><!-- /navigator -->
 
 <div class="layer-navigator"></div><!-- /layer-navigator -->

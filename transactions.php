@@ -339,31 +339,66 @@ include 'inc/header.php'
 									
 			<div class="form-group">
 				<label for="" class="label">TRANSACTION ID</label>
-				<input type="text" id="" class="input" placeholder="For a specific transaction.">
+				<div class="row-input">
+					<a href="#" class="checkbox-input">
+						<i class="fa fa-check" aria-hidden="true"></i>
+					</a>
+					<input type="text" class="input" placeholder="For a specific transaction.">
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="" class="label">CHARITY NAME</label>
-				<input type="text" id="" class="input" placeholder="Please enter the name of the charity">
+				<div class="row-input">
+					<a href="#" class="checkbox-input">
+						<i class="fa fa-check" aria-hidden="true"></i>
+					</a>
+					<input type="text" class="input" placeholder="Please enter the name of the charity">
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="" class="label">AMOUNT DONATED</label>
-				<input type="text" id="" class="input" placeholder="For a specific amount that has been donated.">
+				<div class="row-input">
+					<a href="#" class="checkbox-input">
+						<i class="fa fa-check" aria-hidden="true"></i>
+					</a>
+					<input type="text" class="input" placeholder="For a specific amount that has been donated.">
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="" class="label">PERSONAL NOTES</label>
-				<input type="text" id="" class="input" placeholder="Search your personal notes">
+				<div class="row-input">
+					<a href="#" class="checkbox-input">
+						<i class="fa fa-check" aria-hidden="true"></i>
+					</a>
+					<input type="text" class="input" placeholder="Search your personal notes">
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="" class="label">VOUCHER NUMBER</label>
-				<input type="text" id="" class="input" placeholder="Enter voucher number or range (from and to)">
+				<div class="row-input">
+					<a href="#" class="checkbox-input">
+						<i class="fa fa-check" aria-hidden="true"></i>
+					</a>
+					<input type="text" class="input" placeholder="Enter voucher number or range (from and to)">
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="" class="label">BOOK VOUCHER NUMBER</label>
-				<input type="text" id="" class="input" placeholder="To display all vouchers in a book.">
+				<div class="row-input">
+					<a href="#" class="checkbox-input">
+						<i class="fa fa-check" aria-hidden="true"></i>
+					</a>
+					<input type="text" class="input" placeholder="To display all vouchers in a book.">
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="" class="label">TRANSACTION TYPE</label>
-				<input type="text" id="" class="input" placeholder="Select the type of transactions ">
+				<div class="row-input">
+					<a href="#" class="checkbox-input">
+						<i class="fa fa-check" aria-hidden="true"></i>
+					</a>
+					<input type="text" class="input" placeholder="Select the type of transactions ">
+				</div>
 			</div>
 			
 			<a href="#" class="btn-search">Search Transactions</a>
@@ -473,7 +508,5 @@ include 'inc/header.php'
 
 </div><!-- /modal-search -->
 
-<h2>PAD</h2>
-	
 
 <? include 'inc/footer.php'?>

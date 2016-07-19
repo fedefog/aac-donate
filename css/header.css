@@ -81,14 +81,18 @@
 
 /* navigator */
 .navigator {
-  height: 680px;
+  /* height: 680px; */
+  height: 100%;
   right: 0;
-  position: absolute;
+  position: fixed;
   background: #F4F4F4;
   z-index: 99;
   width: 300px;
   right: -300px;
   transition: all 0.5s cubic-bezier(0.645,0.045,0.355,1);
+}
+ .inner-navigator {
+  max-height: 570px; overflow:auto;  width:100%; 
 }
 .menu-mobile-open .navigator{
   right: 0;
@@ -116,12 +120,7 @@
   clear: both;
   margin-bottom: 30px;
 }
-/* .list-navigator {
 
-}
-.navigator-li {
-
-} */
 .navigator-li:first-child .navigator-lkn {
   border-top: 1px solid #DADADA;
   
@@ -221,7 +220,7 @@
   visibility: hidden;
 
   position: absolute;
-  z-index: 2;
+  z-index: 22;
   transition: all .3s ease-out;
 }
 .menu-mobile-open .layer-navigator {
