@@ -121,17 +121,50 @@ include 'inc/header.php'
 
 							<li class="navigator-transactions-li">
 								
-								<a href="#" class="navigator-transactions-lkn">
+								<a href="#" class="navigator-transactions-lkn lkn-sortby">
 									
 									<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
 
 								</a>
+								
+								<div class="drop-down-sort">
+
+									<div class="container-sortby">
+
+										<ul class="list-sortby">
+											<li class="sortby-li">
+												<h2 class="title-sortby">SORT BY</h2>
+											</li>
+											<li class="sortby-li">
+												<a href="#" class="sortby-lkn">Date (Recent - Furthest)</a>
+											</li>
+											<li class="sortby-li">
+												<a href="#" class="sortby-lkn">Date (Furthest - Recent)</a>
+											</li>
+											<li class="sortby-li">
+												<a href="#" class="sortby-lkn">Amount (High - Low)</a>
+											</li>
+											<li class="sortby-li">
+												<a href="#" class="sortby-lkn">Amount (Low - High)</a>
+											</li>
+											<li class="sortby-li">
+												<a href="#" class="sortby-lkn">Charity Name (A - Z)</a>
+											</li>
+											<li class="sortby-li">
+												<a href="#" class="sortby-lkn">Charity Name (Z - A)</a>
+											</li>
+										</ul>
+									
+									</div><!-- /container-sortby -->
+
+								</div><!-- /drop-down-sort -->
 
 							</li>
 
 						</ul>
 						
 					</div><!-- /col -->
+
 					<div class="clear"></div>
 
 				</div><!-- /row  -->	
@@ -323,6 +356,99 @@ include 'inc/header.php'
 		</form>
 
       </div><!-- /modal-body -->
+
+    </div><!-- /modal-content -->
+
+  </div><!-- /modal-dialog -->
+
+</div><!-- /modal-search -->
+<div class="modal-transaction-info modal fade" id="modal-search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				  
+  <div class="modal-dialog" role="document">
+  
+    <div class="modal-content">
+
+		<div class="modal-header">
+			
+			<h2 class="title-modal">ONE-OFF DONATION </h2>
+
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		</div>    	
+
+		<div class="modal-body">
+			
+			<div class="box-info">
+				
+				<h2 class="title-info">BENEFICIARY </h2>
+				
+				<p class="desc-info">Charity Name </p>
+
+			</div><!-- /box-info -->
+
+			<div class="box-info">
+				
+				<div class="half-info">
+				
+					<h2 class="title-info">DONATION AMOUNT</h2>
+					<p class="desc-info">£ 3,890.00</p>
+
+				</div><!-- /half-info -->
+
+				<div class="half-info">
+
+					<h2 class="title-info">REFERENCE </h2>
+					<p class="desc-info">37127</p>
+
+				</div><!-- /half-info -->
+
+			</div><!-- /box-info -->
+
+			<div class="box-info">
+				
+				<div class="half-info">
+
+					<h2 class="title-info">REQUEST DATE </h2>
+					<p class="desc-info">9-6-2016</p>
+
+				</div><!-- /half-info -->
+
+				<div class="half-info">
+
+					<h2 class="title-info">PROCESSED </h2>
+					<p class="desc-info">15-6-2016</p>
+
+				</div><!-- /half-info -->
+
+			</div><!-- /box-info -->
+
+			<div class="box-info">
+				
+				<h2 class="title-info">BALANCE AFTER TRANSACTION </h2>
+				<p class="desc-info">£ 3,344.99</p>
+								
+			</div><!-- /box-info -->
+
+			<div class="box-info">
+				
+				<h2 class="title-info">NOTES TO AAC</h2>
+				<p class="desc-info">Please send through ASAP</p>
+
+			</div><!-- /box-info -->
+
+			<div class="box-info">
+				
+				<h2 class="title-info">NOTES TO CHARITY</h2>
+				<p class="desc-info">As per discussion with R' David. Wishing you continued success.</p>
+
+			</div><!-- /box-info -->
+
+		</div><!-- /modal-body -->
+		
+		<div class="modal-footer">
+			
+			<a href="#" class="lkn-donate-again">Donate Again</a>
+		
+		</div><!-- /modal-footer -->
 
     </div><!-- /modal-content -->
 

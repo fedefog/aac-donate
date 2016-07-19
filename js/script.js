@@ -21,6 +21,13 @@ $(document).ready(function( ) {
 			
 		});
 		
+		$('.lkn-sortby').click(
+			function(event) {
+			event.preventDefault ( );
+			$('.drop-down-sort').toggleClass('active');
+			
+		});
+		
  		
 	}
 );
