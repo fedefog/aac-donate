@@ -362,6 +362,8 @@ include 'inc/header.php'
   </div><!-- /modal-dialog -->
 
 </div><!-- /modal-search -->
+
+
 <div class="modal-transaction-info modal fade" id="modal-search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				  
   <div class="modal-dialog" role="document">
@@ -455,6 +457,8 @@ include 'inc/header.php'
   </div><!-- /modal-dialog -->
 
 </div><!-- /modal-search -->
+
+<h2>PAD</h2>
 	
 
 <? include 'inc/footer.php'?>
