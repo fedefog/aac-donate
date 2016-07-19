@@ -188,7 +188,7 @@ include 'inc/header.php'
 						<tbody>
 							<tr>
 								<td>
-									<div class="date">1-7</div>
+									<div class="date">1-7-16</div>
 								</td>
 								<td>
 									<div class="desc-table">
@@ -206,17 +206,17 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<div class="date">1-7</div>
+									<div class="date">24-6-16</div>
 								</td>
 								<td>
 									<div class="desc-table">
-										<h2 class="title">Initiation Society</h2>
-										<h3 class="subtitle">STANDING ORDER </h3>
+										<h2 class="title">FO Magen David Adom</h2>
+										<h3 class="subtitle">VOUCHER </h3>
 									</div><!-- /desc-table -->
 								</td>
 								<td class="balance-down">
 									<span class="balance-transition">
-										£ 990.00
+										£ 550.00
 										<i class="fa fa-caret-up" aria-hidden="true"></i>
 										<i class="fa fa-caret-down" aria-hidden="true"></i>
 									</span>
@@ -224,17 +224,33 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<div class="date">1-7</div>
+									<div class="date">14-6-16</div>
 								</td>
 								<td>
 									<div class="desc-table">
-										<h2 class="title">Initiation Society</h2>
-										<h3 class="subtitle">STANDING ORDER </h3>
+										<h2 class="title">£1 Voucher Book £50</h2>
+									</div><!-- /desc-table -->
+								</td>
+								<td class="balance-down">
+									<span class="balance-transition">
+										£ 50.00
+										<i class="fa fa-caret-up" aria-hidden="true"></i>
+										<i class="fa fa-caret-down" aria-hidden="true"></i>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="date">12-6-16</div>
+								</td>
+								<td>
+									<div class="desc-table">
+										<h2 class="title">Commission</h2>
 									</div><!-- /desc-table -->
 								</td>
 								<td class="balance-up">
 									<span class="balance-transition">
-										£ 990.00
+										£ 21.56
 										<i class="fa fa-caret-up" aria-hidden="true"></i>
 										<i class="fa fa-caret-down" aria-hidden="true"></i>
 									</span>
@@ -242,16 +258,16 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<div class="date">1-7</div>
+									<div class="date">9-6-16</div>
 								</td>
 								<td>
 									<div class="desc-table">
-										<h2 class="title">Initiation Society</h2>
+										<h2 class="title">Giftaid Rebate</h2>
 									</div><!-- /desc-table -->
 								</td>
 								<td class="balance-down">
 									<span class="balance-transition">
-										£ 990.00
+										£ 233
 										<i class="fa fa-caret-up" aria-hidden="true"></i>
 										<i class="fa fa-caret-down" aria-hidden="true"></i>
 									</span>
@@ -259,35 +275,34 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<div class="date">1-7</div>
+									<div class="date">1-6-16</div>
 								</td>
 								<td>
 									<div class="desc-table">
-										<h2 class="title">Initiation Society</h2>
-										<h3 class="subtitle">STANDING ORDER </h3>
+										<h2 class="title">Give as You Earn</h2>
+									</div><!-- /desc-table -->
+								</td>
+								<td class="balance-down">
+									<span class="balance-transition">
+										£ 550.00
+										<i class="fa fa-caret-up" aria-hidden="true"></i>
+										<i class="fa fa-caret-down" aria-hidden="true"></i>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="date">1-6-16</div>
+								</td>
+								<td>
+									<div class="desc-table">
+										<h2 class="title">Menorah Grammar</h2>
+										<h3 class="subtitle">ONLINE DONATION </h3>
 									</div><!-- /desc-table -->
 								</td>
 								<td class="balance-up">
 									<span class="balance-transition">
-										£ 990.00
-										<i class="fa fa-caret-up" aria-hidden="true"></i>
-										<i class="fa fa-caret-down" aria-hidden="true"></i>
-									</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="date">1-7</div>
-								</td>
-								<td>
-									<div class="desc-table">
-										<h2 class="title">Initiation Society</h2>
-										<h3 class="subtitle">STANDING ORDER </h3>
-									</div><!-- /desc-table -->
-								</td>
-								<td class="balance-down">
-									<span class="balance-transition">
-										£ 990.00
+										£ 222.00
 										<i class="fa fa-caret-up" aria-hidden="true"></i>
 										<i class="fa fa-caret-down" aria-hidden="true"></i>
 									</span>
