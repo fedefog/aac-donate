@@ -35,7 +35,7 @@ $(window).load(function(){
 	 function load_login(){
 		$( 'body' ).addClass( 'loaded' );
 	}
-	setTimeout(load_login, 2000);		
+	setTimeout(load_login, 4000);		
 });
 
 
