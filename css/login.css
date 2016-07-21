@@ -33,7 +33,7 @@
   margin-top: -28px;
   width: 100%;
 
-  transition: all .4s cubic-bezier(.17,.67,.83,.67);
+  transition: all .5s cubic-bezier(0.42, 0, 0.58, 1);
 }
 .container-login {
   opacity: 0;
