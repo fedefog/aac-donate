@@ -27,17 +27,15 @@ $(document).ready(function( ) {
 			$('.drop-down-sort').toggleClass('active');
 			
 		});
-		
-		$('.modal-search .checkbox-input').click(
-			function(event) {
-			event.preventDefault ( );
-			$(this).parent().toggleClass('active');
-			
-			
-		});
-		
  		
 	}
 );
+$(window).load(function(){
+	 
+	 function load_login(){
+		$( 'body' ).addClass( 'loaded' );
+	}
+	setTimeout(load_login, 2000);		
+});
 
 

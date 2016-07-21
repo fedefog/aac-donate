@@ -20,8 +20,10 @@
 
         <link href="style.css" rel="stylesheet">
         <? if (  $section == 'dashboard') {?>
-
         <link href="css/home.css" rel="stylesheet">
+        <?}?>
+        <? if (  $section == 'login') {?>
+        <link href="css/login.css" rel="stylesheet">
         <?}?>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
