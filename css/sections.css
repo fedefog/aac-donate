@@ -75,6 +75,11 @@
 .modal-search .active .input {
 	border: 1px solid #00ADEE;
 }
+.modal-search .error .checkbox-input ,
+.modal-search .error .input {
+	border: 1px solid #FC2E2E;
+	color: #FC2E2E;
+}
 .btn-search {
 	background: #00ADEE;
 	border-bottom-right-radius: 4px;
@@ -144,11 +149,12 @@
 		width: 100%;
 	}
 	
+	
 	/* transactions */
-	.header-fixed {
+	.main-transactions .header-fixed {
 		height: 285px;
 	}
-	#transactions .header {
+	.main-transactions .header {
 		height: 285px;
 		width: 100%;
 		position: fixed;
@@ -166,7 +172,8 @@
 	}
 	.header-mobile-transactions .title {
 		text-align: center;
-		margin: 17px 0;
+		margin: 20px 0;
+		line-height: 1;
 		font-weight: 900;
 		font-size: 20px;
 		color: #FFFFFF;
@@ -212,7 +219,7 @@
 	}
 
 	
-	#transactions .box-account-header {
+	.main-transactions .box-account-header {
 		background: #FFFFFF;
 		box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.30);
 		border-radius: 5px;
@@ -222,14 +229,14 @@
 		margin-bottom: 14px;
 		width: 100%;
 	}
-	#transactions .box-account {
+	.main-transactions .box-account {
 		float: left;
 		border-right: 1px solid #E5E5E5;
 		margin-right: 30px;
 		margin-left: 20px;
 		padding: 4px 25px 4px 20px;
 	}
-	#transactions .box-account .title  {
+	.main-transactions .box-account .title  {
 		float: left;
 		font-weight: 400;
 		font-size: 12px;
@@ -238,7 +245,7 @@
 		line-height: 20px;
 		margin: 0;
 	}
-	#transactions .box-account .account-number {
+	.main-transactions .box-account .account-number {
 		font-weight: 900;
 		font-size: 12px;
 		color: #333333;
@@ -246,11 +253,11 @@
 		line-height: 20px;
 		margin: 0;
 	}
-	#transactions .box-balance {
+	.main-transactions .box-balance {
 		padding: 4px 0;
 		float: left;
 	}
-	#transactions .box-balance .title {
+	.main-transactions .box-balance .title {
 		font-weight: 400;
 		font-size: 12px;
 		color: #333333;
@@ -258,7 +265,7 @@
 		line-height: 18px;
 		margin: 0;
 	}
-	#transactions .box-balance .balance-number {
+	.main-transactions .box-balance .balance-number {
 		font-weight: 900;
 		font-size: 20px;
 		color: #333333;
@@ -266,7 +273,7 @@
 		line-height: 25px;
 		margin: 0; 
 	}
-	#transactions .time-update {
+	.main-transactions .time-update {
 		font-weight: 400;
 		text-align: center;
 		font-size: 11px;
@@ -382,6 +389,27 @@
 	}
 	.balance-up .fa-caret-down {
 		display: none;
+	}
+	/* transactions */
+
+	.main-transactions.main-transactions-result .header-fixed ,
+	.main-transactions.main-transactions-result .header {
+		height: 168px;
+	}
+	.title-transactions-result {
+		float: left;
+		color: #fff;
+		text-align: center;
+		height: 57px;
+		background: #0084B7;
+		width: 100%;
+	}
+	.title-transactions-result .title-transactions {
+		font-weight: 600;
+		font-size: 13px;
+		color: #FFFFFF;
+		letter-spacing: 0.35px;
+		margin: 22px 0;
 	}
 
 }

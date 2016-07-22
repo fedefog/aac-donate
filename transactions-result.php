@@ -3,7 +3,7 @@ $section = '';
 include 'inc/header.php'
 ?>
 	
-<main class="main-transactions">
+<main class="main-transactions main-transactions-result" >
 	
 	<div class="header-fixed">
 
@@ -45,57 +45,11 @@ include 'inc/header.php'
 
 	                </div><!-- /header-mobile-transactions -->
 
-	                <div class="col-xs-12 header-mobile-transactions">
-
-	                	<ul class="nav-transactions">
-	                		
-	                		<li class="nav-transactions-li">
-	                		
-	                			<a href="#" class="nav-transactions-lkn active">all</a>
-	                		
-	                		</li>
-
-	                		<li class="nav-transactions-li">
-	                		
-	                			<a href="#" class="nav-transactions-lkn">in</a>
-	                		
-	                		</li>
-
-	                		<li class="nav-transactions-li">
-	                		
-	                			<a href="#" class="nav-transactions-lkn">out</a>
-	                		
-	                		</li>
-
-	                	</ul>
-
-	                </div><!-- /header-mobile-transactions -->
-
-					<div class="col-xs-12">
-                	
-	                	<div class="box-account-header">
+					<div class="title-transactions-result">
 							
-							<div class="box-account">
-								
-								<h2 class="title">ACCOUNT</h2> 
-								
-								<h3 class="account-number">A7895</h3>
-								
-							</div><!-- /box-account -->
+						<h3 class="title-transactions">SEARCH RESULTS</h3>
 
-							<div class="box-balance">
-								
-								<h2 class="title">BALANCE</h2>
-
-								<h3 class="balance-number">£ 3,344.99</h3>
-
-							</div><!-- /box-balance -->
-
-						</div><!-- /box-account-header -->
-
-						<h3 class="time-update">AS OF <strong>1 SEP 2016, 2:15PM</strong></h3>
-
-					</div><!-- /col -->
+					</div><!-- /title-transactions-result -->
 					
 					<div class="col-xs-12">
 						

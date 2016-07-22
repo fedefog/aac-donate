@@ -27,6 +27,20 @@ $(document).ready(function( ) {
 			$('.drop-down-sort').toggleClass('active');
 			
 		});
+		$('.checkbox-input').click(
+			function(event) {
+			event.preventDefault ( );
+			
+			if ( $(this).parent( ).find('.input').val() != '') {
+				$(this).parent().toggleClass('active');	
+			}else {
+				$(this).parent().toggleClass('error');	
+			}
+
+
+			// $(this).parent().toggleClass('active');
+			
+		});
  		
 	}
 );
@@ -35,7 +49,9 @@ $(window).load(function(){
 	 function load_login(){
 		$( 'body' ).addClass( 'loaded' );
 	}
-	setTimeout(load_login, 4000);		
+	if ( $('#login').length ){
+		setTimeout(load_login, 4000);
+	}		
 });
 
 
