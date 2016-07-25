@@ -188,12 +188,12 @@ include 'inc/header.php'
 						<tbody>
 							<tr>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
 										<div class="date">1-7-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
 										<div class="desc-table">
 											<h2 class="title">Initiation Society</h2>
 											<h3 class="subtitle">STANDING ORDER </h3>
@@ -201,7 +201,7 @@ include 'inc/header.php'
 									</a>
 								</td>
 								<td class="balance-up">
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
 										<span class="balance-transition">
 											£ 990.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -212,12 +212,12 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 										<div class="date">24-6-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 										<div class="desc-table">
 											<h2 class="title">FO Magen David Adom</h2>
 											<h3 class="subtitle">VOUCHER </h3>
@@ -225,7 +225,7 @@ include 'inc/header.php'
 									</a>
 								</td>
 								<td class="balance-down">
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 										<span class="balance-transition">
 											£ 550.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -236,19 +236,19 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-voucher-book" >
 										<div class="date">14-6-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-voucher-book" >
 										<div class="desc-table">
 											<h2 class="title">£1 Voucher Book £50</h2>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
 								<td class="balance-down">
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-voucher-book" >
 										<span class="balance-transition">
 											£ 50.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -259,19 +259,19 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-comision" >
 										<div class="date">12-6-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-comision" >
 										<div class="desc-table">
 											<h2 class="title">Commission</h2>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
 								<td class="balance-up">
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-comision" >
 										<span class="balance-transition">
 											£ 21.56
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -282,19 +282,19 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
 										<div class="date">9-6-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
 										<div class="desc-table">
 											<h2 class="title">Giftaid Rebate</h2>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
 								<td class="balance-down">
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
 										<span class="balance-transition">
 											£ 233
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -305,19 +305,19 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-give-as-you-earn" >
 										<div class="date">1-6-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-give-as-you-earn" >
 										<div class="desc-table">
 											<h2 class="title">Give as You Earn</h2>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
 								<td class="balance-down">
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-give-as-you-earn" >
 										<span class="balance-transition">
 											£ 550.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -328,12 +328,12 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-online-donation" >
 										<div class="date">1-6-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-online-donation" >
 										<div class="desc-table">
 											<h2 class="title">Menorah Grammar</h2>
 											<h3 class="subtitle">ONLINE DONATION </h3>
@@ -341,7 +341,7 @@ include 'inc/header.php'
 									</a>
 								</td>
 								<td class="balance-up">
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-online-donation" >
 										<span class="balance-transition">
 											£ 222.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -456,5 +456,12 @@ include 'inc/header.php'
 </div><!-- /modal-search -->
 
 
-
+<? include 'inc/online-donation-modal.php' ?>
+<? include 'inc/give-as-you-earn-modal.php' ?>
+<? include 'inc/giftaid-rebate-modal.php' ?>
+<? include 'inc/comision-modal.php' ?>
+<? include 'inc/voucher-book-modal.php' ?>
+<? include 'inc/voucher-modal.php' ?>
+<? include 'inc/standing-order-donation.php' ?>
+<? include 'inc/company-donation-modal.php' ?>
 <? include 'inc/footer.php'?>
