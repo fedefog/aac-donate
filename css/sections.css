@@ -67,6 +67,7 @@
 	  -webkit-appearance: none; 
 	  transition: all .2s ease-out;
 } 
+.modal-search .error .checkbox-input i ,
 .modal-search .active .checkbox-input i {
 	opacity: 1;
 	visibility: visible;
@@ -78,6 +79,9 @@
 .modal-search .error .checkbox-input ,
 .modal-search .error .input {
 	border: 1px solid #FC2E2E;
+	color: #FC2E2E;
+}
+.modal-search .error .checkbox-input i {
 	color: #FC2E2E;
 }
 .btn-search {

@@ -142,124 +142,166 @@ include 'inc/header.php'
 						<tbody>
 							<tr>
 								<td>
-									<div class="date">1-7-16</div>
+									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+										<div class="date">1-7-16</div>
+									</a>
 								</td>
 								<td>
-									<div class="desc-table">
-										<h2 class="title">Initiation Society</h2>
-										<h3 class="subtitle">STANDING ORDER </h3>
-									</div><!-- /desc-table -->
+									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+										<div class="desc-table">
+											<h2 class="title">Initiation Society</h2>
+											<h3 class="subtitle">STANDING ORDER </h3>
+										</div><!-- /desc-table -->
+									</a>
 								</td>
 								<td class="balance-up">
-									<span class="balance-transition">
-										£ 990.00
-										<i class="fa fa-caret-up" aria-hidden="true"></i>
-										<i class="fa fa-caret-down" aria-hidden="true"></i>
-									</span>
+									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+										<span class="balance-transition">
+											£ 990.00
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</span>
+									</a>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<div class="date">24-6-16</div>
+									<a href="#">
+										<div class="date">24-6-16</div>
+									</a>
 								</td>
 								<td>
-									<div class="desc-table">
-										<h2 class="title">FO Magen David Adom</h2>
-										<h3 class="subtitle">VOUCHER </h3>
-									</div><!-- /desc-table -->
+									<a href="#">
+										<div class="desc-table">
+											<h2 class="title">FO Magen David Adom</h2>
+											<h3 class="subtitle">VOUCHER </h3>
+										</div><!-- /desc-table -->
+									</a>
 								</td>
 								<td class="balance-down">
-									<span class="balance-transition">
-										£ 550.00
-										<i class="fa fa-caret-up" aria-hidden="true"></i>
-										<i class="fa fa-caret-down" aria-hidden="true"></i>
-									</span>
+									<a href="#">
+										<span class="balance-transition">
+											£ 550.00
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</span>
+									</a>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<div class="date">14-6-16</div>
+									<a href="#">
+										<div class="date">14-6-16</div>
+									</a>
 								</td>
 								<td>
-									<div class="desc-table">
-										<h2 class="title">£1 Voucher Book £50</h2>
-									</div><!-- /desc-table -->
+									<a href="#">
+										<div class="desc-table">
+											<h2 class="title">£1 Voucher Book £50</h2>
+										</div><!-- /desc-table -->
+									</a>
 								</td>
 								<td class="balance-down">
-									<span class="balance-transition">
-										£ 50.00
-										<i class="fa fa-caret-up" aria-hidden="true"></i>
-										<i class="fa fa-caret-down" aria-hidden="true"></i>
-									</span>
+									<a href="#">
+										<span class="balance-transition">
+											£ 50.00
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</span>
+									</a>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<div class="date">12-6-16</div>
+									<a href="#">
+										<div class="date">12-6-16</div>
+									</a>
 								</td>
 								<td>
-									<div class="desc-table">
-										<h2 class="title">Commission</h2>
-									</div><!-- /desc-table -->
+									<a href="#">
+										<div class="desc-table">
+											<h2 class="title">Commission</h2>
+										</div><!-- /desc-table -->
+									</a>
 								</td>
 								<td class="balance-up">
-									<span class="balance-transition">
-										£ 21.56
-										<i class="fa fa-caret-up" aria-hidden="true"></i>
-										<i class="fa fa-caret-down" aria-hidden="true"></i>
-									</span>
+									<a href="#">
+										<span class="balance-transition">
+											£ 21.56
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</span>
+									</a>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<div class="date">9-6-16</div>
+									<a href="#">
+										<div class="date">9-6-16</div>
+									</a>
 								</td>
 								<td>
-									<div class="desc-table">
-										<h2 class="title">Giftaid Rebate</h2>
-									</div><!-- /desc-table -->
+									<a href="#">
+										<div class="desc-table">
+											<h2 class="title">Giftaid Rebate</h2>
+										</div><!-- /desc-table -->
+									</a>
 								</td>
 								<td class="balance-down">
-									<span class="balance-transition">
-										£ 233
-										<i class="fa fa-caret-up" aria-hidden="true"></i>
-										<i class="fa fa-caret-down" aria-hidden="true"></i>
-									</span>
+									<a href="#">
+										<span class="balance-transition">
+											£ 233
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</span>
+									</a>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<div class="date">1-6-16</div>
+									<a href="#">
+										<div class="date">1-6-16</div>
+									</a>
 								</td>
 								<td>
-									<div class="desc-table">
-										<h2 class="title">Give as You Earn</h2>
-									</div><!-- /desc-table -->
+									<a href="#">
+										<div class="desc-table">
+											<h2 class="title">Give as You Earn</h2>
+										</div><!-- /desc-table -->
+									</a>
 								</td>
 								<td class="balance-down">
-									<span class="balance-transition">
-										£ 550.00
-										<i class="fa fa-caret-up" aria-hidden="true"></i>
-										<i class="fa fa-caret-down" aria-hidden="true"></i>
-									</span>
+									<a href="#">
+										<span class="balance-transition">
+											£ 550.00
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</span>
+									</a>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<div class="date">1-6-16</div>
+									<a href="#">
+										<div class="date">1-6-16</div>
+									</a>
 								</td>
 								<td>
-									<div class="desc-table">
-										<h2 class="title">Menorah Grammar</h2>
-										<h3 class="subtitle">ONLINE DONATION </h3>
-									</div><!-- /desc-table -->
+									<a href="#">
+										<div class="desc-table">
+											<h2 class="title">Menorah Grammar</h2>
+											<h3 class="subtitle">ONLINE DONATION </h3>
+										</div><!-- /desc-table -->
+									</a>
 								</td>
 								<td class="balance-up">
-									<span class="balance-transition">
-										£ 222.00
-										<i class="fa fa-caret-up" aria-hidden="true"></i>
-										<i class="fa fa-caret-down" aria-hidden="true"></i>
-									</span>
+									<a href="#">
+										<span class="balance-transition">
+											£ 222.00
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</span>
+									</a>
 								</td>
 							</tr>
 							
@@ -284,7 +326,9 @@ include 'inc/header.php'
     <div class="modal-content">
 
 	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
 	</div>    	
   
       <div class="modal-body">
@@ -368,99 +412,8 @@ include 'inc/header.php'
 </div><!-- /modal-search -->
 
 
-<div class="modal-transaction-info modal fade" id="modal-search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-				  
-  <div class="modal-dialog" role="document">
-  
-    <div class="modal-content">
-
-		<div class="modal-header">
-			
-			<h2 class="title-modal">ONE-OFF DONATION </h2>
-
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		</div>    	
-
-		<div class="modal-body">
-			
-			<div class="box-info">
-				
-				<h2 class="title-info">BENEFICIARY </h2>
-				
-				<p class="desc-info">Charity Name </p>
-
-			</div><!-- /box-info -->
-
-			<div class="box-info">
-				
-				<div class="half-info">
-				
-					<h2 class="title-info">DONATION AMOUNT</h2>
-					<p class="desc-info">£ 3,890.00</p>
-
-				</div><!-- /half-info -->
-
-				<div class="half-info">
-
-					<h2 class="title-info">REFERENCE </h2>
-					<p class="desc-info">37127</p>
-
-				</div><!-- /half-info -->
-
-			</div><!-- /box-info -->
-
-			<div class="box-info">
-				
-				<div class="half-info">
-
-					<h2 class="title-info">REQUEST DATE </h2>
-					<p class="desc-info">9-6-2016</p>
-
-				</div><!-- /half-info -->
-
-				<div class="half-info">
-
-					<h2 class="title-info">PROCESSED </h2>
-					<p class="desc-info">15-6-2016</p>
-
-				</div><!-- /half-info -->
-
-			</div><!-- /box-info -->
-
-			<div class="box-info">
-				
-				<h2 class="title-info">BALANCE AFTER TRANSACTION </h2>
-				<p class="desc-info">£ 3,344.99</p>
-								
-			</div><!-- /box-info -->
-
-			<div class="box-info">
-				
-				<h2 class="title-info">NOTES TO AAC</h2>
-				<p class="desc-info">Please send through ASAP</p>
-
-			</div><!-- /box-info -->
-
-			<div class="box-info">
-				
-				<h2 class="title-info">NOTES TO CHARITY</h2>
-				<p class="desc-info">As per discussion with R' David. Wishing you continued success.</p>
-
-			</div><!-- /box-info -->
-
-		</div><!-- /modal-body -->
-		
-		<div class="modal-footer">
-			
-			<a href="#" class="lkn-donate-again">Donate Again</a>
-		
-		</div><!-- /modal-footer -->
-
-    </div><!-- /modal-content -->
-
-  </div><!-- /modal-dialog -->
-
-</div><!-- /modal-search -->
 
 
+<? include 'inc/standing-order-donation.php' ?>
+<? include 'inc/company-donation-modal.php' ?>
 <? include 'inc/footer.php'?>

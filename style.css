@@ -63,6 +63,62 @@ a:hover {
   transition: all 0.3s ease-in-out;
 }
 
+/* MODAL GRAL */
+
+.modal-gral .modal-body {
+	padding: 0;
+}
+.modal-gral .row-modal {
+	border-bottom: 1px solid #E2E2E5;
+	padding: 13px 25px;
+}
+.modal-gral .row-modal:last-child {
+	border-bottom: 0;
+}
+
+.modal-gral .row-modal .subtitle-modal ,
+.modal-gral .row-modal .info-modal {
+	margin: 0;
+}
+.modal-gral .title-modal {
+	font-weight: 700;
+	font-size: 13px;
+	color: #00ADEE;
+	margin: 7px 0 5px 0;
+	letter-spacing: 0.35px;
+}
+
+.modal-gral .subtitle-modal {
+	font-weight: 700;
+	font-size: 10px;
+	color: #333333;
+	letter-spacing: 0.36px;
+	line-height: 19px;
+}
+
+.modal-gral .close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+
+}
+.modal-gral .info-modal {
+	font-weight: 400;
+	font-size: 14px;
+	color: #333333;
+	letter-spacing: 0.5px;
+	line-height: 19px;
+}
+.view-all-dontation {
+	text-align: center;
+	display: block;
+	font-weight: 700;
+	font-size: 11px;
+	color: #00ADEE;
+	margin: 5px 0 ;
+	letter-spacing: 0.29px;
+}
+
 /****** Media Queries ******/
 
 
