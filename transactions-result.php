@@ -166,12 +166,12 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 										<div class="date">24-6-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 										<div class="desc-table">
 											<h2 class="title">FO Magen David Adom</h2>
 											<h3 class="subtitle">VOUCHER </h3>
@@ -179,7 +179,7 @@ include 'inc/header.php'
 									</a>
 								</td>
 								<td class="balance-down">
-									<a href="#">
+									<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 										<span class="balance-transition">
 											£ 550.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -414,6 +414,7 @@ include 'inc/header.php'
 
 
 
+<? include 'inc/voucher-modal.php' ?>
 <? include 'inc/standing-order-donation.php' ?>
 <? include 'inc/company-donation-modal.php' ?>
 <? include 'inc/footer.php'?>
