@@ -415,7 +415,12 @@
 		letter-spacing: 0.35px;
 		margin: 22px 0;
 	}
-
+	
+	/* MAKE A PAYMENT */
+	.make-donation .header,
+	.make-donation .header-fixed {
+		height: 185px;
+	}
 }
 @media(min-width:768px){
 	

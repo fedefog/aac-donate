@@ -84,9 +84,11 @@ include 'inc/header.php'
     <div class="box-slide-text">
 	    	
 		<a href="#" class="lkn-daily">
+
 			<p class="text"><strong>VOUCHERS FOR PURIM </strong>- Please make your orders by Tuesday 16th to ensure your vouchers can arrive for Purim.</p>
 			<i class="fa fa-angle-down" aria-hidden="true"></i>
 			<i class="fa fa-angle-up" aria-hidden="true"></i>
+			
 		</a>
 		
     </div><!-- /box-daily-updates -->
