@@ -1,4 +1,4 @@
-<div class="modal-company-donation modal-gral modal fade" id="modal-company-donation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-charity-donation modal-gral modal fade" id="modal-charity-donation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				  
   <div class="modal-dialog" role="document">
   
@@ -8,7 +8,7 @@
 			
 			<div class="row-modal">
 				
-				<h2 class="title-modal">COMPANY DONATION </h2>
+				<h2 class="title-modal">CHARITY DONATION </h2>
 
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
@@ -18,9 +18,9 @@
 			
 			<div class="row-modal">
 				
-				<h3 class="subtitle-modal">COMPANY NAME </h3>
+				<h3 class="subtitle-modal">CHARITY NAME </h3>
 
-				<p class="info-modal">Lyons Presentations</p>
+				<p class="info-modal">ABC</p>
 				
 			</div><!-- /row-modal -->
 

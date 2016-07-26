@@ -352,19 +352,19 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<a href="#" data-toggle="modal" data-target="#" >
+									<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 										<div class="date">1-6-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#" data-toggle="modal" data-target="#" >
+									<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 										<div class="desc-table">
 											<h2 class="title">Account Transfer</h2>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
 								<td class="balance-down">
-									<a href="#" data-toggle="modal" data-target="#" >
+									<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 										<span class="balance-transition">
 											£ 200.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -375,19 +375,19 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<a href="#" data-toggle="modal" data-target="#" >
+									<a href="#" data-toggle="modal" data-target="#modal-company-donation" >
 										<div class="date">1-6-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#" data-toggle="modal" data-target="#" >
+									<a href="#" data-toggle="modal" data-target="#modal-company-donation" >
 										<div class="desc-table">
 											<h2 class="title">Company Donation</h2>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
 								<td class="balance-up">
-									<a href="#" data-toggle="modal" data-target="#" >
+									<a href="#" data-toggle="modal" data-target="#modal-company-donation" >
 										<span class="balance-transition">
 											£ 200.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -398,19 +398,19 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<a href="#" data-toggle="modal" data-target="#" >
+									<a href="#" data-toggle="modal" data-target="#modal-charity-donation" >
 										<div class="date">1-6-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#" data-toggle="modal" data-target="#" >
+									<a href="#" data-toggle="modal" data-target="#modal-charity-donation" >
 										<div class="desc-table">
 											<h2 class="title">Charity Donation</h2>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
 								<td class="balance-up">
-									<a href="#" data-toggle="modal" data-target="#" >
+									<a href="#" data-toggle="modal" data-target="#modal-charity-donation" >
 										<span class="balance-transition">
 											£ 200.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -421,19 +421,19 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<a href="#" data-toggle="modal" data-target="#" >
+									<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 										<div class="date">1-6-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#" data-toggle="modal" data-target="#" >
+									<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 										<div class="desc-table">
 											<h2 class="title">Account Transfer</h2>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
 								<td class="balance-up">
-									<a href="#" data-toggle="modal" data-target="#" >
+									<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 										<span class="balance-transition">
 											£ 200.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -556,4 +556,6 @@ include 'inc/header.php'
 <? include 'inc/voucher-modal.php' ?>
 <? include 'inc/standing-order-donation.php' ?>
 <? include 'inc/company-donation-modal.php' ?>
+<? include 'inc/charity-donation-modal.php' ?>
+<? include 'inc/account-transfer-modal.php' ?>
 <? include 'inc/footer.php'?>

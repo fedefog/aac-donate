@@ -1,4 +1,4 @@
-<div class="modal-company-donation modal-gral modal fade" id="modal-company-donation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-account-transfer modal-gral modal fade" id="modal-account-transfer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				  
   <div class="modal-dialog" role="document">
   
@@ -6,9 +6,9 @@
 
 		<div class="modal-body">
 			
-			<div class="row-modal">
+			<div class="row-modal ">
 				
-				<h2 class="title-modal">COMPANY DONATION </h2>
+				<h2 class="title-modal">ACCOUNT TRANSFER </h2>
 
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
@@ -18,25 +18,25 @@
 			
 			<div class="row-modal">
 				
-				<h3 class="subtitle-modal">COMPANY NAME </h3>
+				<h3 class="subtitle-modal">TRANSFER TO</h3>
 
-				<p class="info-modal">Lyons Presentations</p>
+				<p class="info-modal">Ohr Sameach</p>
 				
 			</div><!-- /row-modal -->
 
 			<div class="row-modal">
-
+				
 				<h3 class="subtitle-modal">AMOUNT</h3>
 
-				<p class="info-modal"> £ 200.00 </p>
+				<p class="info-modal">£2,200</p>
 				
 			</div><!-- /row-modal -->
 
 			<div class="row-modal">
-
+				
 				<h3 class="subtitle-modal">DATE</h3>
 
-				<p class="info-modal">1-6-2016 </p>
+				<p class="info-modal">9-6-2016</p>
 				
 			</div><!-- /row-modal -->
 
