@@ -97,6 +97,51 @@
 	letter-spacing: 0.43px;
 	margin: 25px -15px 0 -15px;
 }
+.modal-payment-confirmation .modal-body {
+	font-size: 0;
+}
+.row-confirmation-content {
+	padding: 40px 50px;
+	color: #5D5C5D;
+	text-align: center;
+}
+.row-confirmation-content h2 {
+	color: #00ADEE;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 140%;
+	margin-bottom: 30px;
+}
+.row-confirmation-content p {
+	font-size: 18px;
+}
+.btns-options {
+	display: inline-block;
+    width: 100%;
+}
+.btns-options a {
+    display: block;
+    text-align: center;
+    padding: 22px 0;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.43px;
+    width: 50%;
+}
+.btns-options .left-bt {
+	background: #E7E7E7;
+	color: #00ADEE;
+	float: left;
+	border-bottom-left-radius: 6px;
+}
+.btns-options .right-bt {
+	background: #00ADEE;
+	color: #FFFFFF;
+	float: right;
+	border-bottom-right-radius: 6px;
+}
+.btns-options .right-bt {
+}
 /* drop-down-sort */
 .drop-down-sort {
 	position: absolute;
