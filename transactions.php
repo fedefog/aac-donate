@@ -444,19 +444,19 @@ include 'inc/header.php'
 							</tr>
 							<tr>
 								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-payment-confirmation" >
+									<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 										<div class="date">1-6-16</div>
 									</a>
 								</td>
 								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-payment-confirmation" >
+									<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 										<div class="desc-table">
 											<h2 class="title">Test</h2>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
 								<td class="balance-up">
-									<a href="#" data-toggle="modal" data-target="#modal-payment-confirmation" >
+									<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 										<span class="balance-transition">
 											£ 200.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -581,5 +581,5 @@ include 'inc/header.php'
 <? include 'inc/company-donation-modal.php' ?>
 <? include 'inc/charity-donation-modal.php' ?>
 <? include 'inc/account-transfer-modal.php' ?>
-<? include 'inc/payment-confirmation-modal.php' ?>
-<? include 'inc/footer.php'?>
+<? include 'inc/previous-standing-order-modal.php' ?>
+<? include 'inc/footer.php' ?>
