@@ -18,6 +18,8 @@
 
         <link href="css/sections.css" rel="stylesheet">
 
+        <link href="css/bootstrap-switch.css" rel="stylesheet">
+        
         <link href="style.css" rel="stylesheet">
         <? if (  $section == 'dashboard') {?>
         <link href="css/home.css" rel="stylesheet">
