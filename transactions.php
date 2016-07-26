@@ -200,7 +200,7 @@ include 'inc/header.php'
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="balance-up">
+								<td class="balance-down">
 									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
 										<span class="balance-transition">
 											£ 990.00
@@ -293,7 +293,7 @@ include 'inc/header.php'
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="balance-down">
+								<td class="balance-up">
 									<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
 										<span class="balance-transition">
 											£ 233
@@ -316,7 +316,7 @@ include 'inc/header.php'
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="balance-down">
+								<td class="balance-up">
 									<a href="#" data-toggle="modal" data-target="#modal-give-as-you-earn" >
 										<span class="balance-transition">
 											£ 550.00
@@ -340,10 +340,102 @@ include 'inc/header.php'
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="balance-up">
+								<td class="balance-down">
 									<a href="#" data-toggle="modal" data-target="#modal-online-donation" >
 										<span class="balance-transition">
 											£ 222.00
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="#" data-toggle="modal" data-target="#" >
+										<div class="date">1-6-16</div>
+									</a>
+								</td>
+								<td>
+									<a href="#" data-toggle="modal" data-target="#" >
+										<div class="desc-table">
+											<h2 class="title">Account Transfer</h2>
+										</div><!-- /desc-table -->
+									</a>
+								</td>
+								<td class="balance-down">
+									<a href="#" data-toggle="modal" data-target="#" >
+										<span class="balance-transition">
+											£ 200.00
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="#" data-toggle="modal" data-target="#" >
+										<div class="date">1-6-16</div>
+									</a>
+								</td>
+								<td>
+									<a href="#" data-toggle="modal" data-target="#" >
+										<div class="desc-table">
+											<h2 class="title">Company Donation</h2>
+										</div><!-- /desc-table -->
+									</a>
+								</td>
+								<td class="balance-up">
+									<a href="#" data-toggle="modal" data-target="#" >
+										<span class="balance-transition">
+											£ 200.00
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="#" data-toggle="modal" data-target="#" >
+										<div class="date">1-6-16</div>
+									</a>
+								</td>
+								<td>
+									<a href="#" data-toggle="modal" data-target="#" >
+										<div class="desc-table">
+											<h2 class="title">Charity Donation</h2>
+										</div><!-- /desc-table -->
+									</a>
+								</td>
+								<td class="balance-up">
+									<a href="#" data-toggle="modal" data-target="#" >
+										<span class="balance-transition">
+											£ 200.00
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="#" data-toggle="modal" data-target="#" >
+										<div class="date">1-6-16</div>
+									</a>
+								</td>
+								<td>
+									<a href="#" data-toggle="modal" data-target="#" >
+										<div class="desc-table">
+											<h2 class="title">Account Transfer</h2>
+										</div><!-- /desc-table -->
+									</a>
+								</td>
+								<td class="balance-up">
+									<a href="#" data-toggle="modal" data-target="#" >
+										<span class="balance-transition">
+											£ 200.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
 											<i class="fa fa-caret-down" aria-hidden="true"></i>
 										</span>
