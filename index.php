@@ -29,7 +29,7 @@ include 'inc/header.php'
 
 					<div class="col-md-4">
 					
-						<h2 class="title-welcome">Welcome to your account, <strong>David.</strong></h2>
+						<h2 class="title-welcome">Welcome to your account.</h2>
 
 						<div class="box-account-header">
 							
@@ -113,7 +113,7 @@ include 'inc/header.php'
 							<span class="icon">
 								<i class="fa fa-line-chart" aria-hidden="true"></i>
 							</span>
-							<span class="text">View Standing orders </span>
+							<span class="text">Standing orders </span>
 							<i class="fa fa-angle-right" aria-hidden="true">
 							</i>
 						</a>

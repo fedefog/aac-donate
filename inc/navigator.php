@@ -78,7 +78,7 @@
 					<i class="fa fa-home" aria-hidden="true"></i>
 				</span>
 
-				<span class="text">Invite a Friend</span>
+				<span class="text">Invite a Friend - <em>Earn £100 credit</em></span>
 
 			</a>
 

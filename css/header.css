@@ -144,6 +144,11 @@
   color: #333;
   letter-spacing: 0.43px;
 }
+.navigator-lkn .text em {
+  font-style: normal;
+  font-size: 13px;
+  color: #00ADEE;
+}
 .lkn-logout {
   border-top: 1px solid #DADADA;
   color: #333;
