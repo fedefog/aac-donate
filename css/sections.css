@@ -464,7 +464,139 @@
 	/* MAKE A PAYMENT */
 	.make-donation .header,
 	.make-donation .header-fixed {
-		height: 185px;
+		height: 205px;
+	}
+	
+	.box-slide-text {
+		background: #F2F2F2;
+	}
+	
+	.box-slide-text i {
+		position: absolute;
+	    top: 15px;
+	    right: 0px;
+	    font-size: 26px;
+}
+	}
+	.box-slide-text .fa-angle-up {
+		display: none;
+	}
+	.lkn-daily strong {
+
+		font-weight: 700;
+		font-size: 12px;
+		color: #00ADEE;
+		letter-spacing: 0.91px;
+		line-height: 22px;
+	}
+	.lkn-daily {
+		display: block;
+		font-weight: 400;
+		font-size: 14px;
+		color: #333333;
+		letter-spacing: 1.07px;
+		position: relative;
+		line-height: 22px;		
+		padding: 15px 45px 5px 0;
+	}
+	.title-make-donation {
+		color: #333333;
+		font-weight: 600;
+		font-size: 12px;
+		letter-spacing: 0.5px;
+	}
+	.box-make-donation-lkns {
+		margin-top: 10px;
+	}
+	.box-make-donation-lkns .make-donation-lkns {
+		color: #00ADEE;
+		display: block;
+		font-weight: 500;
+		font-size: 13px;
+		letter-spacing: 0.56px;
+		line-height: 19px;
+		padding-left: 15px;
+		position: relative;
+	}
+	.box-make-donation-lkns .make-donation-lkns:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 3px;
+		border-left: 5px solid #00ADEE;
+		border-top: 5px solid transparent;
+		border-bottom: 5px solid transparent; 
+	}
+	.amount-input {
+		position: relative;
+		width: 65%;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.coin-amount {
+		display: inline-block;
+		width: 25%;
+		margin-left: 9%;
+		vertical-align: top;
+		/* float: left; */
+	}
+	.numb-aprox {
+		position: absolute;
+		font-weight: 400;
+		top: 6px;
+		right: 10px;
+		font-size: 11px;
+		color: #727272;
+		letter-spacing: 0.48px;
+		line-height: 19px;
+	}
+	.textarea-make-dontation {
+		border: 1px solid #BBBBBB;
+		border-radius: 4px;
+		padding: 15px;
+		height: 60px;
+		resize: none;
+
+		-webkit-appearance: none;
+		width: 100%;
+	}
+	.half-make-donation {
+		width: 49%;
+		display: inline-block;
+	}
+
+
+	/* swich */
+
+	.bootstrap-switch {
+		background: #eee !important;
+		border-radius: 125px !important;
+	}
+	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default, 
+	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
+		color: #eee !important;
+		height: 49px;
+	}
+	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, 
+	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
+		color: #eee !important;
+		background: #eee !important;
+		height: 49px;
+	}
+	.bootstrap-switch .bootstrap-switch-label {
+
+		border-radius: 125px !important;
+		height: 48px !important;
+		background: #fff !important;
+		background: #FFFFFF;
+		box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.19);
+	}
+	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, 
+	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
+	.bootstrap-switch.bootstrap-switch-on {
+		background: #00ADEE !important;
+		color: #00ADEE !important;
+		/* border-radius: 125px; */
 	}
 }
 @media(min-width:768px){

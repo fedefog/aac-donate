@@ -82,14 +82,18 @@ include 'inc/header.php'
     </div><!-- /header-fixed -->
 
     <div class="box-slide-text">
-	    	
-		<a href="#" class="lkn-daily">
+	    
+	    <div class="container">
 
-			<p class="text"><strong>VOUCHERS FOR PURIM </strong>- Please make your orders by Tuesday 16th to ensure your vouchers can arrive for Purim.</p>
-			<i class="fa fa-angle-down" aria-hidden="true"></i>
-			<i class="fa fa-angle-up" aria-hidden="true"></i>
-			
-		</a>
+			<a href="#" class="lkn-daily">
+
+				<p class="text"><strong>VOUCHERS FOR PURIM </strong>- Please make your orders by Tuesday 16th to ensure your vouchers can arrive for Purim.</p>
+				<i class="fa fa-angle-down" aria-hidden="true"></i>
+				<i class="fa fa-angle-up" aria-hidden="true"></i>
+
+			</a>
+
+		</div><!-- container -->
 		
     </div><!-- /box-daily-updates -->
 	
@@ -128,14 +132,18 @@ include 'inc/header.php'
 				<span class="numb-aprox">APROX. 299 GBP</span>
 
 			</div><!-- /amount-input -->
-			
-			<select class="form-control">
-			  <option>USD</option>
-			  <option>USD</option>
-			  <option>USD</option>
-			  <option>USD</option>
-			  <option>USD</option>
-			</select>
+
+			<div class="coin-amount">
+				
+				<select class="form-control ">
+				  <option>USD</option>
+				  <option>USD</option>
+				  <option>USD</option>
+				  <option>USD</option>
+				  <option>USD</option>
+				</select>
+
+			</div><!-- /coin-amount -->
 
 		</div><!-- /box-make-donation -->
 
