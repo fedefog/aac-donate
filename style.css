@@ -72,6 +72,10 @@ a:hover {
 	border-bottom: 1px solid #E2E2E5;
 	padding: 13px 25px;
 }
+.modal-gral .row-modal .col {
+	width: 49.5%;
+    display: inline-block;
+}
 .modal-gral .row-modal:last-child {
 	border-bottom: 0;
 }
@@ -135,6 +139,31 @@ a:hover {
 	color: #00ADEE;
 	margin: 5px 0 ;
 	letter-spacing: 0.29px;
+}
+.btns-options {
+	display: inline-block;
+    width: 100%;
+}
+.btns-options a {
+    display: block;
+    text-align: center;
+    padding: 22px 0;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.43px;
+    width: 50%;
+}
+.btns-options .left-bt {
+	background: #E7E7E7;
+	color: #00ADEE;
+	float: left;
+	border-bottom-left-radius: 6px;
+}
+.btns-options .right-bt {
+	background: #00ADEE;
+	color: #FFFFFF;
+	float: right;
+	border-bottom-right-radius: 6px;
 }
 
 
