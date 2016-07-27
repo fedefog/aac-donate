@@ -93,7 +93,7 @@ include 'inc/header.php'
 					<li class="dashboard-li">
 						<a href="transactions.php" class="lkn-dashboard">
 							<span class="icon">
-								<i class="fa fa-line-chart" aria-hidden="true"></i>
+								<img src="images/view-transactions-icon.png" width="20" height="24">
 							</span>
 							<span class="text">View Transactions </span>
 							<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -102,7 +102,7 @@ include 'inc/header.php'
 					<li class="dashboard-li">
 						<a href="make-a-donation.php" class="lkn-dashboard">
 							<span class="icon">
-								<i class="fa fa-line-chart" aria-hidden="true"></i>
+								<img src="images/make-donation-icon.png" width="24" height="25">
 							</span>
 							<span class="text">Make a Donation </span>
 							<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -111,7 +111,7 @@ include 'inc/header.php'
 					<li class="dashboard-li">
 						<a href="standing-orders.php" class="lkn-dashboard">
 							<span class="icon">
-								<i class="fa fa-line-chart" aria-hidden="true"></i>
+								<img src="images/standing-orders-icon.png" width="16" height="28">
 							</span>
 							<span class="text">Standing orders </span>
 							<i class="fa fa-angle-right" aria-hidden="true">
@@ -121,7 +121,7 @@ include 'inc/header.php'
 					<li class="dashboard-li">
 						<a href="#" class="lkn-dashboard">
 							<span class="icon">
-								<i class="fa fa-line-chart" aria-hidden="true"></i>
+								<img src="images/order-voucher-icon.png" width="22" height="21">
 							</span>
 							<span class="text">Order Vouchers Books</span>
 							<i class="fa fa-angle-right" aria-hidden="true"></i>
