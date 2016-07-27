@@ -39,7 +39,7 @@
 			<a href="index.php" class="navigator-lkn">
 
 				<span class="icon">
-					<i class="fa fa-home" aria-hidden="true"></i>
+					<img src="./images/dashboard-icon.png" width="21" height="20">
 				</span>
 
 				<span class="text">Dashboard</span>
@@ -53,7 +53,7 @@
 			<a href="#" class="navigator-lkn">
 
 				<span class="icon">
-					<i class="fa fa-home" aria-hidden="true"></i>
+					<img src="./images/help-icon.png" width="20" height="20">
 				</span>
 
 				<span class="text">Help</span>
@@ -67,7 +67,7 @@
 			<a href="#" class="navigator-lkn">
 
 				<span class="icon">
-					<i class="fa fa-home" aria-hidden="true"></i>
+					<img src="./images/contact-icon.png" width="20" height="18">
 				</span>
 
 				<span class="text">Contact us</span>
@@ -81,7 +81,7 @@
 			<a href="#" class="navigator-lkn">
 
 				<span class="icon">
-					<i class="fa fa-home" aria-hidden="true"></i>
+					<img src="./images/invite-a-friend-icon.png" width="19" height="20">
 				</span>
 
 				<span class="text">Invite a Friend - <em>Earn £100 credit</em></span>
@@ -95,7 +95,7 @@
 			<a href="#" class="navigator-lkn">
 
 				<span class="icon">
-					<i class="fa fa-home" aria-hidden="true"></i>
+					<img src="./images/settings-icon.png" width="20" height="20">
 				</span>
 
 				<span class="text">Settings</span>

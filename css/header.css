@@ -213,6 +213,7 @@
   bottom: 0;
   padding: 20px;
   width: 100%;
+  background: #f4f4f4;
 }
 .lkn-logout .text{
   font-size: 16px;
