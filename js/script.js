@@ -35,10 +35,16 @@ $(document).ready(function( ) {
 				$(this).parent().toggleClass('active');	
 			}else {
 				$(this).parent().toggleClass('error');	
-			}
-
-
-			// $(this).parent().toggleClass('active');
+			}			
+		});
+		$('.checkbox-box .ckeckbox').click(
+			function(event) {
+			event.preventDefault ( );
+			
+			
+				$(this).toggleClass('active');	
+			
+			
 			
 		});
  		

@@ -15,7 +15,7 @@ include 'inc/header.php'
 					
 					<div class="header-mobile-transactions">
 						
-						<div class="col-xs-3">
+						<div class="col-xs-2">
 								
 							<a href="#" class="go-back">
 								
@@ -25,13 +25,13 @@ include 'inc/header.php'
 						
 						</div><!-- /col -->
 
-						<div class="col-xs-6">
+						<div class="col-xs-8">
 							
 							<h2 class="title">Make a Donation</h2>
 
 						</div><!-- /col -->	
 						
-						<div class="col-xs-3">
+						<div class="col-xs-2">
 							
 							<a href="#" class="nav-mobile nav-icon4 visible-xs ">
 			                                
