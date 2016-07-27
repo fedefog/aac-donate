@@ -282,7 +282,7 @@
   visibility: hidden;
 
   position: absolute;
-  z-index: 22;
+  z-index: 82;
   transition: all .3s ease-out;
 }
 .menu-mobile-open .layer-navigator {
