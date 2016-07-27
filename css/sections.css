@@ -639,17 +639,17 @@
 		position: relative;
 	}
 	.checkbox-box .ckeckbox:before {
-		width: 12px;
-		height: 12px;
-		position: absolute;
-		content: '';
-		background: #00ADEE;
-		border-radius: 125px;
-		z-index: 9;
-		top: 11px;
-		left: 7px;
-		opacity: 0;
-		visibility: hidden;
+		width: 19px;
+	    height: 19px;
+	    position: absolute;
+	    content: '';
+	    background: #00ADEE;
+	    border-radius: 125px;
+	    z-index: 9;
+	    top: 7px;
+	    left: 4px;
+	    opacity: 0;
+	    visibility: hidden;
 	}
 	.checkbox-box .ckeckbox.active:before {
 		opacity: 1;
