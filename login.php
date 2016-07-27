@@ -66,7 +66,7 @@
 
 								</div><!-- /form-group -->
 
-								<a href="#" class="submit-login">Login</a>
+								<a href="index.php" class="submit-login">Login</a>
 
 							</form>
 						</div>
