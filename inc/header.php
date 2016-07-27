@@ -43,5 +43,6 @@
     <section class="section">
        
 <?
-include 'navigator.php'
+include 'navigator.php';
+include 'logout-modal.php';
 ?>    

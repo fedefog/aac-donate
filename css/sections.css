@@ -97,7 +97,7 @@
 	letter-spacing: 0.43px;
 	margin: 25px -15px 0 -15px;
 }
-.modal-payment-confirmation .modal-body {
+.modal-payment-confirmation .modal-body, .modal-logout .modal-body {
 	font-size: 0;
 }
 .row-confirmation-content {
@@ -114,6 +114,9 @@
 }
 .row-confirmation-content p {
 	font-size: 18px;
+}
+.modal-logout .row-confirmation-content {
+	padding: 110px 50px 75px;
 }
 
 /* drop-down-sort */

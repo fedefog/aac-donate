@@ -100,7 +100,7 @@
 
 	</ul>
 
-	<a href="#" class="lkn-logout">
+	<a href="#" class="lkn-logout" data-toggle="modal" data-target="#modal-logout">
 
 		<span class="icon">
 			<i class="fa fa-sign-out" aria-hidden="true"></i>
