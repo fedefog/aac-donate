@@ -17,10 +17,11 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         
 
-        <link href="css/sections.css" rel="stylesheet">
 
         <link href="css/bootstrap-switch.css" rel="stylesheet">
         <link href="css/bootstrap-select.css" rel="stylesheet">
+        
+        <link href="css/sections.css" rel="stylesheet">
         
         <link href="style.css" rel="stylesheet">
         <? if (  $section == 'dashboard') {?>
