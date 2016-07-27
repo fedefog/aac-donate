@@ -127,7 +127,7 @@ include 'inc/header.php'
 			
 			<div class="amount-input">
 				
-				<input type="text" class="form-control" placeholder="435">
+				<input type="text" class="form-control input-text" placeholder="435">
 
 				<span class="numb-aprox">APROX. 299 GBP</span>
 

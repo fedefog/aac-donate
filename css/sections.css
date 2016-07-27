@@ -566,7 +566,7 @@
 	.numb-aprox {
 		position: absolute;
 		font-weight: 400;
-		top: 6px;
+		top: 10px;
 		right: 10px;
 		font-size: 11px;
 		color: #727272;
@@ -576,8 +576,8 @@
 	.textarea-make-dontation {
 		border: 1px solid #BBBBBB;
 		border-radius: 4px;
-		padding: 15px;
-		height: 60px;
+		padding: 12px 15px;
+		height: 69px;
 		resize: none;
 
 		-webkit-appearance: none;
@@ -599,6 +599,12 @@
 		font-size: 16px;
 		color: #00ADEE;
 		letter-spacing: 0.43px;
+	}
+	.make-donation .input-text {
+	    border-color: #BBB;
+	    height: 42px;
+	    padding: 10px 12px;
+
 	}
 
 	/* swich */
