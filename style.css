@@ -221,6 +221,15 @@ input {
 	padding: 10px 12px;
 }
 
+.bootstrap-select .btn-info:hover, 
+.bootstrap-select .btn-info:focus, 
+.bootstrap-select .btn-info.focus, 
+.bootstrap-select .btn-info:active, 
+.bootstrap-select .btn-info.active, 
+.open > .dropdown-toggle.btn-info {
+background: #fff;
+	color: #333;
+}
 
 /****** Media Queries ******/
 
