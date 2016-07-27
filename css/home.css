@@ -145,6 +145,9 @@
 	.lkn-dashboard .icon {
 		color: #00ADEE;
 		margin-right: 5px;
+		width: 30px;
+    	display: inline-block;
+    	text-align: center;
 	}
 	.lkn-dashboard .fa-angle-right {
 		color: #939393;
