@@ -227,15 +227,15 @@ include 'inc/header.php'
 
 	</div><!-- /container -->
 
-	<div class="checkbox">
+	<div class="checkbox-box">
 		
 		<div class="container">
 			
-			<label>
-				<input type="checkbox" value="">
-				Option one is this and that&mdash;be sure to include why it's great
-			</label>
-
+			<a href="#" class="ckeckbox">
+				<span class="circle"></span>
+				<span class="text">I confirm that this donation is for charitable purposes only, I will not benefit directly or indirectly by way of goods or services from the donation.</span>
+			</a>
+			
 		</div><!-- /container -->
 
 	</div><!-- /checkbox -->
