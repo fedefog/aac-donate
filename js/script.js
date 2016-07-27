@@ -44,6 +44,10 @@ $(document).ready(function( ) {
  		
 		$("[name='my-checkbox']").bootstrapSwitch();
 		
+		$('.selectpicker').selectpicker({
+		  style: 'btn-info',
+		  size: 4
+		});
 
  		
 	}

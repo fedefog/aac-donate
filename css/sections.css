@@ -589,7 +589,7 @@
 	}
 	
 	.make-dontation {
-		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.22);
 		background: #F7F7F7;
 		text-align: center;
 		display: block;
@@ -605,7 +605,7 @@
 
 	.bootstrap-switch {
 		background: #eee !important;
-		/* border-radius: 125px !important; */
+		border-radius: 125px !important;
 	}
 	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default, 
 	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
@@ -620,14 +620,15 @@
 	}
 	.bootstrap-switch .bootstrap-switch-label {
 
-		/* border-radius: 125px !important; */
+		border-radius: 125px !important;
 		height: 48px !important;
 		background: #fff !important;
 		background: #FFFFFF;
 		box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.19);
 	}
 	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, 
-	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary{
+	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
+	.bootstrap-switch.bootstrap-switch-on {
 		background: #00ADEE !important;
 		color: #00ADEE !important;
 		/* border-radius: 125px; */

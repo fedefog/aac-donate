@@ -103,7 +103,7 @@ include 'inc/header.php'
 			
 			<h2 class="title-make-donation">BENEFICIARY</h2>
 			
-			<select class="form-control">
+			<select class="form-control selectpicker">
 			  <option>GGBH The Riding London NW11 8HL</option>
 			  <option>GGBH The Riding London NW11 8HL</option>
 			  <option>GGBH The Riding London NW11 8HL</option>
@@ -135,7 +135,7 @@ include 'inc/header.php'
 
 			<div class="coin-amount">
 				
-				<select class="form-control ">
+				<select class="form-control selectpicker">
 				  <option>USD</option>
 				  <option>USD</option>
 				  <option>USD</option>
@@ -185,7 +185,7 @@ include 'inc/header.php'
 				
 				<h2 class="title-make-donation">PAYMENTS</h2>
 			
-				<select class="form-control">
+				<select class="form-control selectpicker">
 				  <option>ONGOING</option>
 				  <option>ONGOING</option>
 				  <option>ONGOING</option>
@@ -199,7 +199,7 @@ include 'inc/header.php'
 				
 				<h2 class="title-make-donation">STARTING </h2>
 			
-				<select class="form-control">
+				<select class="form-control selectpicker">
 				  <option>JUN 15th</option>
 				  <option>JUN 15th</option>
 				  <option>JUN 15th</option>
@@ -213,7 +213,7 @@ include 'inc/header.php'
 				
 				<h2 class="title-make-donation">INTERVAL </h2>
 			
-				<select class="form-control">
+				<select class="form-control selectpicker">
 				  <option>MONTHLY</option>
 				  <option>MONTHLY</option>
 				  <option>MONTHLY</option>
