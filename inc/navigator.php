@@ -2,7 +2,13 @@
 <div class="inner-navigator">
 	<a href="#" class="close-nav">X</a>
 
-	<h2 class="name-navigator">David Jacobs</h2>
+	<?php /* <h2 class="name-navigator">David Jacobs</h2> */?>
+
+	<select class="form-control selectpicker switch-account" title="Switch Account">
+	  <option>ACCOUNT A7895</option>
+	  <option>ACCOUNT A7896</option>
+	  <option>ACCOUNT A7897</option>
+	</select>
 
 	<div class="navigator-account-header">
 		
@@ -30,7 +36,7 @@
 
 		<li class="navigator-li">
 
-			<a href="#" class="navigator-lkn">
+			<a href="index.php" class="navigator-lkn">
 
 				<span class="icon">
 					<i class="fa fa-home" aria-hidden="true"></i>

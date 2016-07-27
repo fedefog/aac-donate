@@ -51,13 +51,13 @@ include 'inc/header.php'
 	                		
 	                		<li class="nav-standing-orders-li">
 	                		
-	                			<a href="standing-orders.php" class="nav-standing-orders-lkn active">CURRENT</a>
+	                			<a href="standing-orders.php" class="nav-standing-orders-lkn">CURRENT</a>
 	                		
 	                		</li>
 
 	                		<li class="nav-standing-orders-li">
 	                		
-	                			<a href="previous-standing-orders.php" class="nav-standing-orders-lkn">PREVIOUS</a>
+	                			<a href="previous-standing-orders.php" class="nav-standing-orders-lkn active">PREVIOUS</a>
 	                		
 	                		</li>
 
@@ -194,6 +194,25 @@ include 'inc/header.php'
 									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
 										<span class="balance-transition">
 											£ 1,290.00
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+										</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+										<div class="desc-table">
+											<h2 class="title">FO Jerusalem College of Te…</h2>
+											<h3 class="subtitle">MONTHLY</h3>
+										</div><!-- /desc-table -->
+									</a>
+								</td>
+								<td class="balance-up">
+									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+										<span class="balance-transition">
+											£ 3,890.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
 											<i class="fa fa-caret-down" aria-hidden="true"></i>
 										</span>

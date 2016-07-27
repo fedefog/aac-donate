@@ -49,6 +49,11 @@ $(document).ready(function( ) {
 		  size: 4
 		});
 
+		/* Switch Accout Style*/
+
+		/*$( '.switch-account .dropdown-menu .text' ).addClass( 'test' );*/
+		$(".switch-account .dropdown-menu .text").lettering('words');
+
  		
 	}
 );

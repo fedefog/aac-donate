@@ -17,7 +17,7 @@ include 'inc/header.php'
 						
 						<div class="col-xs-3">
 								
-							<a href="#" class="go-back">
+							<a href="index.php" class="go-back">
 								
 								<i class="fa fa-angle-left" aria-hidden="true"></i>
 
