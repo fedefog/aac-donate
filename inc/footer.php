@@ -38,6 +38,8 @@
 	
 	<script src="js/bootstrap-switch.js" ></script>
 
+	<script src="js/jquery.lettering.js" ></script>
+
 	<script src="js/script.js"></script>
 	
 	</body>
