@@ -100,7 +100,7 @@ include 'inc/header.php'
 						</a>
 					</li>
 					<li class="dashboard-li">
-						<a href="make-a-doonation.php" class="lkn-dashboard">
+						<a href="make-a-donation.php" class="lkn-dashboard">
 							<span class="icon">
 								<i class="fa fa-line-chart" aria-hidden="true"></i>
 							</span>
@@ -109,7 +109,7 @@ include 'inc/header.php'
 						</a>
 					</li>
 					<li class="dashboard-li">
-						<a href="#" class="lkn-dashboard">
+						<a href="standing-orders.php" class="lkn-dashboard">
 							<span class="icon">
 								<i class="fa fa-line-chart" aria-hidden="true"></i>
 							</span>

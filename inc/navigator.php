@@ -36,7 +36,7 @@
 
 		<li class="navigator-li">
 
-			<a href="#" class="navigator-lkn">
+			<a href="index.php" class="navigator-lkn">
 
 				<span class="icon">
 					<i class="fa fa-home" aria-hidden="true"></i>
