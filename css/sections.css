@@ -434,6 +434,52 @@
 		letter-spacing: 0.35px;
 		margin: 22px 0;
 	}
+
+	/* STAINDING ORDERS */
+
+	.standing-orders .header-fixed {
+		height: 130px;
+	}
+	.standing-orders .header {
+		height: 130px;
+		width: 100%;
+		position: fixed;
+		z-index: 2;
+        background-image: linear-gradient(-180deg, #155199 12%, #488DBF 83%);
+	}
+	.nav-standing-orders {
+		border: 1px solid #FFFFFF;
+		border-radius: 4px;
+		clear: both;
+		float: left;
+		margin-top: 10px;
+		width: 100%;
+	}
+	.nav-standing-orders-li {
+		display: inline-block;
+		font-weight: 700;
+		float: left;
+		letter-spacing: 0.44px;
+		text-transform: uppercase;
+		position: relative;
+		border-right: 1px solid #fff;
+		width: 50%;
+	}
+	.nav-standing-orders-li:last-child {
+		border-right: 0;
+	}
+	.nav-standing-orders-lkn {
+		font-size: 12px;
+		color: #FFFFFF;
+		display: block;
+		padding: 10px 0;
+		text-align: center;
+	}
+	.nav-standing-orders-lkn.active {
+		background: #FFF;
+		color: #00ADEE;
+		font-weight: 900;
+	}
 	
 	/* MAKE A PAYMENT */
 	.make-donation .header,
