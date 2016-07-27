@@ -13,11 +13,22 @@ $(document).ready(function( ) {
 			$('.nav-icon4').toggleClass('open');
 			$('body').toggleClass('menu-mobile-open');
 		});
-		$('.lkn-daily').click(
+		$('.daily-dashboard').click(
 			function(event) {
 			event.preventDefault ( );
 			$(this).toggleClass('open');
 			$(this).parent().find('.text').slideToggle();
+			
+		});
+		
+		$('.lkn-daily-donate').click(
+			function(event) {
+			event.preventDefault ( );
+			if($(this).parent().parent().hasClass("open")) {
+			    $(this).parent().parent().animate({"height": "50px"}).removeClass("open");
+			  } else {
+			    $(this).parent().parent().animate({"height": "120px"}).addClass("open");
+			}
 			
 		});
 		
@@ -54,6 +65,9 @@ $(document).ready(function( ) {
 		  style: 'btn-info',
 		  size: 4
 		});
+
+
+
 
 		/* Switch Accout Style*/
 

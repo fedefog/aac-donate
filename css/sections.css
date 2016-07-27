@@ -499,8 +499,20 @@
 	
 	.box-slide-text {
 		background: #F2F2F2;
+		position: relative;
+		overflow: hidden;
+		height: 50px;
 	}
-	
+	.box-slide-text .lkn-daily-donate {
+		line-height: 29px;
+		padding: 12px 45px 5px 0;
+	}
+	.box-slide-text.open .fa-angle-up {
+		display: block;
+	}
+	.box-slide-text.open .fa-angle-down{
+		display: none;
+	} 	
 	.box-slide-text i {
 		position: absolute;
 	    top: 15px;

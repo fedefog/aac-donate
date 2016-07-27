@@ -79,7 +79,7 @@ include 'inc/header.php'
 			   
 			    <div class="box-daily-updates">
 				    	
-					<a href="#" class="lkn-daily">
+					<a href="#" class="lkn-daily daily-dashboard"> 
 						<span class="date">SEP-14 </span>  ROSH HASHANAH UPDATE 
 						<i class="fa fa-angle-down" aria-hidden="true"></i>
 						<i class="fa fa-angle-up" aria-hidden="true"></i>
