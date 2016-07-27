@@ -184,7 +184,7 @@
 		height: 285px;
 		width: 100%;
 		position: fixed;
-		z-index: 2000;
+		z-index: 80;
         background-image: linear-gradient(-180deg, #155199 12%, #488DBF 83%);
 	}
 	.header-mobile-transactions .go-back {
