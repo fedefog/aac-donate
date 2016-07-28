@@ -1,5 +1,11 @@
 /* HOME */
 
+@media(max-width:340px){
+	.box-account {
+		margin-right: 15px!important;
+		padding: 10px 15px 10px 15px!important;
+	}
+}
 
 @media(max-width:767px){
 	#dashboard .header {

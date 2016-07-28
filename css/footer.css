@@ -1,5 +1,18 @@
 /* FOOTER */
 
+@media(max-width:340px){
+	.logo-footer {
+	    width: 40px!important;
+	}
+	.logo-footer img {
+		width: 100%;
+	}
+	.list-footer {
+	    padding-left: 8px!important;
+	    margin-left: 8px!important;
+	}
+}
+
 @media(max-width:767px){
 	#footer {
 		background: #0084B7;

@@ -167,6 +167,20 @@
 	border-top: 1px solid #E2E2E5;
 }
 
+@media(max-width:340px){ 
+	/*Transaction */
+	.main-transactions .box-account {
+	    margin-right: 20px!important;
+	    padding: 4px 20px 4px 20px!important;
+	}
+	.table-transactions .date {
+		margin-left: 5px!important;
+	}
+	.header-mobile-transactions .title {
+		font-size: 17px!important;
+	}
+}
+
 
 @media(max-width:767px){
 	.section {

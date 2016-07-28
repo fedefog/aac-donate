@@ -84,7 +84,8 @@
   /* height: 680px; */
   height: 100%;
   right: 0;
-  position: fixed;
+  top: 0;
+  position: absolute;
   background: #F4F4F4;
   z-index: 99;
   width: 300px;
@@ -92,7 +93,7 @@
   transition: all 0.5s cubic-bezier(0.645,0.045,0.355,1);
 }
  .inner-navigator {
-  /*max-height: 570px; */
+  /*max-height: 570px;*/
   overflow:auto;  
   width:100%; 
   padding-top: 45px;
@@ -206,10 +207,9 @@
   color: #00ADEE;
 }
 .lkn-logout {
-  border-top: 1px solid #DADADA;
+  border-bottom: 1px solid #DADADA;
   color: #333;
   display: block;
-  position: absolute;
   bottom: 0;
   padding: 20px;
   width: 100%;
@@ -274,10 +274,10 @@
   line-height: 25px;
   margin: 0 0 0 20px;
 }
-.list-navigator {
+/*.list-navigator {
   height: 260px;
   overflow-y: scroll;
-}
+}*/
 .layer-navigator {
   background: #000;
   opacity: .0;
