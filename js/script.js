@@ -128,15 +128,17 @@ $(document).ready(function( ) {
 		/* Switch Accout Style*/
 
 		$(".switch-account .dropdown-menu .text").lettering('words');
-		/*$(".beneficiary-select .filter-option").lettering('words');*/
 
 		/* Datapicker */
 
 		$('#dates-bt-modal').daterangepicker();  
 
+		$('#dates-bt-modal').on('show.daterangepicker', function(ev, picker) {
+          $("body").append('<div class="modal-backdrop fade in date-back"></div>')
+        });
+
         $('#dates-bt-modal').on('showCalendar.daterangepicker', function(ev, picker) {
           $( ".calendar.right tbody" ).remove();
-          $("body").append('<div class="modal-backdrop fade in date-back"></div>')
         });      
 
         $('#dates-bt-modal').on('apply.daterangepicker', function(ev, picker) {
@@ -145,6 +147,10 @@ $(document).ready(function( ) {
         });  
 
         $('#dates-bt-modal').on('cancel.daterangepicker', function(ev, picker) {
+        	$( ".date-back" ).remove();
+        });   
+
+        $('#dates-bt-modal').on('hide.daterangepicker', function(ev, picker) {
         	$( ".date-back" ).remove();
         });    
 

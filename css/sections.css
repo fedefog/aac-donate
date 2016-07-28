@@ -536,8 +536,9 @@
 		background: #000;
 		position: absolute;
 	}
-	.date-back {
+	.modal-backdrop.in.date-back {
 		z-index: 100;
+		opacity: .2;
 	}
 
 	/* transactions */
