@@ -274,6 +274,10 @@
   line-height: 25px;
   margin: 0 0 0 20px;
 }
+.list-navigator {
+  height: 260px;
+  overflow-y: scroll;
+}
 .layer-navigator {
   background: #000;
   opacity: .0;

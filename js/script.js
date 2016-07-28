@@ -89,6 +89,20 @@ $(document).ready(function( ) {
 		/*$( '.switch-account .dropdown-menu .text' ).addClass( 'test' );*/
 		$(".switch-account .dropdown-menu .text").lettering('words');
 
+		/* Datapicker */
+
+		$('#dates-bt-modal').daterangepicker();  
+        $('#dates-bt-modal').on('showCalendar.daterangepicker', function(ev, picker) {
+          $( ".calendar.right tbody" ).remove();
+          /*$( ".calendar.right thead tr:nth-child(2)").remove();*/
+          /*$( ".calendar.left thead tr:first-child th:last-child" ).addClass("next available");
+          $( ".calendar.left thead tr:first-child th:last-child" ).append( '<i class="fa fa-chevron-right glyphicon glyphicon-chevron-right"></i>' );*/
+        });      
+        $('#dates-bt-modal').on('apply.daterangepicker', function(ev, picker) {
+          console.log(picker.startDate.format('YYYY-MM-DD'));
+          console.log(picker.endDate.format('YYYY-MM-DD'));
+        });      
+
  		
 	}
 );

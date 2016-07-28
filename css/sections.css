@@ -416,6 +416,92 @@
 	.balance-up .fa-caret-down {
 		display: none;
 	}
+	.daterangepicker {
+		padding: 0px;
+		width: 93%;
+	}
+	.daterangepicker.dropdown-menu {
+		left: 0!important;
+		top: 80px!important;
+		margin: 15px;
+	}
+	.daterangepicker td.active, .daterangepicker td.active:hover {
+		background: #00ADEE;
+	}
+	.daterangepicker .calendar {
+		max-width: 100%;
+		margin: 0px;
+	}
+	.daterangepicker .calendar-table {
+		margin: 0px;
+	}
+	.daterangepicker_input .fa-calendar {
+		display: none;
+	}
+	.calendar.left .daterangepicker_input input {
+		text-align: right;
+	}
+	.daterangepicker .input-mini {
+		padding: 0px 10px;
+	}
+	.calendar.right thead tr:nth-child(2), .calendar.right thead .month, .calendar.right thead th:first-child {
+    	visibility: hidden;
+    	opacity: 0;
+	}
+	.calendar.right tbody {
+		display: none!important;
+	}
+	.calendar.left thead tr:nth-child(1) th {
+		border-top: 1px solid #E2E2E5;
+		border-bottom: 1px solid #E2E2E5;
+		padding: 10px 0;
+	}
+	.calendar.left thead tr:nth-child(1), .calendar.right thead tr:nth-child(1) {
+		color: #00ADEE;
+	}
+	 .calendar.right thead tr:nth-child(1) th {
+		padding: 10px 0;
+	}
+	.calendar.right thead tr:nth-child(2) {
+		display: none!important;
+	}
+	.calendar.right .calendar-table {
+	    background: rgba(0, 0, 0, 0);
+    	border: none;
+	}
+	.calendar.right {
+		top: 0px;
+	}
+	.daterangepicker th.prev:hover, .daterangepicker th.next:hover {
+		background: transparent;
+	}
+	.daterangepicker td.in-range {
+		background:#F0F0F0;
+	}
+	.daterangepicker td.in-range.end-date {
+		background: #00ADEE!important;
+	}
+	.daterangepicker:before, .daterangepicker:after {
+		display: none;
+	}
+	.daterangepicker .ranges {
+		margin: 0px;
+	}
+	.daterangepicker .btn-success {
+		background: #00ADEE;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+		width: 100%;
+		border: none;
+		padding: 22px 0;
+		font-weight: 600;
+		font-size: 16px;
+		letter-spacing: 0.43px;
+	}
+	.daterangepicker .cancelBtn {
+		display: none;
+	}
+
 	/* transactions */
 
 	.main-transactions.main-transactions-result .header-fixed ,

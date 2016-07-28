@@ -109,7 +109,7 @@ include 'inc/header.php'
 
 							<li class="navigator-transactions-li">
 								
-								<a href="#" class="navigator-transactions-lkn">DATES</a>
+								<a href="#" id="dates-bt-modal" class="navigator-transactions-lkn">DATES</a>
 
 							</li>
 

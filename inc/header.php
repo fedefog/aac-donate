@@ -22,6 +22,7 @@
 
         <link href="css/bootstrap-switch.css" rel="stylesheet">
         <link href="css/bootstrap-select.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" media="all" href="css/daterangepicker.css" />
         
         <link href="css/sections.css" rel="stylesheet">
         

@@ -40,6 +40,10 @@
 
 	<script src="js/jquery.lettering.js" ></script>
 
+	<script type="text/javascript" src="js/moment.js"></script>
+    
+    <script type="text/javascript" src="js/daterangepicker.js"></script>
+
 	<script src="js/script.js"></script>
 	
 	</body>
