@@ -737,6 +737,7 @@
 	}
 	.beneficiary-select .btn-info {
 		padding: 4px 0 4px 12px!important;
+		height: 46px;
 	}
 	.beneficiary-select .dropdown-menu {
 		margin-top: 9px;
@@ -764,6 +765,12 @@
 	.half-make-donation:nth-child(3)  {
 		padding-right: 10px;
 	}
+	.standing-order-switch-container .half-make-donation {
+		opacity: .5;
+	}
+	.standing-order-switch-container .half-make-donation:nth-child(1), .standing-order-switch-container.active .half-make-donation {
+		opacity: 1;
+	}
 	
 	.make-dontation {
 		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.22);
@@ -782,6 +789,18 @@
 	    height: 42px;
 	    padding: 10px 12px;
 
+	}
+	.make-donation .input-text.confirmation-amount {
+		margin-top: 10px;
+	}
+	.make-donation .confirmation-amount.success-amount {
+		background: url(images/success-icon.png) 96% no-repeat ;
+		border: 1px solid #97D361;
+	}
+	.make-donation .confirmation-amount.incorrect-amount {
+		background: url(images/incorrect-icon.png) 96% no-repeat ;
+		border: 1px solid #FC2E2E;
+		color: #FC2E2E;
 	}
 	.make-donation  .checkbox-box {
 		border-top: 1px solid #E2E2E5;
@@ -821,6 +840,11 @@
 		font-size: 13px;
 		letter-spacing: 0.56px;
 		line-height: 19px;
+	}
+	.make-donation .ckeckbox .text p {
+		padding-left: 18px!important;
+    	background-position: 0 3px;
+
 	}
 	.ckeckbox .circle {
 		background: #F4F4F4;

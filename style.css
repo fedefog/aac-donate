@@ -253,6 +253,35 @@ a.sticky-to-footer {
 	box-shadow: 0px -4px 4px 0px rgba(0,0,0,0.12);
 }
 
+/* Error statements */
+.has-error .bootstrap-select .dropdown-toggle, .has-error .input-text {
+	border: 1px solid #FC2E2E;
+	color: #FC2E2E;
+	background: url(css/images/error-icon.png) left no-repeat ;
+	background-size: 13px 13px;
+	padding-left: 30px!important;
+    background-position: 10px center;
+}
+.has-error .bootstrap-select .dropdown-toggle .filter-option {
+	font-size: 13px;
+	font-weight: 400;
+}
+.error .bootstrap-select .dropdown-toggle, .has-error .ckeckbox .circle {
+	border: 1px solid #FC2E2E;
+}
+.text-danger {
+	color: #FC2E2E;
+	margin: 8px 0 0;
+	background: url(css/images/error-icon.png) left no-repeat ;
+	background-size: 13px 13px;
+	padding-left: 30px!important;
+	background-position: 10px 4px;
+	font-size: 13px;
+}
+.has-error .numb-aprox {
+	display: none;
+}
+
 /****** Media Queries ******/
 
 

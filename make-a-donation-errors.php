@@ -99,7 +99,7 @@ include 'inc/header.php'
 	
 	<div class="container">
 		
-		<div class="box-make-donation">
+		<div class="box-make-donation has-error">
 			
 			<h2 class="title-make-donation">BENEFICIARY</h2>
 			
@@ -123,16 +123,16 @@ include 'inc/header.php'
 			
 			<h2 class="title-make-donation">AMOUNT</h2>
 			
-			<div class="amount-input">
+			<div class="amount-input has-error">
 				
-				<input type="text" class="form-control input-text" placeholder="435">
+				<input type="text" class="form-control input-text" placeholder="435" value="Please enter an amount to donate">
 
 
 				<span class="numb-aprox">APROX. 299 GBP</span>
 
 			</div><!-- /amount-input -->
 
-			<div class="coin-amount">
+			<div class="coin-amount error">
 				
 				<select class="form-control selectpicker">
 				  <option>USD</option>
@@ -143,6 +143,12 @@ include 'inc/header.php'
 				</select>
 
 			</div><!-- /coin-amount -->
+
+			<p class="text-danger">Please note that payments for under £100 may take longer to process.</p>
+
+			<input type="text" class="form-control confirmation-amount input-text success-amount" placeholder="435" value="$ 1600">
+
+			<p class="text-danger">This large donation will be eligible for random checks by our compliance office, given the regulations for large donations. Please be aware that there is a chance he may in touch to find out more information about this donation. </p>
 
 		</div><!-- /box-make-donation -->
 
@@ -226,7 +232,7 @@ include 'inc/header.php'
 
 	</div><!-- /container -->
 
-	<div class="checkbox-box">
+	<div class="checkbox-box has-error">
 		
 		<div class="container">
 			
@@ -234,7 +240,7 @@ include 'inc/header.php'
 				<span class="circle"></span>
 				<span class="text">
 					I confirm that this donation is for charitable purposes only, I will not benefit directly or indirectly by way of goods or services from the donation.
-					
+					<p class="text-danger">Please confirm to continue</p>
 				</span>
 			</a>
 			

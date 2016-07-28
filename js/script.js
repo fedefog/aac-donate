@@ -52,7 +52,6 @@ $(document).ready(function( ) {
 			function(event) {
 			event.preventDefault ( );
 			
-			
 				$(this).toggleClass('active');	
 						
 		});
@@ -85,6 +84,14 @@ $(document).ready(function( ) {
 		    
 		});
 
+
+		$('#standing-order-switch').on('switchChange.bootstrapSwitch', function (event, state) {
+
+		    $('.standing-order-switch-container').toggleClass("active");
+		    $('.standing-order-switch-container .btn-group, .standing-order-switch-container .btn ').toggleClass( "disabled" );
+		    $('.standing-order-switch-container .selectpicker ').removeProp( "disabled" );
+		    
+		});
 
 			// VOUCHER 
 		 $( ".input-number" ).each(function( i ) {
@@ -172,5 +179,15 @@ $(window).load(function(){
 		setTimeout(load_login, 4000);
 	}		
 });
+	
+/* Every time the window is scrolled ... */
+$(window).scroll( function(){
 
+	/* Navigator */
 
+	if(!$('body').hasClass('menu-mobile-open')) {
+		var scroll = $( window ).scrollTop();
+		$('.navigator').css('top', scroll);
+	}
+
+});
