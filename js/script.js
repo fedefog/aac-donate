@@ -126,22 +126,26 @@ $(document).ready(function( ) {
 
 		/* Switch Accout Style*/
 
-		/*$( '.switch-account .dropdown-menu .text' ).addClass( 'test' );*/
 		$(".switch-account .dropdown-menu .text").lettering('words');
+		$(".beneficiary-select .filter-option").lettering('words');
 
 		/* Datapicker */
 
 		$('#dates-bt-modal').daterangepicker();  
+
         $('#dates-bt-modal').on('showCalendar.daterangepicker', function(ev, picker) {
           $( ".calendar.right tbody" ).remove();
-          /*$( ".calendar.right thead tr:nth-child(2)").remove();*/
-          /*$( ".calendar.left thead tr:first-child th:last-child" ).addClass("next available");
-          $( ".calendar.left thead tr:first-child th:last-child" ).append( '<i class="fa fa-chevron-right glyphicon glyphicon-chevron-right"></i>' );*/
+          $("body").append('<div class="modal-backdrop fade in date-back"></div>')
         });      
+
         $('#dates-bt-modal').on('apply.daterangepicker', function(ev, picker) {
           console.log(picker.startDate.format('YYYY-MM-DD'));
           console.log(picker.endDate.format('YYYY-MM-DD'));
-        });      
+        });  
+
+        $('#dates-bt-modal').on('cancel.daterangepicker', function(ev, picker) {
+        	$( ".date-back" ).remove();
+        });    
 
  		
 	}

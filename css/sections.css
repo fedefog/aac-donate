@@ -424,6 +424,7 @@
 		left: 0!important;
 		top: 80px!important;
 		margin: 15px;
+		border: none;
 	}
 	.daterangepicker td.active, .daterangepicker td.active:hover {
 		background: #00ADEE;
@@ -472,10 +473,25 @@
 	.calendar.right {
 		top: 0px;
 	}
+	.calendar.left .daterangepicker_input:before {
+		content: '';
+		width: 6px;
+		height: 1px;
+		background: #CCC;
+		display: block;
+		right: -3px;
+		position: absolute;
+		top: 22px;
+		z-index: 10;
+	}
+	.daterangepicker_input {
+		padding-top: 6px;
+		font-weight: 300;
+	}
 	.daterangepicker th.prev:hover, .daterangepicker th.next:hover {
 		background: transparent;
 	}
-	.daterangepicker td.in-range {
+	.daterangepicker td.in-range, .daterangepicker td.off.in-range {
 		background:#F0F0F0;
 	}
 	.daterangepicker td.in-range.end-date {
@@ -499,7 +515,26 @@
 		letter-spacing: 0.43px;
 	}
 	.daterangepicker .cancelBtn {
-		display: none;
+		position: absolute;
+		top: 0;
+		right: 5px;
+		background: none;
+		border: none;
+		color: #000;
+		font-size: 30px;
+		font-weight: 500;
+		opacity: .2;
+		padding: 0 10px;
+	}
+	.daterangepicker.opens:after {
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		position: absolute;
+	}
+	.date-back {
+		z-index: 100;
 	}
 
 	/* transactions */

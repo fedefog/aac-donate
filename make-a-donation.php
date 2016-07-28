@@ -103,12 +103,12 @@ include 'inc/header.php'
 			
 			<h2 class="title-make-donation">BENEFICIARY</h2>
 			
-			<select class="form-control selectpicker">
+			<select class="form-control selectpicker beneficiary-select">
 			  <option>GGBH The Riding London NW11 8HL</option>
-			  <option>GGBH The Riding London NW11 8HL</option>
-			  <option>GGBH The Riding London NW11 8HL</option>
-			  <option>GGBH The Riding London NW11 8HL</option>
-			  <option>GGBH The Riding London NW11 8HL</option>
+			  <option>GGBH The Riding London NW11 9HL</option>
+			  <option>GGBH The Riding London NW11 10HL</option>
+			  <option>GGBH The Riding London NW11 11HL</option>
+			  <option>GGBH The Riding London NW11 12HL</option>
 			</select>
 			
 			<div class="box-make-donation-lkns">

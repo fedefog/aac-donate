@@ -65,10 +65,10 @@
 
         this.locale = {
             direction: 'ltr',
-            format: 'MM/DD/YYYY',
+            format: 'MMMM Do',
             separator: ' - ',
             applyLabel: 'View Transactions',
-            cancelLabel: 'Cancel',
+            cancelLabel: '×',
             weekLabel: 'W',
             customRangeLabel: 'Custom Range',
             daysOfWeek: moment.weekdaysMin(),

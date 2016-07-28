@@ -92,7 +92,7 @@
 
 		<li class="navigator-li">
 
-			<a href="#" class="navigator-lkn">
+			<a href="settings.php" class="navigator-lkn">
 
 				<span class="icon">
 					<img src="./images/settings-icon.png" width="20" height="20">
