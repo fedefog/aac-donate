@@ -54,9 +54,15 @@ $(document).ready(function( ) {
 			
 			
 				$(this).toggleClass('active');	
+						
+		});
+		$('.lkn-change-password').click(
+			function(event) {
+			event.preventDefault ( );
 			
-			
-			
+			$(this).parent().find('.container-password-settings').slideToggle();
+			$(this).toggleClass('active');	
+						
 		});
  		
 		$("[name='my-checkbox']").bootstrapSwitch();
@@ -67,7 +73,16 @@ $(document).ready(function( ) {
 		});
 
 
+		$('#chebox-sms').on('switchChange.bootstrapSwitch', function (event, state) {
 
+		    $('.container-settings-msj').slideToggle();
+		    
+		});
+		$('#checkbox-automatic-login').on('switchChange.bootstrapSwitch', function (event, state) {
+
+		    $('.default-login').slideToggle();
+		    
+		});
 
 		/* Switch Accout Style*/
 

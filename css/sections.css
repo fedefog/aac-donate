@@ -704,35 +704,212 @@
 	/* swich */
 
 	.bootstrap-switch {
-		background: #eee !important;
-		border-radius: 125px !important;
+		background: #eee ;
+		border-radius: 125px ;
 	}
 	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default, 
 	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default {
-		color: #eee !important;
+		color: #eee ;
 		height: 49px;
 	}
 	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, 
 	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
-		color: #eee !important;
-		background: #eee !important;
+		color: #eee ;
+		background: #eee ;
 		height: 49px;
 	}
 	.bootstrap-switch .bootstrap-switch-label {
 
-		border-radius: 125px !important;
-		height: 48px !important;
-		background: #fff !important;
+		border-radius: 125px ;
+		height: 48px ;
+		background: #fff ;
 		background: #FFFFFF;
 		box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.19);
 	}
 	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, 
 	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
 	.bootstrap-switch.bootstrap-switch-on {
-		background: #00ADEE !important;
-		color: #00ADEE !important;
+		background: #00ADEE ;
+		color: #00ADEE ;
 		/* border-radius: 125px; */
 	}
+
+
+	/* SETTINGS */
+	.main-transactions.main-settings .header-fixed,
+	.main-transactions.main-settings .header {
+		    height: 60px;		
+	}
+	.container-settings {
+		border-bottom: 1px solid #E2E2E5;
+		margin: 0 -15px;
+		padding: 0 15px	;
+	}
+	.box-settings {
+		clear: both;
+		display: block;
+		padding: 20px 0;
+	}
+
+	.title-settings {
+		font-weight: 600;
+		font-size: 12px;
+		color: #00ADEE;
+		letter-spacing: 0.5px;
+		margin: 0;
+	}
+	.info-settings {
+		font-weight: 400;
+		font-size: 12px;
+		color: #727272;
+		letter-spacing: 0.52px;
+		line-height: 16px;
+		margin: 0;
+	}
+	.box-settings-info {
+		width: 225px;
+		display: inline-block;
+	}
+	.price-settings {
+		display: block;
+		font-weight: 400;
+		font-size: 14px;
+		color: #727272;
+		letter-spacing: 0.61px;
+	}
+	.container-settings .bootstrap-switch {
+		float: right;
+	}
+
+	/*  tamaño de switch varia en settings */
+	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
+	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
+	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default,
+	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default,
+	.bootstrap-switch .bootstrap-switch-label {
+		height: 35px;
+	}
+	.form-phone-number {
+		margin-top: 10px;
+	}
+	.form-phone-number .input-group-addon {
+
+		font-weight: 700;
+		font-size: 10px;
+		color: #727272;
+		letter-spacing: 0.73px;
+		padding: 15px;
+	}
+	.form-phone-number .phone-number-input {
+		height: 42px;
+
+	}
+	.title-password-settings {
+		font-weight: 600;
+		font-size: 12px;
+		color: #333333;
+		letter-spacing: 0.5px;
+	}
+	.forgot-password {
+		font-weight: 600;
+		font-size: 13px;
+		color: #00ADEE;
+		letter-spacing: 0.56px;
+		line-height: 19px;
+		margin-top: 5px;
+		display: block;
+	}
+	.container-lkns {
+		margin: 15px -15px 0 -15px;
+	}
+	.lkn-cancel ,
+	.lkn-save {
+		text-align: center;
+		padding: 20px 0;
+		float: left;
+		width: 50%;
+	}
+	.lkn-save {
+		background: #00ADEE;
+		color: #fff;
+		font-weight: 600;
+		font-size: 18px;
+		letter-spacing: 0.48px;
+	}
+	.lkn-cancel {
+		background: #E7E7E7;
+		color: #00ADEE;
+		font-weight: 600;
+		font-size: 18px;
+		letter-spacing: 0.48px;
+	}
+	.box-settings.box-settings-msj {
+		padding-bottom: 0;
+	}
+	.box-phone-numb-settings {
+		margin-bottom: 25px;
+		margin-top: 15px;
+	}
+	.lkn-change-password {
+		display: block;
+		position: relative;
+		margin-bottom: -15px;
+	}
+	.lkn-change-password:before {
+		content: '';
+		position: absolute;
+	    right: 15px;
+    	top: 33px;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-top: 5px solid #00ADEE; 
+	}
+	.active.lkn-change-password:before  {
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-top: 5px solid transparent;
+		border-bottom: 5px solid #00ADEE; 
+		margin-top: -3px;
+	}
+	.container-settings-msj {
+		display: none;
+	}
+	.container-settings-msj .title-send {
+		color: #727272;
+		font-weight: 400;
+	}
+	.container-password-settings {
+		display: none;
+		padding-bottom: 15px;
+	}
+
+	.container-settings .bootstrap-switch {
+		width: 70px !important;
+	}
+	.container-settings .bootstrap-switch-container span {
+		font-size: 20px !important;
+		width: 34px !important;
+	}
+	.default-login {
+		display: none;
+	}
+	.default-login .box-settings-info {
+		margin-top: -20px;
+		margin-bottom: 10px;
+		width: 100%;
+	}
+	.default-login .title-settings {
+		margin-bottom: 10px;
+		color: #333;
+	}
+	.default-login .bootstrap-select.btn-group .dropdown-toggle .caret {
+		color:#00ADEE;
+		right: 15px;
+		border-top: 5px solid;
+	    border-right: 5px solid transparent;
+	    border-left: 5px solid transparent;
+	}
+	
 }
 @media(min-width:768px){
 	
