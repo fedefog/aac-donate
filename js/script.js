@@ -69,6 +69,7 @@ $(document).ready(function( ) {
 		
 		$('.selectpicker').selectpicker({
 		  style: 'btn-info',
+		  showSubtext: 'true',
 		  size: 4
 		});
 
@@ -127,7 +128,7 @@ $(document).ready(function( ) {
 		/* Switch Accout Style*/
 
 		$(".switch-account .dropdown-menu .text").lettering('words');
-		$(".beneficiary-select .filter-option").lettering('words');
+		/*$(".beneficiary-select .filter-option").lettering('words');*/
 
 		/* Datapicker */
 

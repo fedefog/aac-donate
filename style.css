@@ -223,6 +223,13 @@ input {
 	color: #333;
 	padding: 10px 12px;
 }
+.bootstrap-select .filter-option .text-muted {
+	display: block;
+	font-weight: 500;
+}
+.bootstrap-select .filter-option {
+	font-weight: 600;
+}
 
 .bootstrap-select .btn-info:hover, 
 .bootstrap-select .btn-info:focus, 

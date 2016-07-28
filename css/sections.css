@@ -418,7 +418,7 @@
 	}
 	.daterangepicker {
 		padding: 0px;
-		width: 93%;
+		width: 92%;
 	}
 	.daterangepicker.dropdown-menu {
 		left: 0!important;
@@ -428,6 +428,9 @@
 	}
 	.daterangepicker td.active, .daterangepicker td.active:hover {
 		background: #00ADEE;
+	}
+	.daterangepicker.ltr .ranges, .daterangepicker.ltr .calendar {
+		float: none;
 	}
 	.daterangepicker .calendar {
 		max-width: 100%;
@@ -715,6 +718,12 @@
 		letter-spacing: 0.48px;
 		line-height: 19px;
 		position: absolute;
+	}
+	.beneficiary-select .btn-info {
+		padding: 4px 0 4px 12px!important;
+	}
+	.beneficiary-select .dropdown-menu {
+		margin-top: 9px;
 	}
 	.textarea-make-dontation {
 		border: 1px solid #BBBBBB;

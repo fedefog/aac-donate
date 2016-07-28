@@ -119,7 +119,7 @@ include 'inc/header.php'
 						</a>
 					</li>
 					<li class="dashboard-li">
-						<a href="#" class="lkn-dashboard">
+						<a href="vouchers.php" class="lkn-dashboard">
 							<span class="icon">
 								<img src="images/order-voucher-icon.png" width="22" height="21">
 							</span>
