@@ -84,6 +84,46 @@ $(document).ready(function( ) {
 		    
 		});
 
+
+			// VOUCHER 
+		 $( ".input-number" ).each(function( i ) {
+		    $(this).change(function() {
+		    	if ( $(this).val() > 0 ){
+			  		$(this).parent().removeClass('input-default');
+		    	}else {
+		    		
+			  		$(this).parent().addClass('input-default');
+		    	}
+			});
+		  });
+
+		 $('.less-input').click(
+			function(event) {
+			event.preventDefault ( );
+			var valor = $(this).parent().find('.input-number').val();
+			if ( valor > 0 ){
+				valor --;
+				$(this).parent().find('.input-number').val( valor  )
+			}
+			if ( valor == 0 ){
+				$(this).parent().addClass('input-default');
+			}				
+
+
+		});
+
+		 $('.more-input').click(
+			function(event) {
+			event.preventDefault ( );
+			var valor = $(this).parent().find('.input-number').val();
+			
+				valor ++;
+				$(this).parent().find('.input-number').val( valor  )
+				if ( valor > 0 ){
+				$(this).parent().removeClass('input-default');
+				}	
+		});
+
 		/* Switch Accout Style*/
 
 		/*$( '.switch-account .dropdown-menu .text' ).addClass( 'test' );*/
