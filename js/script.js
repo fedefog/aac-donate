@@ -154,6 +154,12 @@ $(document).ready(function( ) {
         	$( ".date-back" ).remove();
         });    
 
+        /* Conditional to set sticky footer and primary action */
+
+        if ( $('main.make-donation').length > 0 ){
+	  		$('body').addClass('sticky-footer');
+    	};
+
  		
 	}
 );

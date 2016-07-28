@@ -241,6 +241,18 @@ background: #fff;
 	color: #333;
 }
 
+/* Sticky options */
+body.sticky-footer main {
+	padding-bottom: 140px;
+}
+a.sticky-to-footer {
+	position: fixed;
+	width: 100%;
+	bottom: 90px;
+	z-index: 80;
+	box-shadow: 0px -4px 4px 0px rgba(0,0,0,0.12);
+}
+
 /****** Media Queries ******/
 
 

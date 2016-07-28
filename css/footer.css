@@ -37,6 +37,12 @@
 		letter-spacing: 0.57px;
 		line-height: 18px;
 	}
+	body.sticky-footer #footer {
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		z-index: 80;
+	}
 	
 }
 @media(min-width:768px){

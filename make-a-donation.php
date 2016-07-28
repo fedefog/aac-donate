@@ -238,7 +238,7 @@ include 'inc/header.php'
 
 	</div><!-- /checkbox -->
 	
-	<a href="#" class="make-dontation">Make Donation</a>
+	<a href="#" class="sticky-to-footer make-dontation">Make Donation</a>
 	
 </main>	
 
