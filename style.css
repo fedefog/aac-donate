@@ -214,7 +214,7 @@ input {
 
 /* BOOTSTRAP SELECT */
 .bootstrap-select .dropdown-menu {
-	z-index: 70;
+	/*z-index: 70;*/
 }
 .bootstrap-select .dropdown-toggle  {
 	border-color: #BBB;

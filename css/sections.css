@@ -198,7 +198,7 @@
 		height: 285px;
 		width: 100%;
 		position: fixed;
-		z-index: 80;
+		z-index: 2000;
 		top: 0px;
         background-image: linear-gradient(-180deg, #155199 12%, #488DBF 83%);
 	}

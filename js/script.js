@@ -1,5 +1,11 @@
 $(document).ready(function( ) {
 
+		$('.selectpicker').selectpicker({
+		  style: 'btn-info',
+		  showSubtext: 'true',
+		  size: 4
+		});
+
 		$('.nav-icon4').click(
 			function(event) {
 			event.preventDefault ( );
@@ -65,12 +71,6 @@ $(document).ready(function( ) {
 		});
  		
 		$("[name='my-checkbox']").bootstrapSwitch();
-		
-		$('.selectpicker').selectpicker({
-		  style: 'btn-info',
-		  showSubtext: 'true',
-		  size: 4
-		});
 
 
 		$('#chebox-sms').on('switchChange.bootstrapSwitch', function (event, state) {
