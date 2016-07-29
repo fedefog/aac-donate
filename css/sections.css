@@ -1304,6 +1304,85 @@
 		font-size: 20px !important;
 		width: 34px !important;
 	}
+	/* SETTINGS */
+	.main-transactions.main-help .header-fixed,
+	.main-transactions.main-help .header {
+		    height: 60px;		
+	}
+	.box-faqs-header {
+		border-bottom: 1px solid #E2E2E5;
+		padding: 20px 0;
+	}
+	.title-box-faqs {
+		font-weight: 600;
+		font-size: 12px;
+		color: #333333;
+		letter-spacing: 0.5px;
+		margin-top: 0;
+	}
+	.desc-box-faqs {
+		font-weight: 400;
+		font-size: 13px;
+		color: #727272;
+		letter-spacing: 0.56px;
+		line-height: 18px;
+		margin-bottom: 0;
+	}
+	.container-faqs {
+		padding-top: 20px;
+	}
+	.panel-group .panel-heading + .panel-collapse > .panel-body,
+	.panel-group .panel-heading + .panel-collapse > .list-group,
+	.container-faqs .panel-default {
+		border: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	.container-faqs .panel-default > .panel-heading {
+		padding: 0;
+		background: transparent;
+		border: 0;
+	}
+	.panel-title a {
+		background: #00ADEE;
+		border-radius: 4px;
+		color: #fff;
+		display: block;
+		font-size: 12px;
+		padding: 13px 15px;
+		position: relative;
+	}
+	.panel-title a:before {
+		content: '';
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		margin-top: 2px;
+		
+		border-top: 5px solid #fff;
+	    border-bottom: 5px solid transparent;
+	    border-right: 5px solid transparent;
+	    border-left: 5px solid transparent;
+		width: 10px;
+		height: 10px;
+	}
+	.panel-title a.collapsed:before {
+		margin-top: -3px;
+		border-bottom: 5px solid #00ADEE;
+		border-top: 5px solid transparent;
+	}
+	.panel-title a.collapsed {
+		background: #F2F2F2;
+		color: #333333;
+	}
+	.container-faqs .panel-body {
+		font-weight: 400;
+		font-size: 13px;
+		color: #727272;
+		letter-spacing: 0.56px;
+		line-height: 19px;
+		padding: 15px 0;
+	}
 
 }
 @media(min-width:768px){

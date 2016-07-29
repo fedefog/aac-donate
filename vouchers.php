@@ -376,7 +376,7 @@ include 'inc/header.php'
 
 		<div class="container">
 			
-			<input type="checkbox" id="standing-order-switch" name="my-checkbox">
+			<input type="checkbox" id="urgent-switch" name="my-checkbox">
 
 			<h2 class="label-urgent">THIS IS URGENT</h2>
 
