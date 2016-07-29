@@ -93,7 +93,7 @@ include 'inc/header.php'
 					<li class="dashboard-li">
 						<a href="transactions.php" class="lkn-dashboard">
 							<span class="icon">
-								<img src="images/view-transactions-icon.png" width="20" height="24">
+								<img src="images/view-transactions-icon.png" width="17" height="20.5">
 							</span>
 							<span class="text">View Transactions </span>
 							<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -111,7 +111,7 @@ include 'inc/header.php'
 					<li class="dashboard-li">
 						<a href="standing-orders.php" class="lkn-dashboard">
 							<span class="icon">
-								<img src="images/standing-orders-icon.png" width="16" height="28">
+								<img src="images/standing-orders-icon.png" width="13" height="20.5">
 							</span>
 							<span class="text">Standing orders </span>
 							<i class="fa fa-angle-right" aria-hidden="true">
