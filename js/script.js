@@ -93,14 +93,17 @@ $(document).ready(function( ) {
 		    
 		});
 
-			// VOUCHER 
+		// VOUCHER more & less
 		 $( ".input-number" ).each(function( i ) {
 		    $(this).change(function() {
 		    	if ( $(this).val() > 0 ){
 			  		$(this).parent().removeClass('input-default');
+			  		$('.lkn-order-vouchers').removeClass('disabled');
+
 		    	}else {
 		    		
 			  		$(this).parent().addClass('input-default');
+			  		$('.lkn-order-vouchers').addClass('disabled');
 		    	}
 			});
 		  });
@@ -114,7 +117,8 @@ $(document).ready(function( ) {
 				$(this).parent().find('.input-number').val( valor  )
 			}
 			if ( valor == 0 ){
-				$(this).parent().addClass('input-default');
+				$(this).parent().parent().addClass('input-default');
+				$('.lkn-order-vouchers').addClass('disabled');
 			}				
 
 
@@ -125,12 +129,21 @@ $(document).ready(function( ) {
 			event.preventDefault ( );
 			var valor = $(this).parent().find('.input-number').val();
 			
-				valor ++;
-				$(this).parent().find('.input-number').val( valor  )
-				if ( valor > 0 ){
-				$(this).parent().removeClass('input-default');
-				}	
+			valor ++;
+			$(this).parent().find('.input-number').val( valor  )
+			if ( valor > 0 ){
+				$(this).parent().parent().removeClass('input-default');
+				$('.lkn-order-vouchers').removeClass('disabled');
+			}	
 		});
+
+		 $('.lkn-order-vouchers').click(
+			function(event) {
+			event.preventDefault ( );
+			
+		});
+
+		 
 
 		/* Switch Accout Style*/
 

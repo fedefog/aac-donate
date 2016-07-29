@@ -3,7 +3,7 @@ $section = '';
 include 'inc/header.php'
 ?>
 	
-<main class="main-transactions make-donation">
+<main class="main-transactions order-voucher">
 	
 	<div class="header-fixed">
 
@@ -101,9 +101,9 @@ include 'inc/header.php'
 		<div class="container">
 			<form >
 				
-				<div class="form-group">
+				<div class="form-group input-default">
 				
-					<div class="input-group input-default">
+					<div class="input-group ">
 
 						<a href="#" class="less-input lkn-input"></a>
 						<input type="text" class="input-number" value="0">
@@ -121,9 +121,9 @@ include 'inc/header.php'
 
 				</div><!-- /form-group -->
 
-				<div class="form-group">
+				<div class="form-group input-default">
 				
-					<div class="input-group input-default">
+					<div class="input-group ">
 
 						<a href="#" class="less-input lkn-input"></a>
 						<input type="text" class="input-number" value="0">
@@ -141,9 +141,9 @@ include 'inc/header.php'
 
 				</div><!-- /form-group -->
 
-				<div class="form-group">
+				<div class="form-group input-default">
 				
-					<div class="input-group input-default">
+					<div class="input-group ">
 
 						<a href="#" class="less-input lkn-input"></a>
 						<input type="text" class="input-number" value="0">
@@ -161,9 +161,9 @@ include 'inc/header.php'
 
 				</div><!-- /form-group -->
 
-				<div class="form-group">
+				<div class="form-group input-default">
 				
-					<div class="input-group input-default">
+					<div class="input-group ">
 
 						<a href="#" class="less-input lkn-input"></a>
 						<input type="text" class="input-number" value="0">
@@ -181,9 +181,9 @@ include 'inc/header.php'
 
 				</div><!-- /form-group -->
 
-				<div class="form-group">
+				<div class="form-group input-default">
 				
-					<div class="input-group input-default">
+					<div class="input-group ">
 
 						<a href="#" class="less-input lkn-input"></a>
 						<input type="text" class="input-number" value="0">
@@ -201,9 +201,9 @@ include 'inc/header.php'
 
 				</div><!-- /form-group -->
 
-				<div class="form-group">
+				<div class="form-group input-default">
 				
-					<div class="input-group input-default">
+					<div class="input-group ">
 
 						<a href="#" class="less-input lkn-input"></a>
 						<input type="text" class="input-number" value="0">
@@ -221,9 +221,9 @@ include 'inc/header.php'
 
 				</div><!-- /form-group -->
 
-				<div class="form-group">
+				<div class="form-group input-default">
 				
-					<div class="input-group input-default">
+					<div class="input-group ">
 
 						<a href="#" class="less-input lkn-input"></a>
 						<input type="text" class="input-number" value="0">
@@ -240,9 +240,9 @@ include 'inc/header.php'
 
 				</div><!-- /form-group -->
 
-				<div class="form-group">
+				<div class="form-group input-default">
 				
-					<div class="input-group input-default">
+					<div class="input-group ">
 
 						<a href="#" class="less-input lkn-input"></a>
 						<input type="text" class="input-number" value="0">
@@ -260,9 +260,9 @@ include 'inc/header.php'
 
 				</div><!-- /form-group -->
 
-				<div class="form-group">
+				<div class="form-group input-default">
 				
-					<div class="input-group input-default">
+					<div class="input-group ">
 
 						<a href="#" class="less-input lkn-input"></a>
 						<input type="text" class="input-number" value="0">
@@ -280,9 +280,9 @@ include 'inc/header.php'
 
 				</div><!-- /form-group -->
 
-				<div class="form-group">
+				<div class="form-group input-default">
 				
-					<div class="input-group input-default">
+					<div class="input-group ">
 
 						<a href="#" class="less-input lkn-input"></a>
 						<input type="text" class="input-number" value="0">
@@ -303,7 +303,100 @@ include 'inc/header.php'
 			</form>
 
 		</div><!-- /container- -->
+
 	</div><!-- /container-vochers -->
+
+	<div class="container-delivery">
+		
+		<div class="container">
+
+			<form class="form-delivery">
+
+				<div class="form-group">
+					
+					<h2 class="title-delivery">DELIVERY </h2>
+
+					<div class="row-input">
+
+						<a href="#" class="checkbox-input">
+							<i class="fa fa-check" aria-hidden="true"></i>
+						</a>
+						
+						<div class="label-delivery">
+							
+							<div class="title-label">POST: UP TO TWO BOOKS</div>
+
+							<div class="subtitle-label">I TAKE RESPONSIBILITY FOR ANY 50P/£1 PPV BOOKS LOST IN THE POST</div>
+
+						</div><!-- /label-delivery -->
+
+					</div><!-- /row-input -->
+
+					<div class="row-input">
+
+						<a href="#" class="checkbox-input">
+							<i class="fa fa-check" aria-hidden="true"></i>
+						</a>
+						
+						<div class="label-delivery">
+							
+							<div class="title-label">OFFICE COLLECTION </div>
+
+							<div class="subtitle-label">9.30AM - 3.30PM MON-THURS</div>
+
+						</div><!-- /label-delivery -->
+
+					</div><!-- /row-input -->
+
+					<div class="row-input">
+
+						<a href="#" class="checkbox-input">
+							<i class="fa fa-check" aria-hidden="true"></i>
+						</a>
+						
+						<div class="label-delivery">
+							
+							<div class="title-label">SPECIAL DELIVERY </div>
+
+							<div class="subtitle-label">AT A COST OF £5 TO BE DEDUCTED FROM MY ACCOUNT</div>
+
+						</div><!-- /label-delivery -->
+
+					</div><!-- /row-input -->
+
+				</div><!-- /form-group -->
+
+			</form>
+
+		</div><!-- /container -->
+
+	</div><!-- /container-delivery -->
+
+	<div class="container-urgent">
+
+		<div class="container">
+			
+			<input type="checkbox" id="standing-order-switch" name="my-checkbox">
+
+			<h2 class="label-urgent">THIS IS URGENT</h2>
+
+		</div><!-- /container -->
+
+	</div><!-- /container-urgent -->
+
+	<form class="container-notes">
+
+		<div class="container">
+			
+			<label class="title-notes">NOTES TO AAC</label>
+
+			<textarea cols="30" rows="10" class="textarea-notes" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>	
+			
+		</div><!-- /container -->
+
+	</form><!-- /container-urgent -->
+
+	<a href="#" class="lkn-order-vouchers disabled">Order Vouchers</a>
 	
 </main>	
 
