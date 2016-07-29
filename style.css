@@ -213,9 +213,6 @@ input {
 }
 
 /* BOOTSTRAP SELECT */
-.bootstrap-select .dropdown-menu {
-	/*z-index: 70;*/
-}
 .bootstrap-select .dropdown-toggle  {
 	border-color: #BBB;
 	font-family: 'Lato', sans-serif;
