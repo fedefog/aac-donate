@@ -198,7 +198,7 @@
 		height: 285px;
 		width: 100%;
 		position: fixed;
-		z-index: 80;
+		z-index: 1000;
 		top: 0px;
         background-image: linear-gradient(-180deg, #155199 12%, #488DBF 83%);
 	}
@@ -559,10 +559,11 @@
 	/* transactions */
 
 	.main-transactions.main-transactions-result .header-fixed ,
-	.main-transactions.main-transactions-result .header {
+	.main-transactions.main-transactions-result .header
+	{
 		height: 168px;
 	}
-	.title-transactions-result {
+	.title-transactions-result, .title-transactions-history {
 		float: left;
 		color: #fff;
 		text-align: center;
@@ -570,16 +571,34 @@
 		background: #0084B7;
 		width: 100%;
 	}
-	.title-transactions-result .title-transactions {
+	.title-transactions-result .title-transactions, .title-standing-orders-transactions .title-transactions, .title-transactions-history .title-transactions {
 		font-weight: 600;
 		font-size: 13px;
 		color: #FFFFFF;
 		letter-spacing: 0.35px;
 		margin: 22px 0;
 	}
+	.main-transactions.main-transactions-history .header, 
+	.main-transactions.main-transactions-history .header-fixed {
+		height: 118px;
+	}
 
 	/* STAINDING ORDERS */
-
+	.main-transactions.main-standing-orders-transactions .header-fixed, .main-transactions.main-standing-orders-transactions .header {
+    	height: 137px;
+	}
+	.title-standing-orders-transactions {
+	    float: left;
+	    color: #fff;
+	    text-align: center;
+	    background: #0084B7;
+	    width: 100%;
+	}
+	.title-standing-orders-transactions .title-transactions span {
+		display: block;
+		font-weight: 400;
+    	padding-top: 5px;
+	}
 	.standing-orders .header-fixed {
 		height: 130px;
 	}

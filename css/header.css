@@ -87,7 +87,7 @@
   top: 0;
   position: absolute;
   background: #F4F4F4;
-  z-index: 99;
+  z-index: 1010;
   width: 300px;
   right: -300px;
   transition: all 0.5s cubic-bezier(0.645,0.045,0.355,1);
@@ -286,7 +286,7 @@
   visibility: hidden;
 
   position: absolute;
-  z-index: 82;
+  z-index: 1009;
   transition: all .3s ease-out;
 }
 .menu-mobile-open .layer-navigator {
