@@ -139,13 +139,13 @@ include 'inc/header.php'
 
 	</div><!-- /container-faqs -->
 	
-	<div class="sticky-to-footer">
+	<a href="#" class="sticky-to-footer">
 		
 		<h2 class="title-footer">COULDN’T FIND THE ANSWER YOU NEED?</h2>
 
-		<a href="#" class="subtitle-footer">CONTACT US</a>
+		<p  class="subtitle-footer">CONTACT US</p>
 
-	</div>
+	</a>
 	
 </main>	
 
