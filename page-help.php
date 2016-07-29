@@ -138,7 +138,15 @@ include 'inc/header.php'
 		</div><!-- /container -->
 
 	</div><!-- /container-faqs -->
+	
+	<div class="sticky-to-footer">
+		
+		<h2 class="title-footer-help">COULDN’T FIND THE ANSWER YOU NEED?</h2>
 
+		<a href="#" class="subtitle-footer-help">CONTACT US</a>
+
+	</div>
+	
 </main>	
 
 

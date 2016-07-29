@@ -176,7 +176,7 @@ $(document).ready(function( ) {
 
         /* Conditional to set sticky footer and primary action */
 
-        if ( $('main.make-donation').length > 0 ){
+        if ( $('main.make-donation').length > 0 || $('main.main-help').length ){
 	  		$('body').addClass('sticky-footer');
     	};
 
