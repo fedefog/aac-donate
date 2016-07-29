@@ -12,6 +12,13 @@ $(document).ready(function( ) {
 			$(this).toggleClass('open');
 			$('body').toggleClass('menu-mobile-open');
 		});
+
+		$('.layer-navigator').click(
+			function(event) {
+			event.preventDefault ( );
+			$('.nav-icon4').removeClass('open');
+			$('body').removeClass('menu-mobile-open');
+		});
 		
 		$('.close-nav').click(
 			function(event) {
