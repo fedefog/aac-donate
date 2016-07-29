@@ -141,9 +141,9 @@ include 'inc/header.php'
 	
 	<div class="sticky-to-footer">
 		
-		<h2 class="title-footer-help">COULDN’T FIND THE ANSWER YOU NEED?</h2>
+		<h2 class="title-footer">COULDN’T FIND THE ANSWER YOU NEED?</h2>
 
-		<a href="#" class="subtitle-footer-help">CONTACT US</a>
+		<a href="#" class="subtitle-footer">CONTACT US</a>
 
 	</div>
 	

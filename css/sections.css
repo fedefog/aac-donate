@@ -1402,20 +1402,25 @@
 		line-height: 19px;
 		padding: 15px 0;
 	}
-	.sticky-to-footer {
+	.main-contact-us .sticky-to-footer ,
+	.main-help .sticky-to-footer {
 		background: #F7F7F7;
 		box-shadow: 0px -2px 4px 0px rgba(0,0,0,0.12);
 		padding: 20px 0;
-
+		bottom: 90px;
+		text-align: center;
+		position: fixed;
+		width: 100%;
+		z-index: 99;
 	}
-	.sticky-to-footer .title-footer-help {
+	.sticky-to-footer .title-footer {
 		margin: 0 0 0px 0;
 		font-weight: 400;
 		font-size: 12px;
 		color: #333333;
 		letter-spacing: 0.5px;		
 	}
-	.sticky-to-footer .subtitle-footer-help {
+	.sticky-to-footer .subtitle-footer {
 		font-weight: 700;
 		font-size: 14px;
 		color: #00ADEE;
@@ -1423,14 +1428,57 @@
 		display: block;
 		margin: 0;
 	}
-	.sticky-to-footer {
-		bottom: 90px;
-		text-align: center;
-		position: fixed;
-		width: 100%;
-		z-index: 99;
+	/* MAKE A PAYMENT */
+	.main-contact-us .header,
+	.main-contact-us .header-fixed {
+		height: 185px;
 	}
+	.contact-us-textarea {
+		border: 1px solid #BBBBBB;
+		border-radius: 4px;
+		padding: 12px 15px;
+		height: 85px;
+		margin-top: 20px;
+		margin-bottom: 5px;
+		resize: none;
 
+		-webkit-appearance: none;
+		width: 100%;	
+	}
+	.main-contact-us .send-msj {
+		background: #00ADEE;
+		border-radius: 3px;
+		display: block;
+		text-align: center;
+		font-weight: 600;
+		padding: 17px 0;
+		font-size: 18px;
+		color: #FFFFFF;
+		letter-spacing: 0.48px;
+		box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.13);
+	}
+	.box-details-bank {
+
+		text-align: center;
+		
+		margin: 40px 0 55px 0;
+	}
+	.box-details-bank .title-bank-details{
+		
+		font-weight: 600;
+		font-size: 12px;
+		color: #00ADEE;
+		margin: 0;
+		letter-spacing: 0.5px;
+	}
+	.box-details-bank .text {
+		font-weight: 400;
+		font-size: 12px;
+		color: #727272;
+		letter-spacing: 0.52px;
+		line-height: 16px;
+		margin: 0;
+	}
 }
 @media(min-width:768px){
 	
