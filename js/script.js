@@ -145,6 +145,34 @@ $(document).ready(function( ) {
 
 		 
 
+	 	// FORM SEND A FRIEND
+	 	$('.send-invite').click(
+			function(event) {
+			event.preventDefault ( );
+			
+			if ( $(this).parent( ).find('.input-text').val() == '' || $(this).parent( ).find('.comment-textarea').val() == '' ) {
+
+				$( ".input-text" ).each(function( i ) {
+				    if ( $(this).val() == '') {
+				    	$(this).addClass('error');
+				    }
+				});
+				if ( $('.comment-textarea').val() == '' ) {
+					$('.comment-textarea').addClass('error');	
+				}
+
+			}else {
+				$( ".comment-textarea , .input-text" ).removeClass('error');
+				scrollToAnchor ( 'main-transactions' );
+				
+				function show_msj_ok(){
+				  $('.msj-ok ').slideToggle();
+				  $( ".input-text, .comment-textarea " ).val('');
+				}
+				setTimeout(show_msj_ok, 1000);
+			}			
+		});
+
 		/* Switch Accout Style*/
 
 		$(".switch-account .dropdown-menu .text").lettering('words');
@@ -204,3 +232,14 @@ $(window).scroll( function(){
 	}
 
 });
+
+// Scroll To function
+function scrollToAnchor ( ancla )
+{
+	var off = $( '.' + ancla ).offset ( );
+	off = off.top;
+	
+	off -= 0;
+	$('body, html').animate ( { scrollTop: off } , 'slow' );  
+	
+}

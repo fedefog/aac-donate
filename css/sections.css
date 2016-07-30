@@ -1479,7 +1479,118 @@
 		line-height: 16px;
 		margin: 0;
 	}
-}
+	/* INVITE A FRIEND */
+	.main-invite-a-friend .header,
+	.main-invite-a-friend .header-fixed {
+		height: 60px;
+	}
+	.box-invite-header {
+		border-bottom: 1px solid #E2E2E5;
+		padding: 20px 0 5px 0;
+		position: relative;
+	}
+	
+
+	.box-invite-header .title-box {
+		margin: 0;
+		font-weight: 600;
+		font-size: 12px;
+		color: #333333;
+		letter-spacing: 0.5px;
+		margin-bottom: 5px;
+	}
+	.box-invite-header .desc-box {
+		font-weight: 400;
+		font-size: 13px;
+		color: #727272;
+		letter-spacing: 0.56px;
+		line-height: 18px;
+		margin: 0 0 20px 0 ;
+	}
+	.box-invite-header .desc-box strong {
+		font-weight: 600;
+		color: #00ADEE;
+	}
+	.invite-friend {
+		margin: 20px 0 0 0;
+	}
+	.invite-friend .label {
+		font-weight: 600;
+		font-size: 12px;
+		color: #333333;
+		letter-spacing: 0.5px;
+		margin: 0 0 4px 0;
+		text-align: left;
+		display: block;
+		padding-left: 0;
+	}
+	.invite-friend .input-text {
+		border: 1px solid #BBBBBB;
+		border-radius: 4px;
+		height: 41px;
+		padding: 12px 15px;
+	}
+
+	.main-invite-a-friend .comment-textarea {
+		border: 1px solid #BBBBBB;
+		border-radius: 4px;
+		padding: 12px 15px;
+		height: 85px;
+		margin-top: 0px;
+		margin-bottom: 5px;
+		resize: none;
+
+		-webkit-appearance: none;
+		width: 100%;	
+	}
+	.main-invite-a-friend .comment-textarea.error,
+	.invite-friend .input-text.error {
+		color: #FC2E2E;
+		border-color: #FC2E2E;
+	}
+	.send-invite {
+		background: #00ADEE;
+		border-radius: 3px;
+		box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.13);
+		color: #FFFFFF;
+		display: block;
+		text-align: center;
+		font-weight: 600;
+		font-size: 18px;
+		letter-spacing: 0.48px;
+		padding: 20px 0;
+		margin-bottom: 60px;
+		margin-top: -10px;
+	}
+
+	.container-msj-ok {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	.msj-ok {
+		display: none;
+		background: #fff;
+		text-align: center;
+	}
+	.title-msj-ok {
+		font-weight: 700;
+		font-size: 18px;
+		color: #00ADEE;
+		letter-spacing: 0.65px;
+		margin: 43px 0 20px 0;
+		line-height: 24px;
+	}
+	.desc-msj-ok {
+		font-weight: 400;
+		font-size: 18px;
+		color: #5D5C5D;
+		margin: 0 0 20px 0;
+		letter-spacing: 0.65px;
+		line-height: 24px;
+	}
+}	
 @media(min-width:768px){
 	
 }
