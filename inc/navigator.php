@@ -50,7 +50,7 @@
 
 		<li class="navigator-li">
 
-			<a href="#" class="navigator-lkn">
+			<a href="help.php" class="navigator-lkn">
 
 				<span class="icon">
 					<img src="./images/help-icon.png" width="20.5" height="20">
@@ -64,7 +64,7 @@
 
 		<li class="navigator-li">
 
-			<a href="#" class="navigator-lkn">
+			<a href="contact-us.php" class="navigator-lkn">
 
 				<span class="icon">
 					<img src="./images/contact-icon.png" width="24" height="20.5">
