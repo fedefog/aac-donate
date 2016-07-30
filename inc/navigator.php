@@ -78,7 +78,7 @@
 
 		<li class="navigator-li">
 
-			<a href="#" class="navigator-lkn">
+			<a href="invite-a-friend.php" class="navigator-lkn">
 
 				<span class="icon">
 					<img src="./images/invite-a-friend-icon.png" width="20.5" height="20">
