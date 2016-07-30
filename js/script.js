@@ -1,10 +1,15 @@
 $(document).ready(function( ) {
 
+
+		// Selects dropdown styles
+
 		$('.selectpicker').selectpicker({
 		  style: 'btn-info',
 		  showSubtext: 'true',
 		  size: 4
 		});
+
+		// Navigation sidebar 
 
 		$('.nav-icon4').click(
 			function(event) {
@@ -26,6 +31,9 @@ $(document).ready(function( ) {
 			$('.nav-icon4').toggleClass('open');
 			$('body').toggleClass('menu-mobile-open');
 		});
+
+		// slide toggle dashboard
+
 		$('.daily-dashboard').click(
 			function(event) {
 			event.preventDefault ( );
@@ -44,6 +52,8 @@ $(document).ready(function( ) {
 			}
 			
 		});
+
+		// Sortby Transaction page
 		
 		$('.lkn-sortby').click(
 			function(event) {
@@ -51,6 +61,9 @@ $(document).ready(function( ) {
 			$('.drop-down-sort').toggleClass('active');
 			
 		});
+
+		// Validation of Search Modal 
+
 		$('.checkbox-input').click(
 			function(event) {
 			event.preventDefault ( );
@@ -61,6 +74,9 @@ $(document).ready(function( ) {
 				$(this).parent().toggleClass('error');	
 			}			
 		});
+
+		// Confirm checkbox of Make a Donation
+
 		$('.checkbox-box .ckeckbox').click(
 			function(event) {
 			event.preventDefault ( );
@@ -68,6 +84,10 @@ $(document).ready(function( ) {
 				$(this).toggleClass('active');	
 						
 		});
+
+		// slide toggle Change password Settings
+
+
 		$('.lkn-change-password').click(
 			function(event) {
 			event.preventDefault ( );
@@ -76,21 +96,28 @@ $(document).ready(function( ) {
 			$(this).toggleClass('active');	
 						
 		});
+
+		// Create switch buttons plugin
  		
 		$("[name='my-checkbox']").bootstrapSwitch();
 
+		// Function SMS settings
 
 		$('#chebox-sms').on('switchChange.bootstrapSwitch', function (event, state) {
 
 		    $('.container-settings-msj').slideToggle();
 		    
 		});
+
+		// Function Automatic Login settings
+
 		$('#checkbox-automatic-login').on('switchChange.bootstrapSwitch', function (event, state) {
 
 		    $('.default-login').slideToggle();
 		    
 		});
 
+		// Function Disable/Enable standing Orders in Make a donation
 
 		$('#standing-order-switch').on('switchChange.bootstrapSwitch', function (event, state) {
 
@@ -100,7 +127,8 @@ $(document).ready(function( ) {
 		    
 		});
 
-		// VOUCHER more & less
+		// VOUCHER more & less and enable/disable order vouchers button
+
 		 $( ".input-number" ).each(function( i ) {
 		    $(this).change(function() {
 		    	if ( $(this).val() > 0 ){
@@ -114,6 +142,8 @@ $(document).ready(function( ) {
 		    	}
 			});
 		  });
+
+		 // VOUCHER less number input
 
 		 $('.less-input').click(
 			function(event) {
@@ -131,6 +161,8 @@ $(document).ready(function( ) {
 
 		});
 
+		  // VOUCHER plus number input
+
 		 $('.more-input').click(
 			function(event) {
 			event.preventDefault ( );
@@ -143,16 +175,10 @@ $(document).ready(function( ) {
 				$('.lkn-order-vouchers').removeClass('disabled');
 			}	
 		});
-
-		 $('.lkn-order-vouchers').click(
-			function(event) {
-			event.preventDefault ( );
-			
-		});
-
 		 
 
 	 	// FORM SEND A FRIEND
+
 	 	$('.send-invite').click(
 			function(event) {
 			event.preventDefault ( );
@@ -184,7 +210,7 @@ $(document).ready(function( ) {
 
 		$(".switch-account .dropdown-menu .text").lettering('words');
 
-		/* Datapicker */
+		/* Datapicker inicialization plugin */
 
 		$('#dates-bt-modal').daterangepicker();  
 
@@ -220,9 +246,12 @@ $(document).ready(function( ) {
 );
 $(window).load(function(){
 	 
-	 function load_login(){
+	function load_login(){
 		$( 'body' ).addClass( 'loaded' );
 	}
+
+	//login animation 
+
 	if ( $('#login').length ){
 		setTimeout(load_login, 4000);
 	}		
