@@ -85,11 +85,23 @@ input {
 }
 
 .modal-dialog {
-  display: inline-block;
-  text-align: left;
-  vertical-align: middle;
-  width: 90%;
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+	width: 90%;
+	-webkit-transform: scale(0.1);
+	-moz-transform: scale(0.1);
+	-ms-transform: scale(0.1);
+	transform: scale(0.1);
 }
+
+.modal.fade.in .modal-dialog {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
 .modal-gral .modal-body {
 	padding: 0;
 }
