@@ -44,32 +44,6 @@ include 'inc/header.php'
 		                </div><!-- /col -->	
 
 	                </div><!-- /header-mobile-transactions -->
-
-					<div class="col-xs-12">
-                	
-	                	<div class="box-account-header">
-							
-							<div class="box-account">
-								
-								<h2 class="title">ACCOUNT</h2> 
-								
-								<h3 class="account-number">A7895</h3>
-								
-							</div><!-- /box-account -->
-
-							<div class="box-balance">
-								
-								<h2 class="title">BALANCE</h2>
-
-								<h3 class="balance-number">£ 3,344.99</h3>
-
-							</div><!-- /box-balance -->
-
-						</div><!-- /box-account-header -->
-
-						<h3 class="time-update">AS OF <strong>1 SEP 2016, 2:15PM</strong></h3>
-
-					</div><!-- /col -->
 					
 					<div class="clear"></div>
 
@@ -80,6 +54,40 @@ include 'inc/header.php'
         </header>
 
     </div><!-- /header-fixed -->
+
+    <div class="container top-center-content">
+
+    	<div class="row">
+
+    		<div class="col-xs-12">
+	
+				<div class="box-account-header">
+									
+					<div class="box-account">
+						
+						<h2 class="title">ACCOUNT</h2> 
+						
+						<h3 class="account-number">A7895</h3>
+						
+					</div><!-- /box-account -->
+
+					<div class="box-balance">
+						
+						<h2 class="title">BALANCE</h2>
+
+						<h3 class="balance-number">£ 3,344.99</h3>
+
+					</div><!-- /box-balance -->
+
+				</div><!-- /box-account-header -->
+
+				<h3 class="time-update">AS OF <strong>1 SEP 2016, 2:15PM</strong></h3>
+
+			</div><!-- / col 12 -->
+
+		</div><!-- / row -->
+
+    </div><!-- / top center content -->
 
     <div class="container-contact-us">
     	

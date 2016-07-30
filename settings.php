@@ -258,7 +258,7 @@ include 'inc/header.php'
 
 					</form><!-- /container-password-settings -->
 					
-					<div class="container-lkns">
+					<div class="container-lkns sticky-to-footer">
 					
 						<a href="#" class="lkn-save">Save</a>
 

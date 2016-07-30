@@ -192,15 +192,21 @@
 	
 	/* transactions */
 	.main-transactions .header-fixed {
-		height: 290px;
+		/*height: 126px;*/
 	}
 	.main-transactions .header {
-		height: 285px;
+		height: 126px;
 		width: 100%;
 		position: fixed;
 		z-index: 1000;
 		top: 0px;
-        background-image: linear-gradient(-180deg, #155199 12%, #488DBF 83%);
+        /*background-image: linear-gradient(-180deg, #155199 12%, #2867a7 83%);*/
+        background: url(images/bg-header.jpg) repeat-x top;
+	}
+	.main-transactions .top-center-content {
+		/*background-image: linear-gradient(-180deg, #2c6caa 12%, #488DBF 60%);*/
+		background: url(images/bg-header.jpg) repeat-x top;
+		padding-top: 127px;
 	}
 	.header-mobile-transactions .go-back {
 	    height: 50px;
@@ -266,7 +272,7 @@
 		border-radius: 5px;
 		float: left;
 		padding: 5px 20px 3px 20px;
-		margin-top: 30px;
+		margin-top: 12px;
 		margin-bottom: 14px;
 		width: 100%;
 	}
@@ -552,7 +558,7 @@
 		position: absolute;
 	}
 	.modal-backdrop.in.date-back {
-		z-index: 100;
+		z-index: 1000;
 		opacity: .2;
 	}
 
@@ -607,7 +613,8 @@
 		width: 100%;
 		position: fixed;
 		z-index: 20;
-        background-image: linear-gradient(-180deg, #155199 12%, #488DBF 83%);
+        /*background-image: linear-gradient(-180deg, #155199 12%, #488DBF 83%);*/
+        background: url(images/bg-header.jpg) repeat-x top;
 	}
 	.nav-standing-orders {
 		border: 1px solid #FFFFFF;
@@ -651,11 +658,12 @@
 
 	
 	/* MAKE A PAYMENT */
-	.make-donation .header,
-	.make-donation .header-fixed {
-		height: 185px;
+	.make-donation .header {
+		height: 60px;
 	}
-	
+	.main-transactions.make-donation .top-center-content {
+		padding-top: 60px;
+	}
 	.box-slide-text {
 		background: #F2F2F2;
 		position: relative;
@@ -934,6 +942,9 @@
 		margin: 0 -15px;
 		padding: 0 15px	;
 	}
+	.container-settings:last-child {
+		margin-bottom: 35px;
+	}
 	.box-settings {
 		clear: both;
 		display: block;
@@ -1009,7 +1020,7 @@
 		display: block;
 	}
 	.container-lkns {
-		margin: 15px -15px 0 -15px;
+		margin: 0px -15px 0 -15px;
 	}
 	.lkn-cancel ,
 	.lkn-save {
@@ -1100,11 +1111,12 @@
 	}
 
 	/* VOCHERS */
-	.order-voucher .header,
-	.order-voucher .header-fixed {
-		height: 185px;
+	.order-voucher .header {
+		height: 60px;
 	}
-
+	.main-transactions.order-voucher .top-center-content {
+	    padding-top: 60px;
+	}
 	.container-vochers .lkn-input {
 		background: #00ADEE;
 		height: 40px;
@@ -1296,6 +1308,7 @@
 		resize: none;
 		-webkit-appearance: none;
 		width: 100%;		
+		margin-bottom: 45px;
 	}
 	.lkn-order-vouchers {
 		background: #F7F7F7;
@@ -1349,6 +1362,7 @@
 	}
 	.container-faqs {
 		padding-top: 20px;
+		margin-bottom: 30px;
 	}
 	.panel-group .panel-heading + .panel-collapse > .panel-body,
 	.panel-group .panel-heading + .panel-collapse > .list-group,
@@ -1429,9 +1443,11 @@
 		margin: 0;
 	}
 	/* MAKE A PAYMENT */
-	.main-contact-us .header,
-	.main-contact-us .header-fixed {
-		height: 185px;
+	.main-contact-us .header{
+		height: 60px;
+	}
+	.main-transactions.main-contact-us .top-center-content {
+		padding-top: 60px;
 	}
 	.contact-us-textarea {
 		border: 1px solid #BBBBBB;
@@ -1441,7 +1457,6 @@
 		margin-top: 20px;
 		margin-bottom: 5px;
 		resize: none;
-
 		-webkit-appearance: none;
 		width: 100%;	
 	}

@@ -84,15 +84,15 @@ input {
   margin-right: -4px;
 }
 
-.modal-dialog {
+.modal.fade .modal-dialog {
 	display: inline-block;
 	text-align: left;
 	vertical-align: middle;
 	width: 90%;
-	-webkit-transform: scale(0.1);
-	-moz-transform: scale(0.1);
-	-ms-transform: scale(0.1);
-	transform: scale(0.1);
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	-ms-transform: scale(0.5);
+	transform: scale(0.5);
 }
 
 .modal.fade.in .modal-dialog {
@@ -273,7 +273,7 @@ background: #fff;
 body.sticky-footer main {
 	padding-bottom: 140px;
 }
-a.sticky-to-footer {
+.sticky-to-footer {
 	position: fixed;
 	width: 100%;
 	bottom: 90px;

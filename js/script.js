@@ -237,7 +237,7 @@ $(document).ready(function( ) {
 
         /* Conditional to set sticky footer and primary action */
 
-        if ( $('main.make-donation').length > 0 || $('main.main-help').length || $('main.main-contact-us').length ){
+        if ( $('main.make-donation').length > 0 || $('main.main-help').length || $('main.main-contact-us').length || $('main.order-voucher').length || $('main.main-settings').length ){
 	  		$('body').addClass('sticky-footer');
     	};
 
