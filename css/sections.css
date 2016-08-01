@@ -763,6 +763,9 @@
 		display: inline-block;
 		vertical-align: top;
 	}
+	.amount-input-error {
+		display: none;
+	}
 	.coin-amount {
 		display: inline-block;
 		width: 25%;
@@ -788,6 +791,10 @@
 	}
 	.beneficiary-select .dropdown-menu {
 		margin-top: 9px;
+	}
+	.text-danger.beneficiary-select-error {
+		margin-top: 20px;
+		display: none;
 	}
 	.textarea-make-dontation {
 		border: 1px solid #BBBBBB;
@@ -837,8 +844,19 @@
 	    padding: 10px 12px;
 
 	}
+	.make-donation .large-amount {
+		display: none;
+		color: #FC2E2E;
+	    margin: 8px 0 0;
+	    
+	    font-size: 13px;
+	}
+	.confirmation-amount-error {
+		display: none;
+	}
 	.make-donation .input-text.confirmation-amount {
 		margin-top: 10px;
+		display: none;
 	}
 	.make-donation .confirmation-amount.success-amount {
 		background: url(images/success-icon.png) 96% no-repeat ;
@@ -887,6 +905,12 @@
 		font-size: 13px;
 		letter-spacing: 0.56px;
 		line-height: 19px;
+	}
+	.make-donation .ckeckbox .text-danger {
+		display: none;
+	}
+	.checkbox-box.has-error .ckeckbox .text-danger {
+		display: block;
 	}
 	.make-donation .ckeckbox .text p {
 		padding-left: 18px!important;

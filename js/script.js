@@ -246,6 +246,67 @@ $(document).ready(function( ) {
 	  		$('body').addClass('sticky-footer');
     	};
 
+
+		// MAKE A DONATION FORM VALIDATION
+
+
+		// function if value input is > 1600
+    	$('.amount-input input').focusout(function(event) {
+    		if ( $('.amount-input input').val() > 1600 ) {
+    			$('.confirmation-amount').show();
+    			$('.large-amount').show();
+    		}else{
+    			$('.confirmation-amount').hide();
+    		}
+    	});
+
+    	// function confirmation amount value == input before
+
+    	$( ".confirmation-amount" ).keyup(function() {
+		  if ( $('.amount-input input').val() == $('.confirmation-amount').val() ){
+		  	$('.confirmation-amount').addClass('success-amount');
+		  	$('.confirmation-amount').removeClass('incorrect-amount');
+	  		$('.confirmation-amount-error').hide();
+		  }else {
+		  	
+		  	$('.confirmation-amount').addClass('incorrect-amount');
+		  	$('.confirmation-amount-error').show();
+		  }
+		});
+
+		// click button form  
+		$('.make-dontation').click(
+			function(event) {
+			event.preventDefault ( );
+
+			// Validation Select beneficiary
+
+			if ( $('.beneficiary-select .filter-option').text() == 'Please select a Beneficiary' ) {
+				$('.beneficiary-select').parent().addClass('has-error');
+				$('.beneficiary-select-error').show();
+			}
+			// Validation Amount 
+			if ( $('.amount-input input').val() == '' ) {
+				$('.amount-input').addClass('has-error');
+			}
+			// Validation Amount < 100
+			else if ( $('.amount-input input').val() < 100 ) {
+				$('.amount-input').parent().addClass('has-error');
+				$('.amount-input input').val( 'Please enter an amount to donate' )
+				$('.amount-input-error').show();
+
+			}
+			
+			// Validation coin-amount not selected 			
+			if ( $('.coin-amount .filter-option').text() == 'USD' ) {
+				$('.coin-amount').addClass('error');
+			}
+			// Validation checkbox not checked  
+			if ( !$('.checkbox-box .ckeckbox').hasClass('active') ){
+				$('.checkbox-box').addClass('has-error');
+			}
+
+		});
  		
 	}
 );
