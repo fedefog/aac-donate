@@ -75,6 +75,9 @@
 		line-height: 25px;
 		margin: 0;
 	}
+	.box-balance .balance-number.negative {
+		color: #f76980;
+	}
 	.time {
 		clear: both;
 		text-align: center;
