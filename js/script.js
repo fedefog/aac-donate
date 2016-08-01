@@ -303,11 +303,12 @@ $(document).ready(function( ) {
 			// Validation Amount 
 			if ( $('.amount-input input').val() == '' ) {
 				$('.amount-input').addClass('has-error');
+				$('.amount-input input').val( 'Please enter an amount to donate' )
 			}
 			// Validation Amount < 100
 			else if ( $('.amount-input input').val() < 100 ) {
 				$('.amount-input').parent().addClass('has-error');
-				$('.amount-input input').val( 'Please enter an amount to donate' )
+				
 				$('.amount-input-error').show();
 
 			}
