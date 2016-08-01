@@ -1,19 +1,21 @@
+var viewportHeight = $(window).height();
+
+var viewportHeight_menos = 220;
+
+function navigator_scroll ( ) {
+	if ( viewportHeight < 665 ) {
+		$('.navigator .hoverflow').height( viewportHeight - viewportHeight_menos);
+	}
+}
+
 $(document).ready(function( ) {
 
-
-		
-
-		var viewportHeight = $(window).height();
-
-		function navigator_scroll ( ) {
-			if ( viewportHeight < 665 ) {
-				$('.navigator .hoverflow').height( viewportHeight - 220);
-			}
-		}
 		navigator_scroll ( );
 
 		$(window).resize(function() {
+
 			navigator_scroll ( );
+			
 		});
 
 		// Selects dropdown styles
@@ -31,6 +33,9 @@ $(document).ready(function( ) {
 			event.preventDefault ( );
 			$(this).toggleClass('open');
 			$('body').toggleClass('menu-mobile-open');
+
+			viewportHeight = $(window).height();
+			navigator_scroll ( );
 		});
 
 		$('.layer-navigator').click(
@@ -342,15 +347,10 @@ $(window).load(function(){
 /* Every time the window is scrolled ... */
 $(window).scroll( function(){
 
-	/* Navigator 
-
-	if(!$('body').hasClass('menu-mobile-open')) {
-		var scroll = $( window ).scrollTop();
-		$('.navigator').css('top', scroll);
-	}
-	*/
+	
 
 });
+
 
 // Scroll To function
 function scrollToAnchor ( ancla )
