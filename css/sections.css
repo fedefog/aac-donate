@@ -120,19 +120,35 @@
 }
 
 /* drop-down-sort */
+.sort-back {
+	z-index: -1;
+	opacity: 0;
+}
+.sort-back.in {
+	z-index: 1000;
+	opacity: .2!important;
+}
 .drop-down-sort {
 	position: absolute;
 	width: 238px;
 	right: 7px;
-    top: 53px;
+    top: 59px;
     visibility: hidden;
+    z-index: 1010;
     opacity: 0;
     transition: all .18s ease-out;
+}
+.drop-down-sort .navigator-transactions-lkn.lkn-sortby {
+    width: 55px;
+    background: #FFF;
+    position: absolute;
+    color: #00ADEE;
+    top: -59px;
+    right: 0px!important;
 }
 .drop-down-sort.active {
 	top: 59px;
 	opacity: 1;
-	z-index: 20;
 	visibility: visible;
 }
 .container-sortby {

@@ -139,6 +139,12 @@ include 'inc/header.php'
 						
 						<div class="drop-down-sort">
 
+							<a href="#" class="navigator-transactions-lkn lkn-sortby">
+							
+								<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+
+							</a>
+
 							<div class="container-sortby">
 
 								<ul class="list-sortby">
@@ -574,6 +580,8 @@ include 'inc/header.php'
   </div><!-- /modal-dialog -->
 
 </div><!-- /modal-search -->
+
+<div class="modal-backdrop fade sort-back"></div>
 
 
 <? include 'inc/online-donation-modal.php' ?>

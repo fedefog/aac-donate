@@ -79,7 +79,7 @@ $(document).ready(function( ) {
 			function(event) {
 			event.preventDefault ( );
 			$('.drop-down-sort').toggleClass('active');
-			
+			$('.sort-back').toggleClass("in");
 		});
 
 		// Validation of Search Modal 
