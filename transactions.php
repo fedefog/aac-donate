@@ -445,6 +445,31 @@ include 'inc/header.php'
 										</span>
 									</a>
 								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+										<div class="date">1-7-16</div>
+									</a>
+								</td>
+								<td>
+									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+										<div class="desc-table">
+											<h2 class="title">Kol Yaakov</h2>
+											<h3 class="subtitle">VOUCHER <span>PENDING</span></h3>
+										</div><!-- /desc-table -->
+									</a>
+								</td>
+								<td class="balance-pending">
+									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+										<span class="balance-transition">
+											£ 990.00
+											<i class="fa fa-caret-up" aria-hidden="true"></i>
+											<i class="fa fa-caret-down" aria-hidden="true"></i>
+											<i class="fa fa-caret-right" aria-hidden="true"></i>
+										</span>
+									</a>
+								</td>
 							</tr>							
 						</tbody>
 

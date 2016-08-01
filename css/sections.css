@@ -383,6 +383,7 @@
 	.container-table {
 		margin-left: -15px;
 		margin-right: -15px;
+		min-height: 450px;
 	}
 	.table-transactions {
 		float: left;
@@ -426,6 +427,9 @@
 		color: #333333;
 		letter-spacing: 0.27px;
 	}
+	.table-transactions .desc-table .subtitle span {
+		color: #F76980;
+	}
 	.balance-transition {
 		text-align: right;
 		display: block;
@@ -441,6 +445,12 @@
 	}
 	.balance-up .balance-transition  {
 		color: #97D361;
+	}
+	.balance-pending .balance-transition  {
+		color: #F76980;
+	}
+	.balance-pending .fa-caret-up, .balance-pending .fa-caret-down {
+		display: none;
 	}
 	.balance-down .fa-caret-up {
 		display: none;
@@ -599,6 +609,11 @@
 	.main-transactions.main-transactions-result .header
 	{
 		height: 168px;
+	}
+	.main-transactions.main-transactions-pending .header-fixed ,
+	.main-transactions.main-transactions-pending .header
+	{
+		height: 117px;
 	}
 	.title-transactions-result, .title-transactions-history {
 		float: left;
