@@ -137,6 +137,7 @@
 		position: relative;
 		display: block;
 		color: #333;
+		height: 78px;
 	}
 	.dashboard-li:last-child .lkn-dashboard {
 		border-bottom: 0;
