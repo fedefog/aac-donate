@@ -215,7 +215,11 @@ $(document).ready(function( ) {
 		$('#dates-bt-modal').daterangepicker();  
 
 		$('#dates-bt-modal').on('show.daterangepicker', function(ev, picker) {
-          $("body").append('<div class="modal-backdrop fade in date-back"></div>')
+          $('<div class="modal-backdrop fade date-back"></div>').appendTo("body");
+          setTimeout(function(){
+			$('.date-back').addClass("in");
+		  }, 20);
+          $(".daterangepicker").addClass("calendar-visible");
         });
 
         $('#dates-bt-modal').on('showCalendar.daterangepicker', function(ev, picker) {
@@ -233,6 +237,7 @@ $(document).ready(function( ) {
 
         $('#dates-bt-modal').on('hide.daterangepicker', function(ev, picker) {
         	$( ".date-back" ).remove();
+        	$(".daterangepicker").removeClass("calendar-visible");
         });    
 
         /* Conditional to set sticky footer and primary action */

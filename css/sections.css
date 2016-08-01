@@ -440,6 +440,21 @@
 	.daterangepicker {
 		padding: 0px;
 		width: 92%;
+		opacity: 0;
+		-webkit-transition: all .15s linear 0.1s;
+    	-o-transition: all .15s linear 0.1s;
+    	transition: all .15s linear 0.1s;
+    	-webkit-transform: scale(0.5);
+		-moz-transform: scale(0.5);
+		-ms-transform: scale(0.5);
+		transform: scale(0.5);
+	}
+	.daterangepicker.calendar-visible {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
 	}
 	.daterangepicker.dropdown-menu {
 		left: 0!important;
@@ -557,11 +572,16 @@
 		background: #000;
 		position: absolute;
 	}
-	.modal-backdrop.in.date-back {
+	.modal-backdrop.date-back {
 		z-index: 1000;
+		opacity: 0;
+		-webkit-transition: all .15s linear 0.1s;
+    	-o-transition: all .15s linear 0.1s;
+    	transition: all .15s linear 0.1s;
+	}
+	.modal-backdrop.date-back.in {
 		opacity: .2;
 	}
-
 	/* transactions */
 
 	.main-transactions.main-transactions-result .header-fixed ,
