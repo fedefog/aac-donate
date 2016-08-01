@@ -117,7 +117,7 @@ include 'inc/header.php'
 			  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
 			</select>
 
-			<p class="text-danger beneficiary-select-error ">This large donation will be eligible for random checks by our compliance office, given the regulations for large donations. Please be aware that there is a chance he may in touch to find out more information about this donation. </p>
+			<p class="text-danger beneficiary-select-error ">Please note: Achisomoch carries out random checks on the charitable status of the organisations mentioned on this list, However no guarantee is implied that all charities mentioned on this list are bona-fide.</p>
 			
 			<div class="box-make-donation-lkns">
 				
