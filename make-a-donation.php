@@ -107,15 +107,17 @@ include 'inc/header.php'
 	
 	<div class="container">
 		
-		<div class="box-make-donation">
+		<div class="box-make-donation ">
 			
 			<h2 class="title-make-donation">BENEFICIARY</h2>
 			
-			<select title="Please select a Beneficiary" class="form-control selectpicker beneficiary-select" data-style="btn-danger">
+			<select  title="Please select a Beneficiary" class="form-control selectpicker beneficiary-select select-1" data-style="btn-danger">
 			  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
 			  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
 			  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
 			</select>
+
+			<p class="text-danger beneficiary-select-error ">Please note: Achisomoch carries out random checks on the charitable status of the organisations mentioned on this list, However no guarantee is implied that all charities mentioned on this list are bona-fide.</p>
 			
 			<div class="box-make-donation-lkns">
 				
@@ -131,26 +133,33 @@ include 'inc/header.php'
 			
 			<h2 class="title-make-donation">AMOUNT</h2>
 			
-			<div class="amount-input">
+			<div class="amount-input ">
 				
-				<input type="text" class="form-control input-text" placeholder="435">
+				<input type="text" class="form-control input-text" placeholder="435" >
 
 
 				<span class="numb-aprox">APROX. 299 GBP</span>
 
 			</div><!-- /amount-input -->
 
-			<div class="coin-amount">
+			<div class="coin-amount ">
 				
 				<select class="form-control selectpicker">
 				  <option>USD</option>
 				  <option>GBP</option>
-				  <option>USD</option>
-				  <option>USD</option>
-				  <option>USD</option>
+				  <option>£</option>
+				  
 				</select>
 
 			</div><!-- /coin-amount -->
+
+			<p class="text-danger amount-input-error">Please note that payments for under £100 may take longer to process.</p>
+
+			<p class="large-amount">For your own safety and to comply with large donation regulations, please re-enter the amount you wish to donate. </p>
+
+			<input type="text" class="form-control confirmation-amount input-text" placeholder="">
+
+			<p class="text-danger confirmation-amount-error">This large donation will be eligible for random checks by our compliance office, given the regulations for large donations. Please be aware that there is a chance he may in touch to find out more information about this donation. </p>
 
 		</div><!-- /box-make-donation -->
 
@@ -234,7 +243,7 @@ include 'inc/header.php'
 
 	</div><!-- /container -->
 
-	<div class="checkbox-box">
+	<div class="checkbox-box ">
 		
 		<div class="container">
 			
@@ -242,7 +251,7 @@ include 'inc/header.php'
 				<span class="circle"></span>
 				<span class="text">
 					I confirm that this donation is for charitable purposes only, I will not benefit directly or indirectly by way of goods or services from the donation.
-					
+					<p class="text-danger">Please confirm to continue</p>
 				</span>
 			</a>
 			
