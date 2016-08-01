@@ -12,6 +12,11 @@ include 'inc/header.php'
             <div class="container ">
 			
 				<div class="row">
+
+					<a href="transactions-pending.php" title="Pending Transactions" class="pending-bt">
+						<img src="images/pending-icon.png" width="21" height="21">
+						<span class="badge">2</span>
+					</a>
 					
 					<div class="col-md-4">
 							
