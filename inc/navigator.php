@@ -2,7 +2,7 @@
 
 	<div class="inner-navigator">
 
-		<a href="#" class="close-nav">X</a>
+		<a href="#" class="close-nav">&times;</a>
 
 		<?php /* <h2 class="name-navigator">David Jacobs</h2> */?>
 
