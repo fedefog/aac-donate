@@ -187,12 +187,23 @@
 		position: relative;
 		overflow: hidden;
 		width: 100%;
+
 	}
-	
+	/* 
+		FOR DISABLE SCROLL WHEN NAVIGATOR OPEN 
+	*/
+	.menu-mobile-open .section {
+		height: 100%;
+	}
 	
 	/* transactions */
 	.main-transactions .header-fixed {
 		/*height: 126px;*/
+	}
+	.header-fixed {
+		top: 0;
+		position: relative;
+		margin-top: -1px;
 	}
 	.main-transactions .header {
 		height: 126px;

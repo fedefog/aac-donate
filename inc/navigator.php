@@ -1,121 +1,132 @@
 <div class="navigator">
-<div class="inner-navigator">
-	<a href="#" class="close-nav">X</a>
 
-	<?php /* <h2 class="name-navigator">David Jacobs</h2> */?>
+	<div class="inner-navigator">
 
-	<select class="form-control selectpicker switch-account" title="Switch Account">
-	  <option>ACCOUNT A7895</option>
-	  <option>ACCOUNT A7896</option>
-	  <option>ACCOUNT A7897</option>
-	</select>
+		<a href="#" class="close-nav">X</a>
 
-	<div class="navigator-account-header">
+		<?php /* <h2 class="name-navigator">David Jacobs</h2> */?>
+
+		<select class="form-control selectpicker switch-account" title="Switch Account">
+		  <option>ACCOUNT A7895</option>
+		  <option>ACCOUNT A7896</option>
+		  <option>ACCOUNT A7897</option>
+		</select>
+
+		<div class="navigator-account-header">
+			
+			<div class="navigator-account">
+				
+				<h2 class="title">ACCOUNT</h2> 
+				
+				<h3 class="account-number">A7895</h3>
+				
+			</div><!-- /box-account -->
+
+			<div class="navigator-balance">
+				
+				<h2 class="title">BALANCE</h2>
+
+				<h3 class="balance-number">£ 3,344.99</h3>
+
+			</div><!-- /box-balance -->
+
+		</div><!-- /box-account-header -->
 		
-		<div class="navigator-account">
-			
-			<h2 class="title">ACCOUNT</h2> 
-			
-			<h3 class="account-number">A7895</h3>
-			
-		</div><!-- /box-account -->
 
-		<div class="navigator-balance">
-			
-			<h2 class="title">BALANCE</h2>
+		<div class="hoverflow">
 
-			<h3 class="balance-number">£ 3,344.99</h3>
+			<div class="inner-hoverflow">
 
-		</div><!-- /box-balance -->
+				<h3 class="time-navigator">AS OF <strong>1 SEP 2016, 2:15PM</strong></h3>
 
-	</div><!-- /box-account-header -->
+				<ul class="list-navigator">
 
-	<h3 class="time-navigator">AS OF <strong>1 SEP 2016, 2:15PM</strong></h3>
+					<li class="navigator-li">
 
-	<ul class="list-navigator">
+						<a href="index.php" class="navigator-lkn">
 
-		<li class="navigator-li">
+							<span class="icon">
+								<img src="./images/dashboard-icon.png" width="22" height="20">
+							</span>
 
-			<a href="index.php" class="navigator-lkn">
+							<span class="text">Dashboard</span>
 
-				<span class="icon">
-					<img src="./images/dashboard-icon.png" width="22" height="20">
-				</span>
+						</a>
 
-				<span class="text">Dashboard</span>
+					</li>
 
-			</a>
+					<li class="navigator-li">
 
-		</li>
+						<a href="help.php" class="navigator-lkn">
 
-		<li class="navigator-li">
+							<span class="icon">
+								<img src="./images/help-icon.png" width="20.5" height="20">
+							</span>
 
-			<a href="help.php" class="navigator-lkn">
+							<span class="text">Help</span>
 
-				<span class="icon">
-					<img src="./images/help-icon.png" width="20.5" height="20">
-				</span>
+						</a>
 
-				<span class="text">Help</span>
+					</li>
 
-			</a>
+					<li class="navigator-li">
 
-		</li>
+						<a href="contact-us.php" class="navigator-lkn">
 
-		<li class="navigator-li">
+							<span class="icon">
+								<img src="./images/contact-icon.png" width="24" height="20.5">
+							</span>
 
-			<a href="contact-us.php" class="navigator-lkn">
+							<span class="text">Contact us</span>
 
-				<span class="icon">
-					<img src="./images/contact-icon.png" width="24" height="20.5">
-				</span>
+						</a>
 
-				<span class="text">Contact us</span>
+					</li>
 
-			</a>
+					<li class="navigator-li">
 
-		</li>
+						<a href="invite-a-friend.php" class="navigator-lkn">
 
-		<li class="navigator-li">
+							<span class="icon">
+								<img src="./images/invite-a-friend-icon.png" width="20.5" height="20">
+							</span>
 
-			<a href="invite-a-friend.php" class="navigator-lkn">
+							<span class="text">Invite a Friend - <em>Earn £100 credit</em></span>
 
-				<span class="icon">
-					<img src="./images/invite-a-friend-icon.png" width="20.5" height="20">
-				</span>
+						</a>
 
-				<span class="text">Invite a Friend - <em>Earn £100 credit</em></span>
+					</li>
 
-			</a>
+					<li class="navigator-li">
 
-		</li>
+						<a href="settings.php" class="navigator-lkn">
 
-		<li class="navigator-li">
+							<span class="icon">
+								<img src="./images/settings-icon.png" width="20" height="20">
+							</span>
 
-			<a href="settings.php" class="navigator-lkn">
+							<span class="text">Settings</span>
 
-				<span class="icon">
-					<img src="./images/settings-icon.png" width="20" height="20">
-				</span>
+						</a>
 
-				<span class="text">Settings</span>
+					</li>
 
-			</a>
+				</ul>
 
-		</li>
+				<a href="#" class="lkn-logout" data-toggle="modal" data-target="#modal-logout">
 
-	</ul>
+					<span class="icon">
+						<i class="fa fa-sign-out" aria-hidden="true"></i>
+					</span>
 
-	<a href="#" class="lkn-logout" data-toggle="modal" data-target="#modal-logout">
+					<span class="text">Logout</span>
 
-		<span class="icon">
-			<i class="fa fa-sign-out" aria-hidden="true"></i>
-		</span>
+				</a>
+			</div><!-- /inner -->
 
-		<span class="text">Logout</span>
+		</div><!-- /inner-hoverflow -->
 
-	</a>
-</div><!-- /inner -->	
+	</div><!-- /inner -->	
 </div><!-- /navigator -->
 
 <div class="layer-navigator"></div><!-- /layer-navigator -->

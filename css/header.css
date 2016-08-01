@@ -80,12 +80,25 @@
 }
 
 /* navigator */
+
+.navigator .hoverflow {
+  float: left;
+  position: relative;
+  /* background: #000; */
+  height: 448px;
+  overflow: scroll;
+}
+.inner-hoverflow {
+  float: left;
+  /* background: red; */
+  width: 100%;
+}
 .navigator {
   /* height: 680px; */
   height: 100%;
   right: 0;
   top: 0;
-  position: absolute;
+  position: fixed;
   background: #F4F4F4;
   z-index: 1010;
   width: 300px;
@@ -274,10 +287,7 @@
   line-height: 25px;
   margin: 0 0 0 20px;
 }
-/*.list-navigator {
-  height: 260px;
-  overflow-y: scroll;
-}*/
+
 .layer-navigator {
   background: #000;
   opacity: .0;
@@ -289,6 +299,7 @@
   z-index: 1009;
   transition: all .3s ease-out;
 }
+
 .menu-mobile-open .layer-navigator {
   visibility: visible;
   opacity: .4;

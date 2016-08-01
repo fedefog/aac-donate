@@ -1,6 +1,21 @@
 $(document).ready(function( ) {
 
 
+		
+
+		var viewportHeight = $(window).height();
+
+		function navigator_scroll ( ) {
+			if ( viewportHeight < 665 ) {
+				$('.navigator .hoverflow').height( viewportHeight - 220);
+			}
+		}
+		navigator_scroll ( );
+
+		$(window).resize(function() {
+			navigator_scroll ( );
+		});
+
 		// Selects dropdown styles
 
 		$('.selectpicker').selectpicker({
@@ -326,12 +341,13 @@ $(window).load(function(){
 /* Every time the window is scrolled ... */
 $(window).scroll( function(){
 
-	/* Navigator */
+	/* Navigator 
 
 	if(!$('body').hasClass('menu-mobile-open')) {
 		var scroll = $( window ).scrollTop();
 		$('.navigator').css('top', scroll);
 	}
+	*/
 
 });
 
