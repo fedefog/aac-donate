@@ -50,74 +50,6 @@ include 'inc/header.php'
 						<h3 class="title-transactions">SEARCH RESULTS</h3>
 
 					</div><!-- /title-transactions-result -->
-					
-					<div class="col-xs-12">
-						
-						<ul class="navigator-transactions">
-							
-							<li class="navigator-transactions-li">
-								
-								<a href="#" class="navigator-transactions-lkn active">RECENT</a>
-
-							</li>
-
-							<li class="navigator-transactions-li">
-								
-								<a href="#" class="navigator-transactions-lkn">DATES</a>
-
-							</li>
-
-							<li class="navigator-transactions-li">
-								
-								<a href="#" class="navigator-transactions-lkn" data-toggle="modal" data-target="#modal-search" >SEARCH</a>
-
-							</li>
-
-							<li class="navigator-transactions-li">
-								
-								<a href="#" class="navigator-transactions-lkn lkn-sortby">
-									
-									<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
-
-								</a>
-								
-								<div class="drop-down-sort">
-
-									<div class="container-sortby">
-
-										<ul class="list-sortby">
-											<li class="sortby-li">
-												<h2 class="title-sortby">SORT BY</h2>
-											</li>
-											<li class="sortby-li">
-												<a href="#" class="sortby-lkn">Date (Recent - Furthest)</a>
-											</li>
-											<li class="sortby-li">
-												<a href="#" class="sortby-lkn">Date (Furthest - Recent)</a>
-											</li>
-											<li class="sortby-li">
-												<a href="#" class="sortby-lkn">Amount (High - Low)</a>
-											</li>
-											<li class="sortby-li">
-												<a href="#" class="sortby-lkn">Amount (Low - High)</a>
-											</li>
-											<li class="sortby-li">
-												<a href="#" class="sortby-lkn">Charity Name (A - Z)</a>
-											</li>
-											<li class="sortby-li">
-												<a href="#" class="sortby-lkn">Charity Name (Z - A)</a>
-											</li>
-										</ul>
-									
-									</div><!-- /container-sortby -->
-
-								</div><!-- /drop-down-sort -->
-
-							</li>
-
-						</ul>
-						
-					</div><!-- /col -->
 
 					<div class="clear"></div>
 
@@ -128,6 +60,88 @@ include 'inc/header.php'
         </header>
 
     </div><!-- /header-fixed -->
+
+    <div class="container top-center-content">
+
+    	<div class="row">
+
+    		<div class="col-xs-12">
+
+				<ul class="navigator-transactions">
+							
+					<li class="navigator-transactions-li">
+						
+						<a href="#" class="navigator-transactions-lkn active">RECENT</a>
+
+					</li>
+
+					<li class="navigator-transactions-li">
+						
+						<a href="#" id="dates-bt-modal" class="navigator-transactions-lkn">DATES</a>
+
+					</li>
+
+					<li class="navigator-transactions-li">
+						
+						<a href="#" class="navigator-transactions-lkn" data-toggle="modal" data-target="#modal-search" >SEARCH</a>
+
+					</li>
+
+					<li class="navigator-transactions-li">
+						
+						<a href="#" class="navigator-transactions-lkn lkn-sortby">
+							
+							<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+
+						</a>
+						
+						<div class="drop-down-sort">
+
+							<a href="#" class="navigator-transactions-lkn lkn-sortby">
+							
+								<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+
+							</a>
+
+							<div class="container-sortby">
+
+								<ul class="list-sortby">
+									<li class="sortby-li">
+										<h2 class="title-sortby">SORT BY</h2>
+									</li>
+									<li class="sortby-li">
+										<a href="#" class="sortby-lkn">Date (Recent - Furthest)</a>
+									</li>
+									<li class="sortby-li">
+										<a href="#" class="sortby-lkn">Date (Furthest - Recent)</a>
+									</li>
+									<li class="sortby-li">
+										<a href="#" class="sortby-lkn">Amount (High - Low)</a>
+									</li>
+									<li class="sortby-li">
+										<a href="#" class="sortby-lkn">Amount (Low - High)</a>
+									</li>
+									<li class="sortby-li">
+										<a href="#" class="sortby-lkn">Charity Name (A - Z)</a>
+									</li>
+									<li class="sortby-li">
+										<a href="#" class="sortby-lkn">Charity Name (Z - A)</a>
+									</li>
+								</ul>
+							
+							</div><!-- /container-sortby -->
+
+						</div><!-- /drop-down-sort -->
+
+					</li>
+
+				</ul>
+
+			</div><!-- / col 12 -->
+
+		</div><!-- / row -->
+
+    </div><!-- / top center content -->
 	
     <div class="container-fluid">
 	
@@ -411,7 +425,7 @@ include 'inc/header.php'
 
 </div><!-- /modal-search -->
 
-
+<div class="modal-backdrop fade sort-back"></div>
 
 
 <? include 'inc/online-donation-modal.php' ?>

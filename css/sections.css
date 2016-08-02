@@ -139,12 +139,12 @@
     transition: all .18s ease-out;
 }
 .drop-down-sort .navigator-transactions-lkn.lkn-sortby {
-    width: 55px;
-    background: #FFF;
-    position: absolute;
-    color: #00ADEE;
-    top: -59px;
-    right: 0px!important;
+	width: 64px;
+	background: #FFF;
+	position: absolute;
+	color: #00ADEE;
+	top: -59px;
+	right: -7px!important;
 }
 .drop-down-sort.active {
 	top: 59px;
@@ -637,10 +637,12 @@
 	}
 	/* transactions */
 
-	.main-transactions.main-transactions-result .header-fixed ,
 	.main-transactions.main-transactions-result .header
 	{
-		height: 168px;
+		height: 117px;
+	}
+	.main-transactions.main-transactions-result .top-center-content {
+		padding-top: 118px;
 	}
 	.main-transactions.main-transactions-pending .header-fixed ,
 	.main-transactions.main-transactions-pending .header
