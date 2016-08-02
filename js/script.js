@@ -82,18 +82,40 @@ $(document).ready(function( ) {
 			$('.sort-back').toggleClass("in");
 		});
 
-		// Validation of Search Modal 
+		// Validation of Search Modal && Vouches Chebox
+		var ckeckbox_ckeched = false;
 
 		$('.checkbox-input').click(
 			function(event) {
 			event.preventDefault ( );
 			
-			if ( $(this).parent( ).find('.input').val() != '') {
+			if ( ckeckbox_ckeched == false ) {
+				ckeckbox_ckeched = true;
 				$(this).parent().toggleClass('active');	
-			}else {
-				$(this).parent().toggleClass('error');	
+			}else  {
+
+				if ( $(this).parent().hasClass('active') ) {
+					$(this).parent().toggleClass('active');
+					ckeckbox_ckeched = false;
+				}
+				else {
+					$('.checkbox-input').parent().removeClass('active');	
+					$(this).parent().toggleClass('active');
+					ckeckbox_ckeched = true;		
+				}
 			}			
 		});
+		// Validation of Search Modal if input is empty 
+		$('.btn-search').click(
+			function(event) {
+			
+			if ( $('.row-input.active').find('.input').val() == '' ) {
+				$('.row-input.active').parent().toggleClass('error');
+				event.preventDefault ( );
+			}		
+		});
+
+
 
 		// Confirm checkbox of Make a Donation
 
