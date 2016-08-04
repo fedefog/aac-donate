@@ -1,8 +1,4 @@
-<?
-$section = '';
-include 'inc/header.php'
-?>
-	
+
 <main class="main-transactions">
 	
 	<div class="header-fixed">
@@ -594,4 +590,3 @@ include 'inc/header.php'
 <? include 'inc/company-donation-modal.php' ?>
 <? include 'inc/charity-donation-modal.php' ?>
 <? include 'inc/account-transfer-modal.php' ?>
-<? include 'inc/footer.php' ?>

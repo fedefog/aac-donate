@@ -8,7 +8,81 @@ function navigator_scroll ( ) {
 	}
 }
 
+/* Ajax navigation */
+
+	$('.nav-dashboard a, .list-navigator a').bind('click', function(e) {    
+	  e.preventDefault(); // stop the browser from following the link  
+	  move()     
+	  $("#myBar").addClass("visible");
+	  $('#new-content').addClass("absolute");
+	  $("html, body").animate({ scrollTop: 0 }, "fast");	
+	  var url = $(this).attr('href');
+	  setTimeout(function(){
+	  	$('body').removeClass('menu-mobile-open');
+		$('#new-content').load(url, function() {
+			$("#myBar").removeClass("visible");
+			$('#main-container, #footer').addClass('to-left');
+		}); // load the html response into a DOM element
+		}, 2000);
+	  	setTimeout(function(){
+			$('main#dashboard').addClass("absolute");
+			$('#main-container, #footer').removeClass('to-left');
+			sticky_footer ( );
+			$('#new-content').removeClass('absolute');
+		}, 3000);
+	});
+
+
+	$(document).on('click', '.go-back', function(event) {
+		event.preventDefault();
+
+		$("html, body").animate({
+		  scrollTop:0
+		}, "fast", 
+		    function(){
+		    	$('#main-container').addClass('to-right');
+				$('body').removeClass();
+		    } // callback method use this space how you like
+		);
+
+		setTimeout(function(){
+			$('#main-container').removeClass('to-left');
+			$('#main-container').removeClass('to-right');
+			$('main#dashboard').removeClass('absolute');
+			$('#new-content main').remove();
+		}, 2000);
+	});
+
+/* Conditional to set sticky footer and primary action */
+
+	function sticky_footer(){
+	    if ( $('main.make-donation').length > 0 || $('main.main-help').length || $('main.main-contact-us').length || $('main.order-voucher').length || $('main.main-settings').length ){
+	  		$('body').addClass('sticky-footer');
+		} else {
+			$('body').removeClass('sticky-footer');
+		};	
+	};
+
+/* Progress bar */
+
+function move() {
+  var elem = document.getElementById("myBar");
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+    }
+  }
+}
+
 $(document).ready(function( ) {
+
+
+		/* Navigator Scroll */
 
 		navigator_scroll ( );
 
@@ -281,13 +355,6 @@ $(document).ready(function( ) {
         	$( ".date-back" ).remove();
         	$(".daterangepicker").removeClass("calendar-visible");
         });    
-
-        /* Conditional to set sticky footer and primary action */
-
-        if ( $('main.make-donation').length > 0 || $('main.main-help').length || $('main.main-contact-us').length || $('main.order-voucher').length || $('main.main-settings').length ){
-	  		$('body').addClass('sticky-footer');
-    	};
-
 
 		// MAKE A DONATION FORM VALIDATION
 

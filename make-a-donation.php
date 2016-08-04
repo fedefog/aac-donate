@@ -1,8 +1,4 @@
-<?
-$section = '';
-include 'inc/header.php'
-?>
-	
+
 <main class="main-transactions make-donation">
 	
 	<div class="header-fixed">
@@ -263,6 +259,3 @@ include 'inc/header.php'
 	
 </main>	
 
-
-
-<? include 'inc/footer.php'?>

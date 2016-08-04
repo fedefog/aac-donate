@@ -1,7 +1,3 @@
-<?
-$section = '';
-include 'inc/header.php'
-?>
 	
 <main class="main-transactions order-voucher">
 	
@@ -408,6 +404,3 @@ include 'inc/header.php'
 	
 </main>	
 
-
-
-<? include 'inc/footer.php'?>

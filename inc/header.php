@@ -27,6 +27,7 @@
         <link href="css/sections.css" rel="stylesheet">
         
         <link href="style.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
         <? if (  $section == 'dashboard') {?>
         <link href="css/home.css" rel="stylesheet">
         <?}?>
@@ -44,6 +45,10 @@
     </head>
 
     <body>
+
+    <div id="myProgress">
+      <div id="myBar"></div>
+    </div> 
 
     <section class="section">
        
