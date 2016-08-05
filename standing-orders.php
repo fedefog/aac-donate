@@ -210,6 +210,8 @@
 
 </main>	
 
+<? include 'inc/footer-inner.php' ?>
+
 <div class="modal-search modal fade" id="modal-search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				  
   <div class="modal-dialog" role="document">

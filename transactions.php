@@ -485,6 +485,8 @@
 		
 	</div><!-- /container-fluid -->
 
+	<? include 'inc/footer-inner.php' ?>
+
 </main>	
 
 <div class="modal-search modal fade" id="modal-search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
