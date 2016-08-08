@@ -10,6 +10,8 @@ function navigator_scroll ( ) {
 
 /* inizialization */
 
+var url = 'index.php';
+
 load_js()
 
 $('.close-nav').click(
@@ -21,6 +23,11 @@ $('.close-nav').click(
 
 /* Ajax navigation */
 
+
+/* Navigation from dashboard  */
+
+	
+
 	$('.nav-dashboard a, .list-navigator a').bind('click', function(e) {   
 
 	  e.preventDefault(); // stop the browser from following the link  
@@ -28,33 +35,60 @@ $('.close-nav').click(
 	  progress_bar()      
 	  $("#myBar").addClass("visible"); // Loading bar visibility 
 
-	  $('#new-content').addClass("absolute"); // add class absolute for make the animation of the new content 
-	  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
+	  if ( url == 'index.php') {
 
-	  var url = $(this).attr('href'); 
+		  $('#new-content').addClass("absolute"); // add class absolute for make the animation of the new content 
+		  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
 
-	  setTimeout(function(){
-	  	$('body').removeClass('menu-mobile-open');
-		$('#new-content').load(url, function() { 
-			$("#myBar").removeClass("visible");  // fadeout of the bar loading 
-			$('#main-container').addClass('to-left'); // Animate main container to left
-			load_js()
-		}); // load the html response into a DOM element
-		}, 2000);
+		  url = $(this).attr('href'); 
+		  console.log(url);
 
-	  	setTimeout(function(){
-			$('main#dashboard').addClass("absolute"); // add class absolute for make the animation of the new content 
-			$('#main-container').removeClass('to-left'); // Remove class animation to left
-			sticky_footer ();
-			$('#new-content').removeClass('absolute'); // remove class absolute from new content to navigate well the new content loaded. 
-		}, 3000);
+		  setTimeout(function(){
+		  	$('body').removeClass('menu-mobile-open');
+			$('#new-content').load(url, function() { 
+				$("#myBar").removeClass("visible");  // fadeout of the bar loading 
+				$('#main-container').addClass('to-left'); // Animate main container to left
+				load_js()
+			}); // load the html response into a DOM element
+			}, 2000);
+
+		  	setTimeout(function(){
+				$('main#dashboard').addClass("absolute"); // add class absolute for make the animation of the new content 
+				$('#main-container').removeClass('to-left'); // Remove class animation to left
+				sticky_footer ();
+				$('#new-content').removeClass('absolute'); // remove class absolute from new content to navigate well the new content loaded. 
+			}, 3000);
+
+		  } else {
+
+		  	url = $(this).attr('href'); 
+		  	console.log(url);
+
+		  	setTimeout(function(){
+		  	$('body').removeClass('menu-mobile-open');
+			$('#new-content').load(url, function() { 
+				$("#myBar").removeClass("visible");  // fadeout of the bar loading 
+				load_js()
+			}); // load the html response into a DOM element
+			}, 2000);
+
+			setTimeout(function(){
+				sticky_footer ();
+			}, 3000);
+
+		  } // end conditional 
 
 	});
+
+	
 
 
 	$(document).on('click', '.go-back', function(event) {
 
 		event.preventDefault(); // stop the browser from following the link  
+
+		url = $(this).attr('href'); 
+	    console.log(url);
 
 		$("html, body").animate({ // Animation to top of window
 		  scrollTop:0
@@ -98,7 +132,7 @@ $('.close-nav').click(
 	  }
 	}
 
-/* inizialization */	
+/* inizialization main function */	
 
 	function load_js() {
 
@@ -451,13 +485,6 @@ $(window).load(function(){
 	if ( $('#login').length ){
 		setTimeout(load_login, 4000);
 	}		
-});
-	
-/* Every time the window is scrolled ... */
-$(window).scroll( function(){
-
-	
-
 });
 
 
