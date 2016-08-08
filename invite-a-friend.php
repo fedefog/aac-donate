@@ -1,9 +1,3 @@
-<?
-$section = '';
-include 'inc/header.php'
-/*test*/
-?>
-	
 <main class="main-transactions main-invite-a-friend">
 	
 	<div class="header-fixed">
@@ -121,5 +115,4 @@ include 'inc/header.php'
 </main>	
 
 
-
-<? include 'inc/footer.php'?>
+<? include 'inc/footer-inner.php' ?>

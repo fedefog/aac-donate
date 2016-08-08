@@ -1,8 +1,3 @@
-<?
-$section = '';
-include 'inc/header.php'
-?>
-	
 <main class="main-transactions main-contact-us">
 	
 	<div class="header-fixed">
@@ -122,5 +117,4 @@ include 'inc/header.php'
 </main>	
 
 
-
-<? include 'inc/footer.php'?>
+<? include 'inc/footer-inner.php' ?>
