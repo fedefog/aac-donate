@@ -93,6 +93,14 @@ input {
 	right: -100%;
 	height: 100%;
 }
+#new-content-second.absolute {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	right: -100%;
+	height: 100%;
+	z-index: 1000;
+}
 #dashboard.absolute {
 	position:fixed;
 	top: 0px;

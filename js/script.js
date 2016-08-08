@@ -12,14 +12,28 @@ function navigator_scroll ( ) {
 
 var url = 'index.php';
 
-load_js()
+// Navigation sidebar 
+$(document).on('click', '.nav-icon4', function(event) {
+	event.preventDefault ( );
+	$(this).toggleClass('open');
+	$('body').toggleClass('menu-mobile-open');
+	viewportHeight = $(window).height();
+	navigator_scroll ( );
+});
 
-$('.close-nav').click(
-	function(event) {
+$(document).on('click', '.layer-navigator', function(event) {
+	event.preventDefault ( );
+	$('.nav-icon4').removeClass('open');
+	$('body').removeClass('menu-mobile-open');
+});
+
+$(document).on('click', '.close-nav', function(event) {
 	event.preventDefault ( );
 	$('.nav-icon4').toggleClass('open');
 	$('body').toggleClass('menu-mobile-open');
 });
+
+load_js()
 
 /* Ajax navigation */
 
@@ -34,8 +48,9 @@ $('.close-nav').click(
 
 	  progress_bar()      
 	  $("#myBar").addClass("visible"); // Loading bar visibility 
+	  $('.nav-mobile').removeClass("open");
 
-	  if ( url == 'index.php') {
+	  if ( url == 'index.php' ) {
 
 		  $('#new-content').addClass("absolute"); // add class absolute for make the animation of the new content 
 		  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
@@ -64,17 +79,13 @@ $('.close-nav').click(
 		  	url = $(this).attr('href'); 
 		  	console.log(url);
 
-		  	setTimeout(function(){
 		  	$('body').removeClass('menu-mobile-open');
 			$('#new-content').load(url, function() { 
 				$("#myBar").removeClass("visible");  // fadeout of the bar loading 
 				load_js()
-			}); // load the html response into a DOM element
-			}, 2000);
-
-			setTimeout(function(){
 				sticky_footer ();
-			}, 3000);
+			}); // load the html response into a DOM element
+
 
 		  } // end conditional 
 
@@ -155,25 +166,6 @@ $('.close-nav').click(
 			  style: 'btn-info',
 			  showSubtext: 'true',
 			  size: 4
-			});
-
-			// Navigation sidebar 
-
-			$('.nav-icon4').click(
-				function(event) {
-				event.preventDefault ( );
-				$(this).toggleClass('open');
-				$('body').toggleClass('menu-mobile-open');
-
-				viewportHeight = $(window).height();
-				navigator_scroll ( );
-			});
-
-			$('.layer-navigator').click(
-				function(event) {
-				event.preventDefault ( );
-				$('.nav-icon4').removeClass('open');
-				$('body').removeClass('menu-mobile-open');
 			});
 
 			// slide toggle dashboard
