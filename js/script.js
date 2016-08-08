@@ -8,6 +8,17 @@ function navigator_scroll ( ) {
 	}
 }
 
+/* inizialization */
+
+load_js()
+
+$('.close-nav').click(
+	function(event) {
+	event.preventDefault ( );
+	$('.nav-icon4').toggleClass('open');
+	$('body').toggleClass('menu-mobile-open');
+});
+
 /* Ajax navigation */
 
 	$('.nav-dashboard a, .list-navigator a').bind('click', function(e) {   
@@ -87,6 +98,8 @@ function navigator_scroll ( ) {
 	  }
 	}
 
+/* inizialization */	
+
 	function load_js() {
 
 		$(document).ready(function( ) {
@@ -127,13 +140,6 @@ function navigator_scroll ( ) {
 				event.preventDefault ( );
 				$('.nav-icon4').removeClass('open');
 				$('body').removeClass('menu-mobile-open');
-			});
-			
-			$('.close-nav').click(
-				function(event) {
-				event.preventDefault ( );
-				$('.nav-icon4').toggleClass('open');
-				$('body').toggleClass('menu-mobile-open');
 			});
 
 			// slide toggle dashboard
