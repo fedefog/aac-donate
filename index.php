@@ -111,7 +111,7 @@ include 'inc/header.php'
 						<li class="dashboard-li">
 							<a href="make-a-donation.php" class="lkn-dashboard">
 								<span class="icon">
-									<img src="images/make-donation-icon.png" width="24" height="25">
+									<img src="images/make-donation-icon.png" width="23" height="27">
 								</span>
 								<span class="text">Make a Donation </span>
 								<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -130,7 +130,7 @@ include 'inc/header.php'
 						<li class="dashboard-li">
 							<a href="vouchers.php" class="lkn-dashboard">
 								<span class="icon">
-									<img src="images/order-voucher-icon.png" width="22" height="21">
+									<img src="images/order-voucher-icon.png" width="24.5" height="20.5">
 								</span>
 								<span class="text">Order Vouchers Books</span>
 								<i class="fa fa-angle-right" aria-hidden="true"></i>
