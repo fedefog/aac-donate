@@ -60,6 +60,8 @@
 		background: #0084B7;
 		color: #fff;
 		padding: 15px 0;
+		position: relative;
+		z-index: 10;
 	}
 	.footer {
 		background: #0084B7;

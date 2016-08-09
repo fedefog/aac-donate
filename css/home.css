@@ -292,12 +292,18 @@
 	}
 	#dashboard {
 		min-height: 510px;
+	    padding-left: 317px;
+	}
+	#new-content {
+	    padding-left: 315px;
 	}
 	.content-nav-desktop {
+		background: #E4E4E4;
 		position: absolute;
-		z-index: 9;
 		top: 102px;
+		min-height: 100%;
 		left: 0;
+		z-index: 9;
 	}
 }	
 @media(min-width:992px){
