@@ -290,6 +290,15 @@
 		padding: 0;
 		width: 315px;
 	}
+	#dashboard {
+		min-height: 510px;
+	}
+	.content-nav-desktop {
+		position: absolute;
+		z-index: 9;
+		top: 102px;
+		left: 0;
+	}
 }	
 @media(min-width:992px){
    
