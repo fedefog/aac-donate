@@ -7,7 +7,7 @@ include 'inc/header.php'
 	
 	<main id="dashboard">
 		
-		<div class="header-fixed">
+		<div class="header-fixed visible-xs" >
 
 	        <header class="header ">
 
@@ -78,13 +78,14 @@ include 'inc/header.php'
 
 	    </div><!-- /header-fixed -->
 
-	    <div class="container-fluid">
+
+	    <div class="container-fluid content-nav-desktop">
 		
 			<div class="row">
 			
 				<div class="col-xs-12">
 				   
-				    <div class="box-daily-updates">
+				    <div class="box-daily-updates visible-xs">
 					    	
 						<a href="#" class="lkn-daily daily-dashboard"> 
 							<span class="date">SEP-14 </span>  ROSH HASHANAH UPDATE 
@@ -97,6 +98,7 @@ include 'inc/header.php'
 				    </div><!-- /box-daily-updates -->
 
 					<ul class="nav-dashboard">
+						
 						<li class="dashboard-li">
 							<a href="transactions.php" class="lkn-dashboard">
 								<span class="icon">

@@ -1,6 +1,6 @@
 <footer id="footer">
 
-	<div class="container-fluid">
+	<div class="container">
 
 		<div class="row">
 			

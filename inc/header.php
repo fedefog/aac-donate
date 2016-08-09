@@ -51,8 +51,82 @@
     </div> 
 
     <section class="section">
+
+        <div class="header-fixed hidden-xs" >
+
+            <header class="header ">
+
+                <div class="container-fluid ">
+                
+                    <div class="row">
+                        
+                        <div class="col-md-4">
+                                
+                            <h1 class="logo-header">
+                                
+                                <a href="#">
+                                    
+                                    <img src="images/logo-aac.svg" alt="">
+
+                                </a>
+
+                            </h1>
+                        
+                        </div><!-- /col -->
+
+                        <div class="col-md-4">
+                        
+                            <div class="box-account-header">
+                                
+                                <div class="box-account">
+                                    
+                                    <h2 class="title">ACCOUNT</h2> 
+                                    
+                                    <h3 class="account-number">A7895</h3>
+                                    
+                                </div><!-- /box-account -->
+
+                                <div class="box-balance">
+                                    
+                                    <h2 class="title">BALANCE</h2>
+
+                                    <h3 class="balance-number">£ 3,344.99</h3>
+
+                                </div><!-- /box-balance -->
+
+                                <div class="box-time">
+                                    
+                                    <h2 class="title">AS OF </h2>
+
+                                    <h3 class="time-number">1 SEP 2016, 2:15PM</h3>
+
+                                </div><!-- /box-time -->
+
+                            </div><!-- /box-account-header -->
+
+                        </div><!-- /col --> 
+
+                        <div class="col-md-4">
+
+                            <a href="#" class="nav-mobile nav-icon4 visible-sm visible-md visible-lg ">
+                                            
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </a>
+                        
+                        </div><!-- /col -->
+
+                    </div><!-- /row  -->    
+                
+                </div><!-- /container  -->
+
+            </header>
+
+        </div><!-- /header-fixed -->
        
 <?
-include 'navigator.php';
+// include 'navigator.php';
 include 'logout-modal.php';
 ?>    
