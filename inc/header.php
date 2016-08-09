@@ -127,6 +127,6 @@
         </div><!-- /header-fixed -->
        
 <?
-// include 'navigator.php';
+include 'navigator.php';
 include 'logout-modal.php';
 ?>    

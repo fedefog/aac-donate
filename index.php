@@ -176,6 +176,15 @@ include 'inc/header.php'
 					<ul class="nav-dashboard">
 						
 						<li class="dashboard-li">
+							<a href="index.php" class="lkn-dashboard">
+								<span class="icon">
+									<img src="images/dashboard-icon.png"  height="23">
+								</span>
+								<span class="text">Dashboard </span>
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li class="dashboard-li">
 							<a href="transactions.php" class="lkn-dashboard">
 								<span class="icon">
 									<img src="images/view-transactions-icon.png" width="18" height="23">
@@ -209,6 +218,33 @@ include 'inc/header.php'
 									<img src="images/order-voucher-icon.png" width="22" height="21">
 								</span>
 								<span class="text">Order Vouchers Books</span>
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li class="dashboard-li">
+							<a href="help.php" class="lkn-dashboard">
+								<span class="icon">
+									<img src="images/help-icon.png" width="20.5" height="20">
+								</span>
+								<span class="text">Help</span>
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li class="dashboard-li">
+							<a href="contact-us.php" class="lkn-dashboard">
+								<span class="icon">
+									<img src="images/contact-icon.png" width="24" height="20.5">
+								</span>
+								<span class="text">Contact Us</span>
+								<i class="fa fa-angle-right" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li class="dashboard-li">
+							<a href="invite-a-friend.php" class="lkn-dashboard">
+								<span class="icon">
+									<img src="images/invite-a-friend-icon.png" width="20.5" height="20">
+								</span>
+								<span class="text">Invite a Friend</span>
 								<i class="fa fa-angle-right" aria-hidden="true"></i>
 							</a>
 						</li>
