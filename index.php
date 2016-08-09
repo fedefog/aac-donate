@@ -6,7 +6,13 @@ include 'inc/header.php'
 <div id="main-container">
 	
 	<main id="dashboard">
-		<h1>desktop</h1>
+		
+		<div class="contenido-desktop-dashboard hidden-xs">
+			
+			<h1>dashboard</h1>
+
+		</div><!-- /contenido-desktop-dashboard -->
+
 		<div class="header-fixed visible-xs" >
 
 	        <header class="header ">
