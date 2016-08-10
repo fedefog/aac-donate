@@ -10,7 +10,7 @@ function navigator_scroll ( ) {
 
 /* inizialization */
 
-var url = 'index.php';
+var url = 'dashboard.php';
 
 // Navigation sidebar 
 $(document).on('click', '.nav-icon4', function(event) {
@@ -50,29 +50,23 @@ load_js()
 	  $("#myBar").addClass("visible"); // Loading bar visibility 
 	  $('.nav-mobile').removeClass("open");
 
-	  if ( url == 'index.php' ) {
+	  if ( url == 'dashboard.php' ) {
 
-		  $('#new-content').addClass("absolute"); // add class absolute for make the animation of the new content 
 		  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
 
 		  url = $(this).attr('href'); 
 		  console.log(url);
 
+		  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
+
 		  setTimeout(function(){
 		  	$('body').removeClass('menu-mobile-open');
-			$('#new-content').load(url, function() { 
+			$('#main-container').load(url, function() { 
 				$("#myBar").removeClass("visible");  // fadeout of the bar loading 
-				$('#main-container').addClass('to-left'); // Animate main container to left
 				load_js()
+				sticky_footer ();
 			}); // load the html response into a DOM element
 			}, 2000);
-
-		  	setTimeout(function(){
-				$('main#dashboard').addClass("absolute"); // add class absolute for make the animation of the new content 
-				$('#main-container').removeClass('to-left'); // Remove class animation to left
-				sticky_footer ();
-				$('#new-content').removeClass('absolute'); // remove class absolute from new content to navigate well the new content loaded. 
-			}, 3000);
 
 		  } else {
 
@@ -80,7 +74,7 @@ load_js()
 		  	console.log(url);
 
 		  	$('body').removeClass('menu-mobile-open');
-			$('#new-content').load(url, function() { 
+			$('#main-container').load(url, function() { 
 				$("#myBar").removeClass("visible");  // fadeout of the bar loading 
 				load_js()
 				sticky_footer ();
@@ -98,27 +92,30 @@ load_js()
 
 		event.preventDefault(); // stop the browser from following the link  
 
-		if ( url == 'index.php') {
+		if ( url == 'dashboard.php') {
 			event.preventDefault();
 			// alert('nada')
-		}else {
+		} else {
+
+			progress_bar()      
+  			$("#myBar").addClass("visible"); // Loading bar visibility 
+
+  			$("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
 
 			url = $(this).attr('href'); 
 		    console.log(url);
 
-			$("html, body").animate({ // Animation to top of window
-			  scrollTop:0
-			}, "fast", 
-			    function(){
-			    	$('#main-container').addClass('to-right'); // Add class to animate main container to right
-			    } 
-			);
+		    setTimeout(function(){
+		    $('#main-container').load(url, function() { 
+				$("#myBar").removeClass("visible");  // fadeout of the bar loading 
+				$('body').removeClass(); // Remove all classes from body (this works for pages like make a donation or vouchers where the footer and CTA is fixed )
+				load_js()
+				sticky_footer ();
+			}); // load the html response into a DOM element
+			}, 2000);
 
 			setTimeout(function(){
-				$('#main-container').removeClass(); // Remove all classes from main container 
-				$('main#dashboard').removeClass('absolute'); // remove class absolute from main dashboard to navigate well the new content loaded.  
-				$('#new-content').empty(); // Delete all content from inside new content div container 
-				$('body').removeClass(); // Remove all classes from body (this works for pages like make a donation or vouchers where the footer and CTA is fixed )
+				
 			}, 1000);
 		}
 	});

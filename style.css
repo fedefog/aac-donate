@@ -334,10 +334,6 @@ background: #fff;
 body.sticky-footer main {
 	padding-bottom: 140px;
 }
-body.sticky-footer .sticky-to-footer {
-	-webkit-animation: 0.5s ease-in-out 0s normal 1 fadein forwards;
-    animation: 0.5s ease-in-out 0s normal 1 fadein forwards;
-}
 .sticky-to-footer {
 	position: fixed;
 	width: 100%;

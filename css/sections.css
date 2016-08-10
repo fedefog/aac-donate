@@ -894,7 +894,6 @@
 		text-align: center;
 		display: block;
 		padding: 20px 0;
-		opacity: 0;
 		font-weight: 600;
 		font-size: 16px;
 		color: #00ADEE;
@@ -1427,7 +1426,6 @@
 		letter-spacing: 0.43px;
 		margin-top: 20px;
 		padding: 23px 0;
-		opacity: 0;
 	}
 	.lkn-order-vouchers.disabled {
 		color: #DFDDDD;

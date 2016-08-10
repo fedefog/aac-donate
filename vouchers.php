@@ -13,7 +13,7 @@
 						
 						<div class="col-xs-2">
 								
-							<a href="index.php" class="go-back">
+							<a href="dashboard.php" class="go-back">
 								
 								<i class="fa fa-angle-left" aria-hidden="true"></i>
 
@@ -403,5 +403,3 @@
 	<a href="#" class="sticky-to-footer lkn-order-vouchers disabled">Order Vouchers</a>
 	
 </main>	
-
-<? include 'inc/footer-inner.php' ?>

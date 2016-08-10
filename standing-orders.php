@@ -13,7 +13,7 @@
 						
 						<div class="col-xs-2">
 								
-							<a href="index.php" class="go-back">
+							<a href="dashboard.php" class="go-back">
 								
 								<i class="fa fa-angle-left" aria-hidden="true"></i>
 
@@ -209,8 +209,6 @@
 	</div><!-- /container-fluid -->
 
 </main>	
-
-<? include 'inc/footer-inner.php' ?>
 
 <div class="modal-search modal fade" id="modal-search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				  

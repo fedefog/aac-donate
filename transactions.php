@@ -13,7 +13,7 @@
 						
 						<div class="col-xs-3">
 								
-							<a href="index.php" class="go-back">
+							<a href="dashboard.php" class="go-back">
 								
 								<i class="fa fa-angle-left" aria-hidden="true"></i>
 
@@ -484,8 +484,6 @@
 		</div><!-- /row -->
 		
 	</div><!-- /container-fluid -->
-
-	<? include 'inc/footer-inner.php' ?>
 
 </main>	
 

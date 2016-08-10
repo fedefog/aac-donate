@@ -1,4 +1,4 @@
-	<footer  class="hidden-xs footer" >
+	<footer id="footer">
 
 		<div class="container-fluid">
 
