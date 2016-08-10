@@ -1713,7 +1713,6 @@
 
 }	
 @media(min-width:768px){
-<<<<<<< HEAD
 	.table > thead > tr > th {
 		border-top:1px solid #E2E2E5!important;
 		border-bottom:1px solid #E2E2E5; 
@@ -1724,7 +1723,6 @@
 	.table .amount-td, .table .type-td {
 		text-align: center;
 	}
-=======
 	.title-transactions-desktop {
 		font-weight: 500;
 		font-size: 20px;
