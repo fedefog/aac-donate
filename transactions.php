@@ -329,7 +329,6 @@
   </div><!-- /modal-dialog -->
 
 </div><!-- /modal-search -->
-
 <div class="modal-backdrop fade sort-back"></div>
 
 
