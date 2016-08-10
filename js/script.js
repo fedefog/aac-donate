@@ -42,7 +42,7 @@ load_js()
 
 	
 
-	$(document).on('click', '.nav-dashboard a, .anim-li a', function(event) {
+	$(document).on('click', '.nav-dashboard a, .anim-li a, .pending-bt', function(event) {
 
 		  event.preventDefault(); // stop the browser from following the link  
 

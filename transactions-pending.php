@@ -1,8 +1,3 @@
-<?
-$section = '';
-include 'inc/header.php'
-?>
-	
 <main class="main-transactions main-transactions-pending" >
 	
 	<div class="header-fixed">
@@ -17,7 +12,7 @@ include 'inc/header.php'
 						
 						<div class="col-xs-3">
 								
-							<a href="index.php" class="go-back">
+							<a href="dashboard.php" class="go-back">
 								
 								<i class="fa fa-angle-left" aria-hidden="true"></i>
 
@@ -240,4 +235,3 @@ include 'inc/header.php'
 <? include 'inc/voucher-modal.php' ?>
 <? include 'inc/standing-order-donation.php' ?>
 <? include 'inc/company-donation-modal.php' ?>
-<? include 'inc/footer.php'?>
