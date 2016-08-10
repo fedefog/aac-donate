@@ -1,7 +1,7 @@
 <table class="table-transactions table table-condensed">
 						
 	<tbody>
-		<tr>
+		<tr class="balance-down">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
 					<div class="date">1-7-16</div>
@@ -24,8 +24,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+						<i class="fa fa-caret-up" aria-hidden="true"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-down">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<div class="date">24-6-16</div>
@@ -48,8 +63,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+						<i class="fa fa-caret-up" aria-hidden="true"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-down">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-voucher-book" >
 					<div class="date">14-6-16</div>
@@ -71,8 +101,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+						<i class="fa fa-caret-up" aria-hidden="true"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-down">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-comision" >
 					<div class="date">12-6-16</div>
@@ -94,8 +139,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+						<i class="fa fa-caret-up" aria-hidden="true"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-down">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
 					<div class="date">9-6-16</div>
@@ -117,8 +177,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+						<i class="fa fa-caret-up" aria-hidden="true"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-down">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-give-as-you-earn" >
 					<div class="date">1-6-16</div>
@@ -140,8 +215,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+						<i class="fa fa-caret-up" aria-hidden="true"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-down">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-online-donation" >
 					<div class="date">1-6-16</div>
@@ -164,8 +254,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+						<i class="fa fa-caret-up" aria-hidden="true"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-down">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 					<div class="date">1-6-16</div>
@@ -187,8 +292,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+						<i class="fa fa-caret-up" aria-hidden="true"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-down">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-company-donation" >
 					<div class="date">1-6-16</div>
@@ -210,8 +330,24 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+						<i class="fa fa-caret-up" aria-hidden="true"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions"></a>
+			</td>
 		</tr>
-		<tr>
+
+		<tr class="balance-down">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-charity-donation" >
 					<div class="date">1-6-16</div>
@@ -233,8 +369,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+						<i class="fa fa-caret-up" aria-hidden="true"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-down">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 					<div class="date">1-6-16</div>
@@ -256,8 +407,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+						<i class="fa fa-caret-up" aria-hidden="true"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-down">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
 					<div class="date">1-7-16</div>
@@ -280,6 +446,21 @@
 						<i class="fa fa-caret-right" aria-hidden="true"></i>
 					</span>
 				</a>
+			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+						<i class="fa fa-caret-up" aria-hidden="true"></i>
+						<i class="fa fa-caret-down" aria-hidden="true"></i>
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>							
 	</tbody>
