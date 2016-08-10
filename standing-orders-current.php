@@ -1,5 +1,3 @@
-
-			   
 <table class="table-transactions table-standing-orders table table-condensed">
 
 	<tbody>
