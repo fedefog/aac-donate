@@ -30,7 +30,7 @@ include 'inc/header.php'
 			<ul class="nav-dashboard">
 				
 				<li class="dashboard-li">
-					<a href="index.php" class="lkn-dashboard dif-bg">
+					<a href="dashboard.php" class="lkn-dashboard dif-bg">
 						<span class="icon">
 							<img src="images/dashboard-icon.png"  height="23">
 						</span>
