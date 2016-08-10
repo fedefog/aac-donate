@@ -84,7 +84,7 @@
     		<div class="col-md-6">
 				
 				<h2 class="title-transactions-desktop">Transactions</h2>
-				
+
     			<ul class="nav-transactions">
 	                		
             		<li class="nav-transactions-li">
@@ -109,16 +109,16 @@
 
     		</div><!-- / col 6 -->
 
-    		<div class="col-md-6">
-    			<a href="">EXPORT DATA TO CSV FILE</a>
-    			<a href="">EXPORT DATA TO XLS FILE</a>
+    		<div class="col-md-6 text-right">
+    			<a href="#" class="expert-csv-file">EXPORT DATA TO CSV FILE</a>
+    			<a href="#" class="expert-xls-file">EXPORT DATA TO XLS FILE</a>
     		</div><!-- / col 6 -->
 
 		</div><!-- / row -->
 
     </div>
 
-    <div class="container top-center-content">
+    <div class="container-fluid top-center-content">
 
     	<div class="row">
 
@@ -150,7 +150,7 @@
 							
 					<li class="navigator-transactions-li">
 						
-						<a href="#" class="navigator-transactions-lkn active">RECENT</a>
+						<a href="#" class="navigator-transactions-lkn lkn-recent active">RECENT</a>
 
 					</li>
 
@@ -162,14 +162,14 @@
 
 					<li class="navigator-transactions-li">
 						
-						<a href="#" class="navigator-transactions-lkn" data-toggle="modal" data-target="#modal-search" >SEARCH</a>
+						<a href="#" class="navigator-transactions-lkn lkn-search" data-toggle="modal" data-target="#modal-search" >SEARCH</a>
 
 					</li>
 
-					<li class="navigator-transactions-li">
+					<li class="navigator-transactions-li navigator-transactions-sortby ">
 						
 						<a href="#" class="navigator-transactions-lkn lkn-sortby">
-							
+							<span class="text hidden-xs">SORT BY</span>
 							<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
 
 						</a>
