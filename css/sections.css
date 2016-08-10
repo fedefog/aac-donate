@@ -7,7 +7,41 @@
 
 /* DASHBOARD */
 
-
+/*  table transactoion */
+.table-transactions.table > tbody > tr > td {
+	vertical-align: middle;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.table-transactions.table > tbody > tr{
+	padding: 0 15px	;
+}
+.table-transactions.table > tbody > tr > td {
+	border-top: 0;
+	border-bottom: 1px solid #E2E2E5;
+}
+.balance-transition i {
+	margin-left: 8px;
+	font-size: 17px;
+}
+.balance-down .balance-transition  {
+	color: #00ADEE;	
+}
+.balance-up .balance-transition  {
+	color: #97D361;
+}
+.balance-pending .balance-transition  {
+	color: #F76980;
+}
+.balance-pending .fa-caret-up, .balance-pending .fa-caret-down {
+	display: none;
+}
+.balance-down .fa-caret-up {
+	display: none;
+}
+.balance-up .fa-caret-down {
+	display: none;
+}
 /* MODAL SEARCH */
 
 .modal-search .modal-header{
@@ -421,18 +455,7 @@
 		float: left;
 		margin: 0 0 40px 0;
 	}
-	.table-transactions.table > tbody > tr > td {
-		vertical-align: middle;
-		padding-top: 10px;
-		padding-bottom: 10px;
-	}
-	.table-transactions.table > tbody > tr{
-		padding: 0 15px	;
-	}
-	.table-transactions.table > tbody > tr > td {
-		border-top: 0;
-		border-bottom: 1px solid #E2E2E5;
-	}
+	
 	.table-transactions .desc-table .title {
 		color: #333333;
 		font-weight: 600;
@@ -468,28 +491,7 @@
 		font-weight: 600;
 		margin-right: 10px;
 	}
-	.balance-transition i {
-		margin-left: 8px;
-		font-size: 17px;
-	}
-	.balance-down .balance-transition  {
-		color: #00ADEE;	
-	}
-	.balance-up .balance-transition  {
-		color: #97D361;
-	}
-	.balance-pending .balance-transition  {
-		color: #F76980;
-	}
-	.balance-pending .fa-caret-up, .balance-pending .fa-caret-down {
-		display: none;
-	}
-	.balance-down .fa-caret-up {
-		display: none;
-	}
-	.balance-up .fa-caret-down {
-		display: none;
-	}
+	
 	.daterangepicker {
 		padding: 0px;
 		width: 92%;

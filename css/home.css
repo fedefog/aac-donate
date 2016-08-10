@@ -306,6 +306,7 @@
 	#new-content {
 	    padding-left: 315px;
 	}
+
 	.content-nav-desktop {
 		background: #F3F3F3;
 		position: absolute;
@@ -315,33 +316,82 @@
 		z-index: 9;
 		border-right: 1px solid #DADADA;
 	}
+	.table > thead > tr > th {
+		text-align: center;
+	}
+	.content-desktop-dashboard .top-content {
+		padding-top: 30px;
+	    padding-bottom: 15px;
+	    float: left;
+	    width: 100%;
+		
+	}
+	.line {
+		height: 1px;
+		background: #E2E2E5;
+		float: left;
+		width: 100%;
+	}
 	.content-desktop-dashboard h1 {
 		font-size: 22px;
 		color:#838383;
 		font-weight: 300;
     	letter-spacing: 0.5px;
     	float: left;
+    	margin: 0;
 	}
-	.content-desktop-dashboard .date {
-		font-size: 14px;
+	.top-content .date {
 		font-weight: 300;
-		margin-top: 20px;
+		font-size: 14px;
+		color: #838383;
+		letter-spacing: 1.46px;
+		text-align: right;
+		margin-top: 3px;
 	}
-	.top-content .line {
-		width: 100%;
-		border-bottom: 1px solid #CCC;
-		height: 1px;
-		clear: both;
+	.content-desktop-dashboard .table .date {
+	    background: #F7F7F7;
+	    border-radius: 3px;
+	    color: #727272;
+	    height: 37px;
+	    line-height: 37px;
+	    text-align: center;
+		font-weight: 300;
 	}
+	
+	.content-desktop-dashboard .title-dashborad-desktop {
+    	
+		font-weight: 500;
+		font-size: 20px;
+		color: #9B9B9B;
+		letter-spacing: 0.54px;
+		margin: 20px 0 20px 0;
+	}
+	
 	.content-desktop-dashboard {
 		padding-left: 30px;
 		padding-right: 30px;
 	}
-	.content-desktop-dashboard h2 {
-		font-size: 20px;
+	.content-desktop-dashboard .title {
+    	color: #333333;
+		font-weight: 600;
+		font-size: 14px;
 		letter-spacing: 0.5px;
-		color:#838383;
+		margin: 2px 0 10px 0;
 	}
+	.content-desktop-dashboard .subtitle {
+	    margin: 0;
+	    font-weight: 400;
+	    font-size: 10px;
+	    color: #333333;
+	    letter-spacing: 0.27px;
+	}
+	.balance-transition {
+	    text-align: right;
+	    display: block;
+	    font-weight: 600;
+	    margin-right: 10px;
+	}
+
 	.latest-update-desktop {
 		background: #F2F2F2;
 		padding: 30px;
@@ -351,6 +401,40 @@
 		border: 1px solid #DADADA;
 		padding: 30px;
 		border-radius: 5px;
+	}
+	.type-transactions {
+		font-weight: 400;
+		font-size: 11px;
+		color: #FFFFFF;
+		letter-spacing: 0.56px;
+		border-radius: 3px;
+		padding: 2px 4px;
+		display: inline-block;
+		text-align: center;
+		margin: 0;
+	}
+	.transactions-standing {
+		background: #00ADEE;
+	}
+	.view-more-transactions {
+		background: transparent;
+		display: block;
+		border: 1px solid #00ADEE;
+		border-radius: 5px;
+		font-weight: 500;
+		font-size: 14px;
+		color: #878787;
+		margin: 0 auto;
+		letter-spacing: 0.37px;
+		padding: 11px 0;
+		width: 253px;
+	}
+
+	.view-more-transactions:hover {
+		background: #00ADEE;
+		border: 1px solid #00ADEE;
+
+		color: #fff;
 	}
 }	
 @media(min-width:992px){

@@ -11,11 +11,15 @@ include 'inc/header.php'
 
 			<div class="row">
 				
-				<div class="col-md-12 top-content">
+				<div class="col-md-12 ">
+					
+					<div class="top-content">
+						
+						<h1>Welcome to your account, David.</h1>
+						<div class="date pull-right">FRIDAY 1 SEP 2016, 2:15PM</div>
 
-					<h1>Welcome to your account, David.</h1>
-					<div class="date pull-right">FRIDAY 1 SEP 2016, 2:15PM</div>
-
+					</div>
+					
 					<div class="line"></div>
 
 				</div><!-- col 12 -->
@@ -26,7 +30,7 @@ include 'inc/header.php'
 				
 				<div class="col-md-6">
 
-					<h2>Latest Transactions</h2>
+					<h2 class="title-dashborad-desktop">Latest Transactions</h2>
 
 					<table class="table-transactions table table-condensed">
 						<thead> 
@@ -41,7 +45,7 @@ include 'inc/header.php'
 							<tr>
 								<td>
 									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
-										<div class="date">1-7-16</div>
+										<div class="date">9-6</div>
 									</a>
 								</td>
 								<td>
@@ -62,27 +66,28 @@ include 'inc/header.php'
 									</a>
 								</td>
 								<td>
-									STANDING ORDER
+									<p class="type-transactions transactions-standing">STANDING  ORDER</p>
+									
 								</td>
 							</tr>							
 						</tbody>
 
 					</table>
 
-					<a href="" class="btn btn-primary view-more-transactions">View More Transactions</a>
+					<a href="" class="btn btn-primary view-more-transactions transition">View More Transactions</a>
 
 				</div><!-- col 6 -->
 
 				<div class="col-md-6">
 
-					<h2>Latest Updates</h2>
+					<h2 class="title-dashborad-desktop" >Latest Updates</h2>
 
 					<div class="latest-update-desktop">
 						SEP-14   ROSH HASHANAH UPDATE
 						<p>The office will be closed Monday September 21 to Thursday the 24th. Please ensure all transactions are dealt with as soon as possible to avoid any issues given the high demand. Wishing everyone a ksiva v'chasima tova.  <a href="">READ MORE</a></p>
 					</div>
 
-					<h2>Quick Donation</h2>
+					<h2 class="title-dashborad-desktop">Quick Donation</h2>
 
 					<form id="quick-donation">
 					  <div class="form-group">
