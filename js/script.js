@@ -74,12 +74,14 @@ load_js()
 			  	url = $(this).attr('href'); 
 			  	console.log(url);
 
-			  	$('body').removeClass('menu-mobile-open');
-				$('#main-container').load(url, function() { 
-					$("#myBar").removeClass("visible");  // fadeout of the bar loading 
-					load_js()
-					sticky_footer ();
-				}); // load the html response into a DOM element
+			  	setTimeout(function(){
+			  		$('body').removeClass('menu-mobile-open');
+					$('#main-container').load(url, function() { 
+						$("#myBar").removeClass("visible");  // fadeout of the bar loading 
+						load_js()
+						sticky_footer ();
+					}); // load the html response into a DOM element
+				}, 2000);
 
 
 			  } // end conditional 
