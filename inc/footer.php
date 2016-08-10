@@ -22,6 +22,18 @@
 						</li>
 					</ul>	
 
+					<ul class="list-footer-desktop hidden-xs">
+						<li class="footer-desktop-li">
+							<a href="#">HELP</a>
+						</li>
+						<li class="footer-desktop-li">
+							<a href="#">INVITE A FREIND</a>
+						</li>
+						<li class="footer-desktop-li">
+							<a href="#">CONTACT US</a>
+						</li>
+					</ul>
+
 				</div><!-- /col -->
 
 			</div><!-- /row -->

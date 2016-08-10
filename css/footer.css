@@ -76,6 +76,18 @@
 		letter-spacing: 0.57px;
 		line-height: 18px;
 	}
+	.list-footer-desktop {
+		float: right;
+		margin-top: 22px;
+		font-size: 13px;
+	}
+	.list-footer-desktop li {
+		display: inline-block;
+	}
+	.list-footer-desktop li a {
+		color: #7FC1DA;
+		padding: 0 10px;
+	}
 }
 @media(min-width:992px){
    
