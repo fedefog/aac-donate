@@ -111,7 +111,7 @@
 				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>
-		<tr >
+		<tr class="balance-up" >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-comision" >
 					<div class="date">12-6-16</div>
@@ -147,7 +147,7 @@
 				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>
-		<tr >
+		<tr class="balance-up" >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
 					<div class="date">9-6-16</div>
@@ -183,7 +183,7 @@
 				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>
-		<tr >
+		<tr class="balance-up" >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-give-as-you-earn" >
 					<div class="date">1-6-16</div>
@@ -292,7 +292,7 @@
 				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>
-		<tr >
+		<tr class="balance-up" >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-company-donation" >
 					<div class="date">1-6-16</div>
@@ -329,7 +329,7 @@
 			</td>
 		</tr>
 
-		<tr >
+		<tr class="balance-up" >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-charity-donation" >
 					<div class="date">1-6-16</div>
@@ -365,7 +365,7 @@
 				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>
-		<tr >
+		<tr class="balance-up" >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 					<div class="date">1-6-16</div>
@@ -401,7 +401,7 @@
 				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>
-		<tr >
+		<tr class="balance-pending" >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
 					<div class="date">1-7-16</div>
