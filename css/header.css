@@ -335,6 +335,7 @@
   }	
   .lkn-logout {
     border-bottom: none;
+    border-top: 1px solid #DADADA;
   }
 }
 @media(min-width:992px){

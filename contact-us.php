@@ -115,6 +115,3 @@
 	</a>	
 	
 </main>	
-
-
-<? include 'inc/footer-inner.php' ?>

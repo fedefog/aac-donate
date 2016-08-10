@@ -270,5 +270,3 @@
 	</div><!-- /container-fluid -->
 
 </main>	
-
-<? include 'inc/footer-inner.php' ?>

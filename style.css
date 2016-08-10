@@ -390,6 +390,7 @@ body.sticky-footer main {
 		padding-bottom: 30px;
 		background: #FFF;
 		border-left: 1px solid #DADADA;
+		min-height: 700px;
 	}
 	.modal.fade .modal-dialog { 
 		width: 413px;
