@@ -1747,6 +1747,9 @@
 	.main-transactions {
 		padding-top: 30px;
 	}
+	.table-transactions  {
+		margin-top: 15px;
+	}
 	.title-transactions-desktop {
 		font-weight: 500;
 		margin: 0;
@@ -1869,6 +1872,9 @@
 	}
 	.table-transactions .desc-table .title {
 		margin-bottom: 10px;
+	}
+	.header-table-transactions {
+		margin-top: 20px;
 	}
 }
 @media(min-width:992px){

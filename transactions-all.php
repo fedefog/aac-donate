@@ -1,5 +1,6 @@
 <table class="table-transactions table table-condensed">
-	<thead> 
+	
+	<thead class="hidden-xs "> 
 		<tr>
 			<th>DATE</th>
 			<th>DESCRIPTION</th>
