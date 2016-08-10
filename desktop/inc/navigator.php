@@ -43,7 +43,7 @@
 
 					<li class="navigator-li">
 
-						<a href="index.php" class="navigator-lkn">
+						<a href="dashboard.php" class="navigator-lkn">
 
 							<span class="icon">
 								<img src="./images/dashboard-icon.png" width="22" height="20">
