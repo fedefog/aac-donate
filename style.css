@@ -383,6 +383,11 @@ body.sticky-footer main {
 	#main-container {
 		padding-left: 315px;
 	}
+	.content-desktop {
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 30px;
+	}
 	.modal.fade .modal-dialog { 
 		width: 413px;
 	}

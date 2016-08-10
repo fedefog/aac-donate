@@ -33,6 +33,15 @@
 .balance-pending .balance-transition  {
 	color: #F76980;
 }
+.balance-down .type-transactions {
+	background: #00ADEE;
+}
+.balance-up .type-transactions {
+	background: #97D361;
+}
+.balance-pending .type-transactions {
+	background: #F76980;
+}
 .balance-pending .fa-caret-up, .balance-pending .fa-caret-down {
 	display: none;
 }
@@ -1755,7 +1764,6 @@
 		color: #fff;
 	}
 
->>>>>>> 991ab68a264e1fd7c76e1f4e52b87631de353b45
 }
 @media(min-width:992px){
    
