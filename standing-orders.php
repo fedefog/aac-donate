@@ -77,7 +77,7 @@
 		
 			<div class="col-xs-12">
 
-				<div class="container-table">
+				<div class="container-table ajax-standing">
 			   
 				   <? include 'standing-orders-current.php' ?>
 				

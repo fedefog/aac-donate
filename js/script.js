@@ -12,6 +12,7 @@ function navigator_scroll ( ) {
 
 var url = 'dashboard.php';
 var transaction = 'transactions-all.php';
+var standing = 'standing-orders-current.php';
 
 
 // Navigation sidebar 
@@ -39,39 +40,69 @@ load_js()
 
 /* Ajax navigation */
 	
-	$(document).on('click', '.nav-transactions a', function(event) {
+	$(document).on('click', '.nav-standing-orders-li a', function(event) {
 
-		  event.preventDefault(); // stop the browser from following the link  
+	  event.preventDefault(); // stop the browser from following the link  
 
-		  if ( $(this).attr('href') == transaction ){
-		  	alert('estas en el mismo')
+	  if ( $(this).attr('href') == standing ){
+	  	// do nothing 
+	  }else{
+	  	progress_bar();
 
-		  }else{
-		  	progress_bar();
+			  $("#myBar").addClass("visible"); // Loading bar visibility 
+			  $('.nav-mobile').removeClass("open");
 
-				  $("#myBar").addClass("visible"); // Loading bar visibility 
-				  $('.nav-mobile').removeClass("open");
+			  var thisnav= $(this);
 
-				  var thisnav	= $(this);
-				  // $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
+			  standing = $(this).attr('href'); 
+			  console.log(standing);
 
-				  transaction = $(this).attr('href'); 
-				  console.log(transaction);
+			  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
 
-				  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
-
-				  setTimeout(function(){
-				  	// $('body').removeClass('menu-mobile-open');
-					$('.ajax-transaction').load(transaction, function() { 
-					  $('.nav-transactions a').removeClass('active')
+			  setTimeout(function(){
+					$('.ajax-standing').load(standing, function() { 
+					  $('.nav-standing-orders-li a').removeClass('active')
 					  $(thisnav).addClass('active');
 						$("#myBar").removeClass("visible");  // fadeout of the bar loading 
 						load_js()
 						sticky_footer ();
 					}); // load the html response into a DOM element
-  				}, 2000);
-			  }
-		});
+				}, 2000);
+		  }
+	});
+
+	$(document).on('click', '.nav-transactions a', function(event) {
+
+	  event.preventDefault(); // stop the browser from following the link  
+
+	  if ( $(this).attr('href') == transaction ){
+	  	// do nothing 
+	  }else{
+	  	progress_bar();
+
+			  $("#myBar").addClass("visible"); // Loading bar visibility 
+			  $('.nav-mobile').removeClass("open");
+
+			  var thisnav	= $(this);
+			  // $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
+
+			  transaction = $(this).attr('href'); 
+			  console.log(transaction);
+
+			  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
+
+			  setTimeout(function(){
+			  	// $('body').removeClass('menu-mobile-open');
+				$('.ajax-transaction').load(transaction, function() { 
+				  $('.nav-transactions a').removeClass('active')
+				  $(thisnav).addClass('active');
+					$("#myBar").removeClass("visible");  // fadeout of the bar loading 
+					load_js()
+					sticky_footer ();
+				}); // load the html response into a DOM element
+				}, 2000);
+		  }
+	});
 
 /* Navigation from dashboard  */
 	
@@ -85,6 +116,7 @@ load_js()
 		  $("#myBar").addClass("visible"); // Loading bar visibility 
 		  $('.nav-mobile').removeClass("open");
 		  transaction = 'transactions-all.php';
+		  standing = 'standing-orders-current.php';
 
 		  if ( url == 'dashboard.php' ) {
 
@@ -130,6 +162,7 @@ load_js()
 
 		event.preventDefault(); // stop the browser from following the link  
 		transaction = 'transactions-all.php';
+		standing = 'standing-orders-current.php';
 		if ( url == 'dashboard.php') {
 			event.preventDefault();
 			// alert('nada')
