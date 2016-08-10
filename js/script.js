@@ -42,48 +42,49 @@ load_js()
 
 	
 
-	$('.nav-dashboard a, .anim-li a').bind('click', function(e) {   
+	$(document).on('click', '.nav-dashboard a, .anim-li a', function(event) {
 
-	  e.preventDefault(); // stop the browser from following the link  
+		  event.preventDefault(); // stop the browser from following the link  
 
-	  progress_bar()      
-	  $("#myBar").addClass("visible"); // Loading bar visibility 
-	  $('.nav-mobile').removeClass("open");
+		  progress_bar();
 
-	  if ( url == 'dashboard.php' ) {
+		  $("#myBar").addClass("visible"); // Loading bar visibility 
+		  $('.nav-mobile').removeClass("open");
 
-		  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
+		  if ( url == 'dashboard.php' ) {
 
-		  url = $(this).attr('href'); 
-		  console.log(url);
+			  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
 
-		  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
+			  url = $(this).attr('href'); 
+			  console.log(url);
 
-		  setTimeout(function(){
-		  	$('body').removeClass('menu-mobile-open');
-			$('#main-container').load(url, function() { 
-				$("#myBar").removeClass("visible");  // fadeout of the bar loading 
-				load_js()
-				sticky_footer ();
-			}); // load the html response into a DOM element
-			}, 2000);
+			  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
 
-		  } else {
+			  setTimeout(function(){
+			  	$('body').removeClass('menu-mobile-open');
+				$('#main-container').load(url, function() { 
+					$("#myBar").removeClass("visible");  // fadeout of the bar loading 
+					load_js()
+					sticky_footer ();
+				}); // load the html response into a DOM element
+				}, 2000);
 
-		  	url = $(this).attr('href'); 
-		  	console.log(url);
+			  } else {
 
-		  	$('body').removeClass('menu-mobile-open');
-			$('#main-container').load(url, function() { 
-				$("#myBar").removeClass("visible");  // fadeout of the bar loading 
-				load_js()
-				sticky_footer ();
-			}); // load the html response into a DOM element
+			  	url = $(this).attr('href'); 
+			  	console.log(url);
+
+			  	$('body').removeClass('menu-mobile-open');
+				$('#main-container').load(url, function() { 
+					$("#myBar").removeClass("visible");  // fadeout of the bar loading 
+					load_js()
+					sticky_footer ();
+				}); // load the html response into a DOM element
 
 
-		  } // end conditional 
+			  } // end conditional 
 
-	});
+		});
 
 	
 
@@ -149,6 +150,7 @@ load_js()
 /* inizialization main function */	
 
 	function load_js() {
+
 
 		$(document).ready(function( ) {
 
