@@ -301,12 +301,7 @@
 	}
 	#dashboard {
 		min-height: 510px;
-	    padding-left: 317px;
 	}
-	#new-content {
-	    padding-left: 315px;
-	}
-
 	.content-nav-desktop {
 		background: #F3F3F3;
 		position: absolute;

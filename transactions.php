@@ -1,7 +1,7 @@
 
 <main class="main-transactions">
 	
-	<div class="header-fixed">
+	<div class="header-fixed visible-xs">
 
         <header class="header ">
 
@@ -77,13 +77,52 @@
 
     </div><!-- /header-fixed -->
 
+    <div id="transactions-navigation-desktop" class="hidden-xs">
+
+    	<div class="row">
+
+    		<div class="col-md-6">
+
+    			<ul class="nav-transactions">
+	                		
+            		<li class="nav-transactions-li">
+            		
+            			<a href="transactions-all.php" class="nav-transactions-lkn active">all</a>
+            		
+            		</li>
+
+            		<li class="nav-transactions-li">
+            		
+            			<a href="transactions-in.php" class="nav-transactions-lkn">in</a>
+            		
+            		</li>
+
+            		<li class="nav-transactions-li">
+            		
+            			<a href="transactions-out.php" class="nav-transactions-lkn">out</a>
+            		
+            		</li>
+
+            	</ul>
+
+    		</div><!-- / col 6 -->
+
+    		<div class="col-md-6">
+    			<a href="">EXPORT DATA TO CSV FILE</a>
+    			<a href="">EXPORT DATA TO XLS FILE</a>
+    		</div><!-- / col 6 -->
+
+		</div><!-- / row -->
+
+    </div>
+
     <div class="container top-center-content">
 
     	<div class="row">
 
     		<div class="col-xs-12">
 	
-				<div class="box-account-header">
+				<div class="box-account-header visible-xs">
 									
 					<div class="box-account">
 						
@@ -103,7 +142,7 @@
 
 				</div><!-- /box-account-header -->
 
-				<h3 class="time-update">AS OF <strong>1 SEP 2016, 2:15PM</strong></h3>
+				<h3 class="time-update visible-xs">AS OF <strong>1 SEP 2016, 2:15PM</strong></h3>
 
 				<ul class="navigator-transactions">
 							

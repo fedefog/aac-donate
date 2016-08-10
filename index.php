@@ -102,17 +102,15 @@ include 'inc/header.php'
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</a>
 				</li>
-				<li class="dashboard-li">
-					<a href="#" class="lkn-logout" data-toggle="modal" data-target="#modal-logout">
+				<a href="#" class="lkn-logout" data-toggle="modal" data-target="#modal-logout">
 
-						<span class="icon">
-							<i class="fa fa-sign-out" aria-hidden="true"></i>
-						</span>
+					<span class="icon">
+						<i class="fa fa-sign-out" aria-hidden="true"></i>
+					</span>
 
-						<span class="text">Logout</span>
+					<span class="text">Logout</span>
 
-					</a>
-				</li>
+				</a>
 			</ul>
 		
 		</div><!-- /col -->
