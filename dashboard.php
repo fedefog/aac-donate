@@ -215,26 +215,35 @@
 
 					<h2 class="title-dashborad-desktop">Quick Donation</h2>
 
-					<form id="quick-donation">
+					<form id="quick-donation" class="make-donation">
 					  <div class="form-group">
 					    <label for="beneficiary">BENEFICIARY</label>
-					    <input type="email" class="form-control" id="" placeholder="GGBH">
+					    <select  title="Please select a Beneficiary" class="form-control selectpicker beneficiary-select select-1" data-style="btn-danger">
+						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
+						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
+						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
+						</select>
 					  </div>
 					  <div class="form-group">
 					    <label for="amount">Amount</label>
 					    <div class="row">
 						    <div class="col-xs-9">
-						    	<input type="text" class="form-control" id="" placeholder="3,989.00">
+						    	<input type="text" class="form-control input-text" id="" placeholder="3,989.00">
 							</div>
 							<div class="col-xs-3">
-						    	<input type="text" class="form-control" id="" placeholder="3,989.00">
+						    	<select class="form-control selectpicker">
+								  <option>USD</option>
+								  <option>GBP</option>
+								  <option>£</option>
+								  
+								</select>
 							</div>
 						</div>
 					  </div>
 					  <div class="form-group">
-					  	<a href="">+  ADD NOTES TO CHARITY</a>
+					  	<a class="add-notes" href="">+  ADD NOTES TO CHARITY</a>
 					  </div><!-- / form group -->
-					  <div class="form-group">
+					  <div class="form-group checkbox-box">
 						<a href="#" class="ckeckbox">
 							<span class="circle"></span>
 							<span class="text">
@@ -242,7 +251,7 @@
 							</span>
 						</a>
 					   </div> 	
-					  <button type="submit" class="btn btn-default">Make a Payment</button>
+					  <button type="submit" class="btn btn-make-a-donation">Make a Payment</button>
 					</form>
 
 				</div><!-- col 6 -->
