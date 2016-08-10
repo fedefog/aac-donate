@@ -28,8 +28,6 @@
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
-						<i class="fa fa-caret-up" aria-hidden="true"></i>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</span>
 				</a>
 			</td>
@@ -67,8 +65,6 @@
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
-						<i class="fa fa-caret-up" aria-hidden="true"></i>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</span>
 				</a>
 			</td>
@@ -105,8 +101,6 @@
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
-						<i class="fa fa-caret-up" aria-hidden="true"></i>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</span>
 				</a>
 			</td>
@@ -117,7 +111,7 @@
 				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>
-		<tr class="balance-down">
+		<tr >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-comision" >
 					<div class="date">12-6-16</div>
@@ -143,8 +137,6 @@
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
-						<i class="fa fa-caret-up" aria-hidden="true"></i>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</span>
 				</a>
 			</td>
@@ -155,7 +147,7 @@
 				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>
-		<tr class="balance-down">
+		<tr >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
 					<div class="date">9-6-16</div>
@@ -181,8 +173,6 @@
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
-						<i class="fa fa-caret-up" aria-hidden="true"></i>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</span>
 				</a>
 			</td>
@@ -193,7 +183,7 @@
 				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>
-		<tr class="balance-down">
+		<tr >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-give-as-you-earn" >
 					<div class="date">1-6-16</div>
@@ -219,8 +209,6 @@
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
-						<i class="fa fa-caret-up" aria-hidden="true"></i>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</span>
 				</a>
 			</td>
@@ -258,8 +246,6 @@
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
-						<i class="fa fa-caret-up" aria-hidden="true"></i>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</span>
 				</a>
 			</td>
@@ -296,8 +282,6 @@
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
-						<i class="fa fa-caret-up" aria-hidden="true"></i>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</span>
 				</a>
 			</td>
@@ -308,7 +292,7 @@
 				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>
-		<tr class="balance-down">
+		<tr >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-company-donation" >
 					<div class="date">1-6-16</div>
@@ -334,8 +318,6 @@
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
-						<i class="fa fa-caret-up" aria-hidden="true"></i>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</span>
 				</a>
 			</td>
@@ -347,7 +329,7 @@
 			</td>
 		</tr>
 
-		<tr class="balance-down">
+		<tr >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-charity-donation" >
 					<div class="date">1-6-16</div>
@@ -373,8 +355,6 @@
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
-						<i class="fa fa-caret-up" aria-hidden="true"></i>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</span>
 				</a>
 			</td>
@@ -385,7 +365,7 @@
 				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>
-		<tr class="balance-down">
+		<tr >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 					<div class="date">1-6-16</div>
@@ -411,8 +391,6 @@
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
-						<i class="fa fa-caret-up" aria-hidden="true"></i>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</span>
 				</a>
 			</td>
@@ -423,7 +401,7 @@
 				<a href="#" class="edit-transactions"></a>
 			</td>
 		</tr>
-		<tr class="balance-down">
+		<tr >
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
 					<div class="date">1-7-16</div>
@@ -451,8 +429,6 @@
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
-						<i class="fa fa-caret-up" aria-hidden="true"></i>
-						<i class="fa fa-caret-down" aria-hidden="true"></i>
 					</span>
 				</a>
 			</td>
