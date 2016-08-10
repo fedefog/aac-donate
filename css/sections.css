@@ -1737,7 +1737,10 @@
 	.table .amount-td, .table .type-td {
 		text-align: center;
 	}
-
+	
+	.main-transactions .col-xs-12 {
+		padding: 0;
+	}
 	.transactions-navigation-desktop {
 		margin-bottom: 20px;
 	}
