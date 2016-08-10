@@ -382,7 +382,13 @@ body.sticky-footer .sticky-to-footer {
 	
 }
 @media(min-width:768px){
-	
+	.table > thead > tr > th {
+		border-top:1px solid #E2E2E5!important;
+		border-bottom:1px solid #E2E2E5; 
+		font-size: 12px;
+		color: #838383;
+		font-weight: 300;
+	}
 }
 @media(min-width:992px){
    

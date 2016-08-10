@@ -176,6 +176,13 @@
 		text-align: left;
 		margin: 28px 0;
 	}
+	.name-user {
+		float: right;
+	    margin-top: 41px;
+	    color: #FFF;
+	    margin-right: 50px;
+	    font-size: 16px;
+	}
 	.title-welcome {
 		text-align: center;
 		font-size: 16px;
@@ -259,12 +266,14 @@
 		width: 1px;
 	}
 	.lkn-dashboard {
-		border-bottom: 2px solid #DADADA;
 		padding: 25px 15px ;
 		position: relative;
 		display: block;
 		color: #333;
 		height: 78px;
+	}
+	.lkn-dashboard.dif-bg {
+		background: #FFF;
 	}
 	.dashboard-li:last-child .lkn-dashboard {
 		border-bottom: 0;
@@ -298,12 +307,50 @@
 	    padding-left: 315px;
 	}
 	.content-nav-desktop {
-		background: #E4E4E4;
+		background: #F3F3F3;
 		position: absolute;
 		top: 102px;
 		min-height: 100%;
 		left: 0;
 		z-index: 9;
+		border-right: 1px solid #DADADA;
+	}
+	.content-desktop-dashboard h1 {
+		font-size: 22px;
+		color:#838383;
+		font-weight: 300;
+    	letter-spacing: 0.5px;
+    	float: left;
+	}
+	.content-desktop-dashboard .date {
+		font-size: 14px;
+		font-weight: 300;
+		margin-top: 20px;
+	}
+	.top-content .line {
+		width: 100%;
+		border-bottom: 1px solid #CCC;
+		height: 1px;
+		clear: both;
+	}
+	.content-desktop-dashboard {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.content-desktop-dashboard h2 {
+		font-size: 20px;
+		letter-spacing: 0.5px;
+		color:#838383;
+	}
+	.latest-update-desktop {
+		background: #F2F2F2;
+		padding: 30px;
+		border-radius: 5px;
+	}
+	form#quick-donation {
+		border: 1px solid #DADADA;
+		padding: 30px;
+		border-radius: 5px;
 	}
 }	
 @media(min-width:992px){

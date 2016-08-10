@@ -108,6 +108,10 @@
 
                         <div class="col-md-4">
 
+                            <div class="name-user">
+                                David Jacobs
+                            </div>
+
                             <a href="#" class="nav-mobile nav-icon4 visible-sm visible-md visible-lg ">
                                             
                                 <span></span>
