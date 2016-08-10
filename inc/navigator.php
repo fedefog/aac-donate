@@ -55,7 +55,7 @@
 
 					</li>
 
-					<li class="navigator-li">
+					<li class="navigator-li anim-li anim-li">
 
 						<a href="help.php" class="navigator-lkn">
 
@@ -69,7 +69,7 @@
 
 					</li>
 
-					<li class="navigator-li">
+					<li class="navigator-li anim-li">
 
 						<a href="contact-us.php" class="navigator-lkn">
 
@@ -83,7 +83,7 @@
 
 					</li>
 
-					<li class="navigator-li">
+					<li class="navigator-li anim-li">
 
 						<a href="invite-a-friend.php" class="navigator-lkn">
 
@@ -97,7 +97,7 @@
 
 					</li>
 
-					<li class="navigator-li">
+					<li class="navigator-li anim-li">
 
 						<a href="settings.php" class="navigator-lkn">
 
