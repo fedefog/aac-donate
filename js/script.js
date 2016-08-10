@@ -84,6 +84,7 @@ load_js()
 
 		  $("#myBar").addClass("visible"); // Loading bar visibility 
 		  $('.nav-mobile').removeClass("open");
+		  transaction = 'transactions-all.php';
 
 		  if ( url == 'dashboard.php' ) {
 
@@ -128,7 +129,7 @@ load_js()
 	$(document).on('click', '.go-back , .li-dashboard a', function(event) {
 
 		event.preventDefault(); // stop the browser from following the link  
-
+		transaction = 'transactions-all.php';
 		if ( url == 'dashboard.php') {
 			event.preventDefault();
 			// alert('nada')
