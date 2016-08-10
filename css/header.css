@@ -331,9 +331,11 @@
 }
 @media(min-width:768px){
   .nav-icon4 {
-  
     top: 41px;
   }	
+  .lkn-logout {
+    border-bottom: none;
+  }
 }
 @media(min-width:992px){
    

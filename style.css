@@ -382,11 +382,14 @@ body.sticky-footer main {
 @media(min-width:768px){
 	#main-container {
 		padding-left: 315px;
+		background: #f4f4f4;
 	}
 	.content-desktop {
 		padding-left: 30px;
 		padding-right: 30px;
 		padding-bottom: 30px;
+		background: #FFF;
+		border-left: 1px solid #DADADA;
 	}
 	.modal.fade .modal-dialog { 
 		width: 413px;
