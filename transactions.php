@@ -1,5 +1,5 @@
 
-<main class="main-transactions">
+<main class="main-transactions content-desktop" >
 	
 	<div class="header-fixed visible-xs">
 
@@ -77,7 +77,7 @@
 
     </div><!-- /header-fixed -->
 
-    <div id="transactions-navigation-desktop" class="hidden-xs">
+    <div id="transactions-navigation-desktop" class="hidden-xs transactions-navigation-desktop">
 
     	<div class="row">
 
