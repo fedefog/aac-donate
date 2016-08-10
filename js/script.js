@@ -39,7 +39,7 @@ $(document).on('click', '.close-nav', function(event) {
 load_js()
 
 /* Ajax navigation */
-	
+	// STANDING ORDERS NAV
 	$(document).on('click', '.nav-standing-orders-li a', function(event) {
 
 	  event.preventDefault(); // stop the browser from following the link  
@@ -61,6 +61,7 @@ load_js()
 
 			  setTimeout(function(){
 					$('.ajax-standing').load(standing, function() { 
+						$('.ajax-standing').css({ opacity: 0 }).fadeTo(400,1);//Efect fade
 					  $('.nav-standing-orders-li a').removeClass('active')
 					  $(thisnav).addClass('active');
 						$("#myBar").removeClass("visible");  // fadeout of the bar loading 
@@ -71,6 +72,8 @@ load_js()
 		  }
 	});
 
+
+	// TRANSACTIONS NAV
 	$(document).on('click', '.nav-transactions a', function(event) {
 
 	  event.preventDefault(); // stop the browser from following the link  
@@ -94,7 +97,8 @@ load_js()
 			  setTimeout(function(){
 			  	// $('body').removeClass('menu-mobile-open');
 				$('.ajax-transaction').load(transaction, function() { 
-				  $('.nav-transactions a').removeClass('active')
+					$('.ajax-transaction').css({ opacity: 0 }).fadeTo(400,1);//Efect fade
+				  $('.nav-transactions a').removeClass('active');
 				  $(thisnav).addClass('active');
 					$("#myBar").removeClass("visible");  // fadeout of the bar loading 
 					load_js()
@@ -134,7 +138,7 @@ load_js()
 
 			  	$('body').removeClass('menu-mobile-open');
 				$('#main-container').load(url, function() { 
-			  		$('#main-container').css({ opacity: 0 }).fadeTo(400,1);
+			  		$('#main-container').css({ opacity: 0 }).fadeTo(400,1);//Efect fade
 					$("#myBar").removeClass("visible");  // fadeout of the bar loading 
 					load_js()
 					sticky_footer ();
@@ -150,6 +154,7 @@ load_js()
 			  	setTimeout(function(){
 			  		$('body').removeClass('menu-mobile-open');
 					$('#main-container').load(url, function() { 
+						$('#main-container').css({ opacity: 0 }).fadeTo(400,1);//Efect fade
 						$("#myBar").removeClass("visible");  // fadeout of the bar loading 
 						load_js()
 						sticky_footer ();
@@ -184,6 +189,7 @@ load_js()
 
 		    setTimeout(function(){
 		    $('#main-container').load(url, function() { 
+		    	$('#main-container').css({ opacity: 0 }).fadeTo(400,1);//Efect fade
 				$("#myBar").removeClass("visible");  // fadeout of the bar loading 
 				$('body').removeClass(); // Remove all classes from body (this works for pages like make a donation or vouchers where the footer and CTA is fixed )
 				load_js()
