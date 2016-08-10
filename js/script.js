@@ -11,6 +11,8 @@ function navigator_scroll ( ) {
 /* inizialization */
 
 var url = 'dashboard.php';
+var transaction = 'transactions-all.php';
+
 
 // Navigation sidebar 
 $(document).on('click', '.nav-icon4', function(event) {
@@ -36,10 +38,42 @@ $(document).on('click', '.close-nav', function(event) {
 load_js()
 
 /* Ajax navigation */
+	
+	$(document).on('click', '.nav-transactions a', function(event) {
 
+		  event.preventDefault(); // stop the browser from following the link  
+
+		  if ( $(this).attr('href') == transaction ){
+		  	alert('estas en el mismo')
+
+		  }else{
+		  	progress_bar();
+
+				  $("#myBar").addClass("visible"); // Loading bar visibility 
+				  $('.nav-mobile').removeClass("open");
+
+				  var thisnav	= $(this);
+				  // $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
+
+				  transaction = $(this).attr('href'); 
+				  console.log(transaction);
+
+				  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
+
+				  setTimeout(function(){
+				  	// $('body').removeClass('menu-mobile-open');
+					$('.ajax-transaction').load(transaction, function() { 
+					  $('.nav-transactions a').removeClass('active')
+					  $(thisnav).addClass('active');
+						$("#myBar").removeClass("visible");  // fadeout of the bar loading 
+						load_js()
+						sticky_footer ();
+					}); // load the html response into a DOM element
+  				}, 2000);
+			  }
+		});
 
 /* Navigation from dashboard  */
-
 	
 
 	$(document).on('click', '.nav-dashboard a, .anim-li a, .pending-bt', function(event) {
