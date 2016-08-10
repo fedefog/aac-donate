@@ -107,7 +107,7 @@ load_js()
 /* Navigation from dashboard  */
 	
 
-	$(document).on('click', '.nav-dashboard a, .anim-li a, .pending-bt', function(event) {
+	$(document).on('click', '.dashboard-li a, .anim-li a, .pending-bt', function(event) {
 
 		  event.preventDefault(); // stop the browser from following the link  
 
@@ -127,12 +127,18 @@ load_js()
 
 			  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
 
+			  
+			  	// alert('ahora')
 			  setTimeout(function(){
+			  
+			  	$('#main-container').css({ opacity: 0 }).fadeTo(400,1);
+
 			  	$('body').removeClass('menu-mobile-open');
 				$('#main-container').load(url, function() { 
 					$("#myBar").removeClass("visible");  // fadeout of the bar loading 
 					load_js()
 					sticky_footer ();
+					// $('#main-container').removeClass('fade-section');
 				}); // load the html response into a DOM element
 				}, 2000);
 
