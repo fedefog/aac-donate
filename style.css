@@ -379,6 +379,10 @@ body.sticky-footer main {
 	
 }
 @media(min-width:768px){
+	#main-container {
+		padding-left: 315px;
+	}
+
 	.table > thead > tr > th {
 		border-top:1px solid #E2E2E5!important;
 		border-bottom:1px solid #E2E2E5; 
