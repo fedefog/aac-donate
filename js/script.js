@@ -131,10 +131,10 @@ load_js()
 			  	// alert('ahora')
 			  setTimeout(function(){
 			  
-			  	$('#main-container').css({ opacity: 0 }).fadeTo(400,1);
 
 			  	$('body').removeClass('menu-mobile-open');
 				$('#main-container').load(url, function() { 
+			  		$('#main-container').css({ opacity: 0 }).fadeTo(400,1);
 					$("#myBar").removeClass("visible");  // fadeout of the bar loading 
 					load_js()
 					sticky_footer ();
