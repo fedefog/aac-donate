@@ -309,7 +309,6 @@
 		min-height: 100%;
 		left: 0;
 		z-index: 9;
-		border-right: 1px solid #DADADA;
 	}
 	.table > thead > tr > th {
 		text-align: center;
