@@ -41,7 +41,7 @@
 
 				<ul class="list-navigator">
 
-					<li class="navigator-li">
+					<li class="navigator-li li-dashboard">
 
 						<a href="index.php" class="navigator-lkn">
 

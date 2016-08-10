@@ -42,7 +42,7 @@ load_js()
 
 	
 
-	$('.nav-dashboard a, .list-navigator a').bind('click', function(e) {   
+	$('.nav-dashboard a, .anim-li a').bind('click', function(e) {   
 
 	  e.preventDefault(); // stop the browser from following the link  
 
@@ -94,27 +94,33 @@ load_js()
 	
 
 
-	$(document).on('click', '.go-back', function(event) {
+	$(document).on('click', '.go-back , .li-dashboard a', function(event) {
 
 		event.preventDefault(); // stop the browser from following the link  
 
-		url = $(this).attr('href'); 
-	    console.log(url);
+		if ( url == 'index.php') {
+			event.preventDefault();
+			// alert('nada')
+		}else {
 
-		$("html, body").animate({ // Animation to top of window
-		  scrollTop:0
-		}, "fast", 
-		    function(){
-		    	$('#main-container').addClass('to-right'); // Add class to animate main container to right
-		    } 
-		);
+			url = $(this).attr('href'); 
+		    console.log(url);
 
-		setTimeout(function(){
-			$('#main-container').removeClass(); // Remove all classes from main container 
-			$('main#dashboard').removeClass('absolute'); // remove class absolute from main dashboard to navigate well the new content loaded.  
-			$('#new-content').empty(); // Delete all content from inside new content div container 
-			$('body').removeClass(); // Remove all classes from body (this works for pages like make a donation or vouchers where the footer and CTA is fixed )
-		}, 1000);
+			$("html, body").animate({ // Animation to top of window
+			  scrollTop:0
+			}, "fast", 
+			    function(){
+			    	$('#main-container').addClass('to-right'); // Add class to animate main container to right
+			    } 
+			);
+
+			setTimeout(function(){
+				$('#main-container').removeClass(); // Remove all classes from main container 
+				$('main#dashboard').removeClass('absolute'); // remove class absolute from main dashboard to navigate well the new content loaded.  
+				$('#new-content').empty(); // Delete all content from inside new content div container 
+				$('body').removeClass(); // Remove all classes from body (this works for pages like make a donation or vouchers where the footer and CTA is fixed )
+			}, 1000);
+		}
 	});
 
 /* Conditional to set sticky footer and primary action */
