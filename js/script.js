@@ -11,6 +11,7 @@ function navigator_scroll ( ) {
 /* inizialization */
 
 var url = 'dashboard.php';
+var transaction = 'transactions-all.php';
 
 // Navigation sidebar 
 $(document).on('click', '.nav-icon4', function(event) {
@@ -36,10 +37,38 @@ $(document).on('click', '.close-nav', function(event) {
 load_js()
 
 /* Ajax navigation */
+	
+	$(document).on('click', '.nav-transactions a', function(event) {
 
+		  event.preventDefault(); // stop the browser from following the link  
+
+		  progress_bar();
+
+		  $("#myBar").addClass("visible"); // Loading bar visibility 
+		  $('.nav-mobile').removeClass("open");
+
+		  
+			  // $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
+
+			  transaction = $(this).attr('href'); 
+			  console.log(transaction);
+
+			  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
+
+			  setTimeout(function(){
+			  	// $('body').removeClass('menu-mobile-open');
+				$('.ajax-transaction').load(transaction, function() { 
+					$("#myBar").removeClass("visible");  // fadeout of the bar loading 
+					load_js()
+					sticky_footer ();
+				}); // load the html response into a DOM element
+				}, 2000);
+
+			  
+
+		});
 
 /* Navigation from dashboard  */
-
 	
 
 	$(document).on('click', '.nav-dashboard a, .anim-li a', function(event) {

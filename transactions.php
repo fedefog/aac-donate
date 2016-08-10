@@ -47,7 +47,7 @@
 	                		
 	                		<li class="nav-transactions-li">
 	                		
-	                			<a href="transactions.php" class="nav-transactions-lkn active">all</a>
+	                			<a href="transactions-all.php" class="nav-transactions-lkn active">all</a>
 	                		
 	                		</li>
 
@@ -187,7 +187,7 @@
 		
 			<div class="col-xs-12">
 
-				<div class="container-table">
+				<div class="container-table ajax-transaction">
 			   
 				   <? include 'transactions-all.php' ?>
 				
