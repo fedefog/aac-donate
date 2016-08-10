@@ -1710,8 +1710,10 @@
 		letter-spacing: 0.65px;
 		line-height: 24px;
 	}
+
 }	
 @media(min-width:768px){
+<<<<<<< HEAD
 	.table > thead > tr > th {
 		border-top:1px solid #E2E2E5!important;
 		border-bottom:1px solid #E2E2E5; 
@@ -1722,6 +1724,40 @@
 	.table .amount-td, .table .type-td {
 		text-align: center;
 	}
+=======
+	.title-transactions-desktop {
+		font-weight: 500;
+		font-size: 20px;
+		color: #878787;
+		letter-spacing: 0.54px;
+		display: inline-block;
+	}
+	.nav-transactions {
+		display: inline-block;
+		vertical-align: top;
+	}
+	.nav-transactions-li {
+		display: inline-block;
+	}
+	.nav-transactions-li .nav-transactions-lkn {
+		background: #F3F3F3;
+		border-radius: 98px;
+		display: block;
+		font-weight: 500;
+		font-size: 12px;
+		color: #838383;
+		letter-spacing: 0.44px;
+		text-align: center;
+		padding: 7px 0 6px 0;
+		text-transform: uppercase;
+		width: 80px;
+	}
+	.nav-transactions-li .nav-transactions-lkn.active {
+		background: #00ADEE;
+		color: #fff;
+	}
+
+>>>>>>> 991ab68a264e1fd7c76e1f4e52b87631de353b45
 }
 @media(min-width:992px){
    
