@@ -82,7 +82,9 @@
     	<div class="row">
 
     		<div class="col-md-6">
-
+				
+				<h2 class="title-transactions-desktop">Transactions</h2>
+				
     			<ul class="nav-transactions">
 	                		
             		<li class="nav-transactions-li">
