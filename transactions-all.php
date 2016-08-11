@@ -45,7 +45,9 @@
 				<p class="type-transactions">VOUCHER</p>
 			</td>
 			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions"></a>
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-down">
@@ -82,7 +84,9 @@
 				<p class="type-transactions">VOUCHER</p>
 			</td>
 			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions"></a>
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-down">
@@ -118,7 +122,9 @@
 				<p class="type-transactions">VOUCHER</p>
 			</td>
 			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions"></a>
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-up" >
@@ -154,7 +160,9 @@
 				<p class="type-transactions">VOUCHER</p>
 			</td>
 			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions"></a>
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-up" >
@@ -190,7 +198,9 @@
 				<p class="type-transactions">VOUCHER</p>
 			</td>
 			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions"></a>
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-up" >
@@ -226,7 +236,9 @@
 				<p class="type-transactions">VOUCHER</p>
 			</td>
 			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions"></a>
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-down">
@@ -263,7 +275,9 @@
 				<p class="type-transactions">VOUCHER</p>
 			</td>
 			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions"></a>
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-down">
@@ -299,7 +313,9 @@
 				<p class="type-transactions">VOUCHER</p>
 			</td>
 			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions"></a>
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-up" >
@@ -335,7 +351,9 @@
 				<p class="type-transactions">VOUCHER</p>
 			</td>
 			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions"></a>
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 
@@ -372,7 +390,9 @@
 				<p class="type-transactions">VOUCHER</p>
 			</td>
 			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions"></a>
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-up" >
@@ -408,7 +428,9 @@
 				<p class="type-transactions">VOUCHER</p>
 			</td>
 			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions"></a>
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-pending" >
@@ -446,9 +468,31 @@
 				<p class="type-transactions">VOUCHER</p>
 			</td>
 			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions"></a>
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>							
 	</tbody>
 
 </table>
+
+<nav class="navigation-transactions hidden-xs" aria-label="Page navigation  ">
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#" class="pag-active" >1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav><!-- /navigation-transactions -->

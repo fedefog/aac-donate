@@ -177,7 +177,7 @@
 						<div class="drop-down-sort">
 
 							<a href="#" class="navigator-transactions-lkn lkn-sortby">
-							
+								<span class="text hidden-xs">SORT BY</span>
 								<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
 
 							</a>

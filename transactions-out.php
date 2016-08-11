@@ -1,8 +1,17 @@
 
 <table class="table-transactions table table-condensed">
-	
-	<tbody>
+	<thead class="hidden-xs "> 
 		<tr>
+			<th>DATE</th>
+			<th>DESCRIPTION</th>
+			<th>AMOUNT</th>
+			<th class="hidden-xs">BALANCE AFTER TRANSACTION</th>
+			<th class="hidden-xs">TYPE</th>
+			<th class="hidden-xs">ACTION</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="balance-up">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-comision" >
 					<div class="date">12-6-16</div>
@@ -15,7 +24,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td class="balance-up">
+			<td >
 				<a href="#" data-toggle="modal" data-target="#modal-comision" >
 					<span class="balance-transition">
 						£ 21.56
@@ -24,8 +33,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-up">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
 					<div class="date">9-6-16</div>
@@ -38,7 +62,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td class="balance-up">
+			<td >
 				<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
 					<span class="balance-transition">
 						£ 233
@@ -47,8 +71,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-up">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-give-as-you-earn" >
 					<div class="date">1-6-16</div>
@@ -61,7 +100,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td class="balance-up">
+			<td >
 				<a href="#" data-toggle="modal" data-target="#modal-give-as-you-earn" >
 					<span class="balance-transition">
 						£ 550.00
@@ -70,8 +109,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-up">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-company-donation" >
 					<div class="date">1-6-16</div>
@@ -84,7 +138,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td class="balance-up">
+			<td >
 				<a href="#" data-toggle="modal" data-target="#modal-company-donation" >
 					<span class="balance-transition">
 						£ 200.00
@@ -93,8 +147,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-up">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-charity-donation" >
 					<div class="date">1-6-16</div>
@@ -107,7 +176,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td class="balance-up">
+			<td >
 				<a href="#" data-toggle="modal" data-target="#modal-charity-donation" >
 					<span class="balance-transition">
 						£ 200.00
@@ -116,8 +185,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-up">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 					<div class="date">1-6-16</div>
@@ -130,7 +214,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td class="balance-up">
+			<td >
 				<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 					<span class="balance-transition">
 						£ 200.00
@@ -139,8 +223,23 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+			</td>
 		</tr>
-		<tr>
+		<tr class="balance-up">
 			<td>
 				<a href="#" data-toggle="modal" data-target="#modal-logout" >
 					<div class="date">1-6-16</div>
@@ -153,7 +252,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td class="balance-up">
+			<td >
 				<a href="#" data-toggle="modal" data-target="#modal-logout" >
 					<span class="balance-transition">
 						£ 200.00
@@ -162,9 +261,43 @@
 					</span>
 				</a>
 			</td>
+			<td class="amount-td hidden-xs">
+				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+					<span class="balance-transition">
+						£ 550.00
+					</span>
+				</a>
+			</td>
+			<td class="type-td hidden-xs">
+				<p class="type-transactions">VOUCHER</p>
+			</td>
+			<td class="action-edit hidden-xs">
+				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+			</td>
 		</tr>
 		
 	</tbody>
 
 </table>
+<nav class="navigation-transactions hidden-xs" aria-label="Page navigation  ">
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#" class="pag-active" >1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav><!-- /navigation-transactions -->
 				

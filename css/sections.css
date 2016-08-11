@@ -223,6 +223,73 @@
 .balance-up .fa-caret-down {
 	display: none;
 }
+.edit-transactions {
+	background: url('images/icon-edit.png') no-repeat center;
+}
+.delete-transactions {
+	background: url('images/icon-delete.png') no-repeat center;
+}
+.refresh-transactions {
+	background: url('images/icon-refresh.png') no-repeat center;
+}
+.action-edit  {
+	text-align: center;
+}
+.btn-trannsaction-accion {
+	display: inline-block;
+	height: 22px;
+	width: 22px;
+	border: 1px solid #00ADEE;
+	border-radius: 3px;
+	background-size: 12px;
+	transition: all 0.3s ease-in-out;
+	margin-top: 4px;
+}
+.btn-trannsaction-accion:hover {
+	background-color: #f4f4f4;
+}
+
+.navigation-transactions {
+	text-align: center; 
+	
+}
+.navigation-transactions .pagination > li > a,
+.navigation-transactions .pagination > li > span {
+	border: 0px;
+}
+.navigation-transactions .pagination > li > a {
+	background: #C8C8C8;
+	color: #fff;
+	margin: 0 5px;
+	border-radius: 5px;
+	transition: all 0.3s ease-in-out;
+}
+.navigation-transactions .pagination > li > a.pag-active {
+	background: #00ADEE;
+	color: #fff;
+}
+.navigation-transactions .pagination > li > a:hover {
+	background: #00ADEE;
+	color: #fff;
+}
+.navigation-transactions .pagination > li:first-child > a ,
+.navigation-transactions .pagination > li:last-child > a {
+	background: #fff;
+	color: #C8C8C8;
+}
+.navigation-transactions .pagination > li:first-child > a:hover ,
+.navigation-transactions .pagination > li:last-child > a:hover {
+	color: #00ADEE;
+}
+.navigation-transactions .pagination > li:first-child > a > span {
+	left: 0;
+}
+.navigation-transactions .pagination > li:first-child > a > span ,
+.navigation-transactions .pagination > li:last-child > a > span {
+    font-size: 32px;
+    top: -10px;
+    position: absolute;
+}
 /* MODAL SEARCH */
 
 .modal-search .modal-header{
@@ -1780,6 +1847,12 @@
 		padding: 7px 0 6px 0;
 		text-transform: uppercase;
 		width: 80px;
+		transition: all 0.3s ease-in-out;
+	}
+	.nav-transactions-li .nav-transactions-lkn:hover {
+		background: #00ADEE;
+		border-color: #00ADEE;
+		color: #fff;
 	}
 	.nav-transactions-li .nav-transactions-lkn.active {
 		background: #00ADEE;
@@ -1796,6 +1869,7 @@
 		padding-right: 15px;
 		margin-top: 8px;
 		display: inline-block;
+		transition: all 0.3s ease-in-out;
 	}
 	.expert-csv-file:before {
 		background: #9B9B9B;
@@ -1814,6 +1888,11 @@
 		padding-left: 15px;
 		margin-top: 8px;
 		display: inline-block;
+		transition: all 0.3s ease-in-out;
+	}
+	.expert-csv-file:hover ,
+	.expert-xls-file:hover {
+		color: #000;
 	}
 	.navigator-transactions {
 		display: block;
@@ -1835,6 +1914,7 @@
 		margin-right: 15px;
 		padding: 10px 0; 
 		width: 136px;
+		transition: all 0.3s ease-in-out;
 	}
 	.daterangepicker.dropdown-menu {
 		width: 480px;
@@ -1854,6 +1934,13 @@
 		padding: 10px 0; 
 		margin-left: 15px;
 		width: 136px;
+		transition: all 0.3s ease-in-out;
+	}
+	.navigator-transactions .lkn-search:hover,
+	.navigator-transactions .lkn-recent:hover {
+		background: #00ADEE;
+	    border: 1px solid #00ADEE;
+	    color: #fff;
 	}
 	.navigator-transactions-sortby {
 		float: right;
@@ -1875,6 +1962,9 @@
 	}
 	.header-table-transactions {
 		margin-top: 20px;
+	}
+	.drop-down-sort .navigator-transactions-lkn.lkn-sortby {
+		width: 115px;
 	}
 }
 @media(min-width:992px){

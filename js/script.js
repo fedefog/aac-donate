@@ -122,6 +122,8 @@ load_js()
 		  transaction = 'transactions-all.php';
 		  standing = 'standing-orders-current.php';
 
+
+
 		  if ( url == 'dashboard.php' ) {
 
 			  $("html, body").animate({ scrollTop: 0 }, "fast"); // Animation to top of window
@@ -164,6 +166,12 @@ load_js()
 
 			  } // end conditional 
 
+
+			// current page	
+			$('.dashboard-li .current-page').removeClass('current-page');
+			$('.dashboard-li a[href$="'+url+'"]').addClass('current-page');
+
+
 		});
 
 	
@@ -201,6 +209,10 @@ load_js()
 				
 			}, 1000);
 		}
+		// current page
+		$('.dashboard-li .current-page').removeClass('current-page');
+		$('.dashboard-li a[href$="'+url+'"]').addClass('current-page');
+
 	});
 
 /* Conditional to set sticky footer and primary action */
