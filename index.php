@@ -30,9 +30,10 @@ include 'inc/header.php'
 			<ul class="nav-dashboard">
 				
 				<li class="dashboard-li">
-					<a href="dashboard.php" class="lkn-dashboard dif-bg">
+					<a href="dashboard.php" class="lkn-dashboard dif-bg current-page">
 						<span class="icon">
-							<img src="images/dashboard-icon.png"  height="23">
+							<img class="default" src="images/dashboard-icon.png"  height="23">
+							<img class="active" src="images/dashboard-icon-active.png"  height="23">
 						</span>
 						<span class="text">Dashboard </span>
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -41,7 +42,7 @@ include 'inc/header.php'
 				<li class="dashboard-li">
 					<a href="transactions.php" class="lkn-dashboard dif-bg">
 						<span class="icon">
-							<img src="images/view-transactions-icon.png" width="18" height="23">
+							<img src="images/view-transactions-icon.png" width="20.5" height="28">
 						</span>
 						<span class="text">View Transactions </span>
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -50,7 +51,7 @@ include 'inc/header.php'
 				<li class="dashboard-li">
 					<a href="make-a-donation.php" class="lkn-dashboard dif-bg">
 						<span class="icon">
-							<img src="images/make-donation-icon.png" width="24" height="25">
+							<img src="images/make-donation-icon.png" width="23" height="27">
 						</span>
 						<span class="text">Make a Donation </span>
 						<i class="fa fa-angle-right" aria-hidden="true"></i>

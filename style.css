@@ -380,6 +380,18 @@ body.sticky-footer main {
 	}
 }
 @media(min-width:768px){
+	.nav-dashboard .lkn-dashboard.current-page {
+		background: #00ADEE;
+	}
+	.nav-dashboard .lkn-dashboard.current-page .text {
+		color: #FFF;
+	}
+	.nav-dashboard .current-page .default {
+		display: none;
+	}
+	.nav-dashboard .current-page .active {
+		display: inline-block;
+	}
 	#main-container {
 		padding-left: 315px;
 		background: #f4f4f4;
