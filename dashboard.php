@@ -22,7 +22,7 @@
 
 			<div class="row">
 				
-				<div class="col-md-6">
+				<div class="col-md-7">
 
 					<h2 class="title-dashborad-desktop">Latest Transactions</h2>
 
@@ -204,7 +204,7 @@
 
 				</div><!-- col 6 -->
 
-				<div class="col-md-6">
+				<div class="col-md-5">
 
 					<h2 class="title-dashborad-desktop" >Latest Updates</h2>
 
