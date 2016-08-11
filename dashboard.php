@@ -227,10 +227,10 @@
 					  <div class="form-group">
 					    <label for="amount">Amount</label>
 					    <div class="row">
-						    <div class="col-xs-9">
+						    <div class="col-md-8 col-lg-9">
 						    	<input type="text" class="form-control input-text" id="" placeholder="3,989.00">
 							</div>
-							<div class="col-xs-3">
+							<div class="col-md-4 col-lg-3">
 						    	<select class="form-control selectpicker">
 								  <option>USD</option>
 								  <option>GBP</option>
