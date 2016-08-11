@@ -1,6 +1,6 @@
-<main class="main-transactions main-help">
+<main class="main-transactions main-help content-desktop">
 	
-	<div class="header-fixed">
+	<div class="header-fixed visible-xs">
 
         <header class="header ">
 

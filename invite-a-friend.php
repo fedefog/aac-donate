@@ -1,6 +1,6 @@
-<main class="main-transactions main-invite-a-friend">
+<main class="main-transactions main-invite-a-friend content-desktop">
 	
-	<div class="header-fixed">
+	<div class="header-fixed visible-xs">
 
         <header class="header ">
 

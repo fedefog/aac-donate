@@ -104,8 +104,6 @@
   float: left;
   position: relative;
   /* background: #000; */
-  height: 448px;
-  overflow: scroll;
 }
 .inner-hoverflow {
   float: left;
@@ -327,6 +325,10 @@
   opacity: .4;
 }
 @media(max-width:767px){
+  .navigator .hoverflow {
+    height: 448px;
+    overflow: scroll;
+  }
 	
 }
 @media(min-width:768px){

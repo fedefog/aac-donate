@@ -1,6 +1,6 @@
-<main class="main-transactions main-contact-us">
+<main class="main-transactions main-contact-us content-desktop">
 	
-	<div class="header-fixed">
+	<div class="header-fixed visible-xs">
 
         <header class="header ">
 
@@ -56,7 +56,7 @@
 
     		<div class="col-xs-12">
 	
-				<div class="box-account-header">
+				<div class="box-account-header visible-xs">
 									
 					<div class="box-account">
 						
@@ -76,7 +76,7 @@
 
 				</div><!-- /box-account-header -->
 
-				<h3 class="time-update">AS OF <strong>1 SEP 2016, 2:15PM</strong></h3>
+				<h3 class="time-update visible-xs">AS OF <strong>1 SEP 2016, 2:15PM</strong></h3>
 
 			</div><!-- / col 12 -->
 

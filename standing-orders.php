@@ -1,7 +1,7 @@
 
-<main class="standing-orders" >
+<main class="standing-orders content-desktop" >
 	
-	<div class="header-fixed">
+	<div class="header-fixed visible-xs">
 
         <header class="header ">
 
