@@ -376,7 +376,7 @@ load_js()
 
 			// Function Disable/Enable standing Orders in Make a donation
 
-			$('#standing-order-switch').on('switchChange.bootstrapSwitch', function (event, state) {
+			$('.standing-order-switch').on('switchChange.bootstrapSwitch', function (event, state) {
 
 			    $('.standing-order-switch-container').toggleClass("active");
 			    $('.standing-order-switch-container .btn-group, .standing-order-switch-container .btn ').toggleClass( "disabled" );
