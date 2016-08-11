@@ -1801,8 +1801,12 @@
 		color: #838383;
 		font-weight: 300;
 	}
-	.table .amount-td, .table .type-td {
-		text-align: center;
+	.table .amount-td a {
+		display: inline-block !important;
+	} 
+	.table .amount-td, 
+	.table .type-td {
+		text-align: center !important;
 	}
 	
 	.main-transactions .col-xs-12 {

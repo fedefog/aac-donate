@@ -24,7 +24,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td >
+			<td class="amount-td">
 				<a href="#" data-toggle="modal" data-target="#modal-comision" >
 					<span class="balance-transition">
 						£ 21.56
@@ -62,7 +62,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td >
+			<td class="amount-td">
 				<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
 					<span class="balance-transition">
 						£ 233
@@ -100,7 +100,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td >
+			<td class="amount-td">
 				<a href="#" data-toggle="modal" data-target="#modal-give-as-you-earn" >
 					<span class="balance-transition">
 						£ 550.00
@@ -138,7 +138,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td >
+			<td class="amount-td">
 				<a href="#" data-toggle="modal" data-target="#modal-company-donation" >
 					<span class="balance-transition">
 						£ 200.00
@@ -176,7 +176,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td >
+			<td class="amount-td">
 				<a href="#" data-toggle="modal" data-target="#modal-charity-donation" >
 					<span class="balance-transition">
 						£ 200.00
@@ -214,7 +214,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td >
+			<td class="amount-td">
 				<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 					<span class="balance-transition">
 						£ 200.00
@@ -252,7 +252,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td >
+			<td class="amount-td">
 				<a href="#" data-toggle="modal" data-target="#modal-logout" >
 					<span class="balance-transition">
 						£ 200.00

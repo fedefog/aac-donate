@@ -24,7 +24,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td>
+			<td class="amount-td">
 				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
 					<span class="balance-transition">
 						£ 990.00
@@ -63,7 +63,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td>
+			<td class="amount-td">
 				<a href="#" data-toggle="modal" data-target="#modal-voucher" >
 					<span class="balance-transition">
 						£ 550.00
@@ -101,7 +101,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td>
+			<td class="amount-td">
 				<a href="#" data-toggle="modal" data-target="#modal-voucher-book" >
 					<span class="balance-transition">
 						£ 50.00
@@ -140,7 +140,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td>
+			<td class="amount-td">
 				<a href="#" data-toggle="modal" data-target="#modal-online-donation" >
 					<span class="balance-transition">
 						£ 222.00
@@ -178,7 +178,7 @@
 					</div><!-- /desc-table -->
 				</a>
 			</td>
-			<td>
+			<td class="amount-td">
 				<a href="#" data-toggle="modal" data-target="#modal-account-transfer" >
 					<span class="balance-transition">
 						£ 200.00
