@@ -390,7 +390,10 @@ body.sticky-footer main {
 		display: none;
 	}
 	.nav-dashboard .current-page .active {
-		display: inline-block;
+		display: inline-block!important;
+	}
+	.nav-dashboard .lkn-dashboard .active {
+		display: none;
 	}
 	#main-container {
 		padding-left: 315px;
