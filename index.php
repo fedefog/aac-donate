@@ -42,7 +42,8 @@ include 'inc/header.php'
 				<li class="dashboard-li">
 					<a href="transactions.php" class="lkn-dashboard dif-bg">
 						<span class="icon">
-							<img src="images/view-transactions-icon.png" width="20.5" height="28">
+							<img class="default" src="images/view-transactions-icon.png" width="20.5" height="28">
+							<img class="active" src="images/view-transactions-icon-active.png" width="20.5" height="28">
 						</span>
 						<span class="text">View Transactions </span>
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -51,7 +52,8 @@ include 'inc/header.php'
 				<li class="dashboard-li">
 					<a href="make-a-donation.php" class="lkn-dashboard dif-bg">
 						<span class="icon">
-							<img src="images/make-donation-icon.png" width="23" height="27">
+							<img class="default" src="images/make-donation-icon.png" width="23" height="27">
+							<img class="active" src="images/make-donation-icon-active.png" width="23" height="27">
 						</span>
 						<span class="text">Make a Donation </span>
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -60,7 +62,8 @@ include 'inc/header.php'
 				<li class="dashboard-li">
 					<a href="standing-orders.php" class="lkn-dashboard dif-bg">
 						<span class="icon">
-							<img src="images/standing-orders-icon.png" width="18" height="30.5">
+							<img class="default" src="images/standing-orders-icon.png" width="18" height="30.5">
+							<img class="active" src="images/standing-orders-icon-active.png" width="18" height="30.5">
 						</span>
 						<span class="text">Standing orders </span>
 						<i class="fa fa-angle-right" aria-hidden="true">
@@ -68,9 +71,10 @@ include 'inc/header.php'
 					</a>
 				</li>
 				<li class="dashboard-li">
-					<a href="vouchers.php" class="lkn-dashboard">
+					<a href="vouchers.php" class="lkn-dashboard dif-bg">
 						<span class="icon">
-							<img src="images/order-voucher-icon.png" width="22" height="21">
+							<img class="default" src="images/order-voucher-icon.png" width="22" height="21">
+							<img class="active" src="images/order-voucher-icon-active.png" width="22" height="21">
 						</span>
 						<span class="text">Order Vouchers Books</span>
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -79,7 +83,8 @@ include 'inc/header.php'
 				<li class="dashboard-li">
 					<a href="help.php" class="lkn-dashboard">
 						<span class="icon">
-							<img src="images/help-icon.png" width="20.5" height="20">
+							<img class="default" src="images/help-icon.png" width="20.5" height="20">
+							<img class="active" src="images/help-icon-active.png" width="20.5" height="20">
 						</span>
 						<span class="text">Help</span>
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -88,7 +93,8 @@ include 'inc/header.php'
 				<li class="dashboard-li">
 					<a href="contact-us.php" class="lkn-dashboard">
 						<span class="icon">
-							<img src="images/contact-icon.png" width="24" height="20.5">
+							<img class="default" src="images/contact-icon.png" width="24" height="20.5">
+							<img class="active" src="images/contact-icon-active.png" width="24" height="20.5">
 						</span>
 						<span class="text">Contact Us</span>
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -97,7 +103,8 @@ include 'inc/header.php'
 				<li class="dashboard-li">
 					<a href="invite-a-friend.php" class="lkn-dashboard">
 						<span class="icon">
-							<img src="images/invite-a-friend-icon.png" width="20.5" height="20">
+							<img class="default" src="images/invite-a-friend-icon.png" width="20.5" height="20">
+							<img class="active" src="images/invite-a-friend-icon-active.png" width="20.5" height="20">
 						</span>
 						<span class="text">Invite a Friend</span>
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
