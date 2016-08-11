@@ -381,10 +381,11 @@
 	    letter-spacing: 0.27px;
 	}
 	.balance-transition {
-	    text-align: right;
-	    display: block;
-	    font-weight: 600;
-	    margin-right: 10px;
+		text-align: right;
+		font-weight: 600;
+		margin-right: 0;
+		display: inline-block;
+		width: 100px;
 	}
 
 	.latest-update-desktop {

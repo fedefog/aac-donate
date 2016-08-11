@@ -1808,7 +1808,10 @@
 	.table .type-td {
 		text-align: center !important;
 	}
-	
+	.table .amount-td a {
+		display: inline-block;
+    	width: 100%;
+	}
 	.main-transactions .col-xs-12 {
 		padding: 0;
 	}
