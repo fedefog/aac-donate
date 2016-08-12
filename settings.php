@@ -1,6 +1,6 @@
-<main class="main-transactions main-settings" >
+<main class="main-transactions main-settings content-desktop" >
 	
-	<div class="header-fixed">
+	<div class="header-fixed visible-xs">
 
         <header class="header ">
 
@@ -51,8 +51,16 @@
     <div class="container-fluid ">
 	
 		<div class="row">
-		
-			<div class="col-xs-12">
+			
+			<div class="col-md-12 hidden-xs">
+				
+				<div class="header-desktop-setting">
+					<h2 class="title-setting-desktop">Settings</h2>
+				</div>
+
+			</div><!-- / -->
+
+			<div class="col-xs-12 col-md-6">
 				
 				<div class="container-settings">
 					
@@ -205,6 +213,10 @@
 
 				</div><!-- /container-settings -->
 
+			</div><!-- /col -->
+			
+			<div class="col-xs-12 col-md-6">
+
 				<div class="container-settings">
 					
 					<a href="#" class="lkn-change-password">
@@ -253,7 +265,7 @@
 
 					</form><!-- /container-password-settings -->
 					
-					<div class="container-lkns sticky-to-footer">
+					<div class="container-lkns visible-xs sticky-to-footer">
 					
 						<a href="#" class="lkn-save">Save</a>
 
@@ -264,6 +276,11 @@
 				</div><!-- /container-settings -->
 
 			</div><!-- /col -->
+
+			<div class="col-md-12 hidden-xs">
+				
+				<div class="line-bottom-settings"></div>
+			</div><!-- / -->
 		
 		</div><!-- /row -->
 		
