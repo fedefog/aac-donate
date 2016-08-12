@@ -70,6 +70,44 @@
         </header>
 
     </div><!-- /header-fixed -->
+
+    <div class="header-desktop-orders hidden-xs">
+    	
+    	<div class="col-md-12">
+    		
+    		<h2 class="title-orders">View Standing Orders</h2>
+
+    	</div><!-- /col -->
+
+    	<div class="col-md-7">
+
+	    	<ul class="nav-standing-orders ">
+		                		
+	    		<li class="nav-standing-orders-li">
+	    		
+	    			<a href="standing-orders-current.php" class="nav-standing-orders-lkn active">CURRENT</a>
+	    		
+	    		</li>
+
+	    		<li class="nav-standing-orders-li">
+	    		
+	    			<a href="standing-orders-previous.php" class="nav-standing-orders-lkn">PREVIOUS</a>
+	    		
+	    		</li>
+
+	    	</ul>
+		
+		</div><!-- /col -->
+		
+		<div class="col-md-5 text-right">
+		
+			<a href="#" class="expert-csv-file">EXPORT DATA TO CSV FILE</a>
+		
+			<a href="#" class="expert-xls-file">EXPORT DATA TO XLS FILE</a>
+		
+		</div><!-- / col 6 -->
+
+    </div><!-- /header-desktop-orders -->
 	
     <div class="container-fluid">
 	

@@ -1830,6 +1830,7 @@
 	.transactions-navigation-desktop {
 		margin-bottom: 20px;
 	}
+	.standing-orders,
 	.make-donation,
 	.main-transactions {
 		padding-top: 30px;
@@ -2000,6 +2001,76 @@
 		border-radius: 5px;
 		color: #fff;
 		margin-top: 0px;	
+	}
+	.box-slide-text {
+		margin: -35px -35px 0px;
+    	top: -30px;
+    	padding-left: 20px;
+    	padding-right: 20px;
+	}
+
+	/* standing orders */
+	.title-orders {
+		font-weight: 400;
+		font-size: 20px;
+		color: #878787;
+		letter-spacing: 0.54px;
+		margin-top: 0;
+		margin-bottom: 21px;
+	}
+	.nav-standing-orders {
+		display: block;
+	}
+	.nav-standing-orders-li {
+		display: inline-block;
+	}
+	.nav-standing-orders-li .nav-standing-orders-lkn {
+		background: #F3F3F3;
+		border: 1px solid #F3F3F3;
+		border-radius: 4px;
+		display: block;
+		text-align: center;
+		font-weight: 500;
+		font-size: 12px;
+		color: #9B9B9B;
+		letter-spacing: 0.44px;
+		padding: 8px 0;
+		width: 214px;
+		margin-right: 15px;
+		transition: all 0.3s ease-in-out;
+	}
+	.nav-standing-orders-li .nav-standing-orders-lkn:hover {
+		background: #fff;
+		color: #00ADEE;
+		border-color: #00ADEE;
+	}
+	.nav-standing-orders-li .nav-standing-orders-lkn.active {
+		background: #00ADEE;
+		border: 1px solid #00ADEE;
+		color: #fff;
+	}
+	.text-end-date,
+	.date-interval {
+		font-weight: 400;
+		font-size: 11px;
+		color: #878787;
+		letter-spacing: 0.94px;
+	}
+	.lkn-view-transaction {
+		font-weight: 400;
+		font-size: 11px;
+		color: #ADADAD;
+		letter-spacing: 0.94px;
+
+		transition: all 0.3s ease-in-out;
+	}
+	.lkn-view-transaction:hover {
+		color: #000;
+	}
+	.td-interval,
+	.td-end-date,
+	.td-view-transaction {
+		text-align: center;		
 	}
 
 }
