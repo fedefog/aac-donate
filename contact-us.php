@@ -50,7 +50,7 @@
 
     </div><!-- /header-fixed -->
 
-    <div class="container top-center-content">
+    <div class="container visible-xs top-center-content">
 
     	<div class="row">
 
@@ -86,18 +86,39 @@
 
     <div class="container-contact-us">
     	
-    	<div class="container">
-    		
-			<textarea cols="30" rows="10" class="contact-us-textarea" placeholder="How can we help?"></textarea>
+    	<div class="container-fluid">
 
-			<a href="#" class="send-msj">Send Message</a>
+			<div class="row">
+				
+				<div class="col-md-12 col-xs-12 hidden-xs">
+					
+					<div class="header-desktop">
+						<h2 class="title-desktop">Contact us</h2>
+					</div><!-- header-desktop -->
+
+				</div><!-- /col -->
 			
-			<div class="box-details-bank">
-				<h2 class="title-bank-details">BANK DETAILS</h2>
-				<p class="text">ACHISOMOCH AID CO. LTD.</p>
-				<p class="text">SORT CODE 20-29-37</p>
-				<p class="text">ACCOUNT NO 2033 2003</p>
-			</div>
+	    		<div class="col-xs-12 col-md-6 col-md-offset-3">
+
+					<textarea cols="30" rows="10" class="contact-us-textarea" placeholder="How can we help?"></textarea>
+
+					<a href="#" class="send-msj transition">Send Message</a>
+					
+					<div class="box-details-bank">
+						<h2 class="title-bank-details">BANK DETAILS</h2>
+						<p class="text">ACHISOMOCH AID CO. LTD.</p>
+						<p class="text">SORT CODE 20-29-37</p>
+						<p class="text">ACCOUNT NO 2033 2003</p>
+					</div><!-- / -->
+					
+					<div class="hidden-xs box-for-answers">
+						<h2 class="title-footer">FOR ANSWERS TO COMMONLY ASKED QUESTIONS</h2>
+						<a  class="subtitle-footer">PLEASE VIEW OUR FAQs</a>
+					</div>
+
+				</div><!-- /col -->
+
+			</div><!-- /row -->
 
     	</div><!-- /container -->
 
@@ -106,7 +127,7 @@
 
 
 
-	<a href="#" class="sticky-to-footer">
+	<a href="#" class="sticky-to-footer visible-xs">
 		
 		<h2 class="title-footer">FOR ANSWERS TO COMMONLY ASKED QUESTIONS</h2>
 

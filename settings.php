@@ -54,8 +54,8 @@
 			
 			<div class="col-md-12 hidden-xs">
 				
-				<div class="header-desktop-setting">
-					<h2 class="title-setting-desktop">Settings</h2>
+				<div class="header-desktop">
+					<h2 class="title-desktop">Settings</h2>
 				</div>
 
 			</div><!-- / -->
