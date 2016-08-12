@@ -51,7 +51,7 @@
 
     </div><!-- /header-fixed -->
 
-    <div class="container top-center-content">
+    <div class="container top-center-content visible-xs">
 
     	<div class="row">
 
@@ -102,283 +102,341 @@
     </div><!-- /box-daily-updates -->
 	
 	<div class="container-vochers">
-		<div class="container">
-			<form >
+		
+		<div class="container-fluid">
+
+			<div class="row">
+				<form >
+					<div class="col-md-6 col-xs-12">
+
+					<div class="form-group input-default">
+					
+						<div class="input-group ">
+
+							<a href="#" class="less-input lkn-input"></a>
+							<input type="text" class="input-number" value="0">
+							<a href="#" class="more-input lkn-input"></a>
+
+						</div><!-- /input-group -->
+
+						<div class="info-input">
+							
+							<div class="title-label">PREPAID 50P VOUCHERS</div>
+
+							<div class="subtitle-label">100 VOUCHERS</div>
+
+						</div><!-- /info-input -->
+
+					</div><!-- /form-group -->
+
+					<div class="form-group input-default">
+					
+						<div class="input-group ">
+
+							<a href="#" class="less-input lkn-input"></a>
+							<input type="text" class="input-number" value="0">
+							<a href="#" class="more-input lkn-input"></a>
+
+						</div><!-- /input-group -->
+
+						<div class="info-input">
+							
+							<div class="title-label">PREPAID £1 VOUCHER </div>
+
+							<div class="subtitle-label">50 VOUCHERS</div>
+
+						</div><!-- /info-input -->
+
+					</div><!-- /form-group -->
+
+					<div class="form-group input-default">
+					
+						<div class="input-group ">
+
+							<a href="#" class="less-input lkn-input"></a>
+							<input type="text" class="input-number" value="0">
+							<a href="#" class="more-input lkn-input"></a>
+
+						</div><!-- /input-group -->
+
+						<div class="info-input">
+							
+							<div class="title-label">PRE-PRINTED £3</div>
+
+							<div class="subtitle-label">VOUCHER BOOK</div>
+
+						</div><!-- /info-input -->
+
+					</div><!-- /form-group -->
+
+					<div class="form-group input-default">
+					
+						<div class="input-group ">
+
+							<a href="#" class="less-input lkn-input"></a>
+							<input type="text" class="input-number" value="0">
+							<a href="#" class="more-input lkn-input"></a>
+
+						</div><!-- /input-group -->
+
+						<div class="info-input">
+							
+							<div class="title-label">PRE-PRINTED £5</div>
+
+							<div class="subtitle-label">VOUCHER BOOK</div>
+
+						</div><!-- /info-input -->
+
+					</div><!-- /form-group -->
 				
-				<div class="form-group input-default">
-				
-					<div class="input-group ">
+					<div class="form-group input-default">
+					
+						<div class="input-group ">
 
-						<a href="#" class="less-input lkn-input"></a>
-						<input type="text" class="input-number" value="0">
-						<a href="#" class="more-input lkn-input"></a>
+							<a href="#" class="less-input lkn-input"></a>
+							<input type="text" class="input-number" value="0">
+							<a href="#" class="more-input lkn-input"></a>
 
-					</div><!-- /input-group -->
+						</div><!-- /input-group -->
 
-					<div class="info-input">
-						
-						<div class="title-label">PREPAID 50P VOUCHERS</div>
+						<div class="info-input">
+							
+							<div class="title-label">PRE-PRINTED £10</div>
 
-						<div class="subtitle-label">100 VOUCHERS</div>
+							<div class="subtitle-label">VOUCHER BOOK</div>
 
-					</div><!-- /info-input -->
+						</div><!-- /info-input -->
 
-				</div><!-- /form-group -->
+					</div><!-- /form-group -->
+					
+					</div><!-- /col -->
 
-				<div class="form-group input-default">
-				
-					<div class="input-group ">
+					<div class="col-md-6 col-xs-12">
 
-						<a href="#" class="less-input lkn-input"></a>
-						<input type="text" class="input-number" value="0">
-						<a href="#" class="more-input lkn-input"></a>
+					<div class="form-group input-default">
+					
+						<div class="input-group ">
 
-					</div><!-- /input-group -->
+							<a href="#" class="less-input lkn-input"></a>
+							<input type="text" class="input-number" value="0">
+							<a href="#" class="more-input lkn-input"></a>
 
-					<div class="info-input">
-						
-						<div class="title-label">PREPAID £1 VOUCHER </div>
+						</div><!-- /input-group -->
 
-						<div class="subtitle-label">50 VOUCHERS</div>
+						<div class="info-input">
+							
+							<div class="title-label">PRE-PRINTED £18</div>
 
-					</div><!-- /info-input -->
+							<div class="subtitle-label">VOUCHER BOOK</div>
 
-				</div><!-- /form-group -->
+						</div><!-- /info-input -->
 
-				<div class="form-group input-default">
-				
-					<div class="input-group ">
+					</div><!-- /form-group -->
 
-						<a href="#" class="less-input lkn-input"></a>
-						<input type="text" class="input-number" value="0">
-						<a href="#" class="more-input lkn-input"></a>
+					<div class="form-group input-default">
+					
+						<div class="input-group ">
 
-					</div><!-- /input-group -->
+							<a href="#" class="less-input lkn-input"></a>
+							<input type="text" class="input-number" value="0">
+							<a href="#" class="more-input lkn-input"></a>
 
-					<div class="info-input">
-						
-						<div class="title-label">PRE-PRINTED £3</div>
+						</div><!-- /input-group -->
 
-						<div class="subtitle-label">VOUCHER BOOK</div>
+						<div class="info-input">
+							
+							<div class="title-label">PRE-PRINTED</div>
 
-					</div><!-- /info-input -->
 
-				</div><!-- /form-group -->
+						</div><!-- /info-input -->
 
-				<div class="form-group input-default">
-				
-					<div class="input-group ">
+					</div><!-- /form-group -->
 
-						<a href="#" class="less-input lkn-input"></a>
-						<input type="text" class="input-number" value="0">
-						<a href="#" class="more-input lkn-input"></a>
+					<div class="form-group input-default">
+					
+						<div class="input-group ">
 
-					</div><!-- /input-group -->
+							<a href="#" class="less-input lkn-input"></a>
+							<input type="text" class="input-number" value="0">
+							<a href="#" class="more-input lkn-input"></a>
 
-					<div class="info-input">
-						
-						<div class="title-label">PRE-PRINTED £5</div>
+						</div><!-- /input-group -->
 
-						<div class="subtitle-label">VOUCHER BOOK</div>
+						<div class="info-input">
+							
+							<div class="title-label">PRE-PRINTED £50</div>
 
-					</div><!-- /info-input -->
+							<div class="subtitle-label">VOUCHER BOOK</div>
 
-				</div><!-- /form-group -->
+						</div><!-- /info-input -->
 
-				<div class="form-group input-default">
-				
-					<div class="input-group ">
+					</div><!-- /form-group -->
 
-						<a href="#" class="less-input lkn-input"></a>
-						<input type="text" class="input-number" value="0">
-						<a href="#" class="more-input lkn-input"></a>
+					<div class="form-group input-default">
+					
+						<div class="input-group ">
 
-					</div><!-- /input-group -->
+							<a href="#" class="less-input lkn-input"></a>
+							<input type="text" class="input-number" value="0">
+							<a href="#" class="more-input lkn-input"></a>
 
-					<div class="info-input">
-						
-						<div class="title-label">PRE-PRINTED £10</div>
+						</div><!-- /input-group -->
 
-						<div class="subtitle-label">VOUCHER BOOK</div>
+						<div class="info-input">
+							
+							<div class="title-label">PRE-PRINTED £100</div>
 
-					</div><!-- /info-input -->
+							<div class="subtitle-label">VOUCHER BOOK</div>
 
-				</div><!-- /form-group -->
+						</div><!-- /info-input -->
 
-				<div class="form-group input-default">
-				
-					<div class="input-group ">
+					</div><!-- /form-group -->
 
-						<a href="#" class="less-input lkn-input"></a>
-						<input type="text" class="input-number" value="0">
-						<a href="#" class="more-input lkn-input"></a>
+					<div class="form-group input-default">
+					
+						<div class="input-group ">
 
-					</div><!-- /input-group -->
+							<a href="#" class="less-input lkn-input"></a>
+							<input type="text" class="input-number" value="0">
+							<a href="#" class="more-input lkn-input"></a>
 
-					<div class="info-input">
-						
-						<div class="title-label">PRE-PRINTED £18</div>
+						</div><!-- /input-group -->
 
-						<div class="subtitle-label">VOUCHER BOOK</div>
+						<div class="info-input">
+							
+							<div class="title-label">BLANK</div>
 
-					</div><!-- /info-input -->
+							<div class="subtitle-label">VOUCHER BOOK</div>
 
-				</div><!-- /form-group -->
+						</div><!-- /info-input -->
 
-				<div class="form-group input-default">
-				
-					<div class="input-group ">
-
-						<a href="#" class="less-input lkn-input"></a>
-						<input type="text" class="input-number" value="0">
-						<a href="#" class="more-input lkn-input"></a>
-
-					</div><!-- /input-group -->
-
-					<div class="info-input">
-						
-						<div class="title-label">PRE-PRINTED</div>
-
-
-					</div><!-- /info-input -->
-
-				</div><!-- /form-group -->
-
-				<div class="form-group input-default">
-				
-					<div class="input-group ">
-
-						<a href="#" class="less-input lkn-input"></a>
-						<input type="text" class="input-number" value="0">
-						<a href="#" class="more-input lkn-input"></a>
-
-					</div><!-- /input-group -->
-
-					<div class="info-input">
-						
-						<div class="title-label">PRE-PRINTED £50</div>
-
-						<div class="subtitle-label">VOUCHER BOOK</div>
-
-					</div><!-- /info-input -->
-
-				</div><!-- /form-group -->
-
-				<div class="form-group input-default">
-				
-					<div class="input-group ">
-
-						<a href="#" class="less-input lkn-input"></a>
-						<input type="text" class="input-number" value="0">
-						<a href="#" class="more-input lkn-input"></a>
-
-					</div><!-- /input-group -->
-
-					<div class="info-input">
-						
-						<div class="title-label">PRE-PRINTED £100</div>
-
-						<div class="subtitle-label">VOUCHER BOOK</div>
-
-					</div><!-- /info-input -->
-
-				</div><!-- /form-group -->
-
-				<div class="form-group input-default">
-				
-					<div class="input-group ">
-
-						<a href="#" class="less-input lkn-input"></a>
-						<input type="text" class="input-number" value="0">
-						<a href="#" class="more-input lkn-input"></a>
-
-					</div><!-- /input-group -->
-
-					<div class="info-input">
-						
-						<div class="title-label">BLANK</div>
-
-						<div class="subtitle-label">VOUCHER BOOK</div>
-
-					</div><!-- /info-input -->
-
-				</div><!-- /form-group -->
-
-			</form>
+					</div><!-- /form-group -->
+					
+					</div><!-- /col-->
+					
+				</form>
+			
+			</div><!-- /row -->
 
 		</div><!-- /container- -->
-
+		<div class="container-fluid container-border-desktop hidden-xs">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="border-bottom "></div>
+				</div><!-- /col -->
+			</div><!-- /row -->
+		</div><!-- /container -->
 	</div><!-- /container-vochers -->
 
 	<div class="container-delivery">
 		
-		<div class="container">
+		<div class="container-fluid">
+			
+			<div class="row">
+			
+				<div class="col-md-6">
 
-			<form class="form-delivery">
+					<form class="form-delivery">
 
-				<div class="form-group">
+						<div class="form-group">
+							
+							<h2 class="title-delivery">DELIVERY </h2>
+
+							<div class="row-input">
+
+								<a href="#" class="checkbox-input">
+									<i class="fa fa-check" aria-hidden="true"></i>
+								</a>
+								
+								<div class="label-delivery">
+									
+									<div class="title-label">POST: UP TO TWO BOOKS</div>
+
+									<div class="subtitle-label">I TAKE RESPONSIBILITY FOR ANY 50P/£1 PPV BOOKS LOST IN THE POST</div>
+
+								</div><!-- /label-delivery -->
+
+							</div><!-- /row-input -->
+
+							<div class="row-input">
+
+								<a href="#" class="checkbox-input">
+									<i class="fa fa-check" aria-hidden="true"></i>
+								</a>
+								
+								<div class="label-delivery">
+									
+									<div class="title-label">OFFICE COLLECTION </div>
+
+									<div class="subtitle-label">9.30AM - 3.30PM MON-THURS</div>
+
+								</div><!-- /label-delivery -->
+
+							</div><!-- /row-input -->
+
+							<div class="row-input">
+
+								<a href="#" class="checkbox-input">
+									<i class="fa fa-check" aria-hidden="true"></i>
+								</a>
+								
+								<div class="label-delivery">
+									
+									<div class="title-label">SPECIAL DELIVERY </div>
+
+									<div class="subtitle-label">AT A COST OF £5 TO BE DEDUCTED FROM MY ACCOUNT</div>
+
+								</div><!-- /label-delivery -->
+
+							</div><!-- /row-input -->
+
+						</div><!-- /form-group -->
+
+					</form>
 					
-					<h2 class="title-delivery">DELIVERY </h2>
-
-					<div class="row-input">
-
-						<a href="#" class="checkbox-input">
-							<i class="fa fa-check" aria-hidden="true"></i>
-						</a>
-						
-						<div class="label-delivery">
+				</div><!-- /col -->
+				
+				<div class="col-md-6">
+					
+					<div class="container-urgent hidden-xs">
 							
-							<div class="title-label">POST: UP TO TWO BOOKS</div>
+						<input type="checkbox" id="urgent-switch" name="my-checkbox">
 
-							<div class="subtitle-label">I TAKE RESPONSIBILITY FOR ANY 50P/£1 PPV BOOKS LOST IN THE POST</div>
+						<h2 class="label-urgent">THIS IS URGENT</h2>
 
-						</div><!-- /label-delivery -->
+					</div><!-- /container-urgent -->
 
-					</div><!-- /row-input -->
+					<form class="container-notes hidden-xs">
 
-					<div class="row-input">
+						<label class="title-notes">NOTES TO AAC</label>
 
-						<a href="#" class="checkbox-input">
-							<i class="fa fa-check" aria-hidden="true"></i>
-						</a>
-						
-						<div class="label-delivery">
-							
-							<div class="title-label">OFFICE COLLECTION </div>
+						<textarea cols="30" rows="10" class="textarea-notes" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>	
 
-							<div class="subtitle-label">9.30AM - 3.30PM MON-THURS</div>
+					</form><!-- /container-urgent -->					
+				
+				</div><!-- /col -->
 
-						</div><!-- /label-delivery -->
-
-					</div><!-- /row-input -->
-
-					<div class="row-input">
-
-						<a href="#" class="checkbox-input">
-							<i class="fa fa-check" aria-hidden="true"></i>
-						</a>
-						
-						<div class="label-delivery">
-							
-							<div class="title-label">SPECIAL DELIVERY </div>
-
-							<div class="subtitle-label">AT A COST OF £5 TO BE DEDUCTED FROM MY ACCOUNT</div>
-
-						</div><!-- /label-delivery -->
-
-					</div><!-- /row-input -->
-
-				</div><!-- /form-group -->
-
-			</form>
+			</div><!-- /row -->
 
 		</div><!-- /container -->
 
+		<div class="container-fluid container-border-desktop hidden-xs">
+			<div class="col-md-12">
+				<div class="border-bottom "></div>
+			</div><!-- /col -->
+		</div><!-- /container -->
+		
 	</div><!-- /container-delivery -->
 
-	<div class="container-urgent">
+	<div class="col-md-12 hidden-xs">
 
-		<div class="container">
+		<a href="#" class="lkn-order-vouchers transition disabled">Order Vouchers</a>
+
+	</div><!-- /col -->
+
+	<div class="container-urgent visible-xs">
+
+		<div class="container-fluid">
 			
 			<input type="checkbox" id="urgent-switch" name="my-checkbox">
 
@@ -388,9 +446,9 @@
 
 	</div><!-- /container-urgent -->
 
-	<form class="container-notes">
+	<form class="container-notes visible-xs">
 
-		<div class="container">
+		<div class="container-fluid">
 			
 			<label class="title-notes">NOTES TO AAC</label>
 
@@ -400,6 +458,6 @@
 
 	</form><!-- /container-urgent -->
 
-	<a href="#" class="sticky-to-footer lkn-order-vouchers disabled">Order Vouchers</a>
+	<a href="#" class="sticky-to-footer lkn-order-vouchers visible-xs disabled">Order Vouchers</a>
 	
 </main>	

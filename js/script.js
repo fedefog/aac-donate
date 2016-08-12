@@ -432,6 +432,11 @@ load_js()
 					$('.lkn-order-vouchers').removeClass('disabled');
 				}	
 			});
+			 $('.lkn-order-vouchers.disabled').click(
+				function(event) {
+				event.preventDefault ( );
+				// if order vouchers buton is disabled, prevent default even
+			});
 			 
 
 		 	// FORM SEND A FRIEND

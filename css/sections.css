@@ -708,6 +708,232 @@
 	position: absolute;
 	width: 27px;
 }
+/* VOCHERS */
+
+.main-transactions.order-voucher .top-center-content {
+    padding-top: 60px;
+}
+.container-vochers .lkn-input {
+	background: #00ADEE;
+	height: 40px;
+	display: inline-block;
+	position: relative;
+	width: 40px;
+}
+.input-default .lkn-input{
+	background: #EEE;
+}
+.container-vochers .lkn-input:before {
+	content: '';
+	border-top: 5px solid transparent;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid transparent;
+	position: absolute;
+    top: 16px;
+	left: 16px;
+}
+
+.container-vochers .more-input:before{
+	margin-right: -3px;
+}
+.container-vochers .less-input:before{
+	border-left: 5px solid transparent;
+	border-right: 5px solid #fff;
+	margin-left: -3px;
+}
+.container-vochers .input-default .less-input:before{
+	border-right: 5px solid #727272;
+}
+.container-vochers .input-default .more-input:before {
+	border-left: 5px solid #727272;
+}
+.container-vochers .less-input {
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+}
+.container-vochers .more-input {
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.container-vochers .input-number {
+	
+	border-radius: 0;
+	background: #F5F5F5;
+	border: 1px solid #EEE;
+	display: inline-block;
+	text-align: center;
+	height: 40px;
+	padding: 5px 0;
+	vertical-align: top;
+
+	font-weight: 400;
+	font-size: 14px;
+	color: #00ADEE;
+	letter-spacing: 0.61px;
+	line-height: 19px;
+	width: 60px;
+}
+
+.container-vochers .form-group {
+	margin: 10px 0;
+	height: 40px;
+	clear: both;
+}
+.container-vochers .input-group {
+	float: left;
+}
+.info-input {
+	display: inline-block;
+	margin-left: 20px;
+}
+.title-label {
+	font-weight: 700;
+	font-size: 12px;
+	color: #333333;
+	letter-spacing: 0.5px;
+	margin-top: 4px;
+}
+.subtitle-label {
+	font-weight: 400;
+	font-size: 12px;
+	color: #333333;
+	letter-spacing: 0.5px;
+}
+.container-vochers .input-default .input-number{
+	background: #fff;
+}
+.container-vochers .input-default .input-number,
+.input-default .title-label ,
+.input-default .subtitle-label {
+	color: #727272;
+}
+.container-vochers {
+	display: block;
+	border-bottom: 1px solid #E2E2E5;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	padding-bottom: 10px;
+}
+.title-delivery {
+	color: #B0B0B0;
+	font-weight: 600;
+	font-size: 12px;
+	letter-spacing: 0.3px;	
+	margin: -10px 0 20px 0;
+}
+
+.container-delivery {
+	border-bottom: 1px solid #E2E2E5;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+.form-delivery .row-input {
+	margin-bottom: 15px;
+}
+.form-delivery .label-delivery {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: -3px;
+	width: 80%;
+}
+.form-delivery .label-delivery .title-label {
+	margin-top: 0;
+}
+.form-delivery .label-delivery .subtitle-label ,
+.form-delivery .label-delivery .title-label {
+	color: #727272;
+}
+.form-delivery .label-delivery .subtitle-label {
+	font-size: 11px;
+}
+.form-delivery .checkbox-input {
+	border-radius: 4px;
+	border: 1px solid #BBBBBB;
+	display: inline-block;
+	vertical-align: top;
+	height: 36px;
+	margin-right: 10px;
+	text-align: center;
+	width: 36px;
+	transition: all .2s ease-out;
+}
+.form-delivery .checkbox-input i {
+	font-size: 20px;
+	line-height: 36px;
+	color: #00ADEE;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .2s ease-out;
+}
+.form-delivery .active .checkbox-input i {
+	opacity: 1;
+	visibility: visible;
+}
+.form-delivery .active .checkbox-input {
+	border: 1px solid #00ADEE;
+}
+
+.container-urgent {
+	border-bottom: 1px solid #E2E2E5;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+.container-urgent .label-urgent {
+	font-weight: 600;
+	display: inline-block;
+	font-size: 12px;
+	color: #727272;
+	letter-spacing: 0.3px;
+	margin: 0 0 0 20px;
+}
+.container-notes .textarea-notes {
+	resize: none;
+	width: 100%;
+}
+.container-notes .title-notes {
+	font-weight: 600;
+	font-size: 12px;
+	color: #333333;
+	letter-spacing: 0.5px;
+}
+.container-notes .textarea-notes {
+	border: 1px solid #BBBBBB;
+	border-radius: 4px;
+	padding: 12px 15px;
+	height: 69px;
+	resize: none;
+	-webkit-appearance: none;
+	width: 100%;		
+	margin-bottom: 45px;
+}
+.lkn-order-vouchers {
+	background: #F7F7F7;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
+	display: block;
+	text-align: center;
+	font-weight: 600;
+	font-size: 16px;
+	color: #00ADEE;
+	letter-spacing: 0.43px;
+	margin-top: 20px;
+	padding: 23px 0;
+}
+.lkn-order-vouchers.disabled:hover ,
+.lkn-order-vouchers.disabled {
+	color: #DFDDDD  !important;
+	background: #F7F7F7 !important;
+	cursor: default ;
+}
+.container-urgent .bootstrap-switch {
+	width: 40px;
+}
+.container-urgent .bootstrap-switch {
+	width: 70px !important;
+}
+.container-urgent .bootstrap-switch-container span {
+	font-size: 20px !important;
+	width: 34px !important;
+}
 /* swich */
 
 .bootstrap-switch {
@@ -740,7 +966,14 @@
 	color: #00ADEE ;
 	/* border-radius: 125px; */
 }
-
+/*  tamaño de switch varia en settings */
+	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
+	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
+	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default,
+	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default,
+	.bootstrap-switch .bootstrap-switch-label {
+		height: 35px;
+	}
 @media(max-width:340px){ 
 	/*Transaction */
 	.main-transactions .box-account {
@@ -1120,7 +1353,9 @@
 	}
 
 
-	
+	.order-voucher .header {
+		height: 60px;
+	}
 
 
 	/* SETTINGS */
@@ -1172,14 +1407,7 @@
 		float: right;
 	}
 
-	/*  tamaño de switch varia en settings */
-	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
-	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary,
-	.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-default,
-	.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default,
-	.bootstrap-switch .bootstrap-switch-label {
-		height: 35px;
-	}
+	
 	.form-phone-number {
 		margin-top: 10px;
 	}
@@ -1301,232 +1529,7 @@
 	    border-left: 5px solid transparent;
 	}
 
-	/* VOCHERS */
-	.order-voucher .header {
-		height: 60px;
-	}
-	.main-transactions.order-voucher .top-center-content {
-	    padding-top: 60px;
-	}
-	.container-vochers .lkn-input {
-		background: #00ADEE;
-		height: 40px;
-		display: inline-block;
-		position: relative;
-		width: 40px;
-	}
-	.input-default .lkn-input{
-		background: #EEE;
-	}
-	.container-vochers .lkn-input:before {
-		content: '';
-		border-top: 5px solid transparent;
-	    border-left: 5px solid #fff;
-	    border-bottom: 5px solid transparent;
-		position: absolute;
-	    top: 16px;
-    	left: 16px;
-	}
 	
-	.container-vochers .more-input:before{
-		margin-right: -3px;
-	}
-	.container-vochers .less-input:before{
-		border-left: 5px solid transparent;
-		border-right: 5px solid #fff;
-		margin-left: -3px;
-	}
-	.container-vochers .input-default .less-input:before{
-		border-right: 5px solid #727272;
-	}
-	.container-vochers .input-default .more-input:before {
-		border-left: 5px solid #727272;
-	}
-	.container-vochers .less-input {
-		border-bottom-left-radius: 5px;
-		border-top-left-radius: 5px;
-	}
-	.container-vochers .more-input {
-		border-bottom-right-radius: 5px;
-		border-top-right-radius: 5px;
-	}
-	.container-vochers .input-number {
-		
-		border-radius: 0;
-		background: #F5F5F5;
-		border: 1px solid #EEE;
-		display: inline-block;
-		text-align: center;
-		height: 40px;
-		padding: 5px 0;
-		vertical-align: top;
-
-		font-weight: 400;
-		font-size: 14px;
-		color: #00ADEE;
-		letter-spacing: 0.61px;
-		line-height: 19px;
-		width: 60px;
-	}
-
-	.container-vochers .form-group {
-		margin: 10px 0;
-		height: 40px;
-		clear: both;
-	}
-	.container-vochers .input-group {
-		float: left;
-	}
-	.info-input {
-		display: inline-block;
-		margin-left: 20px;
-	}
-	.title-label {
-		font-weight: 700;
-		font-size: 12px;
-		color: #333333;
-		letter-spacing: 0.5px;
-		margin-top: 4px;
-	}
-	.subtitle-label {
-		font-weight: 400;
-		font-size: 12px;
-		color: #333333;
-		letter-spacing: 0.5px;
-	}
-	.container-vochers .input-default .input-number{
-		background: #fff;
-	}
-	.container-vochers .input-default .input-number,
-	.input-default .title-label ,
-	.input-default .subtitle-label {
-		color: #727272;
-	}
-	.container-vochers {
-		display: block;
-		border-bottom: 1px solid #E2E2E5;
-		margin-bottom: 20px;
-		margin-top: 10px;
-		padding-bottom: 10px;
-	}
-	.title-delivery {
-		color: #B0B0B0;
-		font-weight: 600;
-		font-size: 12px;
-		letter-spacing: 0.3px;	
-		margin: -10px 0 20px 0;
-	}
-
-	.container-delivery {
-		border-bottom: 1px solid #E2E2E5;
-		margin-bottom: 20px;
-		padding-bottom: 10px;
-	}
-	.form-delivery .row-input {
-		margin-bottom: 15px;
-	}
-	.form-delivery .label-delivery {
-		display: inline-block;
-		vertical-align: top;
-		margin-top: -3px;
-		width: 80%;
-	}
-	.form-delivery .label-delivery .title-label {
-		margin-top: 0;
-	}
-	.form-delivery .label-delivery .subtitle-label ,
-	.form-delivery .label-delivery .title-label {
-		color: #727272;
-	}
-	.form-delivery .label-delivery .subtitle-label {
-		font-size: 11px;
-	}
-	.form-delivery .checkbox-input {
-		border-radius: 4px;
-		border: 1px solid #BBBBBB;
-		display: inline-block;
-		vertical-align: top;
-		height: 36px;
-		margin-right: 10px;
-		text-align: center;
-		width: 36px;
-		transition: all .2s ease-out;
-	}
-	.form-delivery .checkbox-input i {
-		font-size: 20px;
-		line-height: 36px;
-		color: #00ADEE;
-		opacity: 0;
-		visibility: hidden;
-		transition: all .2s ease-out;
-	}
-	.form-delivery .active .checkbox-input i {
-		opacity: 1;
-		visibility: visible;
-	}
-	.form-delivery .active .checkbox-input {
-		border: 1px solid #00ADEE;
-	}
-	
-	.container-urgent {
-		border-bottom: 1px solid #E2E2E5;
-		margin-bottom: 20px;
-		padding-bottom: 20px;
-	}
-	.container-urgent .label-urgent {
-		font-weight: 600;
-		display: inline-block;
-		font-size: 12px;
-		color: #727272;
-		letter-spacing: 0.3px;
-		margin: 0 0 0 20px;
-	}
-	.container-notes .textarea-notes {
-		resize: none;
-		width: 100%;
-	}
-	.container-notes .title-notes {
-		font-weight: 600;
-		font-size: 12px;
-		color: #333333;
-		letter-spacing: 0.5px;
-	}
-	.container-notes .textarea-notes {
-		border: 1px solid #BBBBBB;
-		border-radius: 4px;
-		padding: 12px 15px;
-		height: 69px;
-		resize: none;
-		-webkit-appearance: none;
-		width: 100%;		
-		margin-bottom: 45px;
-	}
-	.lkn-order-vouchers {
-		background: #F7F7F7;
-		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
-		display: block;
-		text-align: center;
-		font-weight: 600;
-		font-size: 16px;
-		color: #00ADEE;
-		letter-spacing: 0.43px;
-		margin-top: 20px;
-		padding: 23px 0;
-	}
-	.lkn-order-vouchers.disabled {
-		color: #DFDDDD;
-		cursor: default;
-	}
-	.container-urgent .bootstrap-switch {
-		width: 40px;
-	}
-	.container-urgent .bootstrap-switch {
-		width: 70px !important;
-	}
-	.container-urgent .bootstrap-switch-container span {
-		font-size: 20px !important;
-		width: 34px !important;
-	}
 	/* SETTINGS */
 	.main-transactions.main-help .header-fixed,
 	.main-transactions.main-help .header {
@@ -1831,6 +1834,7 @@
 		margin-bottom: 20px;
 	}
 	.standing-orders,
+	.order-voucher,
 	.make-donation,
 	.main-transactions {
 		padding-top: 30px;
@@ -2073,6 +2077,45 @@
 		text-align: center;		
 	}
 
+	/* vouchers */
+	.order-voucher  {
+		overflow: hidden;
+	}
+	.order-voucher .box-slide-text{
+		margin-top: 0;
+	}
+	.container-urgent,
+	.container-vochers,
+	.container-delivery {
+		border: 0;
+	}
+	.border-bottom {
+		background: #E2E2E5;
+		height: 1px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+	.container-border-desktop {
+		margin-top: 20px;
+		margin-bottom: 5px;
+	}
+	.container-delivery .container-fluid {
+		padding: 0;
+	}
+	
+	.container-notes .textarea-notes {
+		margin-bottom: 0;
+	}
+	.lkn-order-vouchers {
+		width: 375px;
+		margin: 0 auto;
+	}
+	.lkn-order-vouchers:hover {
+		background: #00ADEE;
+		color: #fff;
+	}
 }
 @media(min-width:992px){
    
