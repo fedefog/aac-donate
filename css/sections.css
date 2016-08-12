@@ -2153,6 +2153,32 @@
 	 
 	    padding: 20px 0 10px 0;
 	}
+	.container-lkns {
+		text-align: center;
+		margin-top: 20px;
+	}
+	.container-lkns a {
+		
+		border-radius: 4px;
+		display: inline-block;
+		float: none;
+		margin: 0 7px;
+		width: 225px;
+	}
+	.lkn-save {
+		border: 1px solid #00ADEE;
+	}
+	.lkn-cancel {
+		border: 1px solid #E7E7E7;
+	}
+	.container-lkns .lkn-cancel:hover {
+		background: #fff;
+		color: #bbb;
+	}
+	.container-lkns .lkn-save:hover {
+		background: #fff;
+		color: #00ADEE;
+	}
 }
 @media(min-width:992px){
    

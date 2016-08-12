@@ -280,7 +280,18 @@
 			<div class="col-md-12 hidden-xs">
 				
 				<div class="line-bottom-settings"></div>
+
 			</div><!-- / -->
+
+			<div class="col-md-12 hidden-xs">
+				<div class="container-lkns">
+				
+					<a href="#" class="lkn-save transition">Save</a>
+
+					<a href="#" class="lkn-cancel transition">Cancel</a>
+
+				</div><!-- /container-lkns -->
+			</div>
 		
 		</div><!-- /row -->
 		
