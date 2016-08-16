@@ -123,6 +123,10 @@
 	font-weight: 600;
 	font-size: 16px;
 	letter-spacing: 0.43px;
+	transition: all 0.2s ease-in-out;
+}
+.daterangepicker .btn-success:hover { 
+	background: #0187B9;
 }
 .daterangepicker .cancelBtn {
 	position: absolute;
@@ -2354,6 +2358,9 @@
 	}
 	.drop-down-sort.active {
 	    top: 41px;
+	}
+	.navigator-transactions-lkn.lkn-sortby.lkn-sortby .fa {
+		margin-left: 5px;
 	}
 	.drop-down-sort .navigator-transactions-lkn.lkn-sortby {
 	    top: -59px;

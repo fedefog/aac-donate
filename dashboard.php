@@ -253,7 +253,7 @@
 							</span>
 						</a>
 					   </div> 	
-					  <button type="submit" class="btn btn-make-a-donation">Make a Payment</button>
+					  <button type="submit" class="btn btn-make-a-donation transition">Make a Payment</button>
 					</form>
 
 				</div><!-- col 6 -->

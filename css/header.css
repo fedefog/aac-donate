@@ -337,10 +337,29 @@
   }	
   .lkn-logout {
     border-bottom: none;
-    border-top: 1px solid #DADADA;
   }
   .layer-navigator {
     top: 0;
+  }
+  .navigator-lkn .icon {
+    width: 24px;
+    display: inline-block;
+  }
+  .lkn-logout .text {
+    letter-spacing: 0.43px;
+  }
+  .lkn-logout .icon {
+    width: 24px;
+    display: inline-block;
+  }
+  .lkn-logout .fa {
+    font-size: 20px;
+  }
+  .navigator-lkn, .navigator .lkn-logout {
+    transition: all 0.2s ease-in-out;
+  }
+  .navigator-lkn:hover, .navigator .lkn-logout:hover {
+    background: #EEE;
   }
 }
 @media(min-width:992px){
