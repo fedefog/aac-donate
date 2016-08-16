@@ -167,9 +167,9 @@
 
 					</li>
 
-					<li class="navigator-transactions-li">
+					<li class="navigator-transactions-li hidden-xs">
 						
-						<a href="#" class="navigator-transactions-lkn lkn-search hidden-xs lkn-seach-desktop btn-dropdown-search"  >SEARCH</a>
+						<a href="#" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >SEARCH</a>
 
 					</li>
 
@@ -301,7 +301,7 @@
 						</div>
 					</div>
 
-					<a href="transactions-result.php" class="btn-search transition">Search Transactions</a>					
+					<a href="transactions-result.php" class="btn-search external-lkn transition">Search Transactions</a>					
 
 				</div><!-- /col -->
 
@@ -409,7 +409,7 @@
 				</div>
 			</div>
 			
-			<a href="transactions-result.php" class="btn-search">Search Transactions</a>
+			<a href="transactions-result.php" class="btn-search external-lkn">Search Transactions</a>
 
 		</form>
 

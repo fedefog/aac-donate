@@ -2352,12 +2352,12 @@
 		letter-spacing: 0.54px;
 		margin: 25px 0 30px 0;
 	}
+	.drop-down-sort,
 	.drop-down-sort.active {
 	    top: 41px;
 	}
-	.drop-down-sort .navigator-transactions-lkn.lkn-sortby {
-	    top: -59px;
-	}
+	
+	.drop-down-sort .navigator-transactions-lkn.lkn-sortby,
 	.drop-down-sort.active .navigator-transactions-lkn.lkn-sortby {
 	    top: -41px;
 	}

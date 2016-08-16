@@ -111,7 +111,7 @@ load_js()
 /* Navigation from dashboard  */
 	
 
-	$(document).on('click', '.dashboard-li a, .anim-li a, .pending-bt', function(event) {
+	$(document).on('click', '.dashboard-li a, .external-lkn,  .anim-li a, .pending-bt', function(event) {
 
 		  event.preventDefault(); // stop the browser from following the link  
 
