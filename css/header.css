@@ -339,6 +339,9 @@
     border-bottom: none;
     border-top: 1px solid #DADADA;
   }
+  .layer-navigator {
+    top: 0;
+  }
 }
 @media(min-width:992px){
    

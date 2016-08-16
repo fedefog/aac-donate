@@ -422,14 +422,3 @@
 </div><!-- /modal-search -->
 <div class="modal-backdrop fade sort-back"></div>
 
-
-<? include 'inc/online-donation-modal.php' ?>
-<? include 'inc/give-as-you-earn-modal.php' ?>
-<? include 'inc/giftaid-rebate-modal.php' ?>
-<? include 'inc/comision-modal.php' ?>
-<? include 'inc/voucher-book-modal.php' ?>
-<? include 'inc/voucher-modal.php' ?>
-<? include 'inc/standing-order-donation.php' ?>
-<? include 'inc/company-donation-modal.php' ?>
-<? include 'inc/charity-donation-modal.php' ?>
-<? include 'inc/account-transfer-modal.php' ?>
