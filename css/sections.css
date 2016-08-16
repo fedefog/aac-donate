@@ -2044,6 +2044,9 @@
 		color: #fff;
 		margin-top: 0px;	
 	}
+	.make-dontation:hover {
+		background: #0187B9;
+	}
 	.box-slide-text {
 		margin: -35px -35px 0px;
     	top: -30px;
@@ -2082,8 +2085,8 @@
 		transition: all 0.3s ease-in-out;
 	}
 	.nav-standing-orders-li .nav-standing-orders-lkn:hover {
-		background: #fff;
-		color: #00ADEE;
+		background: #00ADEE;
+		color: #FFF;
 		border-color: #00ADEE;
 	}
 	.nav-standing-orders-li .nav-standing-orders-lkn.active {
@@ -2149,6 +2152,7 @@
 	.lkn-order-vouchers {
 		width: 375px;
 		margin: 0 auto;
+		border-radius: 4px;
 	}
 	.lkn-order-vouchers:hover {
 		background: #00ADEE;
@@ -2256,13 +2260,14 @@
 		text-align: center;
 		letter-spacing: 0.5px;
 		margin: 40px 0 20px 0;
+
 	}
 	.box-find-answers .subtitle-footer ,
 	.box-for-answers .subtitle-footer {
 		border: 1px solid #00ADEE;	
 		text-align: center;
 		border-radius: 4px;
-		font-weight: 500;
+		font-weight: 600;
 		font-size: 12px;
 		color: #00ADEE;
 		letter-spacing: 0.5px;		
@@ -2272,8 +2277,9 @@
 		margin: 0 auto;
 	}
 	.main-contact-us .send-msj:hover {
-		background: #fff;
-		color: #00ADEE;
+		background: #0187B9;
+    	color: #FFF;
+    	border-color: #0187B9;
 	}
 	.box-faqs-header {
 		border-bottom: 0;
@@ -2286,8 +2292,9 @@
 		margin: 15px auto;
 	}
 	.send-invite:hover {
-		background: #fff;
-		color: #00ADEE;
+		background: #0187B9;
+		color: #FFF;
+		border-color: #0187B9;
 	}
 	.main-invite-a-friend .comment-textarea {
 		height: 119px;

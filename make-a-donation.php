@@ -328,7 +328,7 @@
 					
 					<div class="col-md-6">
 					
-						<a href="#" class="make-dontation hidden-xs">Make Donation</a>
+						<a href="#" class="make-dontation transition hidden-xs">Make Donation</a>
 					
 					</div><!-- col -->
 

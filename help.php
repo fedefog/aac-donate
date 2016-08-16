@@ -151,7 +151,7 @@
 					</div><!-- /panel-group -->
 					<div class="hidden-xs box-find-answers">
 						<h2 class="title-footer">COULDN’T FIND THE ANSWER YOU NEED?</h2>
-						<a  class="subtitle-footer">CONTACT US</a>
+						<a href="contact-us.php"  class="subtitle-footer">CONTACT US</a>
 					</div>
 				
 				</div><!-- /col -->
