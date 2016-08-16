@@ -2299,13 +2299,13 @@
 
 		color: #979797;
 	}
-	.form-group {
+	.dropdown-search .form-group {
 		float: left;
 		padding-bottom: 15px;
 		padding-right: 15px;
 		width: 33.3%;
 	}
-	.form-group:nth-child(3n) {
+	.dropdown-search .form-group:nth-child(3n) {
 		padding-right: 0;
 	}
 	.btn-search {
