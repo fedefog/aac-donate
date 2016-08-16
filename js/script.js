@@ -482,9 +482,21 @@ load_js()
 
 			/* Datapicker inicialization plugin */
 
-			$('#dates-bt-modal').daterangepicker();  
+			var options = {};
 
-			$('#dates-bt-modal').on('show.daterangepicker', function(ev, picker) {
+			var start = moment().subtract(6, 'days');
+    		var end = moment();
+
+			$('#dates-bt-modal, #config-date').daterangepicker(
+			{
+			    locale: {
+			      format: 'DD-MM-YYYY'
+			    },
+			    startDate: start,
+			    endDate: end
+			});
+
+			$('#dates-bt-modal, #config-date').on('show.daterangepicker', function(ev, picker) {
 	          $('<div class="modal-backdrop fade date-back"></div>').appendTo("body");
 	          setTimeout(function(){
 				$('.date-back').addClass("in");
@@ -492,20 +504,22 @@ load_js()
 	          $(".daterangepicker").addClass("calendar-visible");
 	        });
 
-	        $('#dates-bt-modal').on('showCalendar.daterangepicker', function(ev, picker) {
+	        $('#dates-bt-modal, #config-date').on('showCalendar.daterangepicker', function(ev, picker) {
 	          $( ".calendar.right tbody" ).remove();
 	        });      
 
-	        $('#dates-bt-modal').on('apply.daterangepicker', function(ev, picker) {
+	        $('#dates-bt-modal, #config-date').on('apply.daterangepicker', function(ev, picker) {
 	          console.log(picker.startDate.format('YYYY-MM-DD'));
 	          console.log(picker.endDate.format('YYYY-MM-DD'));
+	          var value = picker.startDate.format('YYYY-MM-DD') + ' to ' + picker.endDate.format('YYYY-MM-DD');
+	          /*$('#config-date').val( value );*/
 	        });  
 
-	        $('#dates-bt-modal').on('cancel.daterangepicker', function(ev, picker) {
+	        $('#dates-bt-modal, #config-date').on('cancel.daterangepicker', function(ev, picker) {
 	        	$( ".date-back" ).remove();
 	        });   
 
-	        $('#dates-bt-modal').on('hide.daterangepicker', function(ev, picker) {
+	        $('#dates-bt-modal, #config-date').on('hide.daterangepicker', function(ev, picker) {
 	        	$( ".date-back" ).remove();
 	        	$(".daterangepicker").removeClass("calendar-visible");
 	        });    
