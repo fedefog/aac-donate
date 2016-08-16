@@ -24,13 +24,13 @@
 
 					<ul class="list-footer-desktop hidden-xs">
 						<li class="footer-desktop-li">
-							<a class="transition" href="#">HELP</a>
+							<a href="help.php" class="transition external-lkn" href="#">HELP</a>
 						</li>
 						<li class="footer-desktop-li">
-							<a class="transition" href="#">INVITE A FREIND</a>
+							<a href="invite-a-friend.php" class="transition external-lkn" href="#">INVITE A FREIND</a>
 						</li>
 						<li class="footer-desktop-li">
-							<a class="transition" href="#">CONTACT US</a>
+							<a href="contact-us.php" class="transition external-lkn" href="#">CONTACT US</a>
 						</li>
 					</ul>
 
