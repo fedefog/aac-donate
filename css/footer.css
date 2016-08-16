@@ -88,6 +88,9 @@
 		color: #7FC1DA;
 		padding: 0 10px;
 	}
+	.list-footer-desktop li a:hover {
+		color: #FFF;
+	}
 }
 @media(min-width:992px){
    

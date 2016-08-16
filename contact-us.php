@@ -50,7 +50,7 @@
 
     </div><!-- /header-fixed -->
 
-    <div class="container visible-xs top-center-content">
+    <div class="container top-center-content">
 
     	<div class="row">
 
@@ -113,7 +113,10 @@
 					
 					<div class="hidden-xs box-for-answers">
 						<h2 class="title-footer">FOR ANSWERS TO COMMONLY ASKED QUESTIONS</h2>
+
 						<a  class="subtitle-footer">PLEASE VIEW OUR FAQs</a>
+
+						<a href="help.php"  class="subtitle-footer">PLEASE VIEW OUR FAQs</a>
 					</div>
 
 				</div><!-- /col -->

@@ -24,13 +24,13 @@
 
 					<ul class="list-footer-desktop hidden-xs">
 						<li class="footer-desktop-li">
-							<a href="#">HELP</a>
+							<a class="transition" href="#">HELP</a>
 						</li>
 						<li class="footer-desktop-li">
-							<a href="#">INVITE A FREIND</a>
+							<a class="transition" href="#">INVITE A FREIND</a>
 						</li>
 						<li class="footer-desktop-li">
-							<a href="#">CONTACT US</a>
+							<a class="transition" href="#">CONTACT US</a>
 						</li>
 					</ul>
 

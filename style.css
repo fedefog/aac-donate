@@ -128,7 +128,7 @@ input {
 /* SECTION */
 
 .transition {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 /* MODAL GRAL */
@@ -380,7 +380,7 @@ body.sticky-footer main {
 	}
 }
 @media(min-width:768px){
-	.nav-dashboard .lkn-dashboard.current-page {
+	.nav-dashboard .lkn-dashboard.current-page, .nav-dashboard .lkn-dashboard.current-page:hover {
 		background: #00ADEE;
 	}
 	.nav-dashboard .lkn-dashboard.current-page .text {
