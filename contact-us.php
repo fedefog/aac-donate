@@ -113,11 +113,7 @@
 					
 					<div class="hidden-xs box-for-answers">
 						<h2 class="title-footer">FOR ANSWERS TO COMMONLY ASKED QUESTIONS</h2>
-
-						<a  class="subtitle-footer">PLEASE VIEW OUR FAQs</a>
-
-						<a href="help.php"  class="subtitle-footer">PLEASE VIEW OUR FAQs</a>
-
+						
 						<a href="help.php"  class="subtitle-footer transition external-lkn">PLEASE VIEW OUR FAQs</a>
 					</div>
 
