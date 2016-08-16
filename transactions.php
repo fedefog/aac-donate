@@ -225,7 +225,7 @@
 
 			</div><!-- / col 12 -->
 
-			<div class="dropdown-search modal-search">
+			<div class="dropdown-search modal-search hidden-xs">
 
 				<div class="col-md-12">
 									

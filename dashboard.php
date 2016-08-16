@@ -240,6 +240,8 @@
 							</div>
 						</div>
 					  </div>
+						
+
 					  <div class="form-group">
 					  	<a class="add-notes" href="">+  ADD NOTES TO CHARITY</a>
 					  </div><!-- / form group -->

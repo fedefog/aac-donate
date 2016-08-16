@@ -296,6 +296,12 @@ load_js()
 				$('.drop-down-sort').toggleClass('active');
 				$('.sort-back').toggleClass("in");
 			});
+			$('.sort-back').click(
+				function(event) {
+				event.preventDefault ( );
+				$('.drop-down-sort').toggleClass('active');
+				$('.sort-back').toggleClass("in");
+			});
 
 			// Validation of Search Modal && Vouches Chebox
 			var ckeckbox_ckeched = false;
