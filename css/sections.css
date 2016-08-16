@@ -1939,6 +1939,26 @@
 	}
 	.navigator-transactions .navigator-transactions-li {
 		display: inline-block;
+		position: relative;
+	}
+	.navigator-transactions .fa-calendar {
+		position: absolute;
+		top: 15px;
+		left: 10px;
+		color: #00ADEE;
+	}
+	.navigator-transactions #config-date {
+		padding: 10px 10px;
+	    height: 39px;
+	    width: 210px;
+	    text-indent: 25px;
+	    color: #00ADEE;
+	    border-color: #00ADEE;
+	    position: relative;
+    	top: 2px;
+	}
+	.navigator-transactions #config-date:hover {
+		cursor: pointer;
 	}
 	.navigator-transactions .lkn-recent {
 		background: #F3F3F3;

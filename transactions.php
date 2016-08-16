@@ -156,8 +156,9 @@
 
 					<li class="navigator-transactions-li">
 						
-						<a href="#" id="dates-bt-modal" class="navigator-transactions-lkn">DATES</a>
-
+						<a href="#" id="dates-bt-modal" class="navigator-transactions-lkn visible-xs">DATES</a>
+						<input type="text"  id="config-date" class="form-control hidden-xs">
+						<i class="glyphicon glyphicon-calendar fa fa-calendar hidden-xs"></i>
 					</li>
 
 					<li class="navigator-transactions-li">
