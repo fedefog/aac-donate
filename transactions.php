@@ -116,7 +116,7 @@
 
 		</div><!-- / row -->
 
-    </div>
+    </div><!-- /transactions-navigation-desktop -->
 
     <div class="container-fluid top-center-content">
 
@@ -162,7 +162,13 @@
 
 					<li class="navigator-transactions-li">
 						
-						<a href="#" class="navigator-transactions-lkn lkn-search" data-toggle="modal" data-target="#modal-search" >SEARCH</a>
+						<a href="#" class="navigator-transactions-lkn lkn-search visible-xs" data-toggle="modal" data-target="#modal-search" >SEARCH</a>
+
+					</li>
+
+					<li class="navigator-transactions-li">
+						
+						<a href="#" class="navigator-transactions-lkn lkn-search hidden-xs lkn-seach-desktop btn-dropdown-search"  >SEARCH</a>
 
 					</li>
 
@@ -217,6 +223,88 @@
 				</ul>
 
 			</div><!-- / col 12 -->
+
+			<div class="dropdown-search modal-search">
+
+				<div class="col-md-12">
+									
+					<h2 class="title-search">Search Transactions</h2>
+
+					<a href="#" class="arrow-dropdown-search btn-dropdown-search">
+						<i class="fa fa-angle-up" aria-hidden="true"></i>
+					</a>
+
+					<form class="form-modal-search">
+											
+					<div class="form-group">
+						<label for="" class="label">TRANSACTION ID</label>
+						<div class="row-input">
+							<a href="#" class="checkbox-input">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</a>
+							<input type="text" class="input" placeholder="For a specific transaction.">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="label">CHARITY NAME</label>
+						<div class="row-input">
+							<a href="#" class="checkbox-input">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</a>
+							<input type="text" class="input" placeholder="Please enter the name of the charity">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="label">AMOUNT DONATED</label>
+						<div class="row-input">
+							<a href="#" class="checkbox-input">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</a>
+							<input type="text" class="input" placeholder="For a specific amount that has been donated.">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="label">PERSONAL NOTES</label>
+						<div class="row-input">
+							<a href="#" class="checkbox-input">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</a>
+							<input type="text" class="input" placeholder="Search your personal notes">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="label">VOUCHER NUMBER</label>
+						<div class="row-input">
+							<a href="#" class="checkbox-input">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</a>
+							<input type="text" class="input" placeholder="Enter voucher number or range (from and to)">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="label">BOOK VOUCHER NUMBER</label>
+						<div class="row-input">
+							<a href="#" class="checkbox-input">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</a>
+							<input type="text" class="input" placeholder="To display all vouchers in a book.">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="label">TRANSACTION TYPE</label>
+						<div class="row-input">
+							<a href="#" class="checkbox-input">
+								<i class="fa fa-check" aria-hidden="true"></i>
+							</a>
+							<input type="text" class="input" placeholder="Select the type of transactions ">
+						</div>
+					</div>
+
+					<a href="transactions-result.php" class="btn-search transition">Search Transactions</a>					
+
+				</div><!-- /col -->
+
+			</div><!-- /dropdown-search -->
 
 		</div><!-- / row -->
 
