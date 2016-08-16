@@ -106,7 +106,7 @@
 
 		<div class="container-fluid visible no-padding-desktop">
 			<div class="row">
-				<div class="col-md-6 col-xs-12">
+				<div class="col-md-6 col-xs-12 border-right padding-right">
 
 					<div class="box-make-donation ">
 						
@@ -228,7 +228,7 @@
 					
 				</div><!-- /col -->
 				
-				<div class="col-md-6 col-xs-12">
+				<div class="col-md-6 col-xs-12 padding-left">
 					<div class="box-make-donation hidden-xs">
 						
 						<h2 class="title-make-donation">NOTES TO CHARITY</h2>

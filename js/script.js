@@ -35,6 +35,11 @@ $(document).on('click', '.close-nav', function(event) {
 	$('.nav-icon4').toggleClass('open');
 	$('body').toggleClass('menu-mobile-open');
 });
+// Slide toggle desktop search
+$(document).on('click', '.btn-dropdown-search', function(event) {
+	event.preventDefault ( );
+	$('.dropdown-search').slideToggle();
+});
 
 load_js()
 
@@ -347,14 +352,7 @@ load_js()
 					$(this).toggleClass('active');	
 							
 			});
-			// Slide toggle desktop search
-			$('.btn-dropdown-search').click(
-				function(event) {
-				event.preventDefault ( );
-				
-				$('.dropdown-search').slideToggle();
-							
-			});
+			
 
 			// slide toggle Change password Settings
 

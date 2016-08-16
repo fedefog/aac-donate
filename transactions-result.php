@@ -62,7 +62,29 @@
 
     		<div class="col-md-6">
 				
-				<h2 class="title-transactions-desktop">SEARCH RESULTS</h2>
+				<h2 class="title-transactions-desktop">Search Result </h2>
+
+    			<ul class="nav-transactions">
+	                		
+            		<li class="nav-transactions-li">
+            		
+            			<a href="transactions-all.php" class="nav-transactions-lkn active">all</a>
+            		
+            		</li>
+
+            		<li class="nav-transactions-li">
+            		
+            			<a href="transactions-in.php" class="nav-transactions-lkn">in</a>
+            		
+            		</li>
+
+            		<li class="nav-transactions-li">
+            		
+            			<a href="transactions-out.php" class="nav-transactions-lkn">out</a>
+            		
+            		</li>
+
+            	</ul>
 
     		</div><!-- / col 6 -->
 
@@ -75,7 +97,7 @@
 
     </div><!-- /transactions-navigation-desktop -->
     
-    <div class="container top-center-content visible-xs">
+    <div class="container-fluid top-center-content ">
 
     	<div class="row">
 
@@ -85,26 +107,33 @@
 							
 					<li class="navigator-transactions-li">
 						
-						<a href="#" class="navigator-transactions-lkn active">RECENT</a>
+						<a href="#" class="navigator-transactions-lkn lkn-recent active">RECENT</a>
 
 					</li>
 
 					<li class="navigator-transactions-li">
 						
-						<a href="#" id="dates-bt-modal" class="navigator-transactions-lkn">DATES</a>
-
+						<a href="#" id="dates-bt-modal" class="navigator-transactions-lkn visible-xs">DATES</a>
+						<input type="text"  id="config-date" class="form-control hidden-xs">
+						<i class="glyphicon glyphicon-calendar fa fa-calendar hidden-xs"></i>
 					</li>
 
 					<li class="navigator-transactions-li">
 						
-						<a href="#" class="navigator-transactions-lkn" data-toggle="modal" data-target="#modal-search" >SEARCH</a>
+						<a href="#" class="navigator-transactions-lkn lkn-search visible-xs" data-toggle="modal" data-target="#modal-search" >SEARCH</a>
 
 					</li>
 
-					<li class="navigator-transactions-li">
+					<li class="navigator-transactions-li hidden-xs">
+						
+						<a href="#" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >SEARCH</a>
+
+					</li>
+
+					<li class="navigator-transactions-li navigator-transactions-sortby ">
 						
 						<a href="#" class="navigator-transactions-lkn lkn-sortby">
-							
+							<span class="text hidden-xs">SORT BY</span>
 							<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
 
 						</a>
@@ -112,7 +141,7 @@
 						<div class="drop-down-sort">
 
 							<a href="#" class="navigator-transactions-lkn lkn-sortby">
-							
+								<span class="text hidden-xs">SORT BY</span>
 								<i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
 
 							</a>
