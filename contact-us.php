@@ -50,7 +50,7 @@
 
     </div><!-- /header-fixed -->
 
-    <div class="container top-center-content">
+    <div class="container visible-xs top-center-content">
 
     	<div class="row">
 
@@ -113,10 +113,14 @@
 					
 					<div class="hidden-xs box-for-answers">
 						<h2 class="title-footer">FOR ANSWERS TO COMMONLY ASKED QUESTIONS</h2>
+<<<<<<< HEAD
 
 						<a  class="subtitle-footer">PLEASE VIEW OUR FAQs</a>
 
 						<a href="help.php"  class="subtitle-footer">PLEASE VIEW OUR FAQs</a>
+=======
+						<a href="help.php"  class="subtitle-footer transition external-lkn">PLEASE VIEW OUR FAQs</a>
+>>>>>>> 9f64a1234b5527b546902a04184d367310a254b6
 					</div>
 
 				</div><!-- /col -->

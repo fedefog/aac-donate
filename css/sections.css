@@ -2276,6 +2276,11 @@
 		padding: 23px 0;
 		margin: 0 auto;
 	}
+	.box-find-answers .subtitle-footer:hover ,
+	.box-for-answers .subtitle-footer:hover {
+		background: #00ADEE;
+		color: #FFF;
+	}
 	.main-contact-us .send-msj:hover {
 		background: #0187B9;
     	color: #FFF;
