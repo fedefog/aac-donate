@@ -7,6 +7,10 @@
 
 /* DASHBOARD */
 
+.box-notes { 
+	display: none;
+	width: 100%;
+}
 /* DATERANGEPICKER */
 .daterangepicker {
 	padding: 0px;
@@ -2412,7 +2416,7 @@
 	.textarea-make-dontation {
 		height: 86px;
 	}
-
+	
 	
 }
 @media(min-width:992px){

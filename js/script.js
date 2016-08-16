@@ -41,6 +41,12 @@ $(document).on('click', '.btn-dropdown-search', function(event) {
 	$('.dropdown-search').slideToggle();
 });
 
+$(document).on('click', '.add-notes', function(event) {
+	event.preventDefault ( );
+	$(this).hide();
+	$('.box-notes').slideToggle();
+});
+
 load_js()
 
 /* Ajax navigation */

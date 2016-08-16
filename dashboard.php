@@ -241,10 +241,38 @@
 						</div>
 					  </div>
 						
+						<div class="form-group">
+							<div class="box-notes">
+
+								<div class="box-make-donation ">
+									
+									<label >NOTES TO CHARITY</label>
+									
+									<textarea cols="30" rows="10" class="textarea-make-dontation" placeholder="Add any notes you'd wish to pass on the charity."></textarea>
+									
+								</div><!-- /box-make-donation -->
+								<div class="box-make-donation">
+									
+									<label >NOTES TO AAC</label>
+									
+									<textarea cols="30" rows="10" class="textarea-make-dontation" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>
+									
+								</div><!-- /box-make-donation -->
+
+								<div class="box-make-donation">
+									
+									<label >MY NOTES</label>
+									
+									<textarea cols="30" rows="10" class="textarea-make-dontation" placeholder="Add any notes for your personal record keeping. These notes are searchable."></textarea>
+									
+								</div><!-- /box-make-donation -->
+							</div><!-- /form-group -->
+						</div><!-- box-notes -->
 
 					  <div class="form-group">
 					  	<a class="add-notes" href="">+  ADD NOTES TO CHARITY</a>
 					  </div><!-- / form group -->
+
 					  <div class="form-group checkbox-box">
 						<a href="#" class="ckeckbox">
 							<span class="circle"></span>
