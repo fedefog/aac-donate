@@ -100,6 +100,12 @@
 		</div><!-- container -->
 		
     </div><!-- /box-daily-updates -->
+
+    <div class="row hidden-xs">
+		<div class="col-md-12">
+			<h2 class="title-section-desktop">Order Vouchers Books</h2>
+		</div>
+	</div>
 	
 	<div class="container-vochers">
 		

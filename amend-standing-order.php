@@ -23,7 +23,7 @@
 
 						<div class="col-xs-8">
 							
-							<h2 class="title">Make a Donation</h2>
+							<h2 class="title">Amend Standing Order</h2>
 
 						</div><!-- /col -->	
 						
@@ -105,13 +105,11 @@
 	    </div><!-- /box-daily-updates -->
 
 		<div class="container-fluid visible no-padding-desktop">
-
 			<div class="row hidden-xs">
 				<div class="col-md-12">
-					<h2 class="title-section-desktop">Make a Donation</h2>
+					<h2 class="title-section-desktop">Amend Standing Order</h2>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-md-6 col-xs-12 border-right padding-right">
 
@@ -346,7 +344,13 @@
 		</div><!-- /checkbox -->
 		
 		
-		<a href="#" class="sticky-to-footer make-dontation visible-xs">Make Donation</a>
+		<div class="container-lkns visible-xs sticky-to-footer">
+					
+			<a href="#" class="lkn-save">Save</a>
+
+			<a href="#" class="lkn-cancel">Cancel</a>
+
+		</div><!-- /container-lkns -->
 
 	</div><!-- /mobile-content-make-dontation -->
 

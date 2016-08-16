@@ -1023,6 +1023,9 @@
 .container-lkns {
 	margin: 0px -15px 0 -15px;
 }
+.make-donation .container-lkns {
+	margin: 0;
+}
 .lkn-cancel ,
 .lkn-save {
 	text-align: center;
@@ -1851,6 +1854,18 @@
 	.table .amount-td a {
 		display: inline-block;
     	width: 100%;
+	}
+	.title-section-desktop {
+		font-weight: 500;
+		margin: 0 0 20px;
+		font-size: 20px;
+		color: #878787;
+		letter-spacing: 0.54px;
+		display: inline-block;
+		border-bottom: 1px solid #E2E2E5;
+		padding-bottom: 20px;
+		width: 100%;
+
 	}
 	.main-transactions .col-xs-12 {
 		padding: 0;

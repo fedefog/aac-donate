@@ -166,6 +166,7 @@ load_js()
 
 			  	setTimeout(function(){
 			  		$('body').removeClass('menu-mobile-open');
+			  		$('body').removeClass('modal-open');
 					$('#main-container').load(url, function() { 
 						$('#main-container').css({ opacity: 0 }).fadeTo(400,1);//Efect fade
 						$("#myBar").removeClass("visible");  // fadeout of the bar loading 
