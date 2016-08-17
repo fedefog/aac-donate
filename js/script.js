@@ -539,7 +539,7 @@ load_js()
 
 			// function if value input is > 16000
 	    	$('.amount-input input').focusout(function(event) {
-	    		if ( $('.amount-input input').val() > 16000 ) {
+	    		if ( $('.amount-input input').val() > 15000 ) {
 	    			$('.confirmation-amount').show();
 	    			$('.large-amount').show();
 	    		}else{
