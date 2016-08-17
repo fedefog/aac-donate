@@ -15,7 +15,7 @@
 	<tbody>
 		<tr class="balance-up" >
 			<td>
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<div class="desc-table">
 						<h2 class="title">FO The Sick</h2>
 						<h3 class="subtitle visible-xs">EVERY 2 MONTHS</h3>
@@ -25,7 +25,7 @@
 			<td class="hidden-xs">
 			</td>
 			<td >
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<span class="balance-transition">
 						£ 1,290.00
 						<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -51,7 +51,7 @@
 
 		<tr class="balance-up" >
 			<td>
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<div class="desc-table">
 						<h2 class="title">Menorah Grammar School…</h2>
 						<h3 class="subtitle visible-xs">EVERY 3 MONTHS</h3>
@@ -61,7 +61,7 @@
 			<td class="hidden-xs">
 			</td>
 			<td >
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<span class="balance-transition">
 						£ 550.00
 						<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -87,7 +87,7 @@
 
 		<tr class="balance-up" >
 			<td>
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<div class="desc-table">
 						<h2 class="title">Initiation Society</h2>
 						<h3 class="subtitle visible-xs">MONTHLY</h3>
@@ -97,7 +97,7 @@
 			<td class="hidden-xs">
 			</td>
 			<td >
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<span class="balance-transition">
 						£ 990.00
 						<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -123,7 +123,7 @@
 
 		<tr class="balance-up" >
 			<td>
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<div class="desc-table">
 						<h2 class="title">FO Magen David Adom</h2>
 						<h3 class="subtitle visible-xs">EVERY 2 MONTHS</h3>
@@ -133,7 +133,7 @@
 			<td class="hidden-xs">
 			</td>
 			<td >
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<span class="balance-transition">
 						£ 550.00
 						<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -159,7 +159,7 @@
 
 		<tr class="balance-up" >
 			<td>
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<div class="desc-table">
 						<h2 class="title">FO Jerusalem College of Te…</h2>
 						<h3 class="subtitle visible-xs">MONTHLY</h3>
@@ -169,7 +169,7 @@
 			<td class="hidden-xs">
 			</td>
 			<td >
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<span class="balance-transition">
 						£ 3,890.00
 						<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -195,7 +195,7 @@
 
 		<tr class="balance-up" >
 			<td>
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<div class="desc-table">
 						<h2 class="title">FO The Sick</h2>
 						<h3 class="subtitle visible-xs">EVERY 2 MONTHS</h3>
@@ -205,7 +205,7 @@
 			<td class="hidden-xs">
 			</td>
 			<td >
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<span class="balance-transition">
 						£ 1,290.00
 						<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -231,7 +231,7 @@
 
 		<tr class="balance-up" >
 			<td>
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<div class="desc-table">
 						<h2 class="title">FO Jerusalem College of Te…</h2>
 						<h3 class="subtitle visible-xs">MONTHLY</h3>
@@ -241,7 +241,7 @@
 			<td class="hidden-xs">
 			</td>
 			<td >
-				<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+				<a href="#" data-toggle="modal" data-target="#modal-previous-standing-order" >
 					<span class="balance-transition">
 						£ 3,890.00
 						<i class="fa fa-caret-up" aria-hidden="true"></i>

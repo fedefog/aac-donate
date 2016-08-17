@@ -94,7 +94,7 @@
 				
 			</div><!-- /row-modal -->
 
-			<a href="#" class="lkn-bottom-modal">Amend Standing Order</a>
+			<a href="amend-standing-order.php" class="lkn-bottom-modal external-lkn">Amend Standing Order</a>
 
     	</div><!-- /modal-body -->
 	

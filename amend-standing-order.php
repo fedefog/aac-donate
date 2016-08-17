@@ -23,7 +23,7 @@
 
 						<div class="col-xs-8">
 							
-							<h2 class="title">Make a Donation</h2>
+							<h2 class="title">Amend Standing Order</h2>
 
 						</div><!-- /col -->	
 						
@@ -105,13 +105,11 @@
 	    </div><!-- /box-daily-updates -->
 
 		<div class="container-fluid visible no-padding-desktop">
-
 			<div class="row hidden-xs">
 				<div class="col-md-12">
-					<h2 class="title-section-desktop">Make a Donation</h2>
+					<h2 class="title-section-desktop">Amend Standing Order</h2>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-md-6 col-xs-12 border-right padding-right">
 
@@ -176,8 +174,6 @@
 						<h2 class="title-make-donation">NOTES TO CHARITY</h2>
 						
 						<textarea cols="30" rows="10" class="textarea-make-dontation" placeholder="Add any notes you'd wish to pass on the charity."></textarea>
-
-						<p class="error error-text">Regrettably, we cannot make this payment since you may not use charitable funds to pay for a Raffle or tuition fees for your family. Please contact the office on 8731 8988 for further information” and reject the donation</p>
 						
 					</div><!-- /box-make-donation -->
 
@@ -243,8 +239,6 @@
 						<h2 class="title-make-donation">NOTES TO CHARITY</h2>
 						
 						<textarea cols="30" rows="10" class="textarea-make-dontation" placeholder="Add any notes you'd wish to pass on the charity."></textarea>
-
-						<p class="error error-text">Regrettably, we cannot make this payment since you may not use charitable funds to pay for a Raffle or tuition fees for your family. Please contact the office on 8731 8988 for further information” and reject the donation</p>
 						
 					</div><!-- /box-make-donation -->
 					<div class="box-make-donation">
@@ -252,8 +246,6 @@
 						<h2 class="title-make-donation">NOTES TO AAC</h2>
 						
 						<textarea cols="30" rows="10" class="textarea-make-dontation" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>
-
-						<p class="error error-text">Regrettably, we cannot make this payment since you may not use charitable funds to pay for a Raffle or tuition fees for your family. Please contact the office on 8731 8988 for further information” and reject the donation</p>
 						
 					</div><!-- /box-make-donation -->
 
@@ -262,8 +254,6 @@
 						<h2 class="title-make-donation">MY NOTES</h2>
 						
 						<textarea cols="30" rows="10" class="textarea-make-dontation" placeholder="Add any notes for your personal record keeping. These notes are searchable."></textarea>
-
-						<p class="error error-text">Regrettably, we cannot make this payment since you may not use charitable funds to pay for a Raffle or tuition fees for your family. Please contact the office on 8731 8988 for further information” and reject the donation</p>
 						
 					</div><!-- /box-make-donation -->
 
@@ -354,7 +344,13 @@
 		</div><!-- /checkbox -->
 		
 		
-		<a href="#" class="sticky-to-footer make-dontation visible-xs">Make Donation</a>
+		<div class="container-lkns visible-xs sticky-to-footer">
+					
+			<a href="#" class="lkn-save">Save</a>
+
+			<a href="#" class="lkn-cancel">Cancel</a>
+
+		</div><!-- /container-lkns -->
 
 	</div><!-- /mobile-content-make-dontation -->
 

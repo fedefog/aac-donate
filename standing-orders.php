@@ -236,3 +236,5 @@
 <? include 'inc/voucher-modal.php' ?>
 <? include 'inc/standing-order-donation.php' ?>
 <? include 'inc/company-donation-modal.php' ?>
+<? include 'inc/current-standing-order-modal.php' ?>
+<? include 'inc/previous-standing-order-modal.php' ?>
