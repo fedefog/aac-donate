@@ -2437,6 +2437,10 @@
 	.textarea-make-dontation {
 		height: 86px;
 	}
+	.container-lkns a {
+	    width: 45%;
+	    max-width: 225px;
+	}
 	
 	
 }
