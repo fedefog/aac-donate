@@ -561,6 +561,9 @@ load_js()
 			  }
 			});
 
+    		 
+    		
+
 			// click button form  
 			$('.make-dontation').click(
 				function(event) {
@@ -593,6 +596,15 @@ load_js()
 				if ( !$('.checkbox-box .ckeckbox').hasClass('active') ){
 					$('.checkbox-box').addClass('has-error');
 				}
+				
+
+				// Validation if including words RAFFLE / FEES / TUITION
+				$('.textarea-make-dontation').each(function() {
+				    if( $(this).val().match('RAFFLE') || $(this).val().match('FEES') || $(this).val().match('TUITION') || $(this).val().match('raffle') || $(this).val().match('fees') || $(this).val().match('tuition') ) {
+				        $(this).parent().find('.error-text').show();
+				    }     
+				    
+				});
 
 			});
 	 		

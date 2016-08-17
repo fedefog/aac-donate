@@ -7,6 +7,11 @@
 
 /* DASHBOARD */
 
+.error-text {
+	display: none;
+	color: #FC2E2E;
+
+}
 .box-notes { 
 	display: none;
 	width: 100%;

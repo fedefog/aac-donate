@@ -249,6 +249,8 @@
 									<label >NOTES TO CHARITY</label>
 									
 									<textarea cols="30" rows="10" class="textarea-make-dontation" placeholder="Add any notes you'd wish to pass on the charity."></textarea>
+
+									<p class="error error-text">Regrettably, we cannot make this payment since you may not use charitable funds to pay for a Raffle or tuition fees for your family. Please contact the office on 8731 8988 for further information” and reject the donation</p>
 									
 								</div><!-- /box-make-donation -->
 								<div class="box-make-donation">
@@ -256,6 +258,8 @@
 									<label >NOTES TO AAC</label>
 									
 									<textarea cols="30" rows="10" class="textarea-make-dontation" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>
+
+									<p class="error error-text">Regrettably, we cannot make this payment since you may not use charitable funds to pay for a Raffle or tuition fees for your family. Please contact the office on 8731 8988 for further information” and reject the donation</p>
 									
 								</div><!-- /box-make-donation -->
 
@@ -264,6 +268,8 @@
 									<label >MY NOTES</label>
 									
 									<textarea cols="30" rows="10" class="textarea-make-dontation" placeholder="Add any notes for your personal record keeping. These notes are searchable."></textarea>
+
+									<p class="error error-text">Regrettably, we cannot make this payment since you may not use charitable funds to pay for a Raffle or tuition fees for your family. Please contact the office on 8731 8988 for further information” and reject the donation</p>
 									
 								</div><!-- /box-make-donation -->
 							</div><!-- /form-group -->
