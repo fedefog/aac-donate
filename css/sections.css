@@ -553,6 +553,7 @@
 	display: inline-block;
 	vertical-align: top;
 }
+.donations-are-subject-error ,
 .amount-input-error {
 	display: none;
 }

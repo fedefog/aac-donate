@@ -162,12 +162,13 @@
 						</div><!-- /coin-amount -->
 
 						<p class="text-danger amount-input-error">Please note that payments for under £100 may take longer to process.</p>
+						<p class="text-danger donations-are-subject-error">All donations are subject to compliance checks. Given the size of this donation, it is more likely to be selected for a random check. Please be aware that our Compliance Officer may be in touch with you to determine more information about this donation</p>
 
-						<p class="large-amount">For your own safety and to comply with large donation regulations, please re-enter the amount you wish to donate. </p>
+						<p class="large-amount">For your own safety please re-enter the amount you wish to donate </p>
 
 						<input type="text" class="form-control confirmation-amount input-text" placeholder="">
 
-						<p class="text-danger confirmation-amount-error">This large donation will be eligible for random checks by our compliance office, given the regulations for large donations. Please be aware that there is a chance he may in touch to find out more information about this donation. </p>
+						<p class="text-danger confirmation-amount-error">In order to comply with money laundering  regulations,  this donation will also be eligible for random checks by our Compliance Officer. Please provide us a few sentences to outline the purpose of the donation to determine if we need to be in touch for more information. </p>
 
 					</div><!-- /box-make-donation -->
 					

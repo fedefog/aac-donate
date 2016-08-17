@@ -166,7 +166,6 @@ load_js()
 
 			  	setTimeout(function(){
 			  		$('body').removeClass('menu-mobile-open');
-			  		$('body').removeClass('modal-open');
 					$('#main-container').load(url, function() { 
 						$('#main-container').css({ opacity: 0 }).fadeTo(400,1);//Efect fade
 						$("#myBar").removeClass("visible");  // fadeout of the bar loading 
@@ -538,13 +537,21 @@ load_js()
 			// MAKE A DONATION FORM VALIDATION
 
 
-			// function if value input is > 1600
+			// function if value input is > 16000
 	    	$('.amount-input input').focusout(function(event) {
-	    		if ( $('.amount-input input').val() > 1600 ) {
+	    		if ( $('.amount-input input').val() > 16000 ) {
 	    			$('.confirmation-amount').show();
 	    			$('.large-amount').show();
 	    		}else{
 	    			$('.confirmation-amount').hide();
+	    		}
+	    	});
+	    	$('.amount-input input').focusout(function(event) {
+	    		if (  $('.amount-input input').val() > 5000  && $('.amount-input input').val() < 16000 ) {
+	    			$('.donations-are-subject-error').show();
+	    		}else{
+	    			
+	    			$('.donations-are-subject-error').hide();
 	    		}
 	    	});
 
