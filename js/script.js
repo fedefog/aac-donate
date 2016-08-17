@@ -128,6 +128,7 @@ load_js()
 
 		  progress_bar();
 
+			$('body').removeClass('modal-open');
 		  $("#myBar").addClass("visible"); // Loading bar visibility 
 		  $('.nav-mobile').removeClass("open");
 		  transaction = 'transactions-all.php';

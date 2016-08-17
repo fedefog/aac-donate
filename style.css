@@ -370,7 +370,13 @@ body.sticky-footer main {
 .has-error .numb-aprox {
 	display: none;
 }
+/* modal-order-has-been-saved  */
+#modal-order-has-been-saved .title-modal{
+    font-size: 17px;
+    text-align: center;
+    margin: 50px 0;
 
+}
 /****** Media Queries ******/
 
 

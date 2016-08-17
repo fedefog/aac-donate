@@ -333,8 +333,14 @@
 					
 					<div class="col-md-6">
 					
-						<a href="#" class="make-dontation transition hidden-xs">Make Donation</a>
+						<!-- <a href="#" class="make-dontation transition hidden-xs">Make Donation</a> -->
+							<div class="container-lkns hidden-xs ">
 					
+								<a href="#" class="lkn-save" data-toggle="modal" data-target="#modal-order-has-been-saved">Save</a>
+
+								<a href="standing-orders.php" class="lkn-cancel  external-lkn">Cancel</a>
+
+							</div><!-- /container-lkns -->
 					</div><!-- col -->
 
 				</div><!-- /row -->
@@ -346,9 +352,9 @@
 		
 		<div class="container-lkns visible-xs sticky-to-footer">
 					
-			<a href="#" class="lkn-save">Save</a>
+			<a href="#" class="lkn-save" data-toggle="modal" data-target="#modal-order-has-been-saved">Save</a>
 
-			<a href="#" class="lkn-cancel">Cancel</a>
+			<a href="standing-orders.php" class="lkn-cancel  external-lkn">Cancel</a>
 
 		</div><!-- /container-lkns -->
 
