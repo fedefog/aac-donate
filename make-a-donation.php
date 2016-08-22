@@ -130,12 +130,6 @@
 							 </ul>
 						 </form>
 						
-						<select  title="Please select a Beneficiary" class="form-control selectpicker beneficiary-select select-1" data-style="btn-danger">
-						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
-						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
-						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
-						</select>
-
 						<p class="text-danger beneficiary-select-error ">Please note: Achisomoch carries out random checks on the charitable status of the organisations mentioned on this list, However no guarantee is implied that all charities mentioned on this list are bona-fide.</p>
 						
 						<div class="box-make-donation-lkns">
