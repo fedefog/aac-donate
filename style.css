@@ -133,6 +133,13 @@ input {
 
 /* MODAL GRAL */
 
+.modal-backdrop {
+    background-color: #000000;
+}
+.modal-backdrop.in {
+    filter: alpha(opacity=25);
+    opacity: .25;
+}
 .modal {
   text-align: center;
   padding: 0!important;
@@ -384,6 +391,11 @@ body.sticky-footer main {
 	.modal.fade .modal-dialog { 
 		width: 90%
 	}
+	.modal-content {
+		
+		box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.23);
+		border: 0;
+	}
 }
 @media(min-width:768px){
 	.nav-dashboard .lkn-dashboard.current-page, .nav-dashboard .lkn-dashboard.current-page:hover {
@@ -415,6 +427,11 @@ body.sticky-footer main {
 	}
 	.modal.fade .modal-dialog { 
 		width: 413px;
+	}
+	.modal-content {
+
+		box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.23);
+		border: 0;
 	}
 }
 @media(min-width:992px){

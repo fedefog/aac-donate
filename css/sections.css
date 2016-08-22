@@ -4,6 +4,11 @@
 /* FONTS */
 @import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,300italic,400italic,700,900);
 
+/* Data modal table clickeable */
+td[data-toggle="modal"] {
+	/* background: #000; */
+	cursor: pointer;
+}
 
 /* DASHBOARD */
 
@@ -198,8 +203,13 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-.table-transactions.table > tbody > tr{
+.table-transactions.table > tbody > tr {
 	padding: 0 15px	;
+
+	transition: all 0.2s ease-in-out;
+}
+.table-transactions.table > tbody > tr:hover {
+	background: #f7f7f7;
 }
 .table-transactions.table > tbody > tr > td {
 	border-top: 0;

@@ -43,9 +43,17 @@ $(document).on('click', '.btn-dropdown-search', function(event) {
 
 $(document).on('click', '.add-notes', function(event) {
 	event.preventDefault ( );
-	$(this).hide();
+	$('.more-note, .less-note').toggle();
 	$('.box-notes').slideToggle();
 });
+$(document).on('click', '.lkn-sortby , .sort-back', function(event) {
+	event.preventDefault ( );
+	$('.drop-down-sort').toggleClass('active');
+	$('.sort-back').toggleClass("in");
+});
+
+// Sortby Transaction page
+
 
 load_js()
 
@@ -300,20 +308,7 @@ load_js()
 				
 			});
 
-			// Sortby Transaction page
 			
-			$('.lkn-sortby').click(
-				function(event) {
-				event.preventDefault ( );
-				$('.drop-down-sort').toggleClass('active');
-				$('.sort-back').toggleClass("in");
-			});
-			$('.sort-back').click(
-				function(event) {
-				event.preventDefault ( );
-				$('.drop-down-sort').toggleClass('active');
-				$('.sort-back').toggleClass("in");
-			});
 
 			// Validation of Search Modal && Vouches Chebox
 			var ckeckbox_ckeched = false;

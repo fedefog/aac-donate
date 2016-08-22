@@ -439,6 +439,9 @@
 		color: #767676;
 		font-size: 12px;
 	}
+	.less-note {
+		display: none;
+	}
 	.make-donation  .checkbox-box {
 		font-weight: 400;
 		font-size: 13px;

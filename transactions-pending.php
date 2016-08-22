@@ -68,21 +68,21 @@
 						
 						<tbody>
 							<tr>
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+								<td data-toggle="modal" data-target="#modal-standing-order-donation" >
+									<a href="#"  >
 										<div class="date">1-7-16</div>
 									</a>
 								</td>
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+								<td data-toggle="modal" data-target="#modal-standing-order-donation" >
+									<a href="#"  >
 										<div class="desc-table">
 											<h2 class="title">Kol Yaakov</h2>
 											<h3 class="subtitle">VOUCHER </h3>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="balance-pending">
-									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+								<td class="balance-pending" data-toggle="modal" data-target="#modal-standing-order-donation" >
+									<a href="#"  >
 										<span class="balance-transition">
 											£ 990.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -93,21 +93,21 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+								<td data-toggle="modal" data-target="#modal-voucher" >
+									<a href="#"  >
 										<div class="date">24-6-16</div>
 									</a>
 								</td>
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+								<td data-toggle="modal" data-target="#modal-voucher" >
+									<a href="#"  >
 										<div class="desc-table">
 											<h2 class="title">Kol Yaakov</h2>
 											<h3 class="subtitle">VOUCHER </h3>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="balance-pending">
-									<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+								<td class="balance-pending" data-toggle="modal" data-target="#modal-voucher" >
+									<a href="#"  >
 										<span class="balance-transition">
 											£ 550.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>

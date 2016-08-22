@@ -37,21 +37,21 @@
 						</thead>
 						<tbody>
 							<tr class="balance-down">
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+								<td data-toggle="modal" data-target="#modal-standing-order-donation" >
+									<a href="#"  >
 										<div class="date">9-6</div>
 									</a>
 								</td>
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+								<td data-toggle="modal" data-target="#modal-standing-order-donation" >
+									<a href="#"  >
 										<div class="desc-table">
 											<h2 class="title">Initiation Society</h2>
 											<h3 class="subtitle">STANDING ORDER </h3>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="amount-td">
-									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+								<td class="amount-td" data-toggle="modal" data-target="#modal-standing-order-donation" >
+									<a href="#"  >
 										<span class="balance-transition">
 											£ 990.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -64,21 +64,21 @@
 								</td>
 							</tr>
 							<tr class="balance-down">
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+								<td data-toggle="modal" data-target="#modal-voucher" >
+									<a href="#"  >
 										<div class="date">24-6</div>
 									</a>
 								</td>
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+								<td data-toggle="modal" data-target="#modal-voucher" >
+									<a href="#"  >
 										<div class="desc-table">
 											<h2 class="title">FO Magen David Adom</h2>
 											<h3 class="subtitle">VOUCHER </h3>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="amount-td">
-									<a href="#" data-toggle="modal" data-target="#modal-voucher" >
+								<td class="amount-td" data-toggle="modal" data-target="#modal-voucher" >
+									<a href="#"  >
 										<span class="balance-transition">
 											£ 550.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -91,20 +91,20 @@
 								</td>
 							</tr>
 							<tr class="balance-down">
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-voucher-book" >
+								<td data-toggle="modal" data-target="#modal-voucher-book" >
+									<a href="#"  >
 										<div class="date">14-6</div>
 									</a>
 								</td>
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-voucher-book" >
+								<td data-toggle="modal" data-target="#modal-voucher-book" >
+									<a href="#"  >
 										<div class="desc-table">
 											<h2 class="title">£1 Voucher Book £50</h2>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="amount-td">
-									<a href="#" data-toggle="modal" data-target="#modal-voucher-book" >
+								<td class="amount-td" data-toggle="modal" data-target="#modal-voucher-book" >
+									<a href="#"  >
 										<span class="balance-transition">
 											£ 50.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -117,20 +117,20 @@
 								</td>
 							</tr>
 							<tr class="balance-up"> 
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-comision" >
+								<td data-toggle="modal" data-target="#modal-comision" >
+									<a href="#"  >
 										<div class="date">12-6</div>
 									</a>
 								</td>
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-comision" >
+								<td data-toggle="modal" data-target="#modal-comision" >
+									<a href="#"  >
 										<div class="desc-table">
 											<h2 class="title">Commission</h2>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="amount-td">
-									<a href="#" data-toggle="modal" data-target="#modal-comision" >
+								<td class="amount-td" data-toggle="modal" data-target="#modal-comision" >
+									<a href="#"  >
 										<span class="balance-transition">
 											£ 21.56
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -143,20 +143,20 @@
 								</td>
 							</tr>
 							<tr class="balance-up">
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
+								<td data-toggle="modal" data-target="#modal-giftaid-rebate" >
+									<a href="#"  >
 										<div class="date">9-6</div>
 									</a>
 								</td>
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
+								<td data-toggle="modal" data-target="#modal-giftaid-rebate" >
+									<a href="#"  >
 										<div class="desc-table">
 											<h2 class="title">Giftaid Rebate</h2>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="amount-td balance-up">
-									<a href="#" data-toggle="modal" data-target="#modal-giftaid-rebate" >
+								<td class="amount-td balance-up" data-toggle="modal" data-target="#modal-giftaid-rebate" >
+									<a href="#"  >
 										<span class="balance-transition">
 											£ 233
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -169,21 +169,21 @@
 								</td>
 							</tr>
 							<tr class="balance-pending">
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+								<td data-toggle="modal" data-target="#modal-standing-order-donation" >
+									<a href="#"  >
 										<div class="date">1-7</div>
 									</a>
 								</td>
-								<td>
-									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+								<td data-toggle="modal" data-target="#modal-standing-order-donation" >
+									<a href="#"  >
 										<div class="desc-table">
 											<h2 class="title">Kol Yaakov</h2>
 											<h3 class="subtitle">VOUCHER <span>PENDING</span></h3>
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="amount-td">
-									<a href="#" data-toggle="modal" data-target="#modal-standing-order-donation" >
+								<td class="amount-td" data-toggle="modal" data-target="#modal-standing-order-donation" >
+									<a href="#"  >
 										<span class="balance-transition">
 											£ 990.00
 											<i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -276,7 +276,8 @@
 						</div><!-- box-notes -->
 
 					  <div class="form-group">
-					  	<a class="add-notes" href="">+  ADD NOTES TO CHARITY</a>
+					  	<a class="add-notes more-note" href="#"> +  ADD NOTES TO CHARITY</a>
+					  	<a class="add-notes less-note" href="#"> - ADD NOTES TO CHARITY</a>
 					  </div><!-- / form group -->
 
 					  <div class="form-group checkbox-box">
