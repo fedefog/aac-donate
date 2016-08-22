@@ -240,6 +240,10 @@
 							</div>
 						</div>
 					  </div>
+					   <div class="form-group">
+					  	<a class="add-notes more-note" href="#"> +  ADD NOTES TO CHARITY</a>
+					  	<a class="add-notes less-note" href="#"> - ADD NOTES TO CHARITY</a>
+					  </div><!-- / form group -->
 						
 						<div class="form-group">
 							<div class="box-notes">
@@ -275,10 +279,7 @@
 							</div><!-- /form-group -->
 						</div><!-- box-notes -->
 
-					  <div class="form-group">
-					  	<a class="add-notes more-note" href="#"> +  ADD NOTES TO CHARITY</a>
-					  	<a class="add-notes less-note" href="#"> - ADD NOTES TO CHARITY</a>
-					  </div><!-- / form group -->
+					 
 
 					  <div class="form-group checkbox-box">
 						<a href="#" class="ckeckbox">
