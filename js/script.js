@@ -51,6 +51,13 @@ $(document).on('click', '.lkn-sortby , .sort-back', function(event) {
 	$('.drop-down-sort').toggleClass('active');
 	$('.sort-back').toggleClass("in");
 });
+$(document).on('click', '.btn-yes-cancelled', function(event) {
+	event.preventDefault ( );
+	$('.title-cancelled, #modal-delete-transaction .btns-options').hide();
+	$('.title-cancelled-ok').fadeIn().css('display', 'table-cell');
+
+	
+});
 
 // Sortby Transaction page
 

@@ -269,6 +269,26 @@ input {
 	float: right;
 	border-bottom-right-radius: 6px;
 }
+.box-modal-cancelled {
+	height: 300px;
+	width: 100%;
+	vertical-align: middle;
+	display: table;
+}
+.box-modal-cancelled .title-cancelled,
+.box-modal-cancelled .title-cancelled-ok {
+	display: table-cell; 
+	vertical-align: middle;
+	font-size: 18px;
+	text-align: center;
+	color: #878787;
+}
+.box-modal-cancelled  .title-cancelled-ok {
+	display: none;
+}
+#modal-delete-transaction  .btns-options{
+	margin-bottom: -6px;
+}
 
 /* EMPTY STATE */
 

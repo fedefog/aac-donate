@@ -128,6 +128,7 @@ include 'inc/header.php'
 </div><!-- /container-fluid -->
 	
 
+<? include 'inc/modal-delete-transaction.php' ?>
 <? include 'inc/modal-order-has-been-saved.php' ?>
 <? include 'inc/online-donation-modal.php' ?>
 <? include 'inc/give-as-you-earn-modal.php' ?>

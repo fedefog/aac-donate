@@ -44,7 +44,7 @@
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
 			</td>
 		</tr>
 
@@ -80,7 +80,7 @@
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
 			</td>
 		</tr>
 
@@ -116,7 +116,7 @@
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
 			</td>
 		</tr>
 
@@ -152,7 +152,7 @@
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
 			</td>
 		</tr>
 
@@ -188,7 +188,7 @@
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
 			</td>
 		</tr>
 
@@ -224,7 +224,7 @@
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
 			</td>
 		</tr>
 
@@ -260,7 +260,7 @@
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion"></a>
+				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
 			</td>
 		</tr>
 
