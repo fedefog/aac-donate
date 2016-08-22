@@ -122,7 +122,7 @@
 						<form class="search" method="post" action="#" >
 							<i class="fa fa-search" aria-hidden="true"></i>
 
-							 <input type="text" name="q" placeholder="Search..." />
+							 <input type="text" name="q" placeholder="Type your search" />
 							 <ul class="results" >
 								 <li><a href="#">The Riding London NW11 8HL<br /><span>GGBH</span></a></li>
 								 <li><a href="#">The Riding London NW11 8HL<br /><span>GGBH</span></a></li>
