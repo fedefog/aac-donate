@@ -118,6 +118,17 @@
 					<div class="box-make-donation ">
 						
 						<h2 class="title-make-donation">BENEFICIARY</h2>
+
+						<form class="search" method="post" action="index.html" >
+							<i class="fa fa-search" aria-hidden="true"></i>
+
+							 <input type="text" name="q" placeholder="Search..." />
+							 <ul class="results" >
+								 <li><a href="index.html">The Riding London NW11 8HL<br /><span>GGBH</span></a></li>
+								 <li><a href="index.html">The Riding London NW11 8HL<br /><span>GGBH</span></a></li>
+						 		<li><a href="index.html">The Riding London NW11 8HL<br /><span>GGBH</span></a></li>
+							 </ul>
+						 </form>
 						
 						<select  title="Please select a Beneficiary" class="form-control selectpicker beneficiary-select select-1" data-style="btn-danger">
 						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
