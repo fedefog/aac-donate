@@ -67,15 +67,10 @@ td[data-toggle="modal"] {
     margin: 0;
     border-width: 1px;
     border-style: solid;
-    border-color: #cbcfe2 #c8cee7 #c4c7d7;
-    border-radius: 3px;
-    background-color: #fdfdfd;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fdfdfd), color-stop(100%, #eceef4));
-    background-image: -webkit-linear-gradient(top, #fdfdfd, #eceef4);
-    background-image: -moz-linear-gradient(top, #fdfdfd, #eceef4);
-    background-image: -ms-linear-gradient(top, #fdfdfd, #eceef4);
-    background-image: -o-linear-gradient(top, #fdfdfd, #eceef4);
-    background-image: linear-gradient(top, #fdfdfd, #eceef4);
+    border-color: #bbb;
+    border-radius: 4px;
+    background-color: #fff;
+   
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -130,7 +125,7 @@ td[data-toggle="modal"] {
     top: 50%;
     right: 10px;
     margin-top: -9px;
-    background: url("http://cssdeck.com/uploads/media/items/7/7BNkBjd.png") 0 0 no-repeat;
+    
 }
 .search .results a:hover {
     text-decoration: none;
