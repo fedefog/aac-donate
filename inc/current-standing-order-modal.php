@@ -94,7 +94,12 @@
 				
 			</div><!-- /row-modal -->
 
-			<a href="amend-standing-order.php" class="lkn-bottom-modal external-lkn">Amend Standing Order</a>
+			
+
+			<div class="btns-options">
+				<a href="#" class=" transition left-bt btn-yes-cancelled">Cancel Standing Order</a>
+				<a href="amend-standing-order.php" class=" transition right-bt external-lkn">Amend Standing Order</a>
+			</div><!-- / btns options -->
 
     	</div><!-- /modal-body -->
 	

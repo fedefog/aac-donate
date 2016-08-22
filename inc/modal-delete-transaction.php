@@ -22,8 +22,8 @@
 			</div><!-- /row-modal -->
 			
 			<div class="btns-options">
-				<a href="#" class="left-bt" data-dismiss="modal" aria-label="Close">Cancel</a>
-				<a href="#" class="right-bt btn-yes-cancelled">Yes</a>
+				<a href="#" class="transition left-bt" data-dismiss="modal" aria-label="Close">Cancel</a>
+				<a href="#" class="transition right-bt btn-yes-cancelled">Yes</a>
 			</div><!-- / btns options -->
 				
     	</div><!-- /modal-body -->

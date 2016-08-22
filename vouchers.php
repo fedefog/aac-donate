@@ -87,7 +87,7 @@
 
     <div class="box-slide-text">
 	    
-	    <div class="container">
+	    <div class="container-fluid">
 
 			<a href="#" class="lkn-daily lkn-daily-donate">
 

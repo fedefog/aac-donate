@@ -90,7 +90,7 @@
 		
 	    <div class="box-slide-text">
 		    
-		    <div class="container">
+		    <div class="container-fluid">
 
 				<a href="#" class="lkn-daily lkn-daily-donate">
 
@@ -328,7 +328,7 @@
 		
 		<div class="checkbox-box ">
 			
-			<div class="container-fluid">
+			<div class="container-fluid no-padding-desktop">
 				<div class="row">
 					<div class="col-md-6">
 						
@@ -342,7 +342,7 @@
 				
 					</div><!-- /col -->
 					
-					<div class="col-md-6">
+					<div class="col-md-6 padding-left">
 					
 						<a href="#" class="make-dontation transition hidden-xs">Make Donation</a>
 					

@@ -263,11 +263,17 @@ input {
 	float: left;
 	border-bottom-left-radius: 6px;
 }
+.btns-options .left-bt:hover {
+	background: #d6d4d4;
+}
 .btns-options .right-bt {
 	background: #00ADEE;
 	color: #FFFFFF;
 	float: right;
 	border-bottom-right-radius: 6px;
+}
+.btns-options .right-bt:hover {
+	background: #0899d0;
 }
 .box-modal-cancelled {
 	height: 300px;
@@ -286,8 +292,19 @@ input {
 .box-modal-cancelled  .title-cancelled-ok {
 	display: none;
 }
-#modal-delete-transaction  .btns-options{
+#modal-current-standing-order .btns-options ,
+#modal-delete-transaction .btns-options {
 	margin-bottom: -6px;
+}
+.btns-options .right-bt {
+	margin-top: -1px;
+}
+/* modal-order-has-been-saved  */
+#modal-order-has-been-saved .title-modal{
+    font-size: 17px;
+    text-align: center;
+    margin: 90px 0;
+
 }
 
 /* EMPTY STATE */
@@ -397,13 +414,7 @@ body.sticky-footer main {
 .has-error .numb-aprox {
 	display: none;
 }
-/* modal-order-has-been-saved  */
-#modal-order-has-been-saved .title-modal{
-    font-size: 17px;
-    text-align: center;
-    margin: 90px 0;
 
-}
 /****** Media Queries ******/
 
 
@@ -415,6 +426,9 @@ body.sticky-footer main {
 		
 		box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.23);
 		border: 0;
+	}
+	#modal-current-standing-order .btns-options a { 
+		font-size: 13px;
 	}
 }
 @media(min-width:768px){
@@ -453,6 +467,7 @@ body.sticky-footer main {
 		box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.23);
 		border: 0;
 	}
+	
 }
 @media(min-width:992px){
    
