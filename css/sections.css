@@ -9,13 +9,13 @@
 td[data-toggle="modal"] {
 	cursor: pointer;
 }
+/* Search make a dontation */
 .search {
     position: relative;
     margin: 20px auto;
     font-family: 'Lato', sans-serif;
     width: 100%;
 }
-
 .search i {
 	color: #333;
     position: absolute;
@@ -44,7 +44,6 @@ td[data-toggle="modal"] {
     -o-box-shadow: inset 0 0;
     box-shadow: inset 0 0;
 }
-
 .search input:focus {
     outline: none;
     border-color: #66b1ee;
@@ -54,11 +53,9 @@ td[data-toggle="modal"] {
     -o-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
     box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
 }
-
 .search input:focus + .results { 
 	display: block 
 }
-
 .search .results {
     display: none;
     position: absolute;
@@ -85,15 +82,12 @@ td[data-toggle="modal"] {
     -o-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-
 .search .results li { 
 	display: block 
 }
-
 .search .results li:first-child { 
 	margin-top: -1px 
 }
-
 .search .results li:first-child:before,
 .search .results li:first-child:after {
     display: block;
@@ -105,22 +99,17 @@ td[data-toggle="modal"] {
     margin-left: -5px;
     border: 5px outset transparent;
 }
-
 .search .results li:first-child:before {
     border-bottom: 5px solid #c4c7d7;
     top: -11px;
 }
-
 .search .results li:first-child:after {
     border-bottom: 5px solid #fdfdfd;
     top: -10px;
 }
-
 .search .results li:first-child:hover:before, 
 .search .results li:first-child:hover:after { display: none }
-
 .search .results li:last-child { margin-bottom: -1px }
-
 .search .results a {
     display: block;
     position: relative;
@@ -132,9 +121,7 @@ td[data-toggle="modal"] {
     border: 1px solid transparent;
     border-radius: 3px;
 }
-
 .search .results a span { font-weight: 200 }
-
 .search .results a:before {
     content: '';
     width: 18px;
@@ -145,7 +132,6 @@ td[data-toggle="modal"] {
     margin-top: -9px;
     background: url("http://cssdeck.com/uploads/media/items/7/7BNkBjd.png") 0 0 no-repeat;
 }
-
 .search .results a:hover {
     text-decoration: none;
     color: #fff;
