@@ -60,7 +60,7 @@
                 
                     <div class="row">
                         
-                        <div class="col-md-4">
+                        <div class="col-sm-4 col-md-4 ">
                                 
                             <h1 class="logo-header">
                                 
@@ -74,7 +74,7 @@
                         
                         </div><!-- /col -->
 
-                        <div class="col-md-4">
+                        <div class="col-sm-4 col-md-4 ">
                         
                             <div class="box-account-header">
                                 
@@ -106,7 +106,7 @@
 
                         </div><!-- /col --> 
 
-                        <div class="col-md-4">
+                        <div class="col-sm-4 col-md-4 ">
 
                             <div class="name-user">
                                 David Jacobs

@@ -536,11 +536,19 @@
 
 		color: #fff;
 	}
+	.box-account-header {
+	    margin-left: -50%;
+	  }
 }	
 @media(min-width:992px){
-   
+ 	.box-account-header {
+      margin-left: -25%;
+    }  
 }
 @media(min-width:1200px){
+ 	.box-account-header {
+      margin-left: 0px;
+    }  
    
 }
 
