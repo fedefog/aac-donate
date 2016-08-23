@@ -108,7 +108,7 @@
 
                         <div class="col-sm-4 col-md-4 ">
 
-                            <div class="name-user">
+                            <div class="name-user visible-md visible-lg">
                                 David Jacobs
                             </div>
 
