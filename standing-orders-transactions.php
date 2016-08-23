@@ -1,6 +1,6 @@
-<main class="main-transactions main-standing-orders-transactions" >
+<main class="main-transactions main-standing-orders-transactions content-desktop" >
 	
-	<div class="header-fixed">
+	<div class="header-fixed visible-xs">
 
         <header class="header ">
 

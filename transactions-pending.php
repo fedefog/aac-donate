@@ -1,6 +1,6 @@
-<main class="main-transactions main-transactions-pending" >
+<main class="main-transactions content-desktop main-transactions-pending" >
 	
-	<div class="header-fixed">
+	<div class="header-fixed visible-xs">
 
         <header class="header ">
 

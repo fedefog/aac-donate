@@ -90,7 +90,7 @@
 
 			<div class="row-modal">
 
-				<a href="#" class="view-all-dontation">VIEW DONATIONS</a>
+				<a href="standing-orders-transactions.php" class="external-lkn view-all-dontation">VIEW DONATIONS</a>
 				
 			</div><!-- /row-modal -->
 

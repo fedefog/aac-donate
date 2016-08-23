@@ -40,7 +40,7 @@
 				<span class="text-end-date">NOV 2018</span>
 			</td>
 			<td class="hidden-xs td-view-transaction">
-				<a href="#" class="lkn-view-transaction">VIEW TRANSACTIONS</a>
+				<a href="standing-orders-transactions.php" class="external-lkn lkn-view-transaction">VIEW TRANSACTIONS</a>
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
@@ -76,7 +76,7 @@
 				<span class="text-end-date">NOV 2018</span>
 			</td>
 			<td class="hidden-xs td-view-transaction">
-				<a href="#" class="lkn-view-transaction">VIEW TRANSACTIONS</a>
+				<a href="standing-orders-transactions.php" class="external-lkn lkn-view-transaction">VIEW TRANSACTIONS</a>
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
@@ -112,7 +112,7 @@
 				<span class="text-end-date">NOV 2018</span>
 			</td>
 			<td class="hidden-xs td-view-transaction">
-				<a href="#" class="lkn-view-transaction">VIEW TRANSACTIONS</a>
+				<a href="standing-orders-transactions.php" class="external-lkn lkn-view-transaction">VIEW TRANSACTIONS</a>
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
@@ -148,7 +148,7 @@
 				<span class="text-end-date">NOV 2018</span>
 			</td>
 			<td class="hidden-xs td-view-transaction">
-				<a href="#" class="lkn-view-transaction">VIEW TRANSACTIONS</a>
+				<a href="standing-orders-transactions.php" class="external-lkn lkn-view-transaction">VIEW TRANSACTIONS</a>
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
@@ -184,7 +184,7 @@
 				<span class="text-end-date">NOV 2018</span>
 			</td>
 			<td class="hidden-xs td-view-transaction">
-				<a href="#" class="lkn-view-transaction">VIEW TRANSACTIONS</a>
+				<a href="standing-orders-transactions.php" class="external-lkn lkn-view-transaction">VIEW TRANSACTIONS</a>
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
@@ -220,7 +220,7 @@
 				<span class="text-end-date">NOV 2018</span>
 			</td>
 			<td class="hidden-xs td-view-transaction">
-				<a href="#" class="lkn-view-transaction">VIEW TRANSACTIONS</a>
+				<a href="standing-orders-transactions.php" class="external-lkn lkn-view-transaction">VIEW TRANSACTIONS</a>
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
@@ -256,7 +256,7 @@
 				<span class="text-end-date">NOV 2018</span>
 			</td>
 			<td class="hidden-xs td-view-transaction">
-				<a href="#" class="lkn-view-transaction">VIEW TRANSACTIONS</a>
+				<a href="standing-orders-transactions.php" class="external-lkn lkn-view-transaction">VIEW TRANSACTIONS</a>
 			</td>
 			<td class="action-edit hidden-xs">
 				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>

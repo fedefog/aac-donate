@@ -1,6 +1,6 @@
-<main class="main-transactions">
+<main class="main-transactions ">
 	
-	<div class="header-fixed">
+	<div class="header-fixed visible-xs">
 
         <header class="header ">
 
@@ -76,7 +76,7 @@
 
     </div><!-- /header-fixed -->
 
-    <div class="container top-center-content">
+    <div class="container top-center-content visible-xs">
 
     	<div class="row">
 

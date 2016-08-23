@@ -134,7 +134,7 @@
 						
 						<div class="box-make-donation-lkns">
 							
-							<a href="#" class="make-donation-lkns" >See previous donations to GGBH</a>
+							<a href="transactions-history.php" class="make-donation-lkns external-lkn" >See previous donations to GGBH</a>
 
 							<a href="#" class="make-donation-lkns" >Charity Commission profile</a>
 							

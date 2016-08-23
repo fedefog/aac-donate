@@ -375,15 +375,11 @@
     position: fixed;
     z-index: 9;
   }
-  .box-account-header {
-    margin-left: -160px;
-  }
+  
 }
 @media(min-width:992px){
 
-     .box-account-header {
-      margin-left: 0px;
-    }
+     
 }
 @media(min-width:1200px){
    

@@ -1,6 +1,6 @@
-<main class="main-transactions main-transactions-history" >
+<main class="main-transactions main-transactions-history content-desktop" >
 	
-	<div class="header-fixed">
+	<div class="header-fixed visible-xs">
 
         <header class="header ">
 
