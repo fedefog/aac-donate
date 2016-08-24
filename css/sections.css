@@ -1980,6 +1980,12 @@ td[data-toggle="modal"] {
 
 }	
 @media(min-width:768px){
+	.table > thead > tr > th.desktop-align-left {
+		text-align: left;
+	}
+	.desktop-align-center {
+		text-align: center;
+	}
 	.no-padding-desktop {
 		padding: 0;
 	}
@@ -2591,7 +2597,23 @@ td[data-toggle="modal"] {
 	    margin-left: auto;
 		margin-right: auto;
 	}
-	
+	.title-standing-orders-transactions {
+		color: #878787;
+		letter-spacing: 0.54px;
+		line-height: 24px;
+	}
+	.title-standing-orders-transactions .title-transactions {
+		font-weight: 500;
+		font-size: 20px;
+		margin: 0;
+	}
+	.title-standing-orders-transactions span {
+		font-weight: 300;
+		display: block;
+	}
+	.margintop-standing-orders {
+		margin-top: 18px;
+	}
 }
 @media(min-width:992px){
    

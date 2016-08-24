@@ -65,7 +65,14 @@
 				<div class="container-table">
 			   
 				   <table class="table-transactions table table-condensed">
-						
+						<thead class="hidden-xs "> 
+							<tr>
+								<th>DATE</th>
+								<th class="desktop-align-left">ID</th>
+								<th>CHARITY</th>
+								<th>AMOUNT</th>
+							</tr>
+						</thead>
 						<tbody>
 							<tr>
 								<td data-toggle="modal" data-target="#modal-standing-order-donation" >
@@ -81,7 +88,8 @@
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="balance-down" data-toggle="modal" data-target="#modal-standing-order-donation" >
+								<td class="hidden-xs"></td>
+								<td class="desktop-align-center balance-down" data-toggle="modal" data-target="#modal-standing-order-donation" >
 									<a href="#" >
 										<span class="balance-transition">
 											£ 990.00
@@ -105,7 +113,8 @@
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="balance-down" data-toggle="modal" data-target="#modal-voucher" >
+								<td class="hidden-xs"></td>
+								<td class="desktop-align-center balance-down" data-toggle="modal" data-target="#modal-voucher" >
 									<a href="#" >
 										<span class="balance-transition">
 											£ 550.00
@@ -128,7 +137,8 @@
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="balance-down" data-toggle="modal" data-target="#modal-voucher-book" >
+								<td class="hidden-xs"></td>
+								<td class="desktop-align-center balance-down" data-toggle="modal" data-target="#modal-voucher-book" >
 									<a href="#" >
 										<span class="balance-transition">
 											£ 50.00
@@ -152,7 +162,8 @@
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="balance-down" data-toggle="modal" data-target="#modal-online-donation" >
+								<td class="hidden-xs"></td>
+								<td class="desktop-align-center balance-down" data-toggle="modal" data-target="#modal-online-donation" >
 									<a href="#" >
 										<span class="balance-transition">
 											£ 222.00
@@ -175,7 +186,8 @@
 										</div><!-- /desc-table -->
 									</a>
 								</td>
-								<td class="balance-down" data-toggle="modal" data-target="#modal-account-transfer" >
+								<td class="hidden-xs"></td>							
+								<td class="desktop-align-center balance-down" data-toggle="modal" data-target="#modal-account-transfer" >
 									<a href="#" >
 										<span class="balance-transition">
 											£ 200.00
@@ -184,7 +196,7 @@
 										</span>
 									</a>
 								</td>
-							</tr>							
+							</tr>
 						</tbody>
 
 					</table>
