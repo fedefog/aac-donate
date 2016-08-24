@@ -55,6 +55,29 @@
         </header>
 
     </div><!-- /header-fixed -->
+
+    <div id="transactions-navigation-desktop" class="hidden-xs transactions-navigation-desktop">
+
+    	<div class="row">
+
+    		<div class="col-md-6">
+				
+				<div class="title-standing-orders-transactions">
+							
+						<h3 class="title-transactions">DONATIONS TO GGBH</h3>
+
+				</div><!-- /title-transactions-result -->
+
+    		</div><!-- / col 6 -->
+
+    		<div class="col-md-6 text-right ">
+    			<a href="#" class="expert-csv-file">EXPORT DATA TO CSV FILE</a>
+    			<a href="#" class="expert-xls-file">EXPORT DATA TO XLS FILE</a>
+    		</div><!-- / col 6 -->
+
+		</div><!-- / row -->
+
+    </div><!-- /transactions-navigation-desktop -->
 	
     <div class="container-fluid">
 	
