@@ -475,3 +475,11 @@ body.sticky-footer main {
 @media(min-width:1200px){
    
 }
+
+/****** Media Queries for windows height on desktop ******/
+
+@media(min-height:990px){
+	.content-desktop {
+		min-height: 812px;
+	}
+}
