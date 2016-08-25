@@ -116,7 +116,10 @@ td[data-toggle="modal"] {
     border: 1px solid transparent;
     border-radius: 3px;
 }
-.search .results a span { font-weight: 200 }
+.search .results a span { 
+	font-weight: 600;
+    color: #333; 
+}
 .search .results a:before {
     content: '';
     width: 18px;
