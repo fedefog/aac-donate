@@ -592,7 +592,7 @@ load_js()
 			})
 
 
-			$('.search').on("click",'a', function(event) {
+			$('.search').on("click",'.results a', function(event) {
 				event.preventDefault ( );
 
 				var str = $(this).text();
