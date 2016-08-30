@@ -572,8 +572,33 @@ load_js()
 			  }
 			});
 
-    		 
-    		
+			
+			//search field select a beneficiary
+
+			$('.search input').focus(function() {
+			    $(this).attr('placeholder', 'Type your search');
+			}).blur(function() {
+			    $(this).attr('placeholder', 'Please select a Beneficiary');
+			})
+
+			$('.search input').click(function() {
+			    $(".results").css("visibility","visible");			    
+			}).blur(function() {
+				setTimeout(function(){
+				  $(".results").css("visibility","hidden");
+				}, 200);
+			})
+
+
+			$('.search').on("click",'a', function(event) {
+				event.preventDefault ( );
+
+				var str = $(this).text();
+				$('.beneficiary-select-error').show();
+				$( '.search input' ).val( str );
+				$(".results").css("visibility","hidden");		 
+
+			});   		
 
 			// click button form  
 			$('.make-dontation').click(

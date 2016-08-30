@@ -90,7 +90,7 @@
 		
 	    <div class="box-slide-text">
 		    
-		    <div class="container">
+		    <div class="container-fluid">
 
 				<a href="#" class="lkn-daily lkn-daily-donate">
 
@@ -117,11 +117,18 @@
 						
 						<h2 class="title-make-donation">BENEFICIARY</h2>
 						
-						<select  title="Please select a Beneficiary" class="form-control selectpicker beneficiary-select select-1" data-style="btn-danger">
-						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
-						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
-						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
-						</select>
+						<form class="search" method="post" action="#" >
+							<span class="caret"></span>
+
+							 <input type="text" name="q" placeholder="Please select a Beneficiary" />
+
+							 <ul class="results">
+								 <li><a class="test" href="#"><span>GGBH</span><br /> The Riding London NW11 8HL</a></li>
+								 <li><a href="#"><span>GGBH</span><br /> The Riding London NW11 9HL</a></li>
+						 		<li><a href="#"><span>GGBH</span><br /> The Riding London NW11 10HL</a></li>
+							 </ul>
+							 
+						 </form>
 
 						<p class="text-danger beneficiary-select-error ">Please note: Achisomoch carries out random checks on the charitable status of the organisations mentioned on this list, However no guarantee is implied that all charities mentioned on this list are bona-fide.</p>
 						

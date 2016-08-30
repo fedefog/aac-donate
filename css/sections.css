@@ -24,6 +24,30 @@ td[data-toggle="modal"] {
     margin-top: -9px;
     font-size: 19px;
 }
+.search .caret {
+	position: absolute;
+	right: 15px;
+    top: 20px;
+}
+.search input::-webkit-input-placeholder {
+   color: #333!important;
+   font-weight: 600;
+}
+
+.search input:-moz-placeholder { /* Firefox 18- */
+   color: #333!important; 
+   font-weight: 600; 
+}
+
+.search input::-moz-placeholder {  /* Firefox 19+ */
+   color: #333!important;  
+   font-weight: 600;
+}
+
+.search input:-ms-input-placeholder {  
+   color: #333!important;  
+   font-weight: 600;
+}
 .search input {
     height: 44px;
     width: 100%;
@@ -54,10 +78,12 @@ td[data-toggle="modal"] {
     box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
 }
 .search input:focus + .results { 
-	display: block 
+	/*display: block ;*/
+	/*visibility: visible;*/
 }
 .search .results {
-    display: none;
+    /*display: none;*/
+    visibility: hidden;
     position: absolute;
     top: 45px;
     left: 0;
