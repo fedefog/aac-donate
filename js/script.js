@@ -565,9 +565,11 @@ load_js()
 			  	$('.confirmation-amount').addClass('success-amount');
 			  	$('.confirmation-amount').removeClass('incorrect-amount');
 		  		$('.confirmation-amount-error').hide();
+		  		$('.confirmation-amount-succes').show();
 			  }else {
 			  	
 			  	$('.confirmation-amount').addClass('incorrect-amount');
+			  	$('.confirmation-amount-success').hide();
 			  	$('.confirmation-amount-error').show();
 			  }
 			});
@@ -575,13 +577,13 @@ load_js()
 			
 			//search field select a beneficiary
 
-			$('.search input').focus(function() {
+			$('.search .input-beneficiary').focus(function() {
 			    $(this).attr('placeholder', 'Type your search');
 			}).blur(function() {
 			    $(this).attr('placeholder', 'Please select a Beneficiary');
 			})
 
-			$('.search input').click(function() {
+			$('.search .input-beneficiary').click(function() {
 			    $(".results").css("visibility","visible");			    
 			}).blur(function() {
 				setTimeout(function(){
@@ -595,7 +597,7 @@ load_js()
 
 				var str = $(this).text();
 				$('.beneficiary-select-error').show();
-				$( '.search input' ).val( str );
+				$( '.search .input-beneficiary' ).val( str );
 				$(".results").css("visibility","hidden");		 
 
 			});   		

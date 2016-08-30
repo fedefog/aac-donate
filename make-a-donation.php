@@ -122,10 +122,10 @@
 						<form class="search" method="post" action="#" >
 							<span class="caret"></span>
 
-							 <input type="text" name="q" placeholder="Please select a Beneficiary" />
+							 <input class="input-beneficiary" type="text" name="q" placeholder="Please select a Beneficiary" />
 
 							 <ul class="results">
-								 <li><a class="test" href="#"><span>GGBH</span><br /> The Riding London NW11 8HL</a></li>
+								 <li><a href="#"><span>GGBH</span><br /> The Riding London NW11 8HL</a></li>
 								 <li><a href="#"><span>GGBH</span><br /> The Riding London NW11 9HL</a></li>
 						 		<li><a href="#"><span>GGBH</span><br /> The Riding London NW11 10HL</a></li>
 							 </ul>
@@ -173,9 +173,11 @@
 
 						<p class="large-amount">For your own safety please re-enter the amount you wish to donate </p>
 
-						<input type="text" class="form-control confirmation-amount input-text" placeholder="">
+						<input type="text" class="form-control confirmation-amount input-text" placeholder="Please re-enter the amount you wish to donate">
 
-						<p class="text-danger confirmation-amount-error">In order to comply with money laundering  regulations,  this donation will also be eligible for random checks by our Compliance Officer. Please provide us a few sentences to outline the purpose of the donation to determine if we need to be in touch for more information. </p>
+						<p class="text-danger confirmation-amount-succes">In order to comply with money laundering  regulations,  this donation will also be eligible for random checks by our Compliance Officer. Please provide us a few sentences to outline the purpose of the donation to determine if we need to be in touch for more information. </p>
+
+						<p class="text-danger confirmation-amount-error">This figure does not match the original amount.</p>
 
 					</div><!-- /box-make-donation -->
 					

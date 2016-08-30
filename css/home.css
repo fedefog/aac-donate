@@ -425,6 +425,9 @@
 		padding: 30px;
 		border-radius: 5px;
 	}
+	form#quick-donation .form-group:first-child {
+		position: relative;
+	}
 	form#quick-donation label {
 		color: #767676;
 		font-size: 12px;

@@ -160,14 +160,8 @@ td[data-toggle="modal"] {
     text-decoration: none;
     color: #fff;
     text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
-    border-color: #00ADEE;
     background-color: #00ADEE;
- 
-    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
-    -moz-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
-    -ms-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
-    -o-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
+
 }
 /* DASHBOARD */
 
@@ -817,7 +811,7 @@ td[data-toggle="modal"] {
     
     font-size: 13px;
 }
-.confirmation-amount-error {
+.confirmation-amount-error, .confirmation-amount-succes {
 	display: none;
 }
 .make-donation .input-text.confirmation-amount {

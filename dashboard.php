@@ -215,14 +215,17 @@
 
 					<h2 class="title-dashborad-desktop">Quick Donation</h2>
 
-					<form id="quick-donation" class="make-donation">
+					<form id="quick-donation" class="make-donation search">
 					  <div class="form-group">
-					    <label for="beneficiary">BENEFICIARY</label>
-					    <select  title="Please select a Beneficiary" class="form-control selectpicker beneficiary-select select-1" data-style="btn-danger">
-						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
-						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
-						  <option data-subtext="The Riding London NW11 8HL">GGBH</option>
-						</select>
+					    <span class="caret"></span>
+
+						 <input class="input-beneficiary" type="text" name="q" placeholder="Please select a Beneficiary" />
+
+						 <ul class="results">
+							 <li><a class="test" href="#"><span>GGBH</span><br /> The Riding London NW11 8HL</a></li>
+							 <li><a href="#"><span>GGBH</span><br /> The Riding London NW11 9HL</a></li>
+					 		<li><a href="#"><span>GGBH</span><br /> The Riding London NW11 10HL</a></li>
+						 </ul>
 					  </div>
 					  <div class="form-group">
 					    <label for="amount">Amount</label>

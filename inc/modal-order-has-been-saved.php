@@ -8,7 +8,7 @@
 			
 			<div class="row-modal ">
 				
-				<h2 class="title-modal">YOUR ORDER HAS BEEN SAVED </h2>
+				<h2 class="title-modal">CHANGES HAVE BEEN SAVED </h2>
 
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
@@ -16,7 +16,7 @@
 				
 			</div><!-- /row-modal -->
 			
-			<a href="standing-orders.php" class="lkn-bottom-modal external-lkn" data-dismiss="modal" aria-label="Close">ACCEPT</a>
+			<a href="standing-orders.php" class="lkn-bottom-modal external-lkn" data-dismiss="modal" aria-label="Close">OKAY</a>
 				
     	</div><!-- /modal-body -->
 	
