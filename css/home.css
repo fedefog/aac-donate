@@ -176,6 +176,7 @@
 	 .logo-header {
 		text-align: left;
 		margin: 28px 0;
+		float: left;
 	}
 	.name-user {
 		float: right;

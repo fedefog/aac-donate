@@ -94,10 +94,8 @@
 				
 			</div><!-- /row-modal -->
 
-			
-
 			<div class="btns-options">
-				<a href="#" class=" transition left-bt btn-yes-cancelled">Cancel Standing Order</a>
+				<a href="#" data-toggle="modal" data-target="#modal-delete-transaction" class=" transition left-bt delete-transactions cancel-standing-order-bt">Cancel Standing Order</a>
 				<a href="amend-standing-order.php" class=" transition right-bt external-lkn">Amend Standing Order</a>
 			</div><!-- / btns options -->
 

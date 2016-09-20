@@ -81,11 +81,6 @@
 
 /* pending bt */
 
-.pending-bt {
-  position: relative;
-  top: 19px;
-  left: 15px;
-}
 .pending-bt .badge {
   background: #F76980;
   height: 17px;
@@ -324,10 +319,18 @@
   visibility: visible;
   opacity: .4;
 }
+.box-balance .balance-number.negative {
+  color: #f76980;
+}
 @media(max-width:767px){
   .navigator .hoverflow {
     height: 448px;
     overflow: scroll;
+  }
+  .pending-bt {
+    position: relative;
+    top: 19px;
+    left: 15px;
   }
 	
 }
@@ -374,6 +377,11 @@
 
     position: fixed;
     z-index: 9;
+  }
+  .pending-bt {
+    position: relative;
+    top: 47px;
+    left: 15px;
   }
   
 }
