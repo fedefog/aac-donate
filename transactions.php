@@ -110,8 +110,15 @@
     		</div><!-- / col 6 -->
 
     		<div class="col-md-6 text-right">
-    			<a href="#" class="expert-csv-file">EXPORT DATA TO CSV FILE</a>
-    			<a href="#" class="expert-xls-file">EXPORT DATA TO XLS FILE</a>
+
+    			<div class="export-file">
+	    			EXPORT DATA <span class="caret"></span>
+	    			<ul class="transition">
+	    				<li><a class="transition" href="">CSV File</a></li>
+						<li><a class="transition" href="">XLS File</a></li>
+					</ul>
+				</div>
+				
     		</div><!-- / col 6 -->
 
 		</div><!-- / row -->

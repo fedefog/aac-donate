@@ -2158,40 +2158,51 @@ h2.empty-title {
 		border: 1px solid #00ADEE;
 		color: #fff;
 	}
-
-	.expert-csv-file {
+	.export-file {
 		font-weight: 500;
 		font-size: 11px;
 		color: #9B9B9B;
 		letter-spacing: 0.29px;
 		position: relative;
-		padding-right: 15px;
 		margin-top: 8px;
 		display: inline-block;
 		transition: all 0.3s ease-in-out;
+		padding-bottom: 5px;
 	}
-	.expert-csv-file:before {
-		background: #9B9B9B;
+	.export-file .caret {
+		margin: 0 10px;
+	}
+	.export-file ul {
+		opacity: 0;
+		visibility: hidden;
 		position: absolute;
-		content: '';
-		height: 10px;
-		right: 0;
-		top: 2px;
-		width: 1px;
+		width: 103px;
+    	text-align: left;
+	    border-radius: 6px;
+	    border:1px solid rgba(155, 155, 155, 0.2);
+	    background: #F3F3F3;
+	    z-index: 1;
+    	margin-top: 5px;
 	}
-	.expert-xls-file {
-		font-weight: 500;
-		font-size: 11px;
+	.export-file ul li a{
+		padding: 10px;
+		display:inline-block;
 		color: #9B9B9B;
-		letter-spacing: 0.29px;
-		padding-left: 15px;
-		margin-top: 8px;
-		display: inline-block;
-		transition: all 0.3s ease-in-out;
+		width: 100%;
 	}
-	.expert-csv-file:hover ,
-	.expert-xls-file:hover {
-		color: #000;
+	.export-file a:hover {
+		background: #00ADEE;
+		color: #FFF;
+	}
+	.export-file ul li:first-child{
+		border-bottom: 1px solid rgba(155, 155, 155, 0.2);
+	}
+	.export-file:hover {
+		cursor: pointer;
+	}
+	.export-file:hover ul {
+		opacity: 1;
+		visibility: visible;
 	}
 	.navigator-transactions {
 		display: block;
