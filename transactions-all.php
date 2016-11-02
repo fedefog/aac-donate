@@ -7,7 +7,6 @@
 			<th>AMOUNT</th>
 			<th class="hidden-xs">BALANCE AFTER TRANSACTION</th>
 			<th class="hidden-xs">TYPE</th>
-			<th class="hidden-xs">ACTION</th>
 		</tr>
 	</thead>						
 	<tbody>
@@ -44,11 +43,6 @@
 			<td class="type-td hidden-xs">
 				<p class="type-transactions">VOUCHER</p>
 			</td>
-			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
-				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
-			</td>
 		</tr>
 		<tr class="balance-down">
 			<td data-toggle="modal" data-target="#modal-voucher" >
@@ -83,11 +77,6 @@
 			<td class="type-td hidden-xs">
 				<p class="type-transactions">VOUCHER</p>
 			</td>
-			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
-				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
-			</td>
 		</tr>
 		<tr class="balance-down">
 			<td data-toggle="modal" data-target="#modal-voucher-book" >
@@ -120,11 +109,6 @@
 			</td>
 			<td class="type-td hidden-xs">
 				<p class="type-transactions">VOUCHER</p>
-			</td>
-			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
-				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-up" >
@@ -159,11 +143,6 @@
 			<td class="type-td hidden-xs">
 				<p class="type-transactions">VOUCHER</p>
 			</td>
-			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
-				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
-			</td>
 		</tr>
 		<tr class="balance-up" >
 			<td data-toggle="modal" data-target="#modal-giftaid-rebate" >
@@ -197,11 +176,6 @@
 			<td class="type-td hidden-xs">
 				<p class="type-transactions">VOUCHER</p>
 			</td>
-			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
-				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
-			</td>
 		</tr>
 		<tr class="balance-up" >
 			<td data-toggle="modal" data-target="#modal-give-as-you-earn" >
@@ -234,11 +208,6 @@
 			</td>
 			<td class="type-td hidden-xs">
 				<p class="type-transactions">VOUCHER</p>
-			</td>
-			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
-				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-down">
@@ -274,11 +243,6 @@
 			<td class="type-td hidden-xs">
 				<p class="type-transactions">VOUCHER</p>
 			</td>
-			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
-				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
-			</td>
 		</tr>
 		<tr class="balance-down">
 			<td data-toggle="modal" data-target="#modal-account-transfer" >
@@ -312,11 +276,6 @@
 			<td class="type-td hidden-xs">
 				<p class="type-transactions">VOUCHER</p>
 			</td>
-			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
-				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
-			</td>
 		</tr>
 		<tr class="balance-up" >
 			<td data-toggle="modal" data-target="#modal-company-donation" >
@@ -349,11 +308,6 @@
 			</td>
 			<td class="type-td hidden-xs">
 				<p class="type-transactions">VOUCHER</p>
-			</td>
-			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
-				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 
@@ -389,11 +343,6 @@
 			<td class="type-td hidden-xs">
 				<p class="type-transactions">VOUCHER</p>
 			</td>
-			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
-				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
-			</td>
 		</tr>
 		<tr class="balance-up" >
 			<td data-toggle="modal" data-target="#modal-account-transfer" >
@@ -426,11 +375,6 @@
 			</td>
 			<td class="type-td hidden-xs">
 				<p class="type-transactions">VOUCHER</p>
-			</td>
-			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
-				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>
 		<tr class="balance-pending" >
@@ -466,11 +410,6 @@
 			</td>
 			<td class="type-td hidden-xs">
 				<p class="type-transactions">VOUCHER</p>
-			</td>
-			<td class="action-edit hidden-xs">
-				<a href="#" class="edit-transactions btn-trannsaction-accion"></a>
-				<a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
-				<a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
 			</td>
 		</tr>							
 	</tbody>
