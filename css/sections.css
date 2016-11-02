@@ -526,6 +526,17 @@ td[data-toggle="modal"] {
 	  -webkit-appearance: none; 
 	  transition: all .2s ease-out;
 } 
+.modal-search .bootstrap-select {
+	width: 80%!important;
+	top: -5px;
+}
+.modal-search .bootstrap-select .dropdown-toggle {
+	padding: 7px 12px;
+}
+.modal-search .bootstrap-select .filter-option {
+	color: #B0B0B0;
+	font-weight: 400;
+}
 .modal-search .error .checkbox-input i ,
 .modal-search .active .checkbox-input i {
 	opacity: 1;
@@ -1591,6 +1602,49 @@ td[data-toggle="modal"] {
 .bootstrap-switch .bootstrap-switch-label {
 	height: 35px;
 }
+
+/* SUPER EMPTY STATE */
+h2.empty-title {
+	font-weight: 500;
+    font-size: 20px;
+    color: #9B9B9B;
+    letter-spacing: 0.54px;
+    margin: 20px 0 20px 0;
+    text-transform: initial;
+}
+.bank-account {
+	font-style: italic;
+	padding: 10px 0 25px;
+}
+.super-empty-state p {
+	font-weight: 400;
+    font-size: 13px;
+    color: #727272;
+    letter-spacing: 0.56px;
+    line-height: 18px;
+    margin: 0 0 20px 0;
+}
+.super-empty-state strong {
+	padding-bottom: 15px;
+	display: block;
+	text-transform: uppercase;
+}
+.empty-number {
+	display: inline-block;
+	background: #00ADEE;
+	color: #FFF!important;
+	padding: 5px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	font-weight: 600;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+.super-empty-state p span {
+	color: #00ADEE;
+}
+
 @media(max-width:340px){ 
 	/*Transaction */
 	.main-transactions .box-account {

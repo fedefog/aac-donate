@@ -238,12 +238,12 @@
 					<form class="form-modal-search">
 											
 					<div class="form-group">
-						<label for="" class="label">TRANSACTION ID</label>
+						<label for="" class="label">REQUEST ID</label>
 						<div class="row-input">
 							<a href="#" class="checkbox-input">
 								<i class="fa fa-check" aria-hidden="true"></i>
 							</a>
-							<input type="text" class="input" placeholder="For a specific transaction.">
+							<input type="text" class="input" placeholder="Specify the request ID">
 						</div>
 					</div>
 					<div class="form-group">
@@ -265,12 +265,12 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="" class="label">PERSONAL NOTES</label>
+						<label for="" class="label">NOTES</label>
 						<div class="row-input">
 							<a href="#" class="checkbox-input">
 								<i class="fa fa-check" aria-hidden="true"></i>
 							</a>
-							<input type="text" class="input" placeholder="Search your personal notes">
+							<input type="text" class="input" placeholder="Please enter text to search">
 						</div>
 					</div>
 					<div class="form-group">
@@ -283,12 +283,12 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="" class="label">BOOK VOUCHER NUMBER</label>
+						<label for="" class="label">ALL VOUCHERS IN A BOOK</label>
 						<div class="row-input">
 							<a href="#" class="checkbox-input">
 								<i class="fa fa-check" aria-hidden="true"></i>
 							</a>
-							<input type="text" class="input" placeholder="To display all vouchers in a book.">
+							<input type="text" class="input" placeholder="Enter any voucher from that book">
 						</div>
 					</div>
 					<div class="form-group">
@@ -297,7 +297,20 @@
 							<a href="#" class="checkbox-input">
 								<i class="fa fa-check" aria-hidden="true"></i>
 							</a>
-							<input type="text" class="input" placeholder="Select the type of transactions ">
+							<select class="form-control selectpicker" title="Select the type of transactions">
+								    <option>Voucher</option>
+									<option>Voucher Book Order</option>
+									<option>Online Donation</option>
+									<option>Commission</option>
+									<option>Standing Order </option>
+									<option>Account Transfer</option>
+									<option>Give as You Earn</option>
+									<option>Bank Transfer</option>
+									<option>Inland Revenue</option>
+									<option>Refund</option>
+									<option>Company Donation</option>
+									<option>Charity Donation</option>
+							</select>
 						</div>
 					</div>
 
@@ -346,12 +359,12 @@
 		<form class="form-modal-search">
 									
 			<div class="form-group">
-				<label for="" class="label">TRANSACTION ID</label>
+				<label for="" class="label">REQUEST ID</label>
 				<div class="row-input">
 					<a href="#" class="checkbox-input">
 						<i class="fa fa-check" aria-hidden="true"></i>
 					</a>
-					<input type="text" class="input" placeholder="For a specific transaction.">
+					<input type="text" class="input" placeholder="Specify the request ID">
 				</div>
 			</div>
 			<div class="form-group">
@@ -373,12 +386,12 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="" class="label">PERSONAL NOTES</label>
+				<label for="" class="label">NOTES</label>
 				<div class="row-input">
 					<a href="#" class="checkbox-input">
 						<i class="fa fa-check" aria-hidden="true"></i>
 					</a>
-					<input type="text" class="input" placeholder="Search your personal notes">
+					<input type="text" class="input" placeholder="Please enter text to search">
 				</div>
 			</div>
 			<div class="form-group">
@@ -391,12 +404,12 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="" class="label">BOOK VOUCHER NUMBER</label>
+				<label for="" class="label">ALL VOUCHER IN A BOOK</label>
 				<div class="row-input">
 					<a href="#" class="checkbox-input">
 						<i class="fa fa-check" aria-hidden="true"></i>
 					</a>
-					<input type="text" class="input" placeholder="To display all vouchers in a book.">
+					<input type="text" class="input" placeholder="Enter any voucher from that book">
 				</div>
 			</div>
 			<div class="form-group">
@@ -405,7 +418,20 @@
 					<a href="#" class="checkbox-input">
 						<i class="fa fa-check" aria-hidden="true"></i>
 					</a>
-					<input type="text" class="input" placeholder="Select the type of transactions ">
+					<select class="form-control selectpicker" title="Select the type of transactions">
+					    <option>Voucher</option>
+						<option>Voucher Book Order</option>
+						<option>Online Donation</option>
+						<option>Commission</option>
+						<option>Standing Order </option>
+						<option>Account Transfer</option>
+						<option>Give as You Earn</option>
+						<option>Bank Transfer</option>
+						<option>Inland Revenue</option>
+						<option>Refund</option>
+						<option>Company Donation</option>
+						<option>Charity Donation</option>
+					</select>
 				</div>
 			</div>
 			
