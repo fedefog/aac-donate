@@ -1,0 +1,228 @@
+<table class="table-transactions table table-condensed">
+    <thead class="hidden-xs "> 
+        <tr>
+            <th>DATE</th>
+            <th>DESCRIPTION</th>
+            <th>AMOUNT</th>
+            <th class="hidden-xs">BALANCE AFTER TRANSACTION</th>
+            <th class="hidden-xs">TYPE</th>
+            <th class="hidden-xs">ACTION</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="balance-down">
+            <td data-toggle="modal" data-target="#modal-standing-order-donation" >
+                <a href="#" >
+                    <div class="date">1-7-16</div>
+                </a>
+            </td>
+            <td data-toggle="modal" data-target="#modal-standing-order-donation" >
+                <a href="#" >
+                    <div class="desc-table">
+                        <h2 class="title">Initiation Society</h2>
+                        <h3 class="subtitle">STANDING ORDER </h3>
+                    </div><!-- /desc-table -->
+                </a>
+            </td>
+            <td class="amount-td" data-toggle="modal" data-target="#modal-standing-order-donation" >
+                <a href="#" >
+                    <span class="balance-transition">
+                        £ 990.00
+                        <i class="fa fa-caret-up" aria-hidden="true"></i>
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </td>
+            <td class="amount-td hidden-xs" data-toggle="modal" data-target="#modal-voucher" >
+                <a href="#" >
+                    <span class="balance-transition">
+                        £ 550.00
+                    </span>
+                </a>
+            </td>
+            <td class="type-td hidden-xs">
+                <p class="type-transactions">VOUCHER</p>
+            </td>
+            <td class="action-edit hidden-xs">
+                <a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+                <a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
+                <a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+            </td>
+        </tr>
+        <tr class="balance-down">
+            <td data-toggle="modal" data-target="#modal-voucher" >
+                <a href="#" >
+                    <div class="date">24-6-16</div>
+                </a>
+            </td>
+            <td data-toggle="modal" data-target="#modal-voucher" >
+                <a href="#" >
+                    <div class="desc-table">
+                        <h2 class="title">FO Magen David Adom</h2>
+                        <h3 class="subtitle">VOUCHER </h3>
+                    </div><!-- /desc-table -->
+                </a>
+            </td>
+            <td class="amount-td" data-toggle="modal" data-target="#modal-voucher" >
+                <a href="#" >
+                    <span class="balance-transition">
+                        £ 550.00
+                        <i class="fa fa-caret-up" aria-hidden="true"></i>
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </td>
+            <td class="amount-td hidden-xs" data-toggle="modal" data-target="#modal-voucher" >
+                <a href="#" >
+                    <span class="balance-transition">
+                        £ 550.00
+                    </span>
+                </a>
+            </td>
+            <td class="type-td hidden-xs">
+                <p class="type-transactions">VOUCHER</p>
+            </td>
+            <td class="action-edit hidden-xs">
+                <a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+                <a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
+                <a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+            </td>
+        </tr>
+        <tr class="balance-down">
+            <td data-toggle="modal" data-target="#modal-voucher-book" >
+                <a href="#" >
+                    <div class="date">14-6-16</div>
+                </a>
+            </td>
+            <td data-toggle="modal" data-target="#modal-voucher-book" >
+                <a href="#" >
+                    <div class="desc-table">
+                        <h2 class="title">£1 Voucher Book £50</h2>
+                    </div><!-- /desc-table -->
+                </a>
+            </td>
+            <td class="amount-td" data-toggle="modal" data-target="#modal-voucher-book" >
+                <a href="#" >
+                    <span class="balance-transition">
+                        £ 50.00
+                        <i class="fa fa-caret-up" aria-hidden="true"></i>
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </td>
+            <td class="amount-td hidden-xs" data-toggle="modal" data-target="#modal-voucher" >
+                <a href="#" >
+                    <span class="balance-transition">
+                        £ 550.00
+                    </span>
+                </a>
+            </td>
+            <td class="type-td hidden-xs">
+                <p class="type-transactions">VOUCHER</p>
+            </td>
+            <td class="action-edit hidden-xs">
+                <a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+                <a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
+                <a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+            </td>
+        </tr>
+        <tr class="balance-down">
+            <td data-toggle="modal" data-target="#modal-online-donation" >
+                <a href="#" >
+                    <div class="date">1-6-16</div>
+                </a>
+            </td>
+            <td data-toggle="modal" data-target="#modal-online-donation" >
+                <a href="#" >
+                    <div class="desc-table">
+                        <h2 class="title">Menorah Grammar</h2>
+                        <h3 class="subtitle">ONLINE DONATION </h3>
+                    </div><!-- /desc-table -->
+                </a>
+            </td>
+            <td class="amount-td" data-toggle="modal" data-target="#modal-online-donation" >
+                <a href="#" >
+                    <span class="balance-transition">
+                        £ 222.00
+                        <i class="fa fa-caret-up" aria-hidden="true"></i>
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </td>
+            <td class="amount-td hidden-xs" data-toggle="modal" data-target="#modal-voucher" >
+                <a href="#" >
+                    <span class="balance-transition">
+                        £ 550.00
+                    </span>
+                </a>
+            </td>
+            <td class="type-td hidden-xs">
+                <p class="type-transactions">VOUCHER</p>
+            </td>
+            <td class="action-edit hidden-xs">
+                <a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+                <a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
+                <a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+            </td>
+        </tr>
+        <tr class="balance-down">
+            <td data-toggle="modal" data-target="#modal-account-transfer" >
+                <a href="#" >
+                    <div class="date">1-6-16</div>
+                </a>
+            </td>
+            <td data-toggle="modal" data-target="#modal-account-transfer" >
+                <a href="#" >
+                    <div class="desc-table">
+                        <h2 class="title">Account Transfer</h2>
+                    </div><!-- /desc-table -->
+                </a>
+            </td>
+            <td class="amount-td" data-toggle="modal" data-target="#modal-account-transfer" >
+                <a href="#" >
+                    <span class="balance-transition">
+                        £ 200.00
+                        <i class="fa fa-caret-up" aria-hidden="true"></i>
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </td>
+            <td class="amount-td hidden-xs" data-toggle="modal" data-target="#modal-voucher" >
+                <a href="#" >
+                    <span class="balance-transition">
+                        £ 550.00
+                    </span>
+                </a>
+            </td>
+            <td class="type-td hidden-xs">
+                <p class="type-transactions">VOUCHER</p>
+            </td>
+            <td class="action-edit hidden-xs">
+                <a href="#" class="edit-transactions btn-trannsaction-accion"></a>
+                <a href="#" class="delete-transactions btn-trannsaction-accion" data-toggle="modal" data-target="#modal-delete-transaction"></a>
+                <a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+            </td>
+        </tr>							
+    </tbody>
+
+</table>
+
+<nav class="navigation-transactions hidden-xs" aria-label="Page navigation  ">
+    <ul class="pagination">
+        <li>
+            <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li><a href="#" class="pag-active" >1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+            <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav><!-- /navigation-transactions -->
