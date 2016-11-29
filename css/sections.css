@@ -165,6 +165,51 @@ td[data-toggle="modal"] {
 
 }
 /* DASHBOARD */
+.title-dashborad-desktop.title-dashborad-left {
+    float: left;
+}
+.lkn-pendings,
+.lkn-being-processed {
+    float: right;
+    position: relative;
+    font-weight: 500;
+    font-size: 10px;
+    color: #878787;
+    letter-spacing: 0.89px;
+    margin-left: 55px;
+    margin: 24px 0 24px 60px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.lkn-pendings:hover,
+.lkn-being-processed:hover{
+    color: #5d5c5c;
+    border-bottom: 1px solid #5d5c5c;
+}
+.balance-td .balance-transition {
+    color: #787878 !important;
+    text-align: center;
+    width: 100%;
+}
+
+.number-notification {
+
+    background: #F76980;
+    height: 17px;
+    width: 17px;
+    padding: 4px 1px 4px 0;
+    font-size: 10px;
+    position: absolute;
+    text-align: center;
+    left: -27px;
+    letter-spacing: -1px;
+    border-radius: 125px;
+    line-height: 8px;
+    color: #fff;
+    text-align: center;
+}
 
 .error-text {
     display: none;
@@ -317,6 +362,25 @@ td[data-toggle="modal"] {
 }
 
 /*  table transactoion */
+.btn-pendings,
+.btn-being-processed {
+    display: inline-block;
+    position: relative;
+    font-weight: 500;
+    font-size: 10px;
+    color: #878787;
+    letter-spacing: 0.89px;
+    margin-left: 35px;    
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3px;
+}
+
+.btn-pendings:hover,
+.btn-being-processed:hover{
+    color: #5d5c5c;
+    border-bottom: 1px solid #5d5c5c;
+}
+
 .table-transactions .desc-table .title {
     color: #333333;
     font-weight: 600;
@@ -631,6 +695,7 @@ td[data-toggle="modal"] {
 .sortby-li {
     display: block;
 }
+
 .title-sortby {
     font-weight: 700;
     font-size: 10px;
@@ -650,6 +715,10 @@ td[data-toggle="modal"] {
     line-height: 1;
     /* opacity: 0.69; */
     border-top: 1px solid #E2E2E5;
+    transition: all 0.3s ease-in-out;
+}
+.sortby-li .sortby-lkn:hover {
+    color: #00ADEE;
 }
 
 .box-slide-text {
@@ -897,6 +966,40 @@ td[data-toggle="modal"] {
     width: 27px;
 }
 /* VOCHERS */
+
+.voucher-books-header {
+    border-bottom: 1px solid #E2E2E5;
+    padding-bottom: 15px;
+}
+.voucher-books-header .title-section-desktop {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.navigator-voucher-books a {
+    
+    background: #F3F3F3;
+    color: #878787;
+    border-radius: 4px;
+    font-family: 500;
+    font-size: 12px;
+    
+    letter-spacing: 0.44px;
+    padding: 10px;
+    width: 210px;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+.navigator-voucher-books a:last-child {
+    margin-left: 25px;
+}
+.navigator-voucher-books a:hover,
+.navigator-voucher-books a.selected {
+    background: #00ADEE;
+    color: #FFFFFF;
+}
+
 
 .main-transactions.order-voucher .top-center-content {
     padding-top: 60px;
@@ -2237,9 +2340,24 @@ td[data-toggle="modal"] {
         border-radius: 3px;
         display: block;
         padding: 7px 0;
-        text-align: center;
-        width: 115px;
-		/*margin-left:338px;*/
+        
+        text-align: left;
+        padding-left: 25px;
+        color: #00ADEE;
+        width: 230px;
+		
+    }
+    .reset-sort {
+        color: #878787;
+        position: absolute;
+        left: 8px;
+        top: 8px;
+    }
+    .navigator-transactions-sortby .fa-sort-amount-desc {
+        position: absolute;
+        right: 16px;
+        top: 12px;
+        color: #00ADEE;
     }
     .table-transactions .date {
         margin-left: -5px;
@@ -2251,7 +2369,7 @@ td[data-toggle="modal"] {
         margin-top: 20px;
     }
     .drop-down-sort .navigator-transactions-lkn.lkn-sortby {
-        width: 115px;
+        width: 230px;
     }
     .make-donation {
         overflow: hidden;

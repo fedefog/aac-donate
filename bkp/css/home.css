@@ -1,5 +1,17 @@
 /* HOME */
-
+.dashboard-li-has-noti .text {
+	top: -4px;
+}
+.box-notification-nav {
+	color: #333;
+	padding-right: 5px;
+	margin-right: 5px;
+	display: inline-block;
+	margin-left: 40px;
+	font-size: 11px;
+	position: relative;
+	top: -12px;
+}
 
 @media(max-width:340px){
 	.box-account {
@@ -296,6 +308,7 @@
 		position: relative;
     	top: 2px;
 	}
+	
 	.lkn-dashboard .icon {
 		color: #00ADEE;
 		margin-right: 5px;

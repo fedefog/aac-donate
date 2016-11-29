@@ -256,6 +256,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                         <!-- /col -->
                         <div class="col-xs-3"> <a href="#" class="nav-mobile nav-icon4 visible-xs "> <span></span> <span></span> <span></span> </a> </div>
                         <!-- /col -->
+
                     </div>
                     <!-- /header-mobile-transactions -->
                     <div class="col-xs-12 header-mobile-transactions">
@@ -276,8 +277,12 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
     <!-- /header-fixed -->
     <div id="transactions-navigation-desktop" class="hidden-xs transactions-navigation-desktop">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <h2 class="title-transactions-desktop">Transactions</h2>
+                <!-- AACDESIGN -->
+                    <a href="#" class="btn-being-processed"><span class="number-notification">2</span>being processed</a>
+                    <a href="#" class="btn-pendings"><span class="number-notification">4</span> PENDING</a>
+                    <!-- END AACDESIGN -->
                 <ul class="nav-transactions transaction_page_desktop">
                     <li class="nav-transactions-li"> <a href="transactions.php" class="nav-transactions-lkn<?php echo $req_type?'':' active' ?>">all</a> </li>
                     <li class="nav-transactions-li"> <a href="transactions.php?type=in" class="nav-transactions-lkn<?php echo $req_type=='in'?' active':'' ?>">in</a>
@@ -289,7 +294,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                 </ul>
             </div>
             <!-- / col 6 -->
-            <div class="col-md-6 text-right">
+            <div class="col-md-4 text-right">
                 <?php
                 $url = "PHPExcel_1.8.0_doc/export_excel.php?filename=csv";
                 $url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xls";
@@ -337,11 +342,19 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                         <i class="glyphicon glyphicon-calendar fa fa-calendar hidden-xs"></i> </li>
                     <li class="navigator-transactions-li"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search visible-xs" data-toggle="modal" data-target="#modal-search" >SEARCH</a> </li>
                     <li class="navigator-transactions-li hidden-xs"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >SEARCH</a> </li>
-                    <li class="navigator-transactions-li navigator-transactions-sortby "> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby"> <span class="text hidden-xs">SORT
-                                BY</span> <i class="fa fa-sort-amount-desc" aria-hidden="true"></i> </a>
+                    
+                    <!-- AACDESING -->
+
+                    <li class="navigator-transactions-li navigator-transactions-sortby "> 
+                        <a href="#" class="reset-sort">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby"> <span class="text hidden-xs">SORT
+                                BY</span>  </a><i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
                         <div class="drop-down-sort"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby"> <span class="text hidden-xs">SORT
                                     BY</span> <i class="fa fa-sort-amount-desc" aria-hidden="true"></i> </a>
                             <div class="container-sortby">
+                    <!-- END AACDESING -->
                                 <ul class="list-sortby  sort-transactions">
                                     <li class="sortby-li">
                                         <h2 class="title-sortby">SORT BY</h2>

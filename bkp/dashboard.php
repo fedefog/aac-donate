@@ -24,8 +24,9 @@
 				
 				<div class="col-md-7">
 
-					<h2 class="title-dashborad-desktop">Latest Transactions</h2>
+					<h2 class="title-dashborad-desktop ">Latest Transactions</h2>
 
+				
 					<table class="table-transactions table table-condensed">
 						<thead> 
 							<tr>

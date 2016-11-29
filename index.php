@@ -52,16 +52,22 @@ include 'inc/header.php';
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
                 </li>
-                <li class="dashboard-li">
+                <!-- AACDESING -->
+                <li class="dashboard-li dashboard-li-has-noti">
                     <a href="transactions.php" class="lkn-dashboard dif-bg">
                         <span class="icon">
                             <img class="default" src="images/view-transactions-icon.png" width="20.5" height="28">
                             <img class="active" src="images/view-transactions-icon-active.png" width="20.5" height="28">
                         </span>
                         <span class="text">View Transactions </span>
+                          <div class="box-notification-nav">
+                                <span class="notification-nav txt-being-processed"> 2 being processed </span>
+                                <span class="notification-nav">4 PENDING </span>
+                            </div>
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
                 </li>
+                <!-- END AACDESING -->
                 <li class="dashboard-li">
                     <a href="make-a-donation.php" class="lkn-dashboard dif-bg">
                         <span class="icon">

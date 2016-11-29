@@ -168,7 +168,14 @@ switch ($fields['Request']) {
             </div>
             <div class="row">
                 <div class="col-md-7">
-                    <h2 class="title-dashborad-desktop">Latest Transactions</h2>
+
+                    <!-- AACDESING -->
+                    <h2 class="title-dashborad-desktop title-dashborad-left">Latest Transactions</h2>
+
+                    <a href="#" class="lkn-being-processed"><span class="number-notification">2</span>being processed</a>
+                    <a href="#" class="lkn-pendings"><span class="number-notification">4</span> PENDING</a>
+                    
+                    <!-- END AACDESING -->
                     <?php
                     /* $transactionlist = new TransactionList();
                       $tl = $transactionlist->getDashTransactionListByUserName(intval($user->id)); */
@@ -202,9 +209,11 @@ switch ($fields['Request']) {
                             <thead> 
                                 <tr>
                                     <th>DATE</th>
-                                    <th>DESCRIPTION</th>
+                                    <th class="text-left">DESCRIPTION</th>
                                     <th>AMOUNT</th>
-                                    <th>TYPE</th>
+                                    <!-- AACDESING -->
+                                    <th class="last-th">BALANCE AFTER TRANSACTION</th>
+                                    <!-- end AACDESINGS -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -281,8 +290,8 @@ switch ($fields['Request']) {
                                                     </span>
                                                 </a>
                                             </td>
-                                            <td class="type-td transaction-type-label">
-                                                <p class="type-transactions"><?php echo $trans_type; ?></p>
+                                            <td class="balance-td ">
+                                                <span class="balance-transition"><?php /* echo $trans_type; */ ?>£ 990.00</span>
                                                 <?php /* <p class="type-transactions"><?php echo getTransactionType($rowtype); ?></p> */ ?>
                                             </td>
                                     <input type="hidden" name="vchnumber" class="vch-number" value="<?php echo $t->Voucher; ?>">
@@ -533,15 +542,21 @@ switch ($fields['Request']) {
                         <p class="text">The office will be closed Monday September 21 to Thursday the 24th. Please ensure all transactions are dealt with as soon as possible to avoid any issues given the high demand. Wishing everyone a ksiva v'chasima tova.</p>
                     </div><!-- /box-daily-updates -->
                     <ul class="nav-dashboard">
-                        <li class="dashboard-li">
+                        <!-- AACDESIGN -->
+                        <li class="dashboard-li dashboard-li-has-noti">
                             <a href="transactions.php" class="lkn-dashboard">
                                 <span class="icon">
                                     <img src="images/view-transactions-icon.png" width="18" height="23">
                                 </span>
                                 <span class="text">View Transactions </span>
+                                <div class="box-notification-nav">
+                                    <span class="notification-nav txt-being-processed"> 2 being processed </span>
+                                    <span class="notification-nav">4 PENDING </span>
+                                </div>
                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                             </a>
                         </li>
+                        <!-- END AACDESIGN -->
                         <li class="dashboard-li">
                             <a href="make-a-donation.php" class="lkn-dashboard">
                                 <span class="icon">

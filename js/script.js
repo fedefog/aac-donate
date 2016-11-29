@@ -181,7 +181,12 @@ $(document).on('click', '.btn-search, .btn-success', function (event) {
     }	
 });
 
-// SORT NAV
+// SORT by
+$(document).on('click', '.sortby-li a', function (event) {
+    
+    $('.navigator-transactions-lkn .text').text($(this).text())
+}
+);
 $(document).on('click', '.sort-transactions a', function (event) {
     event.preventDefault(); // stop the browser from following the link  
     if ($(this).attr('href') == transaction) {
