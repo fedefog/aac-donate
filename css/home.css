@@ -1,4 +1,7 @@
 /* HOME */
+.dashboard-li-has-noti {
+	position: relative;
+}
 .dashboard-li-has-noti .lkn-dashboard .text {
 	top: -4px;
 	position: relative;
@@ -16,7 +19,15 @@
 }
 .current-page .box-notification-nav{
  	color: #fff;
- }
+}
+.box-notification-nav.sublinks-nav {
+	position: absolute;
+	top: 44px;
+    left: 15px;
+}
+.box-notification-nav.sublinks-nav a {
+	color: #333;
+}
 #dashboard .table-transactions .last-th {
 	width: 190px;
 }

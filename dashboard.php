@@ -506,7 +506,7 @@ switch ($fields['Request']) {
                             if ($row_user['ShowUserDisplayName'] == "1") {
                                 echo '<h2 class="title-welcome">Welcome to your account, ' . $user->UserDisplayName . '</h2>';
                             } else {
-                                echo '<h2>Welcome to your account.</h2>';
+                                echo '<h2 class="title-welcome">Welcome to your account.</h2>';
                             }
                             ?>
                             </h2>
@@ -550,12 +550,12 @@ switch ($fields['Request']) {
                                     <img src="images/view-transactions-icon.png" width="18" height="23">
                                 </span>
                                 <span class="text">View Transactions </span>
-                                <div class="box-notification-nav">
-                                    <span class="notification-nav txt-being-processed"> 2 being processed </span>
-                                    <span class="notification-nav">4 PENDING </span>
-                                </div>
                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                             </a>
+                            <div class="box-notification-nav sublinks-nav">
+                                <span class="notification-nav txt-being-processed"> <a href="">2 being processed </a> </span>
+                                <span class="notification-nav"><a href="">4 PENDING </a></span>
+                            </div>
                         </li>
                         <li class="dashboard-li dashboard-li-has-noti">
                             <a href="make-a-donation.php" class="lkn-dashboard">

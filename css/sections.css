@@ -188,6 +188,9 @@ td[data-toggle="modal"] {
     color: #5d5c5c;
     border-bottom: 1px solid #5d5c5c;
 }
+.balance-td:hover {
+    cursor: pointer;
+}
 .balance-td .balance-transition {
     color: #787878 !important;
     text-align: center;
