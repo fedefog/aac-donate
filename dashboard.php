@@ -489,10 +489,11 @@ switch ($fields['Request']) {
                         $sql .= "WHERE t.Username = '" . $user->Username . "' AND a.ResultCode = 'Pending' ";
                         $result = mysql_query($sql) or die(mysql_error());
                         ?>
-                        <a href="transactions-pending.php" title="Pending Transactions" class="pending-bt">
-                            <img src="images/pending-icon.png" width="21" height="21">
-                            <span class="badge"><?php echo mysql_num_rows($result); ?></span>
-                        </a>
+                        <!-- AACDESING --> 
+
+                        <!-- we've deleted pending icon for mobile -->
+
+                        <!-- AACDESING END --> 
                         <div class="col-md-4">
                             <h1 class="logo-header">
                                 <a href="#">

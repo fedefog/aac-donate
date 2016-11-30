@@ -94,10 +94,11 @@
                                 $count = count($ptl);
                                 if ($count > 0) {
                                     ?>
-                                    <a href="transactions-pending.php" title="Pending Transactions" class="pending-bt">
-                                        <img src="images/pending-icon.png" width="21" height="21">
-                                        <span class="badge"><?php echo $count; ?></span>
-                                    </a>
+                                    <!-- AACDESING --> 
+                                    
+                                    <!-- we've deleted pending icon -->
+
+                                    <!-- AACDESING END --> 
                                     <?php
                                 }
                                 ?>
