@@ -1,6 +1,7 @@
 /* HOME */
 .dashboard-li-has-noti .lkn-dashboard .text {
 	top: -4px;
+	position: relative;
 }
 .box-notification-nav {
 	color: #333;

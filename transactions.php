@@ -320,20 +320,16 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
     <div class="container-fluid top-center-content">
         <div class="row">
             <div class="col-xs-12">
-                <div class="box-account-header visible-xs">
-                    <div class="box-account">
-                        <h2 class="title">ACCOUNT</h2>
-                        <h3 class="account-number">A7895</h3>
-                    </div>
-                    <!-- /box-account -->
-                    <div class="box-balance">
-                        <h2 class="title">BALANCE</h2>
-                        <h3 class="balance-number">£ 3,344.99</h3>
-                    </div>
-                    <!-- /box-balance -->
+                <!-- AACDESING -->
+
+                <div class="visible-xs">
+
+                    <a href="#" class="btn-being-processed-mobile"><span class="number-notification">2</span>Currently being processed</a>
+                    <a href="#" class="btn-pendings-mobile"><span class="number-notification">4</span> PENDING</a>
+                    
                 </div>
                 <!-- /box-account-header -->
-                <h3 class="time-update visible-xs">AS OF <strong>1 SEP 2016, 2:15PM</strong></h3>
+                
                 <ul class="navigator-transactions">
                     <li class="navigator-transactions-li"> <a href="transactions.php" class="navigator-transactions-lkn lkn-recent active page btn-active external-lkn">RECENT</a> </li>
                     <li class="navigator-transactions-li"> <a href="javascript:void(0);" id="dates-bt-modal" class="navigator-transactions-lkn visible-xs">DATES</a>
@@ -343,16 +339,21 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                     <li class="navigator-transactions-li"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search visible-xs" data-toggle="modal" data-target="#modal-search" >SEARCH</a> </li>
                     <li class="navigator-transactions-li hidden-xs"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >SEARCH</a> </li>
                     
-                    <!-- AACDESING -->
 
                     <li class="navigator-transactions-li navigator-transactions-sortby "> 
-                        <a href="#" class="reset-sort">
+                        <a href="#" class="reset-sort hidden-xs">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </a>
-                        <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby"> <span class="text hidden-xs">SORT
-                                BY</span>  </a><i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
-                        <div class="drop-down-sort"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby"> <span class="text hidden-xs">SORT
-                                    BY</span> <i class="fa fa-sort-amount-desc" aria-hidden="true"></i> </a>
+                        <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby"> 
+                                <span class="text hidden-xs">SORT BY</span>  
+                                <i class="fa fa-sort-amount-desc visible-xs" aria-hidden="true"></i>
+                            </a>
+                                <i class="fa fa-sort-amount-desc hidden-xs" aria-hidden="true"></i>
+                        <div class="drop-down-sort"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby"> 
+                                    <span class="text hidden-xs">SORT
+                                    BY <i class="fa fa-sort-amount-desc visible-xs" aria-hidden="true"></i>
+                                    </span> 
+                                    <i class="fa fa-sort-amount-desc " aria-hidden="true"></i> </a>
                             <div class="container-sortby">
                     <!-- END AACDESING -->
                                 <ul class="list-sortby  sort-transactions">
