@@ -557,16 +557,19 @@ switch ($fields['Request']) {
                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                             </a>
                         </li>
-                        <!-- END AACDESIGN -->
-                        <li class="dashboard-li">
+                        <li class="dashboard-li dashboard-li-has-noti">
                             <a href="make-a-donation.php" class="lkn-dashboard">
                                 <span class="icon">
                                     <img src="images/make-donation-icon.png" width="23" height="27">
                                 </span>
                                 <span class="text">Make a Donation </span>
+                                <div class="box-notification-nav">
+                                    <span class="notification-nav">OR SET UP A STANDING ORDER</span>
+                                </div>
                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                             </a>
                         </li>
+                        <!-- END AACDESIGN -->
                         <li class="dashboard-li">
                             <a href="standing-orders.php" class="lkn-dashboard">
                                 <span class="icon">
