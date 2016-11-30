@@ -337,9 +337,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                         <a href='#' id="startDate"></a>
                         <i class="glyphicon glyphicon-calendar fa fa-calendar hidden-xs"></i> </li>
                     <li class="navigator-transactions-li"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search visible-xs" data-toggle="modal" data-target="#modal-search" >SEARCH</a> </li>
-                    <li class="navigator-transactions-li hidden-xs"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >SEARCH</a> </li>
-                    
-
+                    <li class="navigator-transactions-li hidden-xs"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >SEARCH</a> </li>   
                     <li class="navigator-transactions-li navigator-transactions-sortby "> 
                         <a href="#" class="reset-sort hidden-xs">
                             <i class="fa fa-times" aria-hidden="true"></i>
@@ -349,11 +347,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                                 <i class="fa fa-sort-amount-desc visible-xs" aria-hidden="true"></i>
                             </a>
                                 <i class="fa fa-sort-amount-desc hidden-xs" aria-hidden="true"></i>
-                        <div class="drop-down-sort"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby"> 
-                                    <span class="text hidden-xs">SORT
-                                    BY <i class="fa fa-sort-amount-desc visible-xs" aria-hidden="true"></i>
-                                    </span> 
-                                    <i class="fa fa-sort-amount-desc " aria-hidden="true"></i> </a>
+                        <div class="drop-down-sort"> 
                             <div class="container-sortby">
                     <!-- END AACDESING -->
                                 <ul class="list-sortby  sort-transactions">

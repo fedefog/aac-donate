@@ -2418,6 +2418,10 @@ td[data-toggle="modal"] {
         position: absolute;
         left: 8px;
         top: 8px;
+        display: none;
+    }
+    .navigator-transactions-sortby.active .reset-sort {
+        display: block;
     }
     .navigator-transactions-sortby .fa-sort-amount-desc {
         position: absolute;

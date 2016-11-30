@@ -52,6 +52,10 @@ $(document).on('click', '.lkn-sortby , .sort-back', function (event) {
     $('.drop-down-sort').toggleClass('active');
     $('.sort-back').toggleClass("in");
 });
+$(document).on('click', '.sortby-lkn', function (event) {
+    event.preventDefault( );
+    $('.navigator-transactions-sortby').addClass('active');
+});
 $(document).on('click', '.cancel-standing-order-bt', function (event) {
     event.preventDefault( );
     setTimeout(function () {
