@@ -692,6 +692,18 @@ td[data-toggle="modal"] {
     width: 100%;
     vertical-align: top;
 }
+.modal-search .input.mid-size {
+    width: 38%!important;
+}
+.modal-search .input.mid-size:nth-of-type(2) {
+    margin-left: 13px;
+}
+.modal-search .input.mid-size:nth-of-type(2):before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+}
 .modal-search .checkbox-input {
     border-radius: 4px;
     border: 1px solid #BBBBBB;

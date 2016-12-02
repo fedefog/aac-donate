@@ -395,8 +395,11 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                         <div class="form-group">
                             <label for="" class="label">CHARITY NAME</label>
                             <div class="row-input <?php echo $_REQUEST['charity_name']?'active':'' ?>"> <a href="javascript:void(0);" id="chkCharityName" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
-                            	<input type="text" class="input autocomplete-charities" id="txtCharityName" placeholder="Please enter the name of the charity" name="charity_name" value="<?php echo $search['charity_name'] ?>" />
-								<?php /**
+                            <input type="text" class="input autocomplete-charities" id="txtCharityName" placeholder="Please select a Beneficiary" name="charity_name" value="<?php echo $search['charity_name'] ?>" />
+                            <?php /**
+                            <div class="row-input <?php echo $_REQUEST['charity_name']?'active':'' ?>"> <a href="javascript:void(0);" id="chkCharityName" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
+                            	<input type="text" class="input autocomplete-charities" id="txtCharityName" placeholder="Please select a Beneficiary" name="charity_name" value="<?php echo $search['charity_name'] ?>" />
+								
                                 <div class="search" id="search">
                                     <span class="input-beneficiary caret" style="cursor:pointer;"></span>
                                     <input class="input input-beneficiary" type="text" id="txtCharityName" name="charity_name" placeholder="Please select a Beneficiary" autocomplete="false" value="<?php echo $search['charity_name'] ?>" />
@@ -414,13 +417,15 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                                         ?>
                                     </ul>
                                 </div>
-								**/ ?>
+                            
+                            **/ ?>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="" class="label">AMOUNT DONATED</label>
+                            <label for="" class="label">AMOUNT</label>
                             <div class="row-input <?php echo $_REQUEST['amount_donated']?'active':'' ?>"> <a href="javascript:void(0);" id="chkAmount" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
-                                <input type="text" class="input" id="txtAmount" placeholder="For a specific amount that has been donated." name='amount_donated' value="<?php echo $search['amount_donated'] ?>">
+                                <input type="text" class="mid-size input" id="txtAmount" placeholder="Amount number" name='amount_donated' value="<?php echo $search['amount_donated'] ?>">
+                                <input type="text" class="mid-size input" id="txtAmount" placeholder="TO" name='amount_donated' value="<?php echo $search['amount_donated'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -430,15 +435,16 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="" class="label">VOUCHER NUMBER</label>
+                            <label for="" class="label">VOUCHER NUMBER/S</label>
                             <div class="row-input <?php echo $_REQUEST['voucher_no']?'active':'' ?>"> <a href="javascript:void(0);" id="chkVoucherNumber" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
-                                <input type="text" class="input" id="txtVoucherNumber" placeholder="Enter voucher number or range (from and to)" name='voucher_no' value="<?php echo $search['voucher_no'] ?>">
+                                <input type="text" class="mid-size input" id="txtVoucherNumber" placeholder="Voucher Number" name='voucher_no' value="<?php echo $search['voucher_no'] ?>">
+                                <input type="text" class="mid-size input" id="txtVoucherNumber" placeholder="TO" name='voucher_no' value="<?php echo $search['voucher_no'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="" class="label">BOOK VOUCHER NUMBER</label>
+                            <label for="" class="label">DISPLAY VOUCHER BOOK</label>
                             <div class="row-input <?php echo $_REQUEST['book_voucher_no']?'active':'' ?>"> <a href="javascript:void(0);" id="chkBookVoucherNumber" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
-                                <input type="text" class="input" id="txtBookVoucherNumber" placeholder="To display all vouchers in a book." name='book_voucher_no' value="<?php echo $search['book_voucher_no'] ?>">
+                                <input type="text" class="input" id="txtBookVoucherNumber" placeholder="Enter a voucher number" name='book_voucher_no' value="<?php echo $search['book_voucher_no'] ?>">
                             </div>
                         </div>
                         <div class="form-group">
