@@ -9,6 +9,88 @@
 td[data-toggle="modal"] {
     cursor: pointer;
 }
+/* TABLE ORDER BOOKS PREV */
+.table-order-books.table-condensed {
+    margin-top: 25px;
+}
+.table-order-books.table-condensed > tbody > tr > td {
+    background: #F2F2F2;  
+    color: #6E6E6E;
+    padding: 20px 5px;
+    vertical-align: middle;
+}
+.table-order-books.table-condensed > tbody > tr > td:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px
+}
+.table-order-books.table-condensed > tbody > tr {
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+.table-order-books.table-condensed > tbody > tr > td:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px
+}
+.table-order-books.table-condensed a {
+    color: #6E6E6E;
+}
+.table-order-books.table-condensed > thead > tr > th {
+    border-bottom: 1px solid #fff !important;
+    border-top: 1px solid #fff !important;
+}
+.table-order-books.table-condensed > thead > tr > th:first-child,
+.table-order-books.table-condensed > tbody > tr > td:first-child{
+
+    padding-left: 15px;
+}
+
+.table-order-books.table-condensed > thead > tr > th{
+    font-weight: 400;
+    color: #6E6E6E;
+    font-size: 12px;
+}
+.table-order-books.table-condensed > tbody > tr > td {
+    font-size: 14px
+}
+.table-order-books.table-condensed > tbody > tr > td:nth-child(3) {
+    font-size: 12px !important;
+}
+.table-order-books.table-condensed > tbody > tr > td:nth-child(4) {
+    font-weight: 600;
+}
+
+.table-order-books th,
+.table-order-books td{
+    text-align: center;
+}
+.table-order-books.table-condensed > thead > tr > th:first-child,
+.table-order-books.table-condensed > tbody > tr > td:first-child{
+
+    padding-left: 15px;
+}
+.table-order-books.table-condensed > tbody > tr > td {
+    font-weight: 300;
+}
+.table-order-books.table-condensed > thead > tr > th{
+    font-weight: 400;
+    color: #6E6E6E;
+    font-size: 12px;
+}
+
+
+.table-order-books th:nth-child(1),
+.table-order-books td:nth-child(1),
+.table-order-books th:nth-child(3),
+.table-order-books td:nth-child(3){
+    text-align: left;
+}
+.table-order-books .being-processed {
+    color: #FC2E2E;
+    font-size: 10px
+}
+
+/* EMPTY STATE ORDER BOOKS */
+
 /* Search make a dontation */
 .search {
     position: relative;
