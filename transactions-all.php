@@ -103,14 +103,16 @@ if (count($tl) < 1) {
     ?>
     <table class="table-transactions table table-condensed">
         <thead class="hidden-xs "> 
+            <!-- AACDESING -->
             <tr>
                 <th>DATE</th>
                 <th>DESCRIPTION</th>
                 <th>AMOUNT</th>
-                <th class="hidden-xs">BALANCE AFTER TRANSACTION</th>
+                <th class="hidden-xs">COMMENTS</th>
                 <th class="hidden-xs">TYPE</th>
-                <?php /* <th class="hidden-xs">ACTION</th> */ ?>
+                <th class="hidden-xs">ACTION</th>
             </tr>
+            <!-- END AACDESING -->
         </thead>						
         <tbody>
             <?php
@@ -182,18 +184,17 @@ if (count($tl) < 1) {
                                     </span>
                                 </a>
                             </td>
-                            <td class="modal-show amount-td hidden-xs" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
+                            <!-- AACDESING -->
+                            <td class="modal-show comments-td hidden-xs" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
                                 <a href="javascript:void(0);">
-                                    <span class="balance-transition">
-                                        <?php echo showBalance($balanceAmt); ?>
-                                    </span>
+                                        <?php /* echo showBalance($balanceAmt); */?>
+                                        <p>Comments goes here from the user to the Charity..</p>
                                 </a>
                             </td>
                             <td class="type-td transaction-type-label modal-show" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
                                 <p class="type-transactions"><?php echo $type; ?></p>
                                 <?php /* <p class="type-transactions"><?php echo getTransactionType($rows1[$i]['cd_no']); ?></p> */ ?>
                             </td>
-                            <?php /*
                               <td class="action-edit hidden-xs">
                               <?php
                               //$rows1[$i]['cd_no'] = "SO";
@@ -213,7 +214,7 @@ if (count($tl) < 1) {
                               }
                               ?>
                               </td>
-                             */ ?>
+                              <!-- END AACDESING -->
                     <input type="hidden" name="vchnumber" class="vch-number" value="<?php echo $t->Voucher; ?>">
                     </tr>
                     <?php

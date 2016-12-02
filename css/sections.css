@@ -549,6 +549,15 @@ td[data-toggle="modal"] {
     border-top: 0;
     border-bottom: 1px solid #E2E2E5;
 }
+.type-transactions {
+    color: #fff;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 0;
+    letter-spacing: 0.56px;
+}
 .balance-transition i {
     margin-left: 8px;
     font-size: 17px;
@@ -2287,6 +2296,12 @@ td[data-toggle="modal"] {
     .table .amount-td, 
     .table .type-td {
         text-align: center !important;
+    }
+    .table .comments-td {
+        width: 250px;
+    }
+    .table .comments-td p {
+        color: #9B9B9B;
     }
     .table .amount-td a {
         display: inline-block;

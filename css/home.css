@@ -573,13 +573,8 @@
 	}
 	.type-transactions {
 		font-weight: 400;
-		font-size: 11px;
-		color: #FFFFFF;
 		letter-spacing: 0.56px;
-		border-radius: 3px;
-		padding: 2px 4px;
 		display: inline-block;
-		text-align: center;
 		margin: 0;
 	}
 	.view-more-transactions {
