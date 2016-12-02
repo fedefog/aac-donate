@@ -6,7 +6,7 @@
             <th>DATE</th>
             <th>DESCRIPTION</th>
             <th>AMOUNT</th>
-            <th class="hidden-xs">COMMENTS</th>
+            <th class="hidden-xs">BALANCE AFTER TRANSACTION</th>
             <th class="hidden-xs">TYPE</th>
             <th class="hidden-xs">ACTION</th>
         </tr>
