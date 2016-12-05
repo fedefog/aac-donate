@@ -16,6 +16,8 @@
 				
 			</div><!-- /row-modal -->
 
+			<!-- AACDESING -->
+
 			<div class="row-modal">
 
 				<h3 class="subtitle-modal">DATE </h3>

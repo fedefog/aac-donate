@@ -18,6 +18,7 @@ function navigator_scroll( ) {
 /* inizialization */
 var url = 'dashboard.php';
 var transaction = 'transactions-all.php';
+// AACDESING //
 var voucher = 'vouchers.php';
 var standing = 'standing-orders-current.php';
 // Navigation sidebar 
@@ -86,7 +87,7 @@ $(document).on('blur', '.lkn-sortby', function (event) {
         $('.drop-down-sort').removeClass('active');
     }
 });
-
+// AACDESING //
 $(document).on('focus', '.input-to-amount', function (event) {
     if ( $(this).val( ) != ''){
        var res = $(this).val( );
@@ -137,7 +138,7 @@ $(document).on('blur', '.input-search', function (event) {
 
     
 });
-
+// END AACDESING //
 load_js();
 /* Ajax navigation */
 // STANDING ORDERS NAV
@@ -164,7 +165,7 @@ $(document).on('click', '.nav-standing-orders-li a', function (event) {
         }, 2000);
     }
 });
-// VOUCHER BOOKS NAV
+// AACDESING  VOUCHER BOOKS NAV //
 $(document).on('click', '.navigator-voucher-books a', function (event) {
     event.preventDefault(); // stop the browser from following the link  
     if ($(this).attr('href') == voucher) {
