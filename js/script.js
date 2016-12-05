@@ -51,8 +51,8 @@ $(document).on('click', '.add-notes', function (event) {
 $(document).on('click', '.lkn-sortby , .sort-back', function (event) {
     event.preventDefault( );
     $('.dropdown-search').hide();
-    $('.drop-down-sort').toggleClass('active');
-    $('.sort-back').toggleClass("in");
+    $(this).parent().find('.drop-down-sort').toggleClass('active');
+    $(this).parent().find('.sort-back').toggleClass("in");
 });
 $(document).on('click', '.sortby-lkn', function (event) {
     event.preventDefault( );
@@ -83,8 +83,8 @@ $(document).on('click', '.sortby-lkn', function (event) {
 
 $(document).on('blur', '.lkn-sortby', function (event) {
     event.preventDefault( );
-    if ($('.drop-down-sort').hasClass('active') === true) {
-        $('.drop-down-sort').removeClass('active');
+    if ($(this).parent().find('.drop-down-sort').hasClass('active') === true) {
+        $(this).parent().find('.drop-down-sort').removeClass('active');
     }
 });
 // AACDESING //
@@ -264,12 +264,16 @@ $(document).on('click', '.btn-search, .btn-success', function (event) {
     }	
 });
 
-// SORT by
-$(document).on('click', '.sortby-li a', function (event) {
+// AACDESING SORT by
+$(document).on('click', '.date-lkn', function (event) {
+    
+    $('.navigator-transactions-lkn .dates_text_selected').text($(this).text())
+});
+$(document).on('click', '.sortby-lkn', function (event) {
     
     $('.navigator-transactions-lkn .text').text($(this).text())
-}
-);
+});
+// END AACDESING
 $(document).on('click', '.sort-transactions a', function (event) {
     event.preventDefault(); // stop the browser from following the link  
     if ($(this).attr('href') == transaction) {

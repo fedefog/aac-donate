@@ -280,8 +280,8 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
             <div class="col-md-8">
                 <h2 class="title-transactions-desktop">Transactions</h2>
                 <!-- AACDESIGN -->
-                    <a href="#" class="btn-being-processed"><span class="number-notification">2</span>being processed</a>
-                    <a href="#" class="btn-pendings"><span class="number-notification">4</span> PENDING</a>
+                    <a href="#" class="btn-being-processed"><span class="number-notification">2</span><span class="noti-string">being processed</span></a>
+                    <a href="#" class="btn-pendings"><span class="number-notification">4</span> <span class="noti-string">PENDING</span></a>
                     <!-- END AACDESIGN -->
                 <ul class="nav-transactions transaction_page_desktop">
                     <li class="nav-transactions-li"> <a href="transactions.php" class="nav-transactions-lkn<?php echo $req_type?'':' active' ?>">all</a> </li>
@@ -332,12 +332,33 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                 
                 <ul class="navigator-transactions">
                     <li class="navigator-transactions-li"> <a href="transactions.php" class="navigator-transactions-lkn lkn-recent active page btn-active external-lkn">RECENT</a> </li>
-                    <li class="navigator-transactions-li"> <a href="javascript:void(0);" id="dates-bt-modal" class="navigator-transactions-lkn visible-xs">DATES</a>
+                    <li class="navigator-transactions-li visible-xs"> <a href="javascript:void(0);" id="dates-bt-modal" class="navigator-transactions-lkn visible-xs">DATES</a>
                         <input type="text" id="config-date" class="form-control hidden-xs" placeholder="Select Date">
                         <a href='#' id="startDate"></a>
-                        <i class="glyphicon glyphicon-calendar fa fa-calendar hidden-xs"></i> </li>
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar hidden-xs"></i> 
+                    </li>
+                    <li class="navigator-transactions-li hidden-xs"> 
+                        <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby lkn-dates"> 
+                            <span class="dates_text_selected hidden-xs">PREVIOUS 3 MONTHS</span>  
+                            <i class="glyphicon glyphicon-calendar fa fa-calendar hidden-xs"></i>
+                        </a>
+                        <div class="drop-down-sort dropdown-dates"> 
+                            <div class="container-sortby">
+                                <ul class="list-sortby  sort-transactions">
+                                    <li class="sortby-li"> <a href="" class="date-lkn page">PREVIOUS 3 MONTHS</a> </li>
+                                    <li class="sortby-li"> <a href="" class="date-lkn page">PREVIOUS 6 MONTHS</a> </li>
+                                    <li class="sortby-li"> <a href="" class="date-lkn page">PREVIOUS YEAR</a> </li>
+                                    <li class="sortby-li"> <a href="" class="date-lkn page">PREVIOUS 3 YEAR</a> </li>
+                                    <li class="sortby-li"> <a href="" class="date-lkn page">PREVIOUS 5 YEAR</a> </li>
+                                    <li class="sortby-li"> <a href="" class="date-lkn page">CUSTOM DATE RANGE</a> </li>
+                                </ul>
+                            </div>
+                            <!-- /container-sortby -->
+                        </div>
+                        <!-- /drop-down-sort -->
+                    </li>
                     <li class="navigator-transactions-li"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search visible-xs" data-toggle="modal" data-target="#modal-search" >SEARCH</a> </li>
-                    <li class="navigator-transactions-li hidden-xs"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >SEARCH</a> </li>   
+                    <li class="navigator-transactions-li hidden-xs"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >ADVANCED FILTERS</a> </li>   
                     <li class="navigator-transactions-li navigator-transactions-sortby "> 
                         <a href="#" class="reset-sort hidden-xs">
                             <i class="fa fa-times" aria-hidden="true"></i>
