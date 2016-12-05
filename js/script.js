@@ -18,6 +18,7 @@ function navigator_scroll( ) {
 /* inizialization */
 var url = 'dashboard.php';
 var transaction = 'transactions-all.php';
+var voucher = 'vouchers.php';
 var standing = 'standing-orders-current.php';
 // Navigation sidebar 
 $(document).on('click', '.nav-icon4', function (event) {
@@ -86,6 +87,57 @@ $(document).on('blur', '.lkn-sortby', function (event) {
     }
 });
 
+$(document).on('focus', '.input-to-amount', function (event) {
+    if ( $(this).val( ) != ''){
+       var res = $(this).val( );
+       res = res.slice(3);
+       $(this).val( res );
+      
+    }
+    
+});
+$(document).on('click', '.reset-input', function (event) {
+    
+    event.preventDefault( );
+    
+    $( this ).parent( ).find('.input-to-amount,.input-search').val ( '' );
+    $( this ).parent( ).find('.input-to-amount,.input-search').focus();
+    
+    $(this).hide();
+
+
+
+});
+$(document).on('blur', '.input-to-amount', function (event) {
+    event.preventDefault( );
+    
+        if ( $(this).val( ) != '') {
+            var txt = $(this).val();
+
+            $(this).val( 'TO ' + txt );
+            $( this ).parent( ).find('.reset-input').show ( );
+        }else {
+            
+            $( this ).parent( ).find('.reset-input').hide ( );
+        }
+
+    
+});
+$(document).on('blur', '.input-search', function (event) {
+    event.preventDefault( );
+    
+        if ( $(this).val( ) != '') {
+            
+            $( this ).parent( ).find('.reset-input').show ( );
+
+        }else {
+            
+            $( this ).parent( ).find('.reset-input').hide ( );
+        }
+
+    
+});
+
 load_js();
 /* Ajax navigation */
 // STANDING ORDERS NAV
@@ -112,8 +164,32 @@ $(document).on('click', '.nav-standing-orders-li a', function (event) {
         }, 2000);
     }
 });
+// VOUCHER BOOKS NAV
+$(document).on('click', '.navigator-voucher-books a', function (event) {
+    event.preventDefault(); // stop the browser from following the link  
+    if ($(this).attr('href') == voucher) {
+        // do nothing 
+    } else {
+        progress_bar();
+        $("#myBar").addClass("visible"); // Loading bar visibility 
+        $('.nav-mobile').removeClass("open");
+        var thisnav = $(this);
+        voucher = $(this).attr('href');
+        $("html, body").animate({scrollTop: 0}, "fast"); // Animation to top of window
+        setTimeout(function () {
+            $('.ajax-voucher-books').load(voucher, function () {
+                $('.ajax-voucher').css({opacity: 0}).fadeTo(400, 1);//Efect fade
+                $('.navigator-voucher-books a').removeClass('selected')
+                $(thisnav).addClass('selected');
+                $("#myBar").removeClass("visible");  // fadeout of the bar loading 
+                load_js()
+                sticky_footer();
+            }); // load the html response into a DOM element
+        }, 2000);
+    }
+});
 // TRANSACTIONS NAV
-$(document).on('click', '.nav-transactions a, .transaction_page_desktop a,.transaction_page_mobile a', function (event) {
+$(document).on('click', ' .nav-transactions a, .transaction_page_desktop a,.transaction_page_mobile a', function (event) {
     event.preventDefault(); // stop the browser from following the link  
     if ($(this).attr('href') == transaction) {
         // do nothing 
@@ -124,24 +200,24 @@ $(document).on('click', '.nav-transactions a, .transaction_page_desktop a,.trans
         var thisnav = $(this);
         transaction = $(this).attr('href');
 
-		//search in selected tab
-		
-		console.log($('.nav-transactions .active').attr('href'));		
+        //search in selected tab
+        
+        console.log($('.nav-transactions .active').attr('href'));       
 
-		var tabQS = $('.nav-transactions-li .active').attr('href').split('?')[1];
-		if(tabQS && typeof(tabQS) != 'undefined') transaction += '&'+tabQS;
-		console.log(tabQS);
-		/////////////////
+        var tabQS = $('.nav-transactions-li .active').attr('href').split('?')[1];
+        if(tabQS && typeof(tabQS) != 'undefined') transaction += '&'+tabQS;
+        console.log(tabQS);
+        /////////////////
 
         $("html, body").animate({scrollTop: 0}, "fast"); // Animation to top of window
         setTimeout(function () {
             // $('body').removeClass('menu-mobile-open');
 
-			var formData = null;
+            var formData = null;
 
             $('#main-container').load(transaction, formData, function () {
                 $('.ajax-transaction').css({opacity: 0}).fadeTo(400, 1);//Efect fade
-				$(thisnav).parent().parent().find('a').removeClass('active');
+                $(thisnav).parent().parent().find('a').removeClass('active');
                 //$('.nav-transactions a').removeClass('active');
                 $(thisnav).addClass('active');
                 $("#myBar").removeClass("visible");  // fadeout of the bar loading 
@@ -151,6 +227,8 @@ $(document).on('click', '.nav-transactions a, .transaction_page_desktop a,.trans
         }, 500);
     }
 });
+
+
 
 //search
 

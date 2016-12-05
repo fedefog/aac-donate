@@ -1,3 +1,4 @@
+
 <div class="modal-current-standing-order modal-gral modal fade" id="modal-current-standing-order" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 
     <div class="modal-dialog" role="document">
@@ -15,6 +16,8 @@
                     </button>
 
                 </div><!-- /row-modal -->
+                
+                <!-- AACDESING -->
 
                 <div class="row-modal">
 
@@ -28,17 +31,37 @@
 
                     <div class="col">
 
-                        <h3 class="subtitle-modal">REQUEST DATE</h3>
+                        <h3 class="subtitle-modal">ID</h3>
 
-                        <p class="info-modal" id="modal_req_date1"></p>
+                        <p class="info-modal" id="modal_ID"></p>
 
                     </div><!-- / col -->
+
+                    <div class="col">
+
+                        <h3 class="subtitle-modal">AMOUNT</h3>
+
+                        <p class="info-modal" id="modal_Amount"></p>
+
+                    </div><!-- / col -->
+
+                </div><!-- /row-modal -->
+
+                <div class="row-modal">
+
+                    <div class="col">
+
+                        <h3 class="subtitle-modal">DATE OF FIRST PAYMENT</h3>
+
+                        <p class="info-modal" id="modal_first_payment"></p>
+                        
+                    </div>
 
                     <div class="col">
 
                         <h3 class="subtitle-modal">END DATE</h3>
 
-                        <p class="info-modal" id="modal_end_date1"></p>
+                        <p class="info-modal" id="modal_end_date"></p>
 
                     </div><!-- / col -->
 
@@ -46,37 +69,25 @@
 
                 <div class="row-modal">
 
-                    <h3 class="subtitle-modal">PAYMENTS SET</h3>
+                    <h3 class="subtitle-modal">INTERVAL</h3>
 
-                    <p class="info-modal" id="modal_payments_set1"></p>
-
-                </div><!-- /row-modal -->
-
-                <div class="row-modal">
-
-                    <div class="col">
-
-                        <h3 class="subtitle-modal">TOTAL DONATED SO FAR</h3>
-
-                        <p class="info-modal" id="modal_total_donated_sf1"></p>
-
-                    </div><!-- / col -->
-
-                    <div class="col">
-
-                        <h3 class="subtitle-modal">TOTAL TO BE DONATED</h3>
-
-                        <p class="info-modal" id="modal_total_donated_tb1"></p>
-
-                    </div><!-- / col -->
+                    <p class="info-modal" id="modal_interval"></p>
 
                 </div><!-- /row-modal -->
 
                 <div class="row-modal">
 
-                    <h3 class="subtitle-modal">NOTES TO AAC</h3>
+                    <h3 class="subtitle-modal">TOTAL DONATED SO FAR</h3>
 
-                    <p class="info-modal" id="modal_notes_aac1"></p>
+                    <p class="info-modal" id="modal_total_donate"></p>
+
+                </div><!-- /row-modal -->
+
+                <div class="row-modal">
+
+                    <h3 class="subtitle-modal">NOTES TO ACC</h3>
+
+                    <p class="info-modal" id="modal_acc_notes1"></p>
 
                 </div><!-- /row-modal -->
 
@@ -87,6 +98,16 @@
                     <p class="info-modal" id="modal_charity_notes1"></p>
 
                 </div><!-- /row-modal -->
+
+                <div class="row-modal">
+
+                    <h3 class="subtitle-modal">NOTES TO SELF</h3>
+
+                    <p class="info-modal" id="modal_self_notes1"></p>
+
+                </div><!-- /row-modal -->
+
+                <!-- END AACDESING -->
 
                 <div class="row-modal">
 

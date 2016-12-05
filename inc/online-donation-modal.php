@@ -17,39 +17,53 @@
 			</div><!-- /row-modal -->
 
 			<div class="row-modal">
-				
-				<h3 class="subtitle-modal">BENEFICIARY</h3>
 
-				<p class="info-modal">Charity Name </p>
+				<h3 class="subtitle-modal">DATE </h3>
 
-			</div><!-- /row-modal -->
-
-			<div class="row-modal">
-				
-				<h3 class="subtitle-modal">DONATION AMOUNT</h3>
-
-				<p class="info-modal"> £ 3,890.00</p>
+				<p class="info-modal">3/11/2016 </p>
 
 			</div><!-- /row-modal -->
 
 			<div class="row-modal">
 				
-				<h3 class="subtitle-modal">DATE</h3>
+				<h3 class="subtitle-modal">REQUEST ID </h3>
 
-				<p class="info-modal">  22-6-2016</p>
+				<p class="info-modal"> 46183</p>
 
 			</div><!-- /row-modal -->
 
 			<div class="row-modal">
 				
-				<h3 class="subtitle-modal">REFERENCE ID </h3>
+				<h3 class="subtitle-modal">VOUCHER BOOKS ORDERED </h3>
 
-				<p class="info-modal">37127</p>
+				<p class="info-modal">2 x £1 Pre-Paid Voucher Book, 3 x 50p Pre-Paid Voucher Book, 5 x Pre-Printed £10</p>
 
 			</div><!-- /row-modal -->
-			
-			<a href="#" class="lkn-bottom-modal">Donate Again</a>
+
+			<div class="row-modal">
 				
+				<h3 class="subtitle-modal">AMOUNT </h3>
+
+				<p class="info-modal">£3.50</p>
+
+			</div><!-- /row-modal -->
+
+			<div class="row-modal">
+				
+				<h3 class="subtitle-modal">DELIVERY  </h3>
+
+				<p class="info-modal">Office Collection</p>
+
+			</div><!-- /row-modal -->
+
+			<div class="row-modal">
+				
+				<h3 class="subtitle-modal">NOTES TO AAC</h3>
+
+				<p class="info-modal"> This is not urgent</p>
+
+			</div><!-- /row-modal -->
+							
     	</div><!-- /modal-body -->
 	
 	</div><!-- /modal-content -->

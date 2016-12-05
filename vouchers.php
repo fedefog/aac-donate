@@ -346,8 +346,23 @@ switch ($fields['Request']) {
                <div class="voucher-books-header">
                     <h2 class="title-section-desktop">Order Vouchers Books</h2>
                     <div class="navigator-voucher-books">
-                        <a href="#" class="selected">ORDER VOUCHER BOOKS</a>
-                        <a href="#">PREVIOUS ORDERS</a>
+                        <a href="order-voucher-books.php" class="selected">ORDER VOUCHER BOOKS</a>
+                        <a href="previous-order-books.php">PREVIOUS ORDERS</a>
+                    </div>
+                </div> 
+                <!-- END AACDESIGN -->
+            </div>
+        </div>
+        
+        <div class="row visible-xs">
+            <div class="col-md-12">
+                <!-- AACDESIGN -->
+            
+               <div class="voucher-books-header">
+                    
+                    <div class="navigator-voucher-books">
+                        <a href="order-voucher-books.php" class="selected">ORDER VOUCHER BOOKS</a>
+                        <a href="previous-order-books.php">PREVIOUS ORDERS</a>
                     </div>
                 </div> 
                 <!-- END AACDESIGN -->
@@ -358,7 +373,7 @@ switch ($fields['Request']) {
 
         <div class="ajax-voucher-books">
 
-            <?php include 'previous-order-books.php'; ?>
+            <?php include 'order-voucher-books.php'; ?>
             
         </div><!-- /ajax-voucher-books -->
     </main>	

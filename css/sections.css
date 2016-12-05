@@ -91,6 +91,41 @@ td[data-toggle="modal"] {
 
 /* EMPTY STATE ORDER BOOKS */
 
+.box-empty-state {
+    margin: 15px auto;
+    width: 310px;
+}
+.title-empty-state {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    color: #6E6E6E;
+    letter-spacing: 0.75px;
+    line-height: 17px;
+
+}
+.table-order-books.table-condensed .lkn-oreder-voucher {    
+    border: 1px solid #00ADEE;
+    border-radius: 4px;
+    color: #00ADEE;
+    height: 36px;
+    line-height: 36px;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.44px;
+    margin: 7px auto 0 auto;
+    text-align: center;
+    display: block;
+    width: 214px;
+    font-family: 500;
+    letter-spacing: 0.44px;
+    transition: all 0.2s ease-in-out;
+}
+.table-order-books.table-condensed .lkn-oreder-voucher:hover {
+    background: #00ADEE;
+    color: #fff;
+
+}
 /* Search make a dontation */
 .search {
     position: relative;
@@ -691,6 +726,39 @@ td[data-toggle="modal"] {
 .modal-search .row-input {
     width: 100%;
     vertical-align: top;
+    position: relative;
+}
+.modal-search .reset-input {
+    color: #00ADEE;
+
+    display: none;
+    position: absolute;
+    right: 14px;
+    top: 8px;
+}
+.container-to-amount {
+    width: 38%!important;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin-left: 13px;
+}
+.container-input-search {
+    width: 80%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    
+}
+.container-input-search-min {
+    width: 38%;
+}
+.modal-search .form-group .container-input-search  .input{
+    width: 100%;
+}
+
+.modal-search .form-group  .input.input-to-amount {
+    width: 100% ;
 }
 .modal-search .input.mid-size {
     width: 38%!important;
@@ -743,6 +811,7 @@ td[data-toggle="modal"] {
 .modal-search .active .checkbox-input ,
 .modal-search .active .input {
     border: 1px solid #00ADEE;
+    color: #00ADEE;
 }
 .modal-search .error .checkbox-input ,
 .modal-search .error .input {
@@ -2283,7 +2352,23 @@ td[data-toggle="modal"] {
         line-height: 10px;
 
     }
+    
+    .voucher-books-header {
+        margin-top: 10px;
+        text-align: center;
+    }
+    .navigator-voucher-books a {
+        width: 44%;
+        font-size: 11px;
+    }
+    .navigator-voucher-books a:last-child {
+        margin-left: 5px;
+    }
+    .table-order-books.table-condensed > tbody > tr > td:nth-child(3) {
+        width: 57%;
+    }
 
+    
 }	
 @media(min-width:768px){
     .table > thead > tr > th.desktop-align-left {
