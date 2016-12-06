@@ -23,7 +23,7 @@
 
                     <h3 class="subtitle-modal">BENEFICIARY </h3>
 
-                    <p class="info-modal" id="modal_beneficiary1"></p>
+                    <p class="info-modal" id="modal_beneficiary1">GGBH</p>
 
                 </div><!-- /row-modal -->
 
@@ -33,7 +33,7 @@
 
                         <h3 class="subtitle-modal">ID</h3>
 
-                        <p class="info-modal" id="modal_ID"></p>
+                        <p class="info-modal" id="modal_ID">2222</p>
 
                     </div><!-- / col -->
 
@@ -41,7 +41,7 @@
 
                         <h3 class="subtitle-modal">AMOUNT</h3>
 
-                        <p class="info-modal" id="modal_Amount"></p>
+                        <p class="info-modal" id="modal_Amount">£10</p>
 
                     </div><!-- / col -->
 
@@ -53,7 +53,7 @@
 
                         <h3 class="subtitle-modal">DATE OF FIRST PAYMENT</h3>
 
-                        <p class="info-modal" id="modal_first_payment"></p>
+                        <p class="info-modal" id="modal_first_payment">01-01-2016</p>
                         
                     </div>
 
@@ -61,7 +61,7 @@
 
                         <h3 class="subtitle-modal">END DATE</h3>
 
-                        <p class="info-modal" id="modal_end_date"></p>
+                        <p class="info-modal" id="modal_end_date">01-01-2018</p>
 
                     </div><!-- / col -->
 
@@ -71,7 +71,7 @@
 
                     <h3 class="subtitle-modal">INTERVAL</h3>
 
-                    <p class="info-modal" id="modal_interval"></p>
+                    <p class="info-modal" id="modal_interval">Monthly (24 payments in total)</p>
 
                 </div><!-- /row-modal -->
 
@@ -79,7 +79,7 @@
 
                     <h3 class="subtitle-modal">TOTAL DONATED SO FAR</h3>
 
-                    <p class="info-modal" id="modal_total_donate"></p>
+                    <p class="info-modal" id="modal_total_donate">£100(10 Payments)</p>
 
                 </div><!-- /row-modal -->
 
@@ -87,7 +87,7 @@
 
                     <h3 class="subtitle-modal">NOTES TO ACC</h3>
 
-                    <p class="info-modal" id="modal_acc_notes1"></p>
+                    <p class="info-modal" id="modal_acc_notes1">This is urgent</p>
 
                 </div><!-- /row-modal -->
 
@@ -95,7 +95,7 @@
 
                     <h3 class="subtitle-modal">NOTES TO CHARITY</h3>
 
-                    <p class="info-modal" id="modal_charity_notes1"></p>
+                    <p class="info-modal" id="modal_charity_notes1">FOR Kollel project</p>
 
                 </div><!-- /row-modal -->
 
@@ -103,7 +103,7 @@
 
                     <h3 class="subtitle-modal">NOTES TO SELF</h3>
 
-                    <p class="info-modal" id="modal_self_notes1"></p>
+                    <p class="info-modal" id="modal_self_notes1">I should give more next SO</p>
 
                 </div><!-- /row-modal -->
 

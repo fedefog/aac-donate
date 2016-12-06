@@ -909,6 +909,7 @@ td[data-toggle="modal"] {
 }
 .sortby-li {
     display: block;
+    position: relative;
 }
 
 .title-sortby {
@@ -931,6 +932,29 @@ td[data-toggle="modal"] {
     /* opacity: 0.69; */
     border-top: 1px solid #E2E2E5;
     transition: all 0.3s ease-in-out;
+}
+.first-date-lkn {
+    border-top: none;
+}
+.custom-range-container {
+    position: absolute;
+    top: 1px;
+    width: 100%;
+    padding:12px 20px;
+    height: 100%;
+    background: #FFF;
+}
+.custom-range-container .col-xs-5 {
+    font-size: 12px;
+    padding: 4px 0;
+    text-align: center;
+    border: 1px solid #EEE;
+    box-shadow: none;
+    background: #F7F7F7;
+}
+.custom-range-container .col-xs-2 {
+    text-align: center;
+    text-indent: -3px;
 }
 .sortby-li .sortby-lkn:hover {
     color: #00ADEE;
@@ -2540,7 +2564,7 @@ td[data-toggle="modal"] {
     }
     .navigator-transactions .fa-calendar {
         position: absolute;
-        top: 15px;
+        top: 12px;
         left: 10px;
         color: #00ADEE;
     }
@@ -2582,13 +2606,14 @@ td[data-toggle="modal"] {
         border-radius: 3px;
         border: 1px solid #F3F3F3;
         font-weight: 500;
-        text-align: center;
+        text-align: left;
         font-size: 12px;
         color: #9B9B9B;
         letter-spacing: 0.44px;
         display: block;
         padding: 10px 15px; 
         margin-left: 15px;
+        width: 168px;
         transition: all 0.3s ease-in-out;
     }
     .navigator-transactions .lkn-search:hover,
@@ -2616,7 +2641,18 @@ td[data-toggle="modal"] {
     }
     .lkn-sortby.lkn-dates {
         font-size: 12px;
-        padding: 10px 35px;
+        padding: 10px 15px 10px 35px;
+    }
+    .lkn-dates .fa-long-arrow-up, .lkn-search .fa-long-arrow-up {
+        -ms-transform: rotate(180deg); /* IE 9 */
+        -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+        transform: rotate(180deg);
+    }
+    .lkn-dates .fa, .lkn-search .fa {
+        font-size: 14px;
+    }
+    .lkn-dates .fa-long-arrow-up, .lkn-search .fa-long-arrow-up {
+        margin-top: 2px;
     }
     .reset-sort {
         color: #878787;

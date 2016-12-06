@@ -339,18 +339,28 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                     </li>
                     <li class="navigator-transactions-li hidden-xs"> 
                         <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby lkn-dates"> 
-                            <span class="dates_text_selected hidden-xs">PREVIOUS 3 MONTHS</span>  
                             <i class="glyphicon glyphicon-calendar fa fa-calendar hidden-xs"></i>
+                            <span class="dates_text_selected hidden-xs">PREVIOUS 3 MONTHS</span>                              
+                            <i class="fa fa-long-arrow-up pull-right" aria-hidden="true"></i>
                         </a>
                         <div class="drop-down-sort dropdown-dates"> 
                             <div class="container-sortby">
                                 <ul class="list-sortby  sort-transactions">
-                                    <li class="sortby-li"> <a href="" class="date-lkn page">PREVIOUS 3 MONTHS</a> </li>
+                                    <li class="sortby-li"> <a href="" class="date-lkn first-date-lkn page">PREVIOUS 3 MONTHS</a> </li>
                                     <li class="sortby-li"> <a href="" class="date-lkn page">PREVIOUS 6 MONTHS</a> </li>
                                     <li class="sortby-li"> <a href="" class="date-lkn page">PREVIOUS YEAR</a> </li>
                                     <li class="sortby-li"> <a href="" class="date-lkn page">PREVIOUS 3 YEAR</a> </li>
                                     <li class="sortby-li"> <a href="" class="date-lkn page">PREVIOUS 5 YEAR</a> </li>
-                                    <li class="sortby-li"> <a href="" class="date-lkn page">CUSTOM DATE RANGE</a> </li>
+                                    <li class="sortby-li"> 
+                                        <a href="javascript:void(0);" class="date-lkn custom-range-lkn page">
+                                        CUSTOM DATE RANGE
+                                        </a> 
+                                        <div class="custom-range-container">
+                                            <input class="col-xs-5" type="text" name="startdate" value="10/24/1984" /> 
+                                            <span class="col-xs-2">-</span> 
+                                            <input class="col-xs-5" type="text" name="enddate" value="10/24/1984" />
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                             <!-- /container-sortby -->
@@ -358,7 +368,11 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                         <!-- /drop-down-sort -->
                     </li>
                     <li class="navigator-transactions-li"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search visible-xs" data-toggle="modal" data-target="#modal-search" >SEARCH</a> </li>
-                    <li class="navigator-transactions-li hidden-xs"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >ADVANCED FILTERS</a> </li>   
+                    <li class="navigator-transactions-li hidden-xs"> 
+                        <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >ADVANCED FILTERS
+                        <i class="fa fa-long-arrow-up pull-right" aria-hidden="true"></i>
+                        </a> 
+                    </li>   
                     <li class="navigator-transactions-li navigator-transactions-sortby "> 
                         <a href="#" class="reset-sort hidden-xs">
                             <i class="fa fa-times" aria-hidden="true"></i>

@@ -742,7 +742,6 @@ function load_js() {
             $(".date-back").remove();
             $(".daterangepicker").removeClass("calendar-visible");
         });
-
         $('#Amount').focusout(function (event) {
              $('.confirmation-amount-error').hide();
 
