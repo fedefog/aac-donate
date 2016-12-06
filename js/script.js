@@ -74,14 +74,14 @@ $(document).on('click', '.nav-transactions-li', function (event) {
     $('.dropdown-search').hide();
 });
 
-$(document).on('click', '.sortby-lkn', function (event) {
+$(document).on('click', '.sortby-lkn', function (event) { //sort by link
     event.preventDefault( );
     if ($('.drop-down-sort').hasClass('active') === true) {
         $('.drop-down-sort').removeClass('active');
     }
 });
 
-$(document).on('blur', '.lkn-sortby', function (event) {
+$(document).on('blur', '.ldate-lkn.page', function (event) {
     event.preventDefault( );
     if ($(this).parent().find('.drop-down-sort').hasClass('active') === true) {
         $(this).parent().find('.drop-down-sort').removeClass('active');
@@ -265,13 +265,23 @@ $(document).on('click', '.btn-search, .btn-success', function (event) {
 });
 
 // AACDESING SORT by
-$(document).on('click', '.date-lkn', function (event) {
-    
+$(document).on('click', '.date-lkn.page', function (event) {
+    $('.date-lkn').removeClass('selected');
+    $('.custom-range-container').removeClass("active");
+    if ($(this).hasClass('selected') === true) {
+        $(this).removeClass('selected');
+    } else {
+        $(this).addClass('selected');
+    }
     $('.navigator-transactions-lkn .dates_text_selected').text($(this).text())
 });
 $(document).on('click', '.sortby-lkn', function (event) {
     
     $('.navigator-transactions-lkn .text').text($(this).text())
+});
+$(document).on('click', '.custom-range-lkn', function (event) {
+    $('.date-lkn').removeClass('selected');
+    $('.custom-range-container').addClass("active");
 });
 // END AACDESING
 $(document).on('click', '.sort-transactions a', function (event) {
@@ -702,6 +712,28 @@ function load_js() {
         /*var sd = $('#startd').val();
          var ed = $('#endd').val();*/
 
+        // AACDESING
+        $('input[name="startdate"]').daterangepicker({
+            locale: {
+                format: 'DD/MM/YYYY'
+            },
+            singleDatePicker: true,
+            "opens": "left",
+            "drops": "up",
+            "autoApply": true,
+            startDate: start
+        });
+        $('input[name="enddate"]').daterangepicker({
+            locale: {
+                format: 'DD/MM/YYYY'
+            },
+            singleDatePicker: true,
+            "opens": "left",
+            "drops": "up",
+            "autoApply": true,
+            endDate: end
+        });
+
         $('#dates-bt-modal, #config-date').daterangepicker({
             locale: {
                 format: 'DD-MM-YYYY'
@@ -717,10 +749,14 @@ function load_js() {
             }, 20);
             $(".daterangepicker").addClass("calendar-visible");
         });
-        $('#dates-bt-modal, #config-date').on('showCalendar.daterangepicker', function (ev, picker) {
+        $('.custom-range-container input').on('show.daterangepicker', function (ev, picker) {
+            $('.dropdown-search').hide();
+            $(".daterangepicker").addClass("calendar-visible");
+        });
+        $('#dates-bt-modal, #config-date, .custom-range-container input').on('showCalendar.daterangepicker', function (ev, picker) {
             $(".calendar.right tbody").remove();
         });
-        $('#dates-bt-modal, #config-date').on('apply.daterangepicker', function (ev, picker) {
+        $('#dates-bt-modal, #config-date, .custom-range-container input').on('apply.daterangepicker', function (ev, picker) {
             var value = picker.startDate.format('YYYY-MM-DD') + ' to ' + picker.endDate.format('YYYY-MM-DD');
             var searchDate = $('#config-date').val();
             var str = new String('"' + searchDate + '"');
@@ -735,12 +771,23 @@ function load_js() {
             //window.location.replace('transactions-all.php?startdate=' + startdate + '&&enddate=' + enddate);
             $('#startDate').trigger('click');
         });
-        $('#dates-bt-modal, #config-date').on('cancel.daterangepicker', function (ev, picker) {
+        $('#dates-bt-modal, #config-date, .custom-range-container input').on('cancel.daterangepicker', function (ev, picker) {
             $(".date-back").remove();
         });
-        $('#dates-bt-modal, #config-date').on('hide.daterangepicker', function (ev, picker) {
+        $('#dates-bt-modal, #config-date, .custom-range-container input').on('hide.daterangepicker', function (ev, picker) {
             $(".date-back").remove();
             $(".daterangepicker").removeClass("calendar-visible");
+        });
+        $('input[name="startdate"]').on('apply.daterangepicker', function (ev, picker) {
+            startdate = picker.startDate.format('YYYY/MM/DD')
+            //alert(startdate);
+        });
+        $('input[name="enddate"]').on('apply.daterangepicker', function (ev, picker) {
+            enddate = picker.endDate.format('YYYY/MM/DD')
+            var date_complete = startdate + ' - ' + enddate;
+            $('.dropdown-dates').removeClass('active');
+            $('.navigator-transactions-lkn .dates_text_selected').html(date_complete);
+            //alert(enddate);
         });
         $('#Amount').focusout(function (event) {
              $('.confirmation-amount-error').hide();

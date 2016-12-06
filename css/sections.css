@@ -344,14 +344,14 @@ td[data-toggle="modal"] {
 .daterangepicker {
     padding: 0px;
     width: 92%;
-    opacity: 0;
+    /*opacity: 0;
     -webkit-transition: all .15s linear 0.1s;
     -o-transition: all .15s linear 0.1s;
     transition: all .15s linear 0.1s;
     -webkit-transform: scale(0.5);
     -moz-transform: scale(0.5);
     -ms-transform: scale(0.5);
-    transform: scale(0.5);
+    transform: scale(0.5);*/
 }
 .daterangepicker.calendar-visible {
     opacity: 1;
@@ -933,6 +933,15 @@ td[data-toggle="modal"] {
     border-top: 1px solid #E2E2E5;
     transition: all 0.3s ease-in-out;
 }
+.date-lkn {
+    padding-left: 25px;
+    background-position: 8px center;
+    background-repeat:no-repeat; 
+}
+.date-lkn.selected {
+    background-image: url('images/tick.png');
+    color: #00ADEE;
+}
 .first-date-lkn {
     border-top: none;
 }
@@ -940,9 +949,35 @@ td[data-toggle="modal"] {
     position: absolute;
     top: 1px;
     width: 100%;
-    padding:12px 20px;
+    padding:12px 25px;
     height: 100%;
     background: #FFF;
+    opacity: 0;
+    visibility: hidden;
+    background-image: url('images/tick.png');
+    background-position: 8px center;
+    background-repeat: no-repeat;
+}
+.custom-range-container.active {
+    visibility: visible;
+    opacity: 1;
+}
+.custom-range-container input:focus {
+    outline: none;
+}
+.custom-range-container:before, .custom-range-container:after {
+    display: block;
+    /*content: '';*/
+    width: 65px;
+    height: 25px;
+    background: #EEE;
+    position: absolute;
+}
+.custom-range-container:before {
+    left: 49px;
+}
+.custom-range-container:after {
+    right: 49px;
 }
 .custom-range-container .col-xs-5 {
     font-size: 12px;
@@ -956,7 +991,7 @@ td[data-toggle="modal"] {
     text-align: center;
     text-indent: -3px;
 }
-.sortby-li .sortby-lkn:hover {
+.sortby-li .sortby-lkn:hover, .sortby-li .date-lkn:hover {
     color: #00ADEE;
 }
 
@@ -2597,9 +2632,37 @@ td[data-toggle="modal"] {
         transition: all 0.3s ease-in-out;
     }
     .daterangepicker.dropdown-menu {
-        width: 480px;
-        left: 50% !important;
-        margin-left: -240px;
+        width: 247px;
+        left: 730px !important;
+        top: 237px!important;
+    }
+    .daterangepicker .calendar-table {
+        padding-left: 10px;
+        background: rgba(0, 0, 0, 0);
+    }
+    .filters-selected {
+        clear: both;
+        color: #00ADEE;
+        font-size: 11px;
+        margin-top: 10px;
+        float: left;
+    }
+    .filter-selected {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    .filter-selected a {
+        color: #00ADEE;
+        font-size: 15px;
+        padding-right: 4px;
+    }
+    span.clear-all-filters {
+        color: #878787;
+    }
+    span.clear-all-filters a {
+        color: #878787;
+        font-size: 15px;
+        padding-right: 4px;
     }
     .navigator-transactions .lkn-search {
         background: #F3F3F3;
