@@ -1,10 +1,10 @@
 <table class="table table-order-books table-condensed">
-        <thead class="hidden-xs "> 
+        <thead> 
             <tr>
                 <th>DATE</th>
-                <th>REQUEST ID</th>
+                <th class="hidden-xs">REQUEST ID</th>
                 <th>VOUCHER BOOK ORDERED</th>
-                <th>AMOUNT</th>
+                <th class="hidden-xs">AMOUNT</th>
                 
             </tr>
         </thead>						
@@ -15,7 +15,7 @@
                         <div class="date">23-11-16</div>
                     </a>
                 </td>
-                <td class="modal-show" data-toggle="modal" data-target="#modal-online-donation">
+                <td class="modal-show hidden-xs" data-toggle="modal" data-target="#modal-online-donation">
                     <a href="javascript:void(0);">
                         <span class="span-request-id">
                             
@@ -48,7 +48,7 @@
                         <div class="date">23-11-16</div>
                     </a>
                 </td>
-                <td class="modal-show" data-toggle="modal" data-target="#modal-online-donation">
+                <td class="modal-show hidden-xs" data-toggle="modal" data-target="#modal-online-donation">
                     <a href="javascript:void(0);">
                         <span class="span-request-id">
                             

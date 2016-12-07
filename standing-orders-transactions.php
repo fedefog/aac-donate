@@ -97,6 +97,50 @@ $sotl = $transactionlist->getSOtransactionList($id);
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
+
+                <!-- AACDESIGN -->
+                
+                <div class="container-table">
+                    <table class="table-transactions table table-condensed">
+                        <thead class="hidden-xs "> 
+                            <tr>
+                                <th>DATE</th>
+                                <th>TRANSACTION ID</th>
+                                <th>AMOUNT</th>
+                                <th>PROGRESS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-toggle="modal" data-target="#modal-standing-order-donation" >
+                                    <a href="#" >
+                                        <div class="date">1-7-16</div>
+                                    </a>
+                                </td>
+                                <td class="td-center" data-toggle="modal" data-target="#modal-standing-order-donation" >
+                                    3847
+                                </td>
+                                <td class="desktop-align-center balance-down" data-toggle="modal" data-target="#modal-standing-order-
+                                donation" >
+                                    <a href="#" >
+                                        <span class="balance-transition">
+                                            £ 990.00
+                                            <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                                <td class="hidden-xs td-interval">
+                                    <span class="date-interval">1/2 PAYMENTS</span>
+                                </td>
+                            </tr>                   
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <!-- END AACDESIGN -->
+
                 <?php
                 if (count($sotl) > 0) {
                     $k = $page * 10;

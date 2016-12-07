@@ -2736,9 +2736,6 @@ td[data-toggle="modal"] {
     .table-transactions .date {
         margin-left: -5px;
     }
-    .table-transactions .desc-table .title {
-        margin-bottom: 10px;
-    }
     .header-table-transactions {
         margin-top: 20px;
     }
@@ -2816,6 +2813,10 @@ td[data-toggle="modal"] {
         font-size: 11px;
         color: #878787;
         letter-spacing: 0.94px;
+    }
+    .to-be-paid {
+        color: #878787;
+        font-weight: 600;
     }
     .lkn-view-transaction {
         font-weight: 400;

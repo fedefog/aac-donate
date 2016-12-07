@@ -242,6 +242,69 @@ if (count($t) < 1) {
         ?>
     </tbody>
 </table>
+
+<!-- AACDESING -->
+    
+<table class="table-transactions table-standing-orders table table-condensed">
+    <thead class="hidden-xs "> 
+        <tr>
+            <th>ID</th>
+            <th>CHARITY</th>
+            <th>AMOUNT</th>            
+            <th class="hidden-xs">INTERVAL</th>
+            <th>DATE ENDED</th>
+            <th class="hidden-xs">CURRENT SO TO BE PAID</th>
+            <th class="hidden-xs"></th>
+            <th class="hidden-xs">ACTION</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="balance-down" data-id="">
+            <td class="hidden-xs td-center">
+                1938
+            </td>
+            <td data-toggle="modal" data-target="#modal-current-standing-order">
+                <a href="#">
+                    <div class="desc-table">
+                        <h2 class="title td-center">Charity Name</h2>
+                        <h3 class="subtitle visible-xs">EVERY 2 MONTHS</h3>
+                    </div><!-- /desc-table -->
+                </a>
+            </td>
+            <td data-toggle="modal" data-target="#modal-current-standing-order">
+                <a href="#">
+                    <span class="balance-transition ">
+                        £ 1,290.00
+                        <!--£ -->
+                        <i class="fa fa-caret-up" aria-hidden="true"></i>
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </td>
+            <td class="hidden-xs td-interval">
+                <span class="date-interval">EVERY 2 MONTHS</span>
+            </td>
+            <td class="hidden-xs td-interval">
+                <span class="date-interval">NOV 2018</span>
+            </td>
+            <td class="hidden-xs td-end-date">
+                <span class="to-be-paid">£ 1,290.00</span>
+            </td>
+            <td class="hidden-xs td-view-transaction">
+                <a href="standing-orders-transactions.php?id=" class="external-lkn lkn-view-transaction">VIEW TRANSACTIONS</a>
+            </td>
+            <td class="action-edit hidden-xs">
+                <a href="make-a-donation.php?id=" class="edit-transactions btn-trannsaction-accion external-lkn"></a>
+                <a href="javascript:void(0);" class="delete-transactions btn-trannsaction-accion" data-id="" onclick="cancelStandingOrder('');"></a>
+            </td>
+        </tr>
+                                        
+    </tbody>
+
+</table>    
+
+<!-- END AACDESING -->
+
 <nav class="navigation-transactions hidden-xs" aria-label="Page navigation  ">
     <ul class="pagination">
         <?php

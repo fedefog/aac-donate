@@ -163,6 +163,53 @@ $tl = $transactionlist->getTransactionListSearch($user->id, $search_array);
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
+
+                <!-- AACDESIGN -->
+
+                <div class="container-table">
+               
+                   <table class="table-transactions table table-condensed">
+                        <thead class="hidden-xs "> 
+                            <tr>
+                                <th>DATE</th>
+                                <th>AMOUNT</th>
+                                <th>TYPE</th>
+                                <th>COMMENTS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="balance-down">
+                                <td data-toggle="modal" data-target="#modal-standing-order-donation" >
+                                    <a href="#" >
+                                        <div class="date">1-7-16</div>
+                                    </a>
+                                </td>
+                                <td class="desktop-align-center" data-toggle="modal" data-target="#modal-standing-order-donation" >
+                                    <a href="#" >
+                                        <span class="balance-transition">
+                                            £ 990.00
+                                            <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                                <td class="type-td transaction-type-label modal-show" data-toggle="modal" data-target="#modal-standing-order-donation">
+                                    <p class="type-transactions">Standing Order</p>
+                                </td>
+                                <td class="modal-show comments-td hidden-xs" data-toggle="modal" data-target="#modal-standing-order-donation">
+                                    <a href="javascript:void(0);">
+                                            <p>Comments goes here from the user to the Charity..</p>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                
+                </div><!-- /container-table -->
+
+                <!-- END AACDESIGN -->
+
                 <?php
                 if (count($tl) < 1) {
                     ?>
