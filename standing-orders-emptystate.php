@@ -43,13 +43,7 @@
 					<a href="#" class="checkbox-input">
 						<i class="fa fa-check" aria-hidden="true"></i>
 					</a>
-					<div class="mid-size container-input-search">
-						<input type="text" class="input input-search" placeholder="For a specific transaction.">
-
-						<a href="#" class="reset-input">
-						    <i class="fa fa-times" aria-hidden="true"></i>
-						</a>
-					</div>
+					<input type="text" class="input" placeholder="For a specific transaction.">
 				</div>
 			</div>
 			<div class="form-group">

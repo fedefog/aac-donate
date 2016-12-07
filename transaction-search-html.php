@@ -90,46 +90,112 @@
         clearOthers_m(this);
     });
 </script>
+<!-- AACDESING -->
 <div class="form-group">
     <label for="" class="label">TRANSACTION ID</label>
     <div class="row-input"> 
         <a href="javascript:void(0);" id="chkTransactionId_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
-        <input type="text" id="txtTransactionId_m" class="input" placeholder="For a specific transaction." name="transaction_id">
+        <div class="mid-size container-input-search">
+            <input type="text" id="txtTransactionId_m" class="input input-search" placeholder="For a specific transaction." name="transaction_id">
+            <a href="#" class="reset-input">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+        </div>
     </div>
 </div>
 <div class="form-group">
     <label for="" class="label">CHARITY NAME</label>
-    <div class="row-input"> <a href="javascript:void(0);" id="chkCharityName_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
-        <input type="text" class="input" id="txtCharityName_m" placeholder="Please enter the name of the charity" name="charity_name">
+    <div class="row-input"> 
+        <a href="javascript:void(0);" id="chkCharityName_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
+        <div class="mid-size container-input-search">
+            <input type="text" class="input input-search" id="txtCharityName_m" placeholder="Please enter the name of the charity" name="charity_name">
+            <a href="#" class="reset-input">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+        </div>
+
     </div>
+
 </div>
 <div class="form-group">
-    <label for="" class="label">AMOUNT DONATED</label>
-    <div class="row-input"> <a href="javascript:void(0);" id="chkAmount_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
-        <input type="text" class="input" id="txtAmount_m" placeholder="For a specific amount that has been donated." name='amount_donated'>
+    <label for="" class="label">AMOUNT </label>
+    <div class="row-input"> 
+        <a href="javascript:void(0);" id="chkAmount_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
+        <div class="mid-size container-input-search container-input-search-min">
+            <input type="text" class=" input input-search" id="txtAmount" placeholder="Amount number" name='amount_donated' value="<?php echo $search['amount_donated'] ?>">
+            <a href="#" class="reset-input">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div class="mid-size container-to-amount">
+                
+            <input type="text" class="input input-to-amount" id="txtAmount" placeholder="TO" name='amount_donated' value="<?php echo $search['amount_donated'] ?>">
+
+            <a href="#" class="reset-input">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+        
+        </div>
     </div>
 </div>
 <div class="form-group">
     <label for="" class="label">PERSONAL NOTES</label>
-    <div class="row-input"> <a href="javascript:void(0);" id="chkNotes_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
-        <input type="text" class="input" id="txtNotes_m" placeholder="Search your personal notes" name='personal_note'>
+    <div class="row-input"> 
+        <a href="javascript:void(0);" id="chkNotes_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
+        <div class="mid-size container-input-search">
+            <input type="text" class="input input-search" id="txtNotes_m" placeholder="Search your personal notes" name='personal_note'>
+            <a href="#" class="reset-input">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+        </div>
     </div>
 </div>
 <div class="form-group">
     <label for="" class="label">VOUCHER NUMBER</label>
-    <div class="row-input"> <a href="javascript:void(0);" id="chkVoucherNumber_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
-        <input type="text" class="input" id="txtVoucherNumber_m" placeholder="Enter voucher number or range (from and to)" name='voucher_no'>
+    <div class="row-input"> 
+        <a href="javascript:void(0);" id="chkVoucherNumber_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
+        <div class="mid-size container-input-search container-input-search-min">
+            <input type="text" class="input input-search" id="txtVoucherNumber" placeholder="Voucher Number" name='voucher_no' value="<?php echo $search['voucher_no'] ?>">
+            <a href="#" class="reset-input">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="mid-size container-to-amount">
+
+            <input type="text" class=" input input-to-amount" id="txtVoucherNumber" placeholder="TO" name='voucher_no' value="<?php echo $search['voucher_no'] ?>">
+            <a href="#" class="reset-input">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+        </div>
     </div>
 </div>
 <div class="form-group">
-    <label for="" class="label">BOOK VOUCHER NUMBER</label>
-    <div class="row-input"> <a href="javascript:void(0);" id="chkBookVoucherNumber_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
-        <input type="text" class="input" id="txtBookVoucherNumber_m" placeholder="To display all vouchers in a book." name='book_voucher_no'>
+    <label for="" class="label">DISPLAY VOUCHER BOOK</label>
+    <div class="row-input"> 
+        <a href="javascript:void(0);" id="chkBookVoucherNumber_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
+        <div class="mid-size container-input-search">
+            <input type="text" class="input input-search" id="txtBookVoucherNumber_m" placeholder="Enter a voucher number." name='book_voucher_no'>
+            <a href="#" class="reset-input">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+        </div>
     </div>
 </div>
 <div class="form-group">
     <label for="" class="label">TRANSACTION TYPE</label>
-    <div class="row-input"> <a href="javascript:void(0);" id="chkType_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
-        <input type="text" class="input" id="txtType_m" placeholder="Select the type of transactions " name='transaction_type'>
+    <div class="row-input"> 
+        <a href="javascript:void(0);" id="chkType_m" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
+        <div class="mid-size container-input-search">
+            <select id="txtType" class="input" name='transaction_type'>
+                <option value="">Select...</option>
+                <option value="">Select...</option>
+                <option value="">Select...</option>
+                <option value="">Select...</option>
+                
+            </select>
+        </div>
     </div>
+
+<!-- END AACDESING-->
 </div>

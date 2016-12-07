@@ -776,9 +776,9 @@ td[data-toggle="modal"] {
 
 .modal-search .modal-header{
     border: 0;
-
 }
 .modal-search .modal-body {
+    padding: 15px;
     padding-bottom: 0;
 }
 .modal-search .modal-header .close {
