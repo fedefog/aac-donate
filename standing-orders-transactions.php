@@ -81,19 +81,34 @@ $sotl = $transactionlist->getSOtransactionList($id);
             </div><!-- /container  -->
         </header>
     </div><!-- /header-fixed -->
+
+    <!-- AACDESIGN -->
     <div id="transactions-navigation-desktop" class="hidden-xs transactions-navigation-desktop">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
+                <a href="standing-orders.php" class="go-back go-back-transactions ">&lt; Back</a>
+            </div>
+            <div class="col-md-12">
                 <div class="title-standing-orders-transactions">
                     <h3 class="title-transactions"><?php echo "STANDING ORDER " . $so_master_row[0]->id . " FOR " . $so_master_row[0]->name . "<span>" . showBalance($so_master_row[0]->amount) . ", every " . showInterval($so_master_row[0]->freq) . ". " . $so_master_row[0]->count . "/" . $so_master_row[0]->times . " many payments so far."; ?></span></h3>
                 </div><!-- /title-transactions-result -->
             </div><!-- / col 6 -->
-            <div class="col-md-6 text-right margintop-standing-orders">
+            <div class="col-lg-7 col-md-8">
+                    <div class="container-lkns-transactions">
+                        <a href="#" class="lkn-amend">AMEND THIS STANDING ORDER</a>
+                        <a href="#" class="lkn-cancel-order">CANCEL THIS STANDING ORDER</a>
+                    </div>
+                
+            </div>
+
+            <div class="col-lg-5 col-md-4 text-right margintop-standing-orders">
                 <a href="PHPExcel_1.8.0_doc/export_excel.php?filename=csv" class="expert-csv-file">EXPORT DATA TO CSV FILE</a>
                 <a href="PHPExcel_1.8.0_doc/export_excel.php?filename=xls" class="expert-xls-file">EXPORT DATA TO XLS FILE</a>
             </div><!-- / col 6 -->
         </div><!-- / row -->
     </div><!-- /transactions-navigation-desktop -->
+
+    <!-- END AACDESIGN -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">

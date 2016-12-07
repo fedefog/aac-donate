@@ -150,8 +150,10 @@ $tl = $transactionlist->getTransactionListSearch($user->id, $search_array);
         <div class="row">
             <div class="col-md-6">
                 <div class="title-standing-orders-transactions">
+                    <!-- AACDESIGN -->
+                    <a href="./" class="history-back ">&lt; Back</a>
                     <h3 class="title-transactions">DONATIONS TO <?php echo $charity_name; ?></h3>
-					<a href="./" class="history-back">&lt; back</a>
+                    <!-- END AACDESIGN -->
                 </div><!-- /title-transactions-result -->
             </div><!-- / col 6 -->
             <div class="col-md-6 text-right ">

@@ -504,6 +504,53 @@ td[data-toggle="modal"] {
 }
 
 /*  table transactoion */
+.history-back,
+.go-back-transactions {
+
+    font-weight: 400;
+    font-size: 14px;
+    color: #00ADEE;
+    letter-spacing: 0.83px;
+    display: inline-block;
+    margin-bottom: 5px;
+    transition: all 0.2s ease-in-out;
+}
+.history-back:hover,
+.go-back-transactions:hover {
+    color: #000;
+}
+.container-lkns-transactions {
+    display: block;
+    width: 100%;
+}
+.container-lkns-transactions a {
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 36px;
+    height: 36px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.44px;
+    width: 239px;
+    transition: all 0.2s ease-in-out;
+}
+.container-lkns-transactions .lkn-amend {
+    border: 1px solid #00ADEE ;
+    color: #00ADEE;
+    margin-right: 25px;
+}
+.container-lkns-transactions .lkn-cancel-order {
+    background: #F1F1F1;
+    border-radius: 4px;
+    color: #878787;
+
+}
+.container-lkns-transactions a:hover{    
+    background: #00ADEE;
+    color: #fff;
+}
 .btn-pendings,
 .btn-being-processed {
     display: inline-block;
@@ -3192,7 +3239,7 @@ td[data-toggle="modal"] {
         display: block;
     }
     .margintop-standing-orders {
-        margin-top: 18px;
+        margin-top: 22px;
     }
 }
 @media(min-width:992px){
