@@ -718,6 +718,7 @@ function load_js() {
                 format: 'DD/MM/YYYY'
             },
             singleDatePicker: true,
+            "showDropdowns": true,
             "opens": "left",
             "drops": "up",
             "autoApply": true,
@@ -728,6 +729,7 @@ function load_js() {
                 format: 'DD/MM/YYYY'
             },
             singleDatePicker: true,
+            "showDropdowns": true,
             "opens": "left",
             "drops": "up",
             "autoApply": true,
@@ -738,6 +740,7 @@ function load_js() {
             locale: {
                 format: 'DD-MM-YYYY'
             },
+            "showDropdowns": true,
             startDate: start,
             endDate: end
         });
@@ -779,11 +782,12 @@ function load_js() {
             $(".daterangepicker").removeClass("calendar-visible");
         });
         $('input[name="startdate"]').on('apply.daterangepicker', function (ev, picker) {
-            startdate = picker.startDate.format('YYYY/MM/DD')
+            startdate = picker.startDate.format('DD/MM/YYYY')
             //alert(startdate);
         });
+        // AACDESING END
         $('input[name="enddate"]').on('apply.daterangepicker', function (ev, picker) {
-            enddate = picker.endDate.format('YYYY/MM/DD')
+            enddate = picker.endDate.format('DD/MM/YYYY')
             var date_complete = startdate + ' - ' + enddate;
             $('.dropdown-dates').removeClass('active');
             $('.navigator-transactions-lkn .dates_text_selected').html(date_complete);

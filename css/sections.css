@@ -379,14 +379,36 @@ td[data-toggle="modal"] {
 .daterangepicker .calendar-table {
     margin: 0px;
 }
-.daterangepicker_input .fa-calendar {
-    display: none;
+.daterangepicker .daterangepicker_input i {
+    position: absolute;
+    left: 33px;
+    top: 49px;
+    color: #00adee;
 }
 .calendar.left .daterangepicker_input input {
     text-align: right;
 }
+.daterangepicker select.monthselect, .daterangepicker select.yearselect {
+    border-color: #E2E2E5 ;
+    position: relative;
+    z-index: 10;
+    height: 30px;
+    background-image: url(images/arrow-select.png);
+    background-color: #F7F7F7;
+    background-repeat: no-repeat;
+    background-position: 92% center;
+    background-size: 11px 5px;
+    -webkit-appearance:none;
+    text-indent: 10px;
+}
 .daterangepicker .input-mini {
     padding: 0px 10px;
+    text-align: center;
+    margin: 0 auto 0;
+    text-align: center!important;
+    border: 2px solid #00adee!important;
+    width: 72%;
+    text-indent: 5px;
 }
 .calendar.right thead tr:nth-child(2), .calendar.right thead .month, .calendar.right thead th:first-child {
     visibility: hidden;
@@ -424,11 +446,11 @@ td[data-toggle="modal"] {
     display: block;
     right: -3px;
     position: absolute;
-    top: 22px;
+    top: 56px;
     z-index: 10;
 }
 .daterangepicker_input {
-    padding-top: 6px;
+    padding-top: 42px;
     font-weight: 300;
 }
 .daterangepicker th.prev:hover, .daterangepicker th.next:hover {
@@ -983,7 +1005,7 @@ td[data-toggle="modal"] {
     font-size: 12px;
     padding: 4px 0;
     text-align: center;
-    border: 1px solid #EEE;
+    border:1px solid #E2E2E5;
     box-shadow: none;
     background: #F7F7F7;
 }
@@ -2639,6 +2661,15 @@ td[data-toggle="modal"] {
     .daterangepicker .calendar-table {
         padding-left: 10px;
         background: rgba(0, 0, 0, 0);
+    }
+    .daterangepicker_input {
+        padding-top: 6px;
+    }
+    .calendar.left .daterangepicker_input:before { 
+        display: none;
+    }
+    .daterangepicker select.monthselect, .daterangepicker select.yearselect {
+        height: auto;
     }
     .filters-selected {
         clear: both;
