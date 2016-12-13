@@ -34,6 +34,12 @@ $(document).on('click', '.layer-navigator', function (event) {
     $('.nav-icon4').removeClass('open');
     $('body').removeClass('menu-mobile-open');
 });
+$(document).on('click', '.close-notification', function (event) {
+    event.preventDefault( );
+    alert("este")
+    $(this).parent().hide();
+    $('body').removeClass('has-notification');
+});
 $(document).on('click', '.close-nav', function (event) {
     event.preventDefault( );
     $('.nav-icon4').toggleClass('open');

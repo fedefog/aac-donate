@@ -45,7 +45,7 @@
 
     </head>
 
-    <body>
+    <body class="has-notification">
         <?php
         $transaction = $td->getTransactionDetailByAccountName($user->Reference);
 
@@ -61,6 +61,29 @@
         </div> 
 
         <section class="section">
+            <!-- AACDESIGN -->
+            <div class="notification-box">
+                <p class="text-notification"> <i class="fa fa-check" aria-hidden="true"></i>
+ Your donation to CHARITY NAME <strong>is being processed.</strong></p>
+                <a class="close-notification">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="notification-box hide">
+                <p class="text-notification"> <i class="fa fa-check" aria-hidden="true"></i>
+ Your Standing order to CHARITY NAME<strong> has been registered.</strong></p>
+                <a class="close-notification">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="notification-box hide">
+                <p class="text-notification"> <i class="fa fa-check" aria-hidden="true"></i>
+ our Voucher Book order <strong> has been placed.</strong></p>
+                <a class="close-notification">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+            </div>
+                <!-- END AACDESIGN -->
 
             <div class="header-fixed hidden-xs" >
 
