@@ -31,6 +31,7 @@ if ($req_charity_id != "" && $req_charity_id > 0) {
     $transactionlist = new TransactionList();
     $charity_row = $transactionlist->getCharityList($req_charity_id);
     $charity_name = $charity_row[0]->Name;
+    $fields['RemoteCharityID'] = $req_charity_id;
 }
 /* $qry = "";
   $qry .= "SELECT * FROM aac_requests ";
@@ -58,6 +59,7 @@ if ($_REQUEST['Request']) {
 } else {
     $fields = $_REQUEST;
     $fields['Request'] = 'Initiate Transfer';
+    if($req_charity_id) $fields['RemoteCharityID'] = $req_charity_id;
 }
 if ($_POST['doAction']) {
     if ($_POST['request_id'] != "") {

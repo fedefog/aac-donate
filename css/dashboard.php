@@ -168,13 +168,14 @@ switch ($fields['Request']) {
             </div>
             <div class="row">
                 <div class="col-md-7">
-                    <!-- AACDESING -->		
-	                    <h2 class="title-dashborad-desktop title-dashborad-left">Latest Transactions</h2>		
-			
-	                    <a href="transactions-processing.php" class="lkn-being-processed ajaxlink"><span class="number-notification"><?php echo AACRequestList::CountProcessing(); ?></span>being processed</a>		
-	                    <a href="transactions-pending.php" class="lkn-pendings ajaxlink"><span class="number-notification"><?php echo TransactionList::CountPending(); ?></span> PENDING</a>		
-	                    		
-	                    <!-- END AACDESING -->
+
+                    <!-- AACDESING -->
+                    <h2 class="title-dashborad-desktop title-dashborad-left">Latest Transactions</h2>
+
+                    <a href="#" class="lkn-being-processed"><span class="number-notification">2</span>being processed</a>
+                    <a href="#" class="lkn-pendings"><span class="number-notification">4</span> PENDING</a>
+                    
+                    <!-- END AACDESING -->
                     <?php
                     /* $transactionlist = new TransactionList();
                       $tl = $transactionlist->getDashTransactionListByUserName(intval($user->id)); */
@@ -208,17 +209,14 @@ switch ($fields['Request']) {
                             <thead> 
                                 <tr>
                                     <th>DATE</th>
-                                    <th class="text-left">DESCRIPTION</th>
+                                    <th>DESCRIPTION</th>
                                     <th>AMOUNT</th>
-                                    <!-- AACDESING -->		                                   
-	                                <th class="last-th">BALANCE AFTER TRANSACTION</th>		
-	                                <!-- end AACDESINGS -->
+                                    <th>TYPE</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 if ($tl) {
-									$balanceAfterTrans = $balance;
                                     $k = 0;
                                     $j = count($tl);
                                     // $lastRowDate = '';
@@ -233,7 +231,7 @@ switch ($fields['Request']) {
                                             //$status = "Currently being processed";
                                             $status = "Pending";
                                         }
-                                        $trans_type = $t->TransactionDescription;
+                                        $trans_type = $t->description;
                                         $rowtype = $t->CDNo;
                                         $amt = $t->Amount;
                                         $result_code = $t->ResultCode;
@@ -250,10 +248,6 @@ switch ($fields['Request']) {
                                             $modal_name = "";
                                         }
 
-										$status = $trans_type;
-
-										$modal_name = "#modal-voucher";
-
                                         //echo "ID : ".$tl[$i]->id."<br>";
 
                                         $data .= $t->id . "||";
@@ -269,10 +263,6 @@ switch ($fields['Request']) {
                                         $data .= $t->ClientComments . "||";
                                         $data .= $t->OfficeComments . "||";
                                         $data .= $t->CharityNumber . "||";
-
-										$data = $t->id;
-										$rowtype='TR';
-
                                         ?>
                                         <tr class="<?php echo getBalanceColor(number_format($amt, 2)); ?> modal-show dashboard-row" data-toggle="modal" data-target="<?php echo $modal_name; ?>" data-id="<?php echo $data; ?>" data-type="<?php echo $rowtype; ?>">
                                             <td>
@@ -298,13 +288,13 @@ switch ($fields['Request']) {
                                                     </span>
                                                 </a>
                                             </td>
-			                                <td class="balance-td ">
-                                                <span class="balance-transition">&pound; <?php echo number_format($balanceAfterTrans,2) ?></span>
+                                            <td class="type-td transaction-type-label">
+                                                <p class="type-transactions"><?php echo $trans_type; ?></p>
+                                                <?php /* <p class="type-transactions"><?php echo getTransactionType($rowtype); ?></p> */ ?>
                                             </td>
                                     <input type="hidden" name="vchnumber" class="vch-number" value="<?php echo $t->Voucher; ?>">
                                     </tr>
                                     <?php
-									$balanceAfterTrans-=$amt;
                                     $k++;
                                     if ($k == 10)
                                         break;
@@ -338,7 +328,7 @@ switch ($fields['Request']) {
 
                     <div class="latest-update-desktop">
                         <div class="update-title"><strong><?php echo $post_date; ?></strong><?php echo $title; ?> UPDATE</div>
-                        <p><?php echo $content; ?><?php if($url) {'&nbsp;<a href="'.$url.'" target="_blank">READ MORE</a>'; } ?></p>
+                        <p><?php echo $content; ?>&nbsp;<a href="<?php echo $url; ?>" target="_blank">READ MORE</a></p>
                     </div>
 
                     <h2 class="title-dashborad-desktop">Quick Donation</h2>
@@ -485,9 +475,25 @@ switch ($fields['Request']) {
             <header class="header ">
                 <div class="container ">
                     <div class="row">
+                        <?php
+                        $sql = "";
+                        $sql .= "SELECT t.*, c.Name, a.Beneficiary, a.Request, a.Summary, a.RequestDateTime, a.VoucherBooks, a.VoucherBookUrgent,
+                        a.Currency, a.Amount as 'Request_Amount', a.ResultCode, a.ClientComments, a.OfficeComments,
+                        a.UserComments, a.StandingOrderFrequency, a.StandingOrderStartDate, a.StandingOrderEndDate ";
+                        $sql .= "FROM transaction t ";
+                        $sql .= "LEFT JOIN aac_requests a on a.id = t.RequestId ";
+                        $sql .= "LEFT JOIN charities c on c.remote_charity_id = t.CharityNumber ";
+                        $sql .= "LEFT JOIN users u on u.Username = t.Username ";
+                        $sql .= "WHERE t.Username = '" . $user->Username . "' AND a.ResultCode = 'Pending' ";
+                        $result = mysql_query($sql) or die(mysql_error());
+                        ?>
+                        <a href="transactions-pending.php" title="Pending Transactions" class="pending-bt">
+                            <img src="images/pending-icon.png" width="21" height="21">
+                            <span class="badge"><?php echo mysql_num_rows($result); ?></span>
+                        </a>
                         <div class="col-md-4">
                             <h1 class="logo-header">
-                                <a href="./">
+                                <a href="#">
                                     <img src="images/logo-aac.svg" alt="">
                                 </a>
                             </h1>
@@ -497,7 +503,7 @@ switch ($fields['Request']) {
                             if ($row_user['ShowUserDisplayName'] == "1") {
                                 echo '<h2 class="title-welcome">Welcome to your account, ' . $user->UserDisplayName . '</h2>';
                             } else {
-                                echo '<h2 class="title-welcome">Welcome to your account.</h2>';
+                                echo '<h2>Welcome to your account.</h2>';
                             }
                             ?>
                             </h2>
@@ -534,33 +540,28 @@ switch ($fields['Request']) {
                         <p class="text">The office will be closed Monday September 21 to Thursday the 24th. Please ensure all transactions are dealt with as soon as possible to avoid any issues given the high demand. Wishing everyone a ksiva v'chasima tova.</p>
                     </div><!-- /box-daily-updates -->
                     <ul class="nav-dashboard">
-                        <!-- AACDESIGN -->
-                        <li class="dashboard-li dashboard-li-has-noti">
+                        <li class="dashboard-li">
                             <a href="transactions.php" class="lkn-dashboard">
                                 <span class="icon">
                                     <img src="images/view-transactions-icon.png" width="18" height="23">
                                 </span>
                                 <span class="text">View Transactions </span>
+                                <div class="box-notification-nav">
+                                    <span class="notification-nav"> 2 being processed </span>
+                                    <span class="notification-nav">2 being processed </span>
+                                </div>
                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                             </a>
-                            <div class="box-notification-nav sublinks-nav">
-                                <span class="notification-nav txt-being-processed"> <a href="">2 being processed </a> </span>
-                                <span class="notification-nav"><a href="">4 PENDING </a></span>
-                            </div>
                         </li>
-                        <li class="dashboard-li dashboard-li-has-noti">
+                        <li class="dashboard-li">
                             <a href="make-a-donation.php" class="lkn-dashboard">
                                 <span class="icon">
                                     <img src="images/make-donation-icon.png" width="23" height="27">
                                 </span>
                                 <span class="text">Make a Donation </span>
-                                <div class="box-notification-nav">
-                                    <span class="notification-nav">OR SET UP A STANDING ORDER</span>
-                                </div>
                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                             </a>
                         </li>
-                        <!-- END AACDESIGN -->
                         <li class="dashboard-li">
                             <a href="standing-orders.php" class="lkn-dashboard">
                                 <span class="icon">

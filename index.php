@@ -63,8 +63,8 @@ include 'inc/header.php';
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
                     <div class="box-notification-nav sublinks-nav">
-                        <span class="notification-nav txt-being-processed"> <a href="">2 being processed </a> </span>
-                        <span class="notification-nav"><a href="">4 PENDING </a></span>
+                        <span class="notification-nav txt-being-processed"> <a href="transactions-processing.php"><?php echo AACRequestList::CountProcessing(); ?> being processed </a> </span>
+                        <span class="notification-nav"><a href="transactions-pending.php"><?php echo TransactionList::CountPending(); ?> PENDING </a></span>
                     </div>
                 </li>
                 <li class="dashboard-li dashboard-li-has-noti">
@@ -147,15 +147,16 @@ include 'inc/header.php';
 <? include 'inc/modal-delete-transaction.php' ?>
 <? include 'inc/modal-order-has-been-saved.php' ?>
 <? include 'inc/online-donation-modal.php' ?>
-<? include 'inc/give-as-you-earn-modal.php' ?>
-<? include 'inc/giftaid-rebate-modal.php' ?>
-<? include 'inc/comision-modal.php' ?>
-<? include 'inc/voucher-book-modal.php' ?>
+
+<? //include 'inc/give-as-you-earn-modal.php' ?>
+<? //include 'inc/giftaid-rebate-modal.php' ?>
+<? //include 'inc/comision-modal.php' ?>
+<? //include 'inc/voucher-book-modal.php' ?>
 <? include 'inc/voucher-modal.php' ?>
-<? include 'inc/standing-order-donation.php' ?>
-<? include 'inc/company-donation-modal.php' ?>
-<? include 'inc/charity-donation-modal.php' ?>
-<? include 'inc/account-transfer-modal.php' ?>
+<? //include 'inc/standing-order-donation.php' ?>
+<? //include 'inc/company-donation-modal.php' ?>
+<? //include 'inc/charity-donation-modal.php' ?>
+<? //include 'inc/account-transfer-modal.php' ?>
 
 
 <? include 'inc/footer.php' ?>

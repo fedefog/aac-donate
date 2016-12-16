@@ -1,7 +1,6 @@
 
 <table class="table-transactions table table-condensed">
     <thead class="hidden-xs "> 
-        <!-- AACDESING -->
         <tr>
             <th>DATE</th>
             <th>DESCRIPTION</th>
@@ -10,7 +9,6 @@
             <th class="hidden-xs">TYPE</th>
             <th class="hidden-xs">ACTION</th>
         </tr>
-        <!-- END AACDESING -->
     </thead>
     <tbody>
         <tr class="balance-up">

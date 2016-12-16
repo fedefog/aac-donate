@@ -60,6 +60,8 @@ define('NIS_EXRATE', 5.74);
 define('USD_EXRATE', 1.46);
 define('EUR_EXRATE', 1.34);
 
+define('DB_DATE_FORMAT','Y-m-d H;i:s');
+
 //ini_set('error_reporting','0');
 //error_reporting(0);
 //ini_set('display_errors', 'Off');

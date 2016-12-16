@@ -4,16 +4,39 @@ require_once 'inc/dbconn.inc.php';
 require_once 'cls/base.cls.php';
 require_once 'cls/users.cls.php';
 require_once 'inc/funcs.inc.php';
+	require_once 'cls/ui.cls.php';
+	require_once 'inc/funcs.inc.php';
 
 session_start();
 
 User::LoginCheck();
+
+	$user = new User();
+	$user = User::GetInstance();
+
 $id = $_REQUEST['id'];
 if ($_REQUEST['page']) {
     $page = $_REQUEST['page'];
 } else {
     $page = 1;
 }
+
+$somItem = new StandingOrderMasterItem();
+$somItem->load($id) or die('error locating item');
+
+
+$transactionlist = new StandingOrderTransactionList();
+
+$transactionlist->filters[] = 'Account="' . intval($user->Username) . '" ';
+$transactionlist->filters[] = 'sto_id="' . $id . '" ';
+$transactionlist->SetPage($page);
+
+$sotl = $transactionlist->listitems();
+
+
+
+//echo $transactionlist->lastSQL;
+
 
 /* $qry = "";
   $qry .= "SELECT sm.*,c.name FROM so_master sm ";
@@ -22,8 +45,6 @@ if ($_REQUEST['page']) {
   $result = mysql_query($qry);
   $so_master_row = mysql_fetch_row($result, MYSQL_ASSOC); */
 
-$transactionlist = new TransactionList();
-$so_master_row = $transactionlist->getSOMasterList($id);
 
 /* $qry = "";
   $qry .= " SELECT st.*,u.username,c.name";
@@ -34,10 +55,9 @@ $so_master_row = $transactionlist->getSOMasterList($id);
   $qry .= " WHERE st.sto_id = '" . $id . "' ORDER BY st.id DESC";
   $result = mysql_query($qry);
   $count = mysql_num_rows($result); */
-$transactionlist = new TransactionList();
-$sotl = $transactionlist->getSOtransactionList($id);
 ?>
 <script type="text/javascript">
+/**
     jQuery(document).ready(function () {
         jQuery(document).on('click', '.standing-orders', function () {
             var modaldata = jQuery(this).data('id');
@@ -50,6 +70,7 @@ $sotl = $transactionlist->getSOtransactionList($id);
             jQuery('#modal_charity_notes').html(row_arr[5]);
         });
     });
+**/
 </script>
 <main class="main-transactions main-standing-orders-transactions content-desktop" >
     <div class="header-fixed visible-xs">
@@ -74,7 +95,7 @@ $sotl = $transactionlist->getSOtransactionList($id);
                         </div><!-- /col -->	
                     </div><!-- /header-mobile-transactions -->
                     <div class="title-standing-orders-transactions">
-                        <h3 class="title-transactions"><?php echo "STANDING ORDER " . $so_master_row[0]->id . " FOR " . $so_master_row[0]->name . "<span>" . showBalance($so_master_row[0]->amount) . ", every " . showInterval($so_master_row[0]->freq) . ". " . $so_master_row[0]->count . "/" . $so_master_row[0]->times . " many payments so far."; ?></span></h3>
+                        <h3 class="title-transactions"><?php echo "STANDING ORDER " . $somItem->id . " FOR " . $somItem->name . "<span>" . showBalance($somItem->amount) . ", every " . showInterval($somItem->freq) . ". " . $somItem->count . "/" . $somItem->times . " many payments so far."; ?></span></h3>
                     </div><!-- /title-transactions-result -->
                     <div class="clear"></div>
                 </div><!-- /row  -->	
@@ -90,7 +111,7 @@ $sotl = $transactionlist->getSOtransactionList($id);
             </div>
             <div class="col-md-12">
                 <div class="title-standing-orders-transactions">
-                    <h3 class="title-transactions"><?php echo "STANDING ORDER " . $so_master_row[0]->id . " FOR " . $so_master_row[0]->name . "<span>" . showBalance($so_master_row[0]->amount) . ", every " . showInterval($so_master_row[0]->freq) . ". " . $so_master_row[0]->count . "/" . $so_master_row[0]->times . " many payments so far."; ?></span></h3>
+					<h3 class="title-transactions"><?php echo "STANDING ORDER " . $somItem->id . " FOR " . $somItem->name . "<span>" . showBalance($somItem->amount) . ", every " . showInterval($somItem->freq) . ". " . $somItem->count . "/" . $somItem->times . " many payments so far."; ?></span></h3>
                 </div><!-- /title-transactions-result -->
             </div><!-- / col 6 -->
             <div class="col-lg-7 col-md-8">
@@ -112,7 +133,13 @@ $sotl = $transactionlist->getSOtransactionList($id);
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12">
+                <?php
 
+                if (count($sotl) > 0) {
+                    $k = $page * 10;
+                    $i = ($page - 1) * 10;
+                    $i = 0;
+                    ?>
                 <!-- AACDESIGN -->
                 
                 <div class="container-table">
@@ -126,53 +153,6 @@ $sotl = $transactionlist->getSOtransactionList($id);
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td data-toggle="modal" data-target="#modal-standing-order-donation" >
-                                    <a href="#" >
-                                        <div class="date">1-7-16</div>
-                                    </a>
-                                </td>
-                                <td class="td-center" data-toggle="modal" data-target="#modal-standing-order-donation" >
-                                    3847
-                                </td>
-                                <td class="desktop-align-center balance-down" data-toggle="modal" data-target="#modal-standing-order-
-                                donation" >
-                                    <a href="#" >
-                                        <span class="balance-transition">
-                                            £ 990.00
-                                            <i class="fa fa-caret-up" aria-hidden="true"></i>
-                                            <i class="fa fa-caret-down" aria-hidden="true"></i>
-                                        </span>
-                                    </a>
-                                </td>
-                                <td class="hidden-xs td-interval">
-                                    <span class="date-interval">1/2 PAYMENTS</span>
-                                </td>
-                            </tr>                   
-                        </tbody>
-
-                    </table>
-                </div>
-
-                <!-- END AACDESIGN -->
-
-                <?php
-                if (count($sotl) > 0) {
-                    $k = $page * 10;
-                    $i = ($page - 1) * 10;
-                    $i = 0;
-                    ?>
-                    <div class="container-table">
-                        <table class="table-transactions table table-condensed">
-                            <thead class="hidden-xs "> 
-                                <tr>
-                                    <th>DATE</th>
-                                    <th class="desktop-align-left">ID</th>
-                                    <th>CHARITY</th>
-                                    <th>AMOUNT</th>
-                                </tr>
-                            </thead>
-                            <tbody>
                                 <?php
                                 foreach ($sotl as $t) {
                                     $data = "";
@@ -190,102 +170,67 @@ $sotl = $transactionlist->getSOtransactionList($id);
                                       $data .= "" . "||";
                                       $data .= $notes_aac . "||";
                                       $data .= $notes_charity . "||"; */
-                                    if ($i >= ($k - 10) && $i < $k) {
+
+										$data = $t->id;
                                         ?>
-                                        <tr class="standing-orders" data-id="<?= $data; ?>" data-toggle="modal" data-target="#modal-standing-order-donation">
-                                            <td>
-                                                <a href="javascript:void(0);" >
-                                                    <div class="date"><?php echo $date; ?></div>
-                                                </a>
-                                            </td>
-                                            <td class="hidden-xs"><?php echo $id; ?></td>
-                                            <td>
-                                                <a href="javascript:void(0);" >
-                                                    <div class="desc-table">
-                                                        <h2 class="title"><?php echo $beneficiary; ?></h2>
-                                                        <h3 class="subtitle"><?php //echo $request; ?></h3>
-                                                    </div><!-- /desc-table -->
-                                                </a>
-                                            </td>
-                                            <td class="desktop-align-center balance-down">
-                                                <a href="javascript:void(0);" >
-                                                    <span class="balance-transition">
-                                                        <?php echo showBalance($amount); ?>
-                                                        <i class="fa fa-caret-up" aria-hidden="true"></i>
-                                                        <i class="fa fa-caret-down" aria-hidden="true"></i>
-                                                    </span>
-                                                </a>
-                                            </td>
-                                        </tr>
+							<tr class="standing-orders" data-id="<?= $data; ?>" data-toggle="modal" data-target="#modal-voucher" data-type="SOT">
+                                <td  >
+	                                <a href="javascript:void(0);">
+                                        <div class="date"><?php echo $date; ?></div>
+                                    </a>
+                                </td>
+                                <td class="td-center" >
+                                    <?php echo $id; ?>
+                                </td>
+                                <td class="desktop-align-center balance-down">
+	                                <a href="javascript:void(0);">
+                                        <span class="balance-transition">
+                                            <?php echo showBalance($amount); ?>
+                                            <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                                <td class="hidden-xs td-interval">
+                                    <span class="date-interval">1/2 PAYMENTS</span>
+                                </td>
+                            </tr>                   
                                         <?php
-                                    }
                                     $i++;
                                 }
                                 ?>
-                            </tbody>
-                        </table>
-                        <nav class="navigation-transactions hidden-xs" aria-label="Page navigation  ">
-                            <ul class="pagination nav-transactions">
-                                <?php
-                                $class = "class='pag-active page external-lkn'";
-                                $class1 = "class='page external-lkn'";
-                                /* $class = "class='pag-active page'";
-                                  $class1 = "class='page'"; */
-                                $parameter = '&id=' . $id;
-                                $total_row = count($sotl);
+                        </tbody>
 
-                                $per_page = 10;
-                                $total_page = ceil($total_row / $per_page);
-                                if ($total_page > 1) {
-                                    ?>
-                                    <li>
-                                        <?php if ($page > 1) { ?>
-                                            <a href="standing-orders-transactions.php?page=<?php
-                                            echo $page - 1;
-                                            echo $parameter;
-                                            ?>" class='page external-lkn' aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        <?php } ?>
-                                    </li>
-                                    <li><a href="standing-orders-transactions.php?page=1<?php echo $parameter; ?>" <?php
-                                        if ($page == 1)
-                                            echo $class;
-                                        else
-                                            echo $class1;
-                                        ?> id="page1">1</a></li>
-                                           <?php
-                                           for ($i = 2; $i <= $total_page; $i++) {
-                                               ?>
-                                        <li><a href="standing-orders-transactions.php?page=<?php
-                                            echo $i;
-                                            echo $parameter;
-                                            ?>" 
-                                               <?php
-                                               if ($i == $page)
-                                                   echo $class;
-                                               else
-                                                   echo $class1;
-                                               ?> ><?php echo $i; ?> </a></li>
-                                            <?php
-                                        }
-                                        ?>
-                                    <li>
-                                        <?php if ($page < $total_page) { ?>
-                                            <a href="standing-orders-transactions.php?page=<?php
-                                            echo $page + 1;
-                                            echo $parameter;
-                                            ?>" class='page external-lkn' aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        <?php } ?>
-                                    </li>
-                                    <?php
-                                }
-                                ?>
-                            </ul>
-                        </nav><!-- /navigation-transactions -->
-                    </div><!-- /container-table -->
+                    </table>
+                </div>
+
+                <!-- END AACDESIGN -->
+
+
+    <nav class="navigation-transactions hidden-xs" aria-label="Page navigation  ">
+        <ul class="pagination nav-transactions"><li>
+            <?php
+
+			$pageNavOptions  = array(
+				'NoItemsText'=>'',
+				'MaxVisiblePageNums'=>5,
+				'PrevPageText'=>'&laquo;',
+				'NextPageText'=>'&raquo;',
+				'FirstPageText'=>'',
+				'LastPageText'=>'',
+				'ShowAllText'=>'',
+				'ShowAllAlign'=>'',
+				'LeadingText'=>'',
+				'SuffixText'=>'',
+				'PageNumSeperator'=>'</li><li>',
+				'UseJavascriptFunction'=>'',
+			);
+
+
+			echo UI::makePageNav('standing-orders-transactions.php',$page,$transactionlist->PageCount(),false,$_GET,$pageNavOptions);
+			?>
+        </li></ul>
+    </nav><!-- /navigation-transactions -->                    </div><!-- /container-table -->
                     <?php
                 } else {
                     ?>
@@ -391,11 +336,11 @@ $sotl = $transactionlist->getSOtransactionList($id);
     </div><!-- /modal-dialog -->
 </div><!-- /modal-search -->
 
-<?php include 'inc/online-donation-modal.php' ?>
-<?php include 'inc/give-as-you-earn-modal.php' ?>
-<?php include 'inc/giftaid-rebate-modal.php' ?>
-<?php include 'inc/comision-modal.php' ?>
-<?php include 'inc/voucher-book-modal.php' ?>
-<?php include 'inc/voucher-modal.php' ?>
-<?php include 'inc/standing-order-donation.php' ?>
-<?php include 'inc/company-donation-modal.php' ?>
+<?php //include 'inc/online-donation-modal.php' ?>
+<?php //include 'inc/give-as-you-earn-modal.php' ?>
+<?php //include 'inc/giftaid-rebate-modal.php' ?>
+<?php //include 'inc/comision-modal.php' ?>
+<?php //include 'inc/voucher-book-modal.php' ?>
+<?php //include 'inc/voucher-modal.php' ?>
+<?php //include 'inc/standing-order-donation.php' ?>
+<?php //include 'inc/company-donation-modal.php' ?>

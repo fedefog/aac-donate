@@ -4,6 +4,7 @@ require_once 'inc/dbconn.inc.php';
 require_once 'cls/base.cls.php';
 require_once 'cls/users.cls.php';
 require_once 'cls/charities.cls.php';
+require_once 'cls/aac_requests.cls.php';
 	require_once 'cls/ui.cls.php';
 	require_once 'inc/funcs.inc.php';
 
@@ -20,6 +21,8 @@ $param = "";
 
 $search = $_REQUEST;
 foreach($search as $k=>$v) if(!is_array($v)) $search[$k] = mysql_real_escape_string($v);
+
+//$search = array();
 
 
 $td = new TransactionDetailList();
@@ -46,6 +49,7 @@ if ($req_type == "in") {
 		$transactionlist->filters[] = ' Amount > 0';
 		$param .= "&type={$_REQUEST['type']}";
 } else if ($req_type == "out") {
+		$transactionlist->filters[] = ' Amount < 0';
 		$param .= "&type={$_REQUEST['type']}";
 }
 
@@ -65,18 +69,27 @@ $url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xls";
 		$transactionlist->filters[] = " `c`.`Name` LIKE '%{$search['charity_name']}%' ";
 		$param .= "&charity_name={$_REQUEST['charity_name']}";
     } 
-	if ($search['amount_donated']) {
-		$neg = $search['amount_donated']*-1;
-		$transactionlist->filters[] = " (`amount`='{$search['amount_donated']}' OR `amount`='{$neg}' ) ";
-		$param .= "&amount_donated={$_REQUEST['amount_donated']}";
+	if ($search['amount_donated_from']) {
+		$neg = $search['amount_donated_from']*-1;
+		$transactionlist->filters[] = " (`amount`>='{$search['amount_donated_from']}' OR `amount`='{$neg}' ) ";
+		$param .= "&amount_donated_from={$_REQUEST['amount_donated_to']}";
+    } 
+	if ($search['amount_donated_to']) {
+		$neg = $search['amount_donated_to']*-1;
+		$transactionlist->filters[] = " (`amount`<='{$search['amount_donated_to']}' OR `amount`='{$neg}' ) ";
+		$param .= "&amount_donated_to={$_REQUEST['amount_donated_to']}";
     } 
 	if ($search['personal_note']) {
 		$transactionlist->filters[] = " `client_comment` LIKE '%{$search['personal_note']}%' ";
 		$param .= "&amount_donated={$_REQUEST['amount_donated']}";
     } 
-	if ($search['voucher_no']) {
-		$transactionlist->filters[] = " `voucher`='{$search['voucher_no']}' ";
-		$param .= "&voucher_no={$_REQUEST['voucher_no']}";
+	if ($search['voucher_no_from']) {
+		$transactionlist->filters[] = " `voucher`>='{$search['voucher_no_from']}' ";
+		$param .= "&voucher_no_from={$_REQUEST['voucher_no_from']}";
+    } 
+	if ($search['voucher_no_to']) {
+		$transactionlist->filters[] = " `voucher`<='{$search['voucher_no_to']}' ";
+		$param .= "&voucher_no_to={$_REQUEST['voucher_no_to']}";
     } 
 	if ($search['book_voucher_no']) {
 		$transactionlist->filters[] = $transactionlist->GetVoucherBookRangeFilter($search['book_voucher_no']);
@@ -87,25 +100,76 @@ $url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xls";
 		$param .= "&transaction_type={$_REQUEST['transaction_type']}";
     }
 
-	if ($_REQUEST['startdate']) {
+	if ($search['startdate']) {
 		//convert to db format
 		$d = explode('-',$search['startdate']);
-		$search['startdate'] = "{$d['2']}-{$d['1']}-{$d['0']}";
-		$transactionlist->filters[] = " `DateTime`>='{$search['startdate']}' ";
-	    $param .= '&startdate=' . $_REQUEST['startdate'];
+		$dbsearch['startdate'] = "{$d['2']}-{$d['1']}-{$d['0']}";
+		$transactionlist->filters[] = " `DateTime`>='{$dbsearch['startdate']}' ";
+	    $param .= '&startdate=' . $search['startdate'];
 	}
-	if ($_REQUEST['enddate']) {
+	if ($search['enddate']) {
 		$d = explode('-',$search['enddate']);
-		$search['enddate'] = "{$d['2']}-{$d['1']}-{$d['0']}";
+		$dbsearch['enddate'] = "{$d['2']}-{$d['1']}-{$d['0']}";
 
-		$transactionlist->filters[] = " `DateTime`<='{$search['enddate']}' ";
-	    $param .= '&enddate=' . $_REQUEST['enddate'];
+		$transactionlist->filters[] = " `DateTime`<='{$dbsearch['enddate']}' ";
+	    $param .= '&enddate=' . $search['enddate'];
 	}
+
+function buildDates($key){
+	global $search;
+
+	$search2 = $search;
+
+	if($key!='custom') {
+		$search2['startdate'] = date('d-m-Y',strtotime('-'.$key));
+		$search2['enddate'] = date('d-m-Y');
+		$key = str_replace(' ','',$key);
+	}
+
+	$search2['dateType']=$key;
+
+	$params = http_build_query($search2);
+
+	$result = array(
+		'url'=>'transactions.php?'.$params,
+		'startdate'=>$search2['startdate'],
+		'enddate'=>$search2['enddate'],
+		'dateType'=>$key
+	);
+	return $result;
+
+}
+
+$dates = array(
+	'3months'=>buildDates('3 Months'),
+	'6months'=>buildDates('6 Months'),
+	'1year'=>buildDates('12 Months'),
+	'3years'=>buildDates('36 Months'),
+	'5years'=>buildDates('60 Months'),
+	'custom'=>buildDates('custom'),
+);
+
+if(!$search['startdate']) {
+	$defaultDate = reset($dates);
+
+//var_dump($defaultDate);
+
+	$d = explode('-',$defaultDate['startdate']);
+	$defaultDate['startdate'] = "{$d['2']}-{$d['1']}-{$d['0']}";
+	$d = explode('-',$defaultDate['enddate']);
+	$defaultDate['enddate'] = "{$d['2']}-{$d['1']}-{$d['0']}";
+
+	$transactionlist->filters[] = " `DateTime`>='{$defaultDate['startdate']}' ";
+	$transactionlist->filters[] = " `DateTime`<='{$defaultDate['enddate']}' ";
+
+}
+
 /**
 if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
     $param .= '&&sort=' . $_REQUEST['sort'] . '&&fieldname=' . $_REQUEST['fieldname'];
 }
 **/
+
 ?>
 
 <script type="text/javascript">
@@ -149,6 +213,8 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
             $(this).attr('placeholder', 'Type your search');
             //$(".results").css("visibility", "visible");
         });
+
+
     });
     function clearOthers(current_element) {
 
@@ -241,6 +307,21 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
         clearOthers(this);
     });
 
+		if($('.sort-transactions .active').length) {
+			var active = $('.sort-transactions .active');
+ 
+			$('.navigator-transactions-sortby .text').text(active.text());
+			$('.navigator-transactions-sortby .reset-sort').show();
+		}
+
+		if($('.dropdown-dates .selected').length) {
+			var active = $('.dropdown-dates .selected');
+ 
+			$('.dates_text_selected').text(active.text());
+		}
+
+			
+
 </script>
 <main class="main-transactions content-desktop" >
     <div class="header-fixed visible-xs">
@@ -256,7 +337,6 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                         <!-- /col -->
                         <div class="col-xs-3"> <a href="#" class="nav-mobile nav-icon4 visible-xs "> <span></span> <span></span> <span></span> </a> </div>
                         <!-- /col -->
-
                     </div>
                     <!-- /header-mobile-transactions -->
                     <div class="col-xs-12 header-mobile-transactions">
@@ -280,8 +360,8 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
             <div class="col-md-8">
                 <h2 class="title-transactions-desktop">Transactions</h2>
                 <!-- AACDESIGN -->
-                    <a href="#" class="btn-being-processed"><span class="number-notification">2</span><span class="noti-string">being processed</span></a>
-                    <a href="#" class="btn-pendings"><span class="number-notification">4</span> <span class="noti-string">PENDING</span></a>
+                    <a href="transactions-processing.php" class="btn-being-processed ajaxlink"><span class="number-notification"><?php echo AACRequestList::CountProcessing(); ?></span><span class="noti-string">being processed</span></a>
+                    <a href="transactions-pending.php" class="btn-pendings ajaxlink"><span class="number-notification"><?php echo TransactionList::CountPending(); ?></span> <span class="noti-string">PENDING</span></a>
                     <!-- END AACDESIGN -->
                 <ul class="nav-transactions transaction_page_desktop">
                     <li class="nav-transactions-li"> <a href="transactions.php" class="nav-transactions-lkn<?php echo $req_type?'':' active' ?>">all</a> </li>
@@ -345,21 +425,25 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                         </a>
                         <div class="drop-down-sort dropdown-dates"> 
                             <div class="container-sortby">
+
+
+
                                 <ul class="list-sortby">
-                                    <li class="sortby-li"> <a href="#" class="date-lkn first-date-lkn page">PREVIOUS 3 MONTHS</a> </li>
-                                    <li class="sortby-li"> <a href="#" class="date-lkn page">PREVIOUS 6 MONTHS</a> </li>
-                                    <li class="sortby-li"> <a href="#" class="date-lkn page">PREVIOUS YEAR</a> </li>
-                                    <li class="sortby-li"> <a href="#" class="date-lkn page">PREVIOUS 3 YEAR</a> </li>
-                                    <li class="sortby-li"> <a href="#" class="date-lkn page">PREVIOUS 5 YEAR</a> </li>
+                                    <li class="sortby-li"> <a href="<?php echo $dates['3months']['url'] ?>" class="date-lkn first-date-lkn page <?php echo $dates['3months']['dateType']==$search['dateType']?' selected ':'' ?>">PREVIOUS 3 MONTHS</a> </li>
+                                    <li class="sortby-li"> <a href="<?php echo $dates['6months']['url'] ?>" class="date-lkn page <?php echo $dates['6months']['dateType']==$search['dateType']?' selected ':'' ?>">PREVIOUS 6 MONTHS</a> </li>
+                                    <li class="sortby-li"> <a href="<?php echo $dates['1year']['url'] ?>" class="date-lkn page <?php echo $dates['1year']['dateType']==$search['dateType']?' selected ':'' ?>">PREVIOUS YEAR</a> </li>
+                                    <li class="sortby-li"> <a href="<?php echo $dates['3years']['url'] ?>" class="date-lkn page <?php echo $dates['3years']['dateType']==$search['dateType']?' selected ':'' ?>">PREVIOUS 3 YEARS</a> </li>
+                                    <li class="sortby-li"> <a href="<?php echo $dates['5years']['url'] ?>" class="date-lkn page <?php echo $dates['5years']['dateType']==$search['dateType']?' selected ':'' ?>">PREVIOUS 5 YEARS</a> </li>
                                     <li class="sortby-li"> 
-                                        <a href="javascript:void(0);" class="date-lkn custom-range-lkn">
+                                        <a href="javascript:void(0);" class="date-lkn custom-range-lkn <?php echo $dates['custom']['dateType']==$search['dateType']?' selected ':'' ?>">
                                         CUSTOM DATE RANGE
                                         </a> 
                                         <div class="custom-range-container">
                                             <?php /*<input class="col-xs-12" type="text" name="datarange" value="10/24/1984" /> */ ?>
-                                            <input class="col-xs-5" type="text" name="startdate" value="10/24/1984" />
+                                            <input class="col-xs-5" type="text" name="customstartdate" id="customstartdate" value="<?php echo $dates['custom']['startdate'] ?>" />
                                             <span class="col-xs-2">-</span>
-                                            <input class="col-xs-5" type="text" name="enddate" value="10/24/1984" />
+                                            <input class="col-xs-5" type="text" name="customenddate" id="customenddate" value="<?php echo $dates['custom']['enddate'] ?>" />
+											<a class="custom-date-go" href="#">go</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -374,8 +458,9 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                         <i class="fa fa-long-arrow-up pull-right" aria-hidden="true"></i>
                         </a> 
                     </li>   
+
                     <li class="navigator-transactions-li navigator-transactions-sortby "> 
-                        <a href="#" class="reset-sort hidden-xs">
+                        <a href="transactions.php" class="reset-sort hidden-xs">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </a>
                         <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby"> 
@@ -390,19 +475,19 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                                     <li class="sortby-li">
                                         <h2 class="title-sortby">SORT BY</h2>
                                     </li>
-                                    <li class="sortby-li"> <a href="transactions.php?fieldname=t.Datetime&&sort=DESC" class="sortby-lkn page">Date
+                                    <li class="sortby-li <?php echo $_REQUEST['fieldname']=='t.Datetime' && $_REQUEST['sort']==DESC?'active':'' ?>"> <a href="transactions.php?fieldname=t.Datetime&&sort=DESC" class="sortby-lkn page">Date
                                             (Recent - Furthest)</a> </li>
-                                    <li class="sortby-li"> <a href="transactions.php?fieldname=t.Datetime&&sort=ASC" class="sortby-lkn page">Date
+                                    <li class="sortby-li <?php echo $_REQUEST['fieldname']=='t.Datetime' && $_REQUEST['sort']==ASC?'active':'' ?>"> <a href="transactions.php?fieldname=t.Datetime&&sort=ASC" class="sortby-lkn page">Date
                                             (Furthest - Recent)</a> </li>
-                                    <li class="sortby-li"> <a href="transactions.php?fieldname=t.Amount&&sort=DESC" class="sortby-lkn page">Amount
+                                    <li class="sortby-li <?php echo $_REQUEST['fieldname']=='t.Amount' && $_REQUEST['sort']==DESC?'active':'' ?>"> <a href="transactions.php?fieldname=t.Amount&&sort=DESC" class="sortby-lkn page">Amount
                                             (High - Low)</a> </li>
-                                    <li class="sortby-li"> <a href="transactions.php?fieldname=t.Amount&&sort=ASC" class="sortby-lkn page">Amount
+                                    <li class="sortby-li <?php echo $_REQUEST['fieldname']=='t.Amount' && $_REQUEST['sort']==ASC?'active':'' ?>"> <a href="transactions.php?fieldname=t.Amount&&sort=ASC" class="sortby-lkn page">Amount
                                             (Low - High)</a> </li>
-                                    <li class="sortby-li">
+                                    <li class="sortby-li <?php echo $_REQUEST['fieldname']=='t.Description' && $_REQUEST['sort']==ASC?'active':'' ?>">
                                         <!--<a href="transactions.php?fieldname=name&&sort=SORT_ASC" class="sortby-lkn page">Charity Name (A - Z)</a>-->
                                         <a href="transactions.php?fieldname=t.Description&&sort=ASC" class="sortby-lkn page">Charity
                                             Name (A - Z)</a> </li>
-                                    <li class="sortby-li">
+                                    <li class="sortby-li <?php echo $_REQUEST['fieldname']=='t.Description' && $_REQUEST['sort']==DESC?'active':'' ?>">
                                         <!--<a href="transactions.php?fieldname=name&&sort=SORT_DESC" class="sortby-lkn page">Charity Name (Z - A)</a>-->
                                         <a href="transactions.php?fieldname=t.Description&&sort=DESC" class="sortby-lkn page">Charity
                                             Name (Z - A)</a> </li>
@@ -414,12 +499,78 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                     </li>
                 </ul>
                 <div class="filters-selected hidden-xs">
-                    <span class="filter-selected"><a href="#">x</a>VOUCHER #2208</span>
-                    <span class="filter-selected"><a href="#">x</a>VOUCHER #2208</span>
-                    <span class="filter-selected"><a href="#">x</a>VOUCHER #2208</span>
-                    <span class="filter-selected"><a href="#">x</a>VOUCHER #2208</span>
-                    <span class="filter-selected"><a href="#">x</a>VOUCHER #2208</span>
-                    <span class="clear-all-filters"><a href="#">x</a>CLEAR ALL</span>
+					<?php
+					function showFilter($key){
+						global $search;
+
+						$labels = array(
+							'transaction_id'=>'NO',
+							'charity_name'=>'CHARITY',
+							'amount_donated'=>'AMOUNT',
+							'personal_note'=>'NOTE',
+							'voucher_no'=>'VOUCHER',
+							'voucher_book'=>'BOOK',
+							'transaction_type'=>'TYPE',
+							'dates'=>'DATE',
+						);
+
+						$value = '';
+						$search2 = $search;
+
+						if($key=='amount_donated') {
+							if($search['amount_donated_from'] && $search['amount_donated_to']) 
+								$value = "&pound;{$search['amount_donated_from']} TO &pound;{$search['amount_donated_to']}";
+							else if($search['amount_donated_from'])
+								$value = "&pound;{$search['amount_donated_from']}+";
+							else if($search['amount_donated_to'])
+								$value = "&pound;0-{$search['amount_donated_to']}";
+							unset($search2['amount_donated_from']);
+							unset($search2['amount_donated_to']);
+						} else if($key=='voucher_no') {
+							if($search['voucher_no_from'] && $search['voucher_no_to']) 
+								$value = "{$search['voucher_no_from']} TO {$search['voucher_no_to']}";
+							else if($search['voucher_no_from'])
+								$value = "{$search['voucher_no_from']}+";
+							else if($search['voucher_no_to'])
+								$value = "0-{$search['voucher_no_to']}";
+							unset($search2['voucher_no_from']);
+							unset($search2['voucher_no_to']);
+						} else if($key=='dates') {
+							if($search['startdate'] && $search['enddate']) 
+								$value = "{$search['startdate']} TO {$search['enddate']}";
+
+							unset($search2['startdate']);
+							unset($search2['enddate']);							
+						} else {
+							$value = $search[$key];
+							unset($search2[$key]);
+						}
+
+						if(!$value) return;
+	
+						$label = $labels[$key];
+						$params = http_build_query($search2);
+					
+						?>
+	                    <span class="filter-selected"><a href="transactions.php?<?php echo $params ?>">x</a><?php echo "{$label}:$value" ?></span>
+						<?php	
+
+					}
+					foreach($search as $k=>$v) if(!$v) unset($search[$k]);
+					if(count($search)) {
+						showFilter('transaction_id');
+						showFilter('charity_name');
+						showFilter('amount_donated');
+						showFilter('personal_note');
+						showFilter('voucher_no');
+						showFilter('voucher_book');
+						showFilter('transaction_type');
+						showFilter('dates');
+						?>
+	                    <span class="clear-all-filters"><a href="transactions.php">x</a>CLEAR ALL</span>
+						<?php
+					}
+					?>
                 </div>
             </div>
             <!-- / col 12 -->
@@ -451,7 +602,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                                 
                                 <div class="mid-size container-input-search">
 
-                                    <input type="text" class="input autocomplete-charities input-search" id="txtCharityName" placeholder="Please select a Beneficiary" name="charity_name" value="<?php echo $search['charity_name'] ?>" />
+                                    <input type="text" class="input autocomplete-charities input-search" id="txtCharityName" placeholder="Please enter the name of the charity" name="charity_name" value="<?php echo $search['charity_name'] ?>" />
                                     
                                     <a href="#" class="reset-input">
                                         <i class="fa fa-times" aria-hidden="true"></i>
@@ -485,11 +636,11 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                         </div>
                         <div class="form-group">
                             <label for="" class="label">AMOUNT</label>
-                            <div class="row-input <?php echo $_REQUEST['amount_donated']?'active':'' ?>"> <a href="javascript:void(0);" id="chkAmount" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
+                            <div class="row-input <?php echo $_REQUEST['amount_donated_from'] || $_REQUEST['amount_donated_to']?'active':'' ?>"> <a href="javascript:void(0);" id="chkAmount" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
                                 
                                 <div class="mid-size container-input-search container-input-search-min"
                                 >
-                                    <input type="text" class=" input input-search" id="txtAmount" placeholder="Amount number" name='amount_donated' value="<?php echo $search['amount_donated'] ?>">
+                                    <input type="text" class=" input input-search" id="txtAmount" placeholder="Amount number" name='amount_donated_from' value="<?php echo $search['amount_donated_from'] ?>">
                                     <a href="#" class="reset-input">
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </a>
@@ -497,7 +648,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
 
                                 <div class="mid-size container-to-amount">
                                         
-                                    <input type="text" class="input input-to-amount" id="txtAmount" placeholder="TO" name='amount_donated' value="<?php echo $search['amount_donated'] ?>">
+                                    <input type="text" class="input input-to-amount" id="txtAmount" placeholder="TO" name='amount_donated_to' value="<?php echo $search['amount_donated_to'] ?>">
 
                                     <a href="#" class="reset-input">
                                         <i class="fa fa-times" aria-hidden="true"></i>
@@ -522,17 +673,17 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                         </div>
                         <div class="form-group">
                             <label for="" class="label">VOUCHER NUMBER/S</label>
-                            <div class="row-input <?php echo $_REQUEST['voucher_no']?'active':'' ?>"> <a href="javascript:void(0);" id="chkVoucherNumber" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
+                            <div class="row-input <?php echo $_REQUEST['voucher_no_from'] || $_REQUEST['voucher_no_to']?'active':'' ?>"> <a href="javascript:void(0);" id="chkVoucherNumber" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
                                 
                                 <div class="mid-size container-input-search container-input-search-min">
-                                    <input type="text" class="input input-search" id="txtVoucherNumber" placeholder="Voucher Number" name='voucher_no' value="<?php echo $search['voucher_no'] ?>">
+                                    <input type="text" class="input input-search" id="txtVoucherNumber" placeholder="Voucher Number" name='voucher_no_from' value="<?php echo $search['voucher_no_from'] ?>">
                                     <a href="#" class="reset-input">
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="mid-size container-to-amount">
 
-                                    <input type="text" class=" input input-to-amount" id="txtVoucherNumber" placeholder="TO" name='voucher_no' value="<?php echo $search['voucher_no'] ?>">
+                                    <input type="text" class=" input input-to-amount" id="txtVoucherNumber" placeholder="TO" name='voucher_no_to' value="<?php echo $search['voucher_no_to'] ?>">
                                     <a href="#" class="reset-input">
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </a>
@@ -578,8 +729,10 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                 <!-- /col -->
             </div>
 				<input type="hidden" name="type" value="<?php echo $req_type ?>" />
-                        <input type='hidden' name='startdate' id='startd' value="<?php echo $_REQUEST['startdate'] ?>">
-                        <input type='hidden' name='enddate' id='endd' value="<?php echo $_REQUEST['enddate'] ?>">
+                        <input type='hidden' name='startdate' id='startd' value="<?php echo $search['startdate'] ?>">
+                        <input type='hidden' name='enddate' id='endd' value="<?php echo $search['enddate'] ?>">
+                        <input type='hidden' name='dateType' id='dateType' value="<?php echo $search['dateType'] ?>">
+
 			</form>
             <!-- /dropdown-search -->
         </div>
