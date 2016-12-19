@@ -27,18 +27,17 @@ if ($_REQUEST['page']) {
     $page = 1;
 }
 
-$transactionlist = new TransactionList();
+$transactionlist = new AACRequestList();
 
-$transactionlist->filters[] = 'UserName="' . intval($user->Username) . '" ';
-$transactionlist->filters[] = 'CDNo="PEN" ';
+$transactionlist->filters[] = 'UserName="' . $user->Username . '" ';
+$transactionlist->filters[] = 'Request="Initiate Transfer" AND ResultCode="Pending" ';
 
 
-$transactionlist->sortby = $sort_fieldname;
-$transactionlist->sortorder = $sort_direction;
 $transactionlist->SetPage($page);
 
 $ptl = $transactionlist->ListItems();
 ?>
+<?php /**
 <script type="text/javascript">
     jQuery(document).ready(function () {
         jQuery(document).on('click', '.pending-transaction-row', function () {
@@ -64,6 +63,7 @@ $ptl = $transactionlist->ListItems();
         });
     });
 </script>
+**/?>
 <main class="main-transactions content-desktop main-transactions-pending" >
     <div class="header-fixed visible-xs">
         <header class="header ">
@@ -87,7 +87,7 @@ $ptl = $transactionlist->ListItems();
                         </div><!-- /col -->	
                     </div><!-- /header-mobile-transactions -->
                     <div class="title-transactions-result">
-                        <h3 class="title-transactions">PENDING</h3>
+                        <h3 class="title-transactions">PROCESSING</h3>
                     </div><!-- /title-transactions-result -->
                     <div class="clear"></div>
                 </div><!-- /row  -->	
@@ -111,7 +111,7 @@ $ptl = $transactionlist->ListItems();
         <div class="row">
             <div class="col-xs-12">
                 <div class="container-table">
-                    <h2 class="title-orders">Pending Transactions</h2>
+                    <h2 class="title-orders">Processing Transactions</h2>
                     <?php
                     if (count($ptl) > 0) {
                         //$cnt = 0;
@@ -131,9 +131,9 @@ $ptl = $transactionlist->ListItems();
                                 <?php
                                 foreach ($ptl as $t) {
                                     $data = "";
-                                    $date = date('j-n-y', strtotime($t->DateTime));
-                                    $charity_id = $t->CharityNumber;
-                                    $beneficiary = $t->Name;
+                                    $date = date('j-n-y', $t->RequestDateTime);
+                                    $charity_id = $t->RemoteCharityID;
+                                    $beneficiary = $t->Beneficiary;
                                     $type = 'PEN';
                                     $amount = number_format($t->Amount, 2);
 
@@ -146,11 +146,9 @@ $ptl = $transactionlist->ListItems();
                                       $data .= $row['OfficeComments'] . "||"; 
                                     //if ($i >= ($k - 10) && $i < $k) {
 
-										$data = $t->id;
-										$type='TR';
+									  $data = $t->id;
                                         ?>
-                                        <tr>
-                                            <?php /* <tr class="<?php echo getBalanceColor(number_format($amount, 2)); ?> modal-show pending-transaction-row" data-toggle="modal" data-target="#modal-standing-order-donation" data-id="<?php echo $data; ?>" data-type="<?php echo $type; ?>"> */ ?>
+                                        <tr class="<?php echo getBalanceColor(number_format($amount, 2)); ?> modal-show pending-transaction-row" data-toggle="modal" data-target="#modal-voucher" data-id="<?php echo $data; ?>" data-type="RQ">
                                             <td>
                                                 <a href="javascript:void(0);">
                                                     <div class = "date"><?php echo $date; ?></div>
@@ -168,7 +166,7 @@ $ptl = $transactionlist->ListItems();
                                                             }
                                                             ?>
                                                         </h2>
-                                                        <h3 class="subtitle transaction-type-label"><span><?php echo 'Pending'; //getTransactionType($type); ?></span></h3>
+                                                        <h3 class="subtitle transaction-type-label"><span><?php echo 'Currently being processed'; //getTransactionType($type); ?></span></h3>
                                                     </div>
                                                 </a>
                                             </td>
@@ -213,7 +211,7 @@ $ptl = $transactionlist->ListItems();
 			);
 
 
-			echo UI::makePageNav('transactions-pending.php',$page,$transactionlist->PageCount(),false,$_GET,$pageNavOptions);
+			echo UI::makePageNav('transactions-processing.php',$page,$transactionlist->PageCount(),false,$_GET,$pageNavOptions);
 			?>
         </li></ul>
     </nav><!-- /navigation-transactions -->

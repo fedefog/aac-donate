@@ -18,41 +18,71 @@ User::LoginCheck();
 $user = new User();
 $user = User::GetInstance();
 $fields['Request'] = "General Message";
+/**
 if ($_POST['doAction']) {
+
+
+
     $from = $user->Email;
     $to = $_REQUEST['txtEmail'];
     $subject = 'Achisomoch - Invite Friend';
     $message = $_REQUEST['txtComment'];
 
-    /*echo "From:" . $from . "<br>";
-    echo "To:" . $to . "<br>";
-    echo "Message:" . $message . "<br>";
-    exit;*/
+
 
     if (mail($to, $subject, $message, "From:{$from}\r\n")) {
         UI::Redirect('index.php');
     }
 }
+**/
 ?>
 <script type="text/javascript">
-    function sendInvitation() {
-        if (jQuery('#txtName').val() == "") {
-            jQuery("#modal-quick-donation p").html("Please enter your friend's name.");
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        }
-        if (jQuery('#txtEmail').val() == "") {
-            jQuery("#modal-quick-donation p").html("Please enter your friend's email.");
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        }
-        if (jQuery('#txtComment').val() == "") {
-            jQuery("#modal-quick-donation p").html("Please enter comments.");
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        }
-        jQuery('#myform').submit();
-    }
+    $(document).ready(function(){
+		$('#send-invite').click(function(e){
+			e.preventDefault();
+	
+	        if (jQuery('#txtName').val() == "") {
+	            jQuery("#modal-quick-donation p").html("Please enter your friend's name.");
+	            jQuery("#modal-quick-donation").modal('show');
+				return false;
+	        }
+	        if (jQuery('#txtEmail').val() == "") {
+	            jQuery("#modal-quick-donation p").html("Please enter your friend's email.");
+	            jQuery("#modal-quick-donation").modal('show');
+				return false;
+	        }
+	        if (jQuery('#txtComment').val() == "") {
+	            jQuery("#modal-quick-donation p").html("Please enter comments.");
+	            jQuery("#modal-quick-donation").modal('show');
+				return false;
+	        }
+	        //jQuery('#myform').submit();
+	
+			var formData = $('#myform').serialize();
+	
+	
+			$.ajax({
+				url: 'remote.php?m=user-invite',
+				type: 'post',
+				dataType: 'json',
+				data: formData,
+				success: function(data)
+				{
+					if(data.success) {
+			            jQuery("#modal-quick-donation p").html("Thank you for recommending us.");
+
+						$('#myform input, #myform textarea').val('');
+
+					} else {
+			            jQuery("#modal-quick-donation p").html("An error has occured - please contact support.");
+					}
+	    	        jQuery("#modal-quick-donation").modal('show');
+				}
+			});		
+
+	    });		
+
+    });
 </script>
 <main class="main-transactions main-invite-a-friend content-desktop">
 
@@ -167,7 +197,7 @@ if ($_POST['doAction']) {
 
                         <label for="" class="label">FRIEND’S NAME</label>
 
-                        <input type="text" class="form-control input-text" id="txtName" name="txtName" placeholder="Enter your friend’s name" >
+                        <input type="text" class="form-control input-text" id="txtName" name="fields[FriendName]" placeholder="Enter your friend’s name" >
 
                     </div><!-- /form-group -->
 
@@ -175,7 +205,7 @@ if ($_POST['doAction']) {
 
                         <label for="" class="label">FRIEND’S EMAIL ADDRESS</label>
 
-                        <input type="text" class="form-control input-text " id="txtEmail" name="txtEmail" placeholder="Enter your friend’s email address" >
+                        <input type="text" class="form-control input-text " id="txtEmail" name="fields[FriendEmail]" placeholder="Enter your friend’s email address" >
 
                     </div><!-- /form-group -->
 
@@ -187,14 +217,14 @@ if ($_POST['doAction']) {
 
                         <label for="" class="label">COMMENTS</label>
 
-                        <textarea cols="30" rows="10" class="comment-textarea " id="txtComment" name="txtComment" placeholder="Enter any text that you'd like to pass on"></textarea>
+                        <textarea cols="30" rows="10" class="comment-textarea " id="txtComment" name="fields[Comments]" placeholder="Enter any text that you'd like to pass on"></textarea>
 
                     </div><!-- /form-group -->
 
                 </div><!-- /col -->
 
                 <div class="col-xs-12 col-md-12">
-                    <a href="#" onclick="sendInvitation();" class="send-invite transition">Send Invite</a>
+                    <a href="#" id="send-invite" class="send-invite transition">Send Invite</a>
                 </div>
                 <input type="hidden" name="doAction" value="save" />
             </div><!-- /row -->

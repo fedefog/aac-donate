@@ -18,8 +18,6 @@ function navigator_scroll( ) {
 /* inizialization */
 var url = 'dashboard.php';
 var transaction = 'transactions-all.php';
-// AACDESING //
-var voucher = 'vouchers.php';
 var standing = 'standing-orders-current.php';
 // Navigation sidebar 
 $(document).on('click', '.nav-icon4', function (event) {
@@ -34,15 +32,6 @@ $(document).on('click', '.layer-navigator', function (event) {
     $('.nav-icon4').removeClass('open');
     $('body').removeClass('menu-mobile-open');
 });
-<<<<<<< HEAD
-$(document).on('click', '.close-notification', function (event) {
-    event.preventDefault( );
-    
-    $(this).parent().hide();
-    $('body').removeClass('has-notification');
-});
-=======
->>>>>>> 0c1539453bf5ab7b910a53c32b7b1941c6ff8722
 $(document).on('click', '.close-nav', function (event) {
     event.preventDefault( );
     $('.nav-icon4').toggleClass('open');
@@ -60,8 +49,8 @@ $(document).on('click', '.add-notes', function (event) {
 $(document).on('click', '.lkn-sortby , .sort-back', function (event) {
     event.preventDefault( );
     $('.dropdown-search').hide();
-    $(this).parent().find('.drop-down-sort').toggleClass('active');
-    $(this).parent().find('.sort-back').toggleClass("in");
+    $('.drop-down-sort').toggleClass('active');
+    $('.sort-back').toggleClass("in");
 });
 $(document).on('click', '.sortby-lkn', function (event) {
     event.preventDefault( );
@@ -83,75 +72,41 @@ $(document).on('click', '.nav-transactions-li', function (event) {
     $('.dropdown-search').hide();
 });
 
-$(document).on('click', '.sortby-lkn', function (event) { //sort by link
+$(document).on('click', '.sortby-lkn', function (event) {
     event.preventDefault( );
     if ($('.drop-down-sort').hasClass('active') === true) {
         $('.drop-down-sort').removeClass('active');
     }
 });
 
-$(document).on('blur', '.ldate-lkn.page', function (event) {
+$(document).on('blur', '.lkn-sortby', function (event) {
     event.preventDefault( );
-    if ($(this).parent().find('.drop-down-sort').hasClass('active') === true) {
-        $(this).parent().find('.drop-down-sort').removeClass('active');
+    if ($('.drop-down-sort').hasClass('active') === true) {
+        $('.drop-down-sort').removeClass('active');
     }
 });
-// AACDESING //
+
 $(document).on('focus', '.input-to-amount', function (event) {
-    if ( $(this).val( ) != ''){
-       var res = $(this).val( );
-       res = res.slice(3);
-       $(this).val( res );
-      
-    }
-    
-});
-$(document).on('click', '.reset-input', function (event) {
-    
-    event.preventDefault( );
-    
-    $( this ).parent( ).find('.input-to-amount,.input-search').val ( '' );
-    $( this ).parent( ).find('.input-to-amount,.input-search').focus();
-    
-    $(this).hide();
 
-
-
+   var res = $(this).val( );
+   res = str.slice(3);
+   $(this).val( res );
 });
 $(document).on('blur', '.input-to-amount', function (event) {
     event.preventDefault( );
     
-        if ( $(this).val( ) != '') {
-            var txt = $(this).val();
+    
+        
+    
+        var txt = $(this).val();
 
-            $(this).val( 'TO ' + txt );
-            $( this ).parent( ).find('.reset-input').show ( );
-        }else {
-            
-            $( this ).parent( ).find('.reset-input').hide ( );
-        }
-
+        $(this).val( 'TO ' + txt );
     
 });
-$(document).on('blur', '.input-search', function (event) {
-    event.preventDefault( );
-    
-        if ( $(this).val( ) != '') {
-            
-            $( this ).parent( ).find('.reset-input').show ( );
 
-        }else {
-            
-            $( this ).parent( ).find('.reset-input').hide ( );
-        }
-
-    
-});
-// END AACDESING //
 load_js();
 /* Ajax navigation */
 // STANDING ORDERS NAV
-/**
 $(document).on('click', '.nav-standing-orders-li a', function (event) {
     event.preventDefault(); // stop the browser from following the link  
     if ($(this).attr('href') == standing) {
@@ -175,37 +130,10 @@ $(document).on('click', '.nav-standing-orders-li a', function (event) {
         }, 2000);
     }
 });
-**/
-// AACDESING  VOUCHER BOOKS NAV //
-$(document).on('click', '.navigator-voucher-books a', function (event) {
-    event.preventDefault(); // stop the browser from following the link  
-    if ($(this).attr('href') == voucher) {
-        // do nothing 
-    } else {
-        progress_bar();
-        $("#myBar").addClass("visible"); // Loading bar visibility 
-        $('.nav-mobile').removeClass("open");
-        var thisnav = $(this);
-        voucher = $(this).attr('href');
-        $("html, body").animate({scrollTop: 0}, "fast"); // Animation to top of window
-        setTimeout(function () {
-            $('.ajax-voucher-books').load(voucher, function () {
-                $('.ajax-voucher').css({opacity: 0}).fadeTo(400, 1);//Efect fade
-                $('.navigator-voucher-books a').removeClass('selected')
-                $(thisnav).addClass('selected');
-                $("#myBar").removeClass("visible");  // fadeout of the bar loading 
-                load_js()
-                sticky_footer();
-            }); // load the html response into a DOM element
-        }, 2000);
-    }
-});
-
 // TRANSACTIONS NAV
-$(document).on('click', '.nav-standing-orders-li a,.ajaxlink, .clear-all-filters a, .filter-selected a, .dropdown-dates a.page, .nav-transactions a, .transaction_page_desktop a,.transaction_page_mobile a', function (event) {
+$(document).on('click', '.nav-transactions a, .transaction_page_desktop a,.transaction_page_mobile a', function (event) {
     event.preventDefault(); // stop the browser from following the link  
-
-    if ($(this).attr('href') == transaction && false) {
+    if ($(this).attr('href') == transaction) {
         // do nothing 
     } else {
         progress_bar();
@@ -214,26 +142,24 @@ $(document).on('click', '.nav-standing-orders-li a,.ajaxlink, .clear-all-filters
         var thisnav = $(this);
         transaction = $(this).attr('href');
 
-        //search in selected tab
-       
+		//search in selected tab
+		
+		console.log($('.nav-transactions .active').attr('href'));		
 
-		var tabQS='';
-
-		if($('.nav-transactions-li .active').length) {
-        	tabQS = $('.nav-transactions-li .active').attr('href').split('?')[1];
-        	if(tabQS && typeof(tabQS) != 'undefined') transaction += '&'+tabQS;
-        }
-        /////////////////
+		var tabQS = $('.nav-transactions-li .active').attr('href').split('?')[1];
+		if(tabQS && typeof(tabQS) != 'undefined') transaction += '&'+tabQS;
+		console.log(tabQS);
+		/////////////////
 
         $("html, body").animate({scrollTop: 0}, "fast"); // Animation to top of window
         setTimeout(function () {
             // $('body').removeClass('menu-mobile-open');
 
-            var formData = null;
+			var formData = null;
 
             $('#main-container').load(transaction, formData, function () {
                 $('.ajax-transaction').css({opacity: 0}).fadeTo(400, 1);//Efect fade
-                $(thisnav).parent().parent().find('a').removeClass('active');
+				$(thisnav).parent().parent().find('a').removeClass('active');
                 //$('.nav-transactions a').removeClass('active');
                 $(thisnav).addClass('active');
                 $("#myBar").removeClass("visible");  // fadeout of the bar loading 
@@ -244,16 +170,7 @@ $(document).on('click', '.nav-standing-orders-li a,.ajaxlink, .clear-all-filters
     }
 });
 
-
-
 //search
-$(document).on('click', '.custom-date-go', function (event) {
-    event.preventDefault(); // stop the browser from following the link  
-	$('#startd').val($('#customstartdate').val());
-	$('#endd').val($('#customenddate').val());
-	$('#dateType').val('custom');
-	$('.btn-search').click();
-});
 
 $(document).on('click', '.btn-search, .btn-success', function (event) {
     event.preventDefault(); // stop the browser from following the link  
@@ -286,27 +203,13 @@ $(document).on('click', '.btn-search, .btn-success', function (event) {
     }	
 });
 
-// AACDESING SORT by
-$(document).on('click', '.date-lkn.page', function (event) {
-    $('.date-lkn').removeClass('selected');
-    $('.custom-range-container').removeClass("active");
-    if ($(this).hasClass('selected') === true) {
-        $(this).removeClass('selected');
-    } else {
-        $(this).addClass('selected');
-    }
-    $('.navigator-transactions-lkn .dates_text_selected').text($(this).text())
-});
-$(document).on('click', '.sortby-lkn', function (event) {
+// SORT by
+$(document).on('click', '.sortby-li a', function (event) {
     
     $('.navigator-transactions-lkn .text').text($(this).text())
-});
-$(document).on('click', '.custom-range-lkn', function (event) {
-    $('.date-lkn').removeClass('selected');
-    $('.custom-range-container').addClass("active");
-});
-// END AACDESING
-$(document).on('click', '.sort-transactions a, .navigator-transactions-sortby .reset-sort', function (event) {
+}
+);
+$(document).on('click', '.sort-transactions a', function (event) {
     event.preventDefault(); // stop the browser from following the link  
     if ($(this).attr('href') == transaction) {
         // do nothing 
@@ -381,7 +284,6 @@ $(document).on('click', '.dashboard-li a, .external-lkn,  .anim-li a, .pending-b
         url = $(this).attr('href');
         setTimeout(function () {
             $('body').removeClass('menu-mobile-open');
-			$('#main-container-back').attr('id','main-container-history');
 			$('#main-container').hide();
 			$('#main-container').attr('id','main-container-back');
 			$('#main-container-history').show();
@@ -568,15 +470,9 @@ function load_js() {
          $(this).parent().addClass('active');
          }
          });*/
-
         $('.input').focus(function (event) {
             event.preventDefault( );
-            $(this).parent().parent().addClass('active');
-        });
-       $('.input').blur(function (event) {
-            event.preventDefault( );
-			if($(this).val()) return;
-            $(this).parent().parent().removeClass('active');
+            $(this).parent().addClass('active');
         });
 
         /*if ($('.checkbox-input').parent().hasClass('active'))
@@ -647,10 +543,6 @@ function load_js() {
         $('#checkbox-automatic-login').on('switchChange.bootstrapSwitch', function (event, state) {
             $('.default-login').slideToggle();
         });
-		        $('.switch-settings-sms').on('switchChange.bootstrapSwitch', function (event, state) {
-						var me = $(this).val();
-			            $('#'+me).slideToggle();
-			    });		
         $('.standing-order-switch').on('switchChange.bootstrapSwitch', function (event, state) {
             $('.standing-order-switch-container').toggleClass("active");
             $('.standing-order-switch-container .btn-group, .standing-order-switch-container .btn').toggleClass("disabled");
@@ -704,7 +596,6 @@ function load_js() {
                     event.preventDefault( );
                     // if order vouchers buton is disabled, prevent default even
                 });
-	/**
         $('.send-invite').click(
                 function (event) {
                     event.preventDefault( );
@@ -728,7 +619,6 @@ function load_js() {
                         setTimeout(show_msj_ok, 1000);
                     }
                 });
-		**/
         $(".switch-account .dropdown-menu .text").lettering('words');
         var options = {};
         /*var start = moment().subtract(18, 'month');
@@ -738,46 +628,19 @@ function load_js() {
             var start = moment().subtract(18, 'month');
             var end = moment();
 
-            //$('#startd').attr('value', start.format('DD-MM-YYYY'));
-            //$('#endd').attr('value', end.format('DD-MM-YYYY'));
+            $('#startd').attr('value', start.format('DD-MM-YYYY'));
+            $('#endd').attr('value', end.format('DD-MM-YYYY'));
         } else {
             var start = $('#startd').val();
             var end = $('#endd').val();
         }
-
-
         /*var sd = $('#startd').val();
          var ed = $('#endd').val();*/
-
-        // AACDESING
-        $('input[name="customstartdate"]').daterangepicker({
-            locale: {
-                format: 'DD-MM-YYYY'
-            },
-            singleDatePicker: true,
-            "showDropdowns": true,
-            "opens": "left",
-            "drops": "up",
-            "autoApply": true,
-            startDate: start
-        });
-        $('input[name="customenddate"]').daterangepicker({
-            locale: {
-                format: 'DD-MM-YYYY'
-            },
-            singleDatePicker: true,
-            "showDropdowns": true,
-            "opens": "left",
-            "drops": "up",
-            "autoApply": true,
-            startDate: end
-        });
 
         $('#dates-bt-modal, #config-date').daterangepicker({
             locale: {
                 format: 'DD-MM-YYYY'
             },
-            "showDropdowns": true,
             startDate: start,
             endDate: end
         });
@@ -789,14 +652,10 @@ function load_js() {
             }, 20);
             $(".daterangepicker").addClass("calendar-visible");
         });
-        $('.custom-range-container input').on('show.daterangepicker', function (ev, picker) {
-            $('.dropdown-search').hide();
-            $(".daterangepicker").addClass("calendar-visible");
-        });
-        $('#dates-bt-modal, #config-date, .custom-range-container input').on('showCalendar.daterangepicker', function (ev, picker) {
+        $('#dates-bt-modal, #config-date').on('showCalendar.daterangepicker', function (ev, picker) {
             $(".calendar.right tbody").remove();
         });
-        $('#dates-bt-modal, #config-date, .custom-range-container input').on('apply.daterangepicker', function (ev, picker) {
+        $('#dates-bt-modal, #config-date').on('apply.daterangepicker', function (ev, picker) {
             var value = picker.startDate.format('YYYY-MM-DD') + ' to ' + picker.endDate.format('YYYY-MM-DD');
             var searchDate = $('#config-date').val();
             var str = new String('"' + searchDate + '"');
@@ -811,25 +670,14 @@ function load_js() {
             //window.location.replace('transactions-all.php?startdate=' + startdate + '&&enddate=' + enddate);
             $('#startDate').trigger('click');
         });
-        $('#dates-bt-modal, #config-date, .custom-range-container input').on('cancel.daterangepicker', function (ev, picker) {
+        $('#dates-bt-modal, #config-date').on('cancel.daterangepicker', function (ev, picker) {
             $(".date-back").remove();
         });
-        $('#dates-bt-modal, #config-date, .custom-range-container input').on('hide.daterangepicker', function (ev, picker) {
+        $('#dates-bt-modal, #config-date').on('hide.daterangepicker', function (ev, picker) {
             $(".date-back").remove();
             $(".daterangepicker").removeClass("calendar-visible");
         });
-        $('input[name="customstartdate"]').on('apply.daterangepicker', function (ev, picker) {
-            startdate = picker.startDate.format('DD/MM/YYYY')
-            //alert(startdate);
-        });
-        // AACDESING END
-        $('input[name="customenddate"]').on('apply.daterangepicker', function (ev, picker) {
-            enddate = picker.endDate.format('DD/MM/YYYY')
-            var date_complete = startdate + ' - ' + enddate;
-            $('.dropdown-dates').removeClass('active');
-            $('.navigator-transactions-lkn .dates_text_selected').html(date_complete);
-            //alert(enddate);
-        });
+
         $('#Amount').focusout(function (event) {
              $('.confirmation-amount-error').hide();
 
@@ -972,7 +820,6 @@ function load_js() {
         });
 
         /* Save Settings Form*/
-		/**
         $('.lkn-save').click(function (event) {
             event.preventDefault( );
             //alert('save setting');
@@ -981,7 +828,6 @@ function load_js() {
                 //redirectUrl('settings.php');
             }
         });
-		**/
     }
     );
 
@@ -1035,17 +881,3 @@ function redirectUrl(str) {
 $(document).on('click', '.form-modal-search a.checkbox-input', function (event) {
 	$(this).parent().find('input,select').val('');
 });
-
-		function loadpage(url) {
-				progress_bar();
-			    $('body').removeClass('modal-open');
-			    $("#myBar").addClass("visible"); // Loading bar visibility 
-			    $('.nav-mobile').removeClass("open");
-			
-				$('#main-container').load(url, function () {
-			                $('#main-container').css({opacity: 0}).fadeTo(400, 1);//Efect fade
-			                $("#myBar").removeClass("visible");  // fadeout of the bar loading 
-			                load_js();
-			                sticky_footer();
-			    });	
-			}

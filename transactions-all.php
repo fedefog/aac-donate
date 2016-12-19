@@ -3,6 +3,7 @@ if(basename($_SERVER['PHP_SELF']) =='transactions-all.php') {
 	die('call direct error');
 }
 ?>
+<?php /**
 <script type="text/javascript">
     jQuery(document).ready(function () {
 
@@ -75,6 +76,28 @@ if(basename($_SERVER['PHP_SELF']) =='transactions-all.php') {
         });
     }
 </script>
+**/ ?>
+<script>
+    function cancelStandingOrder(id)
+    {
+        BootstrapDialog.show({
+            message: 'Are you sure you want to cancel this standing order?',
+            buttons: [{
+                    label: 'Confirm',
+                    cssClass: 'btn-primary',
+                    action: function (dialogItself) {
+                        cancelOrder(id);
+                        dialogItself.close();
+                    }
+                }, {
+                    label: 'Cancel',
+                    action: function (dialogItself) {
+                        dialogItself.close();
+                    }
+                }]
+        });
+    }
+</script>
 <?php
 
 $tl = $transactionlist->ListItems();
@@ -103,7 +126,6 @@ if (count($tl) < 1) {
     ?>
     <table class="table-transactions table table-condensed">
         <thead class="hidden-xs "> 
-            <!-- AACDESING -->
             <tr>
                 <th>DATE</th>
                 <th>DESCRIPTION</th>
@@ -112,7 +134,6 @@ if (count($tl) < 1) {
                 <th class="hidden-xs">TYPE</th>
                 <th class="hidden-xs">ACTION</th>
             </tr>
-            <!-- END AACDESING -->
         </thead>						
         <tbody>
             <?php
@@ -139,7 +160,7 @@ if (count($tl) < 1) {
                         $modal_name = "";
                     }
 
-                    $type = $t->description;
+                    $type = $t->TransactionDescription;
 
                     $data .= $t->id . "||";
                     $data .= $t->Name . "||";
@@ -154,9 +175,13 @@ if (count($tl) < 1) {
                     if ($t->Voucher && substr($t->Voucher, 0, 1) == '9') {
                         $status = 'online request';
                     }
+					
+					$data = $t->id;
+					$modal_name = "#modal-voucher";
+
                     //if ($i >= ($k - 10) && $i < $k) {
                         ?>
-                        <tr class="<?php echo getBalanceColor(number_format($t->Amount, 2)); ?> transaction_all-row" data-id="<?php echo $data; ?>" data-type="<?php echo $t->CDNo; ?>">
+                        <tr class="<?php echo getBalanceColor(number_format($t->Amount, 2)); ?> transaction_all-row" data-id="<?php echo $data; ?>" data-type="TR">
                             <?php /* <tr class="<?php echo $balance_color; ?> modal-show transaction_all-row" data-toggle="modal" data-target="<?php echo $modal_name; ?>" data-id="<?php echo $data; ?>" data-type="<?php echo $rows1[$i]['cd_no']; ?>"> */ ?>
                             <td class="modal-show" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
                                 <a href="javascript:void(0);">
@@ -184,11 +209,10 @@ if (count($tl) < 1) {
                                     </span>
                                 </a>
                             </td>
-                            <!-- AACDESING -->
                             <td class="modal-show comments-td hidden-xs" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
                                 <a href="javascript:void(0);">
                                         <?php /* echo showBalance($balanceAmt); */?>
-                                        <p>Comments goes here from the user to the Charity..</p>
+                                        <p><?php echo $t->client_comment ?></p>
                                 </a>
                             </td>
                             <td class="type-td transaction-type-label modal-show" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
@@ -214,7 +238,6 @@ if (count($tl) < 1) {
                               }
                               ?>
                               </td>
-                              <!-- END AACDESING -->
                     <input type="hidden" name="vchnumber" class="vch-number" value="<?php echo $t->Voucher; ?>">
                     </tr>
                     <?php
@@ -245,6 +268,7 @@ if (count($tl) < 1) {
 				'PageNumSeperator'=>'</li><li>',
 				'UseJavascriptFunction'=>'',
 			);
+
 
 			echo UI::makePageNav('transactions.php',$page,$transactionlist->PageCount(),false,$_GET,$pageNavOptions);
 			?>

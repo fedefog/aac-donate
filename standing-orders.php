@@ -1,4 +1,6 @@
-
+<?php
+if(!$type) $type = $_REQUEST['type']?$_REQUEST['type']:'current';
+?>
 <main class="standing-orders content-desktop" >
 
     <div class="header-fixed visible-xs">
@@ -47,13 +49,13 @@
 
                             <li class="nav-standing-orders-li">
 
-                                <a href="standing-orders-current.php" class="nav-standing-orders-lkn active">CURRENT</a>
+                                <a href="standing-orders.php" class="nav-standing-orders-lkn active">CURRENT</a>
 
                             </li>
 
                             <li class="nav-standing-orders-li">
 
-                                <a href="standing-orders-previous.php" class="nav-standing-orders-lkn">PREVIOUS</a>
+                                <a href="standing-orders.php?type=previous" class="nav-standing-orders-lkn">PREVIOUS</a>
 
                             </li>
 
@@ -87,13 +89,13 @@
 
                     <li class="nav-standing-orders-li">
 
-                        <a href="standing-orders-current.php" id='current' class="nav-standing-orders-lkn active">CURRENT</a>
+                        <a href="standing-orders.php" id='current' class="nav-standing-orders-lkn <?php echo $type=='current'?'active':'' ?>">CURRENT</a>
 
                     </li>
 
                     <li class="nav-standing-orders-li">
 
-                        <a href="standing-orders-previous.php" id='previous' class="nav-standing-orders-lkn">PREVIOUS</a>
+                        <a href="standing-orders.php?type=previous" id='previous' class="nav-standing-orders-lkn <?php echo $type=='previous'?'active':'' ?>">PREVIOUS</a>
 
                     </li>
 
@@ -120,7 +122,7 @@
             <div class="col-xs-12">
 
                 <div class="container-table ajax-standing">
-                    <?php include 'standing-orders-current.php'; ?>
+                    <?php include 'standing-orders-all.php'; ?>
                 </div><!-- /container-table -->
 
             </div><!-- /col -->
@@ -226,13 +228,13 @@
 
 
 
-<? include 'inc/online-donation-modal.php' ?>
-<? include 'inc/give-as-you-earn-modal.php' ?>
-<? include 'inc/giftaid-rebate-modal.php' ?>
-<? include 'inc/comision-modal.php' ?>
-<? include 'inc/voucher-book-modal.php' ?>
-<? include 'inc/voucher-modal.php' ?>
-<? include 'inc/standing-order-donation.php' ?>
-<? include 'inc/company-donation-modal.php' ?>
-<? include 'inc/current-standing-order-modal.php' ?>
-<? include 'inc/previous-standing-order-modal.php' ?>
+<? //include 'inc/online-donation-modal.php' ?>
+<? //include 'inc/give-as-you-earn-modal.php' ?>
+<? //include 'inc/giftaid-rebate-modal.php' ?>
+<? //include 'inc/comision-modal.php' ?>
+<? //include 'inc/voucher-book-modal.php' ?>
+<? //include 'inc/voucher-modal.php' ?>
+<? //include 'inc/standing-order-donation.php' ?>
+<? //include 'inc/company-donation-modal.php' ?>
+<? //include 'inc/current-standing-order-modal.php' ?>
+<? //include 'inc/previous-standing-order-modal.php' ?>

@@ -14,11 +14,27 @@ jQuery(document).ready(function () {
     jQuery(document).on('click', '.results li', function () {
        jQuery('#hidden_allow').val('1');
     });
-    jQuery(document).on('click', '.dashboard-row', function () {
+    jQuery(document).on('click', '.dashboard-row, .transaction_all-row, .transaction_history-row, .pending-transaction-row, .standing-orders ', function () {
         var modal_data = jQuery(this).data('id');
         var modal_type = jQuery(this).data('type');
-        var row_arr = modal_data.split('||');
+        //var row_arr = modal_data.split('||');
 
+		if(typeof(modal_data)=='undefined') return;
+
+		$('#modal-voucher .modal-body').html('loading...');
+		
+		$.ajax({
+			url: 'remote.php?m=get-popup-dialog&id='+modal_data+'&dialog_type='+modal_type,
+			type: 'post',
+			dataType: 'html',
+			data: null,
+			success: function(data)
+			{
+				$('#modal-voucher .modal-body').html(data);
+			}
+		});
+
+		/**
         if (modal_type == "VO" || modal_type == "NV"  || modal_type == "PEN" ) {
             jQuery('#vo_mdl_beneficiary').html('');
             jQuery('#vo_mdl_beneficiary').html(row_arr[1]);
@@ -60,6 +76,7 @@ jQuery(document).ready(function () {
             jQuery('#mdl_date').html(row_arr[2]);
             jQuery("#lnk_donate_again").attr('href', 'make-a-donation.php?charity_id=' + row_arr[11]);
         }
+		**/
     });
 });
 var currencyWarningShown = false;

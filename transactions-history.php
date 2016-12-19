@@ -6,6 +6,7 @@ require_once 'cls/users.cls.php';
 require_once 'cls/vouchers.cls.php';
 require_once 'cls/charities.cls.php';
 require_once 'cls/aac_requests.cls.php';
+require_once 'cls/ui.cls.php';
 require_once 'inc/funcs.inc.php';
 
 session_start();
@@ -41,7 +42,18 @@ $search_array = array();
 $search = $charity_id;
 $field = 't.CharityNumber';
 $search_array[] = array($field, '=', $search);
-$tl = $transactionlist->getTransactionListSearch($user->id, $search_array);
+//$tl = $transactionlist->getTransactionListSearch($user->id, $search_array);
+
+
+$transactionlist = new TransactionList();
+
+$transactionlist->filters[] = 'UserName="' . intval($user->Username) . '" ';
+$transactionlist->filters[] = 'CharityNumber="' . $charity_id . '" ';
+$transactionlist->SetPage($page);
+
+$tl = $transactionlist->listitems();
+
+
 /* for ($i = 0; $i < count($tl); $i++) {
   $rows1[$i]['id'] = $tl[$i]->id;
   $rows1[$i]['user_id'] = $tl[$i]->Username;
@@ -67,7 +79,7 @@ $tl = $transactionlist->getTransactionListSearch($user->id, $search_array);
     jQuery(document).ready(function () {
         jQuery('#export_csv').attr("href", "<?php echo $url . $param; ?>");
         jQuery('#export_xls').attr("href", "<?php echo $url1 . $param; ?>");
-
+/**
         jQuery(document).on('click', '.transaction_history-row', function () {
             var modal_data = jQuery(this).data('id');
             var modal_type = jQuery(this).data('type');
@@ -114,6 +126,7 @@ $tl = $transactionlist->getTransactionListSearch($user->id, $search_array);
                 jQuery("#lnk_donate_again").attr('href', 'make-a-donation.php?charity_id=' + row_arr[8]);
             }
         });
+	**/
     });
 </script>
 <main class="main-transactions main-transactions-history content-desktop" >
@@ -166,52 +179,6 @@ $tl = $transactionlist->getTransactionListSearch($user->id, $search_array);
         <div class="row">
             <div class="col-xs-12">
 
-                <!-- AACDESIGN -->
-
-                <div class="container-table">
-               
-                   <table class="table-transactions table table-condensed">
-                        <thead class="hidden-xs "> 
-                            <tr>
-                                <th>DATE</th>
-                                <th>AMOUNT</th>
-                                <th>TYPE</th>
-                                <th>COMMENTS</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="balance-down">
-                                <td data-toggle="modal" data-target="#modal-standing-order-donation" >
-                                    <a href="#" >
-                                        <div class="date">1-7-16</div>
-                                    </a>
-                                </td>
-                                <td class="desktop-align-center" data-toggle="modal" data-target="#modal-standing-order-donation" >
-                                    <a href="#" >
-                                        <span class="balance-transition">
-                                            £ 990.00
-                                            <i class="fa fa-caret-up" aria-hidden="true"></i>
-                                            <i class="fa fa-caret-down" aria-hidden="true"></i>
-                                        </span>
-                                    </a>
-                                </td>
-                                <td class="type-td transaction-type-label modal-show" data-toggle="modal" data-target="#modal-standing-order-donation">
-                                    <p class="type-transactions">Standing Order</p>
-                                </td>
-                                <td class="modal-show comments-td hidden-xs" data-toggle="modal" data-target="#modal-standing-order-donation">
-                                    <a href="javascript:void(0);">
-                                            <p>Comments goes here from the user to the Charity..</p>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-                
-                </div><!-- /container-table -->
-
-                <!-- END AACDESIGN -->
-
                 <?php
                 if (count($tl) < 1) {
                     ?>
@@ -233,17 +200,21 @@ $tl = $transactionlist->getTransactionListSearch($user->id, $search_array);
                     <?php
                 } else {
                     ?>
-                    <div class="container-table">
-                        <table class="table-transactions table table-condensed">
-                            <thead class="hidden-xs "> 
-                                <tr>
-                                    <th>DATE</th>
-                                    <!--<th class="desktop-align-left">ID</th>-->
-                                    <th>CHARITY</th>
-                                    <th>AMOUNT</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+
+                <!-- AACDESIGN -->
+
+                <div class="container-table">
+               
+                   <table class="table-transactions table table-condensed">
+                        <thead class="hidden-xs "> 
+                            <tr>
+                                <th>DATE</th>
+                                <th>AMOUNT</th>
+                                <th>TYPE</th>
+                                <th>COMMENTS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                                 <?php
                                 if ($tl) {
                                     //$cnt = 0;
@@ -286,108 +257,75 @@ $tl = $transactionlist->getTransactionListSearch($user->id, $search_array);
                                         if ($t->Voucher && substr($t->Voucher, 0, 1) == '9') {
                                             $status = 'online request';
                                         }
-                                        if ($i >= ($k - 10) && $i < $k) {
                                             ?>
-                                            <tr class="modal-show transaction_history-row" data-toggle="modal" data-target="<?php echo $modal_name; ?>" data-id="<?php echo $data; ?>" data-type="<?php echo $t->CDNo; ?>">
-                                                <td>
-                                                    <a href="javascript:void(0);" >
-                                                        <div class="date"><?php echo date('j-n-y', strtotime($t->DateTime)); ?></div>
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a href="javascript:void(0);" >
-                                                        <div class="desc-table">
-                                                            <h2 class="title"><?php echo $t->Description; ?></h2>
-                                                            <h3 class="subtitle transaction-type-label"><?php echo $type; ?></h3>
-                                                        </div><!-- /desc-table -->
-                                                    </a>
-                                                </td>
-                                                <!--<td class="hidden-xs"></td>-->
-                                                <td class="desktop-align-center <?php echo getBalanceColor(number_format($t->Amount, 2)); ?>">
-                                                    <a href="javascript:void(0);" >
-                                                        <span class="balance-transition">
-                                                            <?php echo showBalance($t->Amount); ?>
-                                                            <i class="fa fa-caret-up" aria-hidden="true"></i>
-                                                            <i class="fa fa-caret-down" aria-hidden="true"></i>
-                                                        </span>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <?php
-                                        }
+                            <!--<tr class="modal-show transaction_history-row" data-toggle="modal" data-target="<?php echo $modal_name; ?>" data-id="<?php echo $data; ?>" data-type="<?php echo $t->CDNo; ?>">-->
+                            <tr class="balance-down">
+                                <td data-toggle="modal" data-target="#modal-standing-order-donation" >
+                                    <a href="#" >
+                                        <div class="date"><?php echo date('j-n-y', strtotime($t->DateTime)); ?></div>
+                                    </a>
+                                </td>
+                                <td class="desktop-align-center" data-toggle="modal" data-target="#modal-standing-order-donation" >
+                                    <a href="#" >
+                                        <span class="balance-transition">
+                                            <?php echo showBalance($t->Amount); ?>
+                                            <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                                <td class="type-td transaction-type-label modal-show" data-toggle="modal" data-target="#modal-standing-order-donation">
+                                    <p class="type-transactions"><?php echo $type; ?></p>
+                                </td>
+                                <td class="modal-show comments-td hidden-xs" data-toggle="modal" data-target="#modal-standing-order-donation">
+                                    <a href="javascript:void(0);">
+                                            <p>Comments goes here from the user to the Charity..</p>
+                                    </a>
+                                </td>
+                            </tr>
+							   <?php
                                         $i++;
                                     }
                                     //$cnt = $k - 1;
                                 }
                                 ?>
+                        </tbody>
+
+                    </table>
+                
+                </div><!-- /container-table -->
+
+                <!-- END AACDESIGN -->
+
+                                         
                             </tbody>
                         </table>
 
                     </div><!-- /container-table -->
-                    <nav class="navigation-transactions hidden-xs" aria-label="Page navigation  ">
-                        <ul class="pagination nav-transactions">
-                            <?php
-                            $class = "class='pag-active page external-lkn'";
-                            $class1 = "class='page external-lkn'";
-                            /* $class = "class='pag-active page'";
-                              $class1 = "class='page'"; */
-                            $parameter = '&charityId=' . $charity_id;
-                            if (isset($n)) {
-                                $total_row = $n;
-                            } else {
-                                $total_row = count($tl);
-                            }
-                            $per_page = 10;
-                            $total_page = ceil($total_row / $per_page);
-                            if ($total_page > 1) {
-                                ?>
-                                <li>
-                                    <?php if ($page > 1) { ?>
-                                        <a href="transactions-history.php?page=<?php
-                                        echo $page - 1;
-                                        echo $parameter;
-                                        ?>" class='page external-lkn' aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    <?php } ?>
-                                </li>
-                                <li><a href="transactions-history.php?page=1<?php echo $parameter; ?>" <?php
-                                    if ($page == 1)
-                                        echo $class;
-                                    else
-                                        echo $class1;
-                                    ?> id="page1">1</a></li>
-                                       <?php
-                                       for ($i = 2; $i <= $total_page; $i++) {
-                                           ?>
-                                    <li><a href="transactions-history.php?page=<?php
-                                        echo $i;
-                                        echo $parameter;
-                                        ?>" 
-                                           <?php
-                                           if ($i == $page)
-                                               echo $class;
-                                           else
-                                               echo $class1;
-                                           ?> ><?php echo $i; ?> </a></li>
-                                        <?php
-                                    }
-                                    ?>
-                                <li>
-                                    <?php if ($page < $total_page) { ?>
-                                        <a href="transactions-history.php?page=<?php
-                                        echo $page + 1;
-                                        echo $parameter;
-                                        ?>" class='page external-lkn' aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    <?php } ?>
-                                </li>
-                                <?php
-                            }
-                            ?>
-                        </ul>
-                    </nav><!-- /navigation-transactions -->
+    <nav class="navigation-transactions hidden-xs" aria-label="Page navigation  ">
+        <ul class="pagination nav-transactions"><li>
+            <?php
+
+			$pageNavOptions  = array(
+				'NoItemsText'=>'',
+				'MaxVisiblePageNums'=>5,
+				'PrevPageText'=>'&laquo;',
+				'NextPageText'=>'&raquo;',
+				'FirstPageText'=>'',
+				'LastPageText'=>'',
+				'ShowAllText'=>'',
+				'ShowAllAlign'=>'',
+				'LeadingText'=>'',
+				'SuffixText'=>'',
+				'PageNumSeperator'=>'</li><li>',
+				'UseJavascriptFunction'=>'',
+			);
+
+
+			echo UI::makePageNav('transactions-history.php',$page,$transactionlist->PageCount(),false,$_GET,$pageNavOptions);
+			?>
+        </li></ul>
+    </nav><!-- /navigation-transactions -->
                     <?php
                 }
                 ?>
@@ -475,11 +413,11 @@ $tl = $transactionlist->getTransactionListSearch($user->id, $search_array);
     </div><!-- /modal-dialog -->
 </div><!-- /modal-search -->
 
-<?php include 'inc/online-donation-modal.php' ?>
-<?php include 'inc/give-as-you-earn-modal.php' ?>
-<?php include 'inc/giftaid-rebate-modal.php' ?>
-<?php include 'inc/comision-modal.php' ?>
-<?php include 'inc/voucher-book-modal.php' ?>
-<?php include 'inc/voucher-modal.php' ?>
-<?php include 'inc/standing-order-donation.php' ?>
-<?php include 'inc/company-donation-modal.php' ?>
+<?php //include 'inc/online-donation-modal.php' ?>
+<?php //include 'inc/give-as-you-earn-modal.php' ?>
+<?php //include 'inc/giftaid-rebate-modal.php' ?>
+<?php //include 'inc/comision-modal.php' ?>
+<?php //include 'inc/voucher-book-modal.php' ?>
+<?php //include 'inc/voucher-modal.php' ?>
+<?php //include 'inc/standing-order-donation.php' ?>
+<?php //include 'inc/company-donation-modal.php' ?>

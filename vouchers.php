@@ -26,6 +26,10 @@ $user = User::GetInstance();
 
 $request = new AACRequestItem();
 
+if (!$_REQUEST['done']) {
+    $details = "New Request: " . $fields['Request'];
+    User::LogAccessRequest($user->Username, '', $details);
+}
 
 if ($_REQUEST['Request']) {
     $fields['Request'] = $_REQUEST['Request'];
@@ -34,7 +38,7 @@ if ($_REQUEST['Request']) {
     $fields['Request'] = "New Voucher Book";
 }
 
-
+/**
 if (isset($_POST['submit1'])) {
     $fields = $_POST['fields'];
     $fields['Request'] = "New Voucher Book";
@@ -83,18 +87,6 @@ if (isset($_POST['submit1'])) {
         }
 
 
-        /* if ($fields['VoucherBookDelivery'] && is_array($fields['VoucherBookDelivery']) && count($fields['VoucherBookDelivery'])) {
-          $vbdelivery = '';
-          foreach ($fields['VoucherBookDelivery'] as $vbd => $d) {
-          if (!$d)
-          continue;
-          $vbd = utf8_decode(html_entity_decode($vbd));
-          $vbdelivery .= "{$d}x{$vbd}; ";
-          }
-          $fields['VoucherBookDelivery'] = trim($vbdelivery, ' ;');
-          }
-          echo $fields['VoucherBookDelivery'];
-          //exit; */
         //$fields['StandingOrderStartDate'] = $fields['StandingOrderStartDate']?strtotime('01-'.$fields['StandingOrderStartDate'])+3600:'0';
         $fields['StandingOrderStartDate'] = $fields['StandingOrderStartDate'] ? strtotime($fields['StandingOrderStartDate']) + 3600 : '0';
 
@@ -116,12 +108,13 @@ if (isset($_POST['submit1'])) {
         User::LogAccessRequest($user->Username, '', $details);
 
 
-        UI::Redirect('?done=true');
+        UI::Redirect('vouchers.php?done=true');
     }
 } else if (!$_REQUEST['done'] && !$id) {
     $details = "New Request: " . $fields['Request'];
     User::LogAccessRequest($user->Username, '', $details);
 }
+**/
 
 switch ($fields['Request']) {
     case 'New Voucher Book':
@@ -134,7 +127,7 @@ switch ($fields['Request']) {
 ?>
 
 <script type="text/javascript">
-
+	/**
     jQuery(document).ready(function () {
 
         jQuery('.lkn-order-vouchers').on('click', function () {
@@ -148,16 +141,9 @@ switch ($fields['Request']) {
                 jQuery("#modal-quick-donation").modal('show');
             }
 
-            /*var active = jQuery('.label-delivery').parent().hasClass('active');
-             if (active) {
-             alert('Now you are ready to submit.');
-             //document.getElementById('editor').submit();
-             } else {
-             jQuery("#modal-quick-donation p").html('Please select a delivery method');
-             jQuery("#modal-quick-donation").modal('show');
-             }*/
         });
     });
+	**/
 
     jQuery('#delivery_type_post').on('switchChange.bootstrapSwitch', function (event, state) {
         if (state == true) {
@@ -230,11 +216,58 @@ switch ($fields['Request']) {
          });*/
 <?php } ?>
 </script>
+<script type="text/javascript">
+    $(document).ready(function(){
+		$('.lkn-order-vouchers').click(function(e){
+			e.preventDefault();
+	
+	
+			var formData = $('#editor').serialize();
 
+            $('#editor input').removeClass('has-error-box');
+	
+	
+			$.ajax({
+				url: 'remote.php?m=order-voucher-books',
+				type: 'post',
+				dataType: 'json',
+				data: formData,
+				success: function(data)
+				{
+					if(!data.error) {
+			            jQuery("#modal-quick-donation p").html("Thank you for your order");
+						
+						loadpage('vouchers.php?done=true');
+
+						//$('.password-box').val('');
+
+					} else {
+			            jQuery("#modal-quick-donation p").html(data.errorMessage);
+			            $('#box-'+data.errorField).addClass('has-error-box');
+			            $('#box-'+data.errorField).focus();
+
+						var pos = null;
+						if(data.errorField) pos = $('#box-'+data.errorField).offset();
+						if(pos) {
+							var top = pos.top - 220;
+							var left = pos.left - 20;
+							window.scrollTo((left < 0 ? 0 : left), (top < 0 ? 0 : top));
+						}
+					}
+	    	        jQuery("#modal-quick-donation").modal('show');
+				}
+			});		
+
+	    });		
+
+    });
+</script>
+<?php /**
 <?php if ($_REQUEST['done']) { ?>
     <p class="blue-text" style="margin: 0 15%;">Your request has been sent. <a href="index.php">Return to request Main Page.</a></p>
     <div style="height:150px"></div>
 <?php } else { ?>	
+**/ ?>
     <main class="main-transactions order-voucher content-desktop">
 
         <div class="header-fixed visible-xs">
@@ -341,41 +374,306 @@ switch ($fields['Request']) {
 
         <div class="row hidden-xs">
             <div class="col-md-12">
-                <!-- AACDESIGN -->
-            
-               <div class="voucher-books-header">
-                    <h2 class="title-section-desktop">Order Vouchers Books</h2>
-                    <div class="navigator-voucher-books">
-                        <a href="order-voucher-books.php" class="selected">ORDER VOUCHER BOOKS</a>
-                        <a href="previous-order-books.php">PREVIOUS ORDERS</a>
-                    </div>
-                </div> 
-                <!-- END AACDESIGN -->
+                <h2 class="title-section-desktop">Order Vouchers Books</h2>
             </div>
         </div>
-        
-        <div class="row visible-xs">
-            <div class="col-md-12">
-                <!-- AACDESIGN -->
-            
-               <div class="voucher-books-header">
-                    
-                    <div class="navigator-voucher-books">
-                        <a href="order-voucher-books.php" class="selected">ORDER VOUCHER BOOKS</a>
-                        <a href="previous-order-books.php">PREVIOUS ORDERS</a>
-                    </div>
-                </div> 
-                <!-- END AACDESIGN -->
-            </div>
-        </div>
-        
-        <!-- AACDESIGN -->
+        <form name="editor" id="editor" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <div class="container-vochers">
 
-        <div class="ajax-voucher-books">
+                <div class="container-fluid">
 
-            <?php include 'order-voucher-books.php'; ?>
-            
-        </div><!-- /ajax-voucher-books -->
+                    <div class="row">
+                        <div >
+                            <div class="col-md-6 col-xs-12">
+
+                                <div class="form-group input-default">
+
+                                    <div class="input-group ">
+
+                                        <a href="#" class="less-input lkn-input"></a>
+                                        <input type="text" name="fields[VoucherBooks][50p]" class="input-number VoucherBooks"  value="0">
+                                        <a href="#" class="more-input lkn-input"></a>
+
+                                    </div><!-- /input-group -->
+
+                                    <div class="info-input">
+
+                                        <div class="title-label">PREPAID 50P VOUCHERS</div>
+
+                                        <div class="subtitle-label">100 VOUCHERS</div>
+
+                                    </div><!-- /info-input -->
+
+                                </div><!-- /form-group -->
+
+                                <div class="form-group input-default">
+
+                                    <div class="input-group ">
+
+                                        <a href="#" class="less-input lkn-input"></a>
+                                        <input type="text" name="fields[VoucherBooks][£1]" class="input-number VoucherBooks" value="0">
+                                        <a href="#" class="more-input lkn-input"></a>
+
+                                    </div><!-- /input-group -->
+
+                                    <div class="info-input">
+
+                                        <div class="title-label">PREPAID £1 VOUCHER </div>
+
+                                        <div class="subtitle-label">50 VOUCHERS</div>
+
+                                    </div><!-- /info-input -->
+
+                                </div><!-- /form-group -->
+
+                                <div class="form-group input-default">
+
+                                    <div class="input-group ">
+
+                                        <a href="#" class="less-input lkn-input"></a>
+                                        <input type="text" name="fields[VoucherBooks][£3]" class="input-number VoucherBooks" value="0">
+                                        <a href="#" class="more-input lkn-input"></a>
+
+                                    </div><!-- /input-group -->
+
+                                    <div class="info-input">
+
+                                        <div class="title-label">PRE-PRINTED £3</div>
+
+                                        <div class="subtitle-label">VOUCHER BOOK</div>
+
+                                    </div><!-- /info-input -->
+
+                                </div><!-- /form-group -->
+
+                                <div class="form-group input-default">
+
+                                    <div class="input-group ">
+
+                                        <a href="#" class="less-input lkn-input"></a>
+                                        <input type="text" name="fields[VoucherBooks][£5]" class="input-number VoucherBooks" value="0">
+                                        <a href="#" class="more-input lkn-input"></a>
+
+                                    </div><!-- /input-group -->
+
+                                    <div class="info-input">
+
+                                        <div class="title-label">PRE-PRINTED £5</div>
+
+                                        <div class="subtitle-label">VOUCHER BOOK</div>
+
+                                    </div><!-- /info-input -->
+
+                                </div><!-- /form-group -->
+
+                                <div class="form-group input-default">
+
+                                    <div class="input-group ">
+
+                                        <a href="#" class="less-input lkn-input"></a>
+                                        <input type="text" name="fields[VoucherBooks][£10]" class="input-number VoucherBooks" value="0">
+                                        <a href="#" class="more-input lkn-input"></a>
+
+                                    </div><!-- /input-group -->
+
+                                    <div class="info-input">
+
+                                        <div class="title-label">PRE-PRINTED £10</div>
+
+                                        <div class="subtitle-label">VOUCHER BOOK</div>
+
+                                    </div><!-- /info-input -->
+
+                                </div><!-- /form-group -->
+
+                            </div><!-- /col -->
+
+                            <div class="col-md-6 col-xs-12">
+
+                                <div class="form-group input-default">
+
+                                    <div class="input-group ">
+
+                                        <a href="#" class="less-input lkn-input"></a>
+                                        <input type="text" name="fields[VoucherBooks][£18]" class="input-number VoucherBooks" value="0">
+                                        <a href="#" class="more-input lkn-input"></a>
+
+                                    </div><!-- /input-group -->
+
+                                    <div class="info-input">
+
+                                        <div class="title-label">PRE-PRINTED £18</div>
+
+                                        <div class="subtitle-label">VOUCHER BOOK</div>
+
+                                    </div><!-- /info-input -->
+
+                                </div><!-- /form-group -->
+
+                                <div class="form-group input-default">
+
+                                    <div class="input-group ">
+
+                                        <a href="#" class="less-input lkn-input"></a>
+                                        <input type="text" name="fields[VoucherBooks][£25]" class="input-number VoucherBooks" value="0">
+                                        <a href="#" class="more-input lkn-input"></a>
+
+                                    </div><!-- /input-group -->
+
+                                    <div class="info-input">
+
+                                        <div class="title-label">PRE-PRINTED £25</div>
+
+                                        <div class="subtitle-label">VOUCHER BOOK</div>
+
+                                    </div><!-- /info-input -->
+
+                                </div><!-- /form-group -->
+
+                                <div class="form-group input-default">
+
+                                    <div class="input-group ">
+
+                                        <a href="#" class="less-input lkn-input"></a>
+                                        <input type="text" name="fields[VoucherBooks][£50]" class="input-number VoucherBooks" value="0">
+                                        <a href="#" class="more-input lkn-input"></a>
+
+                                    </div><!-- /input-group -->
+
+                                    <div class="info-input">
+
+                                        <div class="title-label">PRE-PRINTED £50</div>
+
+                                        <div class="subtitle-label">VOUCHER BOOK</div>
+
+                                    </div><!-- /info-input -->
+
+                                </div><!-- /form-group -->
+                                <div class="form-group input-default">
+                                    <div class="input-group ">
+                                        <a href="#" class="less-input lkn-input"></a>
+                                        <input type="text" name="fields[VoucherBooks][£100]" class="input-number VoucherBooks" value="0">
+                                        <a href="#" class="more-input lkn-input"></a>
+                                    </div><!-- /input-group -->
+                                    <div class="info-input">
+                                        <div class="title-label">PRE-PRINTED £100</div>
+                                        <div class="subtitle-label">VOUCHER BOOK</div>
+                                    </div><!-- /info-input -->
+                                </div><!-- /form-group -->
+                                <div class="form-group input-default">
+                                    <div class="input-group ">
+                                        <a href="#" class="less-input lkn-input"></a>
+                                        <input type="text" name="fields[VoucherBooks][Blank]" class="input-number VoucherBooks" value="0">
+                                        <a href="#" class="more-input lkn-input"></a>
+                                    </div><!-- /input-group -->
+                                    <div class="info-input">
+                                        <div class="title-label">BLANK</div>
+                                        <div class="subtitle-label">VOUCHER BOOK</div>
+                                    </div><!-- /info-input -->
+                                </div><!-- /form-group -->
+                            </div><!-- /col-->
+                        </div>
+                    </div><!-- /row -->
+                </div><!-- /container- -->
+                <div class="container-fluid container-border-desktop hidden-xs">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="border-bottom "></div>
+                        </div><!-- /col -->
+                    </div><!-- /row -->
+                </div><!-- /container -->
+            </div><!-- /container-vochers -->
+            <div class="container-delivery">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-delivery">
+                                <div class="form-group">
+                                    <h2 class="title-delivery">DELIVERY </h2>
+                                    <div class="container-urgent hidden-xs">
+                                        <input type="checkbox" class="switch-settings" data-value="post" id="delivery_type_post" name="fields[VoucherBookDelivery][post]">
+                                        <div class="label-delivery">
+                                            <div class="label-urgent">POST: UP TO TWO BOOKS
+                                                <div class="subtitle-label">I TAKE RESPONSIBILITY FOR ANY 50P/£1 PPV BOOKS LOST IN THE POST</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container-urgent hidden-xs">
+                                        <input type="checkbox" class="switch-settings" data-value="Pick up from office" id="delivery_type_office" name="fields[VoucherBookDelivery][office]">
+                                        <div class="label-delivery">
+                                            <div class="label-urgent">OFFICE COLLECTION 
+                                                <div class="subtitle-label">9.30AM - 3.30PM MON-THURS</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container-urgent hidden-xs">
+                                        <input type="checkbox" class="switch-settings" data-value="Special Delivery" id="delivery_type_special" name="fields[VoucherBookDelivery][special]">
+                                        <div class="label-delivery">
+                                            <div class="label-urgent">SPECIAL DELIVERY 
+                                                <div class="subtitle-label">AT A COST OF £5 TO BE DEDUCTED FROM MY ACCOUNT</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- /form-group -->
+                            </div>
+                        </div><!-- /col -->
+                        <div class="col-md-6">
+                            <div class="container-urgent hidden-xs">
+                                <input type="checkbox" class="switch-settings" id="my-checkbox" name="fields[VoucherBookUrgent]">
+                                <h2 class="label-urgent">THIS IS URGENT</h2>
+                            </div><!-- /container-urgent -->
+                            <div class="container-notes hidden-xs">
+                                <label class="title-notes">NOTES TO AAC</label>
+                                <textarea id="OfficeComments" name="fields[OfficeComments]" cols="30" rows="10" class="textarea-notes" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>	
+                            </div><!-- /container-urgent -->					
+                        </div><!-- /col -->
+                    </div><!-- /row -->
+                </div><!-- /container -->
+                <div class="container-fluid container-border-desktop hidden-xs">
+                    <div class="col-md-12">
+                        <div class="border-bottom "></div>
+                    </div><!-- /col -->
+                </div><!-- /container -->
+
+            </div><!-- /container-delivery -->
+
+
+        <div class="col-md-12 hidden-xs">
+
+            <a href="#" class="lkn-order-vouchers transition disabled">Order Vouchers</a>
+
+        </div><!-- /col -->
+
+        <div class="container-urgent visible-xs">
+
+            <div class="container-fluid">
+
+                <input type="checkbox" id="my-checkbox" name="fields[VoucherBookUrgent]" value="1">
+
+                <h2 class="label-urgent">THIS IS URGENT</h2>
+
+            </div><!-- /container -->
+
+        </div><!-- /container-urgent -->
+
+        <div class="container-notes visible-xs">
+
+            <div class="container-fluid">
+
+                <label class="title-notes">NOTES TO AAC</label>
+
+                <textarea cols="30" rows="10" class="textarea-notes" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>	
+
+            </div><!-- /container -->
+
+        </div><!-- /container-urgent -->
+
+        <a href="#" class="sticky-to-footer lkn-order-vouchers visible-xs disabled">Order Vouchers</a>
+
+            <input type="hidden" name="submit1" value="save" />
+            <input type="hidden" name="fields[VoucherBookDelivery]" id="VoucherBookDelivery">
+        </form>
+
     </main>	
-<?php }
+<?php //}
 ?>

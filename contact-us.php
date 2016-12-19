@@ -32,6 +32,46 @@ if ($_POST['doAction']) {
     }
 }
 ?>
+<script type="text/javascript">
+    $(document).ready(function(){
+		$('#send-contact').click(function(e){
+			e.preventDefault();
+	
+	        if (jQuery('#txtComment').val() == "") {
+	            jQuery("#modal-quick-donation p").html("Please enter comments.");
+	            jQuery("#modal-quick-donation").modal('show');
+				return false;
+	        }
+	        //jQuery('#myform').submit();
+	
+			var formData = $('#myform').serialize();
+	
+	
+			$.ajax({
+				url: 'remote.php?m=contact',
+				type: 'post',
+				dataType: 'json',
+				data: formData,
+				success: function(data)
+				{
+					if(data.success) {
+			            jQuery("#modal-quick-donation p").html("Thank you for contacting us.");
+
+						$('#myform input, #myform textarea').val('');
+
+					} else {
+			            jQuery("#modal-quick-donation p").html("An error has occured - please contact support.");
+					}
+	    	        jQuery("#modal-quick-donation").modal('show');
+				}
+			});		
+
+	    });		
+
+    });
+</script>
+
+
 <?php if ($_REQUEST['done']) { ?>
     <p class="blue-text">Your request has been sent.
         <a href="index.php" class="subtitle-footer transition external-lkn">
@@ -97,9 +137,9 @@ if ($_POST['doAction']) {
                             <?php if ($_REQUEST['error']) { ?>
                                 <p class="red-text">Error</p>
                             <?php } ?>
-                            <textarea cols="30" rows="10" id='OfficeComments' name="txtMessage" class="contact-us-textarea" placeholder="How can we help?"></textarea>
+                            <textarea cols="30" rows="10" id='OfficeComments' name="fields[OfficeComments]" class="contact-us-textarea" placeholder="How can we help?"></textarea>
                             <!--                            <a href="#" class="contact-send transition hidden-xs">Send Message</a>-->
-                            <a href="#" onclick="document.getElementById('myform').submit();" class="send-msj transition">Send Message</a>
+                            <a href="#" id="send-contact" class="send-msj transition">Send Message</a>
                             <div class="box-details-bank">
                                 <h2 class="title-bank-details">BANK DETAILS</h2>
                                 <p class="text">ACHISOMOCH AID CO. LTD.</p>
