@@ -36,7 +36,7 @@ $(document).on('click', '.layer-navigator', function (event) {
 });
 $(document).on('click', '.close-notification', function (event) {
     event.preventDefault( );
-    alert("este")
+    
     $(this).parent().hide();
     $('body').removeClass('has-notification');
 });
