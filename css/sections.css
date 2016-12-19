@@ -281,6 +281,39 @@ td[data-toggle="modal"] {
     background-color: #00ADEE;
 
 }
+/* RE STYLE SELECT */
+ul.ui-autocomplete{
+    z-index: 8;
+    border: 1px solid #bbbbbb !important;
+    background: #fff !important;
+    max-width: 450px !important;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 6px;
+    border: none !important;
+    background: none !important;
+    color: #000 !important;
+    font-weight: normal !important;
+    border-radius: 5px;
+}
+.ui-widget li.ui-menu-item{
+    background: #fff;
+    color: #000;
+    padding-left:10px;
+    border-radius: 5px;
+}
+.ui-widget li.ui-menu-item:hover{
+    background: #00adee;
+    cursor: pointer;
+}
+.ui-widget-content a{
+    line-height: 45px;
+    font-size: 14px;
+    display: block;
+}
+.ui-widget-content a:hover{
+    color: #fff !important;
+}
 /* DASHBOARD */
 .title-dashborad-desktop.title-dashborad-left {
     float: left;
@@ -502,6 +535,12 @@ td[data-toggle="modal"] {
     background: #000;
     position: absolute;
 }
+#dashboard label[for="amount"]{
+    margin-top: 10px;
+}
+#dashboard a.add-notes.more-note{
+    color: #00adee;
+}
 
 /*  table transactoion */
 .history-back,
@@ -646,7 +685,7 @@ td[data-toggle="modal"] {
     padding-bottom: 10px;
 }
 .table-transactions.table > tbody > tr {
-    padding: 0 15px	;
+    padding: 0 15px ;
 
     transition: all 0.2s ease-in-out;
 }
@@ -671,7 +710,7 @@ td[data-toggle="modal"] {
     font-size: 17px;
 }
 .balance-down .balance-transition  {
-    color: #00ADEE;	
+    color: #00ADEE; 
 }
 .balance-up .balance-transition  {
     color: #97D361;
@@ -765,10 +804,10 @@ td[data-toggle="modal"] {
 .navigation-transactions .pagination > li:first-child > a.previous-page ,
 .navigation-transactions .pagination > li:last-child > a.next-page {
     font-size: 32px;
-	/**
+    /**
     top: -10px;
     position: absolute;
-	**/
+    **/
     top: -17px;
 }
 
@@ -978,7 +1017,7 @@ td[data-toggle="modal"] {
     border-radius: 5px;
 }
 .list-sortby {
-	background-color:#ffffff;
+    background-color:#ffffff;
     display: block;
     width: 100%;
 }
@@ -1085,7 +1124,7 @@ td[data-toggle="modal"] {
 }
 .box-slide-text.open .fa-angle-down{
     display: none;
-} 	
+}   
 .box-slide-text i {
     position: absolute;
     top: 15px;
@@ -1111,7 +1150,7 @@ td[data-toggle="modal"] {
     color: #333333;
     letter-spacing: 1.07px;
     position: relative;
-    line-height: 22px;		
+    line-height: 22px;      
     padding: 15px 45px 5px 0;
 }
 .box-make-donation-lkns {
@@ -1261,7 +1300,7 @@ td[data-toggle="modal"] {
     font-size: 13px;
     color: #333333;
     letter-spacing: 0.56px;
-    line-height: 19px;		
+    line-height: 19px;      
     margin: 30px 0;
     padding: 30px 0 10px 0;
 }
@@ -1458,7 +1497,7 @@ td[data-toggle="modal"] {
     color: #B0B0B0;
     font-weight: 600;
     font-size: 12px;
-    letter-spacing: 0.3px;	
+    letter-spacing: 0.3px;  
     margin: -10px 0 20px 0;
 }
 
@@ -1543,7 +1582,7 @@ td[data-toggle="modal"] {
     height: 69px;
     resize: none;
     -webkit-appearance: none;
-    width: 100%;		
+    width: 100%;        
     margin-bottom: 45px;
 }
 .lkn-order-vouchers {
@@ -1580,7 +1619,7 @@ td[data-toggle="modal"] {
 .container-settings {
     border-bottom: 1px solid #E2E2E5;
     margin: 0 -15px;
-    padding: 0 15px	;
+    padding: 0 15px ;
 }
 .container-settings:last-child {
     margin-bottom: 35px;
@@ -1765,7 +1804,7 @@ td[data-toggle="modal"] {
     margin-bottom: 5px;
     resize: none;
     -webkit-appearance: none;
-    width: 100%;	
+    width: 100%;    
 }
 .main-contact-us .send-msj {
     border: 1px solid #00ADEE;
@@ -1861,7 +1900,7 @@ td[data-toggle="modal"] {
     resize: none;
 
     -webkit-appearance: none;
-    width: 100%;	
+    width: 100%;    
 }
 .main-invite-a-friend .comment-textarea.error,
 .invite-friend .input-text.error {
@@ -2004,7 +2043,7 @@ td[data-toggle="modal"] {
     font-weight: 400;
     font-size: 12px;
     color: #333333;
-    letter-spacing: 0.5px;		
+    letter-spacing: 0.5px;      
 }
 .sticky-to-footer .subtitle-footer {
     font-weight: 700;
@@ -2141,7 +2180,7 @@ td[data-toggle="modal"] {
         font-weight: 700;
         font-size: 20px;
         color: #FFFFFF;
-        letter-spacing: 0.54px;		
+        letter-spacing: 0.54px;     
     }
     .header-mobile-transactions {
         font-weight: 900;
@@ -2253,7 +2292,7 @@ td[data-toggle="modal"] {
         clear: both;
     }
     .navigator-transactions-li {
-        float: left;		
+        float: left;        
         position: relative;
         width: 28%;
     }
@@ -2266,7 +2305,7 @@ td[data-toggle="modal"] {
         width: 1px;
     }
     .navigator-transactions-li:last-child:before {
-        display: none;	
+        display: none;  
     }
     .navigator-transactions-li:last-child {
         width: 16%;
@@ -2444,7 +2483,7 @@ td[data-toggle="modal"] {
     /* SETTINGS */
     .main-transactions.main-settings .header-fixed,
     .main-transactions.main-settings .header {
-        height: 60px;		
+        height: 60px;       
     }
 
 
@@ -2452,7 +2491,7 @@ td[data-toggle="modal"] {
     /* HELP */
     .main-transactions.main-help .header-fixed,
     .main-transactions.main-help .header {
-        height: 60px;		
+        height: 60px;       
     }
 
     /* CONTACTUS */
@@ -2511,7 +2550,7 @@ td[data-toggle="modal"] {
     }
 
     
-}	
+}   
 @media(min-width:768px){
     .table > thead > tr > th.desktop-align-left {
         text-align: left;
@@ -2560,7 +2599,7 @@ td[data-toggle="modal"] {
     }
     .main-transactions .col-xs-12 {
         padding: 0;
-		margin-left:0px;
+        margin-left:0px;
     }
     .main-transactions.main-invite-a-friend .col-xs-12 ,
     .main-transactions.make-donation .col-xs-12 {
@@ -2660,15 +2699,15 @@ td[data-toggle="modal"] {
         display: block;
         width: 100%;
     }
-	.container-fluid .row ul .navigator-transactions-li{
-		float:left;
-		margin: 0 2px;
-	}
-	.navigator-transactions-li.navigator-transactions-sortby{
-		float:right !important;
-	}
+    .container-fluid .row ul .navigator-transactions-li{
+        float:left;
+        margin: 0 2px;
+    }
+    .navigator-transactions-li.navigator-transactions-sortby{
+        float:right !important;
+    }
     .navigator-transactions .navigator-transactions-li {
-		/*float:left;*/
+        /*float:left;*/
         display: inline-block;
         position: relative;
     }
@@ -2755,7 +2794,7 @@ td[data-toggle="modal"] {
     }
     span.clear-all-filters a {
         color: #878787;
-        font-size: 15px;
+        font-size: 12px;
         padding-right: 4px;
     }
     .navigator-transactions .lkn-search {
@@ -2794,7 +2833,7 @@ td[data-toggle="modal"] {
         padding-left: 25px;
         color: #00ADEE;
         width: 230px;
-		
+        
     }
     .lkn-sortby.lkn-dates {
         font-size: 12px;
@@ -2849,7 +2888,7 @@ td[data-toggle="modal"] {
         background: #00ADEE;
         border-radius: 5px;
         color: #fff;
-        margin-top: 0px;	
+        margin-top: 0px;    
     }
     .make-dontation:hover {
         background: #0187B9;
@@ -2927,7 +2966,7 @@ td[data-toggle="modal"] {
     .td-interval,
     .td-end-date,
     .td-view-transaction {
-        text-align: center;		
+        text-align: center;     
     }
 
     /* vouchers */
@@ -2998,7 +3037,7 @@ td[data-toggle="modal"] {
     .line-bottom-settings {
         width: 100%;
         background: #BBB;
-        height: 1px;	
+        height: 1px;    
     }
     .box-settings {
 
@@ -3076,13 +3115,13 @@ td[data-toggle="modal"] {
     }
     .box-find-answers .subtitle-footer ,
     .box-for-answers .subtitle-footer {
-        border: 1px solid #00ADEE;	
+        border: 1px solid #00ADEE;  
         text-align: center;
         border-radius: 4px;
         font-weight: 600;
         font-size: 12px;
         color: #00ADEE;
-        letter-spacing: 0.5px;		
+        letter-spacing: 0.5px;      
         width: 228px;
         display: block;
         padding: 23px 0;
@@ -3157,7 +3196,7 @@ td[data-toggle="modal"] {
         padding-right: 0;
     }
     .btn-search {
-        border: 1px solid #00ADEE;	
+        border: 1px solid #00ADEE;  
         float: right;
         margin: 0;
         width: 32.3%;
@@ -3210,7 +3249,7 @@ td[data-toggle="modal"] {
         top: 15px;
     }
     #mobile-content-make-dontation .padding-left {
-        padding-left: 40px;	
+        padding-left: 40px; 
         margin-bottom: 20px;
     }
     .textarea-make-dontation {
@@ -3256,12 +3295,12 @@ td[data-toggle="modal"] {
 }
 
 .transaction-type-label{
-	text-transform:uppercase;
+    text-transform:uppercase;
 }
 
 .btn-active{
-	background-color:#00ADEE !important;
-	color:#ffffff !important;
+    background-color:#00ADEE !important;
+    color:#ffffff !important;
 }
 
 .disable{

@@ -131,7 +131,7 @@ if (count($tl) < 1) {
                 <th>DESCRIPTION</th>
                 <th>AMOUNT</th>
                 <th class="hidden-xs">COMMENTS</th>
-                <!-- HAKUNA -->
+                <th class="hidden-xs">TYPE</th>
                 <th class="hidden-xs">ACTION</th>
             </tr>
         </thead>						
@@ -215,7 +215,10 @@ if (count($tl) < 1) {
                                         <p><?php echo $t->client_comment ?></p>
                                 </a>
                             </td>
-                            <!-- AACESGN2 -->
+                            <td class="type-td transaction-type-label modal-show" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
+                                <p class="type-transactions"><?php echo $type; ?></p>
+                                <?php /* <p class="type-transactions"><?php echo getTransactionType($rows1[$i]['cd_no']); ?></p> */ ?>
+                            </td>
                               <td class="action-edit hidden-xs">
                               <?php
                               //$rows1[$i]['cd_no'] = "SO";
