@@ -207,7 +207,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
         });
         $('#txtCharityName').focus(function (event) {
             event.preventDefault( );
-            $(this).parent().parent().addClass('active');
+            // $(this).parent().parent().addClass('active');
         });
         $('.search .input').focus(function () {
             $(this).attr('placeholder', 'Type your search');

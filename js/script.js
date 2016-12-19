@@ -581,8 +581,11 @@ function load_js() {
         });
        $('.input').blur(function (event) {
             event.preventDefault( );
-			if($(this).val()) return;
-            $(this).parent().parent().removeClass('active');
+            if ( !$(this).hasClass('input-to-amount')){
+    			if($(this).val()) return;
+                $(this).parent().parent().removeClass('active');
+            }
+            
         });
 
         /*if ($('.checkbox-input').parent().hasClass('active'))
