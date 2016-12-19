@@ -886,6 +886,12 @@ td[data-toggle="modal"] {
     border: 1px solid #00ADEE;
     color: #00ADEE;
 }
+.modal-search .empty-state-input {
+    background: #fff !important;
+    border: 1px solid #BBBBBB !important;
+    
+    color: #B0B0B0 !important;
+}
 .modal-search .error .checkbox-input ,
 .modal-search .error .input {
     border: 1px solid #FC2E2E;

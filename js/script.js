@@ -34,15 +34,14 @@ $(document).on('click', '.layer-navigator', function (event) {
     $('.nav-icon4').removeClass('open');
     $('body').removeClass('menu-mobile-open');
 });
-<<<<<<< HEAD
+
 $(document).on('click', '.close-notification', function (event) {
     event.preventDefault( );
     
     $(this).parent().hide();
     $('body').removeClass('has-notification');
 });
-=======
->>>>>>> 0c1539453bf5ab7b910a53c32b7b1941c6ff8722
+
 $(document).on('click', '.close-nav', function (event) {
     event.preventDefault( );
     $('.nav-icon4').toggleClass('open');
@@ -126,6 +125,7 @@ $(document).on('blur', '.input-to-amount', function (event) {
 
             $(this).val( 'TO ' + txt );
             $( this ).parent( ).find('.reset-input').show ( );
+            $(this).removeClass('empty-state-input');
         }else {
             
             $( this ).parent( ).find('.reset-input').hide ( );
@@ -572,6 +572,12 @@ function load_js() {
         $('.input').focus(function (event) {
             event.preventDefault( );
             $(this).parent().parent().addClass('active');
+            if ( $(this).parent().parent().find( '.input-to-amount' ).val() == '' ) {
+                $(this).parent().parent().find( '.input-to-amount' ).addClass('empty-state-input');
+            }
+            else{
+                $(this).parent().parent().find( '.input-to-amount' ).removeClass('empty-state-input');
+            }
         });
        $('.input').blur(function (event) {
             event.preventDefault( );
