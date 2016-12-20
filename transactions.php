@@ -207,6 +207,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
         });
         $('#txtCharityName').focus(function (event) {
             event.preventDefault( );
+            // AACDESIGN2
             // $(this).parent().parent().addClass('active');
         });
         $('.search .input').focus(function () {
@@ -411,7 +412,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                 <!-- /box-account-header -->
                 
                 <ul class="navigator-transactions">
-                <!-- AACESGN2 -->
+                <!-- AACDESIGN2 -->
                     <li class="navigator-transactions-li visible-xs"> <a href="javascript:void(0);" id="dates-bt-modal" class="navigator-transactions-lkn visible-xs">DATES</a>
                         <input type="text" id="config-date" class="form-control hidden-xs" placeholder="Select Date">
                         <a href='#' id="startDate"></a>
@@ -639,7 +640,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                             <div class="row-input <?php echo $_REQUEST['amount_donated_from'] || $_REQUEST['amount_donated_to']?'active':'' ?>"> <a href="javascript:void(0);" id="chkAmount" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
                                 
                                 <div class="mid-size container-input-search container-input-search-min"
-                                ><!-- AACESGN2 -->
+                                ><!-- AACDESIGN2 -->
                                     <input type="text" class=" input input-search" id="txtAmount" placeholder="Number" name='amount_donated_from' value="<?php echo $search['amount_donated_from'] ?>">
                                     <a href="#" class="reset-input">
                                         <i class="fa fa-times" aria-hidden="true"></i>
@@ -676,7 +677,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                             <div class="row-input <?php echo $_REQUEST['voucher_no_from'] || $_REQUEST['voucher_no_to']?'active':'' ?>"> <a href="javascript:void(0);" id="chkVoucherNumber" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
                                 
                                 <div class="mid-size container-input-search container-input-search-min">
-                                    <!-- AACESGN2 -->
+                                    <!-- AACDESIGN2 -->
                                     <input type="text" class="input input-search" id="txtVoucherNumber" placeholder="Number" name='voucher_no_from' value="<?php echo $search['voucher_no_from'] ?>">
                                     <a href="#" class="reset-input">
                                         <i class="fa fa-times" aria-hidden="true"></i>

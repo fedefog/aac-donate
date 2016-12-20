@@ -215,7 +215,7 @@ if (count($tl) < 1) {
                                         <p><?php echo $t->client_comment ?></p>
                                 </a>
                             </td>
-                            <!-- AACESGN2 -->
+                            <!-- AACDESIGN2 -->
                               <td class="action-edit hidden-xs">
                               <?php
                               //$rows1[$i]['cd_no'] = "SO";

@@ -482,25 +482,25 @@
 		text-decoration: underline!important;
 		font-size: 12px;
 	}
-	form#quick-donation {
+	form.quick-donation {
 		border: 1px solid #DADADA;
 		padding: 30px;
 		border-radius: 5px;
 	}
-	form#quick-donation .form-group:first-child {
+	form.quick-donation .form-group:first-child {
 		position: relative;
 	}
-	form#quick-donation label {
+	form.quick-donation label {
 		color: #767676;
 		font-size: 12px;
 		text-transform: uppercase;
 		margin: 0 0 10px 0;
 	}
-	form#quick-donation .input-text {
+	form.quick-donation .input-text {
 		height: 42px;
     	padding: 10px 12px;
 	}
-	form#quick-donation .add-notes {
+	form.quick-donation .add-notes {
 		color: #767676;
 		font-size: 12px;
 	}

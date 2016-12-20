@@ -287,6 +287,8 @@ ul.ui-autocomplete{
     border: 1px solid #bbbbbb !important;
     background: #fff !important;
     max-width: 450px !important;
+    max-height: 340px;
+    overflow-y: scroll;   
 }
 .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
     border-bottom-right-radius: 6px;
@@ -307,7 +309,7 @@ ul.ui-autocomplete{
     cursor: pointer;
 }
 .ui-widget-content a{
-    line-height: 45px;
+    height: 45px;
     font-size: 14px;
     display: block;
 }
@@ -2895,7 +2897,7 @@ ul.ui-autocomplete{
     }
     .box-slide-text {
         margin: -35px -35px 0px;
-        top: -30px;
+        top: -31px;
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -3291,6 +3293,9 @@ ul.ui-autocomplete{
 
 }
 @media(min-width:1200px){
+    .box-slide-text {
+        margin: 0 -35px;
+    }
 
 }
 

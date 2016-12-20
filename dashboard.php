@@ -347,7 +347,7 @@ switch ($fields['Request']) {
                             <td class="error" colspan="2" style="padding-bottom:10px;text-align:center"><?php echo $error ?></td>
                         </tr>
                     <?php } ?>
-                    <form id="editor" class="make-donation search" name="editor"  method="post" action="<?php echo basename($_SERVER['PHP_SELF']); ?>">
+                    <form id="editor" class="make-donation quick-donation search" name="editor"  method="post" action="<?php echo basename($_SERVER['PHP_SELF']); ?>">
 						
                         <input class="input-beneficiary autocomplete-charities form-control input-text box-beneficiary" type="text" id="Beneficiary" name="fields[Beneficiary]" placeholder="Please select a Beneficiary" autocomplete="false" />
 						<?php /**

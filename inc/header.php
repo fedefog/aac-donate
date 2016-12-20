@@ -45,12 +45,12 @@
 
     </head>
     
-    <!-- AACDESIGN -->
+    <!-- AACDESIGN2 -->
     <!-- 
         Comment :  if has notification add this class to de body .
     -->
     <body class="has-notification">
-    <!-- END AACDESIGN -->
+    <!-- END AACDESIGN2 -->
         <?php
         $transaction = $td->getTransactionDetailByAccountName($user->Reference);
 
@@ -66,7 +66,7 @@
         </div> 
 
         <section class="section">
-            <!-- AACDESIGN -->
+            <!-- AACDESIGN2 -->
             <div class="notification-box">
                 <p class="text-notification"> <i class="fa fa-check" aria-hidden="true"></i>
  Your donation to CHARITY NAME <strong>is being processed.</strong></p>
@@ -88,7 +88,7 @@
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </a>
             </div>
-                <!-- END AACDESIGN -->
+                <!-- END AACDESIGN2 -->
             <div class="header-fixed hidden-xs" >
 
                 <header class="header ">

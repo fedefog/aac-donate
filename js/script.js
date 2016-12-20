@@ -125,6 +125,7 @@ $(document).on('blur', '.input-to-amount', function (event) {
 
             $(this).val( 'TO ' + txt );
             $( this ).parent( ).find('.reset-input').show ( );
+            //AACDESIGN2
             $(this).removeClass('empty-state-input');
         }else {
             
@@ -572,15 +573,19 @@ function load_js() {
         $('.input').focus(function (event) {
             event.preventDefault( );
             $(this).parent().parent().addClass('active');
+            //AACDESIGN2
             if ( $(this).parent().parent().find( '.input-to-amount' ).val() == '' ) {
                 $(this).parent().parent().find( '.input-to-amount' ).addClass('empty-state-input');
             }
             else{
                 $(this).parent().parent().find( '.input-to-amount' ).removeClass('empty-state-input');
             }
+            //END AACDESIGN2
         });
        $('.input').blur(function (event) {
             event.preventDefault( );
+
+            // AACDESIGN2
             if ( !$(this).hasClass('input-to-amount')){
     			if($(this).val()) return;
                 $(this).parent().parent().removeClass('active');
