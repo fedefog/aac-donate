@@ -840,7 +840,7 @@ function load_js() {
         $('input[name="customenddate"]').on('apply.daterangepicker', function (ev, picker) {
             enddate = picker.endDate.format('DD/MM/YYYY')
             var date_complete = startdate + ' - ' + enddate;
-            $('.dropdown-dates').removeClass('active');
+            //$('.dropdown-dates').removeClass('active');
             $('.navigator-transactions-lkn .dates_text_selected').html(date_complete);
             //alert(enddate);
         });
