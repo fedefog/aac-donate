@@ -19,30 +19,10 @@ $user = new User();
 $user = User::GetInstance();
 
 
-$req_charity_id = mysql_real_escape_string((empty($_REQUEST['charity_id'])) ? "" : $_REQUEST['charity_id']);
+$req_charity_id = mysql_real_escape_string((empty($_REQUEST['charityId'])) ? "" : $_REQUEST['charityId']);
 $req_id = mysql_real_escape_string((empty($_REQUEST['id'])) ? "" : $_REQUEST['id']);
-
-/* $qry = "";
-  $qry .= "select * from charities where remote_charity_id = " . $req_charity_id;
-  $result = mysql_query($qry);
-  $row = mysql_fetch_row($result);
-  $charity_name = $row[3]; */
-if ($req_charity_id != "" && $req_charity_id > 0) {
-    $transactionlist = new TransactionList();
-    $charity_row = $transactionlist->getCharityList($req_charity_id);
-    $charity_name = $charity_row[0]->Name;
-    $fields['RemoteCharityID'] = $req_charity_id;
-}
-/* $qry = "";
-  $qry .= "SELECT * FROM aac_requests ";
-  $qry .= "WHERE id = " . $req_id;
-  $result = mysql_query($qry);
-  $row = mysql_fetch_row($result, 1); */
-if ($req_id != "" && $req_id > 0) {
-    $transactionlist = new TransactionList();
-    $row = $transactionlist->getAACRequestList($req_id);
-}
-//echo $qry;
+$req_amount = mysql_real_escape_string((empty($_REQUEST['amount'])) ? "" : $_REQUEST['amount']);
+$somid = mysql_real_escape_string((empty($_REQUEST['SOMID'])) ? "" : $_REQUEST['SOMID']);
 
 $request = new AACRequestItem();
 $td = new TransactionDetailList();
@@ -53,6 +33,79 @@ foreach ($transaction as $tr) {
     $date = $tr->dt;
 }
 $balance = $balance ? $balance : 0;
+
+if($req_id) {
+	if($request->load($req_id)) {
+		if($request->Username != $user->Username) die('Access denied');
+		$fields = $request->GetProperties();
+	}
+} else if($somid) {
+	$som = new StandingOrderMasterItem();
+	if($som->load($somid)) {
+		if($som->account != (int)$user->Username) die('Access denied');		
+
+		$fields = array(
+			'Beneficiary' => $som->name,
+			'RemoteCharityID' => $som->charity_id,
+			'Amount' => $som->amount,
+			'StandingOrderType'=>$som->mode=='C'?'Fixed number of payments':'Continuous payments', //Fixed number of payments / Continuous payments
+			'NumberOfPayments'=>$som->times,
+			'StandingOrderStartDate'=>date('1 M Y'),
+			'StandingOrderFrequency'=>'Every Month', //Every Month /  Every 2 months / Every 3 months			
+			'OfficeComments'=>$som->notes_to_aac,
+			'ClientComments'=>$som->notes_to_charity,
+			'UserComments'=>$som->notes_to_self,
+		);
+
+		if($som->freq=='2') $fields['StandingOrderFrequency'] = 'Every 2 months';
+		if($som->freq=='Q') $fields['StandingOrderFrequency'] = 'Every 3 months';
+
+		//freq
+
+		if($_REQUEST['repeat']) unset($somid);
+
+	} else die('Unable to locate standing order');
+}
+//var_dump($fields);
+
+if($req_charity_id) {
+	$charity = new CharityItem();
+	if($charity->loadByRemoteID($req_charity_id)) {
+//var_dump($charity);
+		$fields['Beneficiary'] = $charity->Name;
+		$fields['RemoteCharityID'] = $req_charity_id;
+	}
+}
+if($req_amount) $fields['Amount'] = $req_amount;
+
+
+
+/* $qry = "";
+  $qry .= "select * from charities where remote_charity_id = " . $req_charity_id;
+  $result = mysql_query($qry);
+  $row = mysql_fetch_row($result);
+  $charity_name = $row[3]; */
+/******************
+if ($req_charity_id != "" && $req_charity_id > 0) {
+    $transactionlist = new TransactionList();
+    $charity_row = $transactionlist->getCharityList($req_charity_id);
+    $charity_name = $charity_row[0]->Name;
+    $fields['RemoteCharityID'] = $req_charity_id;
+}
+****************/
+/* $qry = "";
+  $qry .= "SELECT * FROM aac_requests ";
+  $qry .= "WHERE id = " . $req_id;
+  $result = mysql_query($qry);
+  $row = mysql_fetch_row($result, 1); */
+/*********************************
+if ($req_id != "" && $req_id > 0) {
+    $transactionlist = new TransactionList();
+    $row = $transactionlist->getAACRequestList($req_id);
+}
+//echo $qry;
+
+
 if ($_REQUEST['Request']) {
     $fields['Request'] = $_REQUEST['Request'];
     $fields['Beneficiary'];
@@ -155,12 +208,7 @@ if ($_POST['doAction']) {
         $request->SetProperties($fields);
         $request->UpdateSummary();
         $request->VoucherBookUrgent = $request->VoucherBookUrgent ? 'Yes' : 'No';
-        /*
-          if(!$id && $fields['Reference']) {
-          $request->ClientComments = "REFERENCE: {$fields['Reference']}\n\n".$request->ClientComments;
-          unset($request->Reference);
-          }
-         */
+
         $request->Save();
         UI::Redirect('index.php');
         //email send to client
@@ -187,8 +235,10 @@ switch ($fields['Request']) {
         die('Unknown request');
         $field_list = array();
 }
-$fields[Beneficiary] = $_REQUEST['Beneficiary'];
-$fields[Amount] = $_REQUEST['Amount'];
+$fields['Beneficiary'] = $_REQUEST['Beneficiary'];
+$fields['Amount'] = $_REQUEST['Amount'];
+**************************/
+
 ?>
 <script language="javascript" src="js/date.js"></script>
 <script type="text/javascript">
@@ -240,18 +290,20 @@ $fields[Amount] = $_REQUEST['Amount'];
         });
         //alert(jQuery("#Beneficiary").val());
         if (jQuery("#Beneficiary").val() !== "") {
-            jQuery('#history').text("See previous donations to <?php echo $charity_name; ?>").css({opacity: 1});
-            jQuery('#history').prop('href', "transactions-history.php?charityId=<?php echo $req_charity_id; ?>");
+            jQuery('#history').text("See previous donations to <?php echo $fields['Beneficiary']; ?>").css({opacity: 1});
+            jQuery('#history').prop('href', "transactions-history.php?charityId=<?php echo $fields['RemoteCharityID']; ?>");
             jQuery('.beneficiary-select-error').css({display: 'block'});
         }
 
 <?php
+/**
 if ($_REQUEST['id'] != "") {
     ?>
             jQuery('#history').text("See previous donations to <?php echo $row[0]->Beneficiary; ?>").css({opacity: 1});
             jQuery('#history').prop('href', "transactions-history.php?charityId=<?php echo $req_id; ?>");
     <?php
 }
+**/
 ?>
     });
     var NIS_exrate = <?php echo NIS_EXRATE; ?>;
@@ -261,6 +313,7 @@ if ($_REQUEST['id'] != "") {
     {
         var charityName = $('#Beneficiary').val();
         var strplus = "See previous donations to " + charityName;
+        var strplusNone = "You haven't made any previous donations to " + charityName;
         //var link = encodeURI(charityId);
         //$('#history').prop('href', "transactions-history.php?charityname=" + link);
         $.ajax({
@@ -273,7 +326,10 @@ if ($_REQUEST['id'] != "") {
                     $('#charityAddressBoxData').html(data.address);
                     $('#charityRemoteID').val(data.remoteCharityID);
 
-                    $('#history').text(strplus).css({opacity: 1});
+					if(parseInt(data.donationCount))
+	                    $('#history').text(strplus).css({opacity: 1});
+					else
+	                    $('#history').text(strplusNone).css({opacity: 1});
                     $('#history').prop('href', "transactions-history.php?charityId=" + data.remoteCharityID);
 
                     selectedCharityCountry = data.countryName;
@@ -385,202 +441,6 @@ if ($_REQUEST['id'] != "") {
         return true;
     }
 
-    function Validate(form)
-    {
-        var balance = '<?php echo $balance; ?>';
-        if (!form.elements['fields[Amount]'])
-            return true;
-        var s = $('#my-checkbox').parent().parent().hasClass("bootstrap-switch-off");
-        if (s == true) {
-            so = false;
-        } else {
-            var so = $('#StandingOrderType').val();
-        }
-        var currency = $('#Currency').val();
-        var amount = form.elements['fields[Amount]'].value;
-        var beneficiary = $('#Beneficiary').val();
-        var confirm = $('#ConfirmTransfer').val();
-        if (jQuery('#hidden_allow').val() == '' || jQuery('#hidden_allow').val() == '0') {
-            jQuery("#modal-quick-donation p").html('Please select charity from list');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        }
-        if (beneficiary == '' || beneficiary == 'Please select charity from list') {
-            jQuery("#modal-quick-donation p").html('Please select a Beneficiary');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        }
-        if (!TestNumber(amount)) {
-            jQuery("#modal-quick-donation p").html('Amount should be a number without any formatting, e.g. 200 or 200.99');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        }
-        var neg = parseFloat(amount) < 0;
-        var gbpamount = amount;
-        if (confirm != 1) {
-            jQuery("#modal-quick-donation p").html('Please confirm the transaction is charitable');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        }
-        if (amount == '' || amount == 0) {
-            jQuery("#modal-quick-donation p").html('Please complete all fields');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        } else if (isNaN(amount)) {
-            jQuery("#modal-quick-donation p").html('Amount must be a number');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        }
-        if (currency == 'NIS')
-            gbpamount = gbpamount / NIS_exrate;
-        if (currency == 'USD')
-            gbpamount = gbpamount / USD_exrate;
-        if (currency == 'EUR')
-            gbpamount = gbpamount / EUR_exrate;
-        if (selectedCharityCountry == null)
-            selectedCharityCountry = '';
-        selectedCharityCountry = $.trim(selectedCharityCountry.toUpperCase());
-        if (selectedCharityCountry == '')
-            selectedCharityCountry = 'UK';
-        if (selectedCharityCountry == 'ISRAEL') {
-            BootstrapDialog.show({
-                message: 'Please note ' + "\u00a3" + '4 will be deducted for bank charges',
-                buttons: [{
-                        label: 'Confirm',
-                        cssClass: 'btn-primary',
-                        action: function (dialogItself) {
-                            dialogItself.close();
-                            jQuery("#editor").submit();
-                        }
-                    }, {
-                        label: 'Cancel',
-                        action: function (dialogItself) {
-                            dialogItself.close();
-                        }
-                    }]
-            });
-            /*if (!window.confirm('Please note ' + "\u00a3" + '4 will be deducted for bank charges'))
-             return false;*/
-        } else if (selectedCharityCountry == 'USA') {
-            BootstrapDialog.show({
-                message: 'Please note ' + "\u00a3" + '15 will be deducted for bank charges',
-                buttons: [{
-                        label: 'Confirm',
-                        cssClass: 'btn-primary',
-                        action: function (dialogItself) {
-                            dialogItself.close();
-                            jQuery("#editor").submit();
-                        }
-                    }, {
-                        label: 'Cancel',
-                        action: function (dialogItself) {
-                            dialogItself.close();
-                        }
-                    }]
-            });
-            /*if (!window.confirm('Please note ' + "\u00a3" + '15 will be deducted for bank charges'))
-             return false;*/
-        } else if (selectedCharityCountry == 'FRANCE' || selectedCharityCountry == 'GERMANY' || selectedCharityCountry == 'BELGIUM' || selectedCharityCountry == 'ITALY') {
-            BootstrapDialog.show({
-                message: 'Please note ' + "\u00a3" + '15 will be deducted for bank charges',
-                buttons: [{
-                        label: 'Confirm',
-                        cssClass: 'btn-primary',
-                        action: function (dialogItself) {
-                            dialogItself.close();
-                            jQuery("#editor").submit();
-                        }
-                    }, {
-                        label: 'Cancel',
-                        action: function (dialogItself) {
-                            dialogItself.close();
-                        }
-                    }]
-            });
-            /*if (!window.confirm('Please note ' + "\u00a3" + '5 will be deducted for bank charges'))
-             return false;*/
-        }
-        if ($('#ClientComments').val().toLowerCase().indexOf("raffle", 0) > -1) {
-            jQuery("#modal-quick-donation p").html('You cannot pay for raffles with AAC funds');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        } else if (!so && !neg && (parseFloat(gbpamount) < 10) && (selectedCharityCountry == 'UK')) {
-            jQuery("#modal-quick-donation p").html('Sorry, this system can only be used to transfer ' + "\u00a3" + '10 or more - please try again');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        } else if (so && (selectedCharityCountry != 'UK') && (selectedCharityCountry != 'ISRAEL')) {
-            jQuery("#modal-quick-donation p").html('Sorry, standing orders can only be to UK or Israeli charities');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        } else if ((selectedCharityCountry != 'UK') && (parseFloat(gbpamount) < 50)) {
-            jQuery("#modal-quick-donation p").html('Sorry, transfers to charities abroad must be ' + "\u00a3" + '50 or more');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        } else if (so && !neg && (parseFloat(gbpamount) < 10)) {
-            jQuery("#modal-quick-donation p").html('Sorry, this system can only be used to transfer ' + "\u00a3" + '10 or more - please try again');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        } else if (neg && (parseFloat(gbpamount) >= -18) && (parseFloat(gbpamount) < 0)) {
-            jQuery("#modal-quick-donation p").html('Sorry, this system can only be used to transfer ' + "\u00a3" + '18 or more- please try again');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        } else if (balance != '' && (parseFloat(gbpamount) > parseFloat(balance))) {
-            BootstrapDialog.show({
-                message: 'Your account balance is insufficient for this transaction, would you like to proceed?',
-                buttons: [{
-                        label: 'Confirm',
-                        cssClass: 'btn-primary',
-                        action: function (dialogItself) {
-                            dialogItself.close();
-                            jQuery("#editor").submit();
-                        }
-                    }, {
-                        label: 'Cancel',
-                        action: function (dialogItself) {
-                            dialogItself.close();
-                        }
-                    }]
-            });
-            /*if (!window.confirm('Your account balance is insufficient for this transaction, would you like to proceed?'))
-             return false;*/
-        } else if (so && (currency != 'GBP')) {
-            jQuery("#modal-quick-donation p").html('Sorry, standing orders can only be requested in Pounds (sterling) - please alter the currency selection or remove the Standing Order option');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        } else if ($('#StandingOrderType').val() == 'Continuous payments' && !$('#StandingOrderStartDate').val()) {
-            jQuery("#modal-quick-donation p").html('Please specify the standing order date');
-            jQuery("#modal-quick-donation").modal('show');
-            return false;
-        } else if ($('#StandingOrderType').val() == 'Fixed number of payments') {//Repeat Payments
-            if (!$('#StandingOrderStartDate').val()) {
-                jQuery("#modal-quick-donation p").html('Please specify the standing order date');
-                jQuery("#modal-quick-donation").modal('show');
-                return false;
-            }
-        } else {
-            BootstrapDialog.show({
-                //message: 'You paying Beneficiary ' + beneficiary + ' the amount of ' + currency + ' ' + gbpamount + '...' + "\n\n" + 'Would you like to save this request - please note requests cannot be edited' + "\n\n" + 'Click OK to proceed or Cancel to edit',
-                message: 'You have selected to donate ' + currency + ' ' + gbpamount + ' to ' + beneficiary + '. Please confirm your donation.',
-                buttons: [{
-                        label: 'Confirm',
-                        cssClass: 'btn-primary',
-                        action: function (dialogItself) {
-                            dialogItself.close();
-                            jQuery("#editor").submit();
-                        }
-                    }, {
-                        label: 'Cancel',
-                        action: function (dialogItself) {
-                            dialogItself.close();
-                        }
-                    }]
-            });
-            return false;
-        }
-        //return false;
-        return true;
-        //return window.confirm('Would you like to save this request - please note requests cannot be edited' + "\n\n" + 'Click OK to proceed or Cancel to edit');
-    }
 
     jQuery(document).ready(function () {
         $('#StandingOrderType,#StandingOrderStartDate,#StandingOrderFrequency').on('change', function () {
@@ -648,7 +508,11 @@ if ($_REQUEST['id'] != "") {
                                     </a>
                                 </div><!-- /col -->
                                 <div class="col-xs-8">
+									<?php if($somid) { ?>
+                                    <h2 class="title">Edit Standing Order</h2>
+									<?php } else { ?>
                                     <h2 class="title">Make a Donation/Standing Order</h2>
+									<?php } ?>
                                 </div><!-- /col -->	
                                 <div class="col-xs-2">
                                     <a href="#" class="nav-mobile nav-icon4 visible-xs ">
@@ -726,7 +590,11 @@ if ($_REQUEST['id'] != "") {
 
                     <div class="row hidden-xs">
                         <div class="col-md-12">
-                            <h2 class="title-section-desktop">Make a Donation/Standing Order</h2>
+									<?php if($somid) { ?>
+                                    <h2 class="title-section-desktop">Edit Standing Order</h2>
+									<?php } else { ?>
+                                    <h2 class="title-section-desktop">Make a Donation/Standing Order</h2>
+									<?php } ?>
                         </div>
                     </div>
                     <?php if ($error) { ?>
@@ -740,6 +608,7 @@ if ($_REQUEST['id'] != "") {
                             <div class="box-make-donation ">
                                 <h2 class="title-make-donation">BENEFICIARY</h2>
                                 <?php
+								/**
                                 $cl = new CharityList();
                                 $charities = $cl->ListItems();
 
@@ -748,8 +617,9 @@ if ($_REQUEST['id'] != "") {
                                 } else if ($charity_name != "") {
                                     $fields['Beneficiary'] = $charity_name;
                                 }
+								**/
                                 ?>
-                                <input class="input-beneficiary autocomplete-charities form-control input-text" type="text" id="Beneficiary" name="fields[Beneficiary]" placeholder="Please select a Beneficiary" value="<?php echo $fields['Beneficiary']; ?>" />
+                                <input class="input-beneficiary autocomplete-charities form-control input-text" type="text" id="Beneficiary" name="fields[Beneficiary]" placeholder="Please select a Beneficiary" value="<?php echo $fields['Beneficiary']; ?>" <?php echo $somid?' disabled ':'' ?> />
 								<?php /**
                                 <div class="search" id="search">
                                     <span class="input-beneficiary caret" style="cursor:pointer;"></span>
@@ -772,8 +642,8 @@ if ($_REQUEST['id'] != "") {
                                 <p class="text-danger beneficiary-select-error">Please note: Achisomoch carries out random checks on the charitable status of the organisations mentioned on this list, However no guarantee is implied that all charities mentioned on this list are bona-fide.</p>
 
                                 <div class="box-make-donation-lkns">
-
-                                    <a href="transactions-history.php?charityname=GGBH" class="make-donation-lkns external-lkn" style='opacity: 0' id="history"></a>
+									<!--transactions-history.php?charityname=GGBH-->
+                                    <a href="#" class="make-donation-lkns external-lkn" style='opacity: 0' id="history"></a>
 
                                     <a href="#" id="profile" class="make-donation-lkns" style='opacity: 0; display:none;'>Charity Commission profile</a>
 
@@ -787,9 +657,11 @@ if ($_REQUEST['id'] != "") {
 
                                 <div class="amount-input ">
                                     <?php
+									/**
                                     if ($row[0]->Amount != "") {
                                         $fields['Amount'] = $row[0]->Amount;
                                     }
+									**/
                                     ?>
                                     <input type="text" name="fields[Amount]" id="Amount" class="form-control input-text" placeholder="Enter an amount" value="<?php echo $fields['Amount']; ?>">
 
@@ -799,6 +671,7 @@ if ($_REQUEST['id'] != "") {
 
                                 <?php
                                 $options = array();
+								/**
                                 if ($request->id) {
                                     $beneficiary = $request->Beneficiary;
                                 } else if (is_array($charities)) {
@@ -806,7 +679,8 @@ if ($_REQUEST['id'] != "") {
                                     $beneficiary = $c->Name;
                                 } else
                                     $beneficiary = '';
-
+								**/
+								$beneficiary = $fields['Beneficiary'];
                                 if ($beneficiary) {
                                     $ccl = new CharityCurrencyList();
                                     $ccl_items = $ccl->GetCurrencyCodesByCurrencyName($beneficiary);
@@ -822,7 +696,7 @@ if ($_REQUEST['id'] != "") {
                                         <?php
                                         foreach ($options as $op) {
                                             $sel = "";
-                                            if ($op == $row[0]->Currency) {
+                                            if ($op == $fields['Currency']) {
                                                 $sel = "selected";
                                             }
                                             ?>
@@ -850,10 +724,12 @@ if ($_REQUEST['id'] != "") {
                             $active = "";
                             $checked = "";
                             $disable = "disabled";
-                            if ($row[0]->StandingOrderFrequency != "No" && $row[0]->StandingOrderFrequency != "") {
+
+                            if ($fields['StandingOrderFrequency'] != "No" && $fields['StandingOrderFrequency'] != "") {
                                 $active = "active";
                                 $checked = "checked";
                                 $disable = "";
+                                $disableSO = "disabled";
                             }
                             ?>
                             <div class="box-make-donation standing-order-switch-container hidden-xs <?php echo $active; ?>">
@@ -862,7 +738,7 @@ if ($_REQUEST['id'] != "") {
 
                                     <h2 class="title-make-donation">STANDING ORDER</h2>
 
-                                    <input type = "checkbox" class = "standing-order-switch switch-on" id="my-checkbox" name="my-checkbox" <?php echo $checked; ?> >
+                                    <input type = "checkbox" <?php echo $disableSO ?> class = "standing-order-switch switch-on" id="my-checkbox" name="my-checkbox" <?php echo $checked; ?> >
 
                                 </div><!-- /half-make-donation -->
 
@@ -873,6 +749,7 @@ if ($_REQUEST['id'] != "") {
                                       if ($checked == "checked") {
                                       $disable = "";
                                       } */
+										//$disable ='';
                                     ?>
                                     <select id="StandingOrderType" name="fields[StandingOrderType]" class = "form-control selectpicker" <?php echo $disable; ?>>
                                         <option value="Fixed number of payments" >Fixed number of payments</option>
@@ -884,7 +761,7 @@ if ($_REQUEST['id'] != "") {
                                 </div>
                                 <div class="half-make-donation">
                                     <h2 class="title-make-donation" id="lblNumberOfPayments">NUMBER OF PAYMENTS</h2>
-                                    <input type="text" name="fields[NumberOfPayments]" id="txtNumberOfPayments" class="form-control input-text" placeholder="Enter number of payments" value="<?php echo $row[0]->NumberOfPayments; ?>">
+                                    <input type="text" name="fields[NumberOfPayments]" id="txtNumberOfPayments" class="form-control input-text" placeholder="Enter number of payments" value="<?php echo $fields['NumberOfPayments']; ?>">
                                 </div>
                                 <!-- start changes -->
 
@@ -901,8 +778,8 @@ if ($_REQUEST['id'] != "") {
                                         }
                                         foreach ($options as $op) {
                                             ?>
-                                            <option value="1 <?php echo $op; ?>" <?php if (date('d M Y', $row[0]->StandingOrderStartDate) == "1 " . $op) echo "selected"; ?>>1 <?php echo $op; ?></option>
-                                            <option value="15 <?php echo $op; ?>" <?php if (date('d M Y', $row[0]->StandingOrderStartDate) == "15 " . $op) echo "selected"; ?>>15 <?php echo $op; ?></option>
+                                            <option value="1 <?php echo $op; ?>" <?php if (date('d M Y', $fields['StandingOrderStartDate']) == "1 " . $op) echo "selected"; ?>>1 <?php echo $op; ?></option>
+                                            <option value="15 <?php echo $op; ?>" <?php if (date('d M Y', $fields['StandingOrderStartDate']) == "15 " . $op) echo "selected"; ?>>15 <?php echo $op; ?></option>
                                             <?php
                                         }
                                         reset($options);
@@ -918,8 +795,8 @@ if ($_REQUEST['id'] != "") {
 
                                     <select id="StandingOrderFrequency" name="fields[StandingOrderFrequency]" class = "form-control selectpicker" <?php echo $disable; ?>>
                                         <option value="Every Month" <?php if ($row[0]->StandingOrderFrequency == "Every Month") echo "selected"; ?>>Every Month</option>
-                                        <option value="Every 2 months" <?php if ($row[0]->StandingOrderFrequency == "Every 2 months") echo "selected"; ?>>Every 2 months</option>
-                                        <option value="Every 3 months" <?php if ($row[0]->StandingOrderFrequency == "Every 3 months") echo "selected"; ?>>Every 3 months</option>
+                                        <option value="Every 2 months" <?php if ($fields['StandingOrderFrequency'] == "Every 2 months") echo "selected"; ?>>Every 2 months</option>
+                                        <option value="Every 3 months" <?php if ($fields['StandingOrderFrequency'] == "Every 3 months") echo "selected"; ?>>Every 3 months</option>
                                     </select>
 
                                 </div><!--/half-make-donation -->
@@ -930,19 +807,19 @@ if ($_REQUEST['id'] != "") {
 
                         <!-- Mobile -->
                         <div class="col-md-6 col-xs-12 padding-left">
-                            <div class="box-make-donation hidden-xs">
+                            <div class="box-make-donation "><!--hidden-xs-->
                                 <h2 class="title-make-donation">NOTES TO CHARITY</h2>
-                                <textarea id="ClientComments" name="fields[ClientComments]" cols = "30" rows = "10" class = "textarea-make-dontation" placeholder = "Add any notes you'd wish to pass on the charity."><?php echo $row[0]->ClientComments; ?></textarea>
+                                <textarea id="ClientComments" name="fields[ClientComments]" cols = "30" rows = "10" class = "textarea-make-dontation" placeholder = "Add any notes you'd wish to pass on the charity."><?php echo $fields['ClientComments']; ?></textarea>
                                 <p class="error error-text">Regrettably, we cannot make this payment since you may not use charitable funds to pay for a Raffle or tuition fees for your family. Please contact the office on 8731 8988 for further information” and reject the donation</p>
                             </div><!-- /box-make-donation -->
                             <div class="box-make-donation">
                                 <h2 class="title-make-donation">NOTES TO AAC</h2>
-                                <textarea id="OfficeComments" name="fields[OfficeComments]" cols = "30" rows = "10" class = "textarea-make-dontation" placeholder = "Add any notes you'd wish to pass on to AAC."><?php echo $row[0]->OfficeComments; ?></textarea>
+                                <textarea id="OfficeComments" name="fields[OfficeComments]" cols = "30" rows = "10" class = "textarea-make-dontation" placeholder = "Add any notes you'd wish to pass on to AAC."><?php echo $fields['OfficeComments']; ?></textarea>
                                 <p class="error error-text">Regrettably, we cannot make this payment since you may not use charitable funds to pay for a Raffle or tuition fees for your family. Please contact the office on 8731 8988 for further information” and reject the donation</p>
                             </div><!-- /box-make-donation -->
                             <div class="box-make-donation">
                                 <h2 class="title-make-donation">MY NOTES</h2>
-                                <textarea id="UserComments" name="fields[UserComments]" cols = "30" rows = "10" class = "textarea-make-dontation" placeholder = "Add any notes for your personal record keeping. These notes are searchable."><?php echo $row[0]->UserComments; ?></textarea>
+                                <textarea id="UserComments" name="fields[UserComments]" cols = "30" rows = "10" class = "textarea-make-dontation" placeholder = "Add any notes for your personal record keeping. These notes are searchable."><?php echo $fields['UserComments']; ?></textarea>
                                 <p class="error error-text">Regrettably, we cannot make this payment since you may not use charitable funds to pay for a Raffle or tuition fees for your family. Please contact the office on 8731 8988 for further information” and reject the donation</p>
                             </div><!-- /box-make-donation -->
                             <div class="box-make-donation standing-order-switch-container visible-xs">
@@ -959,36 +836,46 @@ if ($_REQUEST['id'] != "") {
 
                                     <h2 class="title-make-donation">PAYMENTS</h2>
 
-                                    <select class="form-control selectpicker" disabled>
-                                        <option>ONGOING</option>
-                                        <option>ONGOING</option>
-                                        <option>ONGOING</option>
-                                        <option>ONGOING</option>
-                                        <option>ONGOING</option>
+                                    <select id="StandingOrderTypeMobile" name="mobile-fields[StandingOrderType]" class = "form-control selectpicker" <?php echo $disable; ?>>
+                                        <option value="Fixed number of payments" >Fixed number of payments</option>
+                                        <option value="Continuous payments" >Continuous payments</option>
                                     </select>
 
                                 </div><!-- /half-make-donation -->
+
+                                <div class="half-make-donation">
+                                    <h2 class="title-make-donation" id="lblNumberOfPayments">NUMBER OF PAYMENTS</h2>
+                                    <input type="text" name="fields[NumberOfPaymentsMobile]" id="txtNumberOfPayments" class="form-control input-text" placeholder="Enter number of payments" value="<?php echo $fields['NumberOfPayments']; ?>">
+                                </div>
 
                                 <div class="half-make-donation">
 
                                     <h2 class="title-make-donation">STARTING </h2>
 
-                                    <select class="form-control selectpicker" disabled>
-                                        <option>JUN 15th</option>
-                                        <option>JUN 15th</option>
-                                        <option>JUN 15th</option>
-                                        <option>JUN 15th</option>
-                                        <option>JUN 15th</option>
+                                    <select id="StandingOrderStartDateMobile" name="mobile-fields[StandingOrderStartDate]" class = "form-control selectpicker" <?php echo $disable; ?>>
+                                        <?php
+                                        $options = array(date('Y-m-1') => date('M Y'));
+                                        for ($i = 1; $i <= 3; $i++) {
+                                            $t = strtotime("+{$i} months", strtotime(date('Y-m-1')));
+                                            $options[date('Y-m-1', $t)] = date('M Y', $t);
+                                        }
+                                        foreach ($options as $op) {
+                                            ?>
+                                            <option value="1 <?php echo $op; ?>" <?php if (date('d M Y', $fields['StandingOrderStartDate']) == "1 " . $op) echo "selected"; ?>>1 <?php echo $op; ?></option>
+                                            <option value="15 <?php echo $op; ?>" <?php if (date('d M Y', $fields['StandingOrderStartDate']) == "15 " . $op) echo "selected"; ?>>15 <?php echo $op; ?></option>
+                                            <?php
+                                        }
+                                        reset($options);
+                                        ?>
+
                                     </select>
                                 </div><!-- /half-make-donation -->
                                 <div class="half-make-donation">
                                     <h2 class="title-make-donation">INTERVAL </h2>
-                                    <select class="form-control selectpicker" disabled>
-                                        <option>MONTHLY</option>
-                                        <option>MONTHLY</option>
-                                        <option>MONTHLY</option>
-                                        <option>MONTHLY</option>
-                                        <option>MONTHLY</option>
+                                    <select id="StandingOrderFrequencyMobile" name="mobile-fields[StandingOrderFrequency]" class = "form-control selectpicker" <?php echo $disable; ?>>
+                                        <option value="Every Month" <?php if ($row[0]->StandingOrderFrequency == "Every Month") echo "selected"; ?>>Every Month</option>
+                                        <option value="Every 2 months" <?php if ($fields['StandingOrderFrequency'] == "Every 2 months") echo "selected"; ?>>Every 2 months</option>
+                                        <option value="Every 3 months" <?php if ($fields['StandingOrderFrequency'] == "Every 3 months") echo "selected"; ?>>Every 3 months</option>
                                     </select>
                                 </div><!-- /half-make-donation -->
                             </div><!-- /box-make-donation -->
@@ -1013,20 +900,23 @@ if ($_REQUEST['id'] != "") {
                         </div><!-- /row -->
                     </div><!-- /container -->
                 </div><!-- /checkbox -->
-                <a href="#" class="sticky-to-footer make-dontation visible-xs">Make Donation</a>
+                <a href="#" class="sticky-to-footer make-dontation make-dontation-mobile visible-xs">Make Donation</a>
             </div><!-- /mobile-content-make-dontation -->
             <?php
-            if ($req_id != "") {
+			if($somid) {
+                $action = "edit-standing-order";
+            } else if ($req_id != "") {
                 $action = "edit";
             } else {
                 $action = "save";
             }
             ?>
             <input type="hidden" name="doAction" value="<?php echo $action; ?>" />
+            <input type="hidden" id="somid" name="somid" value="<?php echo $somid; ?>"/>
             <input type="hidden" id="request_id" name="request_id" value="<?php echo $req_id; ?>"/>
             <input type="hidden" id="hidden_allow" name="hidden_allow" value=""/>
             <input type="hidden" name="ConfirmTransfer" id="ConfirmTransfer"/>
-            <input type="hidden" name="fields[Request]" value="<?php echo $fields['Request']; ?>"/>
+<!--            <input type="hidden" name="fields[Request]" value="<?php echo $fields['Request']; ?>"/>-->
             <input type="hidden" id="StandingOrderEndDate" name="fields[StandingOrderEndDate]" value="" />
             <input type="hidden" id="clone" name="clone" value="<?php echo $_REQUEST['clone']; ?>" />
 

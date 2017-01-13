@@ -35,6 +35,15 @@ if (!$_REQUEST['doAction']) {
     if ($fu && $_REQUEST['username'] && $fu != $_REQUEST['username'])
         $fu = null;
 
+//var_dump($fu);
+
+	if($fu) {
+		$ul = new UserList();
+		$users = $ul->GetUsersByUsername($fu);
+		$u = reset($users);
+		if(!$u->AutomaticLogin) unset($fu);
+	}
+
     if ($fu && $passwords[$fu] && (User::DoLogin2($fu, $passwords[$fu], 'desktop'))) {
         setcookie('u[' . $_REQUEST['username'] . ']', $_REQUEST['username'], time() + (3600 * 24 * 365));
         setcookie('e[' . $_REQUEST['username'] . ']', sha1($_REQUEST['password']), time() + (3600 * 24 * 365));
@@ -49,8 +58,14 @@ if (!$_REQUEST['doAction']) {
 if ($_REQUEST['doAction']) {
     if (User::DoLogin($_REQUEST['username'], $_REQUEST['password'])) {
 
-        setcookie('u[' . $_REQUEST['username'] . ']', $_REQUEST['username'], time() + (3600 * 24 * 365));
-        setcookie('e[' . $_REQUEST['username'] . ']', sha1($_REQUEST['password']), time() + (3600 * 24 * 365));
+		$u = User::GetInstance();
+		if($u->AutomaticLogin) {
+	        setcookie('u[' . $_REQUEST['username'] . ']', $_REQUEST['username'], time() + (3600 * 24 * 365));
+    	    setcookie('e[' . $_REQUEST['username'] . ']', sha1($_REQUEST['password']), time() + (3600 * 24 * 365));
+		}
+
+		//temporary
+		unset($_REQUEST['return']);
 
         if ($_REQUEST['return'])
             header('location:' . $_REQUEST['return']);

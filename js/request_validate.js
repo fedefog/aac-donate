@@ -62,10 +62,15 @@ var RequestValidate = {
             jQuery("#modal-quick-donation").modal('show');
 			$('#modal-quick-donation').on('hidden.bs.modal', function (e) {
 				  window.location.href='./';
-			})
+			})		
 		} else {
             jQuery("#modal-quick-donation p").html(message);
             jQuery("#modal-quick-donation").modal('show');
+
+			if(id=='SOMEdit'){
+				loadpage('dashboard.php');
+			}
+
 		}
 	},
 
@@ -100,8 +105,15 @@ var RequestValidate = {
 				if(data.error){
 		            $('.box-'+data.errorField).addClass('has-error-box');
 					RequestValidate.showDialog(data.errorMessage,data.errorCode,data.errorType);		
+
 				} else {
-					RequestValidate.showDialog('Donation Complete','','success');		
+					var charityName = $('#Beneficiary').val();
+					loadpage('dashboard.php');
+					$('body').addClass('has-notification');
+					//$('.notification-box span').html(charityName);
+					$('.notification-box font').html('Your donation to <span>'+charityName+'</span> <strong>is being processed.</strong>');
+					$('.notification-box').show();
+					//RequestValidate.showDialog('Donation Complete','','success');		
 				}
 			}
 		});		

@@ -63,8 +63,20 @@ include 'inc/header.php';
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
                     <div class="box-notification-nav sublinks-nav">
-                        <span class="notification-nav txt-being-processed"> <a href="transactions-processing.php"><?php echo AACRequestList::CountProcessing(); ?> being processed </a> </span>
-                        <span class="notification-nav"><a href="transactions-pending.php"><?php echo TransactionList::CountPending(); ?> PENDING </a></span>
+						<?php 
+							$processingCount = AACRequestList::CountProcessing();
+							$pendingCount = TransactionList::CountPending();
+							$bits = array();
+
+							if($processingCount) { 
+								$bits[] = '<span class="notification-nav '.($pendingCount?'txt-being-processed':'').'"> <a href="transactions-processing.php">'.$processingCount.' being processed </a> </span>';
+							}
+							if($pendingCount) { 
+								$bits[] ='<span class="notification-nav"><a href="transactions-pending.php">'.$pendingCount.' PENDING </a></span>';
+							}
+
+							echo implode('',$bits);
+						?>
                     </div>
                 </li>
                 <li class="dashboard-li dashboard-li-has-noti">

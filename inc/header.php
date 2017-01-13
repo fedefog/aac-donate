@@ -41,7 +41,18 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 
+		<script>
+/**
+			var performUnloadCheck=true;
+			window.onbeforeunload= function(){
+				if(!performUnloadCheck) return true;
+				//if(!confirm('Are you sure you want to leave this page?')) return false;
+				return 'Are you sure you want to leave this page?';
+			}
+**/
+		</script>
 
     </head>
     
@@ -49,9 +60,10 @@
     <!-- 
         Comment :  if has notification add this class to de body .
     -->
-    <body class="has-notification">
+    <body>
     <!-- END AACDESIGN2 -->
         <?php
+		/**
         $transaction = $td->getTransactionDetailByAccountName($user->Reference);
 
         foreach ($transaction as $tr) {
@@ -60,6 +72,11 @@
             $account = $tr->Reference;
             $date = date('d M Y, H:iA', strtotime($tr->Last_statement_date));
         }
+		**/
+			$user = User::GetInstance();
+            $balance = number_format($user->Close_balance, 2);
+            $account = $user->Reference;
+            $date = date('d M Y, H:iA', strtotime($tr->Close_balance_date));
         ?>
         <div id="myProgress">
             <div id="myBar"></div>
@@ -69,11 +86,12 @@
             <!-- AACDESIGN2 -->
             <div class="notification-box">
                 <p class="text-notification"> <i class="fa fa-check" aria-hidden="true"></i>
- Your donation to CHARITY NAME <strong>is being processed.</strong></p>
+ <font>Your donation to <span>CHARITY NAME</span> <strong>is being processed.</strong></font></p>
                 <a class="close-notification">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </a>
             </div>
+<?php /**
             <div class="notification-box hide">
                 <p class="text-notification"> <i class="fa fa-check" aria-hidden="true"></i>
  Your Standing order to CHARITY NAME<strong> has been registered.</strong></p>
@@ -88,6 +106,7 @@
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </a>
             </div>
+		**/ ?>
                 <!-- END AACDESIGN2 -->
             <div class="header-fixed hidden-xs" >
 
@@ -173,10 +192,14 @@
                                     $qry .= " WHERE id = " . $user->id;
                                     $result = mysql_query($qry);
                                     $row = mysql_fetch_row($result, MYSQL_ASSOC);*/
+
+/**
                                     $row = User::getUserData($user->id);
                                     if ($row['ShowUserDisplayName'] == "1") {
                                         echo $user->UserDisplayName;
                                     }
+**/
+									echo $user->ShowUserDisplayName?$user->UserDisplayName:'';
                                     ?>
                                 </div>
 

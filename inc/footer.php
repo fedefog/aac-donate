@@ -31,7 +31,7 @@
         </div><!-- /row -->
     </div><!-- /container -->
 </footer>
-<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+
 <script type="text/javascript" src="js/bootstrap.min.js" ></script>
 <script type="text/javascript" src="js/bootstrap-select.js" ></script>
 <script type="text/javascript" src="js/bootstrap-switch.js" ></script>

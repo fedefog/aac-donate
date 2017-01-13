@@ -103,6 +103,7 @@ if($m=='getCurrencyCodes') {
 		$data['countryName'] = $charity->CountryName;
 		$data['minimumDonationValue'] = $charity->MinimumDonationValue;
 		$data['remoteCharityID'] = $charity->remote_charity_id;
+		$data['donationCount'] = $charity->CountDonations($user);
 	} else $data = array('found'=>0);
 
 	echo json_encode($data);
@@ -116,24 +117,44 @@ if($m=='getCurrencyCodes') {
 
 	echo 'Thank you for accepting the Terms and Conditions';
 } else if($m=='user-invite'){
+
 	$fields = $_REQUEST['fields'];
 
-	$u= User::GetInstance();
-	$fields['UserName']= $u->Username;
+	$error = '';
 
-	$ui = new UserInviteItem();
-	$ui->SetProperties($fields);
-	$ui->Save();
+	if(!$fields['FriendName']) {
+		$error = 'Please enter your friend\'s name';
+	} else if(!$fields['FriendEmail']) {
+		$error = 'Please enter your friend\'s email';		
+	} else if (!AchisomochEmails::CheckValidEmailPattern($fields['FriendEmail'])) {
+		$error = 'Please enter a valid email address';	
+	} else {
+
+		$u= User::GetInstance();
+		$fields['UserName']= $u->Username;
+
+		$ui = new UserInviteItem();
+		$ui->SetProperties($fields);
+		$ui->Save();
 
 
+		$e = new AchisomochEmails();
+		$e->SendUserInviteEmail($ui,$u);
 
-	$e = new AchisomochEmails();
-	$e->SendUserInviteEmail($ui,$u);
+		$result = array('success'=>1);
+	}
+	if($error) {
+		$result = array('success'=>0,'errorMessage'=>$error);
+	}
 
-	$result = array('success'=>1);
 	echo json_encode($result);
 } else if($m=='save-settings'){
 	$fields = $_REQUEST['fields'];
+
+	$fields['ShowUserDisplayName'] = $fields['ShowUserDisplayName']?1:0;
+	$fields['AutomaticLogin'] = $fields['AutomaticLogin']?1:0;
+	$fields['Sms_enabled'] = $fields['Sms_enabled']?1:0;
+
 
 	$u= User::GetInstance();
 
@@ -168,6 +189,14 @@ if($m=='getCurrencyCodes') {
 
 	$u->SetProperties($fields);
 	$u->Save();
+
+	if($u->AutomaticLogin){
+        setcookie('u[' . $u->Username . ']', $u->Username, time() + (3600 * 24 * 365));
+        setcookie('e[' . $u->Username . ']', sha1($u->Password), time() + (3600 * 24 * 365));
+	} else {
+        setcookie('u[' . $u->Username . ']', $u->Username, time() - (3600 * 24 * 365));
+        setcookie('e[' . $u->Username . ']', sha1($u->Password), time() - (3600 * 24 * 365));
+	}
 
 
 
@@ -220,6 +249,8 @@ if($m=='getCurrencyCodes') {
     $request->ResultCode = 'Pending';
     $request->RequestDateTime = time();
 
+	$amount = 0;
+
     if ($fields['VoucherBooks'] && is_array($fields['VoucherBooks']) && count($fields['VoucherBooks'])) {
             $vb = '';
             foreach ($fields['VoucherBooks'] as $vbook => $qty) {
@@ -227,10 +258,20 @@ if($m=='getCurrencyCodes') {
                     continue;
                 $vbook = utf8_decode(html_entity_decode($vbook));
                 $vb .= "{$qty}x{$vbook}; ";
+
+				$vbook = strtolower($vbook);
+				if($vbook=='50p') $amount += $qty * 0.5;
+				else if($vbook=='blank') $amount += $qty * 0.5;
+				else $amount += $qty * intval($vbook);
+
             }
             //$fields['VoucherBooks'] = implode("\r\n",$fields['VoucherBooks']);
             $fields['VoucherBooks'] = trim($vb, ' ;');
     }
+
+	$fields['Amount'] = $amount;
+
+//var_dump($fields);
 
     $fields['System'] = 'Desktop';
     $request->SetProperties($fields);
@@ -322,9 +363,17 @@ if($m=='getCurrencyCodes') {
 	}
 	exit;
 
+} else if($m=='cancel-standing-order'){
+		$id = $_REQUEST['id'];
+		$request = new AACRequestItem();
+		$error = $request->CancelStandingOrder($id);			
+		if($error) HandleResult($error);
+		exit;
 } else if($m=='save-donation'){
 
 	$fields = $_REQUEST['fields'];
+	$doAction = $_REQUEST['doAction'];
+
 
 
 ///////////////////////////
@@ -342,7 +391,7 @@ if($m=='getCurrencyCodes') {
 
 	$beneficiary = $fields['Beneficiary'];
 
-	if($beneficiary=='' || ($beneficiary =='Please select charity from list') ) {
+	if(isset($fields['Beneficiary']) && ($beneficiary=='') ) {
 		HandleResult('Please select a Beneficiary','Beneficiary');
 	}
 
@@ -357,6 +406,8 @@ if($m=='getCurrencyCodes') {
 	if(!$charity->loadByRemoteID($charityRemoteID)) {
 		HandleResult('Problem locating Beneficiary, please contact support','Beneficiary');
 	}
+
+	$fields['Beneficiary'] = $charity->Name;
 
 	if($amount=='' || $amount==0) {
 		HandleResult('Please enter an amount','Amount');
@@ -454,7 +505,7 @@ if($m=='getCurrencyCodes') {
 			HandleResult( 'Sorry, this system can only be used to transfer $pound;18 or more- please try again');
 		} else if (!$_REQUEST['ConfirmTransfer']) {
 			HandleResult( 'Please confirm the transaction is charitable');
-		} else if(!$so && $balance && (gbpamount > $balance) && !$_REQUEST['confirm-insufficiantbalance'] ) {
+		} else if(!$so && $balance && ($gbpamount > $balance) && !$_REQUEST['confirm-insufficiantbalance'] ) {
 			HandleResult( 'Your account balance is insufficient for this transaction, would you like to proceed?','','insufficiantbalance','confirm');
 		} else if ($so && ($currency != 'GBP') ) {
 			HandleResult( 'Sorry, standing orders can only be requested in Pounds (sterling) - please alter the currency selection or remove the Standing Order option');
@@ -472,13 +523,27 @@ if($m=='getCurrencyCodes') {
 
 		if(!$_REQUEST['confirm-transdetails']) {
 			$gbpInfo = $currency=='GBP'?'':'(approx. &pound;'.number_format($gbpamount,2).')';
-			HandleResult('You have selected to donate ' . $currency . ' ' . $amount . $gbpInfo.' to ' . $beneficiary . '. Please confirm your donation.  Please note that reqests cannot be edited.','','transdetails','confirm');
+
+			if($doAction=='edit-standing-order') {
+				HandleResult('Are you sure you would like to edit this standing order?','','transdetails','confirm');
+			} else {
+				HandleResult('You have selected to donate ' . $currency . ' ' . $amount . $gbpInfo.' to ' . $beneficiary . '. Please confirm your donation.  Please note that reqests cannot be edited.','','transdetails','confirm');
+			}
 		}
 
 		//
 		//validations over    
 		//
+
+		if($doAction=='edit-standing-order') {
+			$somid = $_REQUEST['somid'];
+			$requestCancel = new AACRequestItem();
+			$error = $requestCancel->CancelStandingOrder($somid);			
+			if($error) HandleResult($error);
+		}
+
 		$request = new AACRequestItem();
+		$fields['Request']='Initiate Transfer';
         $fields['Amount'] = abs($fields['Amount']);
 
 
@@ -503,8 +568,8 @@ if($m=='getCurrencyCodes') {
             $request->ResultCode = 'Pending';
             $request->RequestDateTime = time();
         }
-        $fields['StandingOrderStartDate'] = $fields['StandingOrderStartDate'] ? strtotime($fields['StandingOrderStartDate']) + 3600 : '0';
-        $fields['StandingOrderEndDate'] = $fields['StandingOrderEndDate'] ? intval($fields['StandingOrderEndDate']) + 3600 : '0';
+        $fields['StandingOrderStartDate'] = $fields['StandingOrderStartDate'] ? strtotime($fields['StandingOrderStartDate']) + 10800 : '0';
+        $fields['StandingOrderEndDate'] = $fields['StandingOrderEndDate'] ? intval($fields['StandingOrderEndDate']) + 10800 : '0';
         $fields['System'] = 'Desktop';//check??
 
         $request->SetProperties($fields);
@@ -518,6 +583,12 @@ if($m=='getCurrencyCodes') {
     	if($fields['StandingOrderFrequency'] && $fields['StandingOrderFrequency'] != 'No') $details .= ' : Standing Order';
     	if($_POST['clone']) $details .= ' : Re-Request';
 		User::LogAccessRequest($user->Username,'',$details);
+
+		if($doAction=='edit-standing-order') {
+			$errorMessage='Your request to edit your standing order is being processed and will be updated shortly. Please note that we will effectively cancel your standing order and replace it with a new standing order based on your updated terms.';
+			HandleResult($errorMessage,'','SOMEdit');
+		}
+
 
 		HandleResult(); //no params means success
 

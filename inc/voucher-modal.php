@@ -37,10 +37,11 @@
 			</div><!-- /row-modal -->
 
 			<div class="row-modal">
-				
-				<h3 class="subtitle-modal">DATE PROCESSED </h3>
+			
+					<h3 class="subtitle-modal">DATE PROCESSED </h3>
 
-				<p class="info-modal voucher-date" id="vo_mdl_dt_prcd"></p>
+					<p class="info-modal voucher-date" id="vo_mdl_dt_prcd"></p>
+
 
 			</div><!-- /row-modal -->
 

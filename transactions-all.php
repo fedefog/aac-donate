@@ -131,7 +131,7 @@ if (count($tl) < 1) {
                 <th>DESCRIPTION</th>
                 <th>AMOUNT</th>
                 <th class="hidden-xs">COMMENTS</th>
-                <!-- HAKUNA -->
+                <!--<th class="hidden-xs">TYPE</th>-->
                 <th class="hidden-xs">ACTION</th>
             </tr>
         </thead>						
@@ -193,17 +193,17 @@ if (count($tl) < 1) {
                                     <div class="desc-table">
                                         <h2 class="title">
                                             <?php
-                                            echo $t->Description;
+                                            echo $t->FormatDescription();
                                             ?>
                                         </h2>
-                                        <h3 class="subtitle transaction-type-label"><?php echo $status; ?></h3>
+                                        <h3 class="subtitle transaction-type-label"><?php echo $type.' '.$status; ?></h3>
                                     </div><!-- /desc-table -->
                                 </a>
                             </td>
                             <td class="modal-show" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
                                 <a href="javascript:void(0);">
                                     <span class="balance-transition voucher-balance">
-                                        <?php echo showBalance($t->Amount); ?>
+                                        <?php echo $t->FormatAmount(); ?>
                                         <i class="fa fa-caret-up" aria-hidden="true"></i>
                                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                                     </span>
@@ -215,7 +215,7 @@ if (count($tl) < 1) {
                                         <p><?php echo $t->client_comment ?></p>
                                 </a>
                             </td>
-                            <!-- AACDESIGN2 -->
+
                               <td class="action-edit hidden-xs">
                               <?php
                               //$rows1[$i]['cd_no'] = "SO";
@@ -254,10 +254,10 @@ if (count($tl) < 1) {
 			$pageNavOptions  = array(
 				'NoItemsText'=>'',
 				'MaxVisiblePageNums'=>5,
-				'PrevPageText'=>'&laquo;',
-				'NextPageText'=>'&raquo;',
-				'FirstPageText'=>'',
-				'LastPageText'=>'',
+				'PrevPageText'=>'&lt;',
+				'NextPageText'=>'&gt;',
+				'FirstPageText'=>'&laquo;',
+				'LastPageText'=>'&raquo;',
 				'ShowAllText'=>'',
 				'ShowAllAlign'=>'',
 				'LeadingText'=>'',

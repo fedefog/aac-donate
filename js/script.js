@@ -1,8 +1,9 @@
 function ToGBPAmount(amount){
+	var gbpamount;
 	var currency = $('#Currency').val();
-	if (currency=='NIS') gbpamount = gbpamount  / NIS_exrate;
-	else if (currency=='USD') gbpamount = gbpamount  / USD_exrate;
-	else if (currency=='EUR') gbpamount = gbpamount  / EUR_exrate;
+	if (currency=='NIS') gbpamount = amount  / NIS_exrate;
+	else if (currency=='USD') gbpamount = amount  / USD_exrate;
+	else if (currency=='EUR') gbpamount = amount  / EUR_exrate;
 	else gbpamount = amount;
 
 	return gbpamount;
@@ -217,13 +218,17 @@ $(document).on('click', '.nav-standing-orders-li a,.ajaxlink, .clear-all-filters
 
         //search in selected tab
        
-
+		/**
 		var tabQS='';
 
 		if($('.nav-transactions-li .active').length) {
         	tabQS = $('.nav-transactions-li .active').attr('href').split('?')[1];
-        	if(tabQS && typeof(tabQS) != 'undefined') transaction += '&'+tabQS;
+        	if(tabQS && typeof(tabQS) != 'undefined') {
+				transaction = transaction.replace(tabQS,'');
+				transaction += '&'+tabQS;
+			}
         }
+		**/
         /////////////////
 
         $("html, body").animate({scrollTop: 0}, "fast"); // Animation to top of window
@@ -253,10 +258,10 @@ $(document).on('click', '.custom-date-go', function (event) {
 	$('#startd').val($('#customstartdate').val());
 	$('#endd').val($('#customenddate').val());
 	$('#dateType').val('custom');
-	$('.btn-search').click();
+	$('.search-desktop').click();
 });
 
-$(document).on('click', '.btn-search, .btn-success', function (event) {
+$(document).on('click', '.search-desktop, .date-desktop', function (event) {
     event.preventDefault(); // stop the browser from following the link  
     if ($(this).attr('href') == transaction) {
         // do nothing 
@@ -286,6 +291,50 @@ $(document).on('click', '.btn-search, .btn-success', function (event) {
         }, 500);
     }	
 });
+
+$(document).on('click', '.btn-success', function (event) {
+
+			var r = $(this).parents('.daterangepicker');
+
+			var sd = $('[name="daterangepicker_start"]',r).val();
+			var ed = $('[name="daterangepicker_end"]',r).val();
+
+			$('#startd-mobile').val(sd);
+			$('#endd-mobile').val(ed);
+
+});
+
+$(document).on('click', '.search-mobile, .date-mobile, .btn-success', function (event) {
+    event.preventDefault(); // stop the browser from following the link  
+    if ($(this).attr('href') == transaction) {
+        // do nothing 
+    } else {
+        progress_bar();
+        $("#myBar").addClass("visible"); // Loading bar visibility 
+        $('.nav-mobile').removeClass("open");
+        var thisnav = $(this);
+        transaction = 'transactions.php';
+
+
+        $("html, body").animate({scrollTop: 0}, "fast"); // Animation to top of window
+        setTimeout(function () {
+            // $('body').removeClass('menu-mobile-open');
+
+			var formData = $('#transaction-search-mobile').serialize();
+
+            $('#main-container').load(transaction, formData, function () {
+                $('.ajax-transaction').css({opacity: 0}).fadeTo(400, 1);//Efect fade
+				$(thisnav).parent().parent().find('a').removeClass('active');
+                //$('.nav-transactions a').removeClass('active');
+                $(thisnav).addClass('active');
+                $("#myBar").removeClass("visible");  // fadeout of the bar loading 
+                load_js()
+                sticky_footer();
+            }); // load the html response into a DOM element
+        }, 500);
+    }	
+});
+
 
 // AACDESING SORT by
 $(document).on('click', '.date-lkn.page', function (event) {
@@ -321,10 +370,14 @@ $(document).on('click', '.sort-transactions a, .navigator-transactions-sortby .r
 		//search in selected tab
 		
 		console.log($('.nav-transactions .active').attr('href'));		
-
+/**
 		var tabQS = $('.nav-transactions-li .active').attr('href').split('?')[1];
-		if(tabQS && typeof(tabQS) != 'undefined') transaction += '&'+tabQS;
-		console.log(tabQS);
+
+		if(tabQS && typeof(tabQS) != 'undefined') {
+			transaction = transaction.replace(tabQS,'');
+			transaction += '&'+tabQS;
+		}
+**/
 		/////////////////
 
         $("html, body").animate({scrollTop: 0}, "fast"); // Animation to top of window
@@ -641,11 +694,13 @@ function load_js() {
                 });
 		**/
         // Confirm checkbox of Make a Donation
-        $('.checkbox-box .ckeckbox').click(
-                function (event) {
+        //$('.checkbox-box .ckeckbox').click(
+		//$(document).ready(function(){
+				$('#main-container').on('click','.checkbox-box .ckeckbox',function (event) {
                     event.preventDefault();
                     $(this).toggleClass('active');
                 });
+		//});
         // slide toggle Change password Settings
         $('.lkn-change-password').click(
                 function (event) {
@@ -915,7 +970,20 @@ function load_js() {
             $(".results").css("display", "none");
             DoCharityChange();
         });
-        // click button form 
+        // click button form
+        $('.make-dontation-mobile').click(function (event) {
+                    event.preventDefault( );
+					
+					var StandingOrderTypeMobile = $('#StandingOrderTypeMobile').val();
+					var NumberOfPaymentsMobile = $('#NumberOfPaymentsMobile').val();
+					var StandingOrderStartDateMobile = $('#StandingOrderStartDateMobile').val();
+					var StandingOrderFrequencyMobile = $('#StandingOrderFrequencyMobile').val();
+
+					$('#StandingOrderType').val(StandingOrderTypeMobile);
+					$('#NumberOfPayments').val(NumberOfPaymentsMobile);
+					$('#StandingOrderStartDate').val(StandingOrderStartDate);
+					$('#StandingOrderFrequency').val(StandingOrderFrequency);
+		});
         $('.make-dontation').click(
                 function (event) {
                     event.preventDefault( );
@@ -1050,6 +1118,51 @@ $(document).on('click', '.form-modal-search a.checkbox-input', function (event) 
 	$(this).parent().find('input,select').val('');
 });
 
+
+    function cancelStandingOrder(id,charityName)
+    {
+        BootstrapDialog.show({
+            message: 'Are you sure you want to cancel this standing order'+(charityName?' for '+charityName:'')+'?',
+            buttons: [{
+                    label: 'Confirm',
+                    cssClass: 'btn-primary',
+                    action: function (dialogItself) {
+                        cancelOrder(id);
+                        dialogItself.close();
+                    }
+                }, {
+                    label: 'Cancel',
+                    action: function (dialogItself) {
+                        dialogItself.close();
+                    }
+                }]
+        });
+    }
+
+    function cancelOrder(id) {
+        //var url = "inc/ajax_cancel_standing_order.php?id=" + id + "&action=cancel";
+        var url = "inc/ajax_cancel_standing_order.php";
+        var url = "remote.php?m=cancel-standing-order&id="+id;
+        jQuery.ajax({
+            type: 'POST',
+            data: {'id': id, 'action': 'cancel'},
+            url: url,
+            success: function (data) {
+				if(!data) { //blank means sucess
+
+		            jQuery("#modal-quick-donation p").html('Your request to cancel your standing order is currently being processed and will be updated shortly');
+		            jQuery("#modal-quick-donation").modal('show');
+
+				}
+                /*if(data == "1")
+                 {
+                 alert('Success');
+                 }*/
+            }
+        });
+    }
+
+
 		function loadpage(url) {
 				progress_bar();
 			    $('body').removeClass('modal-open');
@@ -1063,3 +1176,10 @@ $(document).on('click', '.form-modal-search a.checkbox-input', function (event) 
 			                sticky_footer();
 			    });	
 			}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+} 

@@ -35,7 +35,7 @@ if ($_REQUEST['page']) {
 }
 $url = "PHPExcel_1.8.0_doc/export_excel.php?filename=csv";
 $url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xls";
-$param = "&charity_name=" . $charity_name;
+$param = "&charity_id=" . $charity_id;
 
 $transactionlist = new TransactionList();
 $search_array = array();
@@ -241,7 +241,7 @@ $tl = $transactionlist->listitems();
                                             $modal_name = "";
                                         }
 
-                                        $type = $t->description;
+                                        $type = $t->TransactionDescription;
 
                                         $data .= $t->id . "||";
                                         $data .= $t->Name . "||";
@@ -257,16 +257,17 @@ $tl = $transactionlist->listitems();
                                         if ($t->Voucher && substr($t->Voucher, 0, 1) == '9') {
                                             $status = 'online request';
                                         }
+										$data = $t->id;
+                                            $modal_name = "#modal-voucher";
                                             ?>
-                            <!--<tr class="modal-show transaction_history-row" data-toggle="modal" data-target="<?php echo $modal_name; ?>" data-id="<?php echo $data; ?>" data-type="<?php echo $t->CDNo; ?>">-->
-                            <tr class="balance-down">
-                                <td data-toggle="modal" data-target="#modal-standing-order-donation" >
-                                    <a href="#" >
+                            <tr class="balance-down modal-show transaction_history-row" data-toggle="modal" data-target="<?php echo $modal_name; ?>" data-id="<?php echo $data; ?>" data-type="TR">
+                                <td >
+                                    <a href="javascript:void(0)" >
                                         <div class="date"><?php echo date('j-n-y', strtotime($t->DateTime)); ?></div>
                                     </a>
                                 </td>
-                                <td class="desktop-align-center" data-toggle="modal" data-target="#modal-standing-order-donation" >
-                                    <a href="#" >
+                                <td class="desktop-align-center" >
+                                    <a href="javascript:void(0)" >
                                         <span class="balance-transition">
                                             <?php echo showBalance($t->Amount); ?>
                                             <i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -274,10 +275,10 @@ $tl = $transactionlist->listitems();
                                         </span>
                                     </a>
                                 </td>
-                                <td class="type-td transaction-type-label modal-show" data-toggle="modal" data-target="#modal-standing-order-donation">
+                                <td class="type-td transaction-type-label " >
                                     <p class="type-transactions"><?php echo $type; ?></p>
                                 </td>
-                                <td class="modal-show comments-td hidden-xs" data-toggle="modal" data-target="#modal-standing-order-donation">
+                                <td class="comments-td hidden-xs"  >
                                     <a href="javascript:void(0);">
                                             <p>Comments goes here from the user to the Charity..</p>
                                     </a>

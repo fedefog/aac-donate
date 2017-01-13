@@ -28,9 +28,11 @@ $somList = new StandingOrderMasterList();
 $somList->filters[] = 'Account="' . intval($user->Username) . '" ';
 
 if($type=='current') {
-	$somList->filters[] = ' end_date>=now() ';
+	$somList->filters[] = ' active=\'Y\' ';
+	$param = "&type=current";
 } else {
-	$somList->filters[] = ' end_date<now() ';
+	$somList->filters[] = ' active=\'N\'   ';
+	$param = "&type=previous";
 }
 
 $somList->SetPage($page);
@@ -78,11 +80,9 @@ if ($_REQUEST['page']) {
     jQuery(document).ready(function () {
 
 <?php
-$url = "PHPExcel_1.8.0_doc/export_excel.php?filename=csv";
-$url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xls";
-$param = "";
-$param .= "&search=so_current";
-$param .= "&charity_id=" . $req_charity_id;
+$url = "PHPExcel_1.8.0_doc/export_excel_standing.php?filename=csv";
+$url1 = "PHPExcel_1.8.0_doc/export_excel_standing.php?filename=xls";
+
 ?>
         jQuery('#export_csv_so').attr("href", "<?php echo $url . $param; ?>");
         jQuery('#export_xls_so').attr("href", "<?php echo $url1 . $param; ?>");
@@ -110,41 +110,6 @@ $param .= "&charity_id=" . $req_charity_id;
 **/
 
     });
-    function cancelStandingOrder(id)
-    {
-        BootstrapDialog.show({
-            message: 'Are you sure you want to cancel this standing order?',
-            buttons: [{
-                    label: 'Confirm',
-                    cssClass: 'btn-primary',
-                    action: function (dialogItself) {
-                        cancelOrder(id);
-                        dialogItself.close();
-                    }
-                }, {
-                    label: 'Cancel',
-                    action: function (dialogItself) {
-                        dialogItself.close();
-                    }
-                }]
-        });
-    }
-
-    function cancelOrder(id) {
-        //var url = "inc/ajax_cancel_standing_order.php?id=" + id + "&action=cancel";
-        var url = "inc/ajax_cancel_standing_order.php";
-        jQuery.ajax({
-            type: 'POST',
-            data: {'id': id, 'action': 'cancel'},
-            url: url,
-            success: function (data) {
-                /*if(data == "1")
-                 {
-                 alert('Success');
-                 }*/
-            }
-        });
-    }
 </script>
 <?php
 if (!count($somItems)) {
@@ -231,7 +196,7 @@ if (!count($somItems)) {
 
                     ?>
 
-        <tr >
+        <tr class="balance-up">
             <td class="hidden-xs td-center standing-orders" data-id="<?= $data; ?>" data-type="SOM" data-toggle="modal" data-target="#modal-voucher">
                 <?php echo $id; ?>
             </td>
@@ -266,8 +231,12 @@ if (!count($somItems)) {
                 <a href="standing-orders-transactions.php?id=<?php echo $id; ?>" class="external-lkn lkn-view-transaction">VIEW TRANSACTIONS</a>
             </td>
             <td class="action-edit hidden-xs">
-                <a href="make-a-donation.php?id=<?php echo $id; ?>" class="edit-transactions btn-trannsaction-accion external-lkn"></a>
-                <a href="javascript:void(0);" class="delete-transactions btn-trannsaction-accion" data-id="<?php echo $id; ?>" onClick="cancelStandingOrder('<?php echo $id; ?>');"></a>
+				<?php if($type=='current') { ?>
+                <a href="make-a-donation.php?SOMID=<?php echo $id; ?>" class="edit-transactions btn-trannsaction-accion external-lkn"></a>
+                <a href="javascript:void(0);" class="delete-transactions btn-trannsaction-accion" data-id="<?php echo $id; ?>" onClick="cancelStandingOrder('<?php echo $id; ?>','<?php echo $name; ?>');"></a>
+				<?php } else { ?>
+                <a href="make-a-donation.php?SOMID=<?php echo $id; ?>&repeat=1" class="refresh-transactions btn-trannsaction-accion external-lkn"></a>
+				<?php } ?>
             </td>
         </tr>
                     <?php

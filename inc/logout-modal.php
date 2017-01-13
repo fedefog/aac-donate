@@ -18,7 +18,7 @@
 
 			<div class="btns-options">
 				<a href="#" data-dismiss="modal" class="left-bt">Cancel</a>
-				<a href="login.php?logout=true" class="right-bt">Yes</a>
+				<a href="login.php?logout=true" class="right-bt logout-button">Yes</a>
 			</div><!-- / btns options -->
 
     	</div><!-- /modal-body -->

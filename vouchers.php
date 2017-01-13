@@ -235,9 +235,15 @@ switch ($fields['Request']) {
 				success: function(data)
 				{
 					if(!data.error) {
-			            jQuery("#modal-quick-donation p").html("Thank you for your order");
+			            //jQuery("#modal-quick-donation p").html("Thank you for your order");
 						
-						loadpage('vouchers.php?done=true');
+						//loadpage('vouchers.php?done=true');
+
+						loadpage('dashboard.php');
+
+						$('body').addClass('has-notification');
+						$('.notification-box font').html('Your Voucher Book order <strong> has been placed.</strong>');
+						$('.notification-box').show();
 
 						//$('.password-box').val('');
 
@@ -253,8 +259,9 @@ switch ($fields['Request']) {
 							var left = pos.left - 20;
 							window.scrollTo((left < 0 ? 0 : left), (top < 0 ? 0 : top));
 						}
+		    	        jQuery("#modal-quick-donation").modal('show');
 					}
-	    	        jQuery("#modal-quick-donation").modal('show');
+
 				}
 			});		
 
@@ -591,7 +598,7 @@ switch ($fields['Request']) {
                                 <div class="form-group">
                                     <h2 class="title-delivery">DELIVERY </h2>
                                     <div class="container-urgent hidden-xs">
-                                        <input type="checkbox" class="switch-settings" data-value="post" id="delivery_type_post" name="fields[VoucherBookDelivery][post]">
+                                        <input type="checkbox" class="switch-settings" data-value="post" id="delivery_type_post" name="Oldfields[VoucherBookDelivery][post]">
                                         <div class="label-delivery">
                                             <div class="label-urgent">POST: UP TO TWO BOOKS
                                                 <div class="subtitle-label">I TAKE RESPONSIBILITY FOR ANY 50P/£1 PPV BOOKS LOST IN THE POST</div>
@@ -599,7 +606,7 @@ switch ($fields['Request']) {
                                         </div>
                                     </div>
                                     <div class="container-urgent hidden-xs">
-                                        <input type="checkbox" class="switch-settings" data-value="Pick up from office" id="delivery_type_office" name="fields[VoucherBookDelivery][office]">
+                                        <input type="checkbox" class="switch-settings" data-value="Pick up from office" id="delivery_type_office" name="Oldfields[VoucherBookDelivery][office]">
                                         <div class="label-delivery">
                                             <div class="label-urgent">OFFICE COLLECTION 
                                                 <div class="subtitle-label">9.30AM - 3.30PM MON-THURS</div>
@@ -607,7 +614,7 @@ switch ($fields['Request']) {
                                         </div>
                                     </div>
                                     <div class="container-urgent hidden-xs">
-                                        <input type="checkbox" class="switch-settings" data-value="Special Delivery" id="delivery_type_special" name="fields[VoucherBookDelivery][special]">
+                                        <input type="checkbox" class="switch-settings" data-value="Special Delivery" id="delivery_type_special" name="Oldfields[VoucherBookDelivery][special]">
                                         <div class="label-delivery">
                                             <div class="label-urgent">SPECIAL DELIVERY 
                                                 <div class="subtitle-label">AT A COST OF £5 TO BE DEDUCTED FROM MY ACCOUNT</div>

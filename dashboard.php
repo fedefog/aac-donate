@@ -137,6 +137,93 @@ switch ($fields['Request']) {
         $field_list = array();
 }
 ?>
+<script type="text/javascript">
+    var currencyWarningShown = false;
+    var selectedCharityCountry = '<?php echo trim($RemoteCharityCountry) ?>';
+    $(document).ready(function () {
+
+		$('.autocomplete-charities').autocomplete({
+			source: 'remote.php?m=getCharityList',
+		    messages: {
+		        noResults: '',
+		        results: function() {}
+		    },
+			resultTextLocator:'label',
+			select: function(event, ui){
+				event.preventDefault();
+				$('.autocomplete-charities').val(ui.item.name);
+				/**
+				if(ui.item.address!=''){
+					$('#charityAddressBox').show();
+					$('#charityAddressBoxData').html(ui.item.address);
+				} else
+					$('#charityAddressBox').hide();
+				**/
+
+				DoCharityChange();
+
+			}
+		});
+
+    });
+    var NIS_exrate = <?php echo NIS_EXRATE; ?>;
+    var USD_exrate = <?php echo USD_EXRATE; ?>;
+    var EUR_exrate = <?php echo EUR_EXRATE; ?>;
+    function DoCharityChange()
+    {
+        var charityName = $('#Beneficiary').val();
+        var strplus = "See previous donations to " + charityName;
+        var strplusNone = "You haven't made any previous donations to " + charityName;
+        //var link = encodeURI(charityId);
+        //$('#history').prop('href', "transactions-history.php?charityname=" + link);
+        $.ajax({
+            dataType: 'json',
+            url: 'remote.php?m=getCharityDetail&charityName=' + encodeURIComponent(charityName),
+            success: function (data) {
+                //alert(JSON.stringify(data));
+                if (data.found == 1) {
+                    $('#charityAddressBox').show();
+                    $('#charityAddressBoxData').html(data.address);
+                    $('#charityRemoteID').val(data.remoteCharityID);
+
+					if(parseInt(data.donationCount))
+	                    $('#history').text(strplus).css({opacity: 1});
+					else
+	                    $('#history').text(strplusNone).css({opacity: 1});
+                    $('#history').prop('href', "transactions-history.php?charityId=" + data.remoteCharityID);
+
+                    selectedCharityCountry = data.countryName;
+                    if ($.trim(data.countryName) == 'UK') {
+                        $('#profile').css({opacity: 1});
+                    } else {
+                        $('#profile').css({opacity: 0});
+                    }
+                } else
+                    $('#charityAddressBox').hide();
+            }
+        });
+
+        DoCurrencyList();
+    }
+
+    function DoCurrencyList() {
+        $('#gbpAmountBoxData').hide();
+        var charityName = $('#Beneficiary').val();
+        $.ajax({
+            url: 'remote.php?m=getCurrencyCodes&charityName=' + encodeURIComponent(charityName),
+            success: function (data) {
+                if (data == '') {
+                    $('.selectpicker').selectpicker('refresh');
+                } else {
+                    $('#Currency').html(data);
+                    $('.selectpicker').selectpicker('refresh');
+                }
+            }
+        });
+    }
+//    DoCurrencyList();
+</script>
+
 <?php if ($x['done']) { ?>
     <p class="blue-text" style="margin: 0 15%;">Your request has been sent. <a href="index.php">Return to request Main Page.</a></p>
     <div style="height:150px"></div>
@@ -170,9 +257,16 @@ switch ($fields['Request']) {
                 <div class="col-md-7">
                     <!-- AACDESING -->		
 	                    <h2 class="title-dashborad-desktop title-dashborad-left">Latest Transactions</h2>		
-			
-	                    <a href="transactions-processing.php" class="lkn-being-processed ajaxlink"><span class="number-notification"><?php echo AACRequestList::CountProcessing(); ?></span>being processed</a>		
-	                    <a href="transactions-pending.php" class="lkn-pendings ajaxlink"><span class="number-notification"><?php echo TransactionList::CountPending(); ?></span> PENDING</a>		
+						<?php 
+							$processingCount = AACRequestList::CountProcessing();
+							$pendingCount = TransactionList::CountPending();
+						?>	
+						<?php if($processingCount) { ?>
+	                    <a href="transactions-processing.php" class="lkn-being-processed ajaxlink"><span class="number-notification"><?php echo $processingCount; ?></span>being processed</a>		
+						<?php } ?>
+						<?php if($pendingCount) { ?>
+	                    <a href="transactions-pending.php" class="lkn-pendings ajaxlink"><span class="number-notification"><?php echo $pendingCount; ?></span> PENDING</a>		
+						<?php } ?>
 	                    		
 	                    <!-- END AACDESING -->
                     <?php
@@ -283,7 +377,7 @@ switch ($fields['Request']) {
                                             <td>
                                                 <a href="javascript:void(0);">
                                                     <div class="desc-table">
-                                                        <h2 class="title"><?php echo $t->Description; ?></h2>
+                                                        <h2 class="title"><?php echo $t->FormatDescription(); ?></h2>
                                                         <h3 class="subtitle transaction-type-label"><?php echo $status; ?></h3>
                                                     </div><!-- /desc-table -->
                                                 </a>
@@ -292,7 +386,7 @@ switch ($fields['Request']) {
                                                 <a href="javascript:void(0);">
                                                     <span class="balance-transition voucher-balance">
                                                         <!--£ <?php //echo number_format($amt, 2);                               ?>-->
-                                                        <?php echo showBalance($amt); ?>
+                                                        <?php echo $t->FormatAmount();; ?>
                                                         <i class="fa fa-caret-up" aria-hidden="true"></i>
                                                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                                                     </span>
@@ -527,11 +621,11 @@ switch ($fields['Request']) {
                 <div class="col-xs-12">
                     <div class="box-daily-updates visible-xs">
                         <a href="#" class="lkn-daily daily-dashboard"> 
-                            <span class="date">SEP-14 </span>  ROSH HASHANAH UPDATE 
+                            <span class="date"><?php echo $post_date; ?> </span>  <?php echo $title; ?> UPDATE 
                             <i class="fa fa-angle-down" aria-hidden="true"></i>
                             <i class="fa fa-angle-up" aria-hidden="true"></i>
                         </a>
-                        <p class="text">The office will be closed Monday September 21 to Thursday the 24th. Please ensure all transactions are dealt with as soon as possible to avoid any issues given the high demand. Wishing everyone a ksiva v'chasima tova.</p>
+                        <p class="text"><?php echo $content; ?><?php if($url) {'&nbsp;<a href="'.$url.'" target="_blank">READ MORE</a>'; } ?></p>
                     </div><!-- /box-daily-updates -->
                     <ul class="nav-dashboard">
                         <!-- AACDESIGN -->
@@ -544,8 +638,20 @@ switch ($fields['Request']) {
                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                             </a>
                             <div class="box-notification-nav sublinks-nav">
-                                <span class="notification-nav txt-being-processed"> <a href="">2 being processed </a> </span>
-                                <span class="notification-nav"><a href="">4 PENDING </a></span>
+						<?php 
+							$processingCount = AACRequestList::CountProcessing();
+							$pendingCount = TransactionList::CountPending();
+							$bits = array();
+
+							if($processingCount) { 
+								$bits[] = '<span class="notification-nav '.($pendingCount?'txt-being-processed':'').'"> <a href="transactions-processing.php">'.$processingCount.' being processed </a> </span>';
+							}
+							if($pendingCount) { 
+								$bits[] ='<span class="notification-nav"><a href="transactions-pending.php">'.$pendingCount.' PENDING </a></span>';
+							}
+
+							echo implode('',$bits);
+						?>
                             </div>
                         </li>
                         <li class="dashboard-li dashboard-li-has-noti">

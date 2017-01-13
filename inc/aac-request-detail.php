@@ -9,8 +9,22 @@
 
                 <div class="row-modal">
                     <h3 class="subtitle-modal">SUMMARY </h3>
-                    <p class="info-modal" id="modal_beneficiary"><?php echo $t->Summary ?></p>
+                    <p class="info-modal" id="modal_beneficiary"><?php echo $t->FormatSummary() ?></p>
                 </div><!-- /row-modal -->
+
+                <div class="row-modal">
+                    <h3 class="subtitle-modal">NOTES TO AAC</h3>
+                    <p class="info-modal" id="modal_notes_aac"><?php echo $t->OfficeComments ?></p>
+                </div><!-- /row-modal -->
+                <div class="row-modal">
+                    <h3 class="subtitle-modal">NOTES TO SELF</h3>
+                    <p class="info-modal" id="modal_charity_notes"><?php echo $t->UserComments ?></p>
+                </div><!-- /row-modal -->
+                <div class="row-modal">
+                    <h3 class="subtitle-modal">NOTES TO CHARITY</h3>
+                    <p class="info-modal" id="modal_charity_notes"><?php echo $t->ClientComments ?></p>
+                </div><!-- /row-modal -->
+
 <?phhp /**
                 <div class="row-modal">
                     <h3 class="subtitle-modal">BENEFICIARY </h3>
@@ -28,14 +42,7 @@
                     <h3 class="subtitle-modal">PAYMENTS NUMBER </h3>
                     <p class="info-modal" id="modal_payments_number"><?php echo $t->PaymentNumber ?></p>
                 </div><!-- /row-modal -->
-                <div class="row-modal">
-                    <h3 class="subtitle-modal">NOTES TO AAC</h3>
-                    <p class="info-modal" id="modal_notes_aac"></p>
-                </div><!-- /row-modal -->
-                <div class="row-modal">
-                    <h3 class="subtitle-modal">NOTES TO SELF</h3>
-                    <p class="info-modal" id="modal_charity_notes"></p>
-                </div><!-- /row-modal -->
+
                 <div class="row-modal">
                     <a href="#" class="view-all-dontation external-lkn" data-dismiss="modal" id="lnk_view_all">VIEW ALL DONATIONS WITHIN THIS STANDING ORDER</a>
                 </div><!-- /row-modal -->

@@ -15,7 +15,7 @@
 
                     <h3 class="subtitle-modal">BENEFICIARY </h3>
 
-                    <p class="info-modal" id="modal_beneficiary1"><?php echo $s->Name ?></p>
+                    <p class="info-modal" id="modal_beneficiary1"><?php echo $s->name ?></p>
 
                 </div><!-- /row-modal -->
 

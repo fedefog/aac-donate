@@ -30,5 +30,5 @@
                     <p class="info-modal" id="modal_charity_notes"></p>
                 </div><!-- /row-modal -->
                 <div class="row-modal">
-                    <a href="#" class="view-all-dontation external-lkn" data-dismiss="modal" id="lnk_view_all">VIEW ALL DONATIONS WITHIN THIS STANDING ORDER</a>
+                    <a href="standing-orders-transactions.php?id=<?php echo $t->so_master_id ?>" class="view-all-dontation external-lkn" data-dismiss="modal" id="lnk_view_all">VIEW ALL DONATIONS WITHIN THIS STANDING ORDER</a>
                 </div><!-- /row-modal -->

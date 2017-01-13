@@ -20,7 +20,9 @@ $sort_fieldname = $_REQUEST['fieldname']?$_REQUEST['fieldname']:'DateTime';
 $param = "";
 
 $search = $_REQUEST;
-foreach($search as $k=>$v) if(!is_array($v)) $search[$k] = mysql_real_escape_string($v);
+unset($search['page']);
+
+$search['amount_donated_to'] = trim(str_replace('TO','',$search['amount_donated_to']));
 
 //$search = array();
 
@@ -44,7 +46,7 @@ $transactionlist->sortby = $sort_fieldname;
 $transactionlist->sortorder = $sort_direction;
 $transactionlist->SetPage($page);
 
-
+/**
 if ($req_type == "in") {
 		$transactionlist->filters[] = ' Amount > 0';
 		$param .= "&type={$_REQUEST['type']}";
@@ -52,6 +54,8 @@ if ($req_type == "in") {
 		$transactionlist->filters[] = ' Amount < 0';
 		$param .= "&type={$_REQUEST['type']}";
 }
+if($_REQUEST['type']) $paramArray['type'] = $_REQUEST['type'];
+**/
 
 ?>
 <?php
@@ -61,6 +65,8 @@ $url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xls";
 
 //$search = $_REQUEST;
 
+
+/**
     if ($search['transaction_id']) {
 		$transactionlist->filters[] = " `t`.`RequestId`='{$search['transaction_id']}' ";
 		$param .= "&transaction_id={$_REQUEST['transaction_id']}";
@@ -114,6 +120,11 @@ $url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xls";
 		$transactionlist->filters[] = " `DateTime`<='{$dbsearch['enddate']}' ";
 	    $param .= '&enddate=' . $search['enddate'];
 	}
+**/
+
+//print_r($search);
+
+//print_r($transactionlist->filters);
 
 function buildDates($key){
 	global $search;
@@ -149,6 +160,15 @@ $dates = array(
 	'custom'=>buildDates('custom'),
 );
 
+$defaultDate = reset($dates);
+$searchF = $search;
+if(!$searchF['startdate']) $searchF['startdate'] = $defaultDate['startdate'];
+if(!$searchF['enddate']) $searchF['enddate'] = $defaultDate['enddate'];
+
+$dates['custom']['startdate'] = $searchF['startdate'];
+$dates['custom']['enddate'] = $searchF['enddate'];
+
+/**
 if(!$search['startdate']) {
 	$defaultDate = reset($dates);
 
@@ -163,6 +183,11 @@ if(!$search['startdate']) {
 	$transactionlist->filters[] = " `DateTime`<='{$defaultDate['enddate']}' ";
 
 }
+**/
+
+$transactionlist->filters = array_merge($transactionlist->filters,$transactionlist->BuildSearch($searchF));
+$param = '&'.http_build_query($searchF);
+unset($search['type']);
 
 /**
 if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
@@ -207,8 +232,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
         });
         $('#txtCharityName').focus(function (event) {
             event.preventDefault( );
-            // AACDESIGN2
-            // $(this).parent().parent().addClass('active');
+            //$(this).parent().parent().addClass('active');
         });
         $('.search .input').focus(function () {
             $(this).attr('placeholder', 'Type your search');
@@ -218,7 +242,8 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
 
     });
     function clearOthers(current_element) {
-
+//disabled this as its causing problems and shouldnt be needed
+return;
         if ($('#chkTransactionId').parent().hasClass('active') === false && $('#chkTransactionId') !== $(current_element)) {
             $('#txtTransactionId').val('');
         }
@@ -342,9 +367,9 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                     <!-- /header-mobile-transactions -->
                     <div class="col-xs-12 header-mobile-transactions">
                         <ul class="nav-transactions transaction_page_mobile">
-                            <li class="nav-transactions-li"> <a href="transactions.php" class="nav-transactions-lkn active">all</a> </li>
-                            <li class="nav-transactions-li"> <a href="transactions.php?type=in" class="nav-transactions-lkn">in</a> </li>
-                            <li class="nav-transactions-li"> <a href="transactions.php?type=out" class="nav-transactions-lkn">out</a> </li>
+                            <li class="nav-transactions-li"> <a href="transactions.php" class="nav-transactions-lkn <?php echo !$req_type?'active':'' ?>">all</a> </li>
+                            <li class="nav-transactions-li"> <a href="transactions.php?type=in" class="nav-transactions-lkn <?php echo $req_type=='in'?'active':'' ?>">in</a> </li>
+                            <li class="nav-transactions-li"> <a href="transactions.php?type=out" class="nav-transactions-lkn <?php echo $req_type=='out'?'active':'' ?>">out</a> </li>
                         </ul>
                     </div>
                     <!-- /header-mobile-transactions -->
@@ -361,8 +386,16 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
             <div class="col-md-8">
                 <h2 class="title-transactions-desktop">Transactions</h2>
                 <!-- AACDESIGN -->
-                    <a href="transactions-processing.php" class="btn-being-processed ajaxlink"><span class="number-notification"><?php echo AACRequestList::CountProcessing(); ?></span><span class="noti-string">being processed</span></a>
-                    <a href="transactions-pending.php" class="btn-pendings ajaxlink"><span class="number-notification"><?php echo TransactionList::CountPending(); ?></span> <span class="noti-string">PENDING</span></a>
+						<?php 
+							$processingCount = AACRequestList::CountProcessing();
+							$pendingCount = TransactionList::CountPending();
+						?>	
+						<?php if($processingCount) { ?>
+                    <a href="transactions-processing.php" class="btn-being-processed ajaxlink"><span class="number-notification"><?php echo $processingCount; ?></span><span class="noti-string">being processed</span></a>
+						<?php } ?>
+						<?php if($pendingCount) { ?>
+                    <a href="transactions-pending.php" class="btn-pendings ajaxlink"><span class="number-notification"><?php echo $pendingCount; ?></span> <span class="noti-string">PENDING</span></a>
+						<?php } ?>
                     <!-- END AACDESIGN -->
                 <ul class="nav-transactions transaction_page_desktop">
                     <li class="nav-transactions-li"> <a href="transactions.php" class="nav-transactions-lkn<?php echo $req_type?'':' active' ?>">all</a> </li>
@@ -378,7 +411,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
             <div class="col-md-4 text-right">
                 <?php
                 $url = "PHPExcel_1.8.0_doc/export_excel.php?filename=csv";
-                $url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xls";
+                $url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xlsx";
 
 					if ($_REQUEST['fieldname']) {
                         $param = $param . "&fieldname=" . $_REQUEST['fieldname'];
@@ -404,15 +437,30 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                 <!-- AACDESING -->
 
                 <div class="visible-xs">
+						<?php 
+							$processingCount = AACRequestList::CountProcessing();
+							$pendingCount = TransactionList::CountPending();
+							$bits = array();
 
-                    <a href="#" class="btn-being-processed-mobile"><span class="number-notification">2</span>Currently being processed</a>
-                    <a href="#" class="btn-pendings-mobile"><span class="number-notification">4</span> PENDING</a>
+							if($processingCount) { 
+								$bits[] = '<a href="transactions-processing.php" class="btn-being-processed-mobile"><span class="number-notification">'.$processingCount.'</span>Currently being processed</a>';
+							}
+							if($pendingCount) { 
+								$bits[] ='<a href="transactions-pending.php" class="btn-pendings-mobile"><span class="number-notification">'.$pendingCount.'</span> PENDING</a>';
+							}
+
+							echo implode('',$bits);
+						?>
+                    
+                    
                     
                 </div>
                 <!-- /box-account-header -->
                 
                 <ul class="navigator-transactions">
-                <!-- AACDESIGN2 -->
+<!--
+                    <li class="navigator-transactions-li"> <a href="transactions.php" class="navigator-transactions-lkn lkn-recent active page btn-active external-lkn">RECENT</a> </li>
+-->
                     <li class="navigator-transactions-li visible-xs"> <a href="javascript:void(0);" id="dates-bt-modal" class="navigator-transactions-lkn visible-xs">DATES</a>
                         <input type="text" id="config-date" class="form-control hidden-xs" placeholder="Select Date">
                         <a href='#' id="startDate"></a>
@@ -517,6 +565,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
 
 						$value = '';
 						$search2 = $search;
+						if($_REQUEST['type']) $search2['type'] = $_REQUEST['type'];
 
 						if($key=='amount_donated') {
 							if($search['amount_donated_from'] && $search['amount_donated_to']) 
@@ -542,6 +591,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
 
 							unset($search2['startdate']);
 							unset($search2['enddate']);							
+							unset($search2['dateType']);							
 						} else {
 							$value = $search[$key];
 							unset($search2[$key]);
@@ -568,7 +618,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
 						showFilter('transaction_type');
 						showFilter('dates');
 						?>
-	                    <span class="clear-all-filters"><a href="transactions.php">X CLEAR ALL</a></span>
+	                    <span class="clear-all-filters"><a href="transactions.php?type=<?php echo $_REQUEST['type'] ?>">X CLEAR ALL</a></span>
 						<?php
 					}
 					?>
@@ -640,7 +690,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                             <div class="row-input <?php echo $_REQUEST['amount_donated_from'] || $_REQUEST['amount_donated_to']?'active':'' ?>"> <a href="javascript:void(0);" id="chkAmount" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
                                 
                                 <div class="mid-size container-input-search container-input-search-min"
-                                ><!-- AACDESIGN2 -->
+                                >
                                     <input type="text" class=" input input-search" id="txtAmount" placeholder="Number" name='amount_donated_from' value="<?php echo $search['amount_donated_from'] ?>">
                                     <a href="#" class="reset-input">
                                         <i class="fa fa-times" aria-hidden="true"></i>
@@ -677,7 +727,6 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                             <div class="row-input <?php echo $_REQUEST['voucher_no_from'] || $_REQUEST['voucher_no_to']?'active':'' ?>"> <a href="javascript:void(0);" id="chkVoucherNumber" class="checkbox-input"> <i class="fa fa-check" aria-hidden="true"></i> </a>
                                 
                                 <div class="mid-size container-input-search container-input-search-min">
-                                    <!-- AACDESIGN2 -->
                                     <input type="text" class="input input-search" id="txtVoucherNumber" placeholder="Number" name='voucher_no_from' value="<?php echo $search['voucher_no_from'] ?>">
                                     <a href="#" class="reset-input">
                                         <i class="fa fa-times" aria-hidden="true"></i>
@@ -725,7 +774,7 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
                                 </select>
                             </div>
                         </div>
-                        <a href="javascript:void(0);" id='searchTransactions' class="btn-search page transition transaction_page">Search Transactions</a>
+                        <a href="javascript:void(0);" id='searchTransactions' class="btn-search search-desktop page transition transaction_page">Search Transactions</a>
                     </div>
                 </div>
                 <!-- /col -->
@@ -764,8 +813,8 @@ if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
             <div class="modal-body">
                 <div class="form-modal-search">
                     <?php include "transaction-search-html.php"; ?>
-                    <?php /* <a href="transactions.php" class="btn-search page transaction_page">Search Transactions</a> </div> */ ?>
-                    <a href="javascript:void(0);" id='searchTransactions' class="btn-search page transition transaction_page">Search Transactions</a>
+                    <?php /* <a href="transactions.php" class="btn-search-mobile page transaction_page">Search Transactions</a> </div> */ ?>
+                    <a href="javascript:void(0);" id='searchTransactions' class="btn-search search-mobile page transition transaction_page">Search Transactions</a>
                 </div>
                 <!-- /modal-body -->
             </div>

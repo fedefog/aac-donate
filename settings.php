@@ -68,6 +68,7 @@ $row = mysql_fetch_row($result, 1);*/
 				success: function(data)
 				{
 					if(!data.error) {
+
 			            jQuery("#modal-quick-donation p").html("Settings saved.");
 						
 						loadpage('settings.php');

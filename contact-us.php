@@ -55,14 +55,21 @@ if ($_POST['doAction']) {
 				success: function(data)
 				{
 					if(data.success) {
-			            jQuery("#modal-quick-donation p").html("Thank you for contacting us.");
+			            //jQuery("#modal-quick-donation p").html("Thank you for contacting us.");
 
-						$('#myform input, #myform textarea').val('');
+						//$('#myform input, #myform textarea').val('');
+
+						loadpage('dashboard.php');
+
+						$('body').addClass('has-notification');
+						$('.notification-box font').html('Thank you for contacting us');
+						$('.notification-box').show();
 
 					} else {
 			            jQuery("#modal-quick-donation p").html("An error has occured - please contact support.");
+		    	        jQuery("#modal-quick-donation").modal('show');
 					}
-	    	        jQuery("#modal-quick-donation").modal('show');
+
 				}
 			});		
 

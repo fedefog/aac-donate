@@ -28,7 +28,7 @@ $somItem->load($id) or die('error locating item');
 $transactionlist = new StandingOrderTransactionList();
 
 $transactionlist->filters[] = 'Account="' . intval($user->Username) . '" ';
-$transactionlist->filters[] = 'sto_id="' . $id . '" ';
+$transactionlist->filters[] = 'so_master_id="' . $id . '" ';
 $transactionlist->SetPage($page);
 
 $sotl = $transactionlist->listitems();
@@ -116,15 +116,15 @@ $sotl = $transactionlist->listitems();
             </div><!-- / col 6 -->
             <div class="col-lg-7 col-md-8">
                     <div class="container-lkns-transactions">
-                        <a href="#" class="lkn-amend">AMEND THIS STANDING ORDER</a>
-                        <a href="#" class="lkn-cancel-order">CANCEL THIS STANDING ORDER</a>
+                        <a href="make-a-donation.php?SOMID=<?php echo $somItem->id; ?>" class="lkn-amend external-lkn">AMEND THIS STANDING ORDER</a>
+                        <a href="javascript:void(0)" class="lkn-cancel-order" onClick="cancelStandingOrder('<?php echo $somItem->id; ?>','<?php echo $somItem->name; ?>');">CANCEL THIS STANDING ORDER</a>
                     </div>
                 
             </div>
 
             <div class="col-lg-5 col-md-4 text-right margintop-standing-orders">
-                <a href="PHPExcel_1.8.0_doc/export_excel.php?filename=csv" class="expert-csv-file">EXPORT DATA TO CSV FILE</a>
-                <a href="PHPExcel_1.8.0_doc/export_excel.php?filename=xls" class="expert-xls-file">EXPORT DATA TO XLS FILE</a>
+                <a href="PHPExcel_1.8.0_doc/export_excel_standing_transactions.php?filename=csv&<?php echo "stoId={$somItem->id}" ?>" class="expert-csv-file">EXPORT DATA TO CSV FILE</a>
+                <a href="PHPExcel_1.8.0_doc/export_excel_standing_transactions.php?filename=xls&<?php echo "stoId={$somItem->id}" ?>" class="expert-xls-file">EXPORT DATA TO XLS FILE</a>
             </div><!-- / col 6 -->
         </div><!-- / row -->
     </div><!-- /transactions-navigation-desktop -->
@@ -159,8 +159,8 @@ $sotl = $transactionlist->listitems();
                                     $id = $t->id;
                                     //$request = $row['Request'];
                                     $beneficiary = $t->name;
-                                    $amount = number_format($t->amount, 2);
-                                    $date = date('d-m-y', strtotime($t->transdate));
+                                    $amount = number_format($t->Amount, 2);
+                                    $date = date('d-m-y', strtotime($t->DateTime));
                                     //$notes_aac = $row['ClientComments'];
                                     //$notes_charity = $row['OfficeComments'];
 
@@ -192,7 +192,7 @@ $sotl = $transactionlist->listitems();
                                     </a>
                                 </td>
                                 <td class="hidden-xs td-interval">
-                                    <span class="date-interval">1/2 PAYMENTS</span>
+                                    <span class="date-interval"><?php echo "$somItem->total_number_of_payments"; ?> PAYMENTS</span>
                                 </td>
                             </tr>                   
                                         <?php

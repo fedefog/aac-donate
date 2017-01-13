@@ -298,3 +298,16 @@ function Validate(form) {
     });
     return false;
 }
+
+			var performUnloadCheck=true;
+$(document).ready(function(){
+
+			window.onbeforeunload= function(){
+				var p = performUnloadCheck;
+				performUnloadCheck=true;
+				if(!p) return null;
+				//if(!confirm('Are you sure you want to leave this page?')) return false;
+				return 'Are you sure you want to leave this page?';
+			}
+			$(document).on('click','.expert-csv-file, .expert-xls-file, .logout-button',function(e){performUnloadCheck=false});
+});

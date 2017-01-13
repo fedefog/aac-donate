@@ -30,7 +30,8 @@ if ($_REQUEST['page']) {
 $transactionlist = new AACRequestList();
 
 $transactionlist->filters[] = 'UserName="' . $user->Username . '" ';
-$transactionlist->filters[] = 'Request="Initiate Transfer" AND ResultCode="Pending" ';
+$transactionlist->filters[] = 'Request IN ("Initiate Transfer","New Voucher Book","Cancel Standing Order") AND ResultCode="Pending" ';
+//
 
 
 $transactionlist->SetPage($page);
@@ -135,7 +136,7 @@ $ptl = $transactionlist->ListItems();
                                     $charity_id = $t->RemoteCharityID;
                                     $beneficiary = $t->Beneficiary;
                                     $type = 'PEN';
-                                    $amount = number_format($t->Amount, 2);
+                                    $amount = $t->Amount;
 
                                       $data .= $beneficiary . "||";
                                       $data .= $date . "||";
@@ -159,11 +160,7 @@ $ptl = $transactionlist->ListItems();
                                                     <div class="desc-table">
                                                         <h2 class="title">
                                                             <?php
-                                                            if ($charity_id != "" && $charity_id > 0) {
-                                                                echo $beneficiary;
-                                                            } else {
-                                                                echo '';
-                                                            }
+															echo $t->RequestTitle()
                                                             ?>
                                                         </h2>
                                                         <h3 class="subtitle transaction-type-label"><span><?php echo 'Currently being processed'; //getTransactionType($type); ?></span></h3>

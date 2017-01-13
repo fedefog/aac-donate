@@ -1,5 +1,6 @@
 <?php
-
+//unused
+exit;
 require_once 'config.inc.php';
 require_once 'dbconn.inc.php';
 
