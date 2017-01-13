@@ -1808,6 +1808,18 @@ ul.ui-autocomplete{
 .main-transactions.main-contact-us .top-center-content {
     padding-top: 60px;
 }
+.send-message-container, .messages-container{
+    padding:15px;
+}
+.main-contact-us .messages-box{
+    overflow-y: scroll;
+    height: 245px;
+    margin-top: 10px;
+}
+.main-contact-us .title{
+    font-size: 16px;
+    color: #727272;
+}
 .contact-us-textarea {
     border: 1px solid #BBBBBB;
     border-radius: 4px;
@@ -1833,13 +1845,10 @@ ul.ui-autocomplete{
     box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.13);
 }
 .box-details-bank {
-
     text-align: center;
-
     margin: 40px 0 55px 0;
 }
 .box-details-bank .title-bank-details{
-
     font-weight: 600;
     font-size: 12px;
     color: #00ADEE;
@@ -1853,6 +1862,59 @@ ul.ui-autocomplete{
     letter-spacing: 0.52px;
     line-height: 16px;
     margin: 0;
+}
+.main-contact-us .messages-box{
+    color: #87878E;
+}
+.no-message-sent{
+    overflow: auto !important;
+}
+.main-contact-us .messages-box .no-message{
+    background: #f3f3f3;
+    padding: 40px 0;
+    text-align: center;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+.main-contact-us .messages-box .no-message > span{
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.main-contact-us .messages-box .message{
+    background-color: #f4f4f4;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.main-contact-us .messages-box .message .date{
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-right: 5px;
+    color: #727272;
+}
+.main-contact-us .messages-box .message a{
+    color: #727272;
+    text-transform: uppercase;
+    text-decoration: underline !important;
+}
+.main-contact-us .messages-box .message .read-more{
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.modal-message.modal-gral{
+    letter-spacing: 0.6px;
+    line-height: 21px;
+    color: #87878E;
+}
+.modal-message.modal-gral .title-modal{
+    color: #727272;
+}
+.modal-message.modal-gral .title-modal .date{
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #727272;
 }
 /* INVITE A FRIEND */
 

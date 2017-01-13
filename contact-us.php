@@ -139,35 +139,79 @@ if ($_POST['doAction']) {
                             <h2 class="title-desktop">Contact us</h2>
                         </div><!-- header-desktop -->
                     </div><!-- /col -->
-                    <form id="myform" method="post" action="<?php echo basename($_SERVER['PHP_SELF']) ?>">
-                        <div class="col-xs-12 col-md-6 col-md-offset-3">
-                            <?php if ($_REQUEST['error']) { ?>
-                                <p class="red-text">Error</p>
-                            <?php } ?>
-                            <textarea cols="30" rows="10" id='OfficeComments' name="fields[OfficeComments]" class="contact-us-textarea" placeholder="How can we help?"></textarea>
-                            <!--                            <a href="#" class="contact-send transition hidden-xs">Send Message</a>-->
-                            <a href="#" id="send-contact" class="send-msj transition">Send Message</a>
-                            <div class="box-details-bank">
-                                <h2 class="title-bank-details">BANK DETAILS</h2>
-                                <p class="text">ACHISOMOCH AID CO. LTD.</p>
-                                <p class="text">SORT CODE 20-29-37</p>
-                                <p class="text">ACCOUNT NO 2033 2003</p>
-                            </div><!-- / -->
-                            <div class="hidden-xs box-for-answers">
-                                <h2 class="title-footer">FOR ANSWERS TO COMMONLY ASKED QUESTIONS</h2>
-                                <a href="help.php" class="subtitle-footer transition external-lkn">PLEASE VIEW OUR FAQs</a>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 col-md-offset-3">
+                        <div class="send-message-container">
+                            <span class="title">Send a Message</span>
+                            <form id="myform" method="post" action="<?php echo basename($_SERVER['PHP_SELF']) ?>">
+                                <?php if ($_REQUEST['error']) { ?>
+                                    <p class="red-text">Error</p>
+                                <?php } ?>
+                                <textarea cols="30" rows="10" id='OfficeComments' name="fields[OfficeComments]" class="contact-us-textarea" placeholder="How can we help?"></textarea>
+                                <!--                            <a href="#" class="contact-send transition hidden-xs">Send Message</a>-->
+                                <a href="#" id="send-contact" class="send-msj transition">Send Message</a>
+                                <div class="box-details-bank">
+                                    <h2 class="title-bank-details">BANK DETAILS</h2>
+                                    <p class="text">ACHISOMOCH AID CO. LTD.</p>
+                                    <p class="text">SORT CODE 20-29-37</p>
+                                    <p class="text">ACCOUNT NO 2033 2003</p>
+                                </div><!-- / -->
+                                <input type="hidden" name="doAction" value="save" />
+                            </form>
+                        </div>
+                    </div><!-- /col -->
+
+                    <!-- AACDESIGN2 -->
+                    <div class="col-xs-12 col-md-6">
+                        <div class="messages-container">
+                             <span class="title">Previous Messages</span>
+                            <div class="messages-box">
+                                <div class="message">
+                                    <span class="date">sep-24</span> The office will be closed Monday September 21 to
+                                    Thursday the 24th. <a href="#" class="read-more" data-target="#message-modal" data-toggle="modal">Read More</a>
+                                </div>
+                                <div class="message">
+                                    <span class="date">sep-24</span> The office will be closed Monday September 21 to
+                                    Thursday the 24th. <a href="#" class="read-more" data-target="#message-modal" data-toggle="modal">Read More</a>
+                                </div>
+                                <div class="message">
+                                    <span class="date">sep-24</span> The office will be closed Monday September 21 to
+                                    Thursday the 24th. <a href="#" class="read-more" data-target="#message-modal" data-toggle="modal">Read More</a>
+                                </div>
+                                <div class="message">
+                                    <span class="date">sep-24</span> The office will be closed Monday September 21 to
+                                    Thursday the 24th. <a href="#" class="read-more" data-target="#message-modal" data-toggle="modal">Read More</a>
+                                </div>
+                                <div class="message">
+                                    <span class="date">sep-24</span> The office will be closed Monday September 21 to
+                                    Thursday the 24th. <a href="#" class="read-more" data-target="#message-modal" data-toggle="modal">Read More</a>
+                                </div>
+                                <div class="message">
+                                    <span class="date">sep-24</span> The office will be closed Monday September 21 to
+                                    Thursday the 24th. <a href="#" class="read-more" data-target="#message-modal" data-toggle="modal">Read More</a>
+                                </div>
+                                <div class="no-message">
+                                    <span>You have not sent any message yet</span>
+                                </div>
                             </div>
-                        </div><!-- /col -->
-                        <input type="hidden" name="doAction" value="save" />
-                    </form>
+                        </div> <!-- END AACDESIGN2 -->
+                    </div> 
                 </div><!-- /row -->
+
+                <div class="row">
+                    <div class="hidden-xs box-for-answers">
+                        <h2 class="title-footer">FOR ANSWERS TO COMMONLY ASKED QUESTIONS</h2>
+                        <a href="help.php" class="subtitle-footer transition external-lkn">PLEASE VIEW OUR FAQs</a>
+                    </div>
+                </div><!-- Row -->
+
             </div><!-- /container -->
-        </div><!-- /container-contact-us -->
-        <a href="#" class="sticky-to-footer visible-xs">
-            <h2 class="title-footer">FOR ANSWERS TO COMMONLY ASKED QUESTIONS</h2>
-            <p  class="subtitle-footer">PLEASE VIEW OUR FAQs</p>
-        </a>	
+        </div><!-- /container-contact-us -->	
     </main>
+
+    <?php include 'inc/message-modal.php' ?>
     <?php
 }
 ?>
