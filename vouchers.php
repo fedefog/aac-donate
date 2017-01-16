@@ -597,7 +597,7 @@ switch ($fields['Request']) {
                             <div class="form-delivery">
                                 <div class="form-group">
                                     <h2 class="title-delivery">DELIVERY </h2>
-                                    <div class="container-urgent hidden-xs">
+                                    <div class="container-urgent">
                                         <input type="checkbox" class="switch-settings" data-value="post" id="delivery_type_post" name="Oldfields[VoucherBookDelivery][post]">
                                         <div class="label-delivery">
                                             <div class="label-urgent">POST: UP TO TWO BOOKS
@@ -605,7 +605,7 @@ switch ($fields['Request']) {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="container-urgent hidden-xs">
+                                    <div class="container-urgent">
                                         <input type="checkbox" class="switch-settings" data-value="Pick up from office" id="delivery_type_office" name="Oldfields[VoucherBookDelivery][office]">
                                         <div class="label-delivery">
                                             <div class="label-urgent">OFFICE COLLECTION 
@@ -613,7 +613,7 @@ switch ($fields['Request']) {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="container-urgent hidden-xs">
+                                    <div class="container-urgent">
                                         <input type="checkbox" class="switch-settings" data-value="Special Delivery" id="delivery_type_special" name="Oldfields[VoucherBookDelivery][special]">
                                         <div class="label-delivery">
                                             <div class="label-urgent">SPECIAL DELIVERY 
@@ -625,17 +625,18 @@ switch ($fields['Request']) {
                             </div>
                         </div><!-- /col -->
                         <div class="col-md-6">
-                            <div class="container-urgent hidden-xs">
+                            <div class="container-urgent">
                                 <input type="checkbox" class="switch-settings" id="my-checkbox" name="fields[VoucherBookUrgent]">
                                 <h2 class="label-urgent">THIS IS URGENT</h2>
                             </div><!-- /container-urgent -->
-                            <div class="container-notes hidden-xs">
+                            <div class="container-notes">
                                 <label class="title-notes">NOTES TO AAC</label>
                                 <textarea id="OfficeComments" name="fields[OfficeComments]" cols="30" rows="10" class="textarea-notes" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>	
                             </div><!-- /container-urgent -->					
                         </div><!-- /col -->
                     </div><!-- /row -->
                 </div><!-- /container -->
+                <!-- AACDESIGN3 Deleted Mobile Urgent-Container, use one for both, mobile and desktop -->
                 <div class="container-fluid container-border-desktop hidden-xs">
                     <div class="col-md-12">
                         <div class="border-bottom "></div>
@@ -650,30 +651,6 @@ switch ($fields['Request']) {
             <a href="#" class="lkn-order-vouchers transition disabled">Order Vouchers</a>
 
         </div><!-- /col -->
-
-        <div class="container-urgent visible-xs">
-
-            <div class="container-fluid">
-
-                <input type="checkbox" id="my-checkbox" name="fields[VoucherBookUrgent]" value="1">
-
-                <h2 class="label-urgent">THIS IS URGENT</h2>
-
-            </div><!-- /container -->
-
-        </div><!-- /container-urgent -->
-
-        <div class="container-notes visible-xs">
-
-            <div class="container-fluid">
-
-                <label class="title-notes">NOTES TO AAC</label>
-
-                <textarea cols="30" rows="10" class="textarea-notes" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>	
-
-            </div><!-- /container -->
-
-        </div><!-- /container-urgent -->
 
         <a href="#" class="sticky-to-footer lkn-order-vouchers visible-xs disabled">Order Vouchers</a>
 

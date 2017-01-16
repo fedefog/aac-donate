@@ -1,4 +1,4 @@
-<!-- AACDESIGN2 -->
+<!-- AACDESIGN3 -->
 <div class="modal-voucher-book modal-message modal-gral modal fade" id="message-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				  
   <div class="modal-dialog" role="document">
@@ -33,4 +33,4 @@
   </div><!-- /modal-dialog -->
 
 </div><!-- /modal -->
-<!-- END AACDESIGN2 -->
+<!-- END AACDESIGN3 -->

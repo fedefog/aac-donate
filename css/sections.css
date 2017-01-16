@@ -1126,7 +1126,7 @@ ul.ui-autocomplete{
     background: #F2F2F2;
     position: relative;
     overflow: hidden;
-    height: 50px;
+    height: 70px;
 }
 .box-slide-text .lkn-daily-donate {
     line-height: 29px;
@@ -1244,13 +1244,18 @@ ul.ui-autocomplete{
     display: inline-block;
     width: 49%;
 }
-.half-make-donation:nth-child(2)  ,
-.half-make-donation:nth-child(4) {
+.half-make-donation:nth-child(2){
     padding-left: 10px;
 }
 .half-make-donation:nth-child(1)  ,
 .half-make-donation:nth-child(3)  {
     padding-right: 10px;
+}
+.half-make-donation:nth-child(3){
+    display: none;
+}
+.half-make-donation:nth-child(5){
+    padding-left: 10px;
 }
 .standing-order-switch-container .half-make-donation {
     opacity: .5;
@@ -2735,6 +2740,9 @@ ul.ui-autocomplete{
         border: 1px solid #00ADEE;
         color: #fff;
     }
+    .header-desktop-orders .text-right{
+        text-align: left;
+    }
 
     .expert-csv-file {
         font-weight: 500;
@@ -2989,6 +2997,8 @@ ul.ui-autocomplete{
     }
     .nav-standing-orders-li {
         display: inline-block;
+        width: 49%;
+        padding-right: 5px;
     }
     .nav-standing-orders-li .nav-standing-orders-lkn {
         background: #F3F3F3;
@@ -3001,7 +3011,7 @@ ul.ui-autocomplete{
         color: #9B9B9B;
         letter-spacing: 0.44px;
         padding: 8px 0;
-        width: 214px;
+        width: 100%;
         margin-right: 15px;
         transition: all 0.3s ease-in-out;
     }
@@ -3014,6 +3024,9 @@ ul.ui-autocomplete{
         background: #00ADEE;
         border: 1px solid #00ADEE;
         color: #fff;
+    }
+    .header-desktop-orders.text-right{
+        text-align: right;
     }
     .text-end-date,
     .date-interval {
@@ -3091,6 +3104,9 @@ ul.ui-autocomplete{
     .container-settings {
         padding: 0;
         margin: 0;
+    }
+    .half-make-donation:nth-child(3){
+        display: block;
     }
 
     /* settings */
@@ -3363,9 +3379,18 @@ ul.ui-autocomplete{
     }
 }
 @media(min-width:992px){
-
+    .header-desktop-orders .text-right{
+        text-align: right;
+    }
+    
 }
 @media(min-width:1200px){
+    .nav-standing-orders-li .nav-standing-orders-lkn {
+        width: 205px;
+    }
+    .nav-standing-orders-li{
+        width: auto;
+    }
     .box-slide-text {
         margin: 0 -35px;
     }

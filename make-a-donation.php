@@ -732,7 +732,8 @@ if ($_REQUEST['id'] != "") {
                                 $disableSO = "disabled";
                             }
                             ?>
-                            <div class="box-make-donation standing-order-switch-container hidden-xs <?php echo $active; ?>">
+                            <!-- AACDESIGN3 -->
+                            <div class="box-make-donation standing-order-switch-container <?php echo $active; ?>">
 
                                 <div class="half-make-donation">
 
@@ -821,63 +822,6 @@ if ($_REQUEST['id'] != "") {
                                 <h2 class="title-make-donation">MY NOTES</h2>
                                 <textarea id="UserComments" name="fields[UserComments]" cols = "30" rows = "10" class = "textarea-make-dontation" placeholder = "Add any notes for your personal record keeping. These notes are searchable."><?php echo $fields['UserComments']; ?></textarea>
                                 <p class="error error-text">Regrettably, we cannot make this payment since you may not use charitable funds to pay for a Raffle or tuition fees for your family. Please contact the office on 8731 8988 for further information” and reject the donation</p>
-                            </div><!-- /box-make-donation -->
-                            <div class="box-make-donation standing-order-switch-container visible-xs">
-
-                                <div class="half-make-donation">
-
-                                    <h2 class="title-make-donation">STANDING ORDER</h2>
-
-                                    <input type="checkbox" class="standing-order-switch" id = "my-checkbox" name="my-checkbox">
-
-                                </div><!-- /half-make-donation -->
-
-                                <div class="half-make-donation">
-
-                                    <h2 class="title-make-donation">PAYMENTS</h2>
-
-                                    <select id="StandingOrderTypeMobile" name="mobile-fields[StandingOrderType]" class = "form-control selectpicker" <?php echo $disable; ?>>
-                                        <option value="Fixed number of payments" >Fixed number of payments</option>
-                                        <option value="Continuous payments" >Continuous payments</option>
-                                    </select>
-
-                                </div><!-- /half-make-donation -->
-
-                                <div class="half-make-donation">
-                                    <h2 class="title-make-donation" id="lblNumberOfPayments">NUMBER OF PAYMENTS</h2>
-                                    <input type="text" name="fields[NumberOfPaymentsMobile]" id="txtNumberOfPayments" class="form-control input-text" placeholder="Enter number of payments" value="<?php echo $fields['NumberOfPayments']; ?>">
-                                </div>
-
-                                <div class="half-make-donation">
-
-                                    <h2 class="title-make-donation">STARTING </h2>
-
-                                    <select id="StandingOrderStartDateMobile" name="mobile-fields[StandingOrderStartDate]" class = "form-control selectpicker" <?php echo $disable; ?>>
-                                        <?php
-                                        $options = array(date('Y-m-1') => date('M Y'));
-                                        for ($i = 1; $i <= 3; $i++) {
-                                            $t = strtotime("+{$i} months", strtotime(date('Y-m-1')));
-                                            $options[date('Y-m-1', $t)] = date('M Y', $t);
-                                        }
-                                        foreach ($options as $op) {
-                                            ?>
-                                            <option value="1 <?php echo $op; ?>" <?php if (date('d M Y', $fields['StandingOrderStartDate']) == "1 " . $op) echo "selected"; ?>>1 <?php echo $op; ?></option>
-                                            <option value="15 <?php echo $op; ?>" <?php if (date('d M Y', $fields['StandingOrderStartDate']) == "15 " . $op) echo "selected"; ?>>15 <?php echo $op; ?></option>
-                                            <?php
-                                        }
-                                        reset($options);
-                                        ?>
-
-                                    </select>
-                                </div><!-- /half-make-donation -->
-                                <div class="half-make-donation">
-                                    <h2 class="title-make-donation">INTERVAL </h2>
-                                    <select id="StandingOrderFrequencyMobile" name="mobile-fields[StandingOrderFrequency]" class = "form-control selectpicker" <?php echo $disable; ?>>
-                                        <option value="Every Month" <?php if ($row[0]->StandingOrderFrequency == "Every Month") echo "selected"; ?>>Every Month</option>
-                                        <option value="Every 2 months" <?php if ($fields['StandingOrderFrequency'] == "Every 2 months") echo "selected"; ?>>Every 2 months</option>
-                                        <option value="Every 3 months" <?php if ($fields['StandingOrderFrequency'] == "Every 3 months") echo "selected"; ?>>Every 3 months</option>
-                                    </select>
-                                </div><!-- /half-make-donation -->
                             </div><!-- /box-make-donation -->
                         </div><!-- /col -->
                     </div><!-- /row -->

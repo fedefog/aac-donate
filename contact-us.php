@@ -163,7 +163,7 @@ if ($_POST['doAction']) {
                         </div>
                     </div><!-- /col -->
 
-                    <!-- AACDESIGN2 -->
+                    <!-- AACDESIGN3 -->
                     <div class="col-xs-12 col-md-6">
                         <div class="messages-container">
                              <span class="title">Previous Messages</span>
@@ -196,7 +196,7 @@ if ($_POST['doAction']) {
                                     <span>You have not sent any message yet</span>
                                 </div>
                             </div>
-                        </div> <!-- END AACDESIGN2 -->
+                        </div> <!-- END AACDESIGN3 -->
                     </div> 
                 </div><!-- /row -->
 
