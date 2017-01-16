@@ -346,7 +346,7 @@ switch ($fields['Request']) {
                <div class="voucher-books-header">
                     <h2 class="title-section-desktop">Order Vouchers Books</h2>
                     <div class="navigator-voucher-books">
-                        <a href="vouchers.php" >ORDER VOUCHER BOOKS</a>
+                        <a href="vouchers.php">ORDER VOUCHER BOOKS</a>
                         <a href="vouchers-previous.php" class="selected">PREVIOUS ORDERS</a>
                     </div>
                 </div> 
