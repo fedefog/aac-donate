@@ -381,7 +381,16 @@ switch ($fields['Request']) {
 
         <div class="row hidden-xs">
             <div class="col-md-12">
-                <h2 class="title-section-desktop">Order Vouchers Books</h2>
+                    
+                <div class="voucher-books-header">
+                    <h2 class="title-section-desktop">Order Vouchers Books</h2>
+                    <div class="navigator-voucher-books">
+                        <a href="vouchers.php" class="selected" >ORDER VOUCHER BOOKS</a>
+                        <a href="vouchers-previous.php">PREVIOUS ORDERS</a>
+                    </div>
+                </div> 
+
+
             </div>
         </div>
         <form name="editor" id="editor" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">

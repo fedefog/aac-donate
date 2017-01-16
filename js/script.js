@@ -189,11 +189,11 @@ $(document).on('click', '.navigator-voucher-books a', function (event) {
         $('.nav-mobile').removeClass("open");
         var thisnav = $(this);
         voucher = $(this).attr('href');
+
         $("html, body").animate({scrollTop: 0}, "fast"); // Animation to top of window
         setTimeout(function () {
-            $('.ajax-voucher-books').load(voucher, function () {
+            $('#main-container').load(voucher, function () {
                 $('.ajax-voucher').css({opacity: 0}).fadeTo(400, 1);//Efect fade
-                $('.navigator-voucher-books a').removeClass('selected')
                 $(thisnav).addClass('selected');
                 $("#myBar").removeClass("visible");  // fadeout of the bar loading 
                 load_js()
