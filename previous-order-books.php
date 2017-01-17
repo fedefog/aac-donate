@@ -5,6 +5,7 @@
                 <th class="hidden-xs">REQUEST ID</th>
                 <th>VOUCHER BOOK ORDERED</th>
                 <th class="hidden-xs">AMOUNT</th>
+                <th> ACTION</th>
                 
             </tr>
         </thead>						
@@ -39,6 +40,9 @@
                         </span>
                     </a>
                 </td>
+                <td>
+                <a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+                </td>
                         
                         
             </tr>
@@ -71,6 +75,9 @@
                             £0.00
                         </span>
                     </a>
+                </td>
+                <td>
+                <a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
                 </td>
                         
                         
