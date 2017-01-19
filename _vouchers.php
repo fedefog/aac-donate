@@ -638,13 +638,14 @@ switch ($fields['Request']) {
                                 <input type="checkbox" class="switch-settings" id="my-checkbox" name="fields[VoucherBookUrgent]">
                                 <h2 class="label-urgent">THIS IS URGENT</h2>
                             </div><!-- /container-urgent -->
-                            <div class="container-notes hidden-xs">
+                            <div class="container-notes">
                                 <label class="title-notes">NOTES TO AAC</label>
                                 <textarea id="OfficeComments" name="fields[OfficeComments]" cols="30" rows="10" class="textarea-notes" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>	
                             </div><!-- /container-urgent -->					
                         </div><!-- /col -->
                     </div><!-- /row -->
                 </div><!-- /container -->
+                <!-- AACDESIGN3 Deleted Mobile Urgent-Container, use one for both, mobile and desktop -->
                 <div class="container-fluid container-border-desktop hidden-xs">
                     <div class="col-md-12">
                         <div class="border-bottom "></div>
@@ -659,18 +660,6 @@ switch ($fields['Request']) {
             <a href="#" class="lkn-order-vouchers transition disabled">Order Vouchers</a>
 
         </div><!-- /col -->
-        <!-- AACDESIGN3 -->
-        <div class="container-notes visible-xs">
-
-            <div class="container-fluid">
-
-                <label class="title-notes">NOTES TO AAC</label>
-
-                <textarea cols="30" rows="10" class="textarea-notes" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>	
-
-            </div><!-- /container -->
-
-        </div><!-- /container-urgent -->
 
         <a href="#" class="sticky-to-footer lkn-order-vouchers visible-xs disabled">Order Vouchers</a>
 

@@ -408,7 +408,7 @@ return;
                 </ul>
             </div>
             <!-- / col 6 -->
-            <div class="col-md-4 text-right">
+            <div class="col-md-4 export-data">
                 <?php
                 $url = "PHPExcel_1.8.0_doc/export_excel.php?filename=csv";
                 $url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xlsx";
@@ -502,7 +502,8 @@ return;
                         <!-- /drop-down-sort -->
                     </li>
                     <li class="navigator-transactions-li"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search visible-xs" data-toggle="modal" data-target="#modal-search" >SEARCH</a> </li>
-                    <li class="navigator-transactions-li hidden-xs"> 
+                    <!-- AACDESIGN3 -->
+                    <li class="navigator-transactions-li hidden-xs hidden-sm"> 
                         <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >ADVANCED FILTERS
                         <i class="fa fa-long-arrow-up pull-right" aria-hidden="true"></i>
                         </a> 

@@ -2708,7 +2708,7 @@ ul.ui-autocomplete{
         margin-top: 3px;
     }
     .nav-transactions {
-        display: inline-block;
+        display: block;
         vertical-align: top;
         /*margin-left: 20px; */
     }
@@ -2911,11 +2911,10 @@ ul.ui-autocomplete{
         border-radius: 3px;
         display: block;
         padding: 7px 0;
-        
         text-align: left;
         padding-left: 25px;
         color: #00ADEE;
-        width: 230px;
+        width: 186px;
         
     }
     .lkn-sortby.lkn-dates {
@@ -3325,6 +3324,9 @@ ul.ui-autocomplete{
     .drop-down-sort.active .navigator-transactions-lkn.lkn-sortby {
         top: -41px;
     }
+    .export-data{
+        text-align: left;
+    }
     #mobile-content-make-dontation .no-padding-desktop .padding-right {
         padding-right: 40px;
         margin-bottom: 20px;
@@ -3382,6 +3384,12 @@ ul.ui-autocomplete{
     .header-desktop-orders .text-right{
         text-align: right;
     }
+    .export-data{
+        text-align: left;
+    }
+    .lkn-sortby{
+        width: 200px;
+    }
     
 }
 @media(min-width:1200px){
@@ -3393,6 +3401,9 @@ ul.ui-autocomplete{
     }
     .box-slide-text {
         margin: 0 -35px;
+    }
+    .lkn-sortby{
+        width: 230px;
     }
 
 }
