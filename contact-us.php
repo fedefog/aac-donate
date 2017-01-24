@@ -59,7 +59,8 @@ if ($_POST['doAction']) {
 
 						//$('#myform input, #myform textarea').val('');
 
-						loadpage('dashboard.php');
+						//AACDESIGN3
+                        //loadpage('dashboard.php');
 
 						$('body').addClass('has-notification');
 						$('.notification-box font').html('Thank you for contacting us');
@@ -151,7 +152,8 @@ if ($_POST['doAction']) {
                                 <?php } ?>
                                 <textarea cols="30" rows="10" id='OfficeComments' name="fields[OfficeComments]" class="contact-us-textarea" placeholder="How can we help?"></textarea>
                                 <!--                            <a href="#" class="contact-send transition hidden-xs">Send Message</a>-->
-                                <a href="#" id="send-contact" class="send-msj transition">Send Message</a>
+                                <!-- AACDESIGN3 -->
+                                <a href="#" id="send-contact" class="send-msj transition" data-target="#contact-us-confirm-modal" data-toggle="modal">Send Message</a>
                                 <div class="box-details-bank">
                                     <h2 class="title-bank-details">BANK DETAILS</h2>
                                     <p class="text">ACHISOMOCH AID CO. LTD.</p>
@@ -211,7 +213,9 @@ if ($_POST['doAction']) {
         </div><!-- /container-contact-us -->	
     </main>
 
+    <!-- AACDESIGN3 -->
     <?php include 'inc/message-modal.php' ?>
+    <?php include 'inc/contact-us-confirm-modal.php' ?>
     <?php
 }
 ?>

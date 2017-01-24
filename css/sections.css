@@ -316,6 +316,26 @@ ul.ui-autocomplete{
 .ui-widget-content a:hover{
     color: #fff !important;
 }
+
+/* VIEW STANDING ORDERS */
+.nav-standing-orders li .badge{
+    margin-right: 10px;
+}
+.nav-standing-orders li .current-badge{
+    background: white;
+    color: #00adee;
+}
+.nav-standing-orders li .previous-badge{
+    background: #878787;
+}
+.nav-standing-orders li .mobile-current-badge{
+    background: #2562a3;
+}
+.nav-standing-orders li .mobile-previous-badge{
+    background: #fff; 
+    color: #2362a5;
+}
+
 /* DASHBOARD */
 .title-dashborad-desktop.title-dashborad-left {
     float: left;
@@ -698,6 +718,12 @@ ul.ui-autocomplete{
     border-top: 0;
     border-bottom: 1px solid #E2E2E5;
 }
+.table-transactions.table > tbody > tr > td.amount-td{
+    text-align: center;
+}
+.table-transactions.table > tbody > tr > td.amount-td > span{
+    margin-left: -20px;
+}
 .type-transactions {
     color: #fff;
     border-radius: 3px;
@@ -715,7 +741,7 @@ ul.ui-autocomplete{
     color: #00ADEE; 
 }
 .balance-up .balance-transition  {
-    color: #97D361;
+    color: #54B125;
 }
 .balance-pending .balance-transition  {
     color: #F76980;
@@ -928,10 +954,14 @@ ul.ui-autocomplete{
     color: #00ADEE;
 }
 .modal-search .empty-state-input {
-    background: #fff !important;
     border: 1px solid #BBBBBB !important;
-    
     color: #B0B0B0 !important;
+    opacity: .5;
+    background: #f0f0f0;
+}
+.modal-search .empty-state-input:focus{
+    background: #fff !important;
+    opacity: 1;
 }
 .modal-search .error .checkbox-input ,
 .modal-search .error .input {
@@ -1405,8 +1435,6 @@ ul.ui-autocomplete{
     background: #00ADEE;
     color: #FFFFFF;
 }
-
-
 .main-transactions.order-voucher .top-center-content {
     padding-top: 60px;
 }
@@ -1518,7 +1546,6 @@ ul.ui-autocomplete{
     letter-spacing: 0.3px;  
     margin: -10px 0 20px 0;
 }
-
 .container-delivery {
     border-bottom: 1px solid #E2E2E5;
     margin-bottom: 20px;
@@ -1569,7 +1596,6 @@ ul.ui-autocomplete{
 .form-delivery .active .checkbox-input {
     border: 1px solid #00ADEE;
 }
-
 .container-urgent {
     border-bottom: 1px solid #E2E2E5;
     margin-bottom: 20px;
@@ -1631,6 +1657,17 @@ ul.ui-autocomplete{
 .container-urgent .bootstrap-switch-container span {
     font-size: 20px !important;
     width: 34px !important;
+}
+#order-voucher-confirm-modal .row-modal{
+    border:none;
+    text-align: center;
+    color: #727272;
+}
+#order-voucher-confirm-modal .modal-dialog{
+    width: 340px;
+}
+#order-voucher-confirm-modal .row-modal h2{
+    font-size: 20px;
 }
 /* settings */
 
@@ -1848,6 +1885,24 @@ ul.ui-autocomplete{
     color: #FFFFFF;
     letter-spacing: 0.48px;
     box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.13);
+}
+#contact-us-confirm-modal .modal-dialog{
+    width: 300px;
+}
+#contact-us-confirm-modal .row-modal{
+    text-align: center;
+    letter-spacing: 0.6px;
+    line-height: 21px;
+    color: #87878E;
+    border:none;
+}
+#contact-us-confirm-modal .row-modal h2{
+    color: #686868;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+#contact-us-confirm-modal  .lkn-bottom-modal{
+    margin-top: 20px;
 }
 .box-details-bank {
     text-align: center;
@@ -2708,7 +2763,7 @@ ul.ui-autocomplete{
         margin-top: 3px;
     }
     .nav-transactions {
-        display: block;
+        display: inline-block;
         vertical-align: top;
         /*margin-left: 20px; */
     }
@@ -3385,7 +3440,7 @@ ul.ui-autocomplete{
         text-align: right;
     }
     .export-data{
-        text-align: left;
+        text-align: right;
     }
     .lkn-sortby{
         width: 200px;

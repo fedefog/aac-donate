@@ -501,7 +501,9 @@ return;
                         </div>
                         <!-- /drop-down-sort -->
                     </li>
-                    <li class="navigator-transactions-li"> <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search visible-xs" data-toggle="modal" data-target="#modal-search" >SEARCH</a> </li>
+                    <li class="navigator-transactions-li"> 
+                        <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search visible-xs" data-toggle="modal" data-target="#modal-search" >SEARCH</a>
+                    </li>
                     <!-- AACDESIGN3 -->
                     <li class="navigator-transactions-li hidden-xs hidden-sm"> 
                         <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >ADVANCED FILTERS
@@ -514,10 +516,11 @@ return;
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </a>
                         <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby"> 
-                                <span class="text hidden-xs">SORT BY</span>  
-                                <i class="fa fa-sort-amount-desc visible-xs" aria-hidden="true"></i>
-                            </a>
-                                <i class="fa fa-sort-amount-desc hidden-xs" aria-hidden="true"></i>
+                            <span class="text hidden-xs">SORT BY</span>  
+                            <i class="fa fa-sort-amount-desc visible-xs" aria-hidden="true"></i>
+                        <!-- AACDESIGN3 -->
+                            <i class="fa fa-sort-amount-desc hidden-xs" aria-hidden="true"></i>
+                        </a>       
                         <div class="drop-down-sort"> 
                             <div class="container-sortby">
                     <!-- END AACDESING -->
@@ -699,8 +702,8 @@ return;
                                 </div>
 
                                 <div class="mid-size container-to-amount">
-                                        
-                                    <input type="text" class="input input-to-amount" id="txtAmount" placeholder="TO" name='amount_donated_to' value="<?php echo $search['amount_donated_to'] ?>">
+                                    <!-- AACDESIGN3 -->
+                                    <input type="text" class="input input-to-amount empty-state-input" id="txtAmount" placeholder="TO" name='amount_donated_to' value="<?php echo $search['amount_donated_to'] ?>">
 
                                     <a href="#" class="reset-input">
                                         <i class="fa fa-times" aria-hidden="true"></i>
@@ -734,8 +737,8 @@ return;
                                     </a>
                                 </div>
                                 <div class="mid-size container-to-amount">
-
-                                    <input type="text" class=" input input-to-amount" id="txtVoucherNumber" placeholder="TO" name='voucher_no_to' value="<?php echo $search['voucher_no_to'] ?>">
+                                    <!-- AACDESIGN3 -->
+                                    <input type="text" class=" input input-to-amount empty-state-input" id="txtVoucherNumber" placeholder="TO" name='voucher_no_to' value="<?php echo $search['voucher_no_to'] ?>">
                                     <a href="#" class="reset-input">
                                         <i class="fa fa-times" aria-hidden="true"></i>
                                     </a>

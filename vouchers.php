@@ -238,8 +238,8 @@ switch ($fields['Request']) {
 			            //jQuery("#modal-quick-donation p").html("Thank you for your order");
 						
 						//loadpage('vouchers.php?done=true');
-
-						loadpage('dashboard.php');
+                        // AACDESIGN3
+						//loadpage('dashboard.php');
 
 						$('body').addClass('has-notification');
 						$('.notification-box font').html('Your Voucher Book order <strong> has been placed.</strong>');
@@ -655,11 +655,10 @@ switch ($fields['Request']) {
 
 
         <div class="col-md-12 hidden-xs">
-
-            <a href="#" class="lkn-order-vouchers transition disabled">Order Vouchers</a>
+            <!-- AACDESIGN3 -->
+            <a href="#" class="lkn-order-vouchers transition disabled" data-target="#order-voucher-confirm-modal" data-toggle="modal">Order Vouchers</a>
 
         </div><!-- /col -->
-        <!-- AACDESIGN3 -->
         <div class="container-notes visible-xs">
 
             <div class="container-fluid">
@@ -681,3 +680,6 @@ switch ($fields['Request']) {
     </main>	
 <?php //}
 ?>
+
+    <?php include 'inc/order-voucher-confirm-modal.php'; ?>
+

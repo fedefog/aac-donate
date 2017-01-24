@@ -24,8 +24,8 @@
                     <h3 class="subtitle-modal">NOTES TO CHARITY</h3>
                     <p class="info-modal" id="modal_charity_notes"><?php echo $t->ClientComments ?></p>
                 </div><!-- /row-modal -->
-
-<?phhp /**
+<!-- AACDESIGN3 -->
+<?php /**
                 <div class="row-modal">
                     <h3 class="subtitle-modal">BENEFICIARY </h3>
                     <p class="info-modal" id="modal_beneficiary"><?php echo $t->Description ?></p>

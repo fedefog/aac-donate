@@ -124,7 +124,8 @@ $ptl = $transactionlist->ListItems();
                             <thead> 
                                 <tr>
                                     <th>DATE</th>
-                                    <th>DESCRIPTION</th>
+                                    <!-- AACDESIGN3 -->
+                                    <th class="text-left">DESCRIPTION</th>
                                     <th>AMOUNT</th>
                                 </tr>
                             </thead>

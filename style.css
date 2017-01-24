@@ -74,7 +74,7 @@ input { -webkit-appearance: none; }
 .modal-gral .info-modal { font-weight: 400; font-size: 14px; color: #333333; letter-spacing: 0.5px; line-height: 19px; }
 .modal-gral .lkn-bottom-modal { background: #00ADEE; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; color: #FFFFFF; display: block; text-align: center; padding: 22px 0; font-weight: 600; font-size: 16px; letter-spacing: 0.43px; width: 100%; }
 .view-all-dontation { text-align: center; display: block; font-weight: 700; font-size: 11px; color: #00ADEE; margin: 5px 0; letter-spacing: 0.29px; }
-.btns-options { display: inline-block; width: 100%; }
+.btns-options { display: inline-block; width: 100%; height: 60px; /* AACDESIGN3 */ }
 .btns-options a { display: block; text-align: center; padding: 22px 0; font-weight: 600; font-size: 16px; letter-spacing: 0.43px; width: 50%; }
 .btns-options .left-bt { background: #E7E7E7; color: #00ADEE; float: left; border-bottom-left-radius: 6px; }
 .btns-options .left-bt:hover { background: #d6d4d4; }

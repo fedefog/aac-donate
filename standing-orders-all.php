@@ -109,6 +109,10 @@ $url1 = "PHPExcel_1.8.0_doc/export_excel_standing.php?filename=xls";
         });
 **/
 
+    //AACDESIGN3
+    
+      jQuery('[data-toggle="tooltip"]').tooltip();
+
     });
 </script>
 <?php
@@ -139,7 +143,7 @@ if (!count($somItems)) {
     <thead class="hidden-xs "> 
         <tr>
             <th>ID</th>
-            <th>CHARITY</th>
+            <th class="text-left">CHARITY</th>
             <th>END DATE</th>
             <th>AMOUNT</th>            
             <th class="hidden-xs">INTERVAL</th>
@@ -203,7 +207,8 @@ if (!count($somItems)) {
             <td class="standing-orders" data-id="<?= $data; ?>" data-type="SOM" data-toggle="modal" data-target="#modal-voucher">
                  <a href="javascript:void(0);">
                     <div class="desc-table">
-                        <h2 class="title td-center"><?php echo $name; ?></h2>
+                        <!-- AACDESIGN3 -->
+                        <h2 class="title"><?php echo $name; ?></h2>
                         <h3 class="subtitle visible-xs">EVERY  <?php echo strtoupper($interval); ?></h3>
                     </div><!-- /desc-table -->
                 </a>
@@ -211,7 +216,8 @@ if (!count($somItems)) {
             <td class="hidden-xs td-interval standing-orders" data-id="<?= $data; ?>" data-type="SOM" data-toggle="modal" data-target="#modal-voucher">
                 <span class="date-interval"><?php echo $t->end_date !='0000-00-00'?strtoupper(date('M Y',strtotime($t->end_date))):'' ?></span>
             </td>
-            <td class="standing-orders" data-id="<?= $data; ?>" data-type="SOM" data-toggle="modal" data-target="#modal-voucher">
+            <!-- AACDESIGN3 -->
+            <td class="standing-orders amount-td" data-id="<?= $data; ?>" data-type="SOM" data-toggle="modal" data-target="#modal-voucher">
                 <a href="#">
                     <span class="balance-transition ">
                         <?php echo showBalance($amt); ?>
@@ -232,11 +238,13 @@ if (!count($somItems)) {
             </td>
             <td class="action-edit hidden-xs">
 				<?php if($type=='current') { ?>
-                <a href="make-a-donation.php?SOMID=<?php echo $id; ?>" class="edit-transactions btn-trannsaction-accion external-lkn"></a>
-                <a href="javascript:void(0);" class="delete-transactions btn-trannsaction-accion" data-id="<?php echo $id; ?>" onClick="cancelStandingOrder('<?php echo $id; ?>','<?php echo $name; ?>');"></a>
+                <!-- AACDESIGN3 -->
+                <a href="make-a-donation.php?SOMID=<?php echo $id; ?>" type="button" class="edit-transactions btn-trannsaction-accion external-lkn"  data-toggle="tooltip" data-placement="left" title="Edit your standing order."></a>
+                <a href="javascript:void(0);" type="button" class="delete-transactions btn-trannsaction-accion" data-id="<?php echo $id; ?>" onClick="cancelStandingOrder('<?php echo $id; ?>','<?php echo $name; ?>');" data-toggle="tooltip" data-placement="left" title="Cancel your standing order."></a>
 				<?php } else { ?>
-                <a href="make-a-donation.php?SOMID=<?php echo $id; ?>&repeat=1" class="refresh-transactions btn-trannsaction-accion external-lkn"></a>
+                <a href="make-a-donation.php?SOMID=<?php echo $id; ?>&repeat=1" type="button" class="refresh-transactions btn-trannsaction-accion external-lkn" data-toggle="tooltip" data-placement="left" title="Redo this transaction."></a>
 				<?php } ?>
+                <!-- END AACDESIGN3 -->
             </td>
         </tr>
                     <?php

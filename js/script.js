@@ -77,6 +77,14 @@ $(document).on('click', '.btn-yes-cancelled', function (event) {
     event.preventDefault( );
     $('.title-cancelled, #modal-delete-transaction .btns-options').hide();
     $('.title-cancelled-ok').fadeIn().css('display', 'table-cell');
+    setTimeout(function(){
+        /* AACDESIGN3*/
+        $('#modal-delete-transaction').modal('hide');
+        $('#modal-voucher').modal('hide');
+        $('.title-cancelled, #modal-delete-transaction .btns-options').show();
+        $('.title-cancelled-ok').hide();
+
+    },2000);
 });
 $(document).on('click', '.nav-transactions-li', function (event) {
     event.preventDefault( );
@@ -412,6 +420,7 @@ $(document).on('click', '.history-back', function (e) {
 $(document).on('click', '.dashboard-li a, .external-lkn,  .anim-li a, .pending-bt', function (event) {
     event.preventDefault(); // stop the browser from following the link  
     progress_bar();
+    $(this).closest('.modal').modal('hide');
     $('body').removeClass('modal-open');
     $("#myBar").addClass("visible"); // Loading bar visibility 
     $('.nav-mobile').removeClass("open");
@@ -696,10 +705,14 @@ function load_js() {
         // Confirm checkbox of Make a Donation
         //$('.checkbox-box .ckeckbox').click(
 		//$(document).ready(function(){
+
+            /* AACDESIGN3 */
+            /*
 				$('#main-container').on('click','.checkbox-box .ckeckbox',function (event) {
                     event.preventDefault();
                     $(this).toggleClass('active');
                 });
+            */
 		//});
         // slide toggle Change password Settings
         $('.lkn-change-password').click(

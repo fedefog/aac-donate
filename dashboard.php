@@ -141,6 +141,11 @@ switch ($fields['Request']) {
     var currencyWarningShown = false;
     var selectedCharityCountry = '<?php echo trim($RemoteCharityCountry) ?>';
     $(document).ready(function () {
+        // AACDESIGN3
+        jQuery('.checkbox-box .ckeckbox').on('click',function (event) {
+                    event.preventDefault();
+                    $(this).toggleClass('active');
+            });
 
 		$('.autocomplete-charities').autocomplete({
 			source: 'remote.php?m=getCharityList',
@@ -302,6 +307,7 @@ switch ($fields['Request']) {
                             <thead> 
                                 <tr>
                                     <th>DATE</th>
+                                    <!-- AACDESIGN3 -->
                                     <th class="text-left">DESCRIPTION</th>
                                     <th>AMOUNT</th>
                                     <!-- AACDESING -->		                                   

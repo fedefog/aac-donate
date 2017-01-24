@@ -156,7 +156,6 @@ include 'inc/header.php';
 </div><!-- /container-fluid -->
 <? include 'inc/quick-donation-modal.php' ?>
 <? include 'inc/confirm-message-modal.php' ?>
-<? include 'inc/modal-delete-transaction.php' ?>
 <? include 'inc/modal-order-has-been-saved.php' ?>
 <? include 'inc/online-donation-modal.php' ?>
 
@@ -164,7 +163,9 @@ include 'inc/header.php';
 <? //include 'inc/giftaid-rebate-modal.php' ?>
 <? //include 'inc/comision-modal.php' ?>
 <? //include 'inc/voucher-book-modal.php' ?>
+<!-- AACDESIGN3 -->
 <? include 'inc/voucher-modal.php' ?>
+<? include 'inc/modal-delete-transaction.php' ?>
 <? //include 'inc/standing-order-donation.php' ?>
 <? //include 'inc/company-donation-modal.php' ?>
 <? //include 'inc/charity-donation-modal.php' ?>

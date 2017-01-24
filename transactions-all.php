@@ -128,7 +128,8 @@ if (count($tl) < 1) {
         <thead class="hidden-xs "> 
             <tr>
                 <th>DATE</th>
-                <th>DESCRIPTION</th>
+                <!-- AACDESIGN3 -->
+                <th class="text-left">DESCRIPTION</th>
                 <th>AMOUNT</th>
                 <th class="hidden-xs">COMMENTS</th>
                 <!--<th class="hidden-xs">TYPE</th>-->
@@ -200,7 +201,8 @@ if (count($tl) < 1) {
                                     </div><!-- /desc-table -->
                                 </a>
                             </td>
-                            <td class="modal-show" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
+                            <!-- AACDESIGN3 -->
+                            <td class="modal-show amount-td" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
                                 <a href="javascript:void(0);">
                                     <span class="balance-transition voucher-balance">
                                         <?php echo $t->FormatAmount(); ?>

@@ -139,6 +139,13 @@ if ($_REQUEST['return'] && strpos($_REQUEST['return'], 'aac_requests_editor.php?
                                     <label for="">PASSWORD</label>	
                                     <input type="password" name="password" class="input" placeholder="Enter your password">
                                 </div><!-- /form-group -->
+                                <!-- AACDESIGN3 -->
+                                <div class="form-group">
+                                    <span class="wrong-user">
+                                          <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                           Username or password is incorrect
+                                    </span>
+                                </div><!-- /form-group -->
                                 <div class="form-group">
                                     <a href="forgot_password.php" class="forgot-pass">Forgot your password ?  Get in touch with us.</a>
                                 </div><!-- /form-group -->
