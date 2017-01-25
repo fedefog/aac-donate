@@ -112,8 +112,10 @@ $url1 = "PHPExcel_1.8.0_doc/export_excel_standing.php?filename=xls";
 
     });
 </script>
+
+
 <?php
-if (!count($somItems)) {
+if (!count($somItems) && $type=='current') {
     ?>
     <div class="container-fluid">
         <div class="row">
@@ -134,6 +136,30 @@ if (!count($somItems)) {
     exit;
 }
 ?>
+
+<!-- AACDESIGN3 -->
+<?php
+if (!count($somItems) && $type=='previous') {
+    ?>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="empty-state previous-orders">
+                    <p>Sorry, there are no results to display.</p>
+                    <p>You have no previous standing orders.</p>
+                    <p class="error-info">
+                        To cancel a standing order, press the <span class="icon delete-transactions btn-trannsaction-accion"></span> that appears in the 'Action' column of any current standing order. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    exit;
+}
+?>
+
+
 <!-- AACDESING -->
     
 <table class="table-transactions table-standing-orders table table-condensed">

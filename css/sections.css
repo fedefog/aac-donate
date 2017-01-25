@@ -101,7 +101,6 @@ td[data-toggle="modal"] {
     color: #6E6E6E;
     letter-spacing: 0.75px;
     line-height: 17px;
-
 }
 .table-order-books.table-condensed .lkn-oreder-voucher {    
     border: 1px solid #00ADEE;
@@ -123,7 +122,6 @@ td[data-toggle="modal"] {
 .table-order-books.table-condensed .lkn-oreder-voucher:hover {
     background: #00ADEE;
     color: #fff;
-
 }
 /* Search make a dontation */
 .search {
@@ -1204,6 +1202,9 @@ span.custom-tooltip{
     position: relative;
     overflow: hidden;
     height: 80px;
+}
+.order-voucher .box-slide-text{
+    margin-top: 125px;
 }
 .box-slide-text .lkn-daily-donate {
     line-height: 29px;

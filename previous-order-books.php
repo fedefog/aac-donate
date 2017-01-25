@@ -41,7 +41,8 @@
                     </a>
                 </td>
                 <td>
-                <a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+                <!-- AACDESIGN3 -->
+                <a href="#" class="refresh-transactions btn-trannsaction-accion" title="Redo this transaction"></a>
                 </td>
                         
                         
@@ -77,7 +78,8 @@
                     </a>
                 </td>
                 <td>
-                <a href="#" class="refresh-transactions btn-trannsaction-accion"></a>
+                <!-- AACDESIGN3 -->
+                <a href="#" class="refresh-transactions btn-trannsaction-accion" title="Redo this transaction"></a>
                 </td>
                         
                         

@@ -1,0 +1,54 @@
+
+	body,html{
+		  background: linear-gradient(-180deg, #155199 12%, #00ADEE 83%);
+		  background-repeat: no-repeat;
+		  height: 100%;
+		}
+	h1{
+		font-size: 16px;
+		color: #5f5d5d;
+		text-align: center;
+	}
+	.logo-login{
+		text-align: center;
+	}
+	.terms-container{
+		background: #fff;
+		border-radius: 4px;
+		padding:10px;
+		margin-top: 20px;
+	}
+	.terms-container ol{
+		overflow-y: scroll;
+		height: 70vh;
+	}
+	.terms-container p{
+		color: #5f5d5d;
+	}
+	.terms-container .agreement{
+		padding-top: 10px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.terms-container input[type="submit"]{
+		display: block;
+		margin: 0 auto;
+		margin-top:10px;
+		background: #00ADEE;
+		border-radius: 4px;
+		color: #fff;
+		border: none;
+		width: 100px;
+		padding: 10px;
+		text-transform: uppercase;
+	}
+	.title{
+		text-transform: uppercase;
+		color: #155199;
+		font-weight: bold;
+	}
+	@media screen and(min-width: 768px){
+		.terms-container{
+			padding:20px;
+		}
+	}

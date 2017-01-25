@@ -299,7 +299,11 @@ switch ($fields['Request']) {
 
         </div><!-- /header-fixed -->
 
-        <div class="container top-center-content hidden-xs">
+<?php 
+
+/*
+AACDESIGN3
+<div class="container top-center-content hidden-xs">
 
             <div class="row">
 
@@ -332,6 +336,11 @@ switch ($fields['Request']) {
             </div><!-- / row -->
 
         </div><!-- / top center content -->
+*/
+
+ ?>
+        
+
         <div class="box-slide-text">
             <div class="container-fluid">
                 <?php
