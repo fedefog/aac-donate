@@ -15,8 +15,8 @@
 
 			<div class="row-modal">
 				<h2>Thank You.</h2>
-				Your message has been sent <br>
-				We will be in touch shortly
+				<p>Your message has been sent</p>
+				<p>We will be in touch shortly</p>
 			</div><!-- /row-modal --> 
 			
 			<a href="#" class="lkn-bottom-modal" class="close" data-dismiss="modal" aria-label="Close">OK</a>

@@ -77,7 +77,6 @@ td[data-toggle="modal"] {
     font-size: 12px;
 }
 
-
 .table-order-books th:nth-child(1),
 .table-order-books td:nth-child(1),
 .table-order-books th:nth-child(3),
@@ -283,12 +282,17 @@ td[data-toggle="modal"] {
 }
 /* RE STYLE SELECT */
 ul.ui-autocomplete{
-    z-index: 8;
     border: 1px solid #bbbbbb !important;
-    background: #fff !important;
-    max-width: 450px !important;
-    max-height: 340px;
-    overflow-y: scroll;   
+    background: #fff !important;  
+    max-height: 350px !important;
+    overflow-y: scroll;
+    z-index: 8;
+}
+.autocomplete-append{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
 }
 .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
     border-bottom-right-radius: 6px;
@@ -299,19 +303,20 @@ ul.ui-autocomplete{
     border-radius: 5px;
 }
 .ui-widget li.ui-menu-item{
-    background: #fff;
-    color: #000;
-    padding-left:10px;
-    border-radius: 5px;
+    cursor: pointer;
 }
 .ui-widget li.ui-menu-item:hover{
     background: #00adee;
     cursor: pointer;
 }
 .ui-widget-content a{
-    height: 45px;
-    font-size: 14px;
+    font-size: 12px;
     display: block;
+    color: #878787 !important;
+    padding: 10px;
+    letter-spacing: 0.5px;
+    font-weight: 300 !important;
+    font-family: 'Lato', sans-serif;
 }
 .ui-widget-content a:hover{
     color: #fff !important;
@@ -321,12 +326,17 @@ ul.ui-autocomplete{
 .nav-standing-orders li .badge{
     margin-right: 10px;
 }
-.nav-standing-orders li .current-badge{
-    background: white;
-    color: #00adee;
+.nav-standing-orders li .badge{
+    background: #fff;
 }
-.nav-standing-orders li .previous-badge{
-    background: #878787;
+.nav-standing-orders li .badge i{
+    color: #2562a3;
+}
+.nav-standing-orders li .active .badge{
+    background: #2562a3;
+}
+.nav-standing-orders li .active .badge i{
+    color: #fff;
 }
 .nav-standing-orders li .mobile-current-badge{
     background: #2562a3;
@@ -334,6 +344,20 @@ ul.ui-autocomplete{
 .nav-standing-orders li .mobile-previous-badge{
     background: #fff; 
     color: #2362a5;
+}
+.badge{
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    padding-top: 3px;
+    position: relative;
+    top:3px;
+}
+.badge i{
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    font-style: normal;
 }
 
 /* DASHBOARD */
@@ -785,11 +809,30 @@ ul.ui-autocomplete{
     background-size: 12px;
     transition: all 0.3s ease-in-out;
     margin-top: 4px;
+    position: relative;
 }
 .btn-trannsaction-accion:hover {
     background-color: #f4f4f4;
 }
-
+.btn-trannsaction-accion span.custom-tooltip{
+    display: none;
+}
+.btn-trannsaction-accion:hover > span.custom-tooltip{
+    //display: block;
+}
+span.custom-tooltip{
+    width: 170px;
+    position: absolute;
+    background: #00adee;
+    top: 0;
+    left: 0;
+    margin-left: -174px;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 12px;
+    padding: 2px;
+}
 .navigation-transactions {
     text-align: center; 
 
@@ -876,6 +919,9 @@ ul.ui-autocomplete{
     right: 14px;
     top: 8px;
 }
+#modal-search .container-to-amount{
+    width: 41% !important;
+}
 .container-to-amount {
     width: 38%!important;
     display: inline-block;
@@ -891,7 +937,7 @@ ul.ui-autocomplete{
     
 }
 .container-input-search-min {
-    width: 38%;
+    width: 35%;
 }
 .modal-search .form-group .container-input-search  .input{
     width: 100%;
@@ -921,6 +967,7 @@ ul.ui-autocomplete{
     text-align: center;
     width: 36px;
     transition: all .2s ease-out;
+    margin-bottom: 5px;
 }
 .modal-search .checkbox-input i {
     font-size: 20px;
@@ -1156,7 +1203,7 @@ ul.ui-autocomplete{
     background: #F2F2F2;
     position: relative;
     overflow: hidden;
-    height: 70px;
+    height: 80px;
 }
 .box-slide-text .lkn-daily-donate {
     line-height: 29px;
@@ -1419,10 +1466,9 @@ ul.ui-autocomplete{
     border-radius: 4px;
     font-family: 500;
     font-size: 12px;
-    
     letter-spacing: 0.44px;
     padding: 10px;
-    width: 210px;
+    width: 180px;
     display: inline-block;
     text-align: center;
     transition: all 0.3s ease-in-out;
@@ -1506,10 +1552,14 @@ ul.ui-autocomplete{
 }
 .container-vochers .input-group {
     float: left;
+    margin-right: 10px;
 }
 .info-input {
     display: inline-block;
     margin-left: 20px;
+}
+.container-vochers .info-input{
+    display: block;
 }
 .title-label {
     font-weight: 700;
@@ -1536,7 +1586,7 @@ ul.ui-autocomplete{
     display: block;
     border-bottom: 1px solid #E2E2E5;
     margin-bottom: 20px;
-    margin-top: 10px;
+    margin-top: 60px;
     padding-bottom: 10px;
 }
 .title-delivery {
@@ -1558,7 +1608,7 @@ ul.ui-autocomplete{
     display: inline-block;
     vertical-align: top;
     margin-top: -3px;
-    width: 80%;
+    width: 75%;
 }
 .form-delivery .label-delivery .title-label {
     margin-top: 0;
@@ -1900,13 +1950,19 @@ ul.ui-autocomplete{
     color: #686868;
     font-size: 20px;
     margin-bottom: 15px;
+    line-height: 25px;
+    font-weight: 600;
+}
+#contact-us-confirm-modal .row-modal p{
+    font-size: 16px;
+    margin: 0;
 }
 #contact-us-confirm-modal  .lkn-bottom-modal{
     margin-top: 20px;
 }
 .box-details-bank {
     text-align: center;
-    margin: 40px 0 55px 0;
+    margin: 40px 0 0 0;
 }
 .box-details-bank .title-bank-details{
     font-weight: 600;
@@ -2254,6 +2310,12 @@ ul.ui-autocomplete{
     .container-vochers .input-number {
         width: 45px!important;
     }
+    .header-mobile-vouchers{
+        font-weight: 900;
+        font-size: 20px;
+        color: #fff;
+        letter-spacing: 0.54px;
+    }
 
 }
 
@@ -2285,7 +2347,7 @@ ul.ui-autocomplete{
         position: relative;
         margin-top: -1px;
     }
-    .main-transactions .header {
+    .main-transactions .header, .order-voucher .header{
         height: 126px;
         width: 100%;
         position: fixed;
@@ -2323,7 +2385,7 @@ ul.ui-autocomplete{
         color: #fff;
         letter-spacing: 0.54px;
     }
-    .nav-transactions {
+    .nav-transactions, .nav-vouchers {
         border: 1px solid #FFFFFF;
         border-radius: 4px;
         clear: both;
@@ -2331,7 +2393,7 @@ ul.ui-autocomplete{
         margin-top: 10px;
         width: 100%;
     }
-    .nav-transactions-li {
+    .nav-transactions-li, .nav-vouchers-li {
         display: inline-block;
         font-weight: 900;
         float: left;
@@ -2341,17 +2403,20 @@ ul.ui-autocomplete{
         border-right: 1px solid #fff;
         width: 33.3%;
     }
-    .nav-transactions-li:last-child {
+    .nav-vouchers-li{
+        width: 50%;
+    }
+    .nav-transactions-li:last-child, .nav-vouchers-li:last-child{
         border-right: 0;
     }
-    .nav-transactions-lkn {
+    .nav-transactions-lkn, .nav-vouchers-lkn {
         font-size: 12px;
         color: #FFFFFF;
         display: block;
         padding: 10px 0;
         text-align: center;
     }
-    .nav-transactions-lkn.active {
+    .nav-transactions-lkn.active, .nav-vouchers-lkn.active {
         background: #FFF;
         color: #155199;
     }
@@ -2608,12 +2673,6 @@ ul.ui-autocomplete{
     .make-donation :-ms-input-placeholder {  
         color: #727272 !important;
     }
-
-
-    .order-voucher .header {
-        height: 60px;
-    }
-
 
     /* SETTINGS */
     .main-transactions.main-settings .header-fixed,
@@ -3035,6 +3094,7 @@ ul.ui-autocomplete{
         top: -31px;
         padding-left: 20px;
         padding-right: 20px;
+        height: 70px;
     }
 
     /* standing orders */
@@ -3112,6 +3172,9 @@ ul.ui-autocomplete{
     }
 
     /* vouchers */
+    .container-vochers{
+        margin-top: 10px;
+    }
     .order-voucher  {
         overflow: hidden;
     }
@@ -3235,14 +3298,14 @@ ul.ui-autocomplete{
         margin-top: 15px;
     }
     .box-details-bank .text {
-        font-family: Lato-Regular;
+        font-family: 'Lato', sans-serif;
         font-size: 14px;
         color: #727272;
         letter-spacing: 0.61px;
         line-height: 18px;
     }
     .box-details-bank {
-        margin: 40px 0 40px 0;
+        margin: 40px 0 15px 0;
     }
     .box-find-answers,
     .box-for-answers {
@@ -3333,12 +3396,7 @@ ul.ui-autocomplete{
     }
     .dropdown-search .form-group {
         float: left;
-        padding-bottom: 15px;
-        padding-right: 15px;
-        width: 33.3%;
-    }
-    .dropdown-search .form-group:nth-child(3n) {
-        padding-right: 0;
+        width: 50%;
     }
     .btn-search {
         border: 1px solid #00ADEE;  
@@ -3445,7 +3503,10 @@ ul.ui-autocomplete{
     .lkn-sortby{
         width: 200px;
     }
-    
+    .modal-search .checkbox-input{
+        display: inline-block;
+    }
+
 }
 @media(min-width:1200px){
     .nav-standing-orders-li .nav-standing-orders-lkn {
@@ -3459,6 +3520,20 @@ ul.ui-autocomplete{
     }
     .lkn-sortby{
         width: 230px;
+    }
+    .dropdown-search .form-group{
+        padding-bottom: 15px;
+        padding-right: 15px;
+    }
+    .dropdown-search .form-group:nth-child(3n) {
+        padding-right: 0;
+    }
+    .dropdown-search .form-group {
+        width: 33.33%;
+    }
+    .navigator-voucher-books a
+    {
+        width: 210px;
     }
 
 }

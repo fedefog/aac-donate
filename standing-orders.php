@@ -49,8 +49,8 @@ if(!$type) $type = $_REQUEST['type']?$_REQUEST['type']:'current';
 
                             <li class="nav-standing-orders-li">
                                 <!-- AACDESIGN3 -->
-                                <a href="standing-orders.php" class="nav-standing-orders-lkn active">
-                                <span class="badge mobile-current-badge">1</span>
+                                <a href="standing-orders.php" class="nav-standing-orders-lkn <?php echo $type=='current'?'active':'' ?>">
+                                <span class="badge mobile-current-badge"><i>1</i></span>
                                 CURRENT</a>
 
                             </li>
@@ -58,8 +58,8 @@ if(!$type) $type = $_REQUEST['type']?$_REQUEST['type']:'current';
                             <li class="nav-standing-orders-li">
                                 <!-- AACDESIGN3 -->
                                 
-                                <a href="standing-orders.php?type=previous" class="nav-standing-orders-lkn">
-                                <span class="badge mobile-previous-badge">3</span>
+                                <a href="standing-orders.php?type=previous" class="nav-standing-orders-lkn <?php echo $type=='previous'?'active':'' ?>">
+                                <span class="badge mobile-previous-badge"><i>3</i></span>
                                 PREVIOUS</a>
 
                             </li>
@@ -94,13 +94,13 @@ if(!$type) $type = $_REQUEST['type']?$_REQUEST['type']:'current';
 
                     <li class="nav-standing-orders-li">
                         <!-- AACDESIGN3 -->
-                        <a href="standing-orders.php" id='current' class="nav-standing-orders-lkn <?php echo $type=='current'?'active':'' ?>"><span class="badge current-badge">4</span>CURRENT</a>
+                        <a href="standing-orders.php" id='current' class="nav-standing-orders-lkn <?php echo $type=='current'?'active':'' ?>"><span class="badge current-badge"><i>4</i></span>CURRENT</a>
 
                     </li>
 
                     <li class="nav-standing-orders-li">
                         <!-- AACDESIGN3 -->
-                        <a href="standing-orders.php?type=previous" id='previous' class="nav-standing-orders-lkn <?php echo $type=='previous'?'active':'' ?>"><span class="badge previous-badge">4</span>PREVIOUS</a>
+                        <a href="standing-orders.php?type=previous" id='previous' class="nav-standing-orders-lkn <?php echo $type=='previous'?'active':'' ?>"><span class="badge previous-badge"><i>4</i></span>PREVIOUS</a>
 
                     </li>
 

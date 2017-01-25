@@ -277,6 +277,18 @@ switch ($fields['Request']) {
 
                         </div><!-- /header-mobile-transactions -->
 
+                        <div class="col-xs-12 header-mobile-transactions visible-xs">
+                            <ul class="nav-vouchers transaction_page_mobile">
+                                <li class="nav-vouchers-li">
+                                    <a href="vouchers.php" class="nav-vouchers-lkn">ORDER VOUCHER BOOKS</a>
+                                </li>
+
+                                <li class="nav-vouchers-li">
+                                    <a href="vouchers-previous.php" class="nav-vouchers-lkn active">PREVIOUS ORDERS</a>
+                                </li>
+                            </ul>
+                        </div>
+
                         <div class="clear"></div>
 
                     </div><!-- /row  -->	
@@ -287,7 +299,7 @@ switch ($fields['Request']) {
 
         </div><!-- /header-fixed -->
 
-        <div class="container top-center-content visible-xs">
+        <div class="container top-center-content hidden-xs">
 
             <div class="row">
 

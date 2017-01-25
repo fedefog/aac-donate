@@ -417,7 +417,7 @@ $(document).on('click', '.history-back', function (e) {
 });
 
 /* Navigation from dashboard */
-$(document).on('click', '.dashboard-li a, .external-lkn,  .anim-li a, .pending-bt', function (event) {
+$(document).on('click', '.btn-being-processed-mobile, .dashboard-li a, .external-lkn,  .anim-li a, .pending-bt', function (event) {
     event.preventDefault(); // stop the browser from following the link  
     progress_bar();
     $(this).closest('.modal').modal('hide');

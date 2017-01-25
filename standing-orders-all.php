@@ -109,9 +109,6 @@ $url1 = "PHPExcel_1.8.0_doc/export_excel_standing.php?filename=xls";
         });
 **/
 
-    //AACDESIGN3
-    
-      jQuery('[data-toggle="tooltip"]').tooltip();
 
     });
 </script>
@@ -239,10 +236,16 @@ if (!count($somItems)) {
             <td class="action-edit hidden-xs">
 				<?php if($type=='current') { ?>
                 <!-- AACDESIGN3 -->
-                <a href="make-a-donation.php?SOMID=<?php echo $id; ?>" type="button" class="edit-transactions btn-trannsaction-accion external-lkn"  data-toggle="tooltip" data-placement="left" title="Edit your standing order."></a>
-                <a href="javascript:void(0);" type="button" class="delete-transactions btn-trannsaction-accion" data-id="<?php echo $id; ?>" onClick="cancelStandingOrder('<?php echo $id; ?>','<?php echo $name; ?>');" data-toggle="tooltip" data-placement="left" title="Cancel your standing order."></a>
+                <a title="Amend your standing order" href="make-a-donation.php?SOMID=<?php echo $id; ?>" type="button" class="edit-transactions btn-trannsaction-accion external-lkn">
+                    <span class="custom-tooltip">Some Text</span>
+                </a>
+                <a title="Cancel your standing order" href="javascript:void(0);" type="button" class="delete-transactions btn-trannsaction-accion" data-id="<?php echo $id; ?>" onClick="cancelStandingOrder('<?php echo $id; ?>','<?php echo $name; ?>');" >
+                    <span class="custom-tooltip">Some Text</span>
+                </a>
 				<?php } else { ?>
-                <a href="make-a-donation.php?SOMID=<?php echo $id; ?>&repeat=1" type="button" class="refresh-transactions btn-trannsaction-accion external-lkn" data-toggle="tooltip" data-placement="left" title="Redo this transaction."></a>
+                <a title="Redo this transaction" href="make-a-donation.php?SOMID=<?php echo $id; ?>&repeat=1" type="button" class="refresh-transactions btn-trannsaction-accion external-lkn" >
+                    <span class="custom-tooltip">Some Text</span>
+                </a>
 				<?php } ?>
                 <!-- END AACDESIGN3 -->
             </td>

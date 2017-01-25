@@ -275,11 +275,11 @@ switch ($fields['Request']) {
     <div style="height:150px"></div>
 <?php } else { ?>	
 **/ ?>
-    <main class="main-transactions order-voucher content-desktop">
+    <main class="order-voucher content-desktop">
 
         <div class="header-fixed visible-xs">
 
-            <header class="header ">
+            <header class="header">
 
                 <div class="container ">
 
@@ -316,6 +316,18 @@ switch ($fields['Request']) {
                             </div><!-- /col -->	
 
                         </div><!-- /header-mobile-transactions -->
+                        <!-- AACDESIGN3 -->
+                        <div class="col-xs-12 header-mobile-transactions visible-xs">
+                            <ul class="nav-vouchers transaction_page_mobile">
+                                <li class="nav-vouchers-li">
+                                    <a href="vouchers.php" class="nav-vouchers-lkn active">ORDER VOUCHER BOOKS</a>
+                                </li>
+
+                                <li class="nav-vouchers-li">
+                                    <a href="vouchers-previous.php" class="nav-vouchers-lkn">PREVIOUS ORDERS</a>
+                                </li>
+                            </ul>
+                        </div>
 
                         <div class="clear"></div>
 
@@ -327,7 +339,7 @@ switch ($fields['Request']) {
 
         </div><!-- /header-fixed -->
 
-        <div class="container top-center-content visible-xs">
+        <div class="container top-center-content hidden-xs">
 
             <div class="row">
 
@@ -393,6 +405,7 @@ switch ($fields['Request']) {
 
             </div>
         </div>
+
         <form name="editor" id="editor" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <div class="container-vochers">
 

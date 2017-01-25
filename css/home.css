@@ -17,9 +17,6 @@
 	position: relative;
 	top: -12px;
 }
-.current-page .box-notification-nav{
- 	color: #fff;
-}
 .box-notification-nav.sublinks-nav {
 	position: absolute;
 	top: 44px;
@@ -598,6 +595,12 @@
 	.box-account-header {
 	    margin-left: -50%;
 	  }
+	  .current-page .box-notification-nav{
+	 	color: #fff;
+	}
+	.current-page.lkn-dashboard + .sublinks-nav > span > a{
+		color: #fff !important;
+	}
 }	
 @media(min-width:992px){
  	.box-account-header {

@@ -245,14 +245,14 @@ $fields['Amount'] = $_REQUEST['Amount'];
     var currencyWarningShown = false;
     var selectedCharityCountry = '<?php echo trim($RemoteCharityCountry) ?>';
     $(document).ready(function () {
-
 		$('.autocomplete-charities').autocomplete({
-			source: 'remote.php?m=getCharityList',
+            source: 'remote.php?m=getCharityList',
 		    messages: {
 		        noResults: '',
 		        results: function() {}
 		    },
-			resultTextLocator:'label',
+            appendTo: ".autocomplete-append",
+            resultTextLocator:'label',
 			select: function(event, ui){
 				event.preventDefault();
 				$('.autocomplete-charities').val(ui.item.name);
@@ -366,9 +366,11 @@ if ($_REQUEST['id'] != "") {
         console.log("confirmTransfer");
         if ($('.ConfirmTransfer').hasClass('active')) {
             document.getElementById("ConfirmTransfer").value = '';
+            $('.ConfirmTransfer').removeClass('active');
         } else {
             $('#cnfdonation').removeClass('has-error');
             document.getElementById("ConfirmTransfer").value = '1';
+            $('.ConfirmTransfer').addClass('active');
         }
     }
 
@@ -620,6 +622,7 @@ if ($_REQUEST['id'] != "") {
 								**/
                                 ?>
                                 <input class="input-beneficiary autocomplete-charities form-control input-text" type="text" id="Beneficiary" name="fields[Beneficiary]" placeholder="Please select a Beneficiary" value="<?php echo $fields['Beneficiary']; ?>" <?php echo $somid?' disabled ':'' ?> />
+                                <span class="autocomplete-append"></span>
 								<?php /**
                                 <div class="search" id="search">
                                     <span class="input-beneficiary caret" style="cursor:pointer;"></span>
@@ -830,7 +833,8 @@ if ($_REQUEST['id'] != "") {
                     <div class="container-fluid no-padding-desktop">
                         <div class="row">
                             <div class="col-md-6">
-                                <a href = "#" class = "ckeckbox ConfirmTransfer" onclick="confirmTransfer()" name="Confirm">
+                            <!-- AACDESIGN3 -->
+                                <a href="javascript:void(0)" class = "ckeckbox ConfirmTransfer" onclick="confirmTransfer()" name="Confirm">
                                     <span class="circle"></span>
                                     <span class="text">
                                         I confirm that this donation is for charitable purposes only, I will not benefit directly or indirectly by way of goods or services from the donation.

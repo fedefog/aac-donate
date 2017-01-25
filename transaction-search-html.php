@@ -130,8 +130,8 @@
         </div>
 
         <div class="mid-size container-to-amount">
-
-            <input type="text" class="input input-to-amount" id="txtAmount" placeholder="TO" name='amount_donated_to' value="<?php echo $search['amount_donated_to'] ?>">                
+            <!-- AACDESIGN3 -->
+            <input type="text" class="input input-to-amount empty-state-input" id="txtAmount" placeholder="TO" name='amount_donated_to' value="<?php echo $search['amount_donated_to'] ?>">                
 
             <a href="#" class="reset-input">
                 <i class="fa fa-times" aria-hidden="true"></i>
@@ -163,7 +163,7 @@
             </a>
         </div>
         <div class="mid-size container-to-amount">
-            <input type="text" class=" input input-to-amount" id="txtVoucherNumber" placeholder="TO" name='voucher_no_to' value="<?php echo $search['voucher_no_to'] ?>">
+            <input type="text" class=" input input-to-amount empty-state-input" id="txtVoucherNumber" placeholder="TO" name='voucher_no_to' value="<?php echo $search['voucher_no_to'] ?>">
             <a href="#" class="reset-input">
                 <i class="fa fa-times" aria-hidden="true"></i>
             </a>

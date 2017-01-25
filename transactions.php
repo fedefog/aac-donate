@@ -630,7 +630,8 @@ return;
             </div>
             <!-- / col 12 -->
 			<form id="transaction-search">
-            <div class="dropdown-search modal-search hidden-xs">
+            <!-- AACDESIGN3 -->
+            <div class="dropdown-search modal-search hidden-sm hidden-xs">
                 <div class="col-md-12">
                     <h2 class="title-search">Search Transactions</h2>
                     <a href="javascript:void(0);" class="arrow-dropdown-search btn-dropdown-search"> <i class="fa fa-angle-up" aria-hidden="true"></i> </a>

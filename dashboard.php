@@ -149,6 +149,7 @@ switch ($fields['Request']) {
 
 		$('.autocomplete-charities').autocomplete({
 			source: 'remote.php?m=getCharityList',
+            appendTo: ".autocomplete-append",
 		    messages: {
 		        noResults: '',
 		        results: function() {}
@@ -450,6 +451,7 @@ switch ($fields['Request']) {
                     <form id="editor" class="make-donation quick-donation search" name="editor"  method="post" action="<?php echo basename($_SERVER['PHP_SELF']); ?>">
 						
                         <input class="input-beneficiary autocomplete-charities form-control input-text box-beneficiary" type="text" id="Beneficiary" name="fields[Beneficiary]" placeholder="Please select a Beneficiary" autocomplete="false" />
+                        <span class="autocomplete-append"></span>
 						<?php /**
                         <div class="search" id="search">
                             <span class="input-beneficiary caret" style="cursor:pointer;"></span>
