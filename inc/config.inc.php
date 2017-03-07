@@ -6,6 +6,9 @@ define('EMAIL_ADMIN_FROM', EMAIL_ADMIN_ORDER);
 //define('EMAIL_ADMIN_CONTACT', 'admin@achisomoch.org');
 define('EMAIL_ADMIN_CONTACT',EMAIL_ADMIN_ORDER);
 
+define('SYSTEM_REQUEST_MESSAGE','THIS IS A TEST ENTRY');
+
+
 /**
   achisomoch
   achisomoch
@@ -53,7 +56,7 @@ define('SMTP_USERNAME', 'mail@clients.achisomoch.org');
 define('SMTP_PASSWORD', 'achiMailer59');
 
 
-define('SITE_ROOT','/achisomoch/');
+define('SITE_ROOT','/achisomoch-design/');
 define('SSL_ENABLED', 0);
 
 define('NIS_EXRATE', 5.74);
@@ -63,8 +66,8 @@ define('EUR_EXRATE', 1.34);
 define('DB_DATE_FORMAT','Y-m-d H;i:s');
 
 //ini_set('error_reporting','0');
-//error_reporting(0);
-//ini_set('display_errors', 'Off');
+error_reporting(E_ALL^E_NOTICE);
+ini_set('display_errors', 'On');
 
 define('RECORD_FOLDER', 'records/');
 date_default_timezone_set('Europe/London');

@@ -8,31 +8,24 @@ var num = 0;
 
 function change_my_url(url)
 {
-   $('#main-container').attr('url',window.location.href);
    history.pushState(stateObj, "page 2", url);
 }
-
-$(document).on('click','a[data-target="#modal-success"]', function(){
-    $('.check-gif-container img').attr('src', 'css/images/check-once.gif');
-});
 
 window.onpopstate = function(event) {
   //alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
   //console.log(window.history);
   //window.location.href = "http://devdb.exceedit.co.uk/achisomoch-design/";
 
-/**
             $('body').removeClass('menu-mobile-open');
             $('#main-container-back').attr('id','main-container-history');
             $(".main-container").animate({ "opacity": "0" }, "fast" );
             $('#main-container').attr('id','main-container-back');
             $("#main-container-history").animate({ "opacity": "1" }, "fast" );
             $('#main-container-history').attr('id','main-container');
-**/
 
             $('#main-container').load('dashboard.php?ajax=1', function () {
                 $('#main-container').css({opacity: 0}).fadeTo(400, 1);//Efect fade
-                //$('#main-container-back').empty();
+                $('#main-container-back').empty();
                 $("#myBar").removeClass("visible");  // fadeout of the bar loading 
                 load_js();
                 sticky_footer();
@@ -55,7 +48,7 @@ var viewportHeight = $(window).height();
 var viewportHeight_menos = 220;
 function navigator_scroll( ) {
     if (viewportHeight < 665) {
-        //$('.navigator .hoverflow').height(viewportHeight - viewportHeight_menos);
+        $('.navigator .hoverflow').height(viewportHeight - viewportHeight_menos);
     }
 }
 
@@ -296,13 +289,6 @@ $(document).on('click', '.nav-standing-orders-li a,.ajaxlink, .clear-all-filters
 
             var formData = null;
 
-			$('#main-container-back').attr('id','main-container-history');
-			$('#main-container').hide();
-			$('#main-container').attr('id','main-container-back');
-			$('#main-container-history').show();
-			$('#main-container-history').attr('id','main-container');
-			$('#main-container').html('Loading...');
-
             $('#main-container').load(AjaxCheck(transaction), formData, function () {
                 $('.ajax-transaction').css({opacity: 0}).fadeTo(400, 1);//Efect fade
                 $(thisnav).parent().parent().find('a').removeClass('active');
@@ -325,69 +311,6 @@ $(document).on('click', '.custom-date-go', function (event) {
 	$('#endd').val($('#customenddate').val());
 	$('#dateType').val('custom');
 	$('.search-desktop').click();
-});
-
-
-$(document).on('click', '#transactionsQuickSearch', function (event) {
-    event.preventDefault(); // stop the browser from following the link  
-    if ($(this).attr('href') == transaction) {
-        // do nothing 
-    } else {
-        progress_bar();
-        $("#myBar").addClass("visible"); // Loading bar visibility 
-        $('.nav-mobile').removeClass("open");
-        var thisnav = $(this);
-        transaction = AjaxCheck('transactions.php');
-
-
-        $("html, body").animate({scrollTop: 0}, "fast"); // Animation to top of window
-        setTimeout(function () {
-            // $('body').removeClass('menu-mobile-open');
-
-			var formData = $('#quick-transaction-search').serialize();
-
-            $('#main-container').load(transaction, formData, function () {
-                $('.ajax-transaction').css({opacity: 0}).fadeTo(400, 1);//Efect fade
-				$(thisnav).parent().parent().find('a').removeClass('active');
-                //$('.nav-transactions a').removeClass('active');
-                $(thisnav).addClass('active');
-                $("#myBar").removeClass("visible");  // fadeout of the bar loading 
-                load_js()
-                sticky_footer();
-            }); // load the html response into a DOM element
-        }, 500);
-    }	
-});
-
-$(document).on('click', '#reportsVoucherBook', function (event) {
-    event.preventDefault(); // stop the browser from following the link  
-    if ($(this).attr('href') == transaction) {
-        // do nothing 
-    } else {
-        progress_bar();
-        $("#myBar").addClass("visible"); // Loading bar visibility 
-        $('.nav-mobile').removeClass("open");
-        var thisnav = $(this);
-        transaction = AjaxCheck('report-voucher-book.php');
-
-
-        $("html, body").animate({scrollTop: 0}, "fast"); // Animation to top of window
-        setTimeout(function () {
-            // $('body').removeClass('menu-mobile-open');
-
-			var formData = $('#reports-voucher-book').serialize();
-
-            $('#main-container').load(transaction, formData, function () {
-                $('.ajax-transaction').css({opacity: 0}).fadeTo(400, 1);//Efect fade
-				$(thisnav).parent().parent().find('a').removeClass('active');
-                //$('.nav-transactions a').removeClass('active');
-                $(thisnav).addClass('active');
-                $("#myBar").removeClass("visible");  // fadeout of the bar loading 
-                load_js()
-                sticky_footer();
-            }); // load the html response into a DOM element
-        }, 500);
-    }	
 });
 
 $(document).on('click', '.search-desktop, .date-desktop', function (event) {
@@ -534,14 +457,9 @@ $(document).on('click', '.sort-transactions a, .navigator-transactions-sortby .r
 $(document).on('click', '.history-back', function (e) {
 	e.preventDefault();
 			$('#main-container').hide();
-			//$("#main-container").animate({ "opacity": "0" }, "fast" );
 			$('#main-container').attr('id','main-container-history');
 			$('#main-container-back').show();
-			//$("#main-container-back").animate({ "opacity": "1" }, "fast" );
 			$('#main-container-back').attr('id','main-container');
-
-			var url = $('#main-container').attr('url');
-			if(url)    history.pushState(stateObj, "page 2", url);
 });
 
 /* Navigation from dashboard */
@@ -579,17 +497,14 @@ $(document).on('click', '.btn-being-processed-mobile, .dashboard-li a, .external
         setTimeout(function () {
             $('body').removeClass('menu-mobile-open');
 			$('#main-container-back').attr('id','main-container-history');
-			//$(".main-container").animate({ "opacity": "0" }, "fast" );
-			$('#main-container').hide();
+			$(".main-container").animate({ "opacity": "0" }, "fast" );
 			$('#main-container').attr('id','main-container-back');
-            //$("#main-container-history").animate({ "opacity": "1" }, "fast" );
-			$('#main-container-history').show();
+            $("#main-container-history").animate({ "opacity": "1" }, "fast" );
 			$('#main-container-history').attr('id','main-container');
-			$('#main-container').html('Loading...');
 
             $('#main-container').load(AjaxCheck(url), function () {
                 $('#main-container').css({opacity: 0}).fadeTo(400, 1);//Efect fade
-                //$('#main-container-back').empty();
+                $('#main-container-back').empty();
                 $("#myBar").removeClass("visible");  // fadeout of the bar loading 
                 load_js();
                 sticky_footer();

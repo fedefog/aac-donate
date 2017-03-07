@@ -20,7 +20,7 @@
 			
 				<h3 class="subtitle-modal">TRANSACTION DATE</h3>
 
-				<p class="info-modal" id="mdl_trans_dt"> </p>
+				<p class="info-modal" id="mdl_trans_dt"></p>
 
 			</div><!-- /row-modal -->  
 
@@ -28,7 +28,7 @@
 			
 				<h3 class="subtitle-modal">AMOUNT</h3>
 
-				<p class="info-modal" id="mdl_amt"> </p>
+				<p class="info-modal" id="mdl_amt"></p>
 
 			</div><!-- /row-modal --> 
 				

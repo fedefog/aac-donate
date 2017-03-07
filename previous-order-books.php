@@ -1,4 +1,27 @@
+<?php
+$user = new User();
+$user = User::GetInstance();
+if ($_REQUEST['page']) {
+    $page = $_REQUEST['page'];
+} else {
+    $page = 1;
+}
+
+$transactionlist = new AACRequestList();
+
+$transactionlist->filters[] = 'UserName="' . $user->Username . '" ';
+$transactionlist->filters[] = 'Request IN ("New Voucher Book") ';
+// AND ResultCode="Pending"
+
+
+//$transactionlist->SetPage($page);
+
+$vtl = $transactionlist->ListItems();
+?>
 <table class="table table-order-books table-condensed">
+		<?php
+		if(count($vtl)) {
+		?>
         <thead> 
             <tr>
                 <th>DATE</th>
@@ -8,82 +31,54 @@
                 <th> ACTION</th>
                 
             </tr>
-        </thead>						
+        </thead>		
         <tbody>
+		<?php
+			foreach($vtl as $v) {
+		?>				
             <tr class=" order-books-row">
-                <td class="modal-show" data-toggle="modal" data-target="#modal-online-donation">
+                <td class="modal-show" data-toggle="modal" data-target="#modal-voucher" data-id="<?php echo $v->id ?>" data-type="RQ">
                     <a href="javascript:void(0);">
-                        <div class="date">23-11-16</div>
+                        <div class="date"><?php echo date('d-m-y',$v->RequestDateTime) ?></div>
                     </a>
                 </td>
-                <td class="modal-show hidden-xs" data-toggle="modal" data-target="#modal-online-donation">
+                <td class="modal-show hidden-xs" data-toggle="modal" data-target="#modal-voucher" data-id="<?php echo $v->id ?>" data-type="RQ">
                     <a href="javascript:void(0);">
                         <span class="span-request-id">
                             
-                                46184
+                                <?php echo $v->id ?>
                             
                         </span><!-- /desc-table -->
                     </a>
                 </td>
-                <td class="modal-show" data-toggle="modal" data-target="#modal-online-donation">
+                <td class="modal-show" data-toggle="modal" data-target="#modal-voucher" data-id="<?php echo $v->id ?>" data-type="RQ">
                     <a href="javascript:void(0);">
-                       <span class="info-vocher-book-orderer">5 x Pre-Printed £3
+                       <span class="info-vocher-book-orderer"><?php echo $v->FormatSummary() ?>
+						<?php if($v->ResultCode=="Pending") { ?>
                         <br>
                         <spam class="being-processed">CURRENTLY BEING PROCESSED</spam>
+						<?php } ?>
                         </span>
                     </a>
                 </td>
-                <td class="modal-show amount-td hidden-xs" data-toggle="modal" data-target="#modal-online-donation">
+                <td class="modal-show amount-td hidden-xs" data-toggle="modal" data-target="#modal-voucher" data-id="<?php echo $v->id ?>" data-type="RQ">
                     <a href="javascript:void(0);">
                         <span class="amount">
-                            £0.00
+                            <?php echo $v->FormatAmount() ?>
                         </span>
                     </a>
                 </td>
                 <td>
                 <!-- AACDESIGN3 -->
-                <a href="#" class="refresh-transactions btn-trannsaction-accion" title="Redo this transaction"></a>
+                <a href="vouchers.php?id=<?php echo $v->id ?>&clone=1" class="refresh-transactions btn-trannsaction-accion ajaxlink" title="Redo this transaction"></a>
                 </td>
                         
                         
             </tr>
-            <tr class=" order-books-row">
-                <td class="modal-show" data-toggle="modal" data-target="#modal-online-donation">
-                    <a href="javascript:void(0);">
-                        <div class="date">23-11-16</div>
-                    </a>
-                </td>
-                <td class="modal-show hidden-xs" data-toggle="modal" data-target="#modal-online-donation">
-                    <a href="javascript:void(0);">
-                        <span class="span-request-id">
-                            
-                                46184
-                            
-                        </span><!-- /desc-table -->
-                    </a>
-                </td>
-                <td class="modal-show" data-toggle="modal" data-target="#modal-online-donation">
-                    <a href="javascript:void(0);">
-                       <span class="info-vocher-book-orderer">2 x £1 Pre-Paid Voucher Book, 3 x 50p Pre-Paid Voucher Book, 5 x Pre-Printed £10
-                        
-                        
-                        </span>
-                    </a>
-                </td>
-                <td class="modal-show amount-td hidden-xs" data-toggle="modal" data-target="#modal-online-donation">
-                    <a href="javascript:void(0);">
-                        <span class="amount">
-                            £0.00
-                        </span>
-                    </a>
-                </td>
-                <td>
-                <!-- AACDESIGN3 -->
-                <a href="#" class="refresh-transactions btn-trannsaction-accion" title="Redo this transaction"></a>
-                </td>
-                        
-                        
-            </tr>
+			<?php
+				}
+			} else {
+			?>
             
             <!--  EMPTY STATE -->
             
@@ -103,5 +98,9 @@
 
             </tr>
 
+
         </tbody>
+			<?php
+			}
+			?>
     </table>        

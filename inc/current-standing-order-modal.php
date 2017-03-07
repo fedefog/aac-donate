@@ -21,7 +21,7 @@
 
                 <div class="row-modal">
 
-                    <h3 class="subtitle-modal">BENEFICIARY </h3>
+                    <h3 class="subtitle-modal">BENEFICIARY</h3>
 
                     <p class="info-modal" id="modal_beneficiary1">GGBH</p>
 

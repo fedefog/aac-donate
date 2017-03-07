@@ -19,6 +19,8 @@ session_start();
 
 User::LoginCheck();
 
+AjaxCheck();
+
 $user = new User();
 $user = User::GetInstance();
 if ($_REQUEST['page']) {
@@ -88,7 +90,7 @@ $ptl = $transactionlist->ListItems();
                         </div><!-- /col -->	
                     </div><!-- /header-mobile-transactions -->
                     <div class="title-transactions-result">
-                        <h3 class="title-transactions">PROCESSING</h3>
+                        <h3 class="title-transactions">Processing Transactions</h3>
                     </div><!-- /title-transactions-result -->
                     <div class="clear"></div>
                 </div><!-- /row  -->	
@@ -112,7 +114,8 @@ $ptl = $transactionlist->ListItems();
         <div class="row">
             <div class="col-xs-12">
                 <div class="container-table">
-                    <h2 class="title-orders">Processing Transactions</h2>
+                    <a href="./" class="history-back ">&lt; Back</a>
+                    <h2 class="title-orders hidden-xs">Processing Transactions</h2>
                     <?php
                     if (count($ptl) > 0) {
                         //$cnt = 0;
@@ -169,6 +172,7 @@ $ptl = $transactionlist->ListItems();
                                                 </a>
                                             </td>
                                             <td class="balance-pending amount-td">
+												<?php if($amount) { ?>
                                                 <a href="javascript:void(0);" >
                                                     <span class="balance-transition">
                                                         <?php
@@ -179,6 +183,7 @@ $ptl = $transactionlist->ListItems();
                                                         ?>
                                                     </span>
                                                 </a>
+												<?php } ?>
                                             </td>
                                         </tr>
                                         <?php
@@ -196,10 +201,10 @@ $ptl = $transactionlist->ListItems();
 			$pageNavOptions  = array(
 				'NoItemsText'=>'',
 				'MaxVisiblePageNums'=>5,
-				'PrevPageText'=>'&laquo;',
-				'NextPageText'=>'&raquo;',
-				'FirstPageText'=>'',
-				'LastPageText'=>'',
+				'PrevPageText'=>'&lt;',
+				'NextPageText'=>'&gt;',
+				'FirstPageText'=>'&laquo;',
+				'LastPageText'=>'&raquo;',
 				'ShowAllText'=>'',
 				'ShowAllAlign'=>'',
 				'LeadingText'=>'',

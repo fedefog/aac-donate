@@ -95,6 +95,8 @@ var RequestValidate = {
 
 		var formData = $('#editor').serialize();
 
+		$('.make-dontation, .btn-make-a-donation').addClass('disabled');
+
 		$.ajax({
 			url: 'remote.php?m=save-donation',
 			type: 'post',
@@ -103,15 +105,20 @@ var RequestValidate = {
 			success: function(data)
 			{
 				if(data.error){
+					$('.make-dontation, .btn-make-a-donation').removeClass('disabled');
 		            $('.box-'+data.errorField).addClass('has-error-box');
 					RequestValidate.showDialog(data.errorMessage,data.errorCode,data.errorType);		
 
 				} else {
 					var charityName = $('#Beneficiary').val();
+					var isStandingOrder = $('#my-checkbox:checked').length;
 					loadpage('dashboard.php');
 					$('body').addClass('has-notification');
 					//$('.notification-box span').html(charityName);
-					$('.notification-box font').html('Your donation to <span>'+charityName+'</span> <strong>is being processed.</strong>');
+					if(isStandingOrder)
+						$('.notification-box font').html('Your standing order to <span>'+charityName+'</span> <a href="transactions-processing.php" class="ajaxlink">is being processed.</a>');
+					else 
+						$('.notification-box font').html('Your donation to <span>'+charityName+'</span> <a href="transactions-processing.php" class="ajaxlink">is being processed.</a>');
 					$('.notification-box').show();
 					//RequestValidate.showDialog('Donation Complete','','success');		
 				}

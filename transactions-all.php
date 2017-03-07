@@ -127,10 +127,15 @@ if (count($tl) < 1) {
     <table class="table-transactions table table-condensed">
         <thead class="hidden-xs "> 
             <tr>
-                <th>DATE</th>
+                <th>
+<?php
+	//echo IsCurrentSortDesc('t.Datetime',null,$sort)?'Y':'N';
+	//echo IsCurrentSortField('t.DateTime',$sort)?'Y':'N';
+?>
+DATE <a href="transactions.php?<?php echo BuildSortLink('t.DateTime',null,$sort) ?>" class="ajaxlink"><i class="fa <?php echo CheckCurrentSort('t.DateTime',$sort) ?>" aria-hidden="true"></i></a></th>
                 <!-- AACDESIGN3 -->
-                <th class="text-left">DESCRIPTION</th>
-                <th>AMOUNT</th>
+                <th class="text-left">DESCRIPTION <a href="transactions.php?<?php echo BuildSortLink('t.Description',null,$sort) ?>" class="ajaxlink"><i class="fa <?php echo CheckCurrentSort('t.Description',$sort) ?>" aria-hidden="true"></i></a></th>
+                <th>AMOUNT <a href="transactions.php?<?php echo BuildSortLink('t.Amount',null,$sort) ?>" class="ajaxlink"><i class="fa <?php echo CheckCurrentSort('t.Amount',$sort) ?>" aria-hidden="true"></i></a></th>
                 <th class="hidden-xs">COMMENTS</th>
                 <!--<th class="hidden-xs">TYPE</th>-->
                 <th class="hidden-xs">ACTION</th>
@@ -146,7 +151,7 @@ if (count($tl) < 1) {
 
                     if ($t->CDNo == "PEN") {
                         //$status = "Currently being processed";
-                        $status = "Pending";
+                        $status = " Pending";
                         $type = 'PENDING';
                     }
 
@@ -174,8 +179,12 @@ if (count($tl) < 1) {
                     $data .= $t->CharityNumber . "||";
 
                     if ($t->Voucher && substr($t->Voucher, 0, 1) == '9') {
-                        $status = 'online request';
+                        //$status = 'online request';
+						$type = 'Online Donation';
                     }
+
+//					$voucher = $t->Voucher?" <span>$t->Voucher</span>":'';
+					$voucher='';
 					
 					$data = $t->id;
 					$modal_name = "#modal-voucher";
@@ -197,7 +206,7 @@ if (count($tl) < 1) {
                                             echo $t->FormatDescription();
                                             ?>
                                         </h2>
-                                        <h3 class="subtitle transaction-type-label"><?php echo $type.' '.$status; ?></h3>
+                                        <h3 class="subtitle transaction-type-label"><?php echo $type.''.$status.$voucher; ?></h3>
                                     </div><!-- /desc-table -->
                                 </a>
                             </td>
@@ -222,18 +231,22 @@ if (count($tl) < 1) {
                               <?php
                               //$rows1[$i]['cd_no'] = "SO";
                               //$rows1[$i]['request_id'] = "8176";
-                              if ($t->CDNo == "SO" && $t->RequestId > 0) {
+                              if ($t->CDNo == "SO" && $t->so_master_id > 0) {
                               ?>
                               <!--<a href="make-a-donation.php?id=<?php //echo $rows1[$i]['request_id']; ?>&clone=1" class="refresh-transactions btn-trannsaction-accion external-lkn"></a>-->
-                              <a href="make-a-donation.php?id=<?php echo $t->RequestId; ?>" class="edit-transactions btn-trannsaction-accion external-lkn"></a>
-                              <a href="javascript:void(0);" class="delete-transactions btn-trannsaction-accion" data-id="<?php echo $id; ?>" onClick="cancelStandingOrder('<?php echo $t->RequestId; ?>');"></a>
+                              <a href="make-a-donation.php?SOMID=<?php echo $t->so_master_id; ?>" class="edit-transactions btn-trannsaction-accion external-lkn" alt="Amend this standing order" title="Amend this standing order"></a>
+                              <a href="javascript:void(0);" class="delete-transactions btn-trannsaction-accion" data-id="<?php echo $id; ?>" onClick="cancelStandingOrder('<?php echo $t->so_master_id; ?>');" alt="Cancel this standing order" title="Cancel this standing order"></a>
                               <?php
                               } else {
-                              if ($t->RequestId && $t->RequestId > 0) {
-                              ?>
-                              <a href="make-a-donation.php?id=<?php echo $t->RequestId; ?>&clone=1" class="refresh-transactions btn-trannsaction-accion external-lkn"></a>
-                              <?php
-                              }
+	                              if ($t->RequestId && $t->RequestId > 0) {
+		                              ?>
+		                              <a href="make-a-donation.php?id=<?php echo $t->RequestId; ?>&clone=1" class="refresh-transactions btn-trannsaction-accion external-lkn" alt="Make this donation again" title="Make this donation again"></a>
+		                              <?php
+	                              } else if (in_array($t->CDNo, array("VO", "PEN", "NV"))) {
+		                              ?>
+		                              <a href="make-a-donation.php?charityId=<?php echo $t->CharityNumber; ?>&amount=<?php echo abs($t->Amount); ?>" class="refresh-transactions btn-trannsaction-accion external-lkn" alt="Make this donation again" title="Make this donation again"></a>
+		                              <?php							
+	                              }
                               }
                               ?>
                               </td>
@@ -249,17 +262,17 @@ if (count($tl) < 1) {
         </tbody>
         <input type="hidden" id="current_data" name="current_data" value="<?php print base64_encode(serialize($tl)); ?>">
     </table>
-    <nav class="navigation-transactions hidden-xs" aria-label="Page navigation  ">
+    <nav class="navigation-transactions " aria-label="Page navigation  "><!--hidden-xs-->
         <ul class="pagination nav-transactions"><li>
             <?php
 
 			$pageNavOptions  = array(
 				'NoItemsText'=>'',
 				'MaxVisiblePageNums'=>5,
-				'PrevPageText'=>'&lt;',
-				'NextPageText'=>'&gt;',
-				'FirstPageText'=>'&laquo;',
-				'LastPageText'=>'&raquo;',
+				'PrevPageText'=>'<i class="fa fa-angle-left" aria-hidden="true"></i>',
+				'NextPageText'=>'<i class="fa fa-angle-right" aria-hidden="true"></i>',
+				'FirstPageText'=>'<i class="fa fa-angle-left" aria-hidden="true"></i><i class="fa fa-angle-left" aria-hidden="true"></i>',
+				'LastPageText'=>'<i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-angle-right" aria-hidden="true"></i>',
 				'ShowAllText'=>'',
 				'ShowAllAlign'=>'',
 				'LeadingText'=>'',

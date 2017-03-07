@@ -383,3 +383,11 @@ AACDESIGN3
     </main>	
 <?php }
 ?>
+<?php include 'inc/online-donation-modal.php' ?>
+<?php include 'inc/give-as-you-earn-modal.php' ?>
+<?php include 'inc/giftaid-rebate-modal.php' ?>
+<?php include 'inc/comision-modal.php' ?>
+<?php include 'inc/voucher-book-modal.php' ?>
+<?php include 'inc/voucher-modal.php' ?>
+<?php include 'inc/standing-order-donation.php' ?>
+<?php include 'inc/company-donation-modal.php' ?>

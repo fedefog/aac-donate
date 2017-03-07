@@ -95,7 +95,7 @@ $sotl = $transactionlist->listitems();
                         </div><!-- /col -->	
                     </div><!-- /header-mobile-transactions -->
                     <div class="title-standing-orders-transactions">
-                        <h3 class="title-transactions"><?php echo "STANDING ORDER " . $somItem->id . " FOR " . $somItem->name . "<span>" . showBalance($somItem->amount) . ", every " . showInterval($somItem->freq) . ". " . $somItem->count . "/" . $somItem->times . " many payments so far."; ?></span></h3>
+                        <h3 class="title-transactions"><?php echo "STANDING ORDER " . $somItem->id . " FOR " . $somItem->name . "<span>" . showBalance($somItem->amount) . ", every " . showInterval($somItem->freq) . ". " . ($somItem->count || $somItem->times?($somItem->count  . ($somItem->times?"/{$somItem->times}":'') . " payments so far."):''); ?></span></h3>
                     </div><!-- /title-transactions-result -->
                     <div class="clear"></div>
                 </div><!-- /row  -->	
@@ -111,7 +111,7 @@ $sotl = $transactionlist->listitems();
             </div>
             <div class="col-md-12">
                 <div class="title-standing-orders-transactions">
-					<h3 class="title-transactions"><?php echo "STANDING ORDER " . $somItem->id . " FOR " . $somItem->name . "<span>" . showBalance($somItem->amount) . ", every " . showInterval($somItem->freq) . ". " . $somItem->count . "/" . $somItem->times . " many payments so far."; ?></span></h3>
+					<h3 class="title-transactions"><?php echo "STANDING ORDER " . $somItem->id . " FOR " . $somItem->name . "<span>" . showBalance($somItem->amount) . ", every " . showInterval($somItem->freq) . ". " . ($somItem->count || $somItem->times?($somItem->count  . ($somItem->times?"/{$somItem->times}":'') . " payments so far."):''); ?></span></h3>
                 </div><!-- /title-transactions-result -->
             </div><!-- / col 6 -->
             <div class="col-lg-7 col-md-8">
@@ -154,7 +154,9 @@ $sotl = $transactionlist->listitems();
                         </thead>
                         <tbody>
                                 <?php
+								$num=0;
                                 foreach ($sotl as $t) {
+									$num++;
                                     $data = "";
                                     $id = $t->id;
                                     //$request = $row['Request'];
@@ -192,7 +194,7 @@ $sotl = $transactionlist->listitems();
                                     </a>
                                 </td>
                                 <td class="hidden-xs td-interval">
-                                    <span class="date-interval"><?php echo "$somItem->total_number_of_payments"; ?> PAYMENTS</span>
+                                    <span class="date-interval"><?php echo "$num".($somItem->times?"/{$somItem->times}":''); ?> PAYMENT<?php echo ($num>1?'S':'') ?></span>
                                 </td>
                             </tr>                   
                                         <?php
@@ -214,10 +216,10 @@ $sotl = $transactionlist->listitems();
 			$pageNavOptions  = array(
 				'NoItemsText'=>'',
 				'MaxVisiblePageNums'=>5,
-				'PrevPageText'=>'&laquo;',
-				'NextPageText'=>'&raquo;',
-				'FirstPageText'=>'',
-				'LastPageText'=>'',
+				'PrevPageText'=>'&lt;',
+				'NextPageText'=>'&gt;',
+				'FirstPageText'=>'&laquo;',
+				'LastPageText'=>'&raquo;',
 				'ShowAllText'=>'',
 				'ShowAllAlign'=>'',
 				'LeadingText'=>'',

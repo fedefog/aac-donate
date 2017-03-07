@@ -23,12 +23,66 @@ foreach ($transaction as $tr) {
     $account = $tr->Reference;
     $date = $tr->Last_statement_date;
 }
+
+//print_r($_SERVER);
+
+$thisPage = basename($_SERVER['SCRIPT_NAME']);
+
+if(!$thisPage || $thisPage=='index.php' || !is_file($thisPage)) $thisPage='dashboard.php';
+//$thisPage = $_REQUEST['p']?$_REQUEST['p']:'dashboard.php';
+
 $section = 'dashboard';
 include 'inc/header.php';
 ?>
+
+<script>
+function getRedirect(url){
+    setTimeout(function () {
+            $('#main-container').load(url, function () {
+                //$('#main-container').css({opacity: 0}).fadeTo(400, 1);//Efect fade
+                $("#myBar").removeClass("visible");  // fadeout of the bar loading 
+                $(".fake-container").removeAttr("style");
+                $(".fake-container").remove();
+                change_my_url(url);
+                load_js();
+                sticky_footer();
+                $('.dashboard-li .current-page').removeClass('current-page');
+                $('.dashboard-li a[href$="' + url + '"]').addClass('current-page');
+                window.scrollTo(0, 0);
+            });
+        }, 0);
+
+    
+    
+
+}
+</script>
+
+<?php if(isset($_GET['section']) && $_GET['section']!="" ): ?>
+    <script>
+        var get = "<?php echo $_GET['section']; ?>";
+        //alert(get);
+        getRedirect(get);
+        $('#main-container').css({opacity: 0});
+    </script>
+<?php else: ?>
+<?php endif; ?>
+
+<?php if(isset($_GET['section'])): ?>
+    <div class="fake-container" style="min-height: 780px; background-color: #fff;"></div>
+<?php endif; ?>
+
+
 <div id="main-container-history"></div>
 <div id="main-container">
-    <?php include 'dashboard.php' ?>
+    <?php 
+
+    if(!isset($_GET['section'])){
+		define('IS_INCLUDE',1);
+        //include 'dashboard.php';
+		include $thisPage;
+    } 
+    ?>
 </div>
 <div class="container-fluid content-nav-desktop hidden-xs">
     <div class="row">
@@ -43,7 +97,7 @@ include 'inc/header.php';
             </div><!-- /box-daily-updates -->
             <ul class="nav-dashboard">
                 <li class="dashboard-li">
-                    <a href="dashboard.php" class="lkn-dashboard dif-bg current-page">
+                    <a href="dashboard.php" class="lkn-dashboard dif-bg <?php echo $thisPage=='dashboard.php'?'current-page':'' ?>">
                         <span class="icon">
                             <img class="default" src="images/dashboard-icon.png"  height="23">
                             <img class="active" src="images/dashboard-icon-active.png"  height="23">
@@ -53,8 +107,8 @@ include 'inc/header.php';
                     </a>
                 </li>
                 <!-- AACDESING -->
-                <li class="dashboard-li dashboard-li-has-noti">
-                    <a href="transactions.php" class="lkn-dashboard dif-bg">
+                <li class="dashboard-li"><!-- dashboard-li-has-noti-->
+                    <a href="transactions.php" class="lkn-dashboard dif-bg <?php echo $thisPage=='transactions.php'?'current-page':'' ?>">
                         <span class="icon">
                             <img class="default" src="images/view-transactions-icon.png" width="20.5" height="28">
                             <img class="active" src="images/view-transactions-icon-active.png" width="20.5" height="28">
@@ -62,6 +116,7 @@ include 'inc/header.php';
                         <span class="text">View Transactions </span>
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
+<?php /**
                     <div class="box-notification-nav sublinks-nav">
 						<?php 
 							$processingCount = AACRequestList::CountProcessing();
@@ -78,9 +133,10 @@ include 'inc/header.php';
 							echo implode('',$bits);
 						?>
                     </div>
+**/ ?>
                 </li>
                 <li class="dashboard-li dashboard-li-has-noti">
-                    <a href="make-a-donation.php" class="lkn-dashboard dif-bg">
+                    <a href="make-a-donation.php" class="lkn-dashboard dif-bg <?php echo $thisPage=='make-a-donation.php'?'current-page':'' ?>">
                         <span class="icon">
                             <img class="default" src="images/make-donation-icon.png" width="23" height="27">
                             <img class="active" src="images/make-donation-icon-active.png" width="23" height="27">
@@ -94,18 +150,18 @@ include 'inc/header.php';
                 </li>
                 <!-- END AACDESING -->
                 <li class="dashboard-li">
-                    <a href="standing-orders.php" class="lkn-dashboard dif-bg">
+                    <a href="standing-orders.php" class="lkn-dashboard dif-bg <?php echo $thisPage=='standing-orders.php'?'current-page':'' ?>">
                         <span class="icon">
                             <img class="default" src="images/standing-orders-icon.png" width="18" height="30.5">
                             <img class="active" src="images/standing-orders-icon-active.png" width="18" height="30.5">
                         </span>
-                        <span class="text">View Standing orders </span>
+                        <span class="text">View Standing Orders </span>
                         <i class="fa fa-angle-right" aria-hidden="true">
                         </i>
                     </a>
                 </li>
                 <li class="dashboard-li">
-                    <a href="vouchers.php" class="lkn-dashboard dif-bg">
+                    <a href="vouchers.php" class="lkn-dashboard dif-bg <?php echo $thisPage=='vouchers.php'?'current-page':'' ?>">
                         <span class="icon">
                             <img class="default" src="images/order-voucher-icon.png" width="22" height="21">
                             <img class="active" src="images/order-voucher-icon-active.png" width="22" height="21">
@@ -115,7 +171,7 @@ include 'inc/header.php';
                     </a>
                 </li>
                 <li class="dashboard-li">
-                    <a href="help.php" class="lkn-dashboard">
+                    <a href="help.php" class="lkn-dashboard <?php echo $thisPage=='help.php'?'current-page':'' ?>">
                         <span class="icon">
                             <img class="default" src="images/help-icon.png" width="20.5" height="20">
                             <img class="active" src="images/help-icon-active.png" width="20.5" height="20">
@@ -125,7 +181,7 @@ include 'inc/header.php';
                     </a>
                 </li>
                 <li class="dashboard-li">
-                    <a href="contact-us.php" class="lkn-dashboard">
+                    <a href="contact-us.php" class="lkn-dashboard <?php echo $thisPage=='contact-us.php'?'current-page':'' ?>">
                         <span class="icon">
                             <img class="default" src="images/contact-icon.png" width="24" height="20.5">
                             <img class="active" src="images/contact-icon-active.png" width="24" height="20.5">
@@ -135,12 +191,23 @@ include 'inc/header.php';
                     </a>
                 </li>
                 <li class="dashboard-li">
-                    <a href="invite-a-friend.php" class="lkn-dashboard">
+                    <a href="invite-a-friend.php" class="lkn-dashboard <?php echo $thisPage=='invite-a-friend.php'?'current-page':'' ?>">
                         <span class="icon">
                             <img class="default" src="images/invite-a-friend-icon.png" width="20.5" height="20">
                             <img class="active" src="images/invite-a-friend-icon-active.png" width="20.5" height="20">
                         </span>
                         <span class="text">Invite a Friend</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <!-- AACDESIGN4 -->
+                <li class="dashboard-li">
+                    <a href="settings.php" class="lkn-dashboard <?php echo $thisPage=='settings.php'?'current-page':'' ?>">
+                        <span class="icon">
+                            <img class="default" src="images/settings-icon.png" width="20.5" height="20">
+                            <img class="active" src="images/settings-icon-active.png" width="20.5" height="20">
+                        </span>
+                        <span class="text">Settings</span>
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
                 </li>
@@ -170,6 +237,28 @@ include 'inc/header.php';
 <? //include 'inc/company-donation-modal.php' ?>
 <? //include 'inc/charity-donation-modal.php' ?>
 <? //include 'inc/account-transfer-modal.php' ?>
+
+<div class="modal-search modal fade" id="modal-search" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-modal-search">
+                    <?php include "transaction-search-html.php"; ?>
+                    <?php /* <a href="transactions.php" class="btn-search-mobile page transaction_page">Search Transactions</a> </div> */ ?>
+                    <a href="javascript:void(0);" id='searchTransactions' class="btn-search search-mobile page transition transaction_page">Search Transactions</a>
+                </div>
+                <!-- /modal-body -->
+            </div>
+            <!-- /modal-content -->
+        </div>
+        <!-- /modal-dialog -->
+    </div>
+    <!-- /modal-search -->
+    <div class="modal-backdrop fade sort-back"></div>
+</div>
 
 
 <? include 'inc/footer.php' ?>

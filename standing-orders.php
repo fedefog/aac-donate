@@ -1,6 +1,40 @@
 <?php
+require_once 'inc/config.inc.php';
+require_once 'inc/dbconn.inc.php';
+require_once 'cls/base.cls.php';
+require_once 'cls/users.cls.php';
+require_once 'cls/charities.cls.php';
+	require_once 'cls/ui.cls.php';
+	require_once 'inc/funcs.inc.php';
+require_once 'cls/vouchers.cls.php';
+
+
+
+
+session_start();
+
+User::LoginCheck();
+
+AjaxCheck();
+
+$user = new User();
+$user = User::GetInstance();
+
+if ($_REQUEST['page']) {
+    $page = $_REQUEST['page'];
+} else {
+    $page = 1;
+}
+
 if(!$type) $type = $_REQUEST['type']?$_REQUEST['type']:'current';
+
+$somList = new StandingOrderMasterList();
+$somList->filters[] = 'Account="' . intval($user->Username) . '" ';
+
 ?>
+
+<script>
+</script>
 <main class="standing-orders content-desktop" >
 
     <div class="header-fixed visible-xs">
@@ -50,7 +84,7 @@ if(!$type) $type = $_REQUEST['type']?$_REQUEST['type']:'current';
                             <li class="nav-standing-orders-li">
                                 <!-- AACDESIGN3 -->
                                 <a href="standing-orders.php" class="nav-standing-orders-lkn <?php echo $type=='current'?'active':'' ?>">
-                                <span class="badge mobile-current-badge"><i>1</i></span>
+                                <span class="badge mobile-current-badge"><i><?php echo $somList->CountItems($somList->GetActiveFilter(true)) ?></i></span>
                                 CURRENT</a>
 
                             </li>
@@ -59,7 +93,7 @@ if(!$type) $type = $_REQUEST['type']?$_REQUEST['type']:'current';
                                 <!-- AACDESIGN3 -->
                                 
                                 <a href="standing-orders.php?type=previous" class="nav-standing-orders-lkn <?php echo $type=='previous'?'active':'' ?>">
-                                <span class="badge mobile-previous-badge"><i>3</i></span>
+                                <span class="badge mobile-previous-badge"><i><?php echo $somList->CountItems($somList->GetActiveFilter(false)) ?></i></span>
                                 PREVIOUS</a>
 
                             </li>
@@ -94,25 +128,37 @@ if(!$type) $type = $_REQUEST['type']?$_REQUEST['type']:'current';
 
                     <li class="nav-standing-orders-li">
                         <!-- AACDESIGN3 -->
-                        <a href="standing-orders.php" id='current' class="nav-standing-orders-lkn <?php echo $type=='current'?'active':'' ?>"><span class="badge current-badge"><i>4</i></span>CURRENT</a>
+                        <a href="standing-orders.php" id='current' class="nav-standing-orders-lkn <?php echo $type=='current'?'active':'' ?>"><span class="badge current-badge"><i><?php echo $somList->CountItems($somList->GetActiveFilter(true)) ?></i></span>CURRENT</a>
 
                     </li>
 
                     <li class="nav-standing-orders-li">
                         <!-- AACDESIGN3 -->
-                        <a href="standing-orders.php?type=previous" id='previous' class="nav-standing-orders-lkn <?php echo $type=='previous'?'active':'' ?>"><span class="badge previous-badge"><i>4</i></span>PREVIOUS</a>
+                        <a href="standing-orders.php?type=previous" id='previous' class="nav-standing-orders-lkn <?php echo $type=='previous'?'active':'' ?>"><span class="badge previous-badge"><i><?php echo $somList->CountItems($somList->GetActiveFilter(false)) ?></i></span>PREVIOUS</a>
 
                     </li>
 
                 </ul>
 
             </div><!-- /col -->
+                
+
 
             <div class="col-md-5 text-right">
+            
+                <div class="export-file">
+                    EXPORT DATA <span class="caret"></span>
+                    <ul class="transition">
+                        <li><a href="PHPExcel_1.8.0_doc/export_excel_standing.php?filename=csv" id="export_csv" class="expert-csv-file transition">CSV FILE</a></li>
+                        <li> <a href="PHPExcel_1.8.0_doc/export_excel_standing.php?filename=xls" id="export_xls" class="expert-xls-file transition"> XLS FILE</a></li>
+                    </ul>
+                </div>
+            <!--
 
                 <a href="PHPExcel_1.8.0_doc/export_excel_standing.php?filename=csv" id="export_csv_so"  class="expert-csv-file standing-csv">EXPORT DATA TO CSV FILE</a>
 
                 <a href="PHPExcel_1.8.0_doc/export_excel_standing.php?filename=xls" id="export_xls_so" class="expert-xls-file standing-xls">EXPORT DATA TO XLS FILE</a>
+                -->
 
             </div><!-- / col 6 -->
 

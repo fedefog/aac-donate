@@ -14,7 +14,7 @@ jQuery(document).ready(function () {
     jQuery(document).on('click', '.results li', function () {
        jQuery('#hidden_allow').val('1');
     });
-    jQuery(document).on('click', '.dashboard-row, .transaction_all-row, .transaction_history-row, .pending-transaction-row, .standing-orders ', function () {
+    jQuery(document).on('click', '.dashboard-row, .transaction_all-row, .transaction_history-row, .pending-transaction-row, .standing-orders, .order-books-row td ', function () {
         var modal_data = jQuery(this).data('id');
         var modal_type = jQuery(this).data('type');
         //var row_arr = modal_data.split('||');
@@ -114,12 +114,25 @@ function DoCurrencyList() {
         }
     });
 }
-function confirmTransfer() {
+function confirmTransfer1() {
+	/**
     if ($('.ConfirmTransfer').hasClass('active')) {
         document.getElementById("ConfirmTransfer").value = '';
     } else {
         document.getElementById("ConfirmTransfer").value = '1';
     }
+	**/
+        console.log("confirmTransfer");
+        console.log($('.ConfirmTransfer1').length);
+        if ($('.ConfirmTransfer1').hasClass('active')) {
+            document.getElementById("ConfirmTransfer").value = '';
+            $('.ConfirmTransfer1').removeClass('active');
+        } else {
+            $('#cnfdonation').removeClass('has-error');
+            document.getElementById("ConfirmTransfer").value = '1';
+            $('.ConfirmTransfer1').addClass('active');
+            $('#dashConfirm').addClass('active');
+        }
 }
 function TestNumber(amount) {
     if (isNaN(amount)) {
@@ -299,15 +312,25 @@ function Validate(form) {
     return false;
 }
 
+function reloadCheck(){
+				var p = performUnloadCheck;
+				performUnloadCheck=true;
+				if(!p || p==false) return false;
+				if(!p || p==false) return null;
+				//if(!confirm('Are you sure you want to leave this page?')) return false;
+				return 'Are you sure you want to leave this page?';
+}
+function reloadActivate(){
+	performUnloadCheck=true;
+	window.onbeforeunload= reloadCheck;	
+}
+
 			var performUnloadCheck=true;
 $(document).ready(function(){
 
-			window.onbeforeunload= function(){
-				var p = performUnloadCheck;
-				performUnloadCheck=true;
-				if(!p) return null;
-				//if(!confirm('Are you sure you want to leave this page?')) return false;
-				return 'Are you sure you want to leave this page?';
-			}
-			$(document).on('click','.expert-csv-file, .expert-xls-file, .logout-button',function(e){performUnloadCheck=false});
+			window.onbeforeunload= reloadCheck;
+			$(document).on('click','.expert-csv-file, .expert-xls-file, .logout-button, .quick-search-form-control',function(e){
+				performUnloadCheck=false
+				window.onbeforeunload=reloadActivate;
+			});
 });

@@ -1,7 +1,7 @@
 
                 <div class="row-modal ">
 
-                    <h2 class="title-modal">CURRENT STANDING ORDER </h2>
+                    <h2 class="title-modal"><?php echo $s->active=='Y'?'CURRENT':'PREVIOUS' ?> STANDING ORDER</h2>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -13,7 +13,7 @@
 
                 <div class="row-modal">
 
-                    <h3 class="subtitle-modal">BENEFICIARY </h3>
+                    <h3 class="subtitle-modal">BENEFICIARY</h3>
 
                     <p class="info-modal" id="modal_beneficiary1"><?php echo $s->name ?></p>
 
@@ -45,7 +45,7 @@
 
                         <h3 class="subtitle-modal">DATE OF FIRST PAYMENT</h3>
 
-                        <p class="info-modal" id="modal_first_payment"><?php echo $s->FormatStartDate() ?></p>
+                        <p class="info-modal" id="modal_first_payment"><?php echo ($sd=$s->FormatStartDate())?$sd:'&nbsp;'; ?></p>
                         
                     </div>
 
@@ -53,7 +53,7 @@
 
                         <h3 class="subtitle-modal">END DATE</h3>
 
-                        <p class="info-modal" id="modal_end_date"><?php echo $s->FormatEndDate() ?></p>
+                        <p class="info-modal" id="modal_end_date"><?php echo ($ed=$s->FormatEndDate())?$ed:'&nbsp;' ?></p>
 
                     </div><!-- / col -->
 
@@ -69,7 +69,7 @@
 
                 <div class="row-modal">
 
-                    <h3 class="subtitle-modal">TOTAL DONATED SO FAR</h3>
+                    <h3 class="subtitle-modal">SO PAID SO FAR</h3>
 
                     <p class="info-modal" id="modal_total_donate"><?php echo $s->FormatTotalAmountPaid() ?></p>
 

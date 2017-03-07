@@ -120,4 +120,171 @@ function showInterval($interval) {
         return '3 Months';
     }
 }
+
+function AjaxCheck() {		
+	$isInclude = defined('IS_INCLUDE') && IS_INCLUDE;
+	if(!$_REQUEST['ajax'] && !$isInclude){
+		$thisPage = substr($_SERVER['REQUEST_URI'],strlen(SITE_ROOT)); //basename($_SERVER['PHP_SELF']);
+		include 'index.php';
+		exit;
+		//header('location:index.php#'.$_SERVER['PHP_SELF'].http_build_query($_GET));
+		//exit;
+	}
+}
+
+
+function buildDates($key,$search){
+	//global $search;
+
+	$search2 = $search;
+
+
+
+	if($key!='custom' && $key !='alltime') {
+		$search2['startdate'] = date('d-m-Y',strtotime('-'.$key));
+		$search2['enddate'] = date('d-m-Y');
+		$key = str_replace(' ','',$key);
+	}
+
+	$search2['dateType']=$key;
+
+	$params = http_build_query($search2);
+
+	$result = array(
+		'url'=>'transactions.php?'.$params,
+		'startdate'=>$search2['startdate'],
+		'enddate'=>$search2['enddate'],
+		'dateType'=>$key
+	);
+
+//var_dump($result);
+
+	return $result;
+
+}
+
+					function showFilter($key,$search){
+					//	global $search;
+
+
+						$labels = array(
+							'searchstr'=>'Quick Search',
+							'transaction_id'=>'NO',
+							'charity_name'=>'CHARITY',
+							'amount_donated'=>'AMOUNT',
+							'personal_note'=>'NOTE',
+							'voucher_no'=>'VOUCHER',
+							'book_voucher_no'=>'BOOK',
+							'transaction_type'=>'TYPE',
+							'dates'=>'DATE',
+						);
+
+						$value = '';
+						$search2 = $search;
+						if($_REQUEST['type']) $search2['type'] = $_REQUEST['type'];
+
+						if($key=='amount_donated') {
+							if($search['amount_donated_from'] && $search['amount_donated_to']) 
+								$value = "&pound;{$search['amount_donated_from']} TO &pound;{$search['amount_donated_to']}";
+							else if($search['amount_donated_from'])
+								$value = "&pound;{$search['amount_donated_from']}+";
+							else if($search['amount_donated_to'])
+								$value = "&pound;0-{$search['amount_donated_to']}";
+							unset($search2['amount_donated_from']);
+							unset($search2['amount_donated_to']);
+						} else if($key=='voucher_no') {
+							if($search['voucher_no_from'] && $search['voucher_no_to']) 
+								$value = "{$search['voucher_no_from']} TO {$search['voucher_no_to']}";
+							else if($search['voucher_no_from'])
+								$value = "{$search['voucher_no_from']}+";
+							else if($search['voucher_no_to'])
+								$value = "0-{$search['voucher_no_to']}";
+							unset($search2['voucher_no_from']);
+							unset($search2['voucher_no_to']);
+						} else if($key=='dates') {
+							if($search['startdate'] && $search['enddate']) 
+								$value = "{$search['startdate']} TO {$search['enddate']}";
+
+							unset($search2['startdate']);
+							unset($search2['enddate']);							
+							unset($search2['dateType']);						
+						} else if($key=='transaction_type') {	
+							$types = TransactionList::GetTransactionTypes();
+//var_dump($types).$value;
+							$value = $types[$search[$key]];
+							unset($search2[$key]);							
+						} else {
+							$value = $search[$key];
+							unset($search2[$key]);
+						}
+
+						if(!$value) return;
+
+						$label = $labels[$key];
+						$params = http_build_query($search2);
+					
+						?>
+	                    <span class="filter-selected"><a href="transactions.php?<?php echo $params ?>">x</a><?php echo "{$label}: $value" ?></span>
+						<?php	
+
+					}
+
+					function IsCurrentSortDesc($field,$direction,$request=null) {
+
+						if(!$request) $request = $_REQUEST;
+						if(!$direction) $direction = $request['sort'];
+						if(!$direction) $direction = 'ASC';
+	
+						if( ($field==$request['fieldname']) && (strtoupper($direction)=='DESC') ) return true;
+						else return false;
+					}
+
+					function IsCurrentSortField($field, $request=null) {
+
+						if(!$request) $request = $_REQUEST;
+	
+						if($field==$request['fieldname']) return true;
+						else return false;
+					}
+
+					function CheckCurrentSort($field,$request) {
+
+						if(!$request) $request = $_REQUEST;
+
+						$return = '';
+						
+						if(IsCurrentSortField($field,$request))
+							$return .= ' green ';
+
+						if (IsCurrentSortDesc($field,null,$request)){
+							$return .= 'fa-caret-up';
+						} else {
+							$return .= 'fa-caret-down';
+						}
+				
+						return $return;
+						
+					}
+
+					function BuildSortLink($field,$direction=null,$request=null){
+
+						if(!$request) $request = $_REQUEST;
+
+						$paramArray = $request;
+						unset($paramArray['fieldname']);
+						unset($paramArray['sort']);
+						unset($paramArray['ajax']);
+						$params= http_build_query($paramArray);
+						if($params) $params = "&amp;$params";
+
+						if(!IsCurrentSortField($field,$request) || IsCurrentSortDesc($field,$direction,$request))
+							return "fieldname={$field}&amp;sort=ASC{$params}";
+						else
+							return "fieldname={$field}&amp;sort=DESC{$params}";
+					}
+
+function VBValue($value) {
+	return $value?$value:0;
+}
+
 ?>

@@ -13,6 +13,8 @@ require_once 'cls/emails.cls.php';
 require_once 'cls/emaillog.cls.php';
 require_once 'inc/funcs.inc.php';
 
+require_once 'cls/mobile_detect.cls.php';
+
 
 
 
@@ -77,6 +79,25 @@ if($m=='getCurrencyCodes') {
 		}
 	}
 	echo $output;
+} else if($m=='getTransactionCharityList'){
+	$term = $_REQUEST['term'];
+	$cl = new TransactionList();
+	$cl->filters[] = 'UserName="' . intval($user->Username) . '" ';
+	$cl->limit = "limit 20";
+	$cl->distinct = true;
+	$cl->tableFields=' DISTINCT remote_charity_id, Name as CharityName';
+	$items = $cl->ListItems(" (`Name` LIKE '%$term%')  ",15);
+//echo $cl->lastSQL;
+
+//	$label = str_replace($label,"<font color=\"#ff0000\">$term</font>",$label);
+
+	foreach($items as $i) {
+		$label = $i->CharityName;
+		//$label = str_ireplace($term,"<b>$term</b>",$label);
+		$result[] = array('label'=>$label,'name'=>$i->CharityName);
+	}
+	echo json_encode($result);
+
 } else if($m=='getCharityList'){
 	$term = $_REQUEST['term'];
 	$cl = new CharityList();
@@ -174,14 +195,14 @@ if($m=='getCurrencyCodes') {
 
 	if($_REQUEST['txtOldPwd']  || $_REQUEST['txtNewPwd'] || $_REQUEST['txtCfmPwd'] ) {
 		if(!$_REQUEST['txtOldPwd']) HandleResult('Please enter your old password','txtOldPwd');
-		if($_REQUEST['txtOldPwd'] != $u->Password) HandleResult('The old pasword you have entered is incorrect','txtOldPwd');
+		if(strtolower($_REQUEST['txtOldPwd']) != strtolower($u->Password)) HandleResult('The old pasword you have entered is incorrect','txtOldPwd');
 
 		if(!$_REQUEST['txtNewPwd']) HandleResult('Please enter a new password','txtNewPwd');
 		if(!$_REQUEST['txtCfmPwd']) HandleResult('Please enter your password again in the confirm box','txtCfmPwd');
 
-		if($_REQUEST['txtNewPwd'] != $_REQUEST['txtCfmPwd']) HandleResult('The new password you have entered does not match the confirmation','txtCfmPwd');
+		if(strtolower($_REQUEST['txtNewPwd']) != strtolower($_REQUEST['txtCfmPwd'])) HandleResult('The new password you have entered does not match the confirmation','txtCfmPwd');
 
-		$fields['Passwprd'] = $_REQUEST['txtNewPwd'];
+		$fields['Password'] = $_REQUEST['txtNewPwd'];
 	}
 
 
@@ -202,11 +223,29 @@ if($m=='getCurrencyCodes') {
 
 	$result = array('error'=>0);
 	echo json_encode($result);
+} else if($m=='contact-message-view'){
+	$id = $_REQUEST['id'];
+	$type = $_REQUEST['dialog_type'];
+
+	$user = User::GetInstance();
+
+	$t= new AACRequestItem();
+	$t->load($id) or die('Unable to locate entry');
+
+	if( (int)$t->Username != (int)$user->Username ) die('Access denied');
+
+	include 'inc/contact-message-view-modal-detail.php';
+
 } else if($m=='contact'){
 	$fields = $_REQUEST['fields'];
 
+	if(!$fields['OfficeComments']) HandleResult('Please enter a message');
+	
+	
+
+
 	$fields['Request'] = "General Message";
-    $fields['System'] = 'Desktop';//check??
+    //$fields['System'] = 'Desktop';//check??
     $fields['ResultCode'] = 'Pending';
     $fields['RequestDateTime'] = time();
 
@@ -224,8 +263,7 @@ if($m=='getCurrencyCodes') {
 	$e = new AchisomochEmails();
 	$e->SendRequestConfirmations($u,$request);
 
-	$result = array('success'=>1);
-	echo json_encode($result);
+	HandleResult();
 } else if($m=='order-voucher-books'){
     $fields = $_REQUEST['fields'];
 
@@ -235,8 +273,9 @@ if($m=='getCurrencyCodes') {
 
     if (count($fields['VoucherBooks'])) {
          foreach ($fields['VoucherBooks'] as $qty)
-              $vbCount+=$qty;
+              $vbCount+=(int)$qty;
     }
+//var_dump($fields['VoucherBookDelivery']);
 
     if (!$vbCount) HandleResult('Please specify a quantity for at least one voucher book type');
 	if (!$fields['VoucherBookDelivery'])HandleResult('Please select a delivery method');
@@ -260,9 +299,13 @@ if($m=='getCurrencyCodes') {
                 $vb .= "{$qty}x{$vbook}; ";
 
 				$vbook = strtolower($vbook);
-				if($vbook=='50p') $amount += $qty * 0.5;
-				else if($vbook=='blank') $amount += $qty * 0.5;
-				else $amount += $qty * intval($vbook);
+				if($vbook=='50p') $amount += $qty * (0.5*100);
+				else if ($vbook=='£1') $amount += $qty*50;
+
+				/**
+				else if($vbook=='blank') $amount += 0;
+				else $amount += $qty * intval(preg_replace('/[^0-9]+/', '', $vbook), 10);
+				**/
 
             }
             //$fields['VoucherBooks'] = implode("\r\n",$fields['VoucherBooks']);
@@ -273,7 +316,7 @@ if($m=='getCurrencyCodes') {
 
 //var_dump($fields);
 
-    $fields['System'] = 'Desktop';
+   // $fields['System'] = 'Desktop';
     $request->SetProperties($fields);
     $request->UpdateSummary();
     $request->VoucherBookUrgent = $request->VoucherBookUrgent ? 'Yes' : 'No';
@@ -283,6 +326,9 @@ if($m=='getCurrencyCodes') {
     if ($_POST['clone'])  $details .= ' : Re-Request';
     User::LogAccessRequest($user->Username, '', $details);
 
+	$e = new AchisomochEmails();
+	$e->SendRequestConfirmations($user,$request);
+
 	HandleResult();
 
 } else if($m=='get-popup-dialog'){
@@ -290,6 +336,7 @@ if($m=='getCurrencyCodes') {
 	$type = $_REQUEST['dialog_type'];
 
 	$user = User::GetInstance();
+
 
 	if($type=='SOM') {
 
@@ -304,7 +351,7 @@ if($m=='getCurrencyCodes') {
 		$s= new StandingOrderTransactionItem();
 		$s->load($id) or die('Unable to locate transaction');
 
-		if( (int)$s->account != (int)$user->Username ) die('Access denied');
+		if( (int)$s->Username != (int)$user->Username ) die('Access denied');
 
 		include 'inc/standing-order-donation-transaction-detail.php';
 	} else if($type=='RQ') {
@@ -320,9 +367,12 @@ if($m=='getCurrencyCodes') {
 		$t = new TransactionItem();
 		$t->load($id) or die('Unable to locate transaction');
 
-		if( (int)$t->Username != (int)$user->Username ) die('Access denied');
+//var_dump($t->Username);
 
+		if( (int)$t->Username != (int)$user->Username ) die('Access denied');
+//var_dump($t);
 		switch(strtoupper($t->cd_code)) {
+			case 'PEN':
 			case 'VO':
 			case 'NV'://voucher
 				include 'inc/voucher-modal-detail.php';
@@ -339,6 +389,7 @@ if($m=='getCurrencyCodes') {
 //				break;
 			case 'TA':
 			case 'RF':
+			case 'Q':
 //				Amount
 //				Date
 //				Notes from AAC:
@@ -368,7 +419,27 @@ if($m=='getCurrencyCodes') {
 		$request = new AACRequestItem();
 		$error = $request->CancelStandingOrder($id);			
 		if($error) HandleResult($error);
+
+		$e = new AchisomochEmails();
+		$e->SendRequestConfirmations($user,$request);
+
+		HandleResult();
 		exit;
+} else if($m=='send-browser-log') {
+	/**
+	action
+	
+	
+	
+	email
+		account no
+		browser
+		os
+		email address
+		ip address
+		
+		browser info
+	**/
 } else if($m=='save-donation'){
 
 	$fields = $_REQUEST['fields'];
@@ -378,7 +449,7 @@ if($m=='getCurrencyCodes') {
 
 ///////////////////////////
 
-	$so = false; //need toset
+	$so = $fields['IsStandingOrder']?$fields['StandingOrderType']:false; 
 	$currency = $fields['Currency'];
 
 	$amount = $fields['Amount'];
@@ -477,6 +548,8 @@ if($m=='getCurrencyCodes') {
 	}	
 
 	$blockedWords = array('raffle'=>'You cannot pay for raffles with AAC funds',
+						'rafffel'=>'You cannot pay for raffles with AAC funds',
+						'raffel'=>'You cannot pay for raffles with AAC funds',
 						'fees'=>'You cannot pay for fees with AAC funds',
 						'invoice'=>'You cannot pay for invoices with AAC funds'
 					);					
@@ -502,21 +575,21 @@ if($m=='getCurrencyCodes') {
 		} else if ($so && !$neg && ($gbpamount<10)) {
 			HandleResult( 'Sorry, this system can only be used to transfer &pound;10 or more - please try again');
 		} else if ($neg && ($gbpamount >= -18) && ($gbpamount < 0) ) {
-			HandleResult( 'Sorry, this system can only be used to transfer $pound;18 or more- please try again');
+			HandleResult( 'Sorry, this system can only be used to transfer &pound;18 or more- please try again');
 		} else if (!$_REQUEST['ConfirmTransfer']) {
 			HandleResult( 'Please confirm the transaction is charitable');
 		} else if(!$so && $balance && ($gbpamount > $balance) && !$_REQUEST['confirm-insufficiantbalance'] ) {
 			HandleResult( 'Your account balance is insufficient for this transaction, would you like to proceed?','','insufficiantbalance','confirm');
 		} else if ($so && ($currency != 'GBP') ) {
 			HandleResult( 'Sorry, standing orders can only be requested in Pounds (sterling) - please alter the currency selection or remove the Standing Order option');
-		} else if($so=='Continuous payments' && !$fields['StandingOrderContinuous']) {
+		} else if($so=='Continuous payments' && !$fields['StandingOrderStartDate']) {
 			HandleResult('Please specify the standing order date.');
 		} else if($so=='Fixed number of payments') {//Repeat Payments
-			if(!$_REQUEST['StandingOrderStartDate']){
+			if(!$fields['StandingOrderStartDate']){
 				HandleResult('Please specify the standing order date.');
-			} else if(!$_REQUEST['StandingOrderNumPayments']){
+			} else if(!$fields['StandingOrderNumPayments']){
 				HandleResult('Please specify how many payments.');
-			} else if(!$_REQUEST['StandingOrderFrequency']){
+			} else if(!$fields['StandingOrderFrequency']){
 				HandleResult('Please specify the payment interval.');
 			}
 		}
@@ -526,8 +599,10 @@ if($m=='getCurrencyCodes') {
 
 			if($doAction=='edit-standing-order') {
 				HandleResult('Are you sure you would like to edit this standing order?','','transdetails','confirm');
+			} else if($so) {
+				HandleResult('You have selected to setup a standing order for ' . $currency . ' ' . $amount . $gbpInfo.' to ' . $beneficiary . '. Please confirm your instruction.  Please note that requests cannot be edited.','','transdetails','confirm');
 			} else {
-				HandleResult('You have selected to donate ' . $currency . ' ' . $amount . $gbpInfo.' to ' . $beneficiary . '. Please confirm your donation.  Please note that reqests cannot be edited.','','transdetails','confirm');
+				HandleResult('You have selected to donate ' . $currency . ' ' . $amount . $gbpInfo.' to ' . $beneficiary . '. Please confirm your donation.  Please note that requests cannot be edited.','','transdetails','confirm');
 			}
 		}
 
@@ -570,7 +645,7 @@ if($m=='getCurrencyCodes') {
         }
         $fields['StandingOrderStartDate'] = $fields['StandingOrderStartDate'] ? strtotime($fields['StandingOrderStartDate']) + 10800 : '0';
         $fields['StandingOrderEndDate'] = $fields['StandingOrderEndDate'] ? intval($fields['StandingOrderEndDate']) + 10800 : '0';
-        $fields['System'] = 'Desktop';//check??
+        //$fields['System'] = 'Desktop';//check??
 
         $request->SetProperties($fields);
         $request->UpdateSummary();

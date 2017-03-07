@@ -1,6 +1,15 @@
 /* FOOTER */
 
+.help-lkn{
+	cursor: pointer;
+}
+.help-lkn:hover{
+	color: #333333;
+}
 @media(max-width:340px){
+	#footer .no-padding{
+		padding: 6px;
+	}	
 	.logo-footer {
 	    width: 40px!important;
 	}
@@ -8,8 +17,9 @@
 		width: 100%;
 	}
 	.list-footer {
-	    padding-left: 8px!important;
-	    margin-left: 8px!important;
+		float: right;
+	    padding-left: 5px!important;
+	    margin-left: 5px!important;
 	}
 }
 
@@ -17,31 +27,44 @@
 	#footer {
 		background: #0084B7;
 		color: #fff;
-		padding: 15px 0;
-	}	
+		padding: 12px 0;
+	}
+
 	.logo-footer {
 		float: left;
 		margin: 17px 0;
 	}
+	.logo-footer img {
+		max-width: 90%;
+	}
 	.list-footer {
 		float: left;
-		padding-left: 15px;
-		margin-left: 15px;
-		border-left: 1px solid #fff;
+		padding-left: 5px;
+		margin-left: 5px;
 	}
 	.footer-link {
 		font-weight: 300;
-		font-size: 12px;
+		font-size: 11px;
 		color: #FFFFFF;
 		letter-spacing: 0.57px;
 		line-height: 18px;
 	}
-	body.sticky-footer #footer {
+	.contact-btn{
+		position: fixed;
+		bottom: 0;
+		z-index: 100;
+		left: 0;
+		width: 100%;
+	}
+	footer{
+		/**display: none;**/
+	}
+	/*body.sticky-footer #footer {
 		position: fixed;
 		width: 100%;
 		bottom: 0;
 		z-index: 80;
-	}
+	}*/
 	
 }
 @media(min-width:768px){
@@ -91,10 +114,14 @@
 	.list-footer-desktop li a:hover {
 		color: #FFF;
 	}
-}
-@media(min-width:992px){
-   
-}
-@media(min-width:1200px){
-   
+	.box-find-answers{
+		text-align: center;
+	}
+	.box-find-answers h2{
+		display: inline-block;
+	}
+	.box-find-answers a{
+		display: inline-block;
+		margin-left: 10px;
+	}
 }

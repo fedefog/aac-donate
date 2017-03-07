@@ -1,5 +1,5 @@
 <footer id="footer">
-    <div class="container-fluid">
+    <div class="container-fluid no-padding">
         <div class="row">
             <div class="col-xs-12">
                 <h4 class="logo-footer">
@@ -13,7 +13,7 @@
                         <a href="#" class="footer-link">admin@achisomoch.org</a>
                     </li>
                     <li class="footer-li">
-                        <a href="#" class="footer-link">35 Templars Avenue, London NW11 0NU</a>
+                        <a href="#" class="footer-link">35 Templars Avenue, London NW11 0NU &nbsp; V <?php echo SYSTEM_VERSION ?></a>
                     </li>
                 </ul>
                 <ul class="list-footer-desktop hidden-xs">
@@ -51,6 +51,12 @@
 	<script>
     $(document).ready(function () {
 
+		if(window.location.hash && window.location.hash.indexOf('index.php')==-1){
+			var url = window.location.hash.substr(1);
+			
+			loadpage(url);
+		}
+
 		$('.autocomplete-charities').autocomplete({
 			source: 'remote.php?m=getCharityList',
 		    messages: {
@@ -76,6 +82,20 @@
 		});
 	});		
 	</script>
+
+<script>
+    Userback = window.Userback || {};
+    Userback.access_token = '845|957|GnTf3VL0lmOsB9ZeYaRIiQx9tjIkWQACdtRhpDhL05dCfcRdnI';
+
+    (function(id) {
+        if (document.getElementById(id)) {return;}
+        var s = document.createElement('script');
+        s.id = id;
+        s.src = 'https://static.userback.io/widget/v1.js';
+        var parent_node = document.head || document.body;
+        parent_node.appendChild(s);
+    })('userback-sdk');
+</script>
 
 </body>
 </html>

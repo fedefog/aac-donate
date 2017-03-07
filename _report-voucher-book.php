@@ -18,8 +18,8 @@ require_once 'cls/aac_requests.cls.php';
 	$user = User::GetInstance();
 
 $req_type = $_REQUEST['type'];
-$sort_direction = $_REQUEST['sort']?$_REQUEST['sort']:'desc';
-$sort_fieldname = $_REQUEST['fieldname']?$_REQUEST['fieldname']:'t.DateTime';
+$sort_direction = $_REQUEST['sort']?$_REQUEST['sort']:'asc';
+$sort_fieldname = $_REQUEST['fieldname']?$_REQUEST['fieldname']:'t.Voucher';
 
 $sort = $_REQUEST;
 $sort['sort'] = $sort_direction;
@@ -60,18 +60,11 @@ $transactionlist = new TransactionList();
 $transactionlist->filters[] = 'UserName="' . intval($user->Username) . '" ';
 $transactionlist->sortby = $sort_fieldname;
 $transactionlist->sortorder = $sort_direction;
-$transactionlist->SetPage($page);
+//$transactionlist->SetPage($page);
 
-/**
-if ($req_type == "in") {
-		$transactionlist->filters[] = ' Amount > 0';
-		$param .= "&type={$_REQUEST['type']}";
-} else if ($req_type == "out") {
-		$transactionlist->filters[] = ' Amount < 0';
-		$param .= "&type={$_REQUEST['type']}";
-}
-if($_REQUEST['type']) $paramArray['type'] = $_REQUEST['type'];
-**/
+$book_voucher_no = $_REQUEST['book_voucher_no'];
+
+$tl = $transactionlist->VoucherBookReport($book_voucher_no);
 
 ?>
 <?php
@@ -82,107 +75,14 @@ $url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xls";
 //$search = $_REQUEST;
 
 
-/**
-    if ($search['transaction_id']) {
-		$transactionlist->filters[] = " `t`.`RequestId`='{$search['transaction_id']}' ";
-		$param .= "&transaction_id={$_REQUEST['transaction_id']}";
-    } 
-	if ($search['charity_name']) {
-		$transactionlist->filters[] = " `c`.`Name` LIKE '%{$search['charity_name']}%' ";
-		$param .= "&charity_name={$_REQUEST['charity_name']}";
-    } 
-	if ($search['amount_donated_from']) {
-		$neg = $search['amount_donated_from']*-1;
-		$transactionlist->filters[] = " (`amount`>='{$search['amount_donated_from']}' OR `amount`='{$neg}' ) ";
-		$param .= "&amount_donated_from={$_REQUEST['amount_donated_to']}";
-    } 
-	if ($search['amount_donated_to']) {
-		$neg = $search['amount_donated_to']*-1;
-		$transactionlist->filters[] = " (`amount`<='{$search['amount_donated_to']}' OR `amount`='{$neg}' ) ";
-		$param .= "&amount_donated_to={$_REQUEST['amount_donated_to']}";
-    } 
-	if ($search['personal_note']) {
-		$transactionlist->filters[] = " `client_comment` LIKE '%{$search['personal_note']}%' ";
-		$param .= "&amount_donated={$_REQUEST['amount_donated']}";
-    } 
-	if ($search['voucher_no_from']) {
-		$transactionlist->filters[] = " `voucher`>='{$search['voucher_no_from']}' ";
-		$param .= "&voucher_no_from={$_REQUEST['voucher_no_from']}";
-    } 
-	if ($search['voucher_no_to']) {
-		$transactionlist->filters[] = " `voucher`<='{$search['voucher_no_to']}' ";
-		$param .= "&voucher_no_to={$_REQUEST['voucher_no_to']}";
-    } 
-	if ($search['book_voucher_no']) {
-		$transactionlist->filters[] = $transactionlist->GetVoucherBookRangeFilter($search['book_voucher_no']);
-		$param .= "&book_voucher_no={$_REQUEST['book_voucher_no']}";
-    } 
-	if ($search['transaction_type']) {
-		$transactionlist->filters[] = " `CDNo`='{$search['transaction_type']}' ";
-		$param .= "&transaction_type={$_REQUEST['transaction_type']}";
-    }
-
-	if ($search['startdate']) {
-		//convert to db format
-		$d = explode('-',$search['startdate']);
-		$dbsearch['startdate'] = "{$d['2']}-{$d['1']}-{$d['0']}";
-		$transactionlist->filters[] = " `DateTime`>='{$dbsearch['startdate']}' ";
-	    $param .= '&startdate=' . $search['startdate'];
-	}
-	if ($search['enddate']) {
-		$d = explode('-',$search['enddate']);
-		$dbsearch['enddate'] = "{$d['2']}-{$d['1']}-{$d['0']}";
-
-		$transactionlist->filters[] = " `DateTime`<='{$dbsearch['enddate']}' ";
-	    $param .= '&enddate=' . $search['enddate'];
-	}
-**/
-
-//print_r($search);
-
-//print_r($transactionlist->filters);
-
-$dates = array(
-	'3months'=>buildDates('3 Months',$search),
-	'6months'=>buildDates('6 Months',$search),
-	'1year'=>buildDates('12 Months',$search),
-	'3years'=>buildDates('36 Months',$search),
-	'5years'=>buildDates('60 Months',$search),
-	'alltime'=>buildDates('alltime',$search),
-	'custom'=>buildDates('custom',$search),
-);
-
-$defaultDate = $dates['alltime']; //reset($dates);
-//$search['dateType'] = 'alltime';
-$searchF = $search;
-if(!$searchF['startdate']) $searchF['startdate'] = $defaultDate['startdate'];
-if(!$searchF['enddate']) $searchF['enddate'] = $defaultDate['enddate'];
-
-$dates['custom']['startdate'] = $searchF['startdate'];
-$dates['custom']['enddate'] = $searchF['enddate'];
 
 /**
-if(!$search['startdate']) {
-	$defaultDate = reset($dates);
-
-//var_dump($defaultDate);
-
-	$d = explode('-',$defaultDate['startdate']);
-	$defaultDate['startdate'] = "{$d['2']}-{$d['1']}-{$d['0']}";
-	$d = explode('-',$defaultDate['enddate']);
-	$defaultDate['enddate'] = "{$d['2']}-{$d['1']}-{$d['0']}";
-
-	$transactionlist->filters[] = " `DateTime`>='{$defaultDate['startdate']}' ";
-	$transactionlist->filters[] = " `DateTime`<='{$defaultDate['enddate']}' ";
-
-}
-**/
-
 $transactionlist->filters = array_merge($transactionlist->filters,$transactionlist->BuildSearch($searchF));
 $param = '&'.http_build_query($searchF);
 unset($search['type']);
 
 $paramT = '&'.http_build_query($search);
+**/
 
 /**
 if ($_REQUEST['sort'] && $_REQUEST['fieldname']) {
@@ -227,33 +127,6 @@ function extractDomain(url) {
 </script>
 
 <script type="text/javascript">
-    function clearOthers(current_element) {
-//disabled this as its causing problems and shouldnt be needed
-return;
-        if ($('#chkTransactionId').parent().hasClass('active') === false && $('#chkTransactionId') !== $(current_element)) {
-            $('#txtTransactionId').val('');
-        }
-
-        if ($('#chkCharityName').parent().hasClass('active') === false && $('#chkCharityName') != $(current_element)) {
-            $('#txtCharityName').val('');
-        }
-        if ($('#chkAmount').parent().hasClass('active') === false && $('#chkAmount') != $(current_element)) {
-            $('#txtAmount').val('');
-        }
-        if ($('#chkNotes').parent().hasClass('active') === false && $('#chkNotes') != $(current_element)) {
-            $('#txtNotes').val('');
-        }
-        if ($('#chkVoucherNumber').parent().hasClass('active') === false && $('#chkVoucherNumber') != $(current_element)) {
-            $('#txtVoucherNumber').val('');
-        }
-        if ($('#chkBookVoucherNumber').parent().hasClass('active') === false && $('#chkBookVoucherNumber') != $(current_element)) {
-            $('#txtBookVoucherNumber').val('');
-        }
-        if ($('#chkType').parent().hasClass('active') === false && $('#chkType') != $(current_element)) {
-            $('#txtType').val('');
-        }
-    }
-
     jQuery(document).ready(function () {
 
 		$('.autocomplete-transaction-charities').autocomplete({
@@ -311,73 +184,99 @@ return;
             //$(".results").css("visibility", "visible");
         });
 
-	
-	
-	    $('#chkTransactionId').click(function (event) {
-	        event.preventDefault( );
-	
-	        if ($(this).parent().hasClass('active') === true) {
-	            $(this).parent().removeClass('active');
-	        } else {
-	            $(this).parent().addClass('active');
-	        }
-	        clearOthers(this);
-	    });
-	    $('#chkCharityName').click(function (event) {
-	        event.preventDefault( );
-	        if ($(this).parent().hasClass('active') === true) {
-	            $(this).parent().removeClass('active');
-	        } else {
-	            $(this).parent().addClass('active');
-	        }
-	        clearOthers(this);
-	    });
-	    $('#chkAmount').click(function (event) {
-	        event.preventDefault( );
-	        if ($(this).parent().hasClass('active') === true) {
-	            $(this).parent().removeClass('active');
-	        } else {
-	            $(this).parent().addClass('active');
-	        }
-	        clearOthers(this);
-	    });
-	    $('#chkNotes').click(function (event) {
-	        event.preventDefault( );
-	        if ($(this).parent().hasClass('active') === true) {
-	            $(this).parent().removeClass('active');
-	        } else {
-	            $(this).parent().addClass('active');
-	        }
-	        clearOthers(this);
-	    });
-	    $('#chkVoucherNumber').click(function (event) {
-	        event.preventDefault();
-	        if ($('#chkVoucherNumber').parent().hasClass('active')) {
-	            $('#chkVoucherNumber').parent().removeClass('active');
-	        } else {
-	            $('#chkVoucherNumber').parent().addClass('active');
-	        }
-	        clearOthers(this);
-	    });
-	    $('#chkBookVoucherNumber').click(function (event) {
-	        event.preventDefault();
-	        if ($(this).parent().hasClass('active') === true) {
-	            $(this).parent().removeClass('active');
-	        } else {
-	            $(this).parent().addClass('active');
-	        }
-	        clearOthers(this);
-	    });
-	    $('#chkType').click(function (event) {
-	        event.preventDefault( );
-	        if ($(this).parent().hasClass('active') === true) {
-	            $(this).parent().removeClass('active');
-	        } else {
-	            $(this).parent().addClass('active');
-	        }
-	        clearOthers(this);
-	    });
-	
+    });
+    function clearOthers(current_element) {
+//disabled this as its causing problems and shouldnt be needed
+return;
+        if ($('#chkTransactionId').parent().hasClass('active') === false && $('#chkTransactionId') !== $(current_element)) {
+            $('#txtTransactionId').val('');
+        }
+
+        if ($('#chkCharityName').parent().hasClass('active') === false && $('#chkCharityName') != $(current_element)) {
+            $('#txtCharityName').val('');
+        }
+        if ($('#chkAmount').parent().hasClass('active') === false && $('#chkAmount') != $(current_element)) {
+            $('#txtAmount').val('');
+        }
+        if ($('#chkNotes').parent().hasClass('active') === false && $('#chkNotes') != $(current_element)) {
+            $('#txtNotes').val('');
+        }
+        if ($('#chkVoucherNumber').parent().hasClass('active') === false && $('#chkVoucherNumber') != $(current_element)) {
+            $('#txtVoucherNumber').val('');
+        }
+        if ($('#chkBookVoucherNumber').parent().hasClass('active') === false && $('#chkBookVoucherNumber') != $(current_element)) {
+            $('#txtBookVoucherNumber').val('');
+        }
+        if ($('#chkType').parent().hasClass('active') === false && $('#chkType') != $(current_element)) {
+            $('#txtType').val('');
+        }
+    }
+
+    $('#chkTransactionId').click(function (event) {
+        event.preventDefault( );
+
+        if ($(this).parent().hasClass('active') === true) {
+            $(this).parent().removeClass('active');
+        } else {
+            $(this).parent().addClass('active');
+        }
+        clearOthers(this);
+    });
+    $('#chkCharityName').click(function (event) {
+        event.preventDefault( );
+        if ($(this).parent().hasClass('active') === true) {
+            $(this).parent().removeClass('active');
+        } else {
+            $(this).parent().addClass('active');
+        }
+        clearOthers(this);
+    });
+    $('#chkAmount').click(function (event) {
+        event.preventDefault( );
+        if ($(this).parent().hasClass('active') === true) {
+            $(this).parent().removeClass('active');
+        } else {
+            $(this).parent().addClass('active');
+        }
+        clearOthers(this);
+    });
+    $('#chkNotes').click(function (event) {
+        event.preventDefault( );
+        if ($(this).parent().hasClass('active') === true) {
+            $(this).parent().removeClass('active');
+        } else {
+            $(this).parent().addClass('active');
+        }
+        clearOthers(this);
+    });
+    $('#chkVoucherNumber').click(function (event) {
+        event.preventDefault();
+        if ($('#chkVoucherNumber').parent().hasClass('active')) {
+            $('#chkVoucherNumber').parent().removeClass('active');
+        } else {
+            $('#chkVoucherNumber').parent().addClass('active');
+        }
+        clearOthers(this);
+    });
+    $('#chkBookVoucherNumber').click(function (event) {
+        event.preventDefault();
+        if ($(this).parent().hasClass('active') === true) {
+            $(this).parent().removeClass('active');
+        } else {
+            $(this).parent().addClass('active');
+        }
+        clearOthers(this);
+    });
+    $('#chkType').click(function (event) {
+        event.preventDefault( );
+        if ($(this).parent().hasClass('active') === true) {
+            $(this).parent().removeClass('active');
+        } else {
+            $(this).parent().addClass('active');
+        }
+        clearOthers(this);
+    });
+
 		if($('.sort-transactions .active').length) {
 			var active = $('.sort-transactions .active');
  
@@ -387,9 +286,9 @@ return;
 
 		if($('.navigator-transactions-li .dropdown-dates .selected').length) {
 			var active = $('.navigator-transactions-li .dropdown-dates .selected').first();
+// alert($('.dropdown-dates .selected').length);
 			$('.dates_text_selected').text(active.text());
 		}
-    });
 
 			
 
@@ -403,7 +302,7 @@ return;
                         <div class="col-xs-3"> <a href="dashboard.php" class="go-back"> <i class="fa fa-angle-left" aria-hidden="true"></i> </a> </div>
                         <!-- /col -->
                         <div class="col-xs-6">
-                            <h2 class="title">Transactions</h2>
+                            <h2 class="title">Voucher Book Report</h2>
                         </div>
                         <!-- /col -->
                         <div class="col-xs-3"> <a href="#" class="nav-mobile nav-icon4 visible-xs "> <span></span> <span></span> <span></span> </a> </div>
@@ -411,11 +310,7 @@ return;
                     </div>
                     <!-- /header-mobile-transactions -->
                     <div class="col-xs-12 header-mobile-transactions">
-                        <ul class="nav-transactions transaction_page_mobile">
-                            <li class="nav-transactions-li"> <a href="transactions.php?<?php echo $paramT ?>" class="nav-transactions-lkn <?php echo !$req_type?'active':'' ?>">all</a> </li>
-                            <li class="nav-transactions-li"> <a href="transactions.php?type=in<?php echo $paramT ?>" class="nav-transactions-lkn <?php echo $req_type=='in'?'active':'' ?>">in</a> </li>
-                            <li class="nav-transactions-li"> <a href="transactions.php?type=out<?php echo $paramT ?>" class="nav-transactions-lkn <?php echo $req_type=='out'?'active':'' ?>">out</a> </li>
-                        </ul>
+     
                     </div>
                     <!-- /header-mobile-transactions -->
                     <div class="clear"></div>
@@ -428,63 +323,25 @@ return;
     <!-- /header-fixed -->
     <div id="transactions-navigation-desktop" class="hidden-xs transactions-navigation-desktop">
         <div class="row">
+            <div class="col-md-12">
+                    <a href="transactions.php" class="history-back ">&lt; Back</a>
+            </div>
             <div class="col-md-8">
-                <h2 class="title-transactions-desktop">Transactions</h2>
-                <!-- AACDESIGN -->
-						<?php 
-							$processingCount = AACRequestList::CountProcessing();
-							$pendingCount = TransactionList::CountPending();
-						?>	
-						<?php if($processingCount) { ?>
-                    <a href="transactions-processing.php" class="btn-being-processed ajaxlink"><span class="number-notification"><?php echo $processingCount; ?></span><span class="noti-string">being processed</span></a>
-						<?php } ?>
-						<?php if($pendingCount) { ?>
-                    <a href="transactions-pending.php" class="btn-pendings ajaxlink"><span class="number-notification"><?php echo $pendingCount; ?></span> <span class="noti-string">PENDING</span></a>
-						<?php } ?>
-                    <!-- END AACDESIGN -->
-                <ul class="nav-transactions transaction_page_desktop">
-                    <li class="nav-transactions-li"> <a href="transactions.php?<?php echo $paramT ?>" class="nav-transactions-lkn<?php echo $req_type?'':' active' ?>">all</a> </li>
-                    <li class="nav-transactions-li"> <a href="transactions.php?type=in<?php echo $paramT ?>" class="nav-transactions-lkn<?php echo $req_type=='in'?' active':'' ?>">in</a>
-                        <?php /* <a href="transactions-in.php" class="nav-transactions-lkn">in</a> */ ?>
-                    </li>
-                    <li class="nav-transactions-li"> <a href="transactions.php?type=out<?php echo $paramT ?>" class="nav-transactions-lkn<?php echo $req_type=='out'?' active':'' ?>">out</a>
-                        <?php /* <a href="transactions-out.php" class="nav-transactions-lkn">out</a> */ ?>
-                    </li>
-                </ul>
+                <h2 class="title-transactions-desktop">Voucher Book Report</h2>
+                <!-- AACDESIGN -->					
             </div>
             <!-- / col 6 -->
             <!--- AACDESIGN4 -->
             <div class="export-file">
 
                  <?php
-                    $url = "PHPExcel_1.8.0_doc/export_excel.php?filename=csv";
-                    $url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xlsx";
+                    $url = "PHPExcel_1.8.0_doc/export_excel_reports_voucher_book.php?filename=csv";
+                    $url1 = "PHPExcel_1.8.0_doc/export_excel_reports_voucher_book.php?filename=xlsx";
 
-                        if ($_REQUEST['fieldname']) {
-                            $param = $param . "&fieldname=" . $_REQUEST['fieldname'];
+                        if ($_REQUEST['book_voucher_no']) {
+                            $param = "&book_voucher_no=" . $_REQUEST['book_voucher_no'];
                         }
-                        if ($_REQUEST['sort']) {
-                            $param = $param . "&sort=" . $_REQUEST['sort'];
-                        }
-                  ?>
-
-                    REPORTS <span class="caret"></span>
-                    <ul class="transition">
-                        <li><a href="report-voucher-book.php" id="report-voucher-book" class="ajaxlink transition">VOUCHER BOOK</a></li>
-                    </ul>
-                </div>
-            <div class="export-file">
-
-                 <?php
-                    $url = "PHPExcel_1.8.0_doc/export_excel.php?filename=csv";
-                    $url1 = "PHPExcel_1.8.0_doc/export_excel.php?filename=xlsx";
-
-                        if ($_REQUEST['fieldname']) {
-                            $param = $param . "&fieldname=" . $_REQUEST['fieldname'];
-                        }
-                        if ($_REQUEST['sort']) {
-                            $param = $param . "&sort=" . $_REQUEST['sort'];
-                        }
+           
                   ?>
 
                     EXPORT DATA <span class="caret"></span>
@@ -505,20 +362,7 @@ return;
                 <!-- AACDESING -->
 
                 <div class="visible-xs">
-						<?php 
-							$processingCount = AACRequestList::CountProcessing();
-							$pendingCount = TransactionList::CountPending();
-							$bits = array();
 
-							if($processingCount) { 
-								$bits[] = '<a href="transactions-processing.php" class="btn-being-processed-mobile"><span class="number-notification">'.$processingCount.'</span>Currently being processed</a>';
-							}
-							if($pendingCount) { 
-								$bits[] ='<a href="transactions-pending.php" class="btn-pendings-mobile"><span class="number-notification">'.$pendingCount.'</span> PENDING</a>';
-							}
-
-							echo implode('',$bits);
-						?>
                     
                     
                     
@@ -536,67 +380,21 @@ return;
                         <i class="glyphicon glyphicon-calendar fa fa-calendar hidden-xs"></i> 
                     </li>
                     */ ?>
-                    <li class="navigator-transactions-li"> 
-                        <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby lkn-dates"> 
-                            <i class="glyphicon glyphicon-calendar fa fa-calendar hidden-xs"></i>
-                            <span class="dates_text_selected">ALL TIME<!--PREVIOUS 3 MONTHS--></span>                              
-                            <i class="fa fa-long-arrow-up pull-right hidden-xs" aria-hidden="true"></i>
-                            <i class="fa fa-caret-down pull-right visible-xs" aria-hidden="true"></i>
-                        </a>
-                        <div class="drop-down-sort dropdown-dates"> 
-                            <div class="container-sortby">
-
-
-
-                                <ul class="list-sortby">
-                                    <li class="sortby-li"> <a href="<?php echo $dates['3months']['url'] ?>" class="date-lkn first-date-lkn page <?php echo $dates['3months']['dateType']==$search['dateType']?' selected ':'' ?>">PREVIOUS 3 MONTHS</a> </li>
-                                    <li class="sortby-li"> <a href="<?php echo $dates['6months']['url'] ?>" class="date-lkn page <?php echo $dates['6months']['dateType']==$search['dateType']?' selected ':'' ?>">PREVIOUS 6 MONTHS</a> </li>
-                                    <li class="sortby-li"> <a href="<?php echo $dates['1year']['url'] ?>" class="date-lkn page <?php echo $dates['1year']['dateType']==$search['dateType']?' selected ':'' ?>">PREVIOUS YEAR</a> </li>
-                                    <li class="sortby-li"> <a href="<?php echo $dates['3years']['url'] ?>" class="date-lkn page <?php echo $dates['3years']['dateType']==$search['dateType']?' selected ':'' ?>">PREVIOUS 3 YEARS</a> </li>
-                                    <li class="sortby-li"> <a href="<?php echo $dates['5years']['url'] ?>" class="date-lkn page <?php echo $dates['5years']['dateType']==$search['dateType']?' selected ':'' ?>">PREVIOUS 5 YEARS</a> </li>
-                                    <li class="sortby-li"> <a href="<?php echo $dates['alltime']['url'] ?>" class="date-lkn page <?php echo $dates['alltime']['dateType']==$search['dateType']?' selected ':'' ?>">ALL TIME</a> </li>
-                                    <li class="sortby-li visible-xs"> 
-                                        <a href='javascript:void(0);' id="dates-bt-modal" class="date-lkn custom-range-lkn <?php echo $dates['custom']['dateType']==$search['dateType']?' selected ':'' ?>">CUSTOM DATE RANGE</a>
-                                    </li>
-                                    <li class="sortby-li hidden-xs"> 
-                                        <a href="javascript:void(0);" class="date-lkn custom-range-lkn <?php echo $dates['custom']['dateType']==$search['dateType']?' selected ':'' ?>">
-                                        CUSTOM DATE RANGE
-                                        </a> 
-                                        <div class="custom-range-container">
-                                            <?php /*<input class="col-xs-12" type="text" name="datarange" value="10/24/1984" /> */ ?>
-                                            <input class="col-xs-5" type="text" name="customstartdate" id="customstartdate" value="<?php echo $dates['custom']['startdate'] ?>" />
-                                            <span class="col-xs-2">-</span>
-                                            <input class="col-xs-5" type="text" name="customenddate" id="customenddate" value="<?php echo $dates['custom']['enddate'] ?>" />
-											<a class="custom-date-go" href="#">go</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- /container-sortby -->
-                        </div>
-                        <!-- /drop-down-sort -->
-                    </li>
-                    <li class="navigator-transactions-li"> 
-                        <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search visible-xs" data-toggle="modal" data-target="#modal-search" >ADVANCED SEARCH</a>
-                    </li>
+         
                     <!-- AACDESIGN3 -->
-                    <li class="navigator-transactions-li hidden-xs hidden-sm"> 
-                        <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-search  lkn-seach-desktop btn-dropdown-search"  >ADVANCED SEARCH
-                        <i class="fa fa-long-arrow-up pull-right" aria-hidden="true"></i>
-                        </a> 
-                    </li>   
 
-                    <li class="navigator-transactions-li navigator-transactions-sortby"> 
-						<form id="quick-transaction-search" class="hidden-xs">
+
+                    <li class="navigator-transactions-li2 navigator-transactions-sortby2"> 
+						<form id="reports-voucher-book" >
                             <div class="container-input-quick-search">
-							     <input class="form-control quick-search-form-control" placeholder="Enter keywords" type="text" name="searchstr" value="<?php echo $searchstr ?>" />
-								 <?php if($searchstr) { ?>
+							     <input class="form-control quick-search-form-control" placeholder="Enter voucher number" type="tel" name="book_voucher_no" value="<?php echo $book_voucher_no ?>" />
+								 <?php if($searchstr && $dontShow) { ?>
                                  <a href="transactions.php?type=<?php echo $_REQUEST['type'] ?>" class="ajaxlink">
                                     <i class="fa fa-times" aria-hidden="true"></i>
                                 </a>
 								<?php } ?>
                             </div>
-                            <a href="javascript:void(0)" class="transition" id="transactionsQuickSearch" >SEARCH</a>
+                            <a href="javascript:void(0)" class="transition quick-button" id="reportsVoucherBook" >SEARCH</a>
 
 							<input type="hidden" name="type" value="<?php echo $req_type ?>" />
 	                        <input type='hidden' name='startdate' id='startd' value="<?php echo $search['startdate'] ?>">
@@ -606,12 +404,7 @@ return;
                         <a href="transactions.php" class="reset-sort hidden-xs">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </a>
-                        <a href="javascript:void(0);" class="navigator-transactions-lkn lkn-sortby visible-xs"> 
-                            <?php /** <span class="text hidden-xs">SORT BY</span> **/ ?>
-                            <i class="fa fa-sort-amount-desc visible-xs" aria-hidden="true"></i>
-                        <!-- AACDESIGN3 -->
-                            <i class="fa fa-sort-amount-desc hidden-xs" aria-hidden="true"></i>
-                        </a>       
+    
                         <div class="drop-down-sort"> 
                             <div class="container-sortby">
                     <!-- END AACDESING -->
@@ -642,26 +435,7 @@ return;
                         <!-- /drop-down-sort -->
                     </li>
                 </ul>
-                <div class="filters-selected">
-					<?php
-					foreach($search as $k=>$v) if(!$v) unset($search[$k]);
 
-					if(count($search)) {
-						showFilter('searchstr',$search);
-						showFilter('transaction_id',$search);
-						showFilter('charity_name',$search);
-						showFilter('amount_donated',$search);
-						showFilter('personal_note',$search);
-						showFilter('voucher_no',$search);
-						showFilter('book_voucher_no',$search);
-						showFilter('transaction_type',$search);
-						showFilter('dates',$search);
-						?>
-	                    <span class="clear-all-filters"><a href="transactions.php?type=<?php echo $_REQUEST['type'] ?>">X CLEAR ALL</a></span>
-						<?php
-					}
-					?>
-                </div>
             </div>
             <!-- / col 12 -->
 			<form id="transaction-search">
@@ -835,7 +609,236 @@ return;
         <div class="row">
             <div class="col-xs-12">
                 <div class="container-table ajax-transaction">
-                    <?php include 'transactions-all.php' ?>
+				<?php
+				if(basename($_SERVER['PHP_SELF']) =='transactions-all.php') {
+					die('call direct error');
+				}
+				?>
+				<script>
+				    function cancelStandingOrder(id)
+				    {
+				        BootstrapDialog.show({
+				            message: 'Are you sure you want to cancel this standing order?',
+				            buttons: [{
+				                    label: 'Confirm',
+				                    cssClass: 'btn-primary',
+				                    action: function (dialogItself) {
+				                        cancelOrder(id);
+				                        dialogItself.close();
+				                    }
+				                }, {
+				                    label: 'Cancel',
+				                    action: function (dialogItself) {
+				                        dialogItself.close();
+				                    }
+				                }]
+				        });
+				    }
+				</script>
+				<?php
+				
+				//$tl = $transactionlist->ListItems();
+				
+				//echo $transactionlist->lastSQL;
+				
+				if (!$book_voucher_no) {
+				    ?>
+				    <div class="container-fluid">
+				        <div class="row">
+				            <div class="col-xs-12">
+				                <div class="empty-state">
+				                    <p>Please enter a voucher number in the box below to view the status of each voucher in its book</p>
+<!--
+				                    <ul>
+				                        <li>Check your spelling, dates, or figures</li>
+				                        <li>Try a different search tool</li>
+				                    </ul>
+				                    <span>OR</span>
+				                    <a href="" class="empty-action">Get in touch with us</a>
+-->
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				    <?php
+				} else  if (count($tl) < 1) {
+				    ?>
+				    <div class="container-fluid">
+				        <div class="row">
+				            <div class="col-xs-12">
+				                <div class="empty-state">
+				                    <p>Sorry, there are no results to display.</p>
+	
+				                    <a href="" class="empty-action">Get in touch with us</a>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+				    <?php
+				} else {
+				    ?>
+				    <table class="table-transactions table table-condensed">
+				        <thead class="hidden-xs "> 
+				            <tr>
+				                <th>DATE</th>
+				                <!-- AACDESIGN3 -->
+				                <th class="text-left">DESCRIPTION</th>
+				                <th>AMOUNT</th>
+<!--				                <th class="hidden-xs">COMMENTS</th>-->
+				                <!--<th class="hidden-xs">TYPE</th>-->
+				                <th class="hidden-xs">ACTION</th>
+				            </tr>
+				        </thead>						
+				        <tbody>
+				            <?php
+				            if ($tl) {
+				
+				                foreach ($tl as $t) {
+				                    $data = "";
+				                    $status = "";
+				
+				                    if ($t->CDNo == "PEN") {
+				                        //$status = "Currently being processed";
+				                        $status = " Pending";
+				                        $type = 'PENDING';
+				                    }
+				
+				                    $balanceAmt = $rowBal;
+				                    if (in_array($t->CDNo, array("VO", "PEN", "NV"))) {
+				                        $modal_name = "#modal-voucher";
+				                    } else if ($t->CDNo == "SO") {
+				                        $modal_name = "#modal-standing-order-donation";
+				                    } else if ($t->CDNo == "Cd" || $t->CDNo == "Ch") {
+				                        $modal_name = "#modal-company-donation";
+				                    } else {
+				                        $modal_name = "";
+				                    }
+				
+				                    $type = $t->TransactionDescription;
+				
+				                    $data .= $t->id . "||";
+				                    $data .= $t->Name . "||";
+				                    $data .= date('j-n-Y', strtotime($t->DateTime)) . "||";
+				                    $data .= showBalance(abs($t->Amount)) . "||";
+				                    $data .= $t->Voucher . "||";
+				                    $data .= $t->StandingOrderType . ' ' . $t->NumberOfPayments . "||";
+				                    $data .= $t->ClientComments . "||";
+				                    $data .= $t->OfficeComments . "||";
+				                    $data .= $t->CharityNumber . "||";
+				
+				                    if ($t->Voucher && substr($t->Voucher, 0, 1) == '9') {
+				                        //$status = 'online request';
+										$type = 'Online Donation';
+				                    }
+				
+									$voucher = $t->Voucher?" <span>$t->Voucher</span>":'';
+									
+									$data = $t->id;
+									$modal_name = $t->id?"#modal-voucher":'';
+				
+				                    //if ($i >= ($k - 10) && $i < $k) {
+				                        ?>
+				                        <tr class="<?php echo getBalanceColor(number_format($t->Amount, 2)); ?> transaction_all-row" data-id="<?php echo $data; ?>" data-type="TR">
+				                            <?php /* <tr class="<?php echo $balance_color; ?> modal-show transaction_all-row" data-toggle="modal" data-target="<?php echo $modal_name; ?>" data-id="<?php echo $data; ?>" data-type="<?php echo $rows1[$i]['cd_no']; ?>"> */ ?>
+				                            <td class="modal-show" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
+				                                <a href="javascript:void(0);">
+				                                    <div class="date"><?php echo strtotime($t->DateTime)?date('j-n-y', strtotime($t->DateTime)):''; ?></div>
+				                                </a>
+				                            </td>
+				                            <td class="modal-show" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
+				                                <a href="javascript:void(0);">
+				                                    <div class="desc-table">
+				                                        <h2 class="title">
+				                                            <?php
+				                                            echo $t->FormatDescription();
+				                                            ?>
+				                                        </h2>
+				                                        <h3 class="subtitle transaction-type-label"><?php echo $voucher; ?></h3>
+				                                    </div><!-- /desc-table -->
+				                                </a>
+				                            </td>
+				                            <!-- AACDESIGN3 -->
+				                            <td class="modal-show amount-td" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
+				                                <a href="javascript:void(0);">
+				                                    <span class="balance-transition voucher-balance">
+				                                        <?php echo $t->FormatAmount(); ?>
+				                                        <i class="fa fa-caret-up" aria-hidden="true"></i>
+				                                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+				                                    </span>
+				                                </a>
+				                            </td>
+<!--
+				                            <td class="modal-show comments-td hidden-xs" data-toggle="modal" data-target="<?php echo $modal_name; ?>">
+				                                <a href="javascript:void(0);">
+				                                        <?php /* echo showBalance($balanceAmt); */?>
+				                                        <p><?php echo $t->client_comment ?></p>
+				                                </a>
+				                            </td>
+-->
+				
+				                              <td class="action-edit hidden-xs">
+				                              <?php
+				                              //$rows1[$i]['cd_no'] = "SO";
+				                              //$rows1[$i]['request_id'] = "8176";
+				                              if ($t->CDNo == "SO" && $t->so_master_id > 0) {
+				                              ?>
+				                              <!--<a href="make-a-donation.php?id=<?php //echo $rows1[$i]['request_id']; ?>&clone=1" class="refresh-transactions btn-trannsaction-accion external-lkn"></a>-->
+				                              <a href="make-a-donation.php?SOMID=<?php echo $t->so_master_id; ?>" class="edit-transactions btn-trannsaction-accion external-lkn" alt="Amend this standing order" title="Amend this standing order"></a>
+				                              <a href="javascript:void(0);" class="delete-transactions btn-trannsaction-accion" data-id="<?php echo $id; ?>" onClick="cancelStandingOrder('<?php echo $t->so_master_id; ?>');" alt="Cancel this standing order" title="Cancel this standing order"></a>
+				                              <?php
+				                              } else {
+					                              if ($t->RequestId && $t->RequestId > 0) {
+						                              ?>
+						                              <a href="make-a-donation.php?id=<?php echo $t->RequestId; ?>&clone=1" class="refresh-transactions btn-trannsaction-accion external-lkn" alt="Make this donation again" title="Make this donation again"></a>
+						                              <?php
+					                              } else if (in_array($t->CDNo, array("VO", "PEN", "NV"))) {
+						                              ?>
+						                              <a href="make-a-donation.php?charityId=<?php echo $t->CharityNumber; ?>&amount=<?php echo abs($t->Amount); ?>" class="refresh-transactions btn-trannsaction-accion external-lkn" alt="Make this donation again" title="Make this donation again"></a>
+						                              <?php							
+					                              }
+				                              }
+				                              ?>
+				                              </td>
+				                    <input type="hidden" name="vchnumber" class="vch-number" value="<?php echo $t->Voucher; ?>">
+				                    </tr>
+				                    <?php
+				               // }
+				                $i++;
+				            }
+				            //$cnt = $k - 1;
+				        }
+				        ?>
+				        </tbody>
+				        <input type="hidden" id="current_data" name="current_data" value="<?php print base64_encode(serialize($tl)); ?>">
+				    </table>
+				    <nav class="navigation-transactions " aria-label="Page navigation  "><!--hidden-xs-->
+				        <ul class="pagination nav-transactions"><li>
+				            <?php
+				
+							$pageNavOptions  = array(
+								'NoItemsText'=>'',
+								'MaxVisiblePageNums'=>5,
+								'PrevPageText'=>'<i class="fa fa-angle-left" aria-hidden="true"></i>',
+								'NextPageText'=>'<i class="fa fa-angle-right" aria-hidden="true"></i>',
+								'FirstPageText'=>'<i class="fa fa-angle-left" aria-hidden="true"></i><i class="fa fa-angle-left" aria-hidden="true"></i>',
+								'LastPageText'=>'<i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-angle-right" aria-hidden="true"></i>',
+								'ShowAllText'=>'',
+								'ShowAllAlign'=>'',
+								'LeadingText'=>'',
+								'SuffixText'=>'',
+								'PageNumSeperator'=>'</li><li>',
+								'UseJavascriptFunction'=>'',
+							);
+				
+				
+							echo UI::makePageNav('transactions.php',$page,$transactionlist->PageCount(),false,$_GET,$pageNavOptions);
+							?>
+				        </li></ul>
+				    </nav><!-- /navigation-transactions -->
+				    <?php
+				}
+				?>
+
                 </div>
                 <!-- /container-table -->
             </div>

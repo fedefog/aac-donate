@@ -13,7 +13,7 @@
 				
 				<div class="half-row-modal">
 					
-					<h3 class="subtitle-modal">BENEFICIARY </h3>
+					<h3 class="subtitle-modal">BENEFICIARY</h3>
 
 					<p class="info-modal voucher-name" id="vo_mdl_beneficiary"><?php echo $t->Description ?></p>
 				
@@ -21,7 +21,7 @@
 
 				<div class="half-row-modal">
 					
-					<h3 class="subtitle-modal">DONATION AMOUNT </h3>
+					<h3 class="subtitle-modal">DONATION AMOUNT</h3>
 
 					<p class="info-modal voucher-amount" id="vo_mdl_dnt_amt"><?php echo $t->FormatAmount(false) ?></p>
 				
@@ -31,7 +31,7 @@
 
 			<div class="row-modal">
 				<div class="half-row-modal">					
-					<h3 class="subtitle-modal">DATE PROCESSED </h3>
+					<h3 class="subtitle-modal">DATE PROCESSED</h3>
 	
 					<p class="info-modal voucher-date" id="vo_mdl_dt_prcd"><?php echo $t->FormatDateTime() ?></p>
 				</div>
@@ -46,7 +46,7 @@
 
 			<div class="row-modal">
 				
-				<h3 class="subtitle-modal">VOUCHER NUMBER </h3>
+				<h3 class="subtitle-modal">VOUCHER NUMBER</h3>
 
 				<p class="info-modal voucher-number" id="vo_mdl_vch_num"><?php echo $t->Voucher ?></p>
 

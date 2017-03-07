@@ -20,7 +20,7 @@
 
 				<h3 class="subtitle-modal">AMOUNT</h3>
 
-				<p class="info-modal"> £ 332.22 </p>
+				<p class="info-modal">£ 332.22 </p>
 				
 			</div><!-- /row-modal -->
 

@@ -17,9 +17,13 @@ require_once 'cls/emails.cls.php';
 require_once 'cls/emaillog.cls.php';
 require_once 'inc/funcs.inc.php';
 
+
+
 session_start();
 
 User::LoginCheck();
+
+AjaxCheck();
 
 $user = new User();
 $user = User::GetInstance();
@@ -27,7 +31,7 @@ $user = User::GetInstance();
 $request = new AACRequestItem();
 
 if (!$_REQUEST['done']) {
-    $details = "New Request: " . $fields['Request'];
+    $details = "New Request: New Voucher Book";
     User::LogAccessRequest($user->Username, '', $details);
 }
 
@@ -37,6 +41,28 @@ if ($_REQUEST['Request']) {
     $fields = $_REQUEST;
     $fields['Request'] = "New Voucher Book";
 }
+
+if($_REQUEST['id']){
+	if($request->load($_REQUEST['id'])){
+		$fields = $request->GetProperties();
+		unset($fields['VoucherBooks']);
+		$fields['VoucherBooks']=array();
+
+
+		$vbs = explode(';',$request->VoucherBooks);
+		foreach($vbs as $vb) {
+			$data = explode('x',trim($vb));
+			$qty = $data[0];
+			$value = $data[1];
+			$fields['VoucherBooks'][$value] = $qty;
+		}
+		
+	}
+}
+
+//var_dump($fields['VoucherBooks']);
+
+
 
 /**
 if (isset($_POST['submit1'])) {
@@ -225,6 +251,8 @@ switch ($fields['Request']) {
 			var formData = $('#editor').serialize();
 
             $('#editor input').removeClass('has-error-box');
+
+            $(this).addClass('disabled');
 	
 	
 			$.ajax({
@@ -235,19 +263,26 @@ switch ($fields['Request']) {
 				success: function(data)
 				{
 					if(!data.error) {
-			            //jQuery("#modal-quick-donation p").html("Thank you for your order");
+			            jQuery("#modal-quick-donation p").html(
+							'<h2>Thank You.</h2>'+
+							'<p>Your voucher book order has been placed.</p>'
+						);
+		    	        jQuery("#modal-quick-donation").modal('show');
 						
-						//loadpage('vouchers.php?done=true');
+						loadpage('vouchers.php?done=true');
                         // AACDESIGN3
 						//loadpage('dashboard.php');
 
-						$('body').addClass('has-notification');
-						$('.notification-box font').html('Your Voucher Book order <strong> has been placed.</strong>');
-						$('.notification-box').show();
+						//$('body').addClass('has-notification');
+						//$('.notification-box font').html('Your Voucher Book order <strong> has been placed.</strong>');
+						//$('.notification-box').show();
 
 						//$('.password-box').val('');
 
 					} else {
+
+			            $('.lkn-order-vouchers').removeClass('disabled');
+
 			            jQuery("#modal-quick-donation p").html(data.errorMessage);
 			            $('#box-'+data.errorField).addClass('has-error-box');
 			            $('#box-'+data.errorField).focus();
@@ -382,11 +417,11 @@ switch ($fields['Request']) {
                 $transactionlist = new TransactionList();
                 $notes_row = $transactionlist->getNotes();
                 ?>
-                <a href="javascript:void(0);" class="lkn-daily">
-                    <p class="text"><?php echo substr(trim($notes_row[0]->TopTickerMessage), 0, 140); ?></p>
-                    <!--<i class="fa fa-angle-down" aria-hidden="true"></i>
-                    <i class="fa fa-angle-up" aria-hidden="true"></i>-->
-                </a>
+                        <!--<a href="javascript:void(0);" class="lkn-daily">-->
+                            <p class="text lkn-daily" ><?php echo trim($notes_row[0]->TopTickerMessage); ?></p>
+                            <!--<i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <i class="fa fa-angle-up" aria-hidden="true"></i>-->
+                        <!--</a>-->
             </div><!-- container -->
 
         </div><!-- /box-daily-updates -->
@@ -420,7 +455,7 @@ switch ($fields['Request']) {
                                     <div class="input-group ">
 
                                         <a href="#" class="less-input lkn-input"></a>
-                                        <input type="text" name="fields[VoucherBooks][50p]" class="input-number VoucherBooks"  value="0">
+                                        <input type="tel" name="fields[VoucherBooks][50p]" class="input-number VoucherBooks"  value="<?php echo VBValue($fields['VoucherBooks']['50p']) ?>">
                                         <a href="#" class="more-input lkn-input"></a>
 
                                     </div><!-- /input-group -->
@@ -440,7 +475,7 @@ switch ($fields['Request']) {
                                     <div class="input-group ">
 
                                         <a href="#" class="less-input lkn-input"></a>
-                                        <input type="text" name="fields[VoucherBooks][£1]" class="input-number VoucherBooks" value="0">
+                                        <input type="tel" name="fields[VoucherBooks][£1]" class="input-number VoucherBooks" value="<?php echo VBValue($fields['VoucherBooks']['�1']) ?>">
                                         <a href="#" class="more-input lkn-input"></a>
 
                                     </div><!-- /input-group -->
@@ -460,7 +495,7 @@ switch ($fields['Request']) {
                                     <div class="input-group ">
 
                                         <a href="#" class="less-input lkn-input"></a>
-                                        <input type="text" name="fields[VoucherBooks][£3]" class="input-number VoucherBooks" value="0">
+                                        <input type="tel" name="fields[VoucherBooks][£3]" class="input-number VoucherBooks" value="<?php echo VBValue($fields['VoucherBooks']['�3']) ?>">
                                         <a href="#" class="more-input lkn-input"></a>
 
                                     </div><!-- /input-group -->
@@ -480,7 +515,7 @@ switch ($fields['Request']) {
                                     <div class="input-group ">
 
                                         <a href="#" class="less-input lkn-input"></a>
-                                        <input type="text" name="fields[VoucherBooks][£5]" class="input-number VoucherBooks" value="0">
+                                        <input type="tel" name="fields[VoucherBooks][£5]" class="input-number VoucherBooks" value="<?php echo VBValue($fields['VoucherBooks']['�5']) ?>">
                                         <a href="#" class="more-input lkn-input"></a>
 
                                     </div><!-- /input-group -->
@@ -500,7 +535,7 @@ switch ($fields['Request']) {
                                     <div class="input-group ">
 
                                         <a href="#" class="less-input lkn-input"></a>
-                                        <input type="text" name="fields[VoucherBooks][£10]" class="input-number VoucherBooks" value="0">
+                                        <input type="tel" name="fields[VoucherBooks][£10]" class="input-number VoucherBooks" value="<?php echo VBValue($fields['VoucherBooks']['�10']) ?>">
                                         <a href="#" class="more-input lkn-input"></a>
 
                                     </div><!-- /input-group -->
@@ -524,7 +559,7 @@ switch ($fields['Request']) {
                                     <div class="input-group ">
 
                                         <a href="#" class="less-input lkn-input"></a>
-                                        <input type="text" name="fields[VoucherBooks][£18]" class="input-number VoucherBooks" value="0">
+                                        <input type="tel" name="fields[VoucherBooks][£18]" class="input-number VoucherBooks" value="<?php echo VBValue($fields['VoucherBooks']['�18']) ?>">
                                         <a href="#" class="more-input lkn-input"></a>
 
                                     </div><!-- /input-group -->
@@ -544,7 +579,7 @@ switch ($fields['Request']) {
                                     <div class="input-group ">
 
                                         <a href="#" class="less-input lkn-input"></a>
-                                        <input type="text" name="fields[VoucherBooks][£25]" class="input-number VoucherBooks" value="0">
+                                        <input type="tel" name="fields[VoucherBooks][£25]" class="input-number VoucherBooks" value="<?php echo VBValue($fields['VoucherBooks']['�25']) ?>">
                                         <a href="#" class="more-input lkn-input"></a>
 
                                     </div><!-- /input-group -->
@@ -564,7 +599,7 @@ switch ($fields['Request']) {
                                     <div class="input-group ">
 
                                         <a href="#" class="less-input lkn-input"></a>
-                                        <input type="text" name="fields[VoucherBooks][£50]" class="input-number VoucherBooks" value="0">
+                                        <input type="tel" name="fields[VoucherBooks][£50]" class="input-number VoucherBooks" value="<?php echo VBValue($fields['VoucherBooks']['�50']) ?>">
                                         <a href="#" class="more-input lkn-input"></a>
 
                                     </div><!-- /input-group -->
@@ -581,7 +616,7 @@ switch ($fields['Request']) {
                                 <div class="form-group input-default">
                                     <div class="input-group ">
                                         <a href="#" class="less-input lkn-input"></a>
-                                        <input type="text" name="fields[VoucherBooks][£100]" class="input-number VoucherBooks" value="0">
+                                        <input type="tel" name="fields[VoucherBooks][£100]" class="input-number VoucherBooks" value="<?php echo VBValue($fields['VoucherBooks']['�100']) ?>">
                                         <a href="#" class="more-input lkn-input"></a>
                                     </div><!-- /input-group -->
                                     <div class="info-input">
@@ -592,7 +627,7 @@ switch ($fields['Request']) {
                                 <div class="form-group input-default">
                                     <div class="input-group ">
                                         <a href="#" class="less-input lkn-input"></a>
-                                        <input type="text" name="fields[VoucherBooks][Blank]" class="input-number VoucherBooks" value="0">
+                                        <input type="tel" name="fields[VoucherBooks][Blank]" class="input-number VoucherBooks" value="<?php echo VBValue($fields['VoucherBooks']['Blank']) ?>">
                                         <a href="#" class="more-input lkn-input"></a>
                                     </div><!-- /input-group -->
                                     <div class="info-input">
@@ -620,7 +655,7 @@ switch ($fields['Request']) {
                                 <div class="form-group">
                                     <h2 class="title-delivery">DELIVERY </h2>
                                     <div class="container-urgent">
-                                        <input type="checkbox" class="switch-settings" data-value="post" id="delivery_type_post" name="Oldfields[VoucherBookDelivery][post]">
+                                        <input type="checkbox" class="switch-settings" data-value="Post" id="delivery_type_post" name="Oldfields[VoucherBookDelivery][post]" <?php echo $fields['VoucherBookDelivery']=='Post'?' checked ':'' ?>>
                                         <div class="label-delivery">
                                             <div class="label-urgent">POST: UP TO TWO BOOKS
                                                 <div class="subtitle-label">I TAKE RESPONSIBILITY FOR ANY 50P/£1 PPV BOOKS LOST IN THE POST</div>
@@ -628,15 +663,15 @@ switch ($fields['Request']) {
                                         </div>
                                     </div>
                                     <div class="container-urgent">
-                                        <input type="checkbox" class="switch-settings" data-value="Pick up from office" id="delivery_type_office" name="Oldfields[VoucherBookDelivery][office]">
+                                        <input type="checkbox" class="switch-settings" data-value="Pick up from office" id="delivery_type_office" name="Oldfields[VoucherBookDelivery][office]" <?php echo $fields['VoucherBookDelivery']=='Pick up from office'?' checked ':'' ?>>
                                         <div class="label-delivery">
                                             <div class="label-urgent">OFFICE COLLECTION 
-                                                <div class="subtitle-label">9.30AM - 3.30PM MON-THURS</div>
+                                                <div class="subtitle-label">10.00AM - 3.00PM MON-THURS</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="container-urgent">
-                                        <input type="checkbox" class="switch-settings" data-value="Special Delivery" id="delivery_type_special" name="Oldfields[VoucherBookDelivery][special]">
+                                        <input type="checkbox" class="switch-settings" data-value="Special Delivery" id="delivery_type_special" name="Oldfields[VoucherBookDelivery][special]" <?php echo $fields['VoucherBookDelivery']=='Special Delivery'?' checked ':'' ?>>
                                         <div class="label-delivery">
                                             <div class="label-urgent">SPECIAL DELIVERY 
                                                 <div class="subtitle-label">AT A COST OF £5 TO BE DEDUCTED FROM MY ACCOUNT</div>
@@ -648,12 +683,13 @@ switch ($fields['Request']) {
                         </div><!-- /col -->
                         <div class="col-md-6">
                             <div class="container-urgent">
-                                <input type="checkbox" class="switch-settings" id="my-checkbox" name="fields[VoucherBookUrgent]">
+                                <input type="checkbox" class="switch-settings" id="my-checkbox" name="fields[VoucherBookUrgent]" value="Yes" <?php echo $fields['VoucherBookUrgent']?' checked ':'' ?>>
                                 <h2 class="label-urgent">THIS IS URGENT</h2>
                             </div><!-- /container-urgent -->
-                            <div class="container-notes hidden-xs">
+                            <!-- AACDESIGN4 -->
+                            <div class="container-notes">
                                 <label class="title-notes">NOTES TO AAC</label>
-                                <textarea id="OfficeComments" name="fields[OfficeComments]" cols="30" rows="10" class="textarea-notes" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>	
+                                <textarea id="OfficeComments" name="fields[OfficeComments]" cols="30" rows="10" class="textarea-notes" placeholder="Add any notes you'd wish to pass on to AAC."><?php echo $fields['OfficeComments'] ?></textarea>	
                             </div><!-- /container-urgent -->					
                         </div><!-- /col -->
                     </div><!-- /row -->
@@ -666,33 +702,22 @@ switch ($fields['Request']) {
 
             </div><!-- /container-delivery -->
 
-
-        <div class="col-md-12 hidden-xs">
+        <!-- AACDESIGN4 -->
+        <div class="col-md-12">
             <!-- AACDESIGN3 -->
-            <a href="#" class="lkn-order-vouchers transition disabled" data-target="#order-voucher-confirm-modal" data-toggle="modal">Order Vouchers</a>
-
+            <a href="#" class="lkn-order-vouchers transition <?php echo $request->id?'':'disabled'; ?>" >Order Vouchers</a>
+            <!-- AACDESIGN4 -->
         </div><!-- /col -->
-        <div class="container-notes visible-xs">
 
-            <div class="container-fluid">
-
-                <label class="title-notes">NOTES TO AAC</label>
-
-                <textarea cols="30" rows="10" class="textarea-notes" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>	
-
-            </div><!-- /container -->
-
-        </div><!-- /container-urgent -->
-
-        <a href="#" class="sticky-to-footer lkn-order-vouchers visible-xs disabled">Order Vouchers</a>
+        <!-- <a href="#" class="lkn-order-vouchers visible-xs disabled">Order Vouchers</a> -->
 
             <input type="hidden" name="submit1" value="save" />
-            <input type="hidden" name="fields[VoucherBookDelivery]" id="VoucherBookDelivery">
+            <input type="hidden" name="fields[VoucherBookDelivery]" id="VoucherBookDelivery" value="<?php echo $fields['VoucherBookDelivery'] ?>">
         </form>
 
     </main>	
 <?php //}
 ?>
 
-    <?php include 'inc/order-voucher-confirm-modal.php'; ?>
+    <?php //include 'inc/order-voucher-confirm-modal.php'; ?>
 

@@ -97,6 +97,7 @@
         if (typeof options.template !== 'string' && !(options.template instanceof $))
             options.template = '<div class="daterangepicker dropdown-menu">' +
                     '<div class="calendar left">' +
+                    '<div class="visible-xs mobile-date-message">Please select a day</div>'+
                     '<div class="daterangepicker_input">' +
                     '<input class="input-mini form-control" type="text" name="daterangepicker_start" value="" />' +
                     '<i class="fa fa-calendar glyphicon glyphicon-calendar"></i>' +
@@ -744,6 +745,7 @@
             }
 
             html += '</tr>';
+            //html += '<tr class="message-append hidden-xs"></tr>';
             html += '<tr>';
 
             // add week number label
@@ -755,6 +757,7 @@
             });
 
             html += '</tr>';
+            html += '<div class="alert-message hidden-xs">Please select a day</div>';
             html += '</thead>';
             html += '<tbody>';
 

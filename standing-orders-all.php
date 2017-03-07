@@ -1,28 +1,4 @@
 <?php
-require_once 'inc/config.inc.php';
-require_once 'inc/dbconn.inc.php';
-require_once 'cls/base.cls.php';
-require_once 'cls/users.cls.php';
-require_once 'cls/charities.cls.php';
-	require_once 'cls/ui.cls.php';
-	require_once 'inc/funcs.inc.php';
-require_once 'cls/vouchers.cls.php';
-
-
-session_start();
-
-User::LoginCheck();
-
-$user = new User();
-$user = User::GetInstance();
-
-if ($_REQUEST['page']) {
-    $page = $_REQUEST['page'];
-} else {
-    $page = 1;
-}
-
-if(!$type) $type = $_REQUEST['type']?$_REQUEST['type']:'current';
 
 $somList = new StandingOrderMasterList();
 $somList->filters[] = 'Account="' . intval($user->Username) . '" ';
@@ -170,7 +146,7 @@ if (!count($somItems) && $type=='previous') {
             <th>END DATE</th>
             <th>AMOUNT</th>            
             <th class="hidden-xs">INTERVAL</th>
-            <th class="hidden-xs">CURRENT SO TO BE PAID</th>
+            <th class="hidden-xs">SO PAID SO FAR</th>
             <th class="hidden-xs"></th>
             <th class="hidden-xs">ACTION</th>
         </tr>
@@ -294,10 +270,10 @@ if (!count($somItems) && $type=='previous') {
 			$pageNavOptions  = array(
 				'NoItemsText'=>'',
 				'MaxVisiblePageNums'=>5,
-				'PrevPageText'=>'&laquo;',
-				'NextPageText'=>'&raquo;',
-				'FirstPageText'=>'',
-				'LastPageText'=>'',
+				'PrevPageText'=>'&lt;',
+				'NextPageText'=>'&gt;',
+				'FirstPageText'=>'&laquo;',
+				'LastPageText'=>'&raquo;',
 				'ShowAllText'=>'',
 				'ShowAllAlign'=>'',
 				'LeadingText'=>'',

@@ -18,7 +18,7 @@
 
 			<div class="row-modal">
 
-				<h3 class="subtitle-modal">AMOUNT </h3>
+				<h3 class="subtitle-modal">AMOUNT</h3>
 
 				<p class="info-modal">£ 12.22</p>
 
@@ -28,7 +28,7 @@
 
 				<h3 class="subtitle-modal">DATE</h3>
 
-				<p class="info-modal"> 22-6-2016</p>
+				<p class="info-modal">22-6-2016</p>
 
 			</div><!-- /row-modal --> 
 

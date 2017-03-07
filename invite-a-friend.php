@@ -15,6 +15,9 @@ require_once 'cls/emaillog.cls.php';
 require_once 'inc/funcs.inc.php';
 session_start();
 User::LoginCheck();
+
+AjaxCheck();
+
 $user = new User();
 $user = User::GetInstance();
 $fields['Request'] = "General Message";
@@ -75,7 +78,7 @@ if ($_POST['doAction']) {
 
 						loadpage('dashboard.php');
 						$('body').addClass('has-notification');
-						$('.notification-box font').html('Thank you for <strong>recommending us.</strong>');
+						$('.notification-box font').html('Thank you for recommending us.');
 						$('.notification-box').show();
 
 					} else {
@@ -211,7 +214,7 @@ if ($_POST['doAction']) {
 
                         <label for="" class="label">FRIEND’S EMAIL ADDRESS</label>
 
-                        <input type="text" class="form-control input-text " id="txtEmail" name="fields[FriendEmail]" placeholder="Enter your friend’s email address" >
+                        <input type="email" class="form-control input-text " id="txtEmail" name="fields[FriendEmail]" placeholder="Enter your friend’s email address" >
 
                     </div><!-- /form-group -->
 

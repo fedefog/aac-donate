@@ -33,6 +33,7 @@ td[data-toggle="modal"] {
 }
 .table-order-books.table-condensed a {
     color: #6E6E6E;
+    font-weight: 400;
 }
 .table-order-books.table-condensed > thead > tr > th {
     border-bottom: 1px solid #fff !important;
@@ -278,6 +279,10 @@ td[data-toggle="modal"] {
     background-color: #00ADEE;
 
 }
+.filter-selected{
+    text-transform: uppercase;
+}
+
 /* RE STYLE SELECT */
 ul.ui-autocomplete{
     border: 1px solid #bbbbbb !important;
@@ -310,14 +315,17 @@ ul.ui-autocomplete{
 .ui-widget-content a{
     font-size: 12px;
     display: block;
-    color: #878787 !important;
+    color: #535151 !important;
     padding: 10px;
     letter-spacing: 0.5px;
-    font-weight: 300 !important;
+    font-weight: 400 !important;
     font-family: 'Lato', sans-serif;
 }
 .ui-widget-content a:hover{
     color: #fff !important;
+}
+.autocomplete-append ul:last-child{
+  //  display: none !important;
 }
 
 /* VIEW STANDING ORDERS */
@@ -336,13 +344,7 @@ ul.ui-autocomplete{
 .nav-standing-orders li .active .badge i{
     color: #fff;
 }
-.nav-standing-orders li .mobile-current-badge{
-    background: #2562a3;
-}
-.nav-standing-orders li .mobile-previous-badge{
-    background: #fff; 
-    color: #2362a5;
-}
+
 .badge{
     width: 18px;
     height: 18px;
@@ -461,6 +463,29 @@ ul.ui-autocomplete{
     left: 33px;
     top: 49px;
     color: #00adee;
+}
+.alert-message{
+    color: #00adee;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 5px;
+}
+tr.message-append{
+    position: relative;
+    height: 30px;
+    color: #00adee;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+tr.message-append span{
+    position: absolute;
+    top: 56px;
+    width: 100%;
+    left: 0;
+    text-align: center;
 }
 .calendar.left .daterangepicker_input input {
     text-align: right;
@@ -686,8 +711,6 @@ ul.ui-autocomplete{
 .btn-pendings {
     margin-right: 15px;
 }
-
-
 .table-transactions .desc-table .title {
     color: #333333;
     font-weight: 600;
@@ -723,18 +746,25 @@ ul.ui-autocomplete{
     font-weight: 600;
     margin-right: 10px;
 }
+.table-transactions th .fa {
+    font-size: 17px;
+    position: relative;
+    top: 1px;
+    margin-left: 4px;
+    color: #838383!important;
+}
 .table-transactions.table > tbody > tr > td {
     vertical-align: middle;
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.table-transactions.table > tbody > tr > td:first-child{
+    min-width: 65px;
+}
 .table-transactions.table > tbody > tr {
     padding: 0 15px ;
 
     transition: all 0.2s ease-in-out;
-}
-.table-transactions.table > tbody > tr:hover {
-    background: #f7f7f7;
 }
 .table-transactions.table > tbody > tr > td {
     border-top: 0;
@@ -742,6 +772,7 @@ ul.ui-autocomplete{
 }
 .table-transactions.table > tbody > tr > td.amount-td{
     text-align: center;
+    width: 100px;
 }
 .table-transactions.table > tbody > tr > td.amount-td > span{
     margin-left: -20px;
@@ -833,7 +864,9 @@ span.custom-tooltip{
 }
 .navigation-transactions {
     text-align: center; 
-
+}
+.navigation-transactions .pagination > li{
+    display: inline-block;
 }
 .navigation-transactions .pagination > li > a,
 .navigation-transactions .pagination > li > span {
@@ -842,7 +875,7 @@ span.custom-tooltip{
 .navigation-transactions .pagination > li > a,.navigation-transactions .pagination > li > span {
     background: #C8C8C8;
     color: #fff;
-    margin: 0 5px;
+    margin: 0 3px;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
 }
@@ -855,13 +888,18 @@ span.custom-tooltip{
     color: #fff;
 }
 .navigation-transactions .pagination > li:first-child > a ,
-.navigation-transactions .pagination > li:last-child > a {
-    background: #fff;
-    color: #C8C8C8;
+.navigation-transactions .pagination > li:last-child > a,
+.navigation-transactions .pagination > li > a.previous-page,
+.navigation-transactions .pagination > li > a.next-page{
+    background: #fff !important;
+    color: #C8C8C8 !important;
+    padding: 5px 3px !important;
 }
 .navigation-transactions .pagination > li:first-child > a:hover ,
-.navigation-transactions .pagination > li:last-child > a:hover {
-    color: #00ADEE;
+.navigation-transactions .pagination > li:last-child > a:hover,
+.navigation-transactions .pagination > li > a.previous-page:hover,
+.navigation-transactions .pagination > li > a.next-page:hover {
+    color: #00ADEE !important;
 }
 .navigation-transactions .pagination > li:first-child > a > span,
 .navigation-transactions .pagination > li:first-child > a.previous-page ,
@@ -881,7 +919,6 @@ span.custom-tooltip{
 }
 
 /* MODAL SEARCH */
-
 .modal-search .modal-header{
     border: 0;
 }
@@ -903,7 +940,12 @@ span.custom-tooltip{
     padding: 0;
     width: 100%;
 }
-
+.autocomplete-search-append, .autocomplete-search-append-mobile{
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 10%;
+}
 .modal-search .row-input {
     width: 100%;
     vertical-align: top;
@@ -1196,12 +1238,21 @@ span.custom-tooltip{
 .sortby-li .sortby-lkn:hover, .sortby-li .date-lkn:hover {
     color: #00ADEE;
 }
+.inst-msg{
+    font-size: 18px;
+    color: #5D5C5D;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
 
 .box-slide-text {
     background: #F2F2F2;
     position: relative;
     overflow: hidden;
-    height: 80px;
+   /** height: 80px;**/
 }
 .order-voucher .box-slide-text{
     margin-top: 125px;
@@ -1238,7 +1289,7 @@ span.custom-tooltip{
     display: block;
     font-weight: 400;
     font-size: 14px;
-    color: #333333;
+    color: #7F7F7F;/**#333333;**/
     letter-spacing: 1.07px;
     position: relative;
     line-height: 22px;      
@@ -1349,16 +1400,20 @@ span.custom-tooltip{
 }
 
 
-.make-dontation {
+.make-dontation, .report-button {
     box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.22);
-    background: #F7F7F7;
+    background: #00ADEE;
     text-align: center;
     display: block;
     padding: 20px 0;
     font-weight: 600;
     font-size: 16px;
-    color: #00ADEE;
     letter-spacing: 0.43px;
+    border-radius: 5px;
+    color: #fff;
+}
+.make-dontation:hover {
+    background: #0187B9;
 }
 .make-donation .input-text {
     border-color: #BBB;
@@ -1411,7 +1466,7 @@ span.custom-tooltip{
     background: #00ADEE;
     border-radius: 125px;
     z-index: 9;
-    top: 7px;
+    top: 20px;
     left: 4px;
     opacity: 0;
     visibility: hidden;
@@ -1445,7 +1500,7 @@ span.custom-tooltip{
     border-radius: 125px;
     border: 1px solid #00ADEE;
     height: 27px;
-    top: 3px;
+    top: 16px;
     position: absolute;
     width: 27px;
 }
@@ -1587,7 +1642,7 @@ span.custom-tooltip{
     display: block;
     border-bottom: 1px solid #E2E2E5;
     margin-bottom: 20px;
-    margin-top: 60px;
+    margin-top: 15px;
     padding-bottom: 10px;
 }
 .title-delivery {
@@ -1678,7 +1733,7 @@ span.custom-tooltip{
     resize: none;
     -webkit-appearance: none;
     width: 100%;        
-    margin-bottom: 45px;
+    margin-bottom: 20px;
 }
 .lkn-order-vouchers {
     background: #F7F7F7;
@@ -1689,7 +1744,7 @@ span.custom-tooltip{
     font-size: 16px;
     color: #00ADEE;
     letter-spacing: 0.43px;
-    margin-top: 20px;
+    margin: 20px 0;
     padding: 23px 0;
 }
 .lkn-order-vouchers.disabled:hover ,
@@ -1765,13 +1820,13 @@ span.custom-tooltip{
 .container-settings .bootstrap-switch {
     float: right;
 }
-
-
+.phone-number{
+    margin-top: 15px;
+}
 .form-phone-number {
     margin-top: 10px;
 }
 .form-phone-number .input-group-addon {
-
     font-weight: 700;
     font-size: 10px;
     color: #727272;
@@ -1897,6 +1952,12 @@ span.custom-tooltip{
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
 }
+
+/*  SUCCESS MODAL */
+.tick-animation-ctn{
+    text-align:center;
+}
+
 /* CONTACTUS */
 .main-transactions.main-contact-us .top-center-content {
     padding-top: 60px;
@@ -2230,20 +2291,27 @@ span.custom-tooltip{
     width: 100%;
     z-index: 99;
 }
-.sticky-to-footer .title-footer {
+.contact-btn .title-footer {
     margin: 0 0 0px 0;
     font-weight: 400;
     font-size: 12px;
     color: #333333;
     letter-spacing: 0.5px;      
 }
-.sticky-to-footer .subtitle-footer {
+.contact-btn .subtitle-footer {
     font-weight: 700;
     font-size: 14px;
     color: #00ADEE;
     letter-spacing: 0.58px;
     display: block;
     margin: 0;
+}
+.contact-btn{
+    background: #F7F7F7;
+    box-shadow: 0px -2px 4px 0px rgba(0,0,0,0.12);
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
 }
 /* swich */
 
@@ -2284,6 +2352,14 @@ span.custom-tooltip{
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-default,
 .bootstrap-switch .bootstrap-switch-label {
     height: 35px;
+}
+
+/* Report Voucher Book */
+.report-voucher-book .empty-state{
+    max-width: inherit;
+    border-top: 1px solid #e8e8e8;
+    margin-top: 40px;
+    padding-top: 20px;
 }
 @media(max-width:340px){ 
     /*Transaction */
@@ -2376,7 +2452,7 @@ span.custom-tooltip{
         margin: 20px 0;
         line-height: 1;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 16px;
         color: #FFFFFF;
         letter-spacing: 0.54px;     
     }
@@ -2491,11 +2567,13 @@ span.custom-tooltip{
         box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12);
         height: 51px;
         clear: both;
+        position: relative;
+        z-index: 1;
     }
     .navigator-transactions-li {
         float: left;        
         position: relative;
-        width: 28%;
+        width: 43%;
     }
     .navigator-transactions-li:before {
         background: #DEE1E6;
@@ -2509,18 +2587,27 @@ span.custom-tooltip{
         display: none;  
     }
     .navigator-transactions-li:last-child {
-        width: 16%;
+        width: 14%;
         position: relative;
+    }
+    .navigator-transactions-li:last-child .navigator-transactions-lkn {
+        font-size: 12px;
+        font-weight: 900;
     }
     .navigator-transactions-lkn {
         display: block;
         position: relative;
-        padding: 17px 0;
+        padding: 18px 0;
         text-align: center;
-        font-weight: 900;
-        font-size: 12px;
+        font-weight: 700;
+        font-size: 11px;
         color: #333333;
         letter-spacing: 0.44px;
+    }
+    .navigator-transactions-lkn .fa.fa-caret-down {
+        position: relative;
+        right: 12px;
+        color: #155199;
     }
     .navigator-transactions-lkn.active {
         color: #00ADEE;
@@ -2535,10 +2622,28 @@ span.custom-tooltip{
         float: left;
         margin: 0 0 40px 0;
     }
-
-
-
-
+    .drop-down-sort.dropdown-dates {
+        right: auto;
+    }
+    .filters-selected {
+        background: #F7F7F7;
+        margin: 0 -15px;
+        white-space: nowrap;
+        overflow-x: auto;
+        clear: both;
+    }
+    .filter-selected a {
+        font-size: 15px;
+        padding-right: 4px;
+    }
+    .filters-selected span {
+        padding: 10px;
+        display: inline-block;
+        font-size: 11px;
+    }
+    .filter-selected  {
+        color: #00ADEE;
+    }
 
     .modal-backdrop.date-back {
         z-index: 1000;
@@ -2653,6 +2758,13 @@ span.custom-tooltip{
 
 
     /* MAKE A PAYMENT */
+
+.box-slide-text p {
+	color:#B0B0B0;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
     .make-donation .header {
         height: 60px;
     }
@@ -2742,8 +2854,21 @@ span.custom-tooltip{
     }
     .table-order-books.table-condensed > tbody > tr > td:nth-child(3) {
         width: 57%;
+    } 
+    iframe{
+        min-height: 960px;
     }
-
+    /* Report Voucher Books*/
+    .main-transactions.report-voucher-book header{
+        height: 60px !important;
+    }
+    .report-voucher-book{
+        margin-top: 80px;
+    }
+    #reports-voucher-book input[type="tel"]{
+        margin-bottom: 15px;
+        height: 40px;
+    }
     
 }   
 @media(min-width:768px){
@@ -2855,6 +2980,15 @@ span.custom-tooltip{
         border: 1px solid #00ADEE;
         color: #fff;
     }
+    .table-transactions.table > tbody > tr > td.amount-td{
+        width: 200px;
+    }
+    .table-transactions.table > tbody > tr > td.date-td{
+        min-width: 80px;
+    }
+    .table-transactions.table > tbody > tr:hover {
+        background: #f7f7f7;
+    }
     .header-desktop-orders .text-right{
         text-align: left;
     }
@@ -2893,6 +3027,54 @@ span.custom-tooltip{
     .expert-xls-file:hover {
         color: #000;
     }
+    .export-file {
+        font-weight: 500;
+        font-size: 11px;
+        color: #9B9B9B;
+        letter-spacing: 0.29px;
+        position: relative;
+        margin-top: 20px;
+        margin-left: 20px;
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+        padding-bottom: 5px;
+    }
+    .export-file .caret {
+        margin: 0 10px;
+    }
+    .export-file ul {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        width: 103px;
+        text-align: left;
+        border-radius: 6px;
+        border:1px solid rgba(155, 155, 155, 0.2);
+        background: #F3F3F3;
+        z-index: 1;
+        margin-top: 5px;
+    }
+    .export-file ul li a{
+        padding: 10px;
+        display:inline-block;
+        color: #9B9B9B;
+        width: 100%;
+        margin-top: 0;
+    }
+    .export-file a:hover {
+        background: #00ADEE;
+        color: #FFF;
+    }
+    .export-file ul li:first-child{
+        border-bottom: 1px solid rgba(155, 155, 155, 0.2);
+    }
+    .export-file:hover {
+        cursor: pointer;
+    }
+    .export-file:hover ul {
+        opacity: 1;
+        visibility: visible;
+    }
     .navigator-transactions {
         display: block;
         width: 100%;
@@ -2901,9 +3083,7 @@ span.custom-tooltip{
         float:left;
         margin: 0 2px;
     }
-    .navigator-transactions-li.navigator-transactions-sortby{
-        float:right !important;
-    }
+    
     .navigator-transactions .navigator-transactions-li {
         /*float:left;*/
         display: inline-block;
@@ -2943,6 +3123,9 @@ span.custom-tooltip{
         width: 136px;
         transition: all 0.3s ease-in-out;
     }
+    .navigation-transactions .pagination > li > a,.navigation-transactions .pagination > li > span {
+        margin: 0 5px;
+    }
     .daterangepicker {
         opacity: 1;
         -webkit-transition: all .15s linear 0.1s;
@@ -2956,14 +3139,15 @@ span.custom-tooltip{
     .daterangepicker.dropdown-menu {
         width: 247px;
         left: 575px !important;
-        top: 237px!important;
+        top: 217px!important;
     }
     .daterangepicker .calendar-table {
         padding-left: 10px;
         background: rgba(0, 0, 0, 0);
     }
     .daterangepicker_input {
-        padding-top: 6px;
+        padding-top: 4px;
+        display: none;
     }
     .calendar.left .daterangepicker_input:before { 
         display: none;
@@ -2984,8 +3168,10 @@ span.custom-tooltip{
     }
     .filter-selected a {
         color: #00ADEE;
-        font-size: 15px;
+        font-size: 14px;
         padding-right: 4px;
+        position: relative;
+        top: 1px;
     }
     span.clear-all-filters {
         color: #878787;
@@ -3019,6 +3205,46 @@ span.custom-tooltip{
     }
     .navigator-transactions-sortby {
         float: right;
+    }
+    #quick-transaction-search, #reports-voucher-book {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #quick-transaction-search .form-control, #reports-voucher-book .form-control {
+        width: 75%;
+        float: left;
+        height: 39px;
+        letter-spacing: 0.44px;
+    }
+    .container-input-quick-search{
+        position: relative;
+    }
+    .container-input-quick-search a{
+        position: absolute;
+        top: 9px;
+        right: 85px;
+    }
+    .container-input-quick-search{
+        color: #00ADEE;
+    }
+    #transactionsQuickSearch, .quick-button {
+        background: #00ADEE;
+        text-align: center;
+        display: block;
+        padding: 0;
+        font-weight: 500;
+        float: right;
+        font-size: 12px;
+        letter-spacing: 0.44px;
+        width: 22%;
+        border-radius: 5px;
+        color: #fff;
+        height: 39px;
+        line-height: 39px;
+    }
+    #transactionsQuickSearch:hover {
+        background: #0187B9;
     }
     .lkn-sortby {
         border: 1px solid #00ADEE;
@@ -3082,10 +3308,7 @@ span.custom-tooltip{
         padding-top: 0;
     }
     .make-dontation {
-        background: #00ADEE;
-        border-radius: 5px;
-        color: #fff;
-        margin-top: 0px;    
+        margin-top: 25px;    
     }
     .make-dontation:hover {
         background: #0187B9;
@@ -3095,8 +3318,10 @@ span.custom-tooltip{
         top: -31px;
         padding-left: 20px;
         padding-right: 20px;
-        height: 70px;
+        /**height: 70px;**/
     }
+
+    
 
     /* standing orders */
     .title-orders {
@@ -3311,6 +3536,7 @@ span.custom-tooltip{
     .box-find-answers,
     .box-for-answers {
         border-top: 1px solid #bbb;
+        margin-top: 10px;
     }
     .box-find-answers .title-footer ,
     .box-for-answers .title-footer {
@@ -3493,6 +3719,9 @@ span.custom-tooltip{
     .margintop-standing-orders {
         margin-top: 22px;
     }
+    iframe{
+        min-height: 500px;
+    }
 }
 @media(min-width:992px){
     .header-desktop-orders .text-right{
@@ -3507,7 +3736,12 @@ span.custom-tooltip{
     .modal-search .checkbox-input{
         display: inline-block;
     }
-
+    .export-file{
+        float: right;
+    }
+    .navigator-transactions-li.navigator-transactions-sortby{
+        float:right !important;
+    }
 }
 @media(min-width:1200px){
     .nav-standing-orders-li .nav-standing-orders-lkn {
@@ -3559,3 +3793,9 @@ span.custom-tooltip{
     border: 1px solid #00adee;
     color: #fff;
 }*/
+
+@media(min-width:1160px){
+   iframe{
+        min-height: 450px;
+    }
+}

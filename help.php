@@ -3,15 +3,23 @@ require_once 'inc/config.inc.php';
 require_once 'inc/dbconn.inc.php';
 require_once 'cls/base.cls.php';
 require_once 'cls/users.cls.php';
+	require_once 'cls/ui.cls.php';
+	require_once 'inc/funcs.inc.php';
 
 session_start();
 
 User::LoginCheck();
 
+	AjaxCheck();
+
 $faqList = new FaqList();
 //$faqItem = new FaqItem();
 $faqItems = $faqList->getFaqByRank();
 ?>
+<script type="text/javascript">
+</script> 
+
+
 <main class="main-transactions main-help content-desktop">
 
     <div class="header-fixed visible-xs">
@@ -63,47 +71,39 @@ $faqItems = $faqList->getFaqByRank();
     </div><!-- /header-fixed -->
 
 
-    <div class="box-faqs-header visible-xs">
-
-        <div class="container-fluid">
-
-            <h2 class="title-box-faqs">FAQs</h2>
-
-            <p class="desc-box-faqs">Our FAQs answer our most commonly asked questions. If you think we've missed something or want to ask something else, please contact us.</p>
-
-        </div><!-- /container -->
-
-    </div><!-- /box-faqs-header -->
-
     <div class="container-faqs">
 
         <div class="container-fluid">
 
             <div class="row">
 
-                <div class="col-md-12 col-xs-12 hidden-xs">
+                <div class="col-md-12 col-xs-12 special-class">
 
-                    <div class="header-desktop">
-                        <h2 class="title-desktop">Help</h2>
+                    <div class="header-desktop hidden-xs">
+                        <h2 class="title-desktop help-lkn">Help</h2>
                     </div><!-- header-desktop -->
+<!--sandbox="allow-same-origin allow-scripts"-->
+                     <iframe id="help-iframe" src="https://slimfaq.com/aac" width="100%" height="100%" style="height:100%; border: 0;"  seamless></iframe> 
+
 
                 </div><!-- /col -->
 
-                <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                <div class="col-xs-12 col-md-12">
 
-                    <div class="box-faqs-header hidden-xs">
-
+                   <!-- <div class="box-faqs-header hidden-xs">
                         <h2 class="title-box-faqs">FAQs</h2>
 
                         <p class="desc-box-faqs">Our FAQs answer our most commonly asked questions. If you think we've missed something or want to ask something else, please contact us.</p>
 
-                    </div><!-- /box-faqs-header -->
+                    </div> --> <!-- /box-faqs-header -->
+
+                    <?php /*
 
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                         <?php 
                         for($i=0;$i < count($faqItems);$i++) {
-                        $question=$faqItems[$i]->question ;
-                        $answer=$faqItems[$i]->answer;
+                        $question=nl2br(str_replace(array('•','“','”','–'),array('&bull;','"','"','-'),htmlentities($faqItems[$i]->question))) ;
+                        $answer=nl2br(str_replace(array('•','“','”','–'),array('&bull;','"','"','-'),htmlentities($faqItems[$i]->answer)));
                         
                         ?>
                         <div class="panel panel-default">
@@ -173,9 +173,9 @@ $faqItems = $faqList->getFaqByRank();
 
                           </div><!-- /panel-group --> */ ?>
                         <div class="hidden-xs box-find-answers">
-                            <h2 class="title-footer">COULDNâ€™T FIND THE ANSWER YOU NEED?</h2>
+                            <h2 class="title-footer">COULDN'T FIND THE ANSWER YOU NEED?</h2>
 
-                            <a href="contact-us.php"  class="subtitle-footer transition external-lkn">CONTACT US</a>
+                            <a href="contact-us.php"  class="transition external-lkn">CONTACT US</a>
 
                         </div>
 
@@ -187,12 +187,14 @@ $faqItems = $faqList->getFaqByRank();
 
         </div><!-- /container-faqs -->
 
-        <a href="#" class="sticky-to-footer visible-xs">
+        <!-- AACDESIGN4 -->
+        <a href="#" class="contact-btn visible-xs">
 
-            <h2 class="title-footer">COULDNâ€™T FIND THE ANSWER YOU NEED?</h2>
+            <h2 class="title-footer">COULDN'T FIND THE ANSWER YOU NEED?</h2>
 
             <p  class="subtitle-footer">CONTACT US</p>
 
         </a>
 
-</main>	
+</main>
+

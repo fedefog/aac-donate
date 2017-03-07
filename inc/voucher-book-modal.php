@@ -26,7 +26,7 @@
 
 			<div class="row-modal">
 				
-				<h3 class="subtitle-modal">BOOK VALUE </h3>
+				<h3 class="subtitle-modal">BOOK VALUE</h3>
 
 				<p class="info-modal">£ 50</p>
 

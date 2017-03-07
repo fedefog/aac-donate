@@ -8,10 +8,11 @@
 
 
                 <div class="row-modal">
-                    <h3 class="subtitle-modal">SUMMARY </h3>
+                    <h3 class="subtitle-modal">SUMMARY</h3>
                     <p class="info-modal" id="modal_beneficiary"><?php echo $t->FormatSummary() ?></p>
                 </div><!-- /row-modal -->
 
+				<?php if($t->Request != 'New Voucher Book') { ?>
                 <div class="row-modal">
                     <h3 class="subtitle-modal">NOTES TO AAC</h3>
                     <p class="info-modal" id="modal_notes_aac"><?php echo $t->OfficeComments ?></p>
@@ -24,22 +25,23 @@
                     <h3 class="subtitle-modal">NOTES TO CHARITY</h3>
                     <p class="info-modal" id="modal_charity_notes"><?php echo $t->ClientComments ?></p>
                 </div><!-- /row-modal -->
+				<?php } ?>
 <!-- AACDESIGN3 -->
 <?php /**
                 <div class="row-modal">
-                    <h3 class="subtitle-modal">BENEFICIARY </h3>
+                    <h3 class="subtitle-modal">BENEFICIARY</h3>
                     <p class="info-modal" id="modal_beneficiary"><?php echo $t->Description ?></p>
                 </div><!-- /row-modal -->
                 <div class="row-modal">
-                    <h3 class="subtitle-modal">DATE PAID </h3>
+                    <h3 class="subtitle-modal">DATE PAID</h3>
                     <p class="info-modal" id="modal_date_paid"><?php echo $t->FormatDateTime(); ?></p>
                 </div><!-- /row-modal -->
                 <div class="row-modal">
-                    <h3 class="subtitle-modal">DONATION AMOUNT </h3>
+                    <h3 class="subtitle-modal">DONATION AMOUNT</h3>
                     <p class="info-modal" id="modal_amount"><?php echo $t->FormatAmount(false); ?></p>
                 </div><!-- /row-modal -->
                 <div class="row-modal">
-                    <h3 class="subtitle-modal">PAYMENTS NUMBER </h3>
+                    <h3 class="subtitle-modal">PAYMENTS NUMBER</h3>
                     <p class="info-modal" id="modal_payments_number"><?php echo $t->PaymentNumber ?></p>
                 </div><!-- /row-modal -->
 

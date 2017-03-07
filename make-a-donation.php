@@ -13,8 +13,13 @@ require_once 'cls/class.phpmailer.php';
 require_once 'cls/emails.cls.php';
 require_once 'cls/emaillog.cls.php';
 require_once 'inc/funcs.inc.php';
+
+
 session_start();
 User::LoginCheck();
+
+AjaxCheck();
+
 $user = new User();
 $user = User::GetInstance();
 
@@ -25,14 +30,21 @@ $req_amount = mysql_real_escape_string((empty($_REQUEST['amount'])) ? "" : $_REQ
 $somid = mysql_real_escape_string((empty($_REQUEST['SOMID'])) ? "" : $_REQUEST['SOMID']);
 
 $request = new AACRequestItem();
+/**
 $td = new TransactionDetailList();
 $transaction = $td->getTransactionDetailByAccountName($user->Reference);
 foreach ($transaction as $tr) {
     $balance = $tr->Close_balance;
-    $account = $tr->acc;
-    $date = $tr->dt;
+    $balance = number_format($balance, 2);
+    $account = $tr->Username;
+    $date = date('d M Y, H:iA', strtotime($tr->Last_statement_date));
 }
 $balance = $balance ? $balance : 0;
+**/
+			$user = User::GetInstance();
+            $balance = number_format($user->Close_balance, 2);
+            $account = $user->Username;
+            $date = date('d M Y, H:iA', strtotime($user->Close_balance_date));
 
 if($req_id) {
 	if($request->load($req_id)) {
@@ -65,18 +77,27 @@ if($req_id) {
 		if($_REQUEST['repeat']) unset($somid);
 
 	} else die('Unable to locate standing order');
-}
+} else {
+	//var_dump($fields);
+	//var_dump($req_charity_id);
+	if($req_charity_id) {
+		$charity = new CharityItem();
+		if($charity->loadByRemoteID($req_charity_id)) {
+	//var_dump($charity);
+			$fields['Beneficiary'] = $charity->Name;
+			$fields['RemoteCharityID'] = $req_charity_id;
+		}
+	}
+	if($req_amount) $fields['Amount'] = $req_amount;
+	
+
+
+	//if($fields['Beneficiary']) $fields['Beneficiary'] = $_REQUEST['Beneficiary'];
+
 //var_dump($fields);
 
-if($req_charity_id) {
-	$charity = new CharityItem();
-	if($charity->loadByRemoteID($req_charity_id)) {
-//var_dump($charity);
-		$fields['Beneficiary'] = $charity->Name;
-		$fields['RemoteCharityID'] = $req_charity_id;
-	}
+	//$fields['Amount'] = $_REQUEST['Amount'];
 }
-if($req_amount) $fields['Amount'] = $req_amount;
 
 
 
@@ -235,8 +256,7 @@ switch ($fields['Request']) {
         die('Unknown request');
         $field_list = array();
 }
-$fields['Beneficiary'] = $_REQUEST['Beneficiary'];
-$fields['Amount'] = $_REQUEST['Amount'];
+
 **************************/
 
 ?>
@@ -513,7 +533,7 @@ if ($_REQUEST['id'] != "") {
 									<?php if($somid) { ?>
                                     <h2 class="title">Edit Standing Order</h2>
 									<?php } else { ?>
-                                    <h2 class="title">Make a Donation/Standing Order</h2>
+                                    <h2 class="title">Make a Donation / <br>Standing Order</h2>
 									<?php } ?>
                                 </div><!-- /col -->	
                                 <div class="col-xs-2">
@@ -580,11 +600,11 @@ if ($_REQUEST['id'] != "") {
                         $transactionlist = new TransactionList();
                         $notes_row = $transactionlist->getNotes();
                         ?>
-                        <a href="javascript:void(0);" class="lkn-daily">
-                            <p class="text"><?php echo substr(trim($notes_row[0]->TopTickerMessage), 0, 140); ?></p>
+                        <!--<a href="javascript:void(0);" class="lkn-daily">-->
+                            <p class="text lkn-daily" ><?php echo trim($notes_row[0]->TopTickerMessage); ?></p>
                             <!--<i class="fa fa-angle-down" aria-hidden="true"></i>
                             <i class="fa fa-angle-up" aria-hidden="true"></i>-->
-                        </a>
+                        <!--</a>-->
                     </div><!-- container -->
                 </div><!-- /box-daily-updates -->
 
@@ -666,7 +686,7 @@ if ($_REQUEST['id'] != "") {
                                     }
 									**/
                                     ?>
-                                    <input type="text" name="fields[Amount]" id="Amount" class="form-control input-text" placeholder="Enter an amount" value="<?php echo $fields['Amount']; ?>">
+                                    <input type="tel" name="fields[Amount]" id="Amount" class="form-control input-text" placeholder="Enter an amount" value="<?php echo $fields['Amount']; ?>">
 
                                     <span id="gbpAmountBoxData" class="numb-aprox"> </span>
 
@@ -742,7 +762,7 @@ if ($_REQUEST['id'] != "") {
 
                                     <h2 class="title-make-donation">STANDING ORDER</h2>
 
-                                    <input type = "checkbox" <?php echo $disableSO ?> class = "standing-order-switch switch-on" id="my-checkbox" name="my-checkbox" <?php echo $checked; ?> >
+                                    <input type = "checkbox" <?php echo $disableSO ?> class = "standing-order-switch switch-on" id="my-checkbox" name="fields[IsStandingOrder]" <?php echo $checked; ?> >
 
                                 </div><!-- /half-make-donation -->
 
@@ -765,7 +785,7 @@ if ($_REQUEST['id'] != "") {
                                 </div>
                                 <div class="half-make-donation">
                                     <h2 class="title-make-donation" id="lblNumberOfPayments">NUMBER OF PAYMENTS</h2>
-                                    <input type="text" name="fields[NumberOfPayments]" id="txtNumberOfPayments" class="form-control input-text" placeholder="Enter number of payments" value="<?php echo $fields['NumberOfPayments']; ?>">
+                                    <input type="tel" name="fields[StandingOrderNumPayments]" id="txtNumberOfPayments" class="form-control input-text" placeholder="Enter number of payments" value="<?php echo $fields['StandingOrderNumPayments']; ?>">
                                 </div>
                                 <!-- start changes -->
 
@@ -775,15 +795,20 @@ if ($_REQUEST['id'] != "") {
 
                                     <select id="StandingOrderStartDate" name="fields[StandingOrderStartDate]" class = "form-control selectpicker" <?php echo $disable; ?>>
                                         <?php
-                                        $options = array(date('Y-m-1') => date('M Y'));
+                                        if((int)date('d')<15) $options = array(date('Y-m-15') => date('15 M Y'));
+										else $options = array();
                                         for ($i = 1; $i <= 3; $i++) {
                                             $t = strtotime("+{$i} months", strtotime(date('Y-m-1')));
-                                            $options[date('Y-m-1', $t)] = date('M Y', $t);
+                                            $options[date('Y-m-1', $t)] = date('1 M Y', $t);
+                                            $options[date('Y-m-15', $t)] = date('15 M Y', $t);
                                         }
                                         foreach ($options as $op) {
-                                            ?>
+/**
                                             <option value="1 <?php echo $op; ?>" <?php if (date('d M Y', $fields['StandingOrderStartDate']) == "1 " . $op) echo "selected"; ?>>1 <?php echo $op; ?></option>
                                             <option value="15 <?php echo $op; ?>" <?php if (date('d M Y', $fields['StandingOrderStartDate']) == "15 " . $op) echo "selected"; ?>>15 <?php echo $op; ?></option>
+**/
+                                            ?>
+                                            <option value="<?php echo $op; ?>" <?php if (date('d M Y', $fields['StandingOrderStartDate']) == $op) echo "selected"; ?>><?php echo $op; ?></option>
                                             <?php
                                         }
                                         reset($options);
@@ -798,7 +823,7 @@ if ($_REQUEST['id'] != "") {
                                     <h2 class = "title-make-donation">INTERVAL </h2>
 
                                     <select id="StandingOrderFrequency" name="fields[StandingOrderFrequency]" class = "form-control selectpicker" <?php echo $disable; ?>>
-                                        <option value="Every Month" <?php if ($row[0]->StandingOrderFrequency == "Every Month") echo "selected"; ?>>Every Month</option>
+                                        <option value="Every Month" <?php if ($row[0]->StandingOrderFrequency == "Every Month") echo "selected"; ?>>Monthly</option>
                                         <option value="Every 2 months" <?php if ($fields['StandingOrderFrequency'] == "Every 2 months") echo "selected"; ?>>Every 2 months</option>
                                         <option value="Every 3 months" <?php if ($fields['StandingOrderFrequency'] == "Every 3 months") echo "selected"; ?>>Every 3 months</option>
                                     </select>
@@ -843,12 +868,14 @@ if ($_REQUEST['id'] != "") {
                                 </a>
                             </div><!-- /col -->
                             <div class="col-md-6 padding-left">
-                                <a href = "#"  class = "make-dontation transition hidden-xs">Make Donation</a>
+                                <a href = "#"  class = "make-dontation transition">Make Donation</a>
                             </div><!-- col -->
                         </div><!-- /row -->
                     </div><!-- /container -->
                 </div><!-- /checkbox -->
-                <a href="#" class="sticky-to-footer make-dontation make-dontation-mobile visible-xs">Make Donation</a>
+                <!-- AACDESIGN4 
+                <a href="#" class="make-dontation make-dontation-mobile visible-xs">Make Donation</a>
+                -->
             </div><!-- /mobile-content-make-dontation -->
             <?php
 			if($somid) {

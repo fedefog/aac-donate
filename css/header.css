@@ -27,11 +27,12 @@
     position: relative;
     top: 1px;
 }
-.notification-box .text-notification strong {
+.notification-box .text-notification strong,.notification-box .text-notification a {
   font-weight: 500;
   position: relative;
   border-bottom: 1px solid #fff;
   padding-bottom: 3px;
+      color: #fff;
 }
 .notification-box .close-notification {
       color: #fff;
@@ -248,7 +249,7 @@
   color: #333333;
   letter-spacing: 0.32px;
   clear: both;
-  margin-bottom: 30px;
+  margin: 15px 0;
 }
 
 .navigator-li:first-child .navigator-lkn {
@@ -262,7 +263,7 @@
   font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.43px;
-  padding: 20px;
+  padding: 12px 20px;
 }
 .navigator-lkn .icon {
   color: #00ADEE;
@@ -284,7 +285,7 @@
   color: #333;
   display: block;
   bottom: 0;
-  padding: 20px;
+  padding: 12px 20px;
   width: 100%;
   background: #f4f4f4;
 }
@@ -300,7 +301,7 @@
   float: left;
   padding: 15px 20px;
   width: 270px;
-  margin: 0 15px 25px 15px;
+  margin: 0 15px 15px 15px;
 }
 .navigator-balance,
 .navigator-account {
@@ -369,8 +370,7 @@
 }
 @media(max-width:767px){
   .navigator .hoverflow {
-    height: 448px;
-    overflow: scroll;
+    height: 100vh;
   }
   .pending-bt {
     position: relative;
@@ -389,19 +389,33 @@
   .has-notification .header-fixed {
     margin-top: 0;
   }
-  .notification-box .close-notification {
-      
+  .notification-box .close-notification { 
       right: 11px;
       z-index: 9999;
       font-size: 17px;
-   
   }
   .notification-box .text-notification i {
       text-indent: -18px;
       font-size: 13px;
   }
+  .mobile-date-message{
+    display: inline-block;
+    position: absolute;
+    width: 150px;
+    left: 50%;
+    margin-left: -75px;
+    top: 5px;
+    color: #58c9f3;
+    font-size: 14px;
+    padding-top: 5px;
+    text-transform: uppercase;
+    text-align: center;
+  }
 }
 @media(min-width:768px){
+  .modal-open header{
+    padding-right: 15px;
+  }
   .nav-icon4 {
     top: 41px;
   }	

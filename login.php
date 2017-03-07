@@ -5,6 +5,8 @@ require_once 'cls/base.cls.php';
 require_once 'cls/users.cls.php';
 session_start();
 
+require_once 'cls/mobile_detect.cls.php';
+
 if ($_REQUEST['logout']) {
 
     $u = User::GetInstance();
@@ -15,7 +17,8 @@ if ($_REQUEST['logout']) {
     setcookie('e[' . $u->Username . ']', '', time() - (3600 * 24 * 365));
 
     if ($_REQUEST['return'])
-        header('location:' . $_REQUEST['return']);
+        header('location: ' . $_REQUEST['return']);
+        //header('location:index.php#' . $_REQUEST['return']);
     else
         header('location:http://www.achisomoch.org/');
     exit;
@@ -39,17 +42,22 @@ if (!$_REQUEST['doAction']) {
 
 	if($fu) {
 		$ul = new UserList();
-		$users = $ul->GetUsersByUsername($fu);
-		$u = reset($users);
-		if(!$u->AutomaticLogin) unset($fu);
+		$users = $ul->GetUsersByUsername($fu,false);
+		if(count($users)) {
+			$u = reset($users);
+			if(!$u->AutomaticLogin) unset($fu);
+		} else  unset($fu);
 	}
-
-    if ($fu && $passwords[$fu] && (User::DoLogin2($fu, $passwords[$fu], 'desktop'))) {
-        setcookie('u[' . $_REQUEST['username'] . ']', $_REQUEST['username'], time() + (3600 * 24 * 365));
-        setcookie('e[' . $_REQUEST['username'] . ']', sha1($_REQUEST['password']), time() + (3600 * 24 * 365));
+//var_dump($passwords[$fu]);
+//exit;
+    if ($fu && $passwords[$fu] && (User::DoLogin2($fu, $passwords[$fu], 'standard'))) {
+		$u = User::GetInstance();
+        setcookie('u[' . $u->Username . ']', $u->Username, time() + (3600 * 24 * 365));
+        setcookie('e[' . $u->Username . ']', sha1($u->Password), time() + (3600 * 24 * 365));
 
         if ($_REQUEST['return'])
-            header('location:' . $_REQUEST['return']);
+			header('location: ' . $_REQUEST['return']);
+            //header('location:index.php#' . $_REQUEST['return']);
         else
             header('location:index.php');
         exit;
@@ -60,20 +68,21 @@ if ($_REQUEST['doAction']) {
 
 		$u = User::GetInstance();
 		if($u->AutomaticLogin) {
-	        setcookie('u[' . $_REQUEST['username'] . ']', $_REQUEST['username'], time() + (3600 * 24 * 365));
-    	    setcookie('e[' . $_REQUEST['username'] . ']', sha1($_REQUEST['password']), time() + (3600 * 24 * 365));
+	        setcookie('u[' . $u->Username . ']', $u->Username, time() + (3600 * 24 * 365));
+    	    setcookie('e[' . $u->Username . ']', sha1($u->Password), time() + (3600 * 24 * 365));
 		}
 
 		//temporary
-		unset($_REQUEST['return']);
+		//unset($_REQUEST['return']);
 
         if ($_REQUEST['return'])
-            header('location:' . $_REQUEST['return']);
+			header('location: ' . $_REQUEST['return']);
+            //header('location:index.php#' . $_REQUEST['return']);
         else
             header('location:index.php');
         exit;
     } else
-        $error = 'Invalid username or password';
+        $error = 'Username or password is incorrect';
 }
 
 if ($_REQUEST['return'] && strpos($_REQUEST['return'], 'aac_requests_editor.php?Request=New%20Voucher%20Book') !== false) {
@@ -93,6 +102,7 @@ if ($_REQUEST['return'] && strpos($_REQUEST['return'], 'aac_requests_editor.php?
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <title>AAC</title>        
+        <link rel="icon" href="inc/favicon.ico?v=2">
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -114,7 +124,7 @@ if ($_REQUEST['return'] && strpos($_REQUEST['return'], 'aac_requests_editor.php?
         <![endif]-->
 
     </head>
-    <body onkeyup="onEnterSubmit(event)">
+    <body onkeyup="onEnterSubmit(event)" class="loaded">
         <script type="text/javascript">
             function onEnterSubmit(event) {
                 if (event.which == 13) {
@@ -133,21 +143,23 @@ if ($_REQUEST['return'] && strpos($_REQUEST['return'], 'aac_requests_editor.php?
                             <form id="myForm" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="login-form" method="post">
                                 <div class="form-group">
                                     <label for=""> ACCOUNT NUMBER</label>	
-                                    <input type="text" name="username" value="<?php echo $_REQUEST['username'] ?>" class="input" placeholder="Enter your account number">
+                                    <input type="tel" name="username" value="<?php echo $_REQUEST['username'] ?>" class="input" placeholder="Enter your account number">
                                 </div><!-- /form-group -->
                                 <div class="form-group">
                                     <label for="">PASSWORD</label>	
                                     <input type="password" name="password" class="input" placeholder="Enter your password">
                                 </div><!-- /form-group -->
                                 <!-- AACDESIGN3 -->
+								<?php if($error) { ?>
                                 <div class="form-group">
                                     <span class="wrong-user">
                                           <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                           Username or password is incorrect
+                                           <?php echo $error ?><!--Username or password is incorrect-->
                                     </span>
                                 </div><!-- /form-group -->
+								<?php } ?>
                                 <div class="form-group">
-                                    <a href="forgot_password.php" class="forgot-pass">Forgot your password ?  Get in touch with us.</a>
+                                    <a href="forgot_password.php" class="forgot-pass">Forgot your password?</a>
                                 </div><!-- /form-group -->
                                 <a href="#" id="lnkLogin" onclick="document.getElementById('myForm').submit();" class="submit-login">Login</a>
                                 <input type="hidden" name="doAction" value="login"  />

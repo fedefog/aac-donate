@@ -15,6 +15,9 @@ require_once 'cls/emaillog.cls.php';
 require_once 'inc/funcs.inc.php';
 session_start();
 User::LoginCheck();
+
+AjaxCheck();
+
 $user = new User();
 $user = User::GetInstance();
 /**
@@ -55,9 +58,9 @@ $row = mysql_fetch_row($result, 1);*/
 			e.preventDefault();
 	
 	
-			var formData = $('#editor').serialize();
+			var formData = $('#settings-editor').serialize();
 
-            $('#editor input').removeClass('has-error-box');
+            $('#settings-editor input').removeClass('has-error-box');
 	
 	
 			$.ajax({
@@ -137,7 +140,7 @@ $row = mysql_fetch_row($result, 1);*/
 **/
 </script>
 <main class="main-transactions main-settings content-desktop">
-    <form name="editor" id="editor" method="POST" action="<?php echo basename($_SERVER['PHP_SELF']) ?>">
+    <form name="settings-editor" id="settings-editor" method="POST" action="<?php echo basename($_SERVER['PHP_SELF']) ?>">
         <div class="header-fixed visible-xs">
             <header class="header ">
                 <div class="container ">
@@ -171,6 +174,7 @@ $row = mysql_fetch_row($result, 1);*/
                     </div>
                 </div><!-- / -->
                 <div class="col-xs-12 col-md-6">
+					<?php /**
                     <div class="container-settings">
                         <div class="box-settings">
                             <div class="box-settings-info">
@@ -180,6 +184,7 @@ $row = mysql_fetch_row($result, 1);*/
                             <input type="checkbox" class="switch-settings" id="my-checkbox" value="1" id="my-checkbox" name="fields[ShowUserDisplayName]" <?php if ($user_data['ShowUserDisplayName'] == "1") echo "checked"; ?>>
                         </div><!-- /box-settings -->
                     </div><!-- /container-settings -->
+					**/ ?>
                     <div class="container-settings">
                         <div class="box-settings">
                             <div class="box-settings-info">
@@ -228,7 +233,7 @@ $row = mysql_fetch_row($result, 1);*/
                             <div class="box-settings">								
                                 <div class="box-settings-info">
                                     <h2 class="title-settings">New Value </h2>
-									<input id="box-Sms_threshold" type="text" name="fields[Sms_threshold]" value="<?php echo $user_data['Sms_threshold'] ?>" class="form-control">
+									<input id="box-Sms_threshold" type="tel" name="fields[Sms_threshold]" value="<?php echo $user_data['Sms_threshold'] ?>" class="form-control">
                                 </div><!-- /box-settings-info -->
                             </div><!-- /box-settings -->
                         </div><!-- /sms_threshold -->
@@ -244,7 +249,7 @@ $row = mysql_fetch_row($result, 1);*/
                             <div class="box-settings">								
                                 <div class="box-settings-info">
                                     <h2 class="title-settings">New Value </h2>
-									<input id="box-Sms_going_in" type="text" name="fields[Sms_going_in]" value="<?php echo $user_data['Sms_going_in'] ?>" class="form-control">
+									<input id="box-Sms_going_in" type="tel" name="fields[Sms_going_in]" value="<?php echo $user_data['Sms_going_in'] ?>" class="form-control">
                                 </div><!-- /box-settings-info -->
                             </div><!-- /box-settings -->
                         </div><!-- /sms_going_in -->
@@ -260,7 +265,7 @@ $row = mysql_fetch_row($result, 1);*/
                             <div class="box-settings">								
                                 <div class="box-settings-info">
                                     <h2 class="title-settings">New Value </h2>
-									<input id="box-Sms_going_out" type="text" name="fields[Sms_going_out]" value="<?php echo $user_data['Sms_going_out'] ?>" class="form-control">
+									<input id="box-Sms_going_out" type="tel" name="fields[Sms_going_out]" value="<?php echo $user_data['Sms_going_out'] ?>" class="form-control">
                                 </div><!-- /box-settings-info -->
                             </div><!-- /box-settings -->
                         </div><!-- /sms_going_in -->
@@ -268,10 +273,11 @@ $row = mysql_fetch_row($result, 1);*/
                             <div class="box-phone-numb-settings">
                                 <h2 class="title-settings">MOBILE PHONE NUMBER TO TEXT </h2>
                                 <form class="form-phone-number">
-                                    <div class="form-group">
+                                <!-- AACDESIGN4-->
+                                    <div class="form-group phone-number">
                                         <div class="input-group">
                                             <div class="input-group-addon">PHONE NUMBER</div>
-                                            <input type="text" id="box-Mobile" name="fields[Mobile]" class="form-control phone-number-input" value="<?php echo $user_data['Mobile']; ?>">
+                                            <input type="tel" id="box-Mobile" name="fields[Mobile]" class="form-control phone-number-input" value="<?php echo $user_data['Mobile']; ?>">
                                         </div><!-- /input-group -->
                                     </div><!-- /form-group -->
                                 </form>
@@ -304,12 +310,15 @@ $row = mysql_fetch_row($result, 1);*/
                                 <input type="password" id="box-txtCfmPwd" name="txtCfmPwd" class="form-control" placeholder="Confirm new password">
                             </div><!-- /box-settings-password -->
                         </div>
-                        <div class="container-lkns visible-xs sticky-to-footer">
-                            <a href="#" class="lkn-save transaction_page">Save</a>
-                            <a href="dashboard.php" class="lkn-cancel transaction_page">Cancel</a>
-                        </div><!-- /container-lkns -->
                     </div><!-- /container-settings -->
+                    <!-- AACDESIGN4 -->
                 </div><!-- /col -->
+
+                <div class="container-lkns visible-xs">
+                    <a href="#" class="lkn-save transaction_page">Save</a>
+                    <a href="dashboard.php" class="lkn-cancel transaction_page">Cancel</a>
+                </div><!-- /container-lkns -->
+
                 <div class="col-md-12 hidden-xs">
                     <div class="line-bottom-settings"></div>
                 </div><!-- / -->

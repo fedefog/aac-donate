@@ -1,7 +1,7 @@
 <?php
 require_once 'inc/config.inc.php';
 require_once 'inc/dbconn.inc.php';
-require_once 'cls/base.cls.php';
+require_once 'cls/base.cls.php';http://devdb.exceedit.co.uk/achisomoch/invite-a-friend.php
 require_once 'cls/users.cls.php';
 require_once 'cls/vouchers.cls.php';
 require_once 'cls/charities.cls.php';
@@ -149,7 +149,7 @@ $ptl = $transactionlist->ListItems();
 										$data = $t->id;
 										$type='TR';
                                         ?>
-                                        <tr>
+                                        <tr class="<?php echo getBalanceColor(number_format($amount, 2)); ?> modal-show pending-transaction-row" data-toggle="modal" data-target="#modal-voucher" data-id="<?php echo $data; ?>" data-type="TR">
                                             <?php /* <tr class="<?php echo getBalanceColor(number_format($amount, 2)); ?> modal-show pending-transaction-row" data-toggle="modal" data-target="#modal-standing-order-donation" data-id="<?php echo $data; ?>" data-type="<?php echo $type; ?>"> */ ?>
                                             <td>
                                                 <a href="javascript:void(0);">
@@ -161,11 +161,10 @@ $ptl = $transactionlist->ListItems();
                                                     <div class="desc-table">
                                                         <h2 class="title">
                                                             <?php
-                                                            if ($charity_id != "" && $charity_id > 0) {
-                                                                echo $beneficiary;
-                                                            } else {
-                                                                echo '';
-                                                            }
+
+															echo $t->Description;
+
+                        
                                                             ?>
                                                         </h2>
                                                         <h3 class="subtitle transaction-type-label"><span><?php echo 'Pending'; //getTransactionType($type); ?></span></h3>
@@ -176,7 +175,7 @@ $ptl = $transactionlist->ListItems();
                                                 <a href="javascript:void(0);" >
                                                     <span class="balance-transition">
                                                         <?php
-                                                            echo showBalance($amount);
+                                                            echo $t->FormatAmount();
                                                             echo '<i class = "fa fa-caret-up" aria-hidden = "true"></i>';
                                                             echo '<i class = "fa fa-caret-down" aria-hidden = "true"></i>';
                                                             echo '<i class = "fa fa-caret-right" aria-hidden = "true"></i>';
@@ -200,10 +199,10 @@ $ptl = $transactionlist->ListItems();
 			$pageNavOptions  = array(
 				'NoItemsText'=>'',
 				'MaxVisiblePageNums'=>5,
-				'PrevPageText'=>'&laquo;',
-				'NextPageText'=>'&raquo;',
-				'FirstPageText'=>'',
-				'LastPageText'=>'',
+				'PrevPageText'=>'&lt;',
+				'NextPageText'=>'&gt;',
+				'FirstPageText'=>'&laquo;',
+				'LastPageText'=>'&raquo;',
 				'ShowAllText'=>'',
 				'ShowAllAlign'=>'',
 				'LeadingText'=>'',

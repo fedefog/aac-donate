@@ -6,19 +6,19 @@
                     </button>
                 </div><!-- /row-modal -->
                 <div class="row-modal">
-                    <h3 class="subtitle-modal">BENEFICIARY </h3>
+                    <h3 class="subtitle-modal">BENEFICIARY</h3>
                     <p class="info-modal" id="modal_beneficiary"><?php echo $s->name ?></p>
                 </div><!-- /row-modal -->
                 <div class="row-modal">
-                    <h3 class="subtitle-modal">DATE PAID </h3>
+                    <h3 class="subtitle-modal">DATE PAID</h3>
                     <p class="info-modal" id="modal_date_paid"><?php echo $s->FormatDateTime(); ?></p>
                 </div><!-- /row-modal -->
                 <div class="row-modal">
-                    <h3 class="subtitle-modal">DONATION AMOUNT </h3>
+                    <h3 class="subtitle-modal">DONATION AMOUNT</h3>
                     <p class="info-modal" id="modal_amount"><?php echo $s->FormatAmount(false); ?></p>
                 </div><!-- /row-modal -->
                 <div class="row-modal">
-                    <h3 class="subtitle-modal">PAYMENTS NUMBER </h3>
+                    <h3 class="subtitle-modal">PAYMENTS NUMBER</h3>
                     <p class="info-modal" id="modal_payments_number"><?php echo $s->PaymentNumber ?></p>
                 </div><!-- /row-modal -->
                 <div class="row-modal">

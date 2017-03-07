@@ -289,7 +289,7 @@
 
         </div><!-- /container-urgent -->
 
-        <a href="#" class="sticky-to-footer lkn-order-vouchers visible-xs disabled">Order Vouchers</a>
+        <a href="#" class="lkn-order-vouchers visible-xs disabled">Order Vouchers</a>
 
             <input type="hidden" name="submit1" value="save" />
             <input type="hidden" name="fields[VoucherBookDelivery]" id="VoucherBookDelivery">
@@ -301,29 +301,3 @@
         <a href="#" class="lkn-order-vouchers transition disabled">Order Vouchers</a>
 
     </div><!-- /col -->
-
-    <div class="container-urgent visible-xs">
-
-        <div class="container-fluid">
-
-            <input type="checkbox" id="my-checkbox" name="my-checkbox">
-
-            <h2 class="label-urgent">THIS IS URGENT</h2>
-
-        </div><!-- /container -->
-
-    </div><!-- /container-urgent -->
-
-    <div class="container-notes visible-xs">
-
-        <div class="container-fluid">
-
-            <label class="title-notes">NOTES TO AAC</label>
-
-            <textarea cols="30" rows="10" class="textarea-notes" placeholder="Add any notes you'd wish to pass on to AAC."></textarea>	
-
-        </div><!-- /container -->
-
-    </div><!-- /container-urgent -->
-
-    <a href="#" class="sticky-to-footer lkn-order-vouchers visible-xs disabled">Order Vouchers</a>

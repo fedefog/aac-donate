@@ -10,7 +10,7 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <title>AAC</title>        
-
+        <link rel="icon" href="inc/favicon.ico?v=2">
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -69,14 +69,14 @@
         foreach ($transaction as $tr) {
             $balance = $tr->Close_balance;
             $balance = number_format($balance, 2);
-            $account = $tr->Reference;
+            $account = $tr->Username;
             $date = date('d M Y, H:iA', strtotime($tr->Last_statement_date));
         }
 		**/
 			$user = User::GetInstance();
             $balance = number_format($user->Close_balance, 2);
-            $account = $user->Reference;
-            $date = date('d M Y, H:iA', strtotime($tr->Close_balance_date));
+            $account = $user->Username;
+            $date = date('d M Y, H:iA', strtotime($user->Close_balance_date));
         ?>
         <div id="myProgress">
             <div id="myBar"></div>

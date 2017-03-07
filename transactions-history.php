@@ -13,6 +13,8 @@ session_start();
 
 User::LoginCheck();
 
+AjaxCheck();
+
 $user = new User();
 $user = User::GetInstance();
 
@@ -280,7 +282,7 @@ $tl = $transactionlist->listitems();
                                 </td>
                                 <td class="comments-td hidden-xs"  >
                                     <a href="javascript:void(0);">
-                                            <p>Comments goes here from the user to the Charity..</p>
+                                            <p><?php echo $t->client_comment; ?></p>
                                     </a>
                                 </td>
                             </tr>
@@ -310,10 +312,10 @@ $tl = $transactionlist->listitems();
 			$pageNavOptions  = array(
 				'NoItemsText'=>'',
 				'MaxVisiblePageNums'=>5,
-				'PrevPageText'=>'&laquo;',
-				'NextPageText'=>'&raquo;',
-				'FirstPageText'=>'',
-				'LastPageText'=>'',
+				'PrevPageText'=>'&lt;',
+				'NextPageText'=>'&gt;',
+				'FirstPageText'=>'&laquo;',
+				'LastPageText'=>'&raquo;',
 				'ShowAllText'=>'',
 				'ShowAllAlign'=>'',
 				'LeadingText'=>'',

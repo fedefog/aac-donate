@@ -14,11 +14,18 @@ require_once 'cls/emails.cls.php';
 require_once 'cls/emaillog.cls.php';
 require_once 'inc/funcs.inc.php';
 //require_once 'inc/domit/xml_domit_include.php';
+
+
+
 session_start();
 User::LoginCheck();
 
+
+if(!isset($isInclude)) AjaxCheck();
+
 $user = new User();
 $user = User::GetInstance();
+/**
 $td = new TransactionDetailList();
 $transaction = $td->getTransactionDetailByAccountName($user->Reference);
 
@@ -28,6 +35,13 @@ foreach ($transaction as $tr) {
     $lastStatementDate = $tr->Last_statement_date;
     $date = date('d M Y, H:iA', strtotime($tr->Last_statement_date));
 }
+**/
+
+			$user = User::GetInstance();
+            $balance = number_format($user->Close_balance, 2);
+            $account = $user->Username;
+            $date = date('d M Y, H:iA', strtotime($user->Close_balance_date));
+
 $request = new AACRequestItem();
 if ($_REQUEST['Request']) {
     $fields['Request'] = $_REQUEST['Request'];
@@ -125,8 +139,8 @@ if ($_POST['doAction']) {
         $x['done'] = true;
     }
 } else if (!$_REQUEST['done'] && !$id) {
-    $details = "New Request: " . $fields['Request'];
-    User::LogAccessRequest($user->Username, '', $details);
+//    $details = "New Request: " . $fields['Request'];
+//    User::LogAccessRequest($user->Username, '', $details);
 }
 switch ($fields['Request']) {
     case 'Initiate Transfer':
@@ -228,6 +242,8 @@ switch ($fields['Request']) {
         });
     }
 //    DoCurrencyList();
+
+
 </script>
 
 <?php if ($x['done']) { ?>
@@ -282,7 +298,7 @@ switch ($fields['Request']) {
                     $transactionlist = new TransactionList();
                     $transactionlist->sortby = 'DateTime';
                     $transactionlist->sortorder = 'desc';
-                    $tl = $transactionlist->ListItems('UserName="' . intval($user->id) . '"');
+                    $tl = $transactionlist->ListItems('UserName="' . intval($user->Username) . '"');
 
                     if (count($tl) < 1) {
                         ?>
@@ -376,7 +392,7 @@ switch ($fields['Request']) {
 
                                         ?>
                                         <tr class="<?php echo getBalanceColor(number_format($amt, 2)); ?> modal-show dashboard-row" data-toggle="modal" data-target="<?php echo $modal_name; ?>" data-id="<?php echo $data; ?>" data-type="<?php echo $rowtype; ?>">
-                                            <td>
+                                            <td class="date-td">
                                                 <a href="javascript:void(0);">
                                                     <div class="date"><?php echo $rowDate; ?></div>
                                                 </a>
@@ -476,7 +492,7 @@ switch ($fields['Request']) {
                             <label for="amount">Amount</label>
                             <div class="row">
                                 <div class="col-md-6 col-lg-8">
-                                    <input type="text" name="fields[Amount]" id="Amount" class="form-control input-text" placeholder="Enter an amount" >
+                                    <input type="tel" name="fields[Amount]" id="Amount" class="form-control input-text" placeholder="Enter an amount" >
                                 </div>
                                 <div class="col-md-6 col-lg-4 ">
                                     <?php
@@ -555,7 +571,8 @@ switch ($fields['Request']) {
                             </div><!-- /form-group -->
                         </div><!-- box-notes -->
                         <div class="form-group checkbox-box">
-                            <a href = "#" class = "ckeckbox ConfirmTransfer" onclick="confirmTransfer()" name="Confirm">
+
+                            <a href="javascript:void(0)" class="ckeckbox ConfirmTransfer1" id="dashConfirm" >
                                 <span class="circle"></span>
                                 <span class="text">
                                     I confirm that this donation is for charitable purposes only, I will not benefit directly or indirectly by way of goods or services from the donation.
@@ -637,16 +654,7 @@ switch ($fields['Request']) {
                     </div><!-- /box-daily-updates -->
                     <ul class="nav-dashboard">
                         <!-- AACDESIGN -->
-                        <li class="dashboard-li dashboard-li-has-noti">
-                            <a href="transactions.php" class="lkn-dashboard">
-                                <span class="icon">
-                                    <img src="images/view-transactions-icon.png" width="18" height="23">
-                                </span>
-                                <span class="text">View Transactions </span>
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                            </a>
-                            <div class="box-notification-nav sublinks-nav">
-						<?php 
+						<?php
 							$processingCount = AACRequestList::CountProcessing();
 							$pendingCount = TransactionList::CountPending();
 							$bits = array();
@@ -657,7 +665,18 @@ switch ($fields['Request']) {
 							if($pendingCount) { 
 								$bits[] ='<span class="notification-nav"><a href="transactions-pending.php">'.$pendingCount.' PENDING </a></span>';
 							}
-
+							$centered = count($bits)?'dashboard-li-has-noti':'';
+						?>
+                        <li class="dashboard-li <?php echo $centered ?>">
+                            <a href="transactions.php" class="lkn-dashboard">
+                                <span class="icon">
+                                    <img src="images/view-transactions-icon.png" width="18" height="23">
+                                </span>
+                                <span class="text">View Transactions </span>
+                                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                            </a>
+                            <div class="box-notification-nav sublinks-nav">
+						<?php 
 							echo implode('',$bits);
 						?>
                             </div>

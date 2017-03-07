@@ -18,7 +18,7 @@
 
                 <div class="row-modal">
 
-                    <h3 class="subtitle-modal">COMPANY NAME </h3>
+                    <h3 class="subtitle-modal">COMPANY NAME</h3>
 
                     <p class="info-modal" id="mdl_comp_name"></p>
 
@@ -28,7 +28,7 @@
 
                     <h3 class="subtitle-modal">AMOUNT</h3>
 
-                    <p class="info-modal" id="mdl_amount"> </p>
+                    <p class="info-modal" id="mdl_amount"></p>
 
                 </div><!-- /row-modal -->
 

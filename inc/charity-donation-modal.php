@@ -18,7 +18,7 @@
 			
 			<div class="row-modal">
 				
-				<h3 class="subtitle-modal">CHARITY NAME </h3>
+				<h3 class="subtitle-modal">CHARITY NAME</h3>
 
 				<p class="info-modal">ABC</p>
 				
@@ -28,7 +28,7 @@
 
 				<h3 class="subtitle-modal">AMOUNT</h3>
 
-				<p class="info-modal"> £ 200.00 </p>
+				<p class="info-modal">£ 200.00 </p>
 				
 			</div><!-- /row-modal -->
 

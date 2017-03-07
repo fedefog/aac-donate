@@ -11,7 +11,7 @@
 
                 <div class="row-modal">
 
-                    <h3 class="subtitle-modal">COMPANY NAME </h3>
+                    <h3 class="subtitle-modal">COMPANY NAME</h3>
 
                     <p class="info-modal" id="mdl_comp_name"><?php echo $t->Description ?></p>
 

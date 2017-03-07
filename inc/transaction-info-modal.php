@@ -15,7 +15,7 @@
 			
 			<div class="box-info">
 				
-				<h2 class="title-info">BENEFICIARY </h2>
+				<h2 class="title-info">BENEFICIARY</h2>
 				
 				<p class="desc-info">Charity Name </p>
 
@@ -32,7 +32,7 @@
 
 				<div class="half-info">
 
-					<h2 class="title-info">REFERENCE </h2>
+					<h2 class="title-info">REFERENCE</h2>
 					<p class="desc-info">37127</p>
 
 				</div><!-- /half-info -->
@@ -43,14 +43,14 @@
 				
 				<div class="half-info">
 
-					<h2 class="title-info">REQUEST DATE </h2>
+					<h2 class="title-info">REQUEST DATE</h2>
 					<p class="desc-info">9-6-2016</p>
 
 				</div><!-- /half-info -->
 
 				<div class="half-info">
 
-					<h2 class="title-info">PROCESSED </h2>
+					<h2 class="title-info">PROCESSED</h2>
 					<p class="desc-info">15-6-2016</p>
 
 				</div><!-- /half-info -->
@@ -59,7 +59,7 @@
 
 			<div class="box-info">
 				
-				<h2 class="title-info">BALANCE AFTER TRANSACTION </h2>
+				<h2 class="title-info">BALANCE AFTER TRANSACTION</h2>
 				<p class="desc-info">£ 3,344.99</p>
 								
 			</div><!-- /box-info -->
